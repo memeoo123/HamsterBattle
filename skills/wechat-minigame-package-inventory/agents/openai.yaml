@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信小游戏包体清单"
+  short_description: "跨平台只读盘点、保存并比较本地微信包体缓存元数据信息"
+  default_prompt: "使用 $wechat-minigame-package-inventory 盘点或比较这台电脑上的微信包体缓存。"

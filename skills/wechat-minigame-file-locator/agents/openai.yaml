@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信小游戏包体定位"
+  short_description: "只读定位包体，并通过启动前后差分识别目标 AppID 与版本"
+  default_prompt: "使用 $wechat-minigame-file-locator 只读定位这台 Windows 电脑上的目标微信小游戏包体。"

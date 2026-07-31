@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信小游戏逆向还原总编排"
+  short_description: "自动编排包体定位、逆向分析、工程还原与最终验收的完整长流程"
+  default_prompt: "使用 $wechat-minigame-reconstruction-orchestrator 接管这个微信小游戏项目，自动恢复进度并推进到下一阶段。"

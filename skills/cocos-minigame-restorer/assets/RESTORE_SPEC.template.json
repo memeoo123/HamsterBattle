@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0",
+  "implementationReady": false,
+  "target": {
+    "appId": "",
+    "version": "",
+    "engine": "cocos",
+    "engineVersion": ""
+  },
+  "design": {
+    "width": {"value": 0, "status": "unknown", "evidence": []},
+    "height": {"value": 0, "status": "unknown", "evidence": []},
+    "orientation": {"value": "", "status": "unknown", "evidence": []}
+  },
+  "representativeLevel": {},
+  "scene": {"anchors": [], "layers": [], "uiHierarchy": []},
+  "assets": [],
+  "entities": [],
+  "spawners": [],
+  "combat": {},
+  "rounds": [],
+  "goldenCases": "golden-cases.json",
+  "unknowns": [
+    {
+      "field": "design.width",
+      "verification": "Inspect the original scene or settings file."
+    }
+  ],
+  "evidenceIndex": {}
+}
