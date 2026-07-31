@@ -401,7 +401,8 @@ export class CangshuGame extends Component {
         resources.load('original/blue_base/spriteFrame', SpriteFrame, (error, frame) => {
             if (!error && selfHome.isValid) selfSprite.spriteFrame = frame;
         });
-        this.selfHomeGraphics = selfHome.addComponent(Graphics);
+        const selfHomeHp = this.makeNode('SelfCampHp', selfHome, 0, 0, 124, 90);
+        this.selfHomeGraphics = selfHomeHp.addComponent(Graphics);
 
         const enemyHome = this.makeNode('EnemyCamp', this.battleLayer, HOME_X, 0, 120, 236);
         const enemySprite = enemyHome.addComponent(Sprite);
@@ -462,9 +463,7 @@ export class CangshuGame extends Component {
         });
         this.goldLabel = this.makeLabel('Gold', this.prepareLayer, -270, -515, 180, 32, '金币 0', 18, GOLD);
 
-        const title = this.makeLabel('LevelTitle', this.node, 0, 625, 360, 36, '1001 · 宁静森林', 23, CREAM);
-        const outline = title.node.addComponent(Graphics);
-        outline.strokeColor = new Color(33, 60, 49, 140);
+        this.makeLabel('LevelTitle', this.node, 0, 625, 360, 36, '1001 · 宁静森林', 23, CREAM);
 
         this.resultLayer = this.makeNode('ResultOverlay', this.node, 0, 0, 620, 330);
         const resultGraphics = this.resultLayer.addComponent(Graphics);

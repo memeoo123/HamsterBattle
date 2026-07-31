@@ -20,6 +20,7 @@
 | Asset metadata | Pass | 22 asset files, 0 missing `.meta` |
 | TypeScript | Pass | Creator 3.8.8 project declarations, exit code 0 |
 | Creator project open | Pass | pre-existing main process PID 42220 opened `cocosProject` |
+| Main startup rendering | Pass | 修复同节点重复 Renderable2D 后，显式 Main UUID 预览显示完整布阵首屏且无新增同类警告 |
 | Post-change interactive preview | Pending | 需要在现有 Creator 窗口执行一次完整点击冒烟测试 |
 | Matched visual baseline | Pending | 尚无原游戏匹配截图/录像 |
 
