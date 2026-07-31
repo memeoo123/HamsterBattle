@@ -1,0 +1,96 @@
+﻿{
+    "table":  "recruit.RecruitConfig",
+    "columnCount":  8,
+    "rowCount":  2,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "openCondition",
+                       "token":  "openCondition",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  3,
+                       "name":  "poolIdForNormal",
+                       "token":  "poolIdForNormal",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "poolIdForXinYuan",
+                       "token":  "poolIdForXinYuan",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "costItems",
+                       "token":  1384,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  6,
+                       "name":  "costItems2",
+                       "token":  "costItems2",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  7,
+                       "name":  "costShopId",
+                       "token":  "costShopId",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "type":  "NORMAL",
+                     "openCondition":  null,
+                     "poolIdForNormal":  101,
+                     "poolIdForXinYuan":  102,
+                     "costItems":  [
+                                       {
+                                           "k":  10,
+                                           "v":  1
+                                       }
+                                   ],
+                     "costItems2":  null,
+                     "costShopId":  101001
+                 },
+                 {
+                     "id":  2,
+                     "type":  "SPECIAL",
+                     "openCondition":  [
+                                           [
+                                               "PASS_TRUNK_INSTANCE",
+                                               10020,
+                                               0
+                                           ]
+                                       ],
+                     "poolIdForNormal":  201,
+                     "poolIdForXinYuan":  202,
+                     "costItems":  [
+                                       {
+                                           "k":  20,
+                                           "v":  1
+                                       }
+                                   ],
+                     "costItems2":  null,
+                     "costShopId":  0
+                 }
+             ],
+    "sourceLength":  34,
+    "expectedLength":  34,
+    "validLength":  true
+}

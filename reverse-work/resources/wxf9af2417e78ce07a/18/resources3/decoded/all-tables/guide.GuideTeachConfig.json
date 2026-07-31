@@ -1,0 +1,144 @@
+﻿{
+    "table":  "guide.GuideTeachConfig",
+    "columnCount":  10,
+    "rowCount":  6,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "group",
+                       "token":  236,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "startUI",
+                       "token":  "startUI",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "startItem",
+                       "token":  "startItem",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "endUI",
+                       "token":  "endUI",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  6,
+                       "name":  "endItem",
+                       "token":  "endItem",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "endIconStyle",
+                       "token":  "endIconStyle",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "time",
+                       "token":  990,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  9,
+                       "name":  "dialogId",
+                       "token":  "dialogId",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1001,
+                     "group":  101,
+                     "icon":  "",
+                     "startUI":  "BagLikeView",
+                     "startItem":  "operComp.chooseCom.rootNode.brickCom_H0101",
+                     "endUI":  "BagLikeView",
+                     "endItem":  "operComp.list.16",
+                     "endIconStyle":  1,
+                     "time":  0,
+                     "dialogId":  1002
+                 },
+                 {
+                     "id":  1002,
+                     "group":  102,
+                     "icon":  "",
+                     "startUI":  "BagLikeView",
+                     "startItem":  "operComp.chooseCom.rootNode.brickCom_H0201",
+                     "endUI":  "BagLikeView",
+                     "endItem":  "operComp.list.23",
+                     "endIconStyle":  2,
+                     "time":  0,
+                     "dialogId":  1004
+                 },
+                 {
+                     "id":  1003,
+                     "group":  103,
+                     "icon":  "",
+                     "startUI":  "BagLikeView",
+                     "startItem":  "operComp.chooseCom.rootNode.brickCom_C01",
+                     "endUI":  "BagLikeView",
+                     "endItem":  "operComp.list.9",
+                     "endIconStyle":  1,
+                     "time":  0,
+                     "dialogId":  1005
+                 },
+                 {
+                     "id":  1004,
+                     "group":  104,
+                     "icon":  "",
+                     "startUI":  "BagLikeView",
+                     "startItem":  "operComp.chooseCom.rootNode.brickCom_G02",
+                     "endUI":  "BagLikeView",
+                     "endItem":  "operComp.list.31",
+                     "endIconStyle":  0,
+                     "time":  0,
+                     "dialogId":  1009
+                 },
+                 {
+                     "id":  1005,
+                     "group":  105,
+                     "icon":  "",
+                     "startUI":  "BagLikeView",
+                     "startItem":  "operComp.chooseCom.rootNode.brickCom_H0101",
+                     "endUI":  "BagLikeView",
+                     "endItem":  "operComp.list.16",
+                     "endIconStyle":  0,
+                     "time":  0,
+                     "dialogId":  1011
+                 },
+                 {
+                     "id":  1006,
+                     "group":  106,
+                     "icon":  "",
+                     "startUI":  "",
+                     "startItem":  "",
+                     "endUI":  "",
+                     "endItem":  "",
+                     "endIconStyle":  0,
+                     "time":  0,
+                     "dialogId":  1012
+                 }
+             ],
+    "sourceLength":  82,
+    "expectedLength":  82,
+    "validLength":  true
+}

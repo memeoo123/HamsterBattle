@@ -1,0 +1,46 @@
+﻿{
+    "table":  "guide.TrunkTaskGuideGroupConfig",
+    "columnCount":  4,
+    "rowCount":  1,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "groupId",
+                       "token":  992,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "openVerify",
+                       "token":  962,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  2,
+                       "name":  "closeVerify",
+                       "token":  993,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  3,
+                       "name":  "endGuideId",
+                       "token":  994,
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "groupId":  1010,
+                     "openVerify":  [
+                                        "TASK",
+                                        2,
+                                        56
+                                    ],
+                     "closeVerify":  null,
+                     "endGuideId":  1003
+                 }
+             ],
+    "sourceLength":  14,
+    "expectedLength":  14,
+    "validLength":  true
+}

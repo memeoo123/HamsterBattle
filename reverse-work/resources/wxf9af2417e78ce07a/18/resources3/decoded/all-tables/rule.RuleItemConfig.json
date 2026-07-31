@@ -1,0 +1,104 @@
+﻿{
+    "table":  "rule.RuleItemConfig",
+    "columnCount":  6,
+    "rowCount":  7,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "groupId",
+                       "token":  992,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "quality",
+                       "token":  30,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "title",
+                       "token":  517,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1001,
+                     "groupId":  1,
+                     "icon":  "image/effect/buff_0056",
+                     "quality":  4,
+                     "title":  "丰厚奖励",
+                     "desc":  "主线章节决定每日挑战章节难度，章节越高，奖励越丰富"
+                 },
+                 {
+                     "id":  1002,
+                     "groupId":  1,
+                     "icon":  "image/effect/buff_0057",
+                     "quality":  4,
+                     "title":  "挑战次数",
+                     "desc":  "每天最多挑战3次，跨天不累积"
+                 },
+                 {
+                     "id":  1003,
+                     "groupId":  1,
+                     "icon":  "image/effect/buff_0058",
+                     "quality":  4,
+                     "title":  "花式战斗",
+                     "desc":  "每天有三种不同的随机增益和减益效果，让战局更加扑朔迷离"
+                 },
+                 {
+                     "id":  2001,
+                     "groupId":  2,
+                     "icon":  "image/effect/buff_0056",
+                     "quality":  4,
+                     "title":  "丰厚奖励",
+                     "desc":  "主线章节决定无尽模式难度，章节越高，金币奖励越丰富"
+                 },
+                 {
+                     "id":  2002,
+                     "groupId":  2,
+                     "icon":  "image/effect/buff_0057",
+                     "quality":  4,
+                     "title":  "挑战次数",
+                     "desc":  "每天最多挑战3次，跨天不累积"
+                 },
+                 {
+                     "id":  2003,
+                     "groupId":  2,
+                     "icon":  "image/effect/buff_0004",
+                     "quality":  4,
+                     "title":  "超强增幅",
+                     "desc":  "已解锁全部齿轮增益效果，实力叠叠叠！"
+                 },
+                 {
+                     "id":  2004,
+                     "groupId":  2,
+                     "icon":  "image/effect/buff_0075",
+                     "quality":  4,
+                     "title":  "大量银币",
+                     "desc":  "开局获得大量银币，一次构建完整阵容，迎接海量怪物"
+                 }
+             ],
+    "sourceLength":  56,
+    "expectedLength":  56,
+    "validLength":  true
+}

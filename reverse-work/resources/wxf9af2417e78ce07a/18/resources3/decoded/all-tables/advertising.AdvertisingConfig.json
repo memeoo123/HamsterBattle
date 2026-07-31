@@ -1,0 +1,132 @@
+﻿{
+    "table":  "advertising.AdvertisingConfig",
+    "columnCount":  4,
+    "rowCount":  16,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "param",
+                       "token":  20,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "advertTimes",
+                       "token":  "advertTimes",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "type":  "MALL",
+                     "param":  "3",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  2,
+                     "type":  "MALL",
+                     "param":  "11",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  3,
+                     "type":  "SHOP",
+                     "param":  "101013",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  4,
+                     "type":  "WEAPON_RECRUIT",
+                     "param":  "",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  5,
+                     "type":  "FAST_HANG_UP",
+                     "param":  "",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  6,
+                     "type":  "DAILY_BOSS",
+                     "param":  "",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  7,
+                     "type":  "TRUNK_MAP_BOSS_EXTRA_REWARD",
+                     "param":  "",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  8,
+                     "type":  "TRUNK_MAP_BOX_DOUBLE_REWARD",
+                     "param":  "",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  9,
+                     "type":  "MAIN_CITY_RANDOM_BOX_REWARD",
+                     "param":  "",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  10,
+                     "type":  "REFRESH_PET_DUNGEON_TOY_BOX",
+                     "param":  "",
+                     "advertTimes":  10
+                 },
+                 {
+                     "id":  11,
+                     "type":  "NORMAL_RECRUIT",
+                     "param":  "",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  12,
+                     "type":  "SECRET_INSTANCE",
+                     "param":  "",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  13,
+                     "type":  "COLLECTIBLES_DUNGEON",
+                     "param":  "",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  14,
+                     "type":  "LEAGUE_BOSS",
+                     "param":  "",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  15,
+                     "type":  "STIMULATION_DEVICE_UP_LEVEL",
+                     "param":  "",
+                     "advertTimes":  1
+                 },
+                 {
+                     "id":  16,
+                     "type":  "MAIN_CITY_RANDOM_BOX_REWARD",
+                     "param":  "",
+                     "advertTimes":  4
+                 }
+             ],
+    "sourceLength":  74,
+    "expectedLength":  74,
+    "validLength":  true
+}

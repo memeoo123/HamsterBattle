@@ -1,0 +1,48 @@
+﻿{
+    "table":  "formation.FormationPositionConfig",
+    "columnCount":  2,
+    "rowCount":  6,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "openVerify",
+                       "token":  962,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "openVerify":  "PLAYER_LEVEL_GE,0,1;"
+                 },
+                 {
+                     "id":  2,
+                     "openVerify":  "PLAYER_LEVEL_GE,0,1;"
+                 },
+                 {
+                     "id":  3,
+                     "openVerify":  "PLAYER_LEVEL_GE,0,1;"
+                 },
+                 {
+                     "id":  4,
+                     "openVerify":  "PLAYER_LEVEL_GE,0,1;"
+                 },
+                 {
+                     "id":  5,
+                     "openVerify":  "PLAYER_LEVEL_GE,0,1;"
+                 },
+                 {
+                     "id":  6,
+                     "openVerify":  "PLAYER_LEVEL_GE,0,1;"
+                 }
+             ],
+    "sourceLength":  18,
+    "expectedLength":  18,
+    "validLength":  true
+}

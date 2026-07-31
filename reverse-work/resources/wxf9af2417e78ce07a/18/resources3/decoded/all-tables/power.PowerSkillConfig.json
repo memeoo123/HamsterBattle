@@ -1,0 +1,258 @@
+﻿{
+    "table":  "power.PowerSkillConfig",
+    "columnCount":  11,
+    "rowCount":  12,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "group",
+                       "token":  236,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "anim",
+                       "token":  858,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "triggerType",
+                       "token":  "triggerType",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "effectType",
+                       "token":  303,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "param",
+                       "token":  20,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  6,
+                       "name":  "preEnergy",
+                       "token":  "preEnergy",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  7,
+                       "name":  "maxEnergy",
+                       "token":  "maxEnergy",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "time",
+                       "token":  990,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  9,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  10,
+                       "name":  "buff",
+                       "token":  773,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "P01_SKILL_S0",
+                     "group":  "P01",
+                     "anim":  "idle3",
+                     "triggerType":  "ROUND_START",
+                     "effectType":  "PRODUCTIVITY",
+                     "param":  [
+                                   1000
+                               ],
+                     "preEnergy":  0,
+                     "maxEnergy":  -1,
+                     "time":  5000,
+                     "icon":  "image/heroSmallHead/P01",
+                     "buff":  ""
+                 },
+                 {
+                     "id":  "P01_SKILL_S3",
+                     "group":  "P01",
+                     "anim":  "idle3",
+                     "triggerType":  "ROUND_START",
+                     "effectType":  "PRODUCTIVITY",
+                     "param":  [
+                                   1500
+                               ],
+                     "preEnergy":  0,
+                     "maxEnergy":  -1,
+                     "time":  5000,
+                     "icon":  "image/heroSmallHead/P01",
+                     "buff":  ""
+                 },
+                 {
+                     "id":  "P01_SKILL_S7",
+                     "group":  "P01",
+                     "anim":  "idle3",
+                     "triggerType":  "ROUND_START",
+                     "effectType":  "PRODUCTIVITY",
+                     "param":  [
+                                   2000
+                               ],
+                     "preEnergy":  0,
+                     "maxEnergy":  -1,
+                     "time":  5000,
+                     "icon":  "image/heroSmallHead/P01",
+                     "buff":  ""
+                 },
+                 {
+                     "id":  "P02_SKILL_S0",
+                     "group":  "P02",
+                     "anim":  "idle3",
+                     "triggerType":  "ACTIVE_SKILL",
+                     "effectType":  "ATK_INC",
+                     "param":  [
+                                   3000
+                               ],
+                     "preEnergy":  300,
+                     "maxEnergy":  500,
+                     "time":  5000,
+                     "icon":  "image/heroSmallHead/P02",
+                     "buff":  "P02_bf1"
+                 },
+                 {
+                     "id":  "P02_SKILL_S3",
+                     "group":  "P02",
+                     "anim":  "idle3",
+                     "triggerType":  "ACTIVE_SKILL",
+                     "effectType":  "ATK_INC",
+                     "param":  [
+                                   4000
+                               ],
+                     "preEnergy":  300,
+                     "maxEnergy":  500,
+                     "time":  5000,
+                     "icon":  "image/heroSmallHead/P02",
+                     "buff":  "P02_bf1"
+                 },
+                 {
+                     "id":  "P02_SKILL_S7",
+                     "group":  "P02",
+                     "anim":  "idle3",
+                     "triggerType":  "ACTIVE_SKILL",
+                     "effectType":  "ATK_INC",
+                     "param":  [
+                                   5000
+                               ],
+                     "preEnergy":  300,
+                     "maxEnergy":  500,
+                     "time":  5000,
+                     "icon":  "image/heroSmallHead/P02",
+                     "buff":  "P02_bf1"
+                 },
+                 {
+                     "id":  "P03_SKILL_S0",
+                     "group":  "P03",
+                     "anim":  "idle3",
+                     "triggerType":  "ACTIVE_SKILL",
+                     "effectType":  "PRODUCTIVITY",
+                     "param":  [
+                                   1500
+                               ],
+                     "preEnergy":  300,
+                     "maxEnergy":  500,
+                     "time":  5000,
+                     "icon":  "image/heroSmallHead/P03",
+                     "buff":  ""
+                 },
+                 {
+                     "id":  "P03_SKILL_S3",
+                     "group":  "P03",
+                     "anim":  "idle3",
+                     "triggerType":  "ACTIVE_SKILL",
+                     "effectType":  "PRODUCTIVITY",
+                     "param":  [
+                                   2000
+                               ],
+                     "preEnergy":  300,
+                     "maxEnergy":  500,
+                     "time":  5000,
+                     "icon":  "image/heroSmallHead/P03",
+                     "buff":  ""
+                 },
+                 {
+                     "id":  "P03_SKILL_S7",
+                     "group":  "P03",
+                     "anim":  "idle3",
+                     "triggerType":  "ACTIVE_SKILL",
+                     "effectType":  "PRODUCTIVITY",
+                     "param":  [
+                                   2500
+                               ],
+                     "preEnergy":  300,
+                     "maxEnergy":  500,
+                     "time":  5000,
+                     "icon":  "image/heroSmallHead/P03",
+                     "buff":  ""
+                 },
+                 {
+                     "id":  "P04_SKILL_S0",
+                     "group":  "P04",
+                     "anim":  "idle3",
+                     "triggerType":  "ACTIVE_SKILL",
+                     "effectType":  "SKILL",
+                     "param":  [
+                                   "FB_1601_1"
+                               ],
+                     "preEnergy":  300,
+                     "maxEnergy":  500,
+                     "time":  5000,
+                     "icon":  "image/heroSmallHead/P04",
+                     "buff":  ""
+                 },
+                 {
+                     "id":  "P04_SKILL_S3",
+                     "group":  "P04",
+                     "anim":  "idle3",
+                     "triggerType":  "ACTIVE_SKILL",
+                     "effectType":  "SKILL",
+                     "param":  [
+                                   "FB_1601_2"
+                               ],
+                     "preEnergy":  300,
+                     "maxEnergy":  500,
+                     "time":  5000,
+                     "icon":  "image/heroSmallHead/P04",
+                     "buff":  ""
+                 },
+                 {
+                     "id":  "P04_SKILL_S7",
+                     "group":  "P04",
+                     "anim":  "idle3",
+                     "triggerType":  "ACTIVE_SKILL",
+                     "effectType":  "SKILL",
+                     "param":  [
+                                   "FB_1601_3"
+                               ],
+                     "preEnergy":  300,
+                     "maxEnergy":  500,
+                     "time":  5000,
+                     "icon":  "image/heroSmallHead/P04",
+                     "buff":  ""
+                 }
+             ],
+    "sourceLength":  156,
+    "expectedLength":  156,
+    "validLength":  true
+}

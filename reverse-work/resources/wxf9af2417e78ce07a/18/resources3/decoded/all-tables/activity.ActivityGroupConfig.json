@@ -1,0 +1,61 @@
+﻿{
+    "table":  "activity.ActivityGroupConfig",
+    "columnCount":  4,
+    "rowCount":  3,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "activityId",
+                       "token":  "activityId",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "goodsList",
+                       "token":  "goodsList",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  3,
+                       "name":  "ui",
+                       "token":  16,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "activityId":  "KAXIXI",
+                     "goodsList":  [
+                                       1001
+                                   ],
+                     "ui":  "ActivityKaxixiView1"
+                 },
+                 {
+                     "id":  2,
+                     "activityId":  "KAXIXI",
+                     "goodsList":  [
+                                       1002,
+                                       1003
+                                   ],
+                     "ui":  "ActivityKaxixiView2"
+                 },
+                 {
+                     "id":  3,
+                     "activityId":  "KAXIXI",
+                     "goodsList":  [
+                                       1004
+                                   ],
+                     "ui":  "ActivityKaxixiView3"
+                 }
+             ],
+    "sourceLength":  22,
+    "expectedLength":  22,
+    "validLength":  true
+}

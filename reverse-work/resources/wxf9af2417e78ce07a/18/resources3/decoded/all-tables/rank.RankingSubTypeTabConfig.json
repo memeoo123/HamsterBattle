@@ -1,0 +1,80 @@
+﻿{
+    "table":  "rank.RankingSubTypeTabConfig",
+    "columnCount":  6,
+    "rowCount":  4,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "rankType",
+                       "token":  "rankType",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "subType",
+                       "token":  813,
+                       "typeCode":  2
+                   },
+                   {
+                       "index":  3,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "bg",
+                       "token":  957,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "fg",
+                       "token":  "fg",
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "rankType":  "LADDER",
+                     "subType":  4,
+                     "name":  "i18n:RankingSubTypeTabConfig.name.1",
+                     "bg":  "image/rank/guanqiabang_1",
+                     "fg":  "image/rank/guanqiabang_0"
+                 },
+                 {
+                     "id":  2,
+                     "rankType":  "LADDER",
+                     "subType":  3,
+                     "name":  "i18n:RankingSubTypeTabConfig.name.2",
+                     "bg":  "image/rank/guanqiabang_1",
+                     "fg":  "image/rank/guanqiabang_0"
+                 },
+                 {
+                     "id":  3,
+                     "rankType":  "LADDER",
+                     "subType":  2,
+                     "name":  "i18n:RankingSubTypeTabConfig.name.3",
+                     "bg":  "image/rank/guanqiabang_1",
+                     "fg":  "image/rank/guanqiabang_0"
+                 },
+                 {
+                     "id":  4,
+                     "rankType":  "LADDER",
+                     "subType":  5,
+                     "name":  "i18n:RankingSubTypeTabConfig.name.4",
+                     "bg":  "image/rank/guanqiabang_1",
+                     "fg":  "image/rank/guanqiabang_0"
+                 }
+             ],
+    "sourceLength":  38,
+    "expectedLength":  38,
+    "validLength":  true
+}

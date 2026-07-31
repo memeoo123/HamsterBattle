@@ -1,0 +1,94 @@
+﻿{
+    "table":  "activity.ActivityGroupGoodsConfig",
+    "columnCount":  3,
+    "rowCount":  4,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "rewards",
+                       "token":  18,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  2,
+                       "name":  "adCost",
+                       "token":  "adCost",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1001,
+                     "rewards":  [
+                                     {
+                                         "k":  "FP04",
+                                         "v":  10
+                                     }
+                                 ],
+                     "adCost":  3
+                 },
+                 {
+                     "id":  1002,
+                     "rewards":  [
+                                     {
+                                         "k":  "FP04",
+                                         "v":  5
+                                     },
+                                     {
+                                         "k":  2,
+                                         "v":  20
+                                     },
+                                     {
+                                         "k":  3,
+                                         "v":  100
+                                     }
+                                 ],
+                     "adCost":  0
+                 },
+                 {
+                     "id":  1003,
+                     "rewards":  [
+                                     {
+                                         "k":  "FP04",
+                                         "v":  15
+                                     },
+                                     {
+                                         "k":  2,
+                                         "v":  100
+                                     },
+                                     {
+                                         "k":  3,
+                                         "v":  500
+                                     }
+                                 ],
+                     "adCost":  1
+                 },
+                 {
+                     "id":  1004,
+                     "rewards":  [
+                                     {
+                                         "k":  "FP04",
+                                         "v":  40
+                                     },
+                                     {
+                                         "k":  2,
+                                         "v":  300
+                                     },
+                                     {
+                                         "k":  3,
+                                         "v":  1500
+                                     }
+                                 ],
+                     "adCost":  2
+                 }
+             ],
+    "sourceLength":  20,
+    "expectedLength":  20,
+    "validLength":  true
+}

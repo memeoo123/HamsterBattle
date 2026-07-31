@@ -1,0 +1,145 @@
+# Unity Resource Inventory
+
+- Source: `reverse-work/unpacked/wxc761b90fabc11225/7/base/game.js`
+- Unique .unity3d paths: 125
+- Scene/map/level candidates: 7
+- CDN base from static config: `https://tdboy-cdn.fuchenkj.com/v3.1.4/WebGL_Wechat/`
+- URL validation: data package and three representative scene bundles returned HTTP 404 when directly joined to the base URL.
+
+## Scene / map / level candidates
+
+- `assets/art/scene/100000/atlas.png.unity3d_9590e63ca779519d31c5eb0693d2efc9.unity3d`
+- `assets/art/scene/200000/atlas.png.unity3d_b1ea8594ddd46fecda7587f115f5a44a.unity3d`
+- `assets/art/scene/200001/atlas.png.unity3d_2fe95a85d966486a385251866878c2ab.unity3d`
+- `assets/res/scene/8000/8000.unity.unity3d_ea1e7714e951f3aa608a8eef430ea2e4.unity3d`
+- `assets/res/scene/game.unity.unity3d_e4838bde688ffcfd750092d09c3ed95d.unity3d`
+- `assets/res/sprite/levelselectui/icon_touxiang.png.unity3d_d2603a0f7caed41c896fa210863be9ed.unity3d`
+- `assets/res/ui/fight/fightmapeffectui.prefab.unity3d_850db0567109d18c2eb2fec44f02bcaf.unity3d`
+
+## All unique bundle paths
+
+- `assets/art/effect/shader/maskadditive.shader.unity3d_66540ae9b75dabc4f704009b89ce982a.unity3d`
+- `assets/art/effect/shader/maskalphablend.shader.unity3d_db6efb195f017ab64648ce758c81e9c2.unity3d`
+- `assets/art/effect/shader/maskalphablend_c.shader.unity3d_cb30abb3a6133721097695b2ea666a94.unity3d`
+- `assets/art/effect/shader/particleadditive.shader.unity3d_8b77e42f6e2fda12bd1eeb53bf0ac1ed.unity3d`
+- `assets/art/effect/shader/particlealphablend.shader.unity3d_43f352174b18c41a02f3783d151b8e3f.unity3d`
+- `assets/art/effect/shader/particlealphablendui.shader.unity3d_f937914a1c0e3b95c7a4dc4b6c78c040.unity3d`
+- `assets/art/scene/100000/atlas.png.unity3d_9590e63ca779519d31c5eb0693d2efc9.unity3d`
+- `assets/art/scene/200000/atlas.png.unity3d_b1ea8594ddd46fecda7587f115f5a44a.unity3d`
+- `assets/art/scene/200001/atlas.png.unity3d_2fe95a85d966486a385251866878c2ab.unity3d`
+- `assets/res/animationclip/closeminimum.anim.unity3d_6edcafb5e596860493b4bbd5ff25980c.unity3d`
+- `assets/res/atlas/100000.spriteatlas.unity3d_a343843416ea6c66187a8960b50f18bf.unity3d`
+- `assets/res/atlas/fight.spriteatlas.unity3d_b5cd12abf18c74ff3231ca4cc3d64ca3.unity3d`
+- `assets/res/atlas/fightcitysiegedungeon.spriteatlas.unity3d_2b677ebd0dfb9526d0582ecd0a03ad50.unity3d`
+- `assets/res/atlas/fightstory.spriteatlas.unity3d_26279cc1b29d982542c3f96bbd8fdc99.unity3d`
+- `assets/res/atlas/fighttdnight.spriteatlas.unity3d_281293418373207771ac85c28694290a.unity3d`
+- `assets/res/atlas/fighttdteam.spriteatlas.unity3d_22653df451d8723e844eba175abd5f85.unity3d`
+- `assets/res/atlas/fighttowerdefenceroom.spriteatlas.unity3d_e091feecbbe84c55cece8bb857083f87.unity3d`
+- `assets/res/atlas/gamepad.spriteatlas.unity3d_691879609a0409297c181deac14fe05a.unity3d`
+- `assets/res/atlas/global.spriteatlas.unity3d_1b2c37a6578617f3d9d13174eb0b722b.unity3d`
+- `assets/res/atlas/guide.spriteatlas.unity3d_4f40d958e74e5f5e803b15cb4982019e.unity3d`
+- `assets/res/atlas/home.spriteatlas.unity3d_b6716188bf9b618de21e0b42208309d3.unity3d`
+- `assets/res/atlas/hud.spriteatlas.unity3d_d0527053cc3fb1086b03e8c7b3b03a88.unity3d`
+- `assets/res/atlas/login.spriteatlas.unity3d_ef43fb999d1965251262ff255f6a330b.unity3d`
+- `assets/res/atlas/rankingactivity.spriteatlas.unity3d_af4ade639f7f1dff77574586bcbcf9c3.unity3d`
+- `assets/res/atlas/seasonreport.spriteatlas.unity3d_2c3695eec062a6b0b14c7ba787a0709e.unity3d`
+- `assets/res/atlas/tilepalette_crystal.spriteatlas.unity3d_f0de19dbc1d528456daabec25e9d32d1.unity3d`
+- `assets/res/atlas/tilepalette_desert.spriteatlas.unity3d_5916eae7639d74eda271e17abbb9e36a.unity3d`
+- `assets/res/atlas/tilepalette_forest.spriteatlas.unity3d_9eadd41a18ad4ac1f9d11cd28d3961ae.unity3d`
+- `assets/res/atlas/tilepalette_iceland.spriteatlas.unity3d_b01f030bf3d5aaee00b86f5c0dfcd41a.unity3d`
+- `assets/res/atlas/tilepalette_road.spriteatlas.unity3d_1a2ea348d25ecfc499e6381038a402dd.unity3d`
+- `assets/res/atlas/tilepalette_ruled.spriteatlas.unity3d_f639d88e2626a9ac86cf1024d50cc6ca.unity3d`
+- `assets/res/atlas/tilepalette_seabottom.spriteatlas.unity3d_e004c3e2bff5979dc89e84f0a4bc9ac3.unity3d`
+- `assets/res/atlas/tilepalette_swamp.spriteatlas.unity3d_55ce9a0fdf443f4abe2f1663b5447e0c.unity3d`
+- `assets/res/atlas/tilepalette_valcano.spriteatlas.unity3d_65880529a59d0ee99d4d8e73ea1fa501.unity3d`
+- `assets/res/character/building/jianzhu_jinkuang1_ye.prefab.unity3d_87c0284842a65469d0c0f613aa6cb71c.unity3d`
+- `assets/res/character/building/jianzhu_zhucheng1_ye.prefab.unity3d_4a70e4048a149cc0cf8500d709c74086.unity3d`
+- `assets/res/character/hero/hero_dafashi.prefab.unity3d_503b3a80ead3fdead71310a38ca6c549.unity3d`
+- `assets/res/character/monster/lord_humansword.prefab.unity3d_c319f707353c515d4de3a585404c7ba5.unity3d`
+- `assets/res/character/monster/mob_jinzhan1.prefab.unity3d_36ad795af7bc226cfdad04eec77f3d2e.unity3d`
+- `assets/res/character/monster/zhugong_renzulingzhu1.prefab.unity3d_160b04674420751a11ab8b376b192b2b.unity3d`
+- `assets/res/effect/attackrange.prefab.unity3d_6bedfb31d0b617395d1dd9b8c90c0d63.unity3d`
+- `assets/res/effect/combat/bianyang_maoyan.prefab.unity3d_f73ed8354ce62ce3f43ea7cc36d6b912.unity3d`
+- `assets/res/effect/combat/jianzao_wancheng.prefab.unity3d_fc426b0845112d85699e81eb537323c5.unity3d`
+- `assets/res/effect/combat/jianzhu_zhongji.prefab.unity3d_3e649d9fcdd8822837da450fb19ac363.unity3d`
+- `assets/res/effect/combat/junei_zhouye.prefab.unity3d_2a200b52c4c4b50a1185db23ad46cb54.unity3d`
+- `assets/res/effect/ui/ui_sanlu_ko.prefab.unity3d_dfd72dac7b068fa95d280cf3eb8f566b.unity3d`
+- `assets/res/effect/ui/ui_shouji_loop.prefab.unity3d_05c32eabe83672fed9716c20932e572f.unity3d`
+- `assets/res/effect/ui/vx_boom_fire.prefab.unity3d_ad68482353a379461c46f223a15015f3.unity3d`
+- `assets/res/effect/ui/vx_bottom_full.prefab.unity3d_d7bc558b47a4579d1d2da0717e363a71.unity3d`
+- `assets/res/effect/ui/vx_click.prefab.unity3d_298786447d0c877dd8e39e2c784d043c.unity3d`
+- `assets/res/effect/ui/vx_guochang.prefab.unity3d_62b031869bf9af0bf7c9743143231801.unity3d`
+- `assets/res/effect/ui/vx_lingzhu_loop_yellow.prefab.unity3d_f952412b176e1a1b292fed3422a775e0.unity3d`
+- `assets/res/effect/ui/vx_run_smoke.prefab.unity3d_c82221f4aa6f8c819f6a3fa997de454b.unity3d`
+- `assets/res/font/mainfont.ttf.unity3d_0e38203cde727a2c3c4e6541514918aa.unity3d`
+- `assets/res/font/outlinemat.mat.unity3d_c856853b385cfdfb1477c19b05038946.unity3d`
+- `assets/res/prefab/arrowhero.prefab.unity3d_3614fc3f6894ae80335871b95d0d125c.unity3d`
+- `assets/res/prefab/buildherohead.prefab.unity3d_c0dd61c251601c30b3a6ace4275dade3.unity3d`
+- `assets/res/prefab/damagetextanimationsettings.prefab.unity3d_101dd2eb7889770a46dd5d3f8ae68551.unity3d`
+- `assets/res/prefab/hudbar.prefab.unity3d_8057c8ce9f2650e60a1bec6fc2a1f828.unity3d`
+- `assets/res/prefab/skillmask.prefab.unity3d_aa9a965ad1453a90c9a8162c3b1a9d68.unity3d`
+- `assets/res/prefab/slotindicator.prefab.unity3d_fd5c9c98ab80113aaea4da15e6f31f3c.unity3d`
+- `assets/res/prefab/spawnindicator.prefab.unity3d_b2d7e13286510d783747330867509264.unity3d`
+- `assets/res/scene/8000/8000.unity.unity3d_ea1e7714e951f3aa608a8eef430ea2e4.unity3d`
+- `assets/res/scene/game.unity.unity3d_e4838bde688ffcfd750092d09c3ed95d.unity3d`
+- `assets/res/shader/character/character2d.shader.unity3d_8d757c31da61e6104e54685594be3bee.unity3d`
+- `assets/res/shader/hudicon.shader.unity3d_12f62a9526e3230648b044098f3fe5cc.unity3d`
+- `assets/res/shader/terrain/terrain.shader.unity3d_a173366fde7a952e98f1344b9988a948.unity3d`
+- `assets/res/shader/terrain/timeofday.shader.unity3d_ee96d1dcbe96c34eb69d215f9755b9e8.unity3d`
+- `assets/res/shader/terrain/widget.shader.unity3d_a3d2940fd0bd2972be9ae1e5b6226940.unity3d`
+- `assets/res/shader/ui/batcheduimesh.shader.unity3d_83d025f96455ecfa41fda276ffdf3185.unity3d`
+- `assets/res/shader/ui/outlineex.shader.unity3d_f0e277bed6eac246b61af8613911682a.unity3d`
+- `assets/res/shader/ui/skillmask.shader.unity3d_6d826b86175ecbeaee351b97d01fdf9c.unity3d`
+- `assets/res/sound/combat/yanchu_shengji.ogg.unity3d_2e31f35587dfb1e68787f62360ad3f39.unity3d`
+- `assets/res/sound/music/music_buyaoa.ogg.unity3d_713757a6635a4f9ac34140e2c299a6f3.unity3d`
+- `assets/res/sound/music/music_nightbattle.ogg.unity3d_81cd4ede11c8e1cde23d3ba0eaff379e.unity3d`
+- `assets/res/sound/ui/ruye.ogg.unity3d_b4ab6c8aeef119e841ab987123cf1a3a.unity3d`
+- `assets/res/sound/ui/yindao_duihua01.ogg.unity3d_38d1126345a41e0d7872d60e945376fb.unity3d`
+- `assets/res/spine/hero/hero_dafashi.prefab.unity3d_636846d040c270c06fd4518544f3d5e8.unity3d`
+- `assets/res/sprite/bg/bg_junei_jineng_purple.png.unity3d_76c1e00c05ef8d43841928b27e560fe1.unity3d`
+- `assets/res/sprite/bg/bg_loading_01.png.unity3d_ff05afbe0b48bd8be55d847b4c7a8363.unity3d`
+- `assets/res/sprite/common/age_prompt.png.unity3d_ad485c0b99bc629370c79ba3de3492e8.unity3d`
+- `assets/res/sprite/common/common_daojukuang_bai.png.unity3d_0dfb8d1880f2e0186f033502179f04f1.unity3d`
+- `assets/res/sprite/common/common_daojukuang_hongse.png.unity3d_3b3edc8703354010e4dc7c4c2f20329d.unity3d`
+- `assets/res/sprite/common/img_baoxiang_03.png.unity3d_d4091629ee079f801b1d6b2a0d473483.unity3d`
+- `assets/res/sprite/fight/img_emeng_redu_dk.png.unity3d_92ea792f7b7b769a558c6e4db4f8991f.unity3d`
+- `assets/res/sprite/fightui/icon_guanqia_kuloutou01.png.unity3d_0a88458c675066e98a55ce3f53216d2f.unity3d`
+- `assets/res/sprite/fightui/icon_guanqia_qidian.png.unity3d_b22bda47f12eaeb191fbc14f8428cde8.unity3d`
+- `assets/res/sprite/fightui/icon_guanqia_zhandou.png.unity3d_d7aa3daceb88078784fd53ededb0d52b.unity3d`
+- `assets/res/sprite/guide/lingzhu_renzu.png.unity3d_0b4200f5219ac805c03c9bfff28a4cdd.unity3d`
+- `assets/res/sprite/heroicon/hero_dafashi.png.unity3d_7faa3a05b4ca089eab275657fecb5017.unity3d`
+- `assets/res/sprite/levelselectui/icon_touxiang.png.unity3d_d2603a0f7caed41c896fa210863be9ed.unity3d`
+- `assets/res/sprite/monsterheadicon/mob_jinzhan1.png.unity3d_e9e7e8c363e118580ed60c3ac0a4f3a5.unity3d`
+- `assets/res/ui/fight/fightcommonloadingui.prefab.unity3d_3e823a18ff85d5f6731ade365fde8e16.unity3d`
+- `assets/res/ui/fight/fightleftstreamertipsui.prefab.unity3d_3bb5b251569594a93825c94ca3ac63d9.unity3d`
+- `assets/res/ui/fight/fightmapeffectui.prefab.unity3d_850db0567109d18c2eb2fec44f02bcaf.unity3d`
+- `assets/res/ui/fight/fightpaneltdbottom.prefab.unity3d_2ccebd22eac112f04bf35172a99ee572.unity3d`
+- `assets/res/ui/fight/fightpaneltdtop.prefab.unity3d_79415d06b35111188bae60656da9e892.unity3d`
+- `assets/res/ui/fight/fightstreamertipsui.prefab.unity3d_94c3ff63ee8c74eca6d7f8b96f01781e.unity3d`
+- `assets/res/ui/fight/fighttddayitem.prefab.unity3d_d3b570bd3f19f16a17b65a00bb6da5eb.unity3d`
+- `assets/res/ui/fight/tdrealtimedpswidget.prefab.unity3d_3e82074593ed2f5f1916fd02a7397904.unity3d`
+- `assets/res/ui/fightcitysiegedungeon/fightcitysiegeweatherui.prefab.unity3d_0a92ad78f38811a9825fff0354e30dc9.unity3d`
+- `assets/res/ui/fightstory/fightstorybossbanner1.prefab.unity3d_3507f7de0d3e6aff9f073f755205075c.unity3d`
+- `assets/res/ui/fightstory/fightstorytipsui.prefab.unity3d_9bdb858058ba04a41abace9863384c1f.unity3d`
+- `assets/res/ui/fightstory/storybubblewidget.prefab.unity3d_3139249932c1f1c466c62e9508d9962e.unity3d`
+- `assets/res/ui/fighttdnight/fighttdnightloadingui.prefab.unity3d_2a5c2a8eec4f8644f78d0c5d75888228.unity3d`
+- `assets/res/ui/fighttdnight/fighttdnightpanel.prefab.unity3d_cdd955d8850a96874f4825b69b3c18e6.unity3d`
+- `assets/res/ui/fighttdnight/suitetipswidget.prefab.unity3d_f8c8efef8eb8ccbcdc0b83b107459226.unity3d`
+- `assets/res/ui/fighttdnight/tdherocardbtnui.prefab.unity3d_b718225382ea150dd9d946f34c33007a.unity3d`
+- `assets/res/ui/fighttdteam/fighttdteamtop.prefab.unity3d_2d726786ef8b19defdecd3633f20bf90.unity3d`
+- `assets/res/ui/fighttowerdefenceroom/fighttdclantopwidget.prefab.unity3d_1b8c2f9bf605b0ded8d79a9d7ef070f1.unity3d`
+- `assets/res/ui/fighttowerdefenceroom/fighttdgemtopwidget.prefab.unity3d_ef58333cbc8981e6ab167cb8bc100e35.unity3d`
+- `assets/res/ui/fighttowerdefenceroom/fighttdgoldtopwidget.prefab.unity3d_692ae015f24b8430d0a62e880f09c3f8.unity3d`
+- `assets/res/ui/fighttowerdefenceroom/fighttdheroskillwidget.prefab.unity3d_dfb8d2596e4a0c8067382ca615727be2.unity3d`
+- `assets/res/ui/fighttowerdefenceroom/fighttdprotopwidget.prefab.unity3d_a75230114d387413588c65cb2f1a2df1.unity3d`
+- `assets/res/ui/fighttowerdefenceroom/fighttdtopwidget.prefab.unity3d_b7c24a4cc840724e3185f5c216f0d12d.unity3d`
+- `assets/res/ui/fighttowerdefenceroom/tddamageprogresswidget.prefab.unity3d_599cc61f7106edbd04b7d4671c14858e.unity3d`
+- `assets/res/ui/fighttowerdefenceroom/tdeffecttips.prefab.unity3d_6e383e8ec3712001dfbf60092f88b68e.unity3d`
+- `assets/res/ui/fighttowerdefenceroom/tdtaskfillwidget.prefab.unity3d_2c8ff2539e41f90d8cbe0642fc5b7b73.unity3d`
+- `assets/res/ui/global/commondropdown.prefab.unity3d_0622b16aa89cab07a4f3ab7bc0c73662.unity3d`
+- `assets/res/ui/global/itemcell.prefab.unity3d_61c4c09fff386b8c41cb08bd80d84bdc.unity3d`
+- `assets/res/ui/guide/guidemaskui.prefab.unity3d_f125f187c980bfe7fc88e01b680822c4.unity3d`
+- `assets/res/ui/hud/hudiconbundle.prefab.unity3d_3c0c886564aa5acae874b742f6c29e68.unity3d`
+- `assets/res/ui/login/fpsui.prefab.unity3d_dfa0344652fd76a61facb3f97c5772d1.unity3d`
+- `assets/res/ui/login/loginpanel.prefab.unity3d_172b8fbc7db0ab1b62c7a6403c349588.unity3d`
+- `assets/res/ui/rankingactivity/rankingactivityscorechgui.prefab.unity3d_6e7c9460371e49dab24e2f635147b90e.unity3d`

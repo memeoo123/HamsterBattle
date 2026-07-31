@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "2.0",
+  "generatedAtUtc": "2026-07-31T10:00:09.0455171Z",
+  "platform": "windows",
+  "source": {
+    "kind": "migration",
+    "legacyProgress": "E:\\Projects\\weichatAnalysis\\cangshu\\REVERSE_PROGRESS.md"
+  },
+  "handoffCandidates": [
+    {
+      "appId": "wxf9af2417e78ce07a",
+      "version": "18",
+      "mainPackage": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\input\\wxf9af2417e78ce07a\\18\\__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
+      "relatedPackages": [
+        "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\input\\wxf9af2417e78ce07a\\18\\_subpackages_game_.wxapkg"
+      ],
+      "confidence": "high",
+      "evidence": "authorized-working-copy-and-unpacked-main-game-subpackage-cross-check",
+      "classification": "cocos-creator-minigame",
+      "contentRead": true
+    }
+  ]
+}

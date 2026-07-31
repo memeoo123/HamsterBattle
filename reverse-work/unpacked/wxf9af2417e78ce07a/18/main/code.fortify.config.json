@@ -1,0 +1,40 @@
+{
+  "plugin_protect": {
+    "name": "外挂防护",
+    "files": []
+  },
+  "watermark": {
+    "name": "水印保护",
+    "files": [
+      "web-adapter.js",
+      "src/chunks/bundle.55402.js",
+      "assets/main/index.ec781.js",
+      "sdk/WxBaseSdk.js",
+      "subpackages/game/game.js"
+    ]
+  },
+  "obfuscation": {
+    "name": "代码混淆",
+    "tasks": [
+      {
+        "level": 1,
+        "files": []
+      },
+      {
+        "level": 2,
+        "files": [
+          "web-adapter.js",
+          "assets/main/index.ec781.js"
+        ]
+      },
+      {
+        "level": 3,
+        "files": [
+          "src/chunks/bundle.55402.js",
+          "sdk/WxBaseSdk.js",
+          "subpackages/game/game.js"
+        ]
+      }
+    ]
+  }
+}

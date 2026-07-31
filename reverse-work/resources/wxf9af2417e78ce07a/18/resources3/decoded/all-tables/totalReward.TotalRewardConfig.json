@@ -1,0 +1,980 @@
+﻿{
+    "table":  "totalReward.TotalRewardConfig",
+    "columnCount":  3,
+    "rowCount":  95,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "adTimes",
+                       "token":  "adTimes",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "rewards",
+                       "token":  18,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "adTimes":  1,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  200
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  2,
+                     "adTimes":  3,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  3,
+                     "adTimes":  5,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  4,
+                     "adTimes":  10,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  200
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  5,
+                     "adTimes":  15,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  6,
+                     "adTimes":  20,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  7,
+                     "adTimes":  25,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  8,
+                     "adTimes":  30,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  9,
+                     "adTimes":  35,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  10,
+                     "adTimes":  40,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  11,
+                     "adTimes":  45,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  12,
+                     "adTimes":  50,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  13,
+                     "adTimes":  55,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  14,
+                     "adTimes":  60,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  15,
+                     "adTimes":  65,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  16,
+                     "adTimes":  70,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  17,
+                     "adTimes":  75,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  18,
+                     "adTimes":  80,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  19,
+                     "adTimes":  85,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  20,
+                     "adTimes":  90,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  21,
+                     "adTimes":  95,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  22,
+                     "adTimes":  100,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  23,
+                     "adTimes":  110,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  24,
+                     "adTimes":  120,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  25,
+                     "adTimes":  130,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  26,
+                     "adTimes":  140,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  27,
+                     "adTimes":  150,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  28,
+                     "adTimes":  160,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  29,
+                     "adTimes":  170,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  30,
+                     "adTimes":  180,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  31,
+                     "adTimes":  190,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  32,
+                     "adTimes":  200,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  33,
+                     "adTimes":  210,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  34,
+                     "adTimes":  220,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  35,
+                     "adTimes":  230,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  36,
+                     "adTimes":  240,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  37,
+                     "adTimes":  250,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  38,
+                     "adTimes":  260,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  39,
+                     "adTimes":  270,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  40,
+                     "adTimes":  280,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  41,
+                     "adTimes":  290,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  42,
+                     "adTimes":  300,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  43,
+                     "adTimes":  320,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  44,
+                     "adTimes":  340,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  45,
+                     "adTimes":  360,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  46,
+                     "adTimes":  380,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  47,
+                     "adTimes":  400,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  48,
+                     "adTimes":  420,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  49,
+                     "adTimes":  440,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  50,
+                     "adTimes":  460,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  51,
+                     "adTimes":  480,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  52,
+                     "adTimes":  500,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  53,
+                     "adTimes":  540,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  54,
+                     "adTimes":  580,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  55,
+                     "adTimes":  620,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  56,
+                     "adTimes":  660,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  57,
+                     "adTimes":  700,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  58,
+                     "adTimes":  740,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  59,
+                     "adTimes":  780,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  60,
+                     "adTimes":  820,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  61,
+                     "adTimes":  860,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  62,
+                     "adTimes":  900,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  63,
+                     "adTimes":  950,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  64,
+                     "adTimes":  1000,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  65,
+                     "adTimes":  1100,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  66,
+                     "adTimes":  1200,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  67,
+                     "adTimes":  1300,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  68,
+                     "adTimes":  1400,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  69,
+                     "adTimes":  1500,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  70,
+                     "adTimes":  1600,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  71,
+                     "adTimes":  1700,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  72,
+                     "adTimes":  1800,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  73,
+                     "adTimes":  1900,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  74,
+                     "adTimes":  2000,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  75,
+                     "adTimes":  2200,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  76,
+                     "adTimes":  2400,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  77,
+                     "adTimes":  2600,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  78,
+                     "adTimes":  2800,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  79,
+                     "adTimes":  3000,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  80,
+                     "adTimes":  3300,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  81,
+                     "adTimes":  3600,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  82,
+                     "adTimes":  3900,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  83,
+                     "adTimes":  4200,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  84,
+                     "adTimes":  4500,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  85,
+                     "adTimes":  5000,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  86,
+                     "adTimes":  5500,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  87,
+                     "adTimes":  6000,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  88,
+                     "adTimes":  6500,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  89,
+                     "adTimes":  7000,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  90,
+                     "adTimes":  7500,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  91,
+                     "adTimes":  8000,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  92,
+                     "adTimes":  8500,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  93,
+                     "adTimes":  9000,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  94,
+                     "adTimes":  9500,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  95,
+                     "adTimes":  10000,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 }
+             ],
+    "sourceLength":  293,
+    "expectedLength":  293,
+    "validLength":  true
+}

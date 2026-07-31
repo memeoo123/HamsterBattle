@@ -1,0 +1,60 @@
+﻿{
+    "table":  "mainpage.MainPageHeaderItemConfig",
+    "columnCount":  4,
+    "rowCount":  4,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "itemId",
+                       "token":  "itemId",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "canBuyFlag",
+                       "token":  "canBuyFlag",
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  3,
+                       "name":  "progressColor",
+                       "token":  "progressColor",
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "itemId":  "1",
+                     "canBuyFlag":  true,
+                     "progressColor":  "#FFE329"
+                 },
+                 {
+                     "id":  2,
+                     "itemId":  "2",
+                     "canBuyFlag":  true,
+                     "progressColor":  "#FFE329"
+                 },
+                 {
+                     "id":  3,
+                     "itemId":  "3",
+                     "canBuyFlag":  true,
+                     "progressColor":  "#FFE329"
+                 },
+                 {
+                     "id":  4,
+                     "itemId":  "4",
+                     "canBuyFlag":  false,
+                     "progressColor":  "#FFE329"
+                 }
+             ],
+    "sourceLength":  26,
+    "expectedLength":  26,
+    "validLength":  true
+}

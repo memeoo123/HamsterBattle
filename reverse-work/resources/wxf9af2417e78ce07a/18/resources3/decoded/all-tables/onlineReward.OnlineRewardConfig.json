@@ -1,0 +1,90 @@
+﻿{
+    "table":  "onlineReward.OnlineRewardConfig",
+    "columnCount":  3,
+    "rowCount":  6,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "time",
+                       "token":  990,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "rewards",
+                       "token":  18,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "time":  10,
+                     "rewards":  [
+                                     {
+                                         "k":  2,
+                                         "v":  200
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  2,
+                     "time":  20,
+                     "rewards":  [
+                                     {
+                                         "k":  2,
+                                         "v":  300
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  3,
+                     "time":  30,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  80
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  4,
+                     "time":  40,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  120
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  5,
+                     "time":  50,
+                     "rewards":  [
+                                     {
+                                         "k":  4,
+                                         "v":  1
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  6,
+                     "time":  60,
+                     "rewards":  [
+                                     {
+                                         "k":  4,
+                                         "v":  2
+                                     }
+                                 ]
+                 }
+             ],
+    "sourceLength":  26,
+    "expectedLength":  26,
+    "validLength":  true
+}

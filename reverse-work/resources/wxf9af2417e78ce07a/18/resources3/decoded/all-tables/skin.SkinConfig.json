@@ -1,0 +1,646 @@
+﻿{
+    "table":  "skin.SkinConfig",
+    "columnCount":  13,
+    "rowCount":  23,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "heroId",
+                       "token":  583,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "isDefault",
+                       "token":  "isDefault",
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  3,
+                       "name":  "sort",
+                       "token":  1088,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "quality",
+                       "token":  30,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "fragmentItemId",
+                       "token":  1089,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "activeCostFragment",
+                       "token":  "activeCostFragment",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "headPath",
+                       "token":  346,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  9,
+                       "name":  "smallHeadPaths",
+                       "token":  "smallHeadPaths",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  10,
+                       "name":  "modelIds",
+                       "token":  "modelIds",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  11,
+                       "name":  "baseAttrs",
+                       "token":  "baseAttrs",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  12,
+                       "name":  "upAttrs",
+                       "token":  "upAttrs",
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "IS_H01_Skin01",
+                     "heroId":  "H01",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H0101",
+                     "smallHeadPaths":  [
+                                            "H0101",
+                                            "H0102",
+                                            "H0103",
+                                            "H0104"
+                                        ],
+                     "modelIds":  [
+                                      "H0101",
+                                      "H0102",
+                                      "H0103",
+                                      "H0104"
+                                  ],
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H02_Skin01",
+                     "heroId":  "H02",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H0201",
+                     "smallHeadPaths":  [
+                                            "H0201",
+                                            "H0202",
+                                            "H0203",
+                                            "H0204"
+                                        ],
+                     "modelIds":  [
+                                      "H0201",
+                                      "H0202",
+                                      "H0203",
+                                      "H0204",
+                                      "H29_S1",
+                                      "H29_S2"
+                                  ],
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H03_Skin01",
+                     "heroId":  "H03",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H0301",
+                     "smallHeadPaths":  [
+                                            "H0301",
+                                            "H0302",
+                                            "H0303",
+                                            "H0304"
+                                        ],
+                     "modelIds":  [
+                                      "H0301",
+                                      "H0302",
+                                      "H0303",
+                                      "H0304",
+                                      "H18_S1",
+                                      "H28_S1",
+                                      "H28_S2"
+                                  ],
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H04_Skin01",
+                     "heroId":  "H04",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H0401",
+                     "smallHeadPaths":  [
+                                            "H0401",
+                                            "H0402",
+                                            "H0403",
+                                            "H0404"
+                                        ],
+                     "modelIds":  [
+                                      "H0401",
+                                      "H0402",
+                                      "H0403",
+                                      "H0404"
+                                  ],
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H05_Skin01",
+                     "heroId":  "H05",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H0501",
+                     "smallHeadPaths":  [
+                                            "H0501",
+                                            "H0502",
+                                            "H0503",
+                                            "H0504"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H06_Skin01",
+                     "heroId":  "H06",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H0601",
+                     "smallHeadPaths":  [
+                                            "H0601",
+                                            "H0602",
+                                            "H0603",
+                                            "H0604"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H07_Skin01",
+                     "heroId":  "H07",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H0705",
+                     "smallHeadPaths":  [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            "H0705"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H08_Skin01",
+                     "heroId":  "H08",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H0805",
+                     "smallHeadPaths":  [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            "H0805"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H09_Skin01",
+                     "heroId":  "H09",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H0905",
+                     "smallHeadPaths":  [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            "H0905"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H10_Skin01",
+                     "heroId":  "H10",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H1005",
+                     "smallHeadPaths":  [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            "H1005"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H11_Skin01",
+                     "heroId":  "H11",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H1101",
+                     "smallHeadPaths":  [
+                                            "H1101",
+                                            "H1101",
+                                            "H1101",
+                                            "H1101"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H12_Skin01",
+                     "heroId":  "H12",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H1201",
+                     "smallHeadPaths":  [
+                                            "H1201",
+                                            "H1201",
+                                            "H1201",
+                                            "H1201"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H13_Skin01",
+                     "heroId":  "H13",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H1301",
+                     "smallHeadPaths":  [
+                                            "H1301",
+                                            "H1301",
+                                            "H1301",
+                                            "H1301"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H14_Skin01",
+                     "heroId":  "H14",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H1401",
+                     "smallHeadPaths":  [
+                                            "H1401",
+                                            "H1401",
+                                            "H1401",
+                                            "H1401"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H15_Skin01",
+                     "heroId":  "H15",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H1505",
+                     "smallHeadPaths":  [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            "H1505"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H16_Skin01",
+                     "heroId":  "H16",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H1601",
+                     "smallHeadPaths":  [
+                                            "H1601",
+                                            "H1602",
+                                            "H1603",
+                                            "H1604"
+                                        ],
+                     "modelIds":  [
+                                      "H1601",
+                                      "H1602",
+                                      "H1603",
+                                      "H1604"
+                                  ],
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H17_Skin01",
+                     "heroId":  "H17",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H1701",
+                     "smallHeadPaths":  [
+                                            "H1701",
+                                            "H1701",
+                                            "H1701",
+                                            "H1701"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H18_Skin01",
+                     "heroId":  "H18",
+                     "isDefault":  true,
+                     "sort":  1,
+                     "name":  "默认皮肤",
+                     "quality":  3,
+                     "fragmentItemId":  "",
+                     "activeCostFragment":  0,
+                     "headPath":  "H1805",
+                     "smallHeadPaths":  [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            "H1805"
+                                        ],
+                     "modelIds":  null,
+                     "baseAttrs":  null,
+                     "upAttrs":  null
+                 },
+                 {
+                     "id":  "IS_H01_Skin02",
+                     "heroId":  "H01",
+                     "isDefault":  false,
+                     "sort":  2,
+                     "name":  "仓鼠鬼鬼",
+                     "quality":  4,
+                     "fragmentItemId":  "IS_H01_Skin02_F",
+                     "activeCostFragment":  30,
+                     "headPath":  "H01_Skin02",
+                     "smallHeadPaths":  [
+                                            "H01_Skin0201",
+                                            "H01_Skin0202",
+                                            "H01_Skin0203",
+                                            "H01_Skin0204"
+                                        ],
+                     "modelIds":  [
+                                      "IS_H0101_Skin02_Model",
+                                      "IS_H0102_Skin02_Model",
+                                      "IS_H0103_Skin02_Model",
+                                      "IS_H0104_Skin02_Model"
+                                  ],
+                     "baseAttrs":  {
+                                       "ATK_BONUS":  300,
+                                       "HP_BONUS":  300
+                                   },
+                     "upAttrs":  {
+                                     "ATK_BONUS":  100,
+                                     "HP_BONUS":  100
+                                 }
+                 },
+                 {
+                     "id":  "IS_H02_Skin02",
+                     "heroId":  "H02",
+                     "isDefault":  false,
+                     "sort":  2,
+                     "name":  "太空射手",
+                     "quality":  4,
+                     "fragmentItemId":  "IS_H02_Skin02_F",
+                     "activeCostFragment":  30,
+                     "headPath":  "H02_Skin02",
+                     "smallHeadPaths":  [
+                                            "H02_Skin0201",
+                                            "H02_Skin0202",
+                                            "H02_Skin0203",
+                                            "H02_Skin0204"
+                                        ],
+                     "modelIds":  [
+                                      "IS_H0201_Skin02_Model",
+                                      "IS_H0202_Skin02_Model",
+                                      "IS_H0203_Skin02_Model",
+                                      "IS_H0204_Skin02_Model",
+                                      "IS_H02_Skin02_Missile",
+                                      "H19_S1"
+                                  ],
+                     "baseAttrs":  {
+                                       "ATK_BONUS":  300,
+                                       "HP_BONUS":  300
+                                   },
+                     "upAttrs":  {
+                                     "ATK_BONUS":  100,
+                                     "HP_BONUS":  100
+                                 }
+                 },
+                 {
+                     "id":  "IS_H03_Skin02",
+                     "heroId":  "H03",
+                     "isDefault":  false,
+                     "sort":  2,
+                     "name":  "仓鼠巫师",
+                     "quality":  4,
+                     "fragmentItemId":  "IS_H03_Skin02_F",
+                     "activeCostFragment":  30,
+                     "headPath":  "H03_Skin02",
+                     "smallHeadPaths":  [
+                                            "H03_Skin0201",
+                                            "H03_Skin0202",
+                                            "H03_Skin0203",
+                                            "H03_Skin0204"
+                                        ],
+                     "modelIds":  [
+                                      "IS_H0301_Skin02_Model",
+                                      "IS_H0302_Skin02_Model",
+                                      "IS_H0303_Skin02_Model",
+                                      "IS_H0304_Skin02_Model",
+                                      "H18_S1",
+                                      "H28_S1",
+                                      "H28_S2"
+                                  ],
+                     "baseAttrs":  {
+                                       "ATK_BONUS":  300,
+                                       "HP_BONUS":  300
+                                   },
+                     "upAttrs":  {
+                                     "ATK_BONUS":  100,
+                                     "HP_BONUS":  100
+                                 }
+                 },
+                 {
+                     "id":  "IS_H04_Skin02",
+                     "heroId":  "H04",
+                     "isDefault":  false,
+                     "sort":  2,
+                     "name":  "外星骑士",
+                     "quality":  4,
+                     "fragmentItemId":  "IS_H04_Skin02_F",
+                     "activeCostFragment":  30,
+                     "headPath":  "H04_Skin02",
+                     "smallHeadPaths":  [
+                                            "H04_Skin0201",
+                                            "H04_Skin0202",
+                                            "H04_Skin0203",
+                                            "H04_Skin0204"
+                                        ],
+                     "modelIds":  [
+                                      "IS_H0401_Skin02_Model",
+                                      "IS_H0402_Skin02_Model",
+                                      "IS_H0403_Skin02_Model",
+                                      "IS_H0404_Skin02_Model"
+                                  ],
+                     "baseAttrs":  {
+                                       "ATK_BONUS":  300,
+                                       "HP_BONUS":  300
+                                   },
+                     "upAttrs":  {
+                                     "ATK_BONUS":  100,
+                                     "HP_BONUS":  100
+                                 }
+                 },
+                 {
+                     "id":  "IS_H16_Skin02",
+                     "heroId":  "H16",
+                     "isDefault":  false,
+                     "sort":  2,
+                     "name":  "仓鼠布布",
+                     "quality":  4,
+                     "fragmentItemId":  "IS_H16_Skin02_F",
+                     "activeCostFragment":  30,
+                     "headPath":  "H16_Skin02",
+                     "smallHeadPaths":  [
+                                            "H16_Skin0201",
+                                            "H16_Skin0202",
+                                            "H16_Skin0203",
+                                            "H16_Skin0204"
+                                        ],
+                     "modelIds":  [
+                                      "IS_H1601_Skin02_Model",
+                                      "IS_H1602_Skin02_Model",
+                                      "IS_H1603_Skin02_Model",
+                                      "IS_H1604_Skin02_Model"
+                                  ],
+                     "baseAttrs":  {
+                                       "ATK_BONUS":  300,
+                                       "HP_BONUS":  300
+                                   },
+                     "upAttrs":  {
+                                     "ATK_BONUS":  100,
+                                     "HP_BONUS":  100
+                                 }
+                 }
+             ],
+    "sourceLength":  327,
+    "expectedLength":  327,
+    "validLength":  true
+}

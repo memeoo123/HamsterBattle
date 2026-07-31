@@ -1,0 +1,105 @@
+﻿{
+    "table":  "trunkinstance.TrunkInstanceDefeatConfig",
+    "columnCount":  3,
+    "rowCount":  15,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "atkMultiple",
+                       "token":  1466,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "hpMultiple",
+                       "token":  1467,
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "atkMultiple":  9500,
+                     "hpMultiple":  9500
+                 },
+                 {
+                     "id":  2,
+                     "atkMultiple":  9025,
+                     "hpMultiple":  9025
+                 },
+                 {
+                     "id":  3,
+                     "atkMultiple":  8574,
+                     "hpMultiple":  8574
+                 },
+                 {
+                     "id":  4,
+                     "atkMultiple":  8145,
+                     "hpMultiple":  8145
+                 },
+                 {
+                     "id":  5,
+                     "atkMultiple":  7738,
+                     "hpMultiple":  7738
+                 },
+                 {
+                     "id":  6,
+                     "atkMultiple":  7351,
+                     "hpMultiple":  7351
+                 },
+                 {
+                     "id":  7,
+                     "atkMultiple":  6983,
+                     "hpMultiple":  6983
+                 },
+                 {
+                     "id":  8,
+                     "atkMultiple":  6634,
+                     "hpMultiple":  6634
+                 },
+                 {
+                     "id":  9,
+                     "atkMultiple":  6302,
+                     "hpMultiple":  6302
+                 },
+                 {
+                     "id":  10,
+                     "atkMultiple":  5987,
+                     "hpMultiple":  5987
+                 },
+                 {
+                     "id":  11,
+                     "atkMultiple":  5688,
+                     "hpMultiple":  5688
+                 },
+                 {
+                     "id":  12,
+                     "atkMultiple":  5404,
+                     "hpMultiple":  5404
+                 },
+                 {
+                     "id":  13,
+                     "atkMultiple":  5133,
+                     "hpMultiple":  5133
+                 },
+                 {
+                     "id":  14,
+                     "atkMultiple":  4877,
+                     "hpMultiple":  4877
+                 },
+                 {
+                     "id":  15,
+                     "atkMultiple":  4633,
+                     "hpMultiple":  4633
+                 }
+             ],
+    "sourceLength":  53,
+    "expectedLength":  53,
+    "validLength":  true
+}

@@ -1,0 +1,739 @@
+﻿{
+    "table":  "rank.RankingConfig",
+    "columnCount":  17,
+    "rowCount":  25,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "groupType",
+                       "token":  "groupType",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "tabType",
+                       "token":  "tabType",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "tabName",
+                       "token":  "tabName",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "rankValuePrefixText",
+                       "token":  "rankValuePrefixText",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  6,
+                       "name":  "rankSuffixText",
+                       "token":  "rankSuffixText",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "rankValueSmallLogo",
+                       "token":  "rankValueSmallLogo",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  8,
+                       "name":  "tapId",
+                       "token":  "tapId",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  9,
+                       "name":  "isShowPrivate",
+                       "token":  "isShowPrivate",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  10,
+                       "name":  "limit",
+                       "token":  "limit",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  11,
+                       "name":  "verifyStr",
+                       "token":  "verifyStr",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  12,
+                       "name":  "systemType",
+                       "token":  "systemType",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  13,
+                       "name":  "priority",
+                       "token":  "priority",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  14,
+                       "name":  "titleIcon",
+                       "token":  "titleIcon",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  15,
+                       "name":  "icon1",
+                       "token":  "icon1",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  16,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "PLAYER_FIGHT",
+                     "groupType":  "common",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.PLAYER_FIGHT",
+                     "tabName":  "i18n:RankingConfig.tabName.PLAYER_FIGHT",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.PLAYER_FIGHT",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.PLAYER_FIGHT",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "image/rank/guanqiabang_1",
+                     "icon":  "image/rank/guanqiabang_0"
+                 },
+                 {
+                     "id":  "TRUNK_INSTANCE",
+                     "groupType":  "common",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.TRUNK_INSTANCE",
+                     "tabName":  "i18n:RankingConfig.tabName.TRUNK_INSTANCE",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.TRUNK_INSTANCE",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.TRUNK_INSTANCE",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "image/rank/guanqiabang_1",
+                     "icon":  "image/rank/guanqiabang_0"
+                 },
+                 {
+                     "id":  "ARENA",
+                     "groupType":  "jjc",
+                     "tabType":  "rank",
+                     "name":  "i18n:RankingConfig.name.ARENA",
+                     "tabName":  "i18n:RankingConfig.tabName.ARENA",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.ARENA",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.ARENA",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "image/rank/guanqiabang_1",
+                     "icon":  "image/rank/guanqiabang_0"
+                 },
+                 {
+                     "id":  "DAILY_BOSS",
+                     "groupType":  "dailyBoss",
+                     "tabType":  "rank",
+                     "name":  "i18n:RankingConfig.name.DAILY_BOSS",
+                     "tabName":  "i18n:RankingConfig.tabName.DAILY_BOSS",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.DAILY_BOSS",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.DAILY_BOSS",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "image/rank/guanqiabang_1",
+                     "icon":  "image/rank/guanqiabang_0"
+                 },
+                 {
+                     "id":  "LEAGUE_FIGHT",
+                     "groupType":  "league",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.LEAGUE_FIGHT",
+                     "tabName":  "i18n:RankingConfig.tabName.LEAGUE_FIGHT",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.LEAGUE_FIGHT",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.LEAGUE_FIGHT",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "LEAGUE_BOSS",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.LEAGUE_BOSS",
+                     "tabName":  "i18n:RankingConfig.tabName.LEAGUE_BOSS",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.LEAGUE_BOSS",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.LEAGUE_BOSS",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "WORLD_BOSS",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.WORLD_BOSS",
+                     "tabName":  "i18n:RankingConfig.tabName.WORLD_BOSS",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.WORLD_BOSS",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.WORLD_BOSS",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  200,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "SECRET_INSTANCE",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.SECRET_INSTANCE",
+                     "tabName":  "i18n:RankingConfig.tabName.SECRET_INSTANCE",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.SECRET_INSTANCE",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.SECRET_INSTANCE",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "LADDER",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.LADDER",
+                     "tabName":  "i18n:RankingConfig.tabName.LADDER",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.LADDER",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.LADDER",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "DAILY_BOSS_HURT_FORMATION",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.DAILY_BOSS_HURT_FORMATION",
+                     "tabName":  "i18n:RankingConfig.tabName.DAILY_BOSS_HURT_FORMATION",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.DAILY_BOSS_HURT_FORMATION",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.DAILY_BOSS_HURT_FORMATION",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  1,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "GUARD_SHIP",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.GUARD_SHIP",
+                     "tabName":  "i18n:RankingConfig.tabName.GUARD_SHIP",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.GUARD_SHIP",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.GUARD_SHIP",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "FACTORY",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.FACTORY",
+                     "tabName":  "i18n:RankingConfig.tabName.FACTORY",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.FACTORY",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.FACTORY",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "HERO_RECRUIT_SCORE",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.HERO_RECRUIT_SCORE",
+                     "tabName":  "i18n:RankingConfig.tabName.HERO_RECRUIT_SCORE",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.HERO_RECRUIT_SCORE",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.HERO_RECRUIT_SCORE",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "SECRET_INSTANCE_WEEK_PASS_AMT",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.SECRET_INSTANCE_WEEK_PASS_AMT",
+                     "tabName":  "i18n:RankingConfig.tabName.SECRET_INSTANCE_WEEK_PASS_AMT",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.SECRET_INSTANCE_WEEK_PASS_AMT",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.SECRET_INSTANCE_WEEK_PASS_AMT",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "TEAM_INSTANCE",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.TEAM_INSTANCE",
+                     "tabName":  "i18n:RankingConfig.tabName.TEAM_INSTANCE",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.TEAM_INSTANCE",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.TEAM_INSTANCE",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "SEASON_SCORE",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.SEASON_SCORE",
+                     "tabName":  "i18n:RankingConfig.tabName.SEASON_SCORE",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.SEASON_SCORE",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.SEASON_SCORE",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "LEAGUE_EXPLORE_PERSON_SCORE",
+                     "groupType":  "leagueExplore",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.LEAGUE_EXPLORE_PERSON_SCORE",
+                     "tabName":  "i18n:RankingConfig.tabName.LEAGUE_EXPLORE_PERSON_SCORE",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.LEAGUE_EXPLORE_PERSON_SCORE",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.LEAGUE_EXPLORE_PERSON_SCORE",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "image/rank/guanqiabang_1",
+                     "icon":  "image/rank/guanqiabang_0"
+                 },
+                 {
+                     "id":  "LEAGUE_EXPLORE_SCORE",
+                     "groupType":  "leagueExplore",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.LEAGUE_EXPLORE_SCORE",
+                     "tabName":  "i18n:RankingConfig.tabName.LEAGUE_EXPLORE_SCORE",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.LEAGUE_EXPLORE_SCORE",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.LEAGUE_EXPLORE_SCORE",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "image/rank/guanqiabang_1",
+                     "icon":  "image/rank/guanqiabang_0"
+                 },
+                 {
+                     "id":  "SEASON_SECRET",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.SEASON_SECRET",
+                     "tabName":  "i18n:RankingConfig.tabName.SEASON_SECRET",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.SEASON_SECRET",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.SEASON_SECRET",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "SEASON_BOSS",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.SEASON_BOSS",
+                     "tabName":  "i18n:RankingConfig.tabName.SEASON_BOSS",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.SEASON_BOSS",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.SEASON_BOSS",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "PET_DUNGEON",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.PET_DUNGEON",
+                     "tabName":  "i18n:RankingConfig.tabName.PET_DUNGEON",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.PET_DUNGEON",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.PET_DUNGEON",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "COLLECTIBLES_DUNGEON",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.COLLECTIBLES_DUNGEON",
+                     "tabName":  "i18n:RankingConfig.tabName.COLLECTIBLES_DUNGEON",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.COLLECTIBLES_DUNGEON",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.COLLECTIBLES_DUNGEON",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "RUSH_LADDER",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.RUSH_LADDER",
+                     "tabName":  "i18n:RankingConfig.tabName.RUSH_LADDER",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.RUSH_LADDER",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.RUSH_LADDER",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "ENDLESS_SECRET",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.ENDLESS_SECRET",
+                     "tabName":  "i18n:RankingConfig.tabName.ENDLESS_SECRET",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.ENDLESS_SECRET",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.ENDLESS_SECRET",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 },
+                 {
+                     "id":  "PARALLEL_ACTIVITY_SCORE",
+                     "groupType":  "",
+                     "tabType":  "",
+                     "name":  "i18n:RankingConfig.name.PARALLEL_ACTIVITY_SCORE",
+                     "tabName":  "i18n:RankingConfig.tabName.PARALLEL_ACTIVITY_SCORE",
+                     "rankValuePrefixText":  "i18n:RankingConfig.rankValuePrefixText.PARALLEL_ACTIVITY_SCORE",
+                     "rankSuffixText":  "i18n:RankingConfig.rankSuffixText.PARALLEL_ACTIVITY_SCORE",
+                     "rankValueSmallLogo":  "",
+                     "tapId":  0,
+                     "isShowPrivate":  0,
+                     "limit":  100,
+                     "verifyStr":  [
+                                       [
+                                           "PLAYER_LEVEL_GE",
+                                           0,
+                                           1
+                                       ]
+                                   ],
+                     "systemType":  0,
+                     "priority":  0,
+                     "titleIcon":  "",
+                     "icon1":  "",
+                     "icon":  ""
+                 }
+             ],
+    "sourceLength":  461,
+    "expectedLength":  461,
+    "validLength":  true
+}

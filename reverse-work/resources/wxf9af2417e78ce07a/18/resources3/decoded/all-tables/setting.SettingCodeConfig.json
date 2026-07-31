@@ -1,0 +1,128 @@
+﻿{
+    "table":  "setting.SettingCodeConfig",
+    "columnCount":  3,
+    "rowCount":  7,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "rewards",
+                       "token":  18,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "888888",
+                     "type":  0,
+                     "rewards":  [
+                                     {
+                                         "k":  2,
+                                         "v":  100
+                                     },
+                                     {
+                                         "k":  3,
+                                         "v":  100
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  "VIP666",
+                     "type":  0,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  100
+                                     },
+                                     {
+                                         "k":  2,
+                                         "v":  500
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  "VIP888",
+                     "type":  0,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  100
+                                     },
+                                     {
+                                         "k":  "IR_Exp",
+                                         "v":  200
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  "SVIP666",
+                     "type":  0,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  100
+                                     },
+                                     {
+                                         "k":  2,
+                                         "v":  600
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  "SVIP888",
+                     "type":  0,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  100
+                                     },
+                                     {
+                                         "k":  "BOX_RF",
+                                         "v":  10
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  "CL666",
+                     "type":  0,
+                     "rewards":  [
+                                     {
+                                         "k":  2,
+                                         "v":  600
+                                     },
+                                     {
+                                         "k":  "BOX_RF",
+                                         "v":  10
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  "CL888",
+                     "type":  0,
+                     "rewards":  [
+                                     {
+                                         "k":  2,
+                                         "v":  800
+                                     },
+                                     {
+                                         "k":  "IR_Exp",
+                                         "v":  200
+                                     }
+                                 ]
+                 }
+             ],
+    "sourceLength":  29,
+    "expectedLength":  29,
+    "validLength":  true
+}

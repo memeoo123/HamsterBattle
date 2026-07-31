@@ -1,0 +1,1380 @@
+﻿{
+    "table":  "i18n.I18nTipsConfig",
+    "columnCount":  3,
+    "rowCount":  270,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "Chinese",
+                       "token":  1103,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "English",
+                       "token":  1104,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "i18n:moduleOpen.needServerOpenDays",
+                     "Chinese":  "${key0}天后开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:notFoundConfig",
+                     "Chinese":  "该道具在茫茫星空中遗漏了,请联系客服!",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:confirm",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:cancel",
+                     "Chinese":  "取消",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:tipsForConfirm",
+                     "Chinese":  "提示",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:clickInCd",
+                     "Chinese":  "操作过于频繁, 请稍后再试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:unlock",
+                     "Chinese":  "解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:lock",
+                     "Chinese":  "锁定",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:reset",
+                     "Chinese":  "重置",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:exitBattleAlertTitle",
+                     "Chinese":  "确认退出关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:exitBattleAlertContent",
+                     "Chinese":  "是否退出当前战斗",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:bossDie",
+                     "Chinese":  "已击败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:cd",
+                     "Chinese":  "活动倒计时:${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:common:cd2",
+                     "Chinese":  "${key0}后开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:time:timeUnitYear",
+                     "Chinese":  "年",
+                     "English":  "year"
+                 },
+                 {
+                     "id":  "i18n:time:timeUnitMonth",
+                     "Chinese":  "月",
+                     "English":  "month"
+                 },
+                 {
+                     "id":  "i18n:time:timeUnitDay",
+                     "Chinese":  "天",
+                     "English":  "day"
+                 },
+                 {
+                     "id":  "i18n:time:timeUnitHour",
+                     "Chinese":  "时",
+                     "English":  "hour"
+                 },
+                 {
+                     "id":  "i18n:time:timeUnitMinute",
+                     "Chinese":  "分",
+                     "English":  "minute"
+                 },
+                 {
+                     "id":  "i18n:time:timeUnitMinute2",
+                     "Chinese":  "分钟",
+                     "English":  "minute"
+                 },
+                 {
+                     "id":  "i18n:time:timeUnitSecond",
+                     "Chinese":  "秒",
+                     "English":  "second"
+                 },
+                 {
+                     "id":  "i18n:time:nextResetDesc",
+                     "Chinese":  "后重置",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:time:everyDay",
+                     "Chinese":  "每日",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:time:timeUnitHourPoint",
+                     "Chinese":  "点",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:time:timeDayHour",
+                     "Chinese":  "${key0}天${key1}小时",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:time:timeHourMinute",
+                     "Chinese":  "${key0}时${key1}分",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:time:timeMinuteSecond",
+                     "Chinese":  "${key0}分${key1}秒",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:time:forever",
+                     "Chinese":  "无期限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:item:titleCurrentCount",
+                     "Chinese":  "当前数量",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:item:titleBoxDetail",
+                     "Chinese":  "宝箱详情",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:item:useItemSuccess",
+                     "Chinese":  "使用道具成功!",
+                     "English":  "use item success!"
+                 },
+                 {
+                     "id":  "i18n:item:useItemFailure",
+                     "Chinese":  "使用道具失败...",
+                     "English":  "use item failure.."
+                 },
+                 {
+                     "id":  "i18n:item:itemNoComeFromTips",
+                     "Chinese":  "该道具没有获取方式!",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:item:noFixedRewardInBox",
+                     "Chinese":  "该箱子中没有可发放的奖励!",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:item:noPreviewRewardInBox",
+                     "Chinese":  "该箱子中没有可预览的奖励!",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:item:noChooseRewardInBox ",
+                     "Chinese":  "该箱子中没有可选择的奖励!",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:item:gainItemsButHaveMail",
+                     "Chinese":  "奖励物品已达上限，注意邮件补发",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:email:gainRewardFail",
+                     "Chinese":  "领取失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:email:gainButExpireEmail",
+                     "Chinese":  "邮件已过期，无法领取奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:email:deleteSuccess",
+                     "Chinese":  "成功删除邮件",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:email:noCanDeleteReadEmail",
+                     "Chinese":  "没有可以删除的邮件",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:email:deleteFail",
+                     "Chinese":  "删除邮件失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:email:deleteAllHaveRead",
+                     "Chinese":  "是否删除所有已读邮件",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:email:oneKeyGainSuccessButOverflow",
+                     "Chinese":  "一键领取成功但部分邮件因道具溢出无法领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:email:oneKeyGainFail",
+                     "Chinese":  "没有奖励可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:task:taskRowFinish",
+                     "Chinese":  "已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:trunkTask:gainRewardTips",
+                     "Chinese":  "获得奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailyTask:activeScore",
+                     "Chinese":  "活跃积分",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailyTask:panelTitle",
+                     "Chinese":  "每日任务",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailyTask:dailyScore",
+                     "Chinese":  "日活跃",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailyTask:weekScore",
+                     "Chinese":  "周活跃",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:talent:haveLvUp",
+                     "Chinese":  "已激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:talent:lock",
+                     "Chinese":  "未激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:battle:autoBattle",
+                     "Chinese":  "自动挑战中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:hangUp:speedUpHangUpTips",
+                     "Chinese":  "快速挂机立刻获得[color=#44FF5A]2小时[/color]收益",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:hangUp:buyHangUpMaxTips",
+                     "Chinese":  "永久加钟",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:hangUp:maxHangUpTimeTips",
+                     "Chinese":  "上限：6小时",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:hangUp:mustPassAnyLevel",
+                     "Chinese":  "必须通关任意关卡才可领取挂机奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:hangUp:levelReward",
+                     "Chinese":  "挂机奖励提升",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:hangUp:mainPageTitle",
+                     "Chinese":  "关卡:",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:hangUp:exitBattleAlertTitle",
+                     "Chinese":  "确认退出关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:hangUp:exitBattleAlertContent",
+                     "Chinese":  "是否退出当前挂机关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:mainUI:eliminateEnemyTips",
+                     "Chinese":  "请先消灭附近的怪物",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:mainUI:homeCantUseAirship",
+                     "Chinese":  "母舰内无法使用",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:shop:shopUpdate",
+                     "Chinese":  "每日手动刷新次数${key0}/${key1}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:shop:goodsDiscount",
+                     "Chinese":  "${key0}折",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:shop:goodsFree",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:shop:errTips1",
+                     "Chinese":  "已售罄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:shop:errTips2",
+                     "Chinese":  "货币不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:shop:errTips3",
+                     "Chinese":  "不可继续刷新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:shop:errTips4",
+                     "Chinese":  "商店未开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:shop:goodsBuyLock",
+                     "Chinese":  "联盟${key0}级解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:worldBoss:rank",
+                     "Chinese":  "第${key0}名",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:worldBoss:bfpm",
+                     "Chinese":  "本服排名",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:worldBoss:zgsh",
+                     "Chinese":  "最高伤害",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:worldBoss:ckjl",
+                     "Chinese":  "查看奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:worldBoss:jl",
+                     "Chinese":  "奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:worldBoss:ph",
+                     "Chinese":  "排行",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:worldBoss:dm",
+                     "Chinese":  "弹幕",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:worldBoss:noRank",
+                     "Chinese":  "未上榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:worldBoss:reward1",
+                     "Chinese":  "参与玩家击杀Boss可获得以下奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:worldBoss:reward2",
+                     "Chinese":  "参与玩家在[color=#44FF5A]${key0}[/color]内击杀${key1}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:worldBoss:skill",
+                     "Chinese":  "${key0}日内击杀",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:worldBoss:startTime",
+                     "Chinese":  "已进行[color=#44FF5A]${key0}[/color]",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:pvp:REFRESH_OPPO_REACHED_MAX_COUNT",
+                     "Chinese":  "刷新次数已达上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:pvp:WEEKLY_REWARD_NOT_REACHED",
+                     "Chinese":  "未达到条件领取奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:pvp:WEEKLY_REWARD_HAVE_GAIN",
+                     "Chinese":  "已经领取过奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:pvp:BUY_WHEN_NO_CHALLENGE_ITEM",
+                     "Chinese":  "门票达到上限，请使用后购买",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:pvp:TODAY_BUY_COUNT_MAX",
+                     "Chinese":  "今日购买次数已耗尽",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:pvp:TODAY_CHALLENGE_USE_MAX",
+                     "Chinese":  "今日挑战次数已用完",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:heroSkillRange:S",
+                     "Chinese":  "小",
+                     "English":  "S"
+                 },
+                 {
+                     "id":  "i18n:heroSkillRange:M",
+                     "Chinese":  "中",
+                     "English":  "M"
+                 },
+                 {
+                     "id":  "i18n:heroSkillRange:L",
+                     "Chinese":  "大",
+                     "English":  "L"
+                 },
+                 {
+                     "id":  "i18n:heroSkillFeatrueDesc:PreCD",
+                     "Chinese":  "前置冷却时间",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:heroSkillFeatrueDesc:CD",
+                     "Chinese":  "使用冷却时间",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:heroSkillFeatrueDesc:Range",
+                     "Chinese":  "技能作用范围",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:league:wordNot",
+                     "Chinese":  "请输入联盟名称或编号",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:league:wordNotFind",
+                     "Chinese":  "联盟不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:league:wordNot2",
+                     "Chinese":  "请输入联盟名称",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:league:agreet",
+                     "Chinese":  "已同意该玩家加入联盟",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:league:changeTips",
+                     "Chinese":  "修改成功",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:league:NoNotice",
+                     "Chinese":  "这位盟主很懒，什么都没有留下",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:league:quit",
+                     "Chinese":  "您确定退出联盟\u003cbr/\u003e[color=#FF6666]退出联盟${key0}才能加入新军团[/color]",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:league:kickOut",
+                     "Chinese":  "您确定将[color=#44FF5A]${key0}[/color]逐出联盟？",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:league:job",
+                     "Chinese":  "您确定将[color=#44FF5A]${key0}[/color]任命为${key1}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailyBoss:notChallengeWhenBalance",
+                     "Chinese":  "今日榜单结算中,不可挑战",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailyBoss:DailiesI18nKeys1",
+                     "Chinese":  "基础阵容推荐",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailyBoss:DailiesI18nKeys2",
+                     "Chinese":  "进阶阵容推荐",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:mainPage:backTips",
+                     "Chinese":  "乘坐运输机返回母舰？",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:godSequence:lockChallengeTips",
+                     "Chinese":  "所有序列通关${key0}层后解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:godSequence:chooseTips",
+                     "Chinese":  "点击挑战进入对应职业校验",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:godSequence:layerLock",
+                     "Chinese":  "未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:godSequence:layerChallenge",
+                     "Chinese":  "校验挑战",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:godSequence:layerDone",
+                     "Chinese":  "已校验",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:takeOff",
+                     "Chinese":  "卸下",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:attributeBonus",
+                     "Chinese":  "属性加成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:exclusiveBonus",
+                     "Chinese":  "专属加成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:texingjiacheng",
+                     "Chinese":  "特性加成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:myWeapon",
+                     "Chinese":  "我的武器",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:confirmSelection",
+                     "Chinese":  "确认选择",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:typeGeneral",
+                     "Chinese":  "通用超武",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:typeExclusive",
+                     "Chinese":  "专属超武",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:wore",
+                     "Chinese":  "当前已装配",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:gotoUpStar",
+                     "Chinese":  "前往升星",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:change",
+                     "Chinese":  "更换",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:ware",
+                     "Chinese":  "装配",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:gotoWare",
+                     "Chinese":  "前往装配",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:great",
+                     "Chinese":  "太棒了",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:tipTitle",
+                     "Chinese":  "重要提示",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:tip1",
+                     "Chinese":  "本次升星将会返回消耗溢出",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:tip2",
+                     "Chinese":  "超能武器，具体如下",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:confirmUpStar",
+                     "Chinese":  "确认升星",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:upStar",
+                     "Chinese":  "升星",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:noWeapon",
+                     "Chinese":  "暂无武器",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:tip3",
+                     "Chinese":  "升星需要消耗同名武器×${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:tip4",
+                     "Chinese":  "需要先填充足够数量的同名武器",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:starCount",
+                     "Chinese":  "${key0}星",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:awakeWeapon:backTip",
+                     "Chinese":  "已返还：${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:title",
+                     "Chinese":  "好友",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:tab1",
+                     "Chinese":  "游戏好友",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:tab2",
+                     "Chinese":  "好友推荐",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:tab3",
+                     "Chinese":  "好友申请",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:tab4",
+                     "Chinese":  "黑名单",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:onkeyGiveAndDraw",
+                     "Chinese":  "一键赠送领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:giveLimit",
+                     "Chinese":  "每日领取上限：${key0}/${key1}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:refresh",
+                     "Chinese":  "刷新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:refreshCountDown",
+                     "Chinese":  "${key0}秒后可刷新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:ignoreAll",
+                     "Chinese":  "全部忽略",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:acceptAll",
+                     "Chinese":  "一键接受",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:cancelBlacklist",
+                     "Chinese":  "取消黑名单",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:applied",
+                     "Chinese":  "已申请",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:apply",
+                     "Chinese":  "申请",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:giftSuccTip",
+                     "Chinese":  "赠送成功",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:fight",
+                     "Chinese":  "战力：${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:trunkInstanceId",
+                     "Chinese":  "进度：${key0}关",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:online",
+                     "Chinese":  "在线",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:deleteTip",
+                     "Chinese":  "删除成功",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:friend:serverName",
+                     "Chinese":  "服务器：${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:illustrations:title",
+                     "Chinese":  "图鉴",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:illustrations:rewardStateTip1",
+                     "Chinese":  "还差${key0}积分可获得奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:illustrations:rewardStateTip2",
+                     "Chinese":  "请领取当前奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:illustrations:rewardStateTip3",
+                     "Chinese":  "全部奖励已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:illustrations:getScoreTip",
+                     "Chinese":  "升级条件不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:illustrations:isFullStar",
+                     "Chinese":  "已满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:give",
+                     "Chinese":  "赠${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:price",
+                     "Chinese":  "${key0}元",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:tab0",
+                     "Chinese":  "星钻商店",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:tab1",
+                     "Chinese":  "VIP",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:tab2",
+                     "Chinese":  "限购商城",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:tab3",
+                     "Chinese":  "每日特惠",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:limitDaily",
+                     "Chinese":  "日礼包",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:limitWeekly",
+                     "Chinese":  "周礼包",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:limitDoubleWeekly",
+                     "Chinese":  "双周礼包",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:limitMonthly",
+                     "Chinese":  "月礼包",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:limitNever",
+                     "Chinese":  "常驻礼包",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:limitBuyCount",
+                     "Chinese":  "限购${key0}/${key1}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:free",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:errorTip1",
+                     "Chinese":  "商城未开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:charge:sellOut",
+                     "Chinese":  "售罄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:vip:privilege",
+                     "Chinese":  "特权",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:vip:nextLvTip",
+                     "Chinese":  "再充值${key0}元，可成为VIP${key1}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:vip:discount",
+                     "Chinese":  "${key0}超值",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:vip:maxLvTip",
+                     "Chinese":  "已达到最高VIP等级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:mapInstance:bossArrive",
+                     "Chinese":  "BOSS来袭",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:mapInstance:manyMonsterArrive",
+                     "Chinese":  "一大波怪物来袭",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:account:backLoginBtn",
+                     "Chinese":  "返回登录",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:account:reconnectBtn",
+                     "Chinese":  "重新连接",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:account:forceLogoutContent",
+                     "Chinese":  "当前账号在其他设备上登录，当前设备被迫下线",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:account:reconnectTitle",
+                     "Chinese":  "网络错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:account:reconnectContent",
+                     "Chinese":  "当前未检查到网络连接，请检查后继续",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:account:kickedContent",
+                     "Chinese":  "您已被管理员强制登出！",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:account:hotupdateTitle",
+                     "Chinese":  "更新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:account:hotupdateContent",
+                     "Chinese":  "有新版本更新，请重新登录！",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:chat:mianDaRaoTips",
+                     "Chinese":  "设置后对应频道不再弹出频道消息和红点提醒",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:chat:teamChallengeFail",
+                     "Chinese":  "${key0}的队伍分享已经失效",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:post:enterGameTips",
+                     "Chinese":  "抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailySale:freeGift",
+                     "Chinese":  "免费领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailySale:packTip2",
+                     "Chinese":  "并额外获取${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailySale:packTip3",
+                     "Chinese":  "今日不能购买",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailySale:buyLimit",
+                     "Chinese":  "限购${key0}/${key1}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailySale:price",
+                     "Chinese":  "${key0}元",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dailySale:hasBuy",
+                     "Chinese":  "已购买",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:validDays",
+                     "Chinese":  "${key0}天特权",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:validForever",
+                     "Chinese":  "永久专属特权",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:active",
+                     "Chinese":  "已激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:noActive",
+                     "Chinese":  "未激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:discount",
+                     "Chinese":  "超值",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:tip1",
+                     "Chinese":  "${key0}专属特权",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:tip2",
+                     "Chinese":  "每日可领",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:tip3",
+                     "Chinese":  "激活即可享受",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:tip4",
+                     "Chinese":  "每日好礼",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:remainDays",
+                     "Chinese":  "剩余${key0}天",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:price",
+                     "Chinese":  "${key0}元",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:leichong",
+                     "Chinese":  "累充(${key0}/${key1}元)",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:renew",
+                     "Chinese":  "续费¥${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:draw",
+                     "Chinese":  "领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:draw2",
+                     "Chinese":  "已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:drawAll",
+                     "Chinese":  "一键领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:title",
+                     "Chinese":  "特权卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:foreverTip",
+                     "Chinese":  "现在购买可补领${key0}\u003ccolor=#FFED2A\u003ex${key1}\u003c/color\u003e",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:buyLimitTip",
+                     "Chinese":  "最多仅可购买${key0}天",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:useItem1",
+                     "Chinese":  "免费激活月卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:useItem2",
+                     "Chinese":  "免费续费月卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:freeAct",
+                     "Chinese":  "月卡免费送！",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:Act",
+                     "Chinese":  "激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:monthCard:Act2",
+                     "Chinese":  "激活成功",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:itemDetails:des1",
+                     "Chinese":  "无限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:itemDetails:des2",
+                     "Chinese":  "${key0}/${key1}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:itemDetails:des3",
+                     "Chinese":  "以下内容选择",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:itemDetails:des4",
+                     "Chinese":  "以下内容随机",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:itemDetails:des5",
+                     "Chinese":  "获得以下内容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:gift:NO_FOUND_REDEMPTION_CODE",
+                     "Chinese":  "无效兑换码",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dinmondBank:bought2unlock",
+                     "Chinese":  "${key0}元去解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dinmondBank:bought2unlockTip",
+                     "Chinese":  "是否花费${key0}元提前解锁？",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dinmondBank:bought2unlockRewardTip",
+                     "Chinese":  "是否花费${key0}元解锁奖励？",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:dinmondBank:rate",
+                     "Chinese":  "${key0}/分钟",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:diamondBank:unlockTip",
+                     "Chinese":  "挂机关卡通关[color=#E3863C]${key0}[/color]关",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:diamondBank:drawTips",
+                     "Chinese":  "${key0}后可再次领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:petGift:des1",
+                     "Chinese":  "${key0}后可再次领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:leagueBargain:title1",
+                     "Chinese":  "盟友不急, 便宜点就便宜点......",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:leagueBargain:title2",
+                     "Chinese":  "盟友不急, 便宜点就便宜点......",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:season:enter",
+                     "Chinese":  "进入",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:season:ing",
+                     "Chinese":  "进行中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:season:check",
+                     "Chinese":  "查看",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:season:closed",
+                     "Chinese":  "已结束",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:season:course",
+                     "Chinese":  "赛程",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:season:signUpTips",
+                     "Chinese":  "请先报名",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:season:signUpTips2",
+                     "Chinese":  "报名后领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:rank",
+                     "Chinese":  "排名 ：",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:haveThumb",
+                     "Chinese":  "已点赞",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:thumbTips1",
+                     "Chinese":  "只可点赞自己服务器的霸主",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:thumbTips2",
+                     "Chinese":  "只可点赞自己多元时空的霸主",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:positionTip",
+                     "Chinese":  "已定位至您所在的服务器",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:positionTip2",
+                     "Chinese":  "已定位至您所在的平行时空",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:ing",
+                     "Chinese":  "正在进行",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:tabTips1",
+                     "Chinese":  "星际霸主角逐中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:tabTips2",
+                     "Chinese":  "战力:",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:tabTips3",
+                     "Chinese":  "联盟:",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:localLord",
+                     "Chinese":  "星际霸主",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:crossLord",
+                     "Chinese":  "星域主宰",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:tabTips4",
+                     "Chinese":  "星域主宰角逐中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:tabTips5",
+                     "Chinese":  "星域主宰虚位以待",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:tabTips6",
+                     "Chinese":  "星际霸主虚位以待",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:tabTips7",
+                     "Chinese":  "星际霸主虚位以待将于新赛季进行角逐",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:tabTips8",
+                     "Chinese":  "星域主宰将于\r\n新赛季进行角逐",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:tabTips9",
+                     "Chinese":  "星域即将发生交错",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:tabTips10",
+                     "Chinese":  "星域交错",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:tabTips11",
+                     "Chinese":  "${key0}号${key1}级星域",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:crossServer:tabTips12",
+                     "Chinese":  "正在准备下赛程",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:collection:drawCollection",
+                     "Chinese":  "幸运值满时，必定获得\u003ccolor=#FF5656\u003e神话收藏品\u003c/color\u003e",
+                     "English":  ""
+                 }
+             ],
+    "sourceLength":  818,
+    "expectedLength":  818,
+    "validLength":  true
+}

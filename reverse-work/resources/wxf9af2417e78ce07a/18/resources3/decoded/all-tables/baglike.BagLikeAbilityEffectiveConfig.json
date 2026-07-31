@@ -1,0 +1,831 @@
+﻿{
+    "table":  "baglike.BagLikeAbilityEffectiveConfig",
+    "columnCount":  4,
+    "rowCount":  93,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "effectType",
+                       "token":  303,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "param",
+                       "token":  20,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  3,
+                       "name":  "attr",
+                       "token":  32,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "RG_ALL_abl01_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_INC":  500
+                              }
+                 },
+                 {
+                     "id":  "RG_ALL_abl02_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_INC":  1000
+                              }
+                 },
+                 {
+                     "id":  "RG_ALL_abl03_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_INC":  1500
+                              }
+                 },
+                 {
+                     "id":  "RG_ALL_abl04_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_SPD":  500
+                              }
+                 },
+                 {
+                     "id":  "RG_ALL_abl05_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_SPD":  1000
+                              }
+                 },
+                 {
+                     "id":  "RG_ALL_abl06_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_SPD":  1500
+                              }
+                 },
+                 {
+                     "id":  "RG_ALL_abl07_eff01",
+                     "effectType":  "EXP_GAIN",
+                     "param":  [
+                                   5000
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_ALL_abl08_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_DEC":  500
+                              }
+                 },
+                 {
+                     "id":  "RG_ALL_abl09_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "DMG_RES":  "-3000"
+                              }
+                 },
+                 {
+                     "id":  "RG_ALL_abl10_eff01",
+                     "effectType":  "GEAR_UPGRAGE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_ALL_abl11_eff01",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "ADD_LEVEL2_GEAR",
+                                   3012,
+                                   20000
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_ALL_abl12_eff01",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "POWER_NEAR_ATK_UP",
+                                   2000
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_ALL_abl13_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_INC":  500
+                              }
+                 },
+                 {
+                     "id":  "RG_ALL_abl14_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_INC":  1000
+                              }
+                 },
+                 {
+                     "id":  "RG_ALL_abl15_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_INC":  1500
+                              }
+                 },
+                 {
+                     "id":  "RG_ALL_abl16_eff01",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "POWER_NEAR_WORKER_UP",
+                                   2000
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_ALL_abl17_eff01",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "HEAL_HOME",
+                                   "IMMED",
+                                   5000
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_ALL_abl18_eff01",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "HEAL_HOME",
+                                   "ROUND",
+                                   1000
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H01_abl01_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_INC":  1000
+                              }
+                 },
+                 {
+                     "id":  "RG_H01_abl02_eff01",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "1002_2"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H01_abl02_eff02",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "1002_3"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H01_abl02_eff03",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "1002_4"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H01_abl02_eff04",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "1002_5"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H01_abl03_eff01",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "DIE_ZHONG_DIE",
+                                   30
+                               ],
+                     "attr":  {
+                                  "ATK_INC":  200
+                              }
+                 },
+                 {
+                     "id":  "RG_H02_abl01_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_SPD":  3000
+                              }
+                 },
+                 {
+                     "id":  "RG_H02_abl02_eff01",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "2001_2"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H02_abl02_eff02",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "2001_3"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H02_abl02_eff03",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "2001_4"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H02_abl03_eff01",
+                     "effectType":  "ADD_SKILL",
+                     "param":  [
+                                   "2001_5"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H02_abl03_eff02",
+                     "effectType":  "ADD_SKILL",
+                     "param":  [
+                                   "2001_6"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H03_abl01_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_INC":  2000
+                              }
+                 },
+                 {
+                     "id":  "RG_H03_abl02_eff01",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "3001_2"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H03_abl03_eff01",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "3001_3"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H03_abl03_eff02",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "3001_4"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H03_abl04_eff01",
+                     "effectType":  "ADD_SKILL",
+                     "param":  [
+                                   "3001_5"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H04_abl01_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "HP_INC":  1000
+                              }
+                 },
+                 {
+                     "id":  "RG_H04_abl02_eff01",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "4001_1"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H04_abl02_eff02",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "4001_2"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H04_abl03_eff01",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "4001_3"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H04_abl03_eff02",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "4001_4"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H04_abl04_eff01",
+                     "effectType":  "FEATURE",
+                     "param":  [
+                                   "ATTACK_KILL_FLY",
+                                   3000
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H05_abl01_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_INC":  2000
+                              }
+                 },
+                 {
+                     "id":  "RG_H05_abl02_eff01",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "5001_2"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H05_abl02_eff02",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "5001_3"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H05_abl03_eff01",
+                     "effectType":  "ADD_SKILL",
+                     "param":  [
+                                   "5001_4"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H05_abl03_eff02",
+                     "effectType":  "ADD_SKILL",
+                     "param":  [
+                                   "5001_5"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H05_abl03_eff03",
+                     "effectType":  "ADD_SKILL",
+                     "param":  [
+                                   "5001_6"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H06_abl01_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "HP_INC":  1000
+                              }
+                 },
+                 {
+                     "id":  "RG_H06_abl02_eff01",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "6001_2"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H06_abl02_eff02",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "6001_3"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H06_abl03_eff01",
+                     "effectType":  "ADD_SKILL",
+                     "param":  [
+                                   "6001_4"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H11_abl01_eff02",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "ZL_1103"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H11_abl02_eff01",
+                     "effectType":  "FEATURE",
+                     "param":  [
+                                   "HEAL_TO_SHIELD",
+                                   1
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H11_abl03_eff01",
+                     "effectType":  "HEAL_MORE_TARGER",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H12_abl01_eff01",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "LY_1202"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H12_abl01_eff02",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "LY_1203"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H12_abl02_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "CRI_RATE":  10000
+                              }
+                 },
+                 {
+                     "id":  "RG_H12_abl03_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "CRI_DMG":  5000
+                              }
+                 },
+                 {
+                     "id":  "RG_H12_abl04_eff01",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "LY_1204"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H13_abl01_eff01",
+                     "effectType":  "FEATURE",
+                     "param":  [
+                                   "BOUNCE_TIMES",
+                                   2
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H13_abl01_eff02",
+                     "effectType":  "FEATURE",
+                     "param":  [
+                                   "BOUNCE_TIMES",
+                                   4
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H13_abl02_eff01",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "TZ_1302"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H13_abl02_eff02",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "TZ_1303"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H14_abl01_eff01",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "SY_1402"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H14_abl02_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "BOSS_DMG_INS":  10000
+                              }
+                 },
+                 {
+                     "id":  "RG_H7_abl01_eff01",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "8001_3"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H8_abl01_eff01",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "7001_3"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H9_abl01_eff01",
+                     "effectType":  "FEATURE",
+                     "param":  [
+                                   "ACTIVE_KILL_FLY",
+                                   3000
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H10_abl01_eff01",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "10001_3"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H16_abl01_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_INC":  1000
+                              }
+                 },
+                 {
+                     "id":  "RG_H16_abl02_eff01",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "11001_2"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H16_abl02_eff02",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "11001_3"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H16_abl03_eff01",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "BIGGER_SIZES",
+                                   "1.2",
+                                   0
+                               ],
+                     "attr":  {
+                                  "HP_INC":  2000,
+                                  "ATK_INC":  2000
+                              }
+                 },
+                 {
+                     "id":  "RG_H16_abl03_eff02",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "BIGGER_SIZES",
+                                   "1.2",
+                                   200
+                               ],
+                     "attr":  {
+                                  "HP_INC":  2000,
+                                  "ATK_INC":  2000
+                              }
+                 },
+                 {
+                     "id":  "RG_H17_abl01_eff01",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "LS_1501_1"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H17_abl01_eff02",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "LS_1501_2"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H17_abl02_eff01",
+                     "effectType":  "REPLACE_SKILL",
+                     "param":  [
+                                   "LS_1502"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H18_abl01_eff01",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "DIE_SKILL_DIE",
+                                   "12001_2",
+                                   200
+                               ],
+                     "attr":  {
+                                  "ATK_INC":  100
+                              }
+                 },
+                 {
+                     "id":  "RG_H15_fmt01_eff01",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "KILL_GET_COIN",
+                                   10000,
+                                   1
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H15_fmt02_eff01",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "ROUND_END_GET_COIN",
+                                   16
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "RG_H16_fmt01_eff01",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "FORMATION_ATTR"
+                               ],
+                     "attr":  {
+                                  "ATK_INC":  2000
+                              }
+                 },
+                 {
+                     "id":  "DI_BUFF_eff01",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "REDUCE_REFRESH_BRICK_COST",
+                                   2000
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "DI_BUFF_eff02",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "ADD_LEVEL3_GEAR",
+                                   3013,
+                                   20000
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "DI_BUFF_eff03",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_INC":  2000
+                              }
+                 },
+                 {
+                     "id":  "DI_BUFF_eff04",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_INC":  2000
+                              }
+                 },
+                 {
+                     "id":  "DI_BUFF_eff05",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "MULTIPLE_CREATE_HERO",
+                                   850,
+                                   100,
+                                   50
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "DI_BUFF_eff06",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "MULTIPLE_CREATE_TOWER",
+                                   850,
+                                   100,
+                                   50
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "DI_BUFF_eff07",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "REFRESH_LEVEL5_GEAR",
+                                   200
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "DI_DEBUFF_eff01",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "MOVE_SPD":  2000
+                              }
+                 },
+                 {
+                     "id":  "DI_DEBUFF_eff02",
+                     "effectType":  "ADD_PASSIVITY_SKILL",
+                     "param":  [
+                                   "BT_001"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "DI_DEBUFF_eff03",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "HERO_DMG_RES":  8000
+                              }
+                 },
+                 {
+                     "id":  "DI_DEBUFF_eff04",
+                     "effectType":  "ATTR",
+                     "param":  null,
+                     "attr":  {
+                                  "TOWER_DMG_RES":  8000
+                              }
+                 },
+                 {
+                     "id":  "DI_DEBUFF_eff05",
+                     "effectType":  "SPECIAL_WORD",
+                     "param":  [
+                                   "ADD_EXTRA_MONSTER",
+                                   300001,
+                                   300002,
+                                   300003,
+                                   300004,
+                                   300005,
+                                   300006,
+                                   300007,
+                                   300008,
+                                   300009,
+                                   300010
+                               ],
+                     "attr":  null
+                 }
+             ],
+    "sourceLength":  382,
+    "expectedLength":  382,
+    "validLength":  true
+}

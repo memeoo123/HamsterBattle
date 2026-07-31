@@ -1,0 +1,834 @@
+﻿{
+    "table":  "battle.PassivitySkillConfig",
+    "columnCount":  20,
+    "rowCount":  27,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "group",
+                       "token":  236,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "belongType",
+                       "token":  812,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "subType",
+                       "token":  813,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "exitClearCd",
+                       "token":  "exitClearCd",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  7,
+                       "name":  "notHatred",
+                       "token":  814,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "precd",
+                       "token":  815,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  9,
+                       "name":  "interval",
+                       "token":  719,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  10,
+                       "name":  "cd",
+                       "token":  816,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  11,
+                       "name":  "condition",
+                       "token":  817,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  12,
+                       "name":  "conditionValue",
+                       "token":  "conditionValue",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  13,
+                       "name":  "conditionValue2",
+                       "token":  "conditionValue2",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  14,
+                       "name":  "conditionNow",
+                       "token":  "conditionNow",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  15,
+                       "name":  "statusGroup",
+                       "token":  "statusGroup",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  16,
+                       "name":  "behavior_0",
+                       "token":  818,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  17,
+                       "name":  "behavior_1",
+                       "token":  819,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  18,
+                       "name":  "skills",
+                       "token":  820,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  19,
+                       "name":  "skillParm",
+                       "token":  "skillParm",
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "1002_p2",
+                     "name":  "",
+                     "desc":  "攻击三次下次暴击",
+                     "group":  "1002_p2",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  23,
+                     "conditionValue":  [
+                                            0,
+                                            3
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "1002_bh2"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "1002_p3",
+                     "name":  "",
+                     "desc":  "攻击三次下次暴击造成150%暴击伤害",
+                     "group":  "1002_p3",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  23,
+                     "conditionValue":  [
+                                            0,
+                                            3
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "1002_bh3"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "1002_p4",
+                     "name":  "",
+                     "desc":  "攻击二次下次暴击造成150%暴击伤害",
+                     "group":  "1002_p4",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  23,
+                     "conditionValue":  [
+                                            0,
+                                            2
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "1002_bh4"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "1002_p5",
+                     "name":  "",
+                     "desc":  "普攻二次暴击造成150%暴击伤害，加生命值",
+                     "group":  "1002_p5",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  23,
+                     "conditionValue":  [
+                                            0,
+                                            2
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "1002_bh5"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "2001_p2",
+                     "name":  "",
+                     "desc":  "有30%概率额外攻击1个敌人",
+                     "group":  "2001_p2",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  2,
+                     "conditionValue":  [
+                                            0
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  [
+                                         3,
+                                         3000
+                                     ],
+                     "behavior_0":  {
+                                        "behaviorId":  "2001_bh2"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "2001_p3",
+                     "name":  "",
+                     "desc":  "有50%概率额外攻击1个敌人",
+                     "group":  "2001_p3",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  2,
+                     "conditionValue":  [
+                                            0
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  [
+                                         3,
+                                         5000
+                                     ],
+                     "behavior_0":  {
+                                        "behaviorId":  "2001_bh3"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "2001_p4",
+                     "name":  "",
+                     "desc":  "100%概率额外攻击1个敌人",
+                     "group":  "2001_p4",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  2,
+                     "conditionValue":  [
+                                            0
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  [
+                                         3,
+                                         10000
+                                     ],
+                     "behavior_0":  {
+                                        "behaviorId":  "2001_bh4"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "2001_p5",
+                     "name":  "",
+                     "desc":  "弹幕时间，5发子弹后加攻速，持续2秒",
+                     "group":  "2001_p5",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  23,
+                     "conditionValue":  [
+                                            0,
+                                            5
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "2001_bh5"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "2001_p6",
+                     "name":  "",
+                     "desc":  "弹幕时间，5发子弹后加攻速，持续3秒",
+                     "group":  "2001_p6",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  23,
+                     "conditionValue":  [
+                                            0,
+                                            5
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "2001_bh6"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "3001_p2",
+                     "name":  "",
+                     "desc":  "攻击有30%概率将敌人冰冻",
+                     "group":  "3001_p2",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  4,
+                     "conditionValue":  [
+                                            0
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  [
+                                         3,
+                                         3000
+                                     ],
+                     "behavior_0":  {
+                                        "behaviorId":  "3001_bh2"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "3001_p3",
+                     "name":  "",
+                     "desc":  "能够将敌人变成花生，5秒冷却，持续2秒",
+                     "group":  "3001_p3",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  4,
+                     "conditionValue":  [
+                                            0
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "3001_bh3"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "3001_p4",
+                     "name":  "",
+                     "desc":  "被变形的目标受到的伤害增加30%",
+                     "group":  "3001_p4",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  4,
+                     "conditionValue":  [
+                                            0
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "3001_bh4"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "4001_p1",
+                     "name":  "",
+                     "desc":  "仓鼠骑士每秒恢复2%自身最大生命值",
+                     "group":  "4001_p1",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  1000,
+                     "cd":  1000,
+                     "condition":  6,
+                     "conditionValue":  null,
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "4001_bh1"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "4001_p2",
+                     "name":  "",
+                     "desc":  "仓鼠骑士每秒恢复5%自身最大生命值",
+                     "group":  "4001_p2",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  1000,
+                     "cd":  1000,
+                     "condition":  6,
+                     "conditionValue":  null,
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "4001_bh2"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "4001_p3",
+                     "name":  "",
+                     "desc":  "使自身受到的伤害降低30%，5秒冷却，持续2秒",
+                     "group":  "4001_p3",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  5000,
+                     "cd":  5000,
+                     "condition":  6,
+                     "conditionValue":  null,
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "4001_bh3"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "4001_p4",
+                     "name":  "",
+                     "desc":  "使自身受到的伤害降低30%，并将其反弹给攻击者，5秒冷却，持续2秒",
+                     "group":  "4001_p4",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  5000,
+                     "cd":  5000,
+                     "condition":  6,
+                     "conditionValue":  null,
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "4001_bh4"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "5001_p2",
+                     "name":  "",
+                     "desc":  "使受击的敌人降低50%移速(5秒)",
+                     "group":  "5001_p2",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  4,
+                     "conditionValue":  [
+                                            0
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "5001_bh2"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "5001_p3",
+                     "name":  "",
+                     "desc":  "使受击的敌人50%移速，50%攻速",
+                     "group":  "5001_p3",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  4,
+                     "conditionValue":  [
+                                            0
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "5001_bh3"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "6001_p2",
+                     "name":  "",
+                     "desc":  "飞行员攻击附加30%减速效果",
+                     "group":  "6001_p2",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  4,
+                     "conditionValue":  [
+                                            0
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "6001_bh2"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "6001_p3",
+                     "name":  "",
+                     "desc":  "飞行员攻击附加50%减速效果",
+                     "group":  "6001_p3",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  4,
+                     "conditionValue":  [
+                                            0
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "6001_bh3"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "6001_p5",
+                     "name":  "",
+                     "desc":  "当自身在场时所有友方单位获得20%伤害加成",
+                     "group":  "6001_p5",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  1,
+                     "conditionValue":  null,
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "6001_bh5"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "6001_p6",
+                     "name":  "",
+                     "desc":  "当自身在场时所有友方单位获得20%伤害减免",
+                     "group":  "6001_p6",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  1,
+                     "conditionValue":  null,
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "6001_bh6"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "BT_p001",
+                     "name":  "",
+                     "desc":  "霸体buff",
+                     "group":  "BT_p001",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  1,
+                     "conditionValue":  null,
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "BT_bh001"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "ZB_P001",
+                     "name":  "",
+                     "desc":  "自爆",
+                     "group":  "ZB_P001",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  14,
+                     "conditionValue":  null,
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "H_ZB_1701_1"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "ZB_P002",
+                     "name":  "",
+                     "desc":  "自爆",
+                     "group":  "ZB_P002",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  38,
+                     "conditionValue":  null,
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "ZB_1701"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "JT_p001",
+                     "name":  "",
+                     "desc":  "怪物身上的击退被动",
+                     "group":  "JT_p001",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  2,
+                     "conditionValue":  [
+                                            0
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "JT_bh001"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 },
+                 {
+                     "id":  "JT_p002",
+                     "name":  "",
+                     "desc":  "仓鼠身上的击退被动",
+                     "group":  "JT_p002",
+                     "belongType":  "",
+                     "subType":  0,
+                     "exitClearCd":  0,
+                     "notHatred":  0,
+                     "precd":  0,
+                     "interval":  0,
+                     "cd":  0,
+                     "condition":  2,
+                     "conditionValue":  [
+                                            0
+                                        ],
+                     "conditionValue2":  null,
+                     "conditionNow":  0,
+                     "statusGroup":  null,
+                     "behavior_0":  {
+                                        "behaviorId":  "JT_bh002"
+                                    },
+                     "behavior_1":  null,
+                     "skills":  null,
+                     "skillParm":  null
+                 }
+             ],
+    "sourceLength":  582,
+    "expectedLength":  582,
+    "validLength":  true
+}

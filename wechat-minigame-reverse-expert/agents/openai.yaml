@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信小游戏逆向工程专家"
+  short_description: "按目标隔离、循证分析微信小游戏包体、引擎、逻辑与关卡数据"
+  default_prompt: "使用 $wechat-minigame-reverse-expert 为这个已授权微信小游戏建立独立目标记录并按证据链分析。"

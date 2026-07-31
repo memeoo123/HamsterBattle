@@ -1,0 +1,348 @@
+﻿{
+    "table":  "battle.AttributeConfig",
+    "columnCount":  10,
+    "rowCount":  23,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "attrName",
+                       "token":  "attrName",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "attrDesc",
+                       "token":  "attrDesc",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "tid",
+                       "token":  "tid",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "max",
+                       "token":  "max",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "min",
+                       "token":  "min",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  7,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  8,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  9,
+                       "name":  "isPermyriad",
+                       "token":  "isPermyriad",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "ATK",
+                     "attrName":  "攻击",
+                     "attrDesc":  "提升角色造成的伤害",
+                     "tid":  1,
+                     "type":  1,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "ui://comm/gj_icon",
+                     "isPermyriad":  0
+                 },
+                 {
+                     "id":  "HP",
+                     "attrName":  "生命",
+                     "attrDesc":  "角色受到伤害会减少生命值，生命值为0则角色被击败",
+                     "tid":  3,
+                     "type":  1,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "ui://comm/xl_icon",
+                     "isPermyriad":  0
+                 },
+                 {
+                     "id":  "ATK_BONUS",
+                     "attrName":  "攻击",
+                     "attrDesc":  "百分比攻击",
+                     "tid":  4,
+                     "type":  0,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "ui://comm/gj_icon",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "HP_BONUS",
+                     "attrName":  "生命",
+                     "attrDesc":  "百分比生命",
+                     "tid":  6,
+                     "type":  0,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "ui://comm/xl_icon",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "DOD_RATE",
+                     "attrName":  "闪避率",
+                     "attrDesc":  "闪避敌方伤害的概率",
+                     "tid":  10,
+                     "type":  2,
+                     "max":  7000,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "DOD_RES",
+                     "attrName":  "命中率",
+                     "attrDesc":  "击中敌方的几率",
+                     "tid":  11,
+                     "type":  2,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "CRI_RATE",
+                     "attrName":  "暴击率",
+                     "attrDesc":  "造成伤害暴击的几率",
+                     "tid":  12,
+                     "type":  2,
+                     "max":  10000,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/baoji",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "CRI_DMG",
+                     "attrName":  "暴击伤害",
+                     "attrDesc":  "暴击造成的伤害",
+                     "tid":  13,
+                     "type":  2,
+                     "max":  25000,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "DMG_INC",
+                     "attrName":  "伤害增加",
+                     "attrDesc":  "造成伤害增加",
+                     "tid":  20,
+                     "type":  2,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "DMG_RES",
+                     "attrName":  "伤害减免",
+                     "attrDesc":  "受到伤害减少",
+                     "tid":  21,
+                     "type":  2,
+                     "max":  7000,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "MOVE_SPD",
+                     "attrName":  "移动速度",
+                     "attrDesc":  "人物移动速度",
+                     "tid":  22,
+                     "type":  2,
+                     "max":  10000,
+                     "min":  -9000,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  0
+                 },
+                 {
+                     "id":  "ATK_SPD",
+                     "attrName":  "攻击速度",
+                     "attrDesc":  "人物的攻击速度",
+                     "tid":  23,
+                     "type":  2,
+                     "max":  90000,
+                     "min":  -5000,
+                     "name":  "",
+                     "icon":  "image/attr/gongsu",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "ATK_INC",
+                     "attrName":  "攻击增加",
+                     "attrDesc":  "攻击增加",
+                     "tid":  26,
+                     "type":  2,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "HP_INC",
+                     "attrName":  "生命上限",
+                     "attrDesc":  "生命上限增加",
+                     "tid":  28,
+                     "type":  2,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "ATK_DEC",
+                     "attrName":  "攻击降低",
+                     "attrDesc":  "攻击力降低",
+                     "tid":  29,
+                     "type":  2,
+                     "max":  7000,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "HP_DEC",
+                     "attrName":  "生命上限降低",
+                     "attrDesc":  "生命上限减少",
+                     "tid":  31,
+                     "type":  2,
+                     "max":  5000,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "LIFE_STEAL",
+                     "attrName":  "吸血",
+                     "attrDesc":  "自己造成的伤害会按照一定数值成为自身回复血量",
+                     "tid":  34,
+                     "type":  2,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "REFLECT_DMG",
+                     "attrName":  "反伤",
+                     "attrDesc":  "敌方造成的伤害会按照一定数值对敌方造成伤害",
+                     "tid":  35,
+                     "type":  2,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "HL_INC",
+                     "attrName":  "治愈率",
+                     "attrDesc":  "造成的治疗回血量按照比例增加",
+                     "tid":  37,
+                     "type":  2,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "HL_HOME_INC",
+                     "attrName":  "治愈基地率",
+                     "attrDesc":  "造成的治疗回血量按照比例增加",
+                     "tid":  38,
+                     "type":  2,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "BOSS_DMG_INS",
+                     "attrName":  "BOSS增伤",
+                     "attrDesc":  "对BOSS增伤",
+                     "tid":  39,
+                     "type":  2,
+                     "max":  0,
+                     "min":  0,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "HERO_DMG_RES",
+                     "attrName":  "仓鼠伤害减免",
+                     "attrDesc":  "收到的仓鼠伤害减少",
+                     "tid":  40,
+                     "type":  2,
+                     "max":  10000,
+                     "min":  -10000,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 },
+                 {
+                     "id":  "TOWER_DMG_RES",
+                     "attrName":  "法术伤害减免",
+                     "attrDesc":  "收到的法术伤害减少",
+                     "tid":  41,
+                     "type":  2,
+                     "max":  10000,
+                     "min":  -10000,
+                     "name":  "",
+                     "icon":  "image/attr/gongjibaifenbi",
+                     "isPermyriad":  1
+                 }
+             ],
+    "sourceLength":  252,
+    "expectedLength":  252,
+    "validLength":  true
+}

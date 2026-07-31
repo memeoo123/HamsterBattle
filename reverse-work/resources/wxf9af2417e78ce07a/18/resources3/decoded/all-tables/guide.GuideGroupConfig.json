@@ -1,0 +1,54 @@
+﻿{
+    "table":  "guide.GuideGroupConfig",
+    "columnCount":  4,
+    "rowCount":  3,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "groupId",
+                       "token":  992,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "openVerify",
+                       "token":  962,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  2,
+                       "name":  "closeVerify",
+                       "token":  993,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  3,
+                       "name":  "endGuideId",
+                       "token":  994,
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "groupId":  101,
+                     "openVerify":  null,
+                     "closeVerify":  null,
+                     "endGuideId":  10117
+                 },
+                 {
+                     "groupId":  102,
+                     "openVerify":  null,
+                     "closeVerify":  null,
+                     "endGuideId":  10205
+                 },
+                 {
+                     "groupId":  103,
+                     "openVerify":  null,
+                     "closeVerify":  null,
+                     "endGuideId":  10304
+                 }
+             ],
+    "sourceLength":  22,
+    "expectedLength":  22,
+    "validLength":  true
+}

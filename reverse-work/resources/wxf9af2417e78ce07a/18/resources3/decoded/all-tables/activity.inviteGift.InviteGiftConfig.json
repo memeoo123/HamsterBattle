@@ -1,0 +1,51 @@
+﻿{
+    "table":  "activity.inviteGift.InviteGiftConfig",
+    "columnCount":  4,
+    "rowCount":  1,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "count",
+                       "token":  "count",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "chapterId",
+                       "token":  "chapterId",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "rewards",
+                       "token":  18,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "count":  1,
+                     "chapterId":  1001,
+                     "rewards":  [
+                                     {
+                                         "k":  2,
+                                         "v":  150
+                                     },
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ]
+                 }
+             ],
+    "sourceLength":  14,
+    "expectedLength":  14,
+    "validLength":  true
+}

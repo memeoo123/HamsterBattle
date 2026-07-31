@@ -1,0 +1,2977 @@
+﻿{
+    "table":  "battle.BehaviorConfig",
+    "columnCount":  17,
+    "rowCount":  126,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "rangeType",
+                       "token":  238,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "rangeParam",
+                       "token":  "rangeParam",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  3,
+                       "name":  "byAtkDistance",
+                       "token":  "byAtkDistance",
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  4,
+                       "name":  "notSelf",
+                       "token":  680,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "num",
+                       "token":  681,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "targetFaction",
+                       "token":  682,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  7,
+                       "name":  "targetType",
+                       "token":  683,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "targetParam",
+                       "token":  684,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  9,
+                       "name":  "shake",
+                       "token":  685,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  10,
+                       "name":  "animPosType",
+                       "token":  686,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  11,
+                       "name":  "modelId",
+                       "token":  347,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  12,
+                       "name":  "param",
+                       "token":  20,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  13,
+                       "name":  "behavior",
+                       "token":  "behavior",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  14,
+                       "name":  "behaviorDelay",
+                       "token":  "behaviorDelay",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  15,
+                       "name":  "effectType",
+                       "token":  303,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  16,
+                       "name":  "effectParam",
+                       "token":  687,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "melee_attack_bh",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "cleave_attack_bh",
+                     "rangeType":  7,
+                     "rangeParam":  {
+                                        "radius":  75,
+                                        "angle":  120
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "ranged_attack_bh",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "splash_attack_bh",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  50
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "splash_attack_large_bh",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  75
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  3000
+                                     }
+                 },
+                 {
+                     "id":  "HS_bh5001",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_HS_50001"
+                                     }
+                 },
+                 {
+                     "id":  "M_HS_50001_1",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "HS_bh5002",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_HS_50002"
+                                     }
+                 },
+                 {
+                     "id":  "M_HS_50002_1",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "YGT_bh5002",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_YGT_50002"
+                                     }
+                 },
+                 {
+                     "id":  "M_YGT_50002_1",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  50
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "GWZX_bh001",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  15000
+                                     }
+                 },
+                 {
+                     "id":  "GWZX_bh002",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  15000
+                                     }
+                 },
+                 {
+                     "id":  "GWFW_bh001",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  150
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  15000
+                                     }
+                 },
+                 {
+                     "id":  "GJJD_bh001",
+                     "rangeType":  16,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  9,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "BT_bh001",
+                     "rangeType":  1,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "BT_bf001"
+                                     }
+                 },
+                 {
+                     "id":  "JT_bh001",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "repel":  100
+                                     }
+                 },
+                 {
+                     "id":  "JT_bh002",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "repel":  100
+                                     }
+                 },
+                 {
+                     "id":  "ZJ_bh5001",
+                     "rangeType":  16,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "healHome",
+                     "effectParam":  {
+                                         "amount":  0,
+                                         "maxHp":  3000
+                                     }
+                 },
+                 {
+                     "id":  "ZJ_bh5002",
+                     "rangeType":  16,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "healHome",
+                     "effectParam":  {
+                                         "amount":  0,
+                                         "maxHp":  5000
+                                     }
+                 },
+                 {
+                     "id":  "B_ZL_1101",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  200
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  4,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  {
+                                     "up":  [
+                                                "H11_S1"
+                                            ]
+                                 },
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "heal",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "B_ZL_1102",
+                     "rangeType":  16,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "healHome",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "B_ZL_1103",
+                     "rangeType":  16,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "healHome",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "M_LY_1201",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_LY_1201"
+                                     }
+                 },
+                 {
+                     "id":  "H_LY_1201",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  50
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  5,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "LY_bh1202",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "LY_bf1202"
+                                     }
+                 },
+                 {
+                     "id":  "LY_bh1203",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "LY_bf1203"
+                                     }
+                 },
+                 {
+                     "id":  "LY_bh1204",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "LY_bf1204"
+                                     }
+                 },
+                 {
+                     "id":  "B_TZ_1301_1",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_TZ_1301_1"
+                                     }
+                 },
+                 {
+                     "id":  "B_TZ_1301_2",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  {
+                                     "low":  [
+                                                 "H13_S1_LOWER"
+                                             ]
+                                 },
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  3500
+                                     }
+                 },
+                 {
+                     "id":  "B_TZ_1302_1",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_TZ_1302_1"
+                                     }
+                 },
+                 {
+                     "id":  "B_TZ_1303_1",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_TZ_1303_1"
+                                     }
+                 },
+                 {
+                     "id":  "B_TZ_1303_3",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  50
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  5,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  3000
+                                     }
+                 },
+                 {
+                     "id":  "B_SY_1401",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_SY_1401"
+                                     }
+                 },
+                 {
+                     "id":  "M_SY_1401_1",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  75
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  3,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  3000,
+                                         "repel":  50
+                                     }
+                 },
+                 {
+                     "id":  "B_SY_1402",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_SY_1402"
+                                     }
+                 },
+                 {
+                     "id":  "M_SY_1402_1",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  100
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  5,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  3000,
+                                         "repel":  50
+                                     }
+                 },
+                 {
+                     "id":  "bh1001",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "1002_bh2",
+                     "rangeType":  1,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "1002_bf2"
+                                     }
+                 },
+                 {
+                     "id":  "1002_bh3",
+                     "rangeType":  1,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "1002_bf3"
+                                     }
+                 },
+                 {
+                     "id":  "1002_bh4",
+                     "rangeType":  1,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "1002_bf4"
+                                     }
+                 },
+                 {
+                     "id":  "1002_bh5",
+                     "rangeType":  1,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "1002_bf5"
+                                     }
+                 },
+                 {
+                     "id":  "bh2001",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_SS_2001"
+                                     }
+                 },
+                 {
+                     "id":  "M_SS_2001_1",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "bh2002",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_SS_2002"
+                                     }
+                 },
+                 {
+                     "id":  "2001_bh2",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  250
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  7,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_SS_2001"
+                                     }
+                 },
+                 {
+                     "id":  "2001_bh3",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  250
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  7,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_SS_2001"
+                                     }
+                 },
+                 {
+                     "id":  "2001_bh4",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  250
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  7,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_SS_2001"
+                                     }
+                 },
+                 {
+                     "id":  "2001_bh5",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_SS_2005"
+                                     }
+                 },
+                 {
+                     "id":  "M_SS_2005_1",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  9999
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  7,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "bh3001",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_FS_3001"
+                                     }
+                 },
+                 {
+                     "id":  "M_FS_3001_1",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "3001_bh2",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "3001_bf2"
+                                     }
+                 },
+                 {
+                     "id":  "3001_bh3",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "3001_bf3"
+                                     }
+                 },
+                 {
+                     "id":  "3001_bh4",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "3001_bf4"
+                                     }
+                 },
+                 {
+                     "id":  "bh3001_5",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  100,
+                                        "height":  300
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "bh4001",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "4001_bh1",
+                     "rangeType":  1,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "heal",
+                     "effectParam":  {
+                                         "amount":  200
+                                     }
+                 },
+                 {
+                     "id":  "4001_bh2",
+                     "rangeType":  1,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "heal",
+                     "effectParam":  {
+                                         "amount":  500
+                                     }
+                 },
+                 {
+                     "id":  "4001_bh3",
+                     "rangeType":  1,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "4001_bf3"
+                                     }
+                 },
+                 {
+                     "id":  "4001_bh4",
+                     "rangeType":  1,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "4001_bf4"
+                                     }
+                 },
+                 {
+                     "id":  "bh5001",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "5001_bh2",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "5001_bf2"
+                                     }
+                 },
+                 {
+                     "id":  "5001_bh3",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "5001_bf3"
+                                     }
+                 },
+                 {
+                     "id":  "bh5001_4",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  4,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "heal",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "bh5001_5",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  4,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "heal",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "bh5001_6",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  4,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "5001_bf6"
+                                     }
+                 },
+                 {
+                     "id":  "bh6001",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_FXY_6001"
+                                     }
+                 },
+                 {
+                     "id":  "M_FXY_6001_1",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  50
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  {
+                                     "low":  [
+                                                 "H19_S1_LOWER"
+                                             ]
+                                 },
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "6001_bh2",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  50
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "6001_bf2"
+                                     }
+                 },
+                 {
+                     "id":  "6001_bh3",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  50
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "6001_bf3"
+                                     }
+                 },
+                 {
+                     "id":  "bh6001_4",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_FXY_6004"
+                                     }
+                 },
+                 {
+                     "id":  "bh6001_4_1",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  100
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  {
+                                     "low":  [
+                                                 "H20_S1_LOWER"
+                                             ]
+                                 },
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "bh6001_5",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  10000
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "6001_bf5"
+                                     }
+                 },
+                 {
+                     "id":  "bh6001_6",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  10000
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "6001_bf6"
+                                     }
+                 },
+                 {
+                     "id":  "bh7001_1",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_ATM_7001"
+                                     }
+                 },
+                 {
+                     "id":  "7001_11",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  {
+                                     "low":  [
+                                                 "H21_S1_LOWER"
+                                             ]
+                                 },
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "bh7001_2",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  100,
+                                        "height":  300
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "bh7001_3",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  100,
+                                        "height":  300
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  15000,
+                                         "buff":  [
+                                                      "7001_bf3"
+                                                  ]
+                                     }
+                 },
+                 {
+                     "id":  "bh8001_1",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  4,
+                     "modelId":  {
+                                     "up":  [
+                                                "H22_S1_LOWER"
+                                            ]
+                                 },
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "bh8001_2",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_TTX_8001"
+                                     }
+                 },
+                 {
+                     "id":  "8001_2_1",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  300
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  15000
+                                     }
+                 },
+                 {
+                     "id":  "bh9001_1",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  2,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_ZC_9001"
+                                     }
+                 },
+                 {
+                     "id":  "9001_11",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  2,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  4,
+                     "modelId":  {
+                                     "up":  [
+                                                "H24_S1_LOWER"
+                                            ]
+                                 },
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  3500
+                                     }
+                 },
+                 {
+                     "id":  "bh9001_2",
+                     "rangeType":  7,
+                     "rangeParam":  {
+                                        "radius":  50,
+                                        "angle":  120
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  15000
+                                     }
+                 },
+                 {
+                     "id":  "bh10001_1",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_FD_10001"
+                                     }
+                 },
+                 {
+                     "id":  "10001_bh02_1",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  100,
+                                        "height":  300
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "bh10001_2",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_FD_10004"
+                                     }
+                 },
+                 {
+                     "id":  "bh10001_2_1",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  99999
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  1000
+                                     }
+                 },
+                 {
+                     "id":  "bh10001_3",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_FD_10005"
+                                     }
+                 },
+                 {
+                     "id":  "bh10001_2_2",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  99999
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  1000,
+                                         "lowAtkKill":  1
+                                     }
+                 },
+                 {
+                     "id":  "bh11001_1",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_SY_1403"
+                                     }
+                 },
+                 {
+                     "id":  "M_SY_1403_1",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  75
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  5,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  3000,
+                                         "repel":  50
+                                     }
+                 },
+                 {
+                     "id":  "bh11001",
+                     "rangeType":  7,
+                     "rangeParam":  {
+                                        "radius":  75,
+                                        "angle":  120
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "bh11001_2",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  150
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "11001_bf2"
+                                     }
+                 },
+                 {
+                     "id":  "bh11001_3",
+                     "rangeType":  1,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "11001_bf3"
+                                     }
+                 },
+                 {
+                     "id":  "bh12001",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "bh12001_2",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  100,
+                                        "height":  300
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "bh12001_3",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  100,
+                                        "height":  300
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  12000
+                                     }
+                 },
+                 {
+                     "id":  "bh12001_4",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  100,
+                                        "height":  300
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  14000
+                                     }
+                 },
+                 {
+                     "id":  "bh12001_5",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  100,
+                                        "height":  300
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  16000
+                                     }
+                 },
+                 {
+                     "id":  "bh12001_6",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  100,
+                                        "height":  300
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  18000
+                                     }
+                 },
+                 {
+                     "id":  "bh12001_7",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  100,
+                                        "height":  300
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  20000
+                                     }
+                 },
+                 {
+                     "id":  "LS_bh1501",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500,
+                                        "atkAngle":  90,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_LS_1501"
+                                     }
+                 },
+                 {
+                     "id":  "H_LS_1501",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500,
+                                        "atkAngle":  90,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  999,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  3000
+                                     }
+                 },
+                 {
+                     "id":  "LS_bh1501_1",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500,
+                                        "atkAngle":  90,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_LS_bh1501_1"
+                                     }
+                 },
+                 {
+                     "id":  "H_LS_1501_1_1",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500,
+                                        "atkAngle":  90,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  999,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  3600
+                                     }
+                 },
+                 {
+                     "id":  "H_LS_1501_1_2",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500,
+                                        "atkAngle":  90,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  999,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  4200
+                                     }
+                 },
+                 {
+                     "id":  "H_LS_1501_1_3",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500,
+                                        "atkAngle":  90,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  999,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  4800
+                                     }
+                 },
+                 {
+                     "id":  "H_LS_1501_1_4",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500,
+                                        "atkAngle":  90,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  999,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  5400
+                                     }
+                 },
+                 {
+                     "id":  "H_LS_1501_1_5",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500,
+                                        "atkAngle":  90,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  999,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  6000
+                                     }
+                 },
+                 {
+                     "id":  "LS_bh1501_2",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500,
+                                        "atkAngle":  90,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_LS_bh1501_2"
+                                     }
+                 },
+                 {
+                     "id":  "bh1501_2",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500,
+                                        "atkAngle":  90,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "addBuff",
+                     "effectParam":  {
+                                         "buffId":  "1501_bf2"
+                                     }
+                 },
+                 {
+                     "id":  "LS_bh1502",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500,
+                                        "atkAngle":  90,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_LS_bh1502"
+                                     }
+                 },
+                 {
+                     "id":  "H_LS_bh1502",
+                     "rangeType":  5,
+                     "rangeParam":  {
+                                        "width":  150,
+                                        "height":  500,
+                                        "atkAngle":  90,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  999,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  3000
+                                     }
+                 },
+                 {
+                     "id":  "FB_P04_1",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  150,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_FB_P04_1"
+                                     }
+                 },
+                 {
+                     "id":  "H_FB_P04_1_1",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  150
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  999,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  6000
+                                     }
+                 },
+                 {
+                     "id":  "FB_P04_2",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  150,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_FB_P04_2"
+                                     }
+                 },
+                 {
+                     "id":  "H_FB_P04_2_1",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  150
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  999,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  9000
+                                     }
+                 },
+                 {
+                     "id":  "FB_P04_3",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  150,
+                                        "fixed":  1
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M_FB_P04_3"
+                                     }
+                 },
+                 {
+                     "id":  "H_FB_P04_3_1",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  150
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  999,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  12000
+                                     }
+                 },
+                 {
+                     "id":  "ZB_1701",
+                     "rangeType":  1,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  2,
+                     "targetType":  6,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurtCurHp",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "H_ZB_1701_1",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  100
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  999,
+                     "targetFaction":  1,
+                     "targetType":  10,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  10000
+                                     }
+                 },
+                 {
+                     "id":  "M10_attack_H",
+                     "rangeType":  2,
+                     "rangeParam":  null,
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "missile",
+                     "effectParam":  {
+                                         "missileId":  "M10_attack_M"
+                                     }
+                 },
+                 {
+                     "id":  "M10_attack_D",
+                     "rangeType":  4,
+                     "rangeParam":  {
+                                        "radius":  50
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  0,
+                     "targetFaction":  1,
+                     "targetType":  1,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  {
+                                     "low":  [
+                                                 "M10_S1_LOWER"
+                                             ]
+                                 },
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "hurt",
+                     "effectParam":  {
+                                         "amount":  5000
+                                     }
+                 },
+                 {
+                     "id":  "CS_1801",
+                     "rangeType":  3,
+                     "rangeParam":  {
+                                        "radius":  2000
+                                    },
+                     "byAtkDistance":  false,
+                     "notSelf":  0,
+                     "num":  1,
+                     "targetFaction":  1,
+                     "targetType":  3,
+                     "targetParam":  null,
+                     "shake":  null,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "param":  null,
+                     "behavior":  null,
+                     "behaviorDelay":  null,
+                     "effectType":  "assassinate",
+                     "effectParam":  {
+                                         "amount":  10000,
+                                         "distance":  45
+                                     }
+                 }
+             ],
+    "sourceLength":  2178,
+    "expectedLength":  2178,
+    "validLength":  true
+}

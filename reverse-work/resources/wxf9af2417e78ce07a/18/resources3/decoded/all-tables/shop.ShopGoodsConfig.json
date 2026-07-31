@@ -1,0 +1,477 @@
+﻿{
+    "table":  "shop.ShopGoodsConfig",
+    "columnCount":  9,
+    "rowCount":  13,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "shopId",
+                       "token":  1451,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "rewardId",
+                       "token":  1001,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "cost",
+                       "token":  553,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  4,
+                       "name":  "discount",
+                       "token":  "discount",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  5,
+                       "name":  "canManualRefresh",
+                       "token":  "canManualRefresh",
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  6,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  8,
+                       "name":  "sort",
+                       "token":  1088,
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  101001,
+                     "shopId":  101,
+                     "rewardId":  1001,
+                     "cost":  [
+                                  [
+                                      "FREE",
+                                      0,
+                                      0,
+                                      1
+                                  ],
+                                  [
+                                      "AD",
+                                      0,
+                                      0,
+                                      10
+                                  ]
+                              ],
+                     "discount":  null,
+                     "canManualRefresh":  false,
+                     "name":  "钻石",
+                     "icon":  "image/item/sd004_icon",
+                     "sort":  1
+                 },
+                 {
+                     "id":  101002,
+                     "shopId":  101,
+                     "rewardId":  1010,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0,
+                                      1
+                                  ]
+                              ],
+                     "discount":  null,
+                     "canManualRefresh":  true,
+                     "name":  "广告宝箱",
+                     "icon":  "",
+                     "sort":  2
+                 },
+                 {
+                     "id":  101003,
+                     "shopId":  101,
+                     "rewardId":  1003,
+                     "cost":  [
+                                  [
+                                      "ITEM_DIAMOND",
+                                      0,
+                                      0,
+                                      1
+                                  ]
+                              ],
+                     "discount":  null,
+                     "canManualRefresh":  true,
+                     "name":  "",
+                     "icon":  "",
+                     "sort":  3
+                 },
+                 {
+                     "id":  101004,
+                     "shopId":  101,
+                     "rewardId":  1003,
+                     "cost":  [
+                                  [
+                                      "ITEM_DIAMOND",
+                                      0,
+                                      0,
+                                      1
+                                  ]
+                              ],
+                     "discount":  [
+                                      {
+                                          "k":  20,
+                                          "v":  20
+                                      },
+                                      {
+                                          "k":  40,
+                                          "v":  40
+                                      },
+                                      {
+                                          "k":  60,
+                                          "v":  60
+                                      },
+                                      {
+                                          "k":  80,
+                                          "v":  80
+                                      },
+                                      {
+                                          "k":  100,
+                                          "v":  100
+                                      }
+                                  ],
+                     "canManualRefresh":  true,
+                     "name":  "",
+                     "icon":  "",
+                     "sort":  4
+                 },
+                 {
+                     "id":  101005,
+                     "shopId":  101,
+                     "rewardId":  1003,
+                     "cost":  [
+                                  [
+                                      "ITEM_DIAMOND",
+                                      0,
+                                      0,
+                                      1
+                                  ]
+                              ],
+                     "discount":  [
+                                      {
+                                          "k":  20,
+                                          "v":  20
+                                      },
+                                      {
+                                          "k":  40,
+                                          "v":  40
+                                      },
+                                      {
+                                          "k":  60,
+                                          "v":  60
+                                      },
+                                      {
+                                          "k":  80,
+                                          "v":  80
+                                      },
+                                      {
+                                          "k":  100,
+                                          "v":  100
+                                      }
+                                  ],
+                     "canManualRefresh":  true,
+                     "name":  "",
+                     "icon":  "",
+                     "sort":  5
+                 },
+                 {
+                     "id":  101006,
+                     "shopId":  101,
+                     "rewardId":  1004,
+                     "cost":  [
+                                  [
+                                      "ITEM_GOLD",
+                                      0,
+                                      0,
+                                      1
+                                  ]
+                              ],
+                     "discount":  [
+                                      {
+                                          "k":  10,
+                                          "v":  10
+                                      },
+                                      {
+                                          "k":  20,
+                                          "v":  20
+                                      },
+                                      {
+                                          "k":  30,
+                                          "v":  30
+                                      },
+                                      {
+                                          "k":  40,
+                                          "v":  40
+                                      },
+                                      {
+                                          "k":  50,
+                                          "v":  50
+                                      },
+                                      {
+                                          "k":  60,
+                                          "v":  60
+                                      },
+                                      {
+                                          "k":  70,
+                                          "v":  70
+                                      },
+                                      {
+                                          "k":  80,
+                                          "v":  80
+                                      },
+                                      {
+                                          "k":  90,
+                                          "v":  90
+                                      },
+                                      {
+                                          "k":  100,
+                                          "v":  100
+                                      }
+                                  ],
+                     "canManualRefresh":  true,
+                     "name":  "",
+                     "icon":  "",
+                     "sort":  6
+                 },
+                 {
+                     "id":  101007,
+                     "shopId":  101,
+                     "rewardId":  1004,
+                     "cost":  [
+                                  [
+                                      "ITEM_GOLD",
+                                      0,
+                                      0,
+                                      1
+                                  ]
+                              ],
+                     "discount":  [
+                                      {
+                                          "k":  10,
+                                          "v":  10
+                                      },
+                                      {
+                                          "k":  20,
+                                          "v":  20
+                                      },
+                                      {
+                                          "k":  30,
+                                          "v":  30
+                                      },
+                                      {
+                                          "k":  40,
+                                          "v":  40
+                                      },
+                                      {
+                                          "k":  50,
+                                          "v":  50
+                                      },
+                                      {
+                                          "k":  60,
+                                          "v":  60
+                                      },
+                                      {
+                                          "k":  70,
+                                          "v":  70
+                                      },
+                                      {
+                                          "k":  80,
+                                          "v":  80
+                                      },
+                                      {
+                                          "k":  90,
+                                          "v":  90
+                                      },
+                                      {
+                                          "k":  100,
+                                          "v":  100
+                                      }
+                                  ],
+                     "canManualRefresh":  true,
+                     "name":  "",
+                     "icon":  "",
+                     "sort":  7
+                 },
+                 {
+                     "id":  101008,
+                     "shopId":  101,
+                     "rewardId":  1004,
+                     "cost":  [
+                                  [
+                                      "ITEM_GOLD",
+                                      0,
+                                      0,
+                                      1
+                                  ]
+                              ],
+                     "discount":  [
+                                      {
+                                          "k":  10,
+                                          "v":  10
+                                      },
+                                      {
+                                          "k":  20,
+                                          "v":  20
+                                      },
+                                      {
+                                          "k":  30,
+                                          "v":  30
+                                      },
+                                      {
+                                          "k":  40,
+                                          "v":  40
+                                      },
+                                      {
+                                          "k":  50,
+                                          "v":  50
+                                      },
+                                      {
+                                          "k":  60,
+                                          "v":  60
+                                      },
+                                      {
+                                          "k":  70,
+                                          "v":  70
+                                      },
+                                      {
+                                          "k":  80,
+                                          "v":  80
+                                      },
+                                      {
+                                          "k":  90,
+                                          "v":  90
+                                      },
+                                      {
+                                          "k":  100,
+                                          "v":  100
+                                      }
+                                  ],
+                     "canManualRefresh":  true,
+                     "name":  "",
+                     "icon":  "",
+                     "sort":  8
+                 },
+                 {
+                     "id":  103001,
+                     "shopId":  103,
+                     "rewardId":  1005,
+                     "cost":  [
+                                  [
+                                      "FREE",
+                                      0,
+                                      0,
+                                      1
+                                  ],
+                                  [
+                                      "AD",
+                                      0,
+                                      0,
+                                      10
+                                  ]
+                              ],
+                     "discount":  null,
+                     "canManualRefresh":  false,
+                     "name":  "一点金币",
+                     "icon":  "image/item/sd003_icon",
+                     "sort":  1
+                 },
+                 {
+                     "id":  103002,
+                     "shopId":  103,
+                     "rewardId":  1006,
+                     "cost":  [
+                                  [
+                                      "ITEM",
+                                      3,
+                                      500,
+                                      0
+                                  ]
+                              ],
+                     "discount":  null,
+                     "canManualRefresh":  false,
+                     "name":  "一袋金币",
+                     "icon":  "image/item/sd002_icon",
+                     "sort":  2
+                 },
+                 {
+                     "id":  103003,
+                     "shopId":  103,
+                     "rewardId":  1007,
+                     "cost":  [
+                                  [
+                                      "ITEM",
+                                      3,
+                                      1500,
+                                      0
+                                  ]
+                              ],
+                     "discount":  null,
+                     "canManualRefresh":  false,
+                     "name":  "一箱金币",
+                     "icon":  "image/item/sd001_icon",
+                     "sort":  3
+                 },
+                 {
+                     "id":  104001,
+                     "shopId":  104,
+                     "rewardId":  1008,
+                     "cost":  [
+                                  [
+                                      "ITEM",
+                                      3,
+                                      150,
+                                      3
+                                  ]
+                              ],
+                     "discount":  null,
+                     "canManualRefresh":  false,
+                     "name":  "大量体力",
+                     "icon":  "",
+                     "sort":  1
+                 },
+                 {
+                     "id":  104002,
+                     "shopId":  104,
+                     "rewardId":  1009,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0,
+                                      3
+                                  ]
+                              ],
+                     "discount":  null,
+                     "canManualRefresh":  false,
+                     "name":  "少量体力",
+                     "icon":  "",
+                     "sort":  2
+                 }
+             ],
+    "sourceLength":  137,
+    "expectedLength":  137,
+    "validLength":  true
+}

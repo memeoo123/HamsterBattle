@@ -1,0 +1,1899 @@
+﻿{
+    "table":  "baglike.BagLikeItemConfig",
+    "columnCount":  15,
+    "rowCount":  68,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "shapeId",
+                       "token":  343,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "level",
+                       "token":  344,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "material1",
+                       "token":  "material1",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "material2",
+                       "token":  "material2",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "nextId",
+                       "token":  345,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  6,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "skill0",
+                       "token":  "skill0",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  8,
+                       "name":  "params",
+                       "token":  "params",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  9,
+                       "name":  "headPath",
+                       "token":  346,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  10,
+                       "name":  "modelId",
+                       "token":  347,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  11,
+                       "name":  "verifys",
+                       "token":  239,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  12,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  13,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  14,
+                       "name":  "showEffects",
+                       "token":  "showEffects",
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "P01",
+                     "shapeId":  1001,
+                     "level":  0,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "",
+                     "type":  "POWER",
+                     "skill0":  null,
+                     "params":  [
+                                    1000,
+                                    200,
+                                    10000
+                                ],
+                     "headPath":  "",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "",
+                     "desc":  "鼠鼠源动力",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "H0101",
+                     "shapeId":  1,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "H0102",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    1001
+                                ],
+                     "params":  [
+                                    "H01",
+                                    10,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0101",
+                     "modelId":  "H0101",
+                     "verifys":  null,
+                     "name":  "仓鼠战士",
+                     "desc":  "近战、快速召唤",
+                     "showEffects":  [
+                                         "RG_H01_abl01",
+                                         "RG_H01_abl02",
+                                         "RG_H01_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0102",
+                     "shapeId":  1,
+                     "level":  2,
+                     "material1":  "H0101",
+                     "material2":  "H0101",
+                     "nextId":  "H0103",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    1001
+                                ],
+                     "params":  [
+                                    "H01",
+                                    10,
+                                    15000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0102",
+                     "modelId":  "H0102",
+                     "verifys":  null,
+                     "name":  "仓鼠战士",
+                     "desc":  "近战、快速召唤",
+                     "showEffects":  [
+                                         "RG_H01_abl01",
+                                         "RG_H01_abl02",
+                                         "RG_H01_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0103",
+                     "shapeId":  1,
+                     "level":  3,
+                     "material1":  "H0102",
+                     "material2":  "H0102",
+                     "nextId":  "H0104",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    1001
+                                ],
+                     "params":  [
+                                    "H01",
+                                    10,
+                                    22500
+                                ],
+                     "headPath":  "image/heroSmallHead/H0103",
+                     "modelId":  "H0103",
+                     "verifys":  null,
+                     "name":  "仓鼠战士",
+                     "desc":  "近战、快速召唤",
+                     "showEffects":  [
+                                         "RG_H01_abl01",
+                                         "RG_H01_abl02",
+                                         "RG_H01_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0104",
+                     "shapeId":  1,
+                     "level":  4,
+                     "material1":  "H0103",
+                     "material2":  "H0103",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    1001
+                                ],
+                     "params":  [
+                                    "H01",
+                                    10,
+                                    33750
+                                ],
+                     "headPath":  "image/heroSmallHead/H0104",
+                     "modelId":  "H0104",
+                     "verifys":  null,
+                     "name":  "仓鼠战士",
+                     "desc":  "近战、快速召唤",
+                     "showEffects":  [
+                                         "RG_H01_abl01",
+                                         "RG_H01_abl02",
+                                         "RG_H01_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0201",
+                     "shapeId":  2,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "H0202",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    2001
+                                ],
+                     "params":  [
+                                    "H02",
+                                    8,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0201",
+                     "modelId":  "H0201",
+                     "verifys":  null,
+                     "name":  "仓鼠射手",
+                     "desc":  "远程、高攻速",
+                     "showEffects":  [
+                                         "RG_H02_abl01",
+                                         "RG_H02_abl02",
+                                         "RG_H02_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0202",
+                     "shapeId":  2,
+                     "level":  2,
+                     "material1":  "H0201",
+                     "material2":  "H0201",
+                     "nextId":  "H0203",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    2001
+                                ],
+                     "params":  [
+                                    "H02",
+                                    8,
+                                    15000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0202",
+                     "modelId":  "H0202",
+                     "verifys":  null,
+                     "name":  "仓鼠射手",
+                     "desc":  "远程、高攻速",
+                     "showEffects":  [
+                                         "RG_H02_abl01",
+                                         "RG_H02_abl02",
+                                         "RG_H02_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0203",
+                     "shapeId":  2,
+                     "level":  3,
+                     "material1":  "H0202",
+                     "material2":  "H0202",
+                     "nextId":  "H0204",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    2001
+                                ],
+                     "params":  [
+                                    "H02",
+                                    8,
+                                    22500
+                                ],
+                     "headPath":  "image/heroSmallHead/H0203",
+                     "modelId":  "H0203",
+                     "verifys":  null,
+                     "name":  "仓鼠射手",
+                     "desc":  "远程、高攻速",
+                     "showEffects":  [
+                                         "RG_H02_abl01",
+                                         "RG_H02_abl02",
+                                         "RG_H02_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0204",
+                     "shapeId":  2,
+                     "level":  4,
+                     "material1":  "H0203",
+                     "material2":  "H0203",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    2002
+                                ],
+                     "params":  [
+                                    "H02",
+                                    8,
+                                    33750
+                                ],
+                     "headPath":  "image/heroSmallHead/H0204",
+                     "modelId":  "H0204",
+                     "verifys":  null,
+                     "name":  "仓鼠射手",
+                     "desc":  "远程、高攻速",
+                     "showEffects":  [
+                                         "RG_H02_abl01",
+                                         "RG_H02_abl02",
+                                         "RG_H02_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0301",
+                     "shapeId":  3,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "H0302",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    3001
+                                ],
+                     "params":  [
+                                    "H03",
+                                    7,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0301",
+                     "modelId":  "H0301",
+                     "verifys":  null,
+                     "name":  "仓鼠法师",
+                     "desc":  "远程、高攻击、控制",
+                     "showEffects":  [
+                                         "RG_H03_abl01",
+                                         "RG_H03_abl02",
+                                         "RG_H03_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0302",
+                     "shapeId":  3,
+                     "level":  2,
+                     "material1":  "H0301",
+                     "material2":  "H0301",
+                     "nextId":  "H0303",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    3001
+                                ],
+                     "params":  [
+                                    "H03",
+                                    7,
+                                    15000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0302",
+                     "modelId":  "H0302",
+                     "verifys":  null,
+                     "name":  "仓鼠法师",
+                     "desc":  "远程、高攻击、控制",
+                     "showEffects":  [
+                                         "RG_H03_abl01",
+                                         "RG_H03_abl02",
+                                         "RG_H03_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0303",
+                     "shapeId":  3,
+                     "level":  3,
+                     "material1":  "H0302",
+                     "material2":  "H0302",
+                     "nextId":  "H0304",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    3001
+                                ],
+                     "params":  [
+                                    "H03",
+                                    7,
+                                    22500
+                                ],
+                     "headPath":  "image/heroSmallHead/H0303",
+                     "modelId":  "H0303",
+                     "verifys":  null,
+                     "name":  "仓鼠法师",
+                     "desc":  "远程、高攻击、控制",
+                     "showEffects":  [
+                                         "RG_H03_abl01",
+                                         "RG_H03_abl02",
+                                         "RG_H03_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0304",
+                     "shapeId":  3,
+                     "level":  4,
+                     "material1":  "H0303",
+                     "material2":  "H0303",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    3001
+                                ],
+                     "params":  [
+                                    "H03",
+                                    7,
+                                    33750
+                                ],
+                     "headPath":  "image/heroSmallHead/H0304",
+                     "modelId":  "H0304",
+                     "verifys":  null,
+                     "name":  "仓鼠法师",
+                     "desc":  "远程、高攻击、控制",
+                     "showEffects":  [
+                                         "RG_H03_abl01",
+                                         "RG_H03_abl02",
+                                         "RG_H03_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0401",
+                     "shapeId":  5,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "H0402",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    4001
+                                ],
+                     "params":  [
+                                    "H04",
+                                    6,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0401",
+                     "modelId":  "H0401",
+                     "verifys":  null,
+                     "name":  "仓鼠骑士",
+                     "desc":  "近战、高血量、自身恢复",
+                     "showEffects":  [
+                                         "RG_H04_abl01",
+                                         "RG_H04_abl02",
+                                         "RG_H04_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0402",
+                     "shapeId":  5,
+                     "level":  2,
+                     "material1":  "H0401",
+                     "material2":  "H0401",
+                     "nextId":  "H0403",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    4001
+                                ],
+                     "params":  [
+                                    "H04",
+                                    6,
+                                    15000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0402",
+                     "modelId":  "H0402",
+                     "verifys":  null,
+                     "name":  "仓鼠骑士",
+                     "desc":  "近战、高血量、自身恢复",
+                     "showEffects":  [
+                                         "RG_H04_abl01",
+                                         "RG_H04_abl02",
+                                         "RG_H04_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0403",
+                     "shapeId":  5,
+                     "level":  3,
+                     "material1":  "H0402",
+                     "material2":  "H0402",
+                     "nextId":  "H0404",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    4001
+                                ],
+                     "params":  [
+                                    "H04",
+                                    6,
+                                    22500
+                                ],
+                     "headPath":  "image/heroSmallHead/H0403",
+                     "modelId":  "H0403",
+                     "verifys":  null,
+                     "name":  "仓鼠骑士",
+                     "desc":  "近战、高血量、自身恢复",
+                     "showEffects":  [
+                                         "RG_H04_abl01",
+                                         "RG_H04_abl02",
+                                         "RG_H04_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0404",
+                     "shapeId":  5,
+                     "level":  4,
+                     "material1":  "H0403",
+                     "material2":  "H0403",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    4001
+                                ],
+                     "params":  [
+                                    "H04",
+                                    6,
+                                    33750
+                                ],
+                     "headPath":  "image/heroSmallHead/H0404",
+                     "modelId":  "H0404",
+                     "verifys":  null,
+                     "name":  "仓鼠骑士",
+                     "desc":  "近战、高血量、自身恢复",
+                     "showEffects":  [
+                                         "RG_H04_abl01",
+                                         "RG_H04_abl02",
+                                         "RG_H04_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0501",
+                     "shapeId":  6,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "H0502",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    5001
+                                ],
+                     "params":  [
+                                    "H05",
+                                    5,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0501",
+                     "modelId":  "H0501",
+                     "verifys":  null,
+                     "name":  "仓鼠召唤师",
+                     "desc":  "中距离、辅助支援",
+                     "showEffects":  [
+                                         "RG_H05_abl01",
+                                         "RG_H05_abl02",
+                                         "RG_H05_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0502",
+                     "shapeId":  6,
+                     "level":  2,
+                     "material1":  "H0501",
+                     "material2":  "H0501",
+                     "nextId":  "H0503",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    5001
+                                ],
+                     "params":  [
+                                    "H05",
+                                    5,
+                                    15000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0502",
+                     "modelId":  "H0502",
+                     "verifys":  null,
+                     "name":  "仓鼠召唤师",
+                     "desc":  "中距离、辅助支援",
+                     "showEffects":  [
+                                         "RG_H05_abl01",
+                                         "RG_H05_abl02",
+                                         "RG_H05_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0503",
+                     "shapeId":  6,
+                     "level":  3,
+                     "material1":  "H0502",
+                     "material2":  "H0502",
+                     "nextId":  "H0504",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    5001
+                                ],
+                     "params":  [
+                                    "H05",
+                                    5,
+                                    22500
+                                ],
+                     "headPath":  "image/heroSmallHead/H0503",
+                     "modelId":  "H0503",
+                     "verifys":  null,
+                     "name":  "仓鼠召唤师",
+                     "desc":  "中距离、辅助支援",
+                     "showEffects":  [
+                                         "RG_H05_abl01",
+                                         "RG_H05_abl02",
+                                         "RG_H05_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0504",
+                     "shapeId":  6,
+                     "level":  4,
+                     "material1":  "H0503",
+                     "material2":  "H0503",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    5001
+                                ],
+                     "params":  [
+                                    "H05",
+                                    5,
+                                    33750
+                                ],
+                     "headPath":  "image/heroSmallHead/H0504",
+                     "modelId":  "H0504",
+                     "verifys":  null,
+                     "name":  "仓鼠召唤师",
+                     "desc":  "中距离、辅助支援",
+                     "showEffects":  [
+                                         "RG_H05_abl01",
+                                         "RG_H05_abl02",
+                                         "RG_H05_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0601",
+                     "shapeId":  10,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "H0602",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    6001
+                                ],
+                     "params":  [
+                                    "H06",
+                                    3,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0601",
+                     "modelId":  "H0601",
+                     "verifys":  null,
+                     "name":  "仓鼠飞行员",
+                     "desc":  "远程、范围攻击、高爆发",
+                     "showEffects":  [
+                                         "RG_H06_abl01",
+                                         "RG_H06_abl02",
+                                         "RG_H06_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0602",
+                     "shapeId":  10,
+                     "level":  2,
+                     "material1":  "H0601",
+                     "material2":  "H0601",
+                     "nextId":  "H0603",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    6001
+                                ],
+                     "params":  [
+                                    "H06",
+                                    3,
+                                    15000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0602",
+                     "modelId":  "H0602",
+                     "verifys":  null,
+                     "name":  "仓鼠飞行员",
+                     "desc":  "远程、范围攻击、高爆发",
+                     "showEffects":  [
+                                         "RG_H06_abl01",
+                                         "RG_H06_abl02",
+                                         "RG_H06_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0603",
+                     "shapeId":  10,
+                     "level":  3,
+                     "material1":  "H0602",
+                     "material2":  "H0602",
+                     "nextId":  "H0604",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    6001
+                                ],
+                     "params":  [
+                                    "H06",
+                                    3,
+                                    22500
+                                ],
+                     "headPath":  "image/heroSmallHead/H0603",
+                     "modelId":  "H0603",
+                     "verifys":  null,
+                     "name":  "仓鼠飞行员",
+                     "desc":  "远程、范围攻击、高爆发",
+                     "showEffects":  [
+                                         "RG_H06_abl01",
+                                         "RG_H06_abl02",
+                                         "RG_H06_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0604",
+                     "shapeId":  10,
+                     "level":  4,
+                     "material1":  "H0603",
+                     "material2":  "H0603",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    6001
+                                ],
+                     "params":  [
+                                    "H06",
+                                    3,
+                                    33750
+                                ],
+                     "headPath":  "image/heroSmallHead/H0604",
+                     "modelId":  "H0604",
+                     "verifys":  null,
+                     "name":  "仓鼠飞行员",
+                     "desc":  "远程、范围攻击、高爆发",
+                     "showEffects":  [
+                                         "RG_H06_abl01",
+                                         "RG_H06_abl02",
+                                         "RG_H06_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H0705",
+                     "shapeId":  2,
+                     "level":  5,
+                     "material1":  "H0104",
+                     "material2":  "H0204",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    8001,
+                                    "8001_2"
+                                ],
+                     "params":  [
+                                    "H07",
+                                    8,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0705",
+                     "modelId":  "R1001",
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H01",
+                                         2
+                                     ],
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H02",
+                                         2
+                                     ]
+                                 ],
+                     "name":  "仓鼠铁铁侠",
+                     "desc":  "中距离、范围攻击",
+                     "showEffects":  [
+                                         "RG_H01_abl01",
+                                         "RG_H01_abl02",
+                                         "RG_H01_abl03",
+                                         "RG_H02_abl01",
+                                         "RG_H02_abl02",
+                                         "RG_H02_abl03",
+                                         "RG_H7_abl01"
+                                     ]
+                 },
+                 {
+                     "id":  "H0805",
+                     "shapeId":  3,
+                     "level":  5,
+                     "material1":  "H0304",
+                     "material2":  "H1204",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    7001,
+                                    "7001_2"
+                                ],
+                     "params":  [
+                                    "H08",
+                                    7,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0805",
+                     "modelId":  "R1002",
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H03",
+                                         3
+                                     ],
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H12",
+                                         3
+                                     ]
+                                 ],
+                     "name":  "仓鼠凹凸曼",
+                     "desc":  "中距离、范围攻击",
+                     "showEffects":  [
+                                         "RG_H03_abl01",
+                                         "RG_H03_abl02",
+                                         "RG_H03_abl03",
+                                         "RG_H12_abl01",
+                                         "RG_H12_abl02",
+                                         "RG_H12_abl03",
+                                         "RG_H8_abl01"
+                                     ]
+                 },
+                 {
+                     "id":  "H0905",
+                     "shapeId":  7,
+                     "level":  5,
+                     "material1":  "H0404",
+                     "material2":  "H1304",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    9001,
+                                    "9001_2"
+                                ],
+                     "params":  [
+                                    "H09",
+                                    6,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H0905",
+                     "modelId":  "R1003",
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H04",
+                                         5
+                                     ],
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H13",
+                                         5
+                                     ]
+                                 ],
+                     "name":  "仓鼠战车",
+                     "desc":  "中距离、高血量",
+                     "showEffects":  [
+                                         "RG_H04_abl01",
+                                         "RG_H04_abl02",
+                                         "RG_H04_abl03",
+                                         "RG_H13_abl01",
+                                         "RG_H13_abl02",
+                                         "RG_H13_abl03",
+                                         "RG_H9_abl01"
+                                     ]
+                 },
+                 {
+                     "id":  "H1005",
+                     "shapeId":  10,
+                     "level":  5,
+                     "material1":  "H0504",
+                     "material2":  "H0604",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    10001,
+                                    "10001_2"
+                                ],
+                     "params":  [
+                                    "H10",
+                                    3,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1005",
+                     "modelId":  "R1004",
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H05",
+                                         5
+                                     ],
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H06",
+                                         5
+                                     ]
+                                 ],
+                     "name":  "仓鼠飞碟",
+                     "desc":  "远程、最强爆发",
+                     "showEffects":  [
+                                         "RG_H05_abl01",
+                                         "RG_H05_abl02",
+                                         "RG_H05_abl03",
+                                         "RG_H06_abl01",
+                                         "RG_H06_abl02",
+                                         "RG_H06_abl03",
+                                         "RG_H10_abl01"
+                                     ]
+                 },
+                 {
+                     "id":  "G01",
+                     "shapeId":  1,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "",
+                     "type":  "GRID",
+                     "skill0":  null,
+                     "params":  null,
+                     "headPath":  "",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "1x1格子",
+                     "desc":  "高攻击、高暴击、高爆伤",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "G02",
+                     "shapeId":  2,
+                     "level":  2,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "",
+                     "type":  "GRID",
+                     "skill0":  null,
+                     "params":  null,
+                     "headPath":  "",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "横向两格",
+                     "desc":  "高攻击、高暴击、高爆伤",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "G03",
+                     "shapeId":  3,
+                     "level":  2,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "",
+                     "type":  "GRID",
+                     "skill0":  null,
+                     "params":  null,
+                     "headPath":  "",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "纵向两格",
+                     "desc":  "高攻击、高暴击、高爆伤",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "G04",
+                     "shapeId":  4,
+                     "level":  3,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "",
+                     "type":  "GRID",
+                     "skill0":  null,
+                     "params":  null,
+                     "headPath":  "",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "横向三格",
+                     "desc":  "高攻击、高暴击、高爆伤",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "G05",
+                     "shapeId":  5,
+                     "level":  3,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "",
+                     "type":  "GRID",
+                     "skill0":  null,
+                     "params":  null,
+                     "headPath":  "",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "纵向三格",
+                     "desc":  "高攻击、高暴击、高爆伤",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "G06",
+                     "shapeId":  6,
+                     "level":  3,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "",
+                     "type":  "GRID",
+                     "skill0":  null,
+                     "params":  null,
+                     "headPath":  "",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "└",
+                     "desc":  "高攻击、高暴击、高爆伤",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "G07",
+                     "shapeId":  7,
+                     "level":  3,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "",
+                     "type":  "GRID",
+                     "skill0":  null,
+                     "params":  null,
+                     "headPath":  "",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "┌",
+                     "desc":  "高攻击、高暴击、高爆伤",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "G08",
+                     "shapeId":  8,
+                     "level":  3,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "",
+                     "type":  "GRID",
+                     "skill0":  null,
+                     "params":  null,
+                     "headPath":  "",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "┘",
+                     "desc":  "高攻击、高暴击、高爆伤",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "G09",
+                     "shapeId":  9,
+                     "level":  3,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "",
+                     "type":  "GRID",
+                     "skill0":  null,
+                     "params":  null,
+                     "headPath":  "",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "┐",
+                     "desc":  "高攻击、高暴击、高爆伤",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "H1101",
+                     "shapeId":  3,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "H1102",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "ZL_1101"
+                                ],
+                     "params":  [
+                                    "H11",
+                                    9,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1101",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "治疗齿轮",
+                     "desc":  "治疗仓鼠、治疗基地",
+                     "showEffects":  [
+                                         "RG_H11_abl01",
+                                         "RG_H11_abl02",
+                                         "RG_H11_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1102",
+                     "shapeId":  3,
+                     "level":  2,
+                     "material1":  "H1101",
+                     "material2":  "H1101",
+                     "nextId":  "H1103",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "ZL_1101"
+                                ],
+                     "params":  [
+                                    "H11",
+                                    9,
+                                    15000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1101",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "治疗齿轮",
+                     "desc":  "治疗仓鼠、治疗基地",
+                     "showEffects":  [
+                                         "RG_H11_abl01",
+                                         "RG_H11_abl02",
+                                         "RG_H11_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1103",
+                     "shapeId":  3,
+                     "level":  3,
+                     "material1":  "H1102",
+                     "material2":  "H1102",
+                     "nextId":  "H1104",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "ZL_1101"
+                                ],
+                     "params":  [
+                                    "H11",
+                                    9,
+                                    22500
+                                ],
+                     "headPath":  "image/heroSmallHead/H1101",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "治疗齿轮",
+                     "desc":  "治疗仓鼠、治疗基地",
+                     "showEffects":  [
+                                         "RG_H11_abl01",
+                                         "RG_H11_abl02",
+                                         "RG_H11_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1104",
+                     "shapeId":  3,
+                     "level":  4,
+                     "material1":  "H1103",
+                     "material2":  "H1103",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "ZL_1101"
+                                ],
+                     "params":  [
+                                    "H11",
+                                    9,
+                                    33750
+                                ],
+                     "headPath":  "image/heroSmallHead/H1101",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "治疗齿轮",
+                     "desc":  "治疗仓鼠、治疗基地",
+                     "showEffects":  [
+                                         "RG_H11_abl01",
+                                         "RG_H11_abl02",
+                                         "RG_H11_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1201",
+                     "shapeId":  2,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "H1202",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "LY_1201"
+                                ],
+                     "params":  [
+                                    "H12",
+                                    20,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1201",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "雷云齿轮",
+                     "desc":  "高频攻击、麻痹控制",
+                     "showEffects":  [
+                                         "RG_H12_abl01",
+                                         "RG_H12_abl02",
+                                         "RG_H12_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1202",
+                     "shapeId":  2,
+                     "level":  2,
+                     "material1":  "H1201",
+                     "material2":  "H1201",
+                     "nextId":  "H1203",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "LY_1201"
+                                ],
+                     "params":  [
+                                    "H12",
+                                    20,
+                                    15000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1201",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "雷云齿轮",
+                     "desc":  "高频攻击、麻痹控制",
+                     "showEffects":  [
+                                         "RG_H12_abl01",
+                                         "RG_H12_abl02",
+                                         "RG_H12_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1203",
+                     "shapeId":  2,
+                     "level":  3,
+                     "material1":  "H1202",
+                     "material2":  "H1202",
+                     "nextId":  "H1204",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "LY_1201"
+                                ],
+                     "params":  [
+                                    "H12",
+                                    20,
+                                    22500
+                                ],
+                     "headPath":  "image/heroSmallHead/H1201",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "雷云齿轮",
+                     "desc":  "高频攻击、麻痹控制",
+                     "showEffects":  [
+                                         "RG_H12_abl01",
+                                         "RG_H12_abl02",
+                                         "RG_H12_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1204",
+                     "shapeId":  2,
+                     "level":  4,
+                     "material1":  "H1203",
+                     "material2":  "H1203",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "LY_1201"
+                                ],
+                     "params":  [
+                                    "H12",
+                                    20,
+                                    33750
+                                ],
+                     "headPath":  "image/heroSmallHead/H1201",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "雷云齿轮",
+                     "desc":  "高频攻击、麻痹控制",
+                     "showEffects":  [
+                                         "RG_H12_abl01",
+                                         "RG_H12_abl02",
+                                         "RG_H12_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1301",
+                     "shapeId":  7,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "H1302",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "TZ_1301"
+                                ],
+                     "params":  [
+                                    "H13",
+                                    15,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1301",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "火炮齿轮",
+                     "desc":  "弹射攻击、高伤害",
+                     "showEffects":  [
+                                         "RG_H13_abl01",
+                                         "RG_H13_abl02",
+                                         "RG_H13_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1302",
+                     "shapeId":  7,
+                     "level":  2,
+                     "material1":  "H1301",
+                     "material2":  "H1301",
+                     "nextId":  "H1303",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "TZ_1301"
+                                ],
+                     "params":  [
+                                    "H13",
+                                    15,
+                                    15000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1301",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "火炮齿轮",
+                     "desc":  "弹射攻击、高伤害",
+                     "showEffects":  [
+                                         "RG_H13_abl01",
+                                         "RG_H13_abl02",
+                                         "RG_H13_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1303",
+                     "shapeId":  7,
+                     "level":  3,
+                     "material1":  "H1302",
+                     "material2":  "H1302",
+                     "nextId":  "H1304",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "TZ_1301"
+                                ],
+                     "params":  [
+                                    "H13",
+                                    15,
+                                    22500
+                                ],
+                     "headPath":  "image/heroSmallHead/H1301",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "火炮齿轮",
+                     "desc":  "弹射攻击、高伤害",
+                     "showEffects":  [
+                                         "RG_H13_abl01",
+                                         "RG_H13_abl02",
+                                         "RG_H13_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1304",
+                     "shapeId":  7,
+                     "level":  4,
+                     "material1":  "H1303",
+                     "material2":  "H1303",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "TZ_1301"
+                                ],
+                     "params":  [
+                                    "H13",
+                                    15,
+                                    33750
+                                ],
+                     "headPath":  "image/heroSmallHead/H1301",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "火炮齿轮",
+                     "desc":  "弹射攻击、高伤害",
+                     "showEffects":  [
+                                         "RG_H13_abl01",
+                                         "RG_H13_abl02",
+                                         "RG_H13_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1401",
+                     "shapeId":  8,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "H1402",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "SY_1401"
+                                ],
+                     "params":  [
+                                    "H14",
+                                    12,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1401",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "鲨鱼齿轮",
+                     "desc":  "范围伤害、控制击退",
+                     "showEffects":  [
+                                         "RG_H14_abl01",
+                                         "RG_H14_abl02",
+                                         "RG_H14_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1402",
+                     "shapeId":  8,
+                     "level":  2,
+                     "material1":  "H1401",
+                     "material2":  "H1401",
+                     "nextId":  "H1403",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "SY_1401"
+                                ],
+                     "params":  [
+                                    "H14",
+                                    12,
+                                    15000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1401",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "鲨鱼齿轮",
+                     "desc":  "范围伤害、控制击退",
+                     "showEffects":  [
+                                         "RG_H14_abl01",
+                                         "RG_H14_abl02",
+                                         "RG_H14_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1403",
+                     "shapeId":  8,
+                     "level":  3,
+                     "material1":  "H1402",
+                     "material2":  "H1402",
+                     "nextId":  "H1404",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "SY_1401"
+                                ],
+                     "params":  [
+                                    "H14",
+                                    12,
+                                    22500
+                                ],
+                     "headPath":  "image/heroSmallHead/H1401",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "鲨鱼齿轮",
+                     "desc":  "范围伤害、控制击退",
+                     "showEffects":  [
+                                         "RG_H14_abl01",
+                                         "RG_H14_abl02",
+                                         "RG_H14_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1404",
+                     "shapeId":  8,
+                     "level":  4,
+                     "material1":  "H1403",
+                     "material2":  "H1403",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "SY_1401"
+                                ],
+                     "params":  [
+                                    "H14",
+                                    12,
+                                    33750
+                                ],
+                     "headPath":  "image/heroSmallHead/H1401",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "鲨鱼齿轮",
+                     "desc":  "范围伤害、控制击退",
+                     "showEffects":  [
+                                         "RG_H14_abl01",
+                                         "RG_H14_abl02",
+                                         "RG_H14_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1505",
+                     "shapeId":  8,
+                     "level":  5,
+                     "material1":  "H1404",
+                     "material2":  "C04",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    110001
+                                ],
+                     "params":  [
+                                    "H15",
+                                    12,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1505",
+                     "modelId":  "",
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H14",
+                                         5
+                                     ]
+                                 ],
+                     "name":  "吞宝鲨",
+                     "desc":  "范围伤害、击杀获得金币",
+                     "showEffects":  [
+                                         "RG_H14_abl01",
+                                         "RG_H14_abl02",
+                                         "RG_H14_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "C01",
+                     "shapeId":  1,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "C02",
+                     "type":  "COIN",
+                     "skill0":  null,
+                     "params":  [
+                                    3,
+                                    2
+                                ],
+                     "headPath":  "image/heroSmallHead/coin",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "银币齿轮",
+                     "desc":  "满眼都是小银币！",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "C02",
+                     "shapeId":  1,
+                     "level":  2,
+                     "material1":  "C01",
+                     "material2":  "C01",
+                     "nextId":  "C03",
+                     "type":  "COIN",
+                     "skill0":  null,
+                     "params":  [
+                                    3,
+                                    4
+                                ],
+                     "headPath":  "image/heroSmallHead/coin",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "银币齿轮",
+                     "desc":  "满眼都是小银币！",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "C03",
+                     "shapeId":  1,
+                     "level":  3,
+                     "material1":  "C02",
+                     "material2":  "C02",
+                     "nextId":  "C04",
+                     "type":  "COIN",
+                     "skill0":  null,
+                     "params":  [
+                                    3,
+                                    8
+                                ],
+                     "headPath":  "image/heroSmallHead/coin",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "银币齿轮",
+                     "desc":  "满眼都是小银币！",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "C04",
+                     "shapeId":  1,
+                     "level":  4,
+                     "material1":  "C03",
+                     "material2":  "C03",
+                     "nextId":  "",
+                     "type":  "COIN",
+                     "skill0":  null,
+                     "params":  [
+                                    3,
+                                    16
+                                ],
+                     "headPath":  "image/heroSmallHead/coin",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "银币齿轮",
+                     "desc":  "满眼都是小银币！",
+                     "showEffects":  null
+                 },
+                 {
+                     "id":  "H1601",
+                     "shapeId":  9,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "H1602",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    11001
+                                ],
+                     "params":  [
+                                    "H16",
+                                    4,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1601",
+                     "modelId":  "H1601",
+                     "verifys":  null,
+                     "name":  "仓鼠怪兽",
+                     "desc":  "嘲讽、攻击型坦克",
+                     "showEffects":  [
+                                         "RG_H16_abl01",
+                                         "RG_H16_abl02",
+                                         "RG_H16_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1602",
+                     "shapeId":  9,
+                     "level":  2,
+                     "material1":  "H1601",
+                     "material2":  "H1601",
+                     "nextId":  "H1603",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    11001
+                                ],
+                     "params":  [
+                                    "H16",
+                                    4,
+                                    15000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1602",
+                     "modelId":  "H1602",
+                     "verifys":  null,
+                     "name":  "仓鼠怪兽",
+                     "desc":  "嘲讽、攻击型坦克",
+                     "showEffects":  [
+                                         "RG_H16_abl01",
+                                         "RG_H16_abl02",
+                                         "RG_H16_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1603",
+                     "shapeId":  9,
+                     "level":  3,
+                     "material1":  "H1602",
+                     "material2":  "H1602",
+                     "nextId":  "H1604",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    11001
+                                ],
+                     "params":  [
+                                    "H16",
+                                    4,
+                                    22500
+                                ],
+                     "headPath":  "image/heroSmallHead/H1603",
+                     "modelId":  "H1603",
+                     "verifys":  null,
+                     "name":  "仓鼠怪兽",
+                     "desc":  "嘲讽、攻击型坦克",
+                     "showEffects":  [
+                                         "RG_H16_abl01",
+                                         "RG_H16_abl02",
+                                         "RG_H16_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1604",
+                     "shapeId":  9,
+                     "level":  4,
+                     "material1":  "H1603",
+                     "material2":  "H1603",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    11001
+                                ],
+                     "params":  [
+                                    "H16",
+                                    4,
+                                    33750
+                                ],
+                     "headPath":  "image/heroSmallHead/H1604",
+                     "modelId":  "H1604",
+                     "verifys":  null,
+                     "name":  "仓鼠怪兽",
+                     "desc":  "嘲讽、攻击型坦克",
+                     "showEffects":  [
+                                         "RG_H16_abl01",
+                                         "RG_H16_abl02",
+                                         "RG_H16_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1701",
+                     "shapeId":  4,
+                     "level":  1,
+                     "material1":  "",
+                     "material2":  "",
+                     "nextId":  "H1702",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "LS_1501"
+                                ],
+                     "params":  [
+                                    "H17",
+                                    7,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1701",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "镭射齿轮",
+                     "desc":  "高频高攻，需要布阵策略",
+                     "showEffects":  [
+                                         "RG_H17_abl01",
+                                         "RG_H17_abl02",
+                                         "RG_H17_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1702",
+                     "shapeId":  4,
+                     "level":  2,
+                     "material1":  "H1701",
+                     "material2":  "H1701",
+                     "nextId":  "H1703",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "LS_1501"
+                                ],
+                     "params":  [
+                                    "H17",
+                                    7,
+                                    15000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1701",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "镭射齿轮",
+                     "desc":  "高频高攻，需要布阵策略",
+                     "showEffects":  [
+                                         "RG_H17_abl01",
+                                         "RG_H17_abl02",
+                                         "RG_H17_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1703",
+                     "shapeId":  4,
+                     "level":  3,
+                     "material1":  "H1702",
+                     "material2":  "H1702",
+                     "nextId":  "H1704",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "LS_1501"
+                                ],
+                     "params":  [
+                                    "H17",
+                                    7,
+                                    22500
+                                ],
+                     "headPath":  "image/heroSmallHead/H1701",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "镭射齿轮",
+                     "desc":  "高频高攻，需要布阵策略",
+                     "showEffects":  [
+                                         "RG_H17_abl01",
+                                         "RG_H17_abl02",
+                                         "RG_H17_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1704",
+                     "shapeId":  4,
+                     "level":  4,
+                     "material1":  "H1703",
+                     "material2":  "H1703",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    "LS_1501"
+                                ],
+                     "params":  [
+                                    "H17",
+                                    7,
+                                    33750
+                                ],
+                     "headPath":  "image/heroSmallHead/H1701",
+                     "modelId":  "",
+                     "verifys":  null,
+                     "name":  "镭射齿轮",
+                     "desc":  "高频高攻，需要布阵策略",
+                     "showEffects":  [
+                                         "RG_H17_abl01",
+                                         "RG_H17_abl02",
+                                         "RG_H17_abl03"
+                                     ]
+                 },
+                 {
+                     "id":  "H1805",
+                     "shapeId":  9,
+                     "level":  5,
+                     "material1":  "H1604",
+                     "material2":  "H1704",
+                     "nextId":  "",
+                     "type":  "HERO",
+                     "skill0":  [
+                                    12001,
+                                    "12001_2"
+                                ],
+                     "params":  [
+                                    "H18",
+                                    4,
+                                    10000
+                                ],
+                     "headPath":  "image/heroSmallHead/H1805",
+                     "modelId":  "R1005",
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H16",
+                                         5
+                                     ],
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H17",
+                                         5
+                                     ]
+                                 ],
+                     "name":  "仓鼠哥吱拉",
+                     "desc":  "史诗巨兽最强近战单位",
+                     "showEffects":  [
+                                         "RG_H16_abl01",
+                                         "RG_H16_abl02",
+                                         "RG_H16_abl03",
+                                         "RG_H17_abl01",
+                                         "RG_H17_abl02",
+                                         "RG_H17_abl03"
+                                     ]
+                 }
+             ],
+    "sourceLength":  1052,
+    "expectedLength":  1052,
+    "validLength":  true
+}

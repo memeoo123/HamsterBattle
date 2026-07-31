@@ -1,0 +1,1959 @@
+﻿{
+    "table":  "baglike.BagLikeAbilityEffectConfig",
+    "columnCount":  14,
+    "rowCount":  78,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "group",
+                       "token":  236,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "effectiveId",
+                       "token":  237,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "rangeType",
+                       "token":  238,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "range",
+                       "token":  31,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  5,
+                       "name":  "verifys",
+                       "token":  239,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  6,
+                       "name":  "conditions",
+                       "token":  "conditions",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  7,
+                       "name":  "weight",
+                       "token":  240,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "times",
+                       "token":  241,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  9,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  10,
+                       "name":  "quality",
+                       "token":  30,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  11,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  12,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  13,
+                       "name":  "noRestore",
+                       "token":  "noRestore",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "RG_ALL_abl01_eff01",
+                     "group":  "RG_ALL_abl01",
+                     "effectiveId":  "RG_ALL_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H01",
+                                   "H02",
+                                   "H03",
+                                   "H04",
+                                   "H05",
+                                   "H06",
+                                   "H07",
+                                   "H08",
+                                   "H09",
+                                   "H10"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  20,
+                     "times":  99,
+                     "icon":  "image/effect/buff_0025",
+                     "quality":  2,
+                     "name":  "攻击强化·1",
+                     "desc":  "增加所有仓鼠\u003ccolor=#28f27d\u003e5%\u003c/color\u003e攻击",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl02_eff01",
+                     "group":  "RG_ALL_abl02",
+                     "effectiveId":  "RG_ALL_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H01",
+                                   "H02",
+                                   "H03",
+                                   "H04",
+                                   "H05",
+                                   "H06",
+                                   "H07",
+                                   "H08",
+                                   "H09",
+                                   "H10"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  10,
+                     "times":  99,
+                     "icon":  "image/effect/buff_0025",
+                     "quality":  3,
+                     "name":  "攻击强化·2",
+                     "desc":  "增加所有仓鼠\u003ccolor=#28f27d\u003e10%\u003c/color\u003e攻击",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl03_eff01",
+                     "group":  "RG_ALL_abl03",
+                     "effectiveId":  "RG_ALL_abl03_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H01",
+                                   "H02",
+                                   "H03",
+                                   "H04",
+                                   "H05",
+                                   "H06",
+                                   "H07",
+                                   "H08",
+                                   "H09",
+                                   "H10"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  5,
+                     "times":  99,
+                     "icon":  "image/effect/buff_0025",
+                     "quality":  4,
+                     "name":  "攻击强化·3",
+                     "desc":  "增加所有仓鼠\u003ccolor=#28f27d\u003e15%\u003c/color\u003e攻击",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl04_eff01",
+                     "group":  "RG_ALL_abl04",
+                     "effectiveId":  "RG_ALL_abl04_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H01",
+                                   "H02",
+                                   "H03",
+                                   "H04",
+                                   "H05",
+                                   "H06",
+                                   "H07",
+                                   "H08",
+                                   "H09",
+                                   "H10"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  20,
+                     "times":  99,
+                     "icon":  "image/effect/buff_0024",
+                     "quality":  2,
+                     "name":  "攻速强化·1",
+                     "desc":  "增加所有仓鼠\u003ccolor=#28f27d\u003e5%\u003c/color\u003e攻速",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl05_eff01",
+                     "group":  "RG_ALL_abl05",
+                     "effectiveId":  "RG_ALL_abl05_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H01",
+                                   "H02",
+                                   "H03",
+                                   "H04",
+                                   "H05",
+                                   "H06",
+                                   "H07",
+                                   "H08",
+                                   "H09",
+                                   "H10"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  10,
+                     "times":  99,
+                     "icon":  "image/effect/buff_0024",
+                     "quality":  3,
+                     "name":  "攻速强化·2",
+                     "desc":  "增加所有仓鼠\u003ccolor=#28f27d\u003e10%\u003c/color\u003e攻速",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl06_eff01",
+                     "group":  "RG_ALL_abl06",
+                     "effectiveId":  "RG_ALL_abl06_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H01",
+                                   "H02",
+                                   "H03",
+                                   "H04",
+                                   "H05",
+                                   "H06",
+                                   "H07",
+                                   "H08",
+                                   "H09",
+                                   "H10"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  5,
+                     "times":  99,
+                     "icon":  "image/effect/buff_0024",
+                     "quality":  4,
+                     "name":  "攻速强化·3",
+                     "desc":  "增加所有仓鼠\u003ccolor=#28f27d\u003e15%\u003c/color\u003e攻速",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl07_eff01",
+                     "group":  "RG_ALL_abl07",
+                     "effectiveId":  "RG_ALL_abl07_eff01",
+                     "rangeType":  "",
+                     "range":  null,
+                     "verifys":  null,
+                     "conditions":  [
+                                        [
+                                            "WAVE_TIMES",
+                                            11,
+                                            15
+                                        ]
+                                    ],
+                     "weight":  5,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0009",
+                     "quality":  4,
+                     "name":  "经验强化",
+                     "desc":  "获得经验提升\u003ccolor=#28f27d\u003e50%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl08_eff01",
+                     "group":  "RG_ALL_abl08",
+                     "effectiveId":  "RG_ALL_abl08_eff01",
+                     "rangeType":  "MONSTER",
+                     "range":  null,
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  20,
+                     "times":  10,
+                     "icon":  "image/effect/buff_0021",
+                     "quality":  2,
+                     "name":  "攻击弱化",
+                     "desc":  "敌方全体攻击降低\u003ccolor=#28f27d\u003e5%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl09_eff01",
+                     "group":  "RG_ALL_abl09",
+                     "effectiveId":  "RG_ALL_abl09_eff01",
+                     "rangeType":  "BOSS",
+                     "range":  null,
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  10,
+                     "times":  99,
+                     "icon":  "image/effect/buff_0012",
+                     "quality":  3,
+                     "name":  "精英克星",
+                     "desc":  "对Boss伤害增加\u003ccolor=#28f27d\u003e30%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl10_eff01",
+                     "group":  "RG_ALL_abl10",
+                     "effectiveId":  "RG_ALL_abl10_eff01",
+                     "rangeType":  "",
+                     "range":  null,
+                     "verifys":  null,
+                     "conditions":  [
+                                        [
+                                            "WAVE_TIMES",
+                                            0,
+                                            10
+                                        ]
+                                    ],
+                     "weight":  10,
+                     "times":  99,
+                     "icon":  "image/effect/buff_0031",
+                     "quality":  3,
+                     "name":  "",
+                     "desc":  "随机\u003ccolor=#28f27d\u003e1\u003c/color\u003e个齿轮升级",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl11_eff01",
+                     "group":  "RG_ALL_abl11",
+                     "effectiveId":  "RG_ALL_abl11_eff01",
+                     "rangeType":  "",
+                     "range":  null,
+                     "verifys":  null,
+                     "conditions":  [
+                                        [
+                                            "WAVE_TIMES",
+                                            11,
+                                            15
+                                        ]
+                                    ],
+                     "weight":  10,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0010",
+                     "quality":  3,
+                     "name":  "",
+                     "desc":  "备战阶段免费刷新时，提升\u003ccolor=#28f27d\u003e2\u003c/color\u003e级齿轮出现概率",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl12_eff01",
+                     "group":  "RG_ALL_abl12",
+                     "effectiveId":  "RG_ALL_abl12_eff01",
+                     "rangeType":  "",
+                     "range":  null,
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  5,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0032",
+                     "quality":  4,
+                     "name":  "",
+                     "desc":  "动力仓鼠周围的齿轮攻击提升\u003ccolor=#28f27d\u003e20%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl13_eff01",
+                     "group":  "RG_ALL_abl13",
+                     "effectiveId":  "RG_ALL_abl13_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H11",
+                                   "H12",
+                                   "H13",
+                                   "H14",
+                                   "H15"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  20,
+                     "times":  99,
+                     "icon":  "image/effect/buff_0027",
+                     "quality":  2,
+                     "name":  "法术强化·1",
+                     "desc":  "增加所有法术齿轮\u003ccolor=#28f27d\u003e5%\u003c/color\u003e攻击",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl14_eff01",
+                     "group":  "RG_ALL_abl14",
+                     "effectiveId":  "RG_ALL_abl14_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H11",
+                                   "H12",
+                                   "H13",
+                                   "H14",
+                                   "H15"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  10,
+                     "times":  99,
+                     "icon":  "image/effect/buff_0027",
+                     "quality":  3,
+                     "name":  "法术强化·2",
+                     "desc":  "增加所有法术齿轮\u003ccolor=#28f27d\u003e10%\u003c/color\u003e攻击",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl15_eff01",
+                     "group":  "RG_ALL_abl15",
+                     "effectiveId":  "RG_ALL_abl15_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H11",
+                                   "H12",
+                                   "H13",
+                                   "H14",
+                                   "H15"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  5,
+                     "times":  99,
+                     "icon":  "image/effect/buff_0027",
+                     "quality":  4,
+                     "name":  "法术强化·3",
+                     "desc":  "增加所有法术齿轮\u003ccolor=#28f27d\u003e15%\u003c/color\u003e攻击",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl16_eff01",
+                     "group":  "RG_ALL_abl16",
+                     "effectiveId":  "RG_ALL_abl16_eff01",
+                     "rangeType":  "",
+                     "range":  null,
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  5,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0032",
+                     "quality":  4,
+                     "name":  "",
+                     "desc":  "动力仓鼠周围的齿轮效率提升\u003ccolor=#28f27d\u003e20%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_ALL_abl17_eff01",
+                     "group":  "RG_ALL_abl17",
+                     "effectiveId":  "RG_ALL_abl17_eff01",
+                     "rangeType":  "",
+                     "range":  null,
+                     "verifys":  null,
+                     "conditions":  [
+                                        [
+                                            "BASE_HP",
+                                            0,
+                                            50
+                                        ]
+                                    ],
+                     "weight":  999,
+                     "times":  99,
+                     "icon":  "image/effect/buff_0015",
+                     "quality":  4,
+                     "name":  "",
+                     "desc":  "立即恢复\u003ccolor=#28f27d\u003e50%\u003c/color\u003e主基地生命",
+                     "noRestore":  1
+                 },
+                 {
+                     "id":  "RG_ALL_abl18_eff01",
+                     "group":  "RG_ALL_abl18",
+                     "effectiveId":  "RG_ALL_abl18_eff01",
+                     "rangeType":  "",
+                     "range":  null,
+                     "verifys":  null,
+                     "conditions":  [
+                                        [
+                                            "BASE_HP",
+                                            0,
+                                            75
+                                        ]
+                                    ],
+                     "weight":  999,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0013",
+                     "quality":  4,
+                     "name":  "",
+                     "desc":  "每次战斗开始前恢复\u003ccolor=#28f27d\u003e10%\u003c/color\u003e主基地生命",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H01_abl01_eff01",
+                     "group":  "RG_H01_abl01",
+                     "effectiveId":  "RG_H01_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H01",
+                                   "H07"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H01",
+                                         1
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  200,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0002",
+                     "quality":  2,
+                     "name":  "精英战士",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠战士\u003c/color\u003e的攻击增加\u003ccolor=#28f27d\u003e10%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H01_abl02_eff01",
+                     "group":  "RG_H01_abl02",
+                     "effectiveId":  "RG_H01_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H01",
+                                   "H07"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H01",
+                                         3
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0003",
+                     "quality":  4,
+                     "name":  "鼠鼠重击·1",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠战士\u003c/color\u003e每攻击2次后，下次攻击必定暴击",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H01_abl02_eff02",
+                     "group":  "RG_H01_abl02",
+                     "effectiveId":  "RG_H01_abl02_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H01",
+                                   "H07"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H01",
+                                         5
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0003",
+                     "quality":  4,
+                     "name":  "鼠鼠重击·2",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠战士\u003c/color\u003e每攻击2次后，下次攻击必定暴击",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H01_abl02_eff03",
+                     "group":  "RG_H01_abl02",
+                     "effectiveId":  "RG_H01_abl02_eff03",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H01",
+                                   "H07"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H01",
+                                         8
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0003",
+                     "quality":  4,
+                     "name":  "鼠鼠重击·3",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠战士\u003c/color\u003e每攻击1次后，下次攻击必定暴击",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H01_abl02_eff04",
+                     "group":  "RG_H01_abl02",
+                     "effectiveId":  "RG_H01_abl02_eff04",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H01",
+                                   "H07"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H01",
+                                         10
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0003",
+                     "quality":  4,
+                     "name":  "鼠鼠重击·4",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠战士\u003c/color\u003e每攻击1次后，下次攻击必定暴击，并回复生命值",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H01_abl03_eff01",
+                     "group":  "RG_H01_abl03",
+                     "effectiveId":  "RG_H01_abl03_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H01",
+                                   "H07"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H01",
+                                         7
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0004",
+                     "quality":  3,
+                     "name":  "叠中叠",
+                     "desc":  "本场战斗中，任意仓鼠战士参与击败敌人都会为所有仓鼠战士+2%攻击力，最多可叠加30层",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H02_abl01_eff01",
+                     "group":  "RG_H02_abl01",
+                     "effectiveId":  "RG_H02_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H02",
+                                   "H07"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H02",
+                                         1
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0037",
+                     "quality":  4,
+                     "name":  "精英射手",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠射手\u003c/color\u003e的攻速增加\u003ccolor=#28f27d\u003e30%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H02_abl02_eff01",
+                     "group":  "RG_H02_abl02",
+                     "effectiveId":  "RG_H02_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H02",
+                                   "H07"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H02",
+                                         3
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0036",
+                     "quality":  3,
+                     "name":  "分裂射击·1",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠射手\u003c/color\u003e有\u003ccolor=#28f27d\u003e30%\u003c/color\u003e概率额外攻击1个敌人",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H02_abl02_eff02",
+                     "group":  "RG_H02_abl02",
+                     "effectiveId":  "RG_H02_abl02_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H02",
+                                   "H07"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H02",
+                                         5
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0036",
+                     "quality":  3,
+                     "name":  "分裂射击·2",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠射手\u003c/color\u003e有\u003ccolor=#28f27d\u003e50%\u003c/color\u003e概率额外攻击1个敌人",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H02_abl02_eff03",
+                     "group":  "RG_H02_abl02",
+                     "effectiveId":  "RG_H02_abl02_eff03",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H02",
+                                   "H07"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H02",
+                                         10
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0036",
+                     "quality":  3,
+                     "name":  "分裂射击·3",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠射手\u003c/color\u003e有\u003ccolor=#28f27d\u003e100%\u003c/color\u003e概率额外攻击1个敌人",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H02_abl03_eff01",
+                     "group":  "RG_H02_abl03",
+                     "effectiveId":  "RG_H02_abl03_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H02",
+                                   "H07"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H02",
+                                         7
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0001",
+                     "quality":  4,
+                     "name":  "弹幕时间·1",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠射手\u003c/color\u003e6秒后进入弹幕时间的超级射击状态，持续3秒",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H02_abl03_eff02",
+                     "group":  "RG_H02_abl03",
+                     "effectiveId":  "RG_H02_abl03_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H02",
+                                   "H07"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H02",
+                                         8
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0001",
+                     "quality":  4,
+                     "name":  "弹幕时间·2",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠射手\u003c/color\u003e6秒后进入弹幕时间的超级射击状态，持续4秒",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H03_abl01_eff01",
+                     "group":  "RG_H03_abl01",
+                     "effectiveId":  "RG_H03_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H03",
+                                   "H08"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H03",
+                                         2
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0005",
+                     "quality":  3,
+                     "name":  "精英法师",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠法师\u003c/color\u003e的攻击增加\u003ccolor=#28f27d\u003e20%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H03_abl02_eff01",
+                     "group":  "RG_H03_abl02",
+                     "effectiveId":  "RG_H03_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H03",
+                                   "H08"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H03",
+                                         1
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0006",
+                     "quality":  3,
+                     "name":  "可乐加冰",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠法师\u003c/color\u003e攻击有\u003ccolor=#28f27d\u003e30%\u003c/color\u003e概率将敌人冰冻",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H03_abl03_eff01",
+                     "group":  "RG_H03_abl03",
+                     "effectiveId":  "RG_H03_abl03_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H03",
+                                   "H08"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H03",
+                                         7
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0007",
+                     "quality":  3,
+                     "name":  "花生变形术",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠法师\u003c/color\u003e能够将敌人变成栗子持续2秒",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H03_abl03_eff02",
+                     "group":  "RG_H03_abl03",
+                     "effectiveId":  "RG_H03_abl03_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H03",
+                                   "H08"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H03",
+                                         8
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0007",
+                     "quality":  3,
+                     "name":  "花生变形术·2",
+                     "desc":  "被变形的目标受到的伤害增加\u003ccolor=#28f27d\u003e30%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H03_abl04_eff01",
+                     "group":  "RG_H03_abl04",
+                     "effectiveId":  "RG_H03_abl04_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H03",
+                                   "H08"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H03",
+                                         10
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0008",
+                     "quality":  4,
+                     "name":  "鼠鼠激光",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠法师\u003c/color\u003e发射穿透激光攻击敌人",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H04_abl01_eff01",
+                     "group":  "RG_H04_abl01",
+                     "effectiveId":  "RG_H04_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H04",
+                                   "H09"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H04",
+                                         1
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  200,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0038",
+                     "quality":  2,
+                     "name":  "精英骑士",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠骑士\u003c/color\u003e的生命增加\u003ccolor=#28f27d\u003e10%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H04_abl02_eff01",
+                     "group":  "RG_H04_abl02",
+                     "effectiveId":  "RG_H04_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H04",
+                                   "H09"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H04",
+                                         2
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0035",
+                     "quality":  3,
+                     "name":  "骑士活力·1",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠骑士\u003c/color\u003e每秒恢复\u003ccolor=#28f27d\u003e2%\u003c/color\u003e自身最大生命值",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H04_abl02_eff02",
+                     "group":  "RG_H04_abl02",
+                     "effectiveId":  "RG_H04_abl02_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H04",
+                                   "H09"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H04",
+                                         3
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0035",
+                     "quality":  3,
+                     "name":  "骑士活力·2",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠骑士\u003c/color\u003e每秒恢复\u003ccolor=#28f27d\u003e5%\u003c/color\u003e自身最大生命值",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H04_abl03_eff01",
+                     "group":  "RG_H04_abl03",
+                     "effectiveId":  "RG_H04_abl03_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H04",
+                                   "H09"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H04",
+                                         7
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0034",
+                     "quality":  4,
+                     "name":  "鼠鼠盾墙·1",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠骑士\u003c/color\u003e受到的伤害降低\u003ccolor=#28f27d\u003e30%\u003c/color\u003e，持续2秒",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H04_abl03_eff02",
+                     "group":  "RG_H04_abl03",
+                     "effectiveId":  "RG_H04_abl03_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H04",
+                                   "H09"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H04",
+                                         10
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0034",
+                     "quality":  4,
+                     "name":  "鼠鼠盾墙·2",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠骑士\u003c/color\u003e受到的伤害降低\u003ccolor=#28f27d\u003e30%\u003c/color\u003e，并将其反弹给攻击者，持续2秒",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H04_abl04_eff01",
+                     "group":  "RG_H04_abl04",
+                     "effectiveId":  "RG_H04_abl04_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H04",
+                                   "H09"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H04",
+                                         8
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0033",
+                     "quality":  2,
+                     "name":  "进击的鼠鼠",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠骑士\u003c/color\u003e有概率直接将目标击飞出屏障，对Boss单位无效",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H05_abl01_eff01",
+                     "group":  "RG_H05_abl01",
+                     "effectiveId":  "RG_H05_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H05",
+                                   "H10"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H05",
+                                         2
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0039",
+                     "quality":  3,
+                     "name":  "精英召唤师",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠召唤师\u003c/color\u003e的攻击增加\u003ccolor=#28f27d\u003e20%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H05_abl02_eff01",
+                     "group":  "RG_H05_abl02",
+                     "effectiveId":  "RG_H05_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H05",
+                                   "H10"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H05",
+                                         1
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0030",
+                     "quality":  3,
+                     "name":  "火力压制·1",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠召唤师\u003c/color\u003e使受击的敌人降低\u003ccolor=#28f27d\u003e50%\u003c/color\u003e移动速度",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H05_abl02_eff02",
+                     "group":  "RG_H05_abl02",
+                     "effectiveId":  "RG_H05_abl02_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H05",
+                                   "H10"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H05",
+                                         3
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0030",
+                     "quality":  3,
+                     "name":  "火力压制·2",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠召唤师\u003c/color\u003e使受击的敌人降低\u003ccolor=#28f27d\u003e50%\u003c/color\u003e移动速度，\u003ccolor=#28f27d\u003e50%\u003c/color\u003e攻速",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H05_abl03_eff01",
+                     "group":  "RG_H05_abl03",
+                     "effectiveId":  "RG_H05_abl03_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H05",
+                                   "H10"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H05",
+                                         7
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0029",
+                     "quality":  4,
+                     "name":  "鼠鼠空投·1",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠召唤师\u003c/color\u003e使用坚果为我方单位恢复召唤师攻击力\u003ccolor=#28f27d\u003e50%\u003c/color\u003e生命值",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H05_abl03_eff02",
+                     "group":  "RG_H05_abl03",
+                     "effectiveId":  "RG_H05_abl03_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H05",
+                                   "H10"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H05",
+                                         8
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0029",
+                     "quality":  4,
+                     "name":  "鼠鼠空投·2",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠召唤师\u003c/color\u003e使用坚果为我方单位恢复召唤师攻击力\u003ccolor=#28f27d\u003e100%\u003c/color\u003e生命值",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H05_abl03_eff03",
+                     "group":  "RG_H05_abl03",
+                     "effectiveId":  "RG_H05_abl03_eff03",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H05",
+                                   "H10"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H05",
+                                         10
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0029",
+                     "quality":  4,
+                     "name":  "鼠鼠空投·3",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠召唤师\u003c/color\u003e使用坚果为我方单位恢复召唤师攻击力\u003ccolor=#28f27d\u003e100%\u003c/color\u003e生命值，并提升我方单位\u003ccolor=#28f27d\u003e10%\u003c/color\u003e攻击力",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H06_abl01_eff01",
+                     "group":  "RG_H06_abl01",
+                     "effectiveId":  "RG_H06_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H06",
+                                   "H10"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H06",
+                                         1
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  200,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0028",
+                     "quality":  2,
+                     "name":  "精英飞行员",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠飞行员\u003c/color\u003e的生命增加\u003ccolor=#28f27d\u003e10%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H06_abl02_eff01",
+                     "group":  "RG_H06_abl02",
+                     "effectiveId":  "RG_H06_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H06",
+                                   "H10"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H06",
+                                         2
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0027",
+                     "quality":  3,
+                     "name":  "鼠鼠奶油·1",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠飞行员\u003c/color\u003e攻击附加\u003ccolor=#28f27d\u003e30%\u003c/color\u003e减速效果",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H06_abl02_eff02",
+                     "group":  "RG_H06_abl02",
+                     "effectiveId":  "RG_H06_abl02_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H06",
+                                   "H10"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H06",
+                                         3
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0027",
+                     "quality":  3,
+                     "name":  "鼠鼠奶油·2",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠飞行员\u003c/color\u003e攻击附加\u003ccolor=#28f27d\u003e50%\u003c/color\u003e减速效果",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H06_abl03_eff01",
+                     "group":  "RG_H06_abl03",
+                     "effectiveId":  "RG_H06_abl03_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H06",
+                                   "H10"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H06",
+                                         7
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0026",
+                     "quality":  2,
+                     "name":  "坚果炸弹",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠飞行员\u003c/color\u003e可发射一颗超大范围的爆炸坚果",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H11_abl01_eff02",
+                     "group":  "RG_H11_abl01",
+                     "effectiveId":  "RG_H11_abl01_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H11"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H11",
+                                         5
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  200,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0013",
+                     "quality":  2,
+                     "name":  "基地修复",
+                     "desc":  "\u003ccolor=#28f27d\u003e治疗齿轮\u003c/color\u003e为基地恢复的生命值提升至攻击力\u003ccolor=#28f27d\u003e100%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H11_abl02_eff01",
+                     "group":  "RG_H11_abl02",
+                     "effectiveId":  "RG_H11_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H11"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H11",
+                                         2
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0014",
+                     "quality":  3,
+                     "name":  "护盾生成",
+                     "desc":  "\u003ccolor=#28f27d\u003e治疗齿轮\u003c/color\u003e溢出的治疗量会转化为护盾值",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H11_abl03_eff01",
+                     "group":  "RG_H11_abl03",
+                     "effectiveId":  "RG_H11_abl03_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H11"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H11",
+                                         7
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0015",
+                     "quality":  3,
+                     "name":  "群体治疗",
+                     "desc":  "\u003ccolor=#28f27d\u003e治疗齿轮\u003c/color\u003e每次治疗会作用多个目标",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H12_abl01_eff01",
+                     "group":  "RG_H12_abl01",
+                     "effectiveId":  "RG_H12_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H12",
+                                   "H08"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H12",
+                                         1
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  200,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0019",
+                     "quality":  2,
+                     "name":  "高压电击·1",
+                     "desc":  "\u003ccolor=#28f27d\u003e雷云\u003c/color\u003e造成伤害时会造成麻痹效果，持续1秒",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H12_abl01_eff02",
+                     "group":  "RG_H12_abl01",
+                     "effectiveId":  "RG_H12_abl01_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H12",
+                                   "H08"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H12",
+                                         3
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  200,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0019",
+                     "quality":  2,
+                     "name":  "高压电击·2",
+                     "desc":  "\u003ccolor=#28f27d\u003e雷云\u003c/color\u003e造成伤害时会造成麻痹效果，持续2秒",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H12_abl02_eff01",
+                     "group":  "RG_H12_abl02",
+                     "effectiveId":  "RG_H12_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H12",
+                                   "H08"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H12",
+                                         2
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0019",
+                     "quality":  3,
+                     "name":  "十万伏特",
+                     "desc":  "\u003ccolor=#28f27d\u003e雷云\u003c/color\u003e造成的伤害必定暴击",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H12_abl03_eff01",
+                     "group":  "RG_H12_abl03",
+                     "effectiveId":  "RG_H12_abl03_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H12",
+                                   "H08"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H12",
+                                         7
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0019",
+                     "quality":  3,
+                     "name":  "百万伏特",
+                     "desc":  "\u003ccolor=#28f27d\u003e雷云\u003c/color\u003e造成的暴击伤害增加50%",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H12_abl04_eff01",
+                     "group":  "RG_H12_abl04",
+                     "effectiveId":  "RG_H12_abl04_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H12",
+                                   "H08"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H12",
+                                         10
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0019",
+                     "quality":  4,
+                     "name":  "感电效应",
+                     "desc":  "\u003ccolor=#28f27d\u003e雷云\u003c/color\u003e造成伤害会附加易伤效果，目标后续受到的伤害增加10%",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H13_abl01_eff01",
+                     "group":  "RG_H13_abl01",
+                     "effectiveId":  "RG_H13_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H13",
+                                   "H09"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H13",
+                                         2
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0018",
+                     "quality":  3,
+                     "name":  "玉米弹射·1",
+                     "desc":  "\u003ccolor=#28f27d\u003e火炮齿轮\u003c/color\u003e发射的玉米粒可以弹射增加至4次",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H13_abl01_eff02",
+                     "group":  "RG_H13_abl01",
+                     "effectiveId":  "RG_H13_abl01_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H13",
+                                   "H09"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H13",
+                                         3
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0018",
+                     "quality":  3,
+                     "name":  "玉米弹射·2",
+                     "desc":  "\u003ccolor=#28f27d\u003e火炮齿轮\u003c/color\u003e发射的玉米粒可以弹射增加至6次",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H13_abl02_eff01",
+                     "group":  "RG_H13_abl02",
+                     "effectiveId":  "RG_H13_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H13",
+                                   "H09"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H13",
+                                         7
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0018",
+                     "quality":  4,
+                     "name":  "爆米花弹射·1",
+                     "desc":  "\u003ccolor=#28f27d\u003e火炮齿轮\u003c/color\u003e发射的玉米粒会变成爆米花，每次弹射伤害增加10%",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H13_abl02_eff02",
+                     "group":  "RG_H13_abl02",
+                     "effectiveId":  "RG_H13_abl02_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H13",
+                                   "H09"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H13",
+                                         10
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0018",
+                     "quality":  4,
+                     "name":  "爆米花弹射·2",
+                     "desc":  "\u003ccolor=#28f27d\u003e火炮齿轮\u003c/color\u003e发射的玉米粒会变成爆米花，每次弹射伤害增加10%，最后一次弹射会发生爆炸造成范围伤害",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H14_abl01_eff01",
+                     "group":  "RG_H14_abl01",
+                     "effectiveId":  "RG_H14_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H14",
+                                   "H15"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H14",
+                                         2
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0020",
+                     "quality":  3,
+                     "name":  "大大白鲨",
+                     "desc":  "鲨鱼体型增大，攻击的目标数量增加",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H14_abl02_eff01",
+                     "group":  "RG_H14_abl02",
+                     "effectiveId":  "RG_H14_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H14",
+                                   "H15"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H14",
+                                         7
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0020",
+                     "quality":  4,
+                     "name":  "精英克星",
+                     "desc":  "\u003ccolor=#28f27d\u003e鲨鱼\u003c/color\u003e对Boss伤害增加\u003ccolor=#28f27d\u003e100%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H7_abl01_eff01",
+                     "group":  "RG_H7_abl01",
+                     "effectiveId":  "RG_H7_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H07"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  10000,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0041",
+                     "quality":  5,
+                     "name":  "钢铁轰炸·EX",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠铁铁侠\u003c/color\u003e【钢铁轰炸】同时会附带【鼠鼠激光】攻击",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H8_abl01_eff01",
+                     "group":  "RG_H8_abl01",
+                     "effectiveId":  "RG_H8_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H08"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  10000,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0040",
+                     "quality":  5,
+                     "name":  "光之鼠鼠·EX",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠凹凸曼\u003c/color\u003e【光之鼠鼠】造成伤害提升，且攻击能够眩晕敌人",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H9_abl01_eff01",
+                     "group":  "RG_H9_abl01",
+                     "effectiveId":  "RG_H9_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H09"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  10000,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0042",
+                     "quality":  5,
+                     "name":  "车轮滚滚·EX",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠战车\u003c/color\u003e【车轮滚滚】提升撞飞敌人的概率",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H10_abl01_eff01",
+                     "group":  "RG_H10_abl01",
+                     "effectiveId":  "RG_H10_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H10"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  10000,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0043",
+                     "quality":  5,
+                     "name":  "臣服于鼠鼠·EX",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠飞碟\u003c/color\u003e【臣服于鼠鼠】超级核弹立即消灭攻击力低于自己的敌人",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H16_abl01_eff01",
+                     "group":  "RG_H16_abl01",
+                     "effectiveId":  "RG_H16_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H16",
+                                   "H18"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H16",
+                                         1
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  200,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0072",
+                     "quality":  2,
+                     "name":  "精英怪兽",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠怪兽\u003c/color\u003e的攻击增加\u003ccolor=#28f27d\u003e10%\u003c/color\u003e",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H16_abl02_eff01",
+                     "group":  "RG_H16_abl02",
+                     "effectiveId":  "RG_H16_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H16",
+                                   "H18"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H16",
+                                         2
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0073",
+                     "quality":  3,
+                     "name":  "怪兽坦克·1",
+                     "desc":  "每隔一段时间，\u003ccolor=#28f27d\u003e仓鼠怪兽\u003c/color\u003e会嘲讽附近的敌人攻击自己",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H16_abl02_eff02",
+                     "group":  "RG_H16_abl02",
+                     "effectiveId":  "RG_H16_abl02_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H16",
+                                   "H18"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H16",
+                                         3
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0073",
+                     "quality":  3,
+                     "name":  "怪兽坦克·2",
+                     "desc":  "每隔一段时间，\u003ccolor=#28f27d\u003e仓鼠怪兽\u003c/color\u003e会嘲讽附近的敌人攻击自己，并获得\u003ccolor=#28f27d\u003e30%\u003c/color\u003e减伤",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H16_abl03_eff01",
+                     "group":  "RG_H16_abl03",
+                     "effectiveId":  "RG_H16_abl03_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H16",
+                                   "H18"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H16",
+                                         7
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0069",
+                     "quality":  4,
+                     "name":  "超级大怪兽·1",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠怪兽\u003c/color\u003e的体型增大，攻击力和生命值提升20%",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H16_abl03_eff02",
+                     "group":  "RG_H16_abl03",
+                     "effectiveId":  "RG_H16_abl03_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H16",
+                                   "H18"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H16",
+                                         8
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0069",
+                     "quality":  4,
+                     "name":  "超级大怪兽·2",
+                     "desc":  "\u003ccolor=#28f27d\u003e仓鼠怪兽\u003c/color\u003e的体型增大，攻击力和生命值提升20%，场上每有一个齿轮额外提升2%",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H17_abl01_eff01",
+                     "group":  "RG_H17_abl01",
+                     "effectiveId":  "RG_H17_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H17",
+                                   "H18"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H17",
+                                         2
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0061",
+                     "quality":  3,
+                     "name":  "镭射增幅·1",
+                     "desc":  "镭射光线发动期间，造成的伤害随时间递增",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H17_abl01_eff02",
+                     "group":  "RG_H17_abl03",
+                     "effectiveId":  "RG_H17_abl01_eff02",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H17",
+                                   "H18"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H17",
+                                         10
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  100,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0061",
+                     "quality":  3,
+                     "name":  "镭射增幅·2",
+                     "desc":  "镭射光线的攻击附加减速效果",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H17_abl02_eff01",
+                     "group":  "RG_H17_abl02",
+                     "effectiveId":  "RG_H17_abl02_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H17"
+                               ],
+                     "verifys":  [
+                                     [
+                                         "HERO_STAR_GE",
+                                         "H17",
+                                         7
+                                     ]
+                                 ],
+                     "conditions":  null,
+                     "weight":  50,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0062",
+                     "quality":  4,
+                     "name":  "摇头射线",
+                     "desc":  "镭射光线发动时可以进行摇摆攻击",
+                     "noRestore":  0
+                 },
+                 {
+                     "id":  "RG_H18_abl01_eff01",
+                     "group":  "RG_H18_abl01",
+                     "effectiveId":  "RG_H18_abl01_eff01",
+                     "rangeType":  "HERO",
+                     "range":  [
+                                   "H18"
+                               ],
+                     "verifys":  null,
+                     "conditions":  null,
+                     "weight":  10000,
+                     "times":  1,
+                     "icon":  "image/effect/buff_0066",
+                     "quality":  5,
+                     "name":  "饿饿巨兽",
+                     "desc":  "本局游戏中，原子吐息每消灭1个敌人则叠加1%攻击力，最多叠加200层",
+                     "noRestore":  0
+                 }
+             ],
+    "sourceLength":  1122,
+    "expectedLength":  1122,
+    "validLength":  true
+}

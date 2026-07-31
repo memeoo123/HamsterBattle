@@ -1,0 +1,88 @@
+﻿{
+    "table":  "dailytask.DailyActiveBoxConfig",
+    "columnCount":  3,
+    "rowCount":  5,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "rewards",
+                       "token":  18,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  2,
+                       "name":  "dailyActive",
+                       "token":  "dailyActive",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "rewards":  [
+                                     {
+                                         "k":  2,
+                                         "v":  500
+                                     }
+                                 ],
+                     "dailyActive":  20
+                 },
+                 {
+                     "id":  2,
+                     "rewards":  [
+                                     {
+                                         "k":  "BOX_RF",
+                                         "v":  25
+                                     }
+                                 ],
+                     "dailyActive":  40
+                 },
+                 {
+                     "id":  3,
+                     "rewards":  [
+                                     {
+                                         "k":  1,
+                                         "v":  10
+                                     }
+                                 ],
+                     "dailyActive":  60
+                 },
+                 {
+                     "id":  4,
+                     "rewards":  [
+                                     {
+                                         "k":  4,
+                                         "v":  1
+                                     },
+                                     {
+                                         "k":  7,
+                                         "v":  1
+                                     }
+                                 ],
+                     "dailyActive":  80
+                 },
+                 {
+                     "id":  5,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  200
+                                     },
+                                     {
+                                         "k":  "IR_Exp",
+                                         "v":  300
+                                     }
+                                 ],
+                     "dailyActive":  100
+                 }
+             ],
+    "sourceLength":  23,
+    "expectedLength":  23,
+    "validLength":  true
+}

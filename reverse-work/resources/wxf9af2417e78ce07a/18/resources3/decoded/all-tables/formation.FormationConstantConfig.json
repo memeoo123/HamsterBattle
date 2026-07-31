@@ -1,0 +1,32 @@
+﻿{
+    "table":  "formation.FormationConstantConfig",
+    "columnCount":  2,
+    "rowCount":  2,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "FORMATION:DEFAULT_FORMATION_FORCE_FULL_POSITION",
+                     "content":  ""
+                 },
+                 {
+                     "id":  "FORMATION:BOND_DISPLAY_CONDITION",
+                     "content":  "2006"
+                 }
+             ],
+    "sourceLength":  10,
+    "expectedLength":  10,
+    "validLength":  true
+}

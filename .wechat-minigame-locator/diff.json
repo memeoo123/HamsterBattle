@@ -1,0 +1,49 @@
+{
+    "schemaVersion":  "1.0",
+    "sourceReadOnly":  true,
+    "mode":  "Diff",
+    "baselineScannedAtUtc":  "2026-07-31T03:31:18.6303910Z",
+    "scannedAtUtc":  "2026-07-31T03:34:50.9628671Z",
+    "summary":  {
+                    "changedPackageCount":  3,
+                    "changedAppIdCount":  3
+                },
+    "changes":  [
+                    {
+                        "change":  "new",
+                        "rootKind":  "xwechat-radium",
+                        "packageRoot":  "C:\\Users\\jiachengwei\\AppData\\Roaming\\Tencent\\xwechat\\radium\\users\\d833ae57d25e1087edac741082077974\\applet\\packages",
+                        "appId":  "wxc761b90fabc11225",
+                        "version":  "7",
+                        "role":  "plugin-bundle",
+                        "name":  "__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
+                        "fullPath":  "C:\\Users\\jiachengwei\\AppData\\Roaming\\Tencent\\xwechat\\radium\\users\\d833ae57d25e1087edac741082077974\\applet\\packages\\wxc761b90fabc11225\\7\\__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
+                        "length":  2929002,
+                        "lastWriteTimeUtc":  "2026-07-31T03:33:18.2736387Z"
+                    },
+                    {
+                        "change":  "new",
+                        "rootKind":  "xwechat-radium",
+                        "packageRoot":  "C:\\Users\\jiachengwei\\AppData\\Roaming\\Tencent\\xwechat\\radium\\users\\d833ae57d25e1087edac741082077974\\applet\\packages",
+                        "appId":  "wxe5a48f1ed5f544b7",
+                        "version":  "335",
+                        "role":  "plugin",
+                        "name":  "__PLUGINCODE__.wxapkg",
+                        "fullPath":  "C:\\Users\\jiachengwei\\AppData\\Roaming\\Tencent\\xwechat\\radium\\users\\d833ae57d25e1087edac741082077974\\applet\\packages\\wxe5a48f1ed5f544b7\\335\\__PLUGINCODE__.wxapkg",
+                        "length":  691274,
+                        "lastWriteTimeUtc":  "2026-07-31T03:33:17.8960518Z"
+                    },
+                    {
+                        "change":  "modified",
+                        "rootKind":  "xwechat-radium",
+                        "packageRoot":  "C:\\Users\\jiachengwei\\AppData\\Roaming\\Tencent\\xwechat\\radium\\users\\d833ae57d25e1087edac741082077974\\applet\\packages",
+                        "appId":  "wxaed5ace05d92b218",
+                        "version":  "63",
+                        "role":  "plugin",
+                        "name":  "__PLUGINCODE__.wxapkg",
+                        "fullPath":  "C:\\Users\\jiachengwei\\AppData\\Roaming\\Tencent\\xwechat\\radium\\users\\d833ae57d25e1087edac741082077974\\applet\\packages\\wxaed5ace05d92b218\\63\\__PLUGINCODE__.wxapkg",
+                        "length":  316405,
+                        "lastWriteTimeUtc":  "2026-07-31T03:33:12.9450866Z"
+                    }
+                ]
+}

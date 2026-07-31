@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "activeTarget": "wxf9af2417e78ce07a/18",
+  "targets": [
+    {
+      "key": "wxc761b90fabc11225/7",
+      "path": "targets/wxc761b90fabc11225/7",
+      "engine": "unity",
+      "currentStage": "reconstruct-main-subpackages",
+      "updatedAtUtc": "2026-07-31T10:00:09.0455171Z"
+    },
+    {
+      "key": "wxf9af2417e78ce07a/18",
+      "path": "targets/wxf9af2417e78ce07a/18",
+      "engine": "cocos",
+      "currentStage": "produce-restoration-handoff",
+      "updatedAtUtc": "2026-07-31T10:00:09.0455171Z"
+    }
+  ]
+}

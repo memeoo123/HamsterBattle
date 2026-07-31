@@ -1,0 +1,48 @@
+﻿{
+    "table":  "shop.ShopGoodsLimitBuyConfig",
+    "columnCount":  2,
+    "rowCount":  6,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "refreshStr",
+                       "token":  "refreshStr",
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "NEVER",
+                     "refreshStr":  "i18n:ShopGoodsLimitBuyConfig.refreshStr.NEVER"
+                 },
+                 {
+                     "id":  "DAILY",
+                     "refreshStr":  "i18n:ShopGoodsLimitBuyConfig.refreshStr.DAILY"
+                 },
+                 {
+                     "id":  "WEEKLY",
+                     "refreshStr":  "i18n:ShopGoodsLimitBuyConfig.refreshStr.WEEKLY"
+                 },
+                 {
+                     "id":  "MONTH",
+                     "refreshStr":  "i18n:ShopGoodsLimitBuyConfig.refreshStr.MONTH"
+                 },
+                 {
+                     "id":  "FOREVER",
+                     "refreshStr":  "i18n:ShopGoodsLimitBuyConfig.refreshStr.FOREVER"
+                 },
+                 {
+                     "id":  "CUSTOM",
+                     "refreshStr":  "i18n:ShopGoodsLimitBuyConfig.refreshStr.CUSTOM"
+                 }
+             ],
+    "sourceLength":  18,
+    "expectedLength":  18,
+    "validLength":  true
+}

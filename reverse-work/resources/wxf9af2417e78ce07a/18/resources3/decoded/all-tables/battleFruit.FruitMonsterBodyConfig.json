@@ -1,0 +1,342 @@
+﻿{
+    "table":  "battleFruit.FruitMonsterBodyConfig",
+    "columnCount":  8,
+    "rowCount":  20,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "hp",
+                       "token":  650,
+                       "typeCode":  2
+                   },
+                   {
+                       "index":  2,
+                       "name":  "size",
+                       "token":  636,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  3,
+                       "name":  "bodyNum",
+                       "token":  "bodyNum",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "buffCnt",
+                       "token":  "buffCnt",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "staticBuffs",
+                       "token":  651,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  6,
+                       "name":  "boxPath",
+                       "token":  "boxPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "bodyPath",
+                       "token":  "bodyPath",
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "1001",
+                     "hp":  10,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  0,
+                     "staticBuffs":  [
+                                         1001,
+                                         1003
+                                     ],
+                     "boxPath":  "image/item/baoxiang2",
+                     "bodyPath":  "FRUIT_M02"
+                 },
+                 {
+                     "id":  "1002",
+                     "hp":  55,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  0,
+                     "staticBuffs":  [
+                                         1018
+                                     ],
+                     "boxPath":  "image/item/baoxiang1",
+                     "bodyPath":  "FRUIT_M03"
+                 },
+                 {
+                     "id":  "1003",
+                     "hp":  100,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  0,
+                     "staticBuffs":  [
+                                         1009,
+                                         1007
+                                     ],
+                     "boxPath":  "image/item/baoxiang2",
+                     "bodyPath":  "FRUIT_M02"
+                 },
+                 {
+                     "id":  "1004",
+                     "hp":  156,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  0,
+                     "staticBuffs":  [
+                                         1001,
+                                         1004
+                                     ],
+                     "boxPath":  "image/item/baoxiang2",
+                     "bodyPath":  "FRUIT_M03"
+                 },
+                 {
+                     "id":  "1005",
+                     "hp":  400,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  0,
+                     "staticBuffs":  [
+                                         1005,
+                                         1001
+                                     ],
+                     "boxPath":  "image/item/baoxiang2",
+                     "bodyPath":  "FRUIT_M02"
+                 },
+                 {
+                     "id":  "1006",
+                     "hp":  720,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  0,
+                     "staticBuffs":  [
+                                         1007,
+                                         1011
+                                     ],
+                     "boxPath":  "image/item/baoxiang2",
+                     "bodyPath":  "FRUIT_M03"
+                 },
+                 {
+                     "id":  "1007",
+                     "hp":  1100,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  0,
+                     "staticBuffs":  [
+                                         1017
+                                     ],
+                     "boxPath":  "image/item/baoxiang1",
+                     "bodyPath":  "FRUIT_M02"
+                 },
+                 {
+                     "id":  "1008",
+                     "hp":  1950,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  0,
+                     "staticBuffs":  [
+                                         1016,
+                                         1014
+                                     ],
+                     "boxPath":  "image/item/baoxiang2",
+                     "bodyPath":  "FRUIT_M03"
+                 },
+                 {
+                     "id":  "1009",
+                     "hp":  2790,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  2,
+                     "staticBuffs":  null,
+                     "boxPath":  "image/item/baoxiang2",
+                     "bodyPath":  "FRUIT_M02"
+                 },
+                 {
+                     "id":  "1010",
+                     "hp":  3620,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  2,
+                     "staticBuffs":  null,
+                     "boxPath":  "image/item/baoxiang2",
+                     "bodyPath":  "FRUIT_M03"
+                 },
+                 {
+                     "id":  "1011",
+                     "hp":  4560,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  2,
+                     "staticBuffs":  null,
+                     "boxPath":  "image/item/baoxiang1",
+                     "bodyPath":  "FRUIT_M02"
+                 },
+                 {
+                     "id":  "1012",
+                     "hp":  5480,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  2,
+                     "staticBuffs":  null,
+                     "boxPath":  "image/item/baoxiang1",
+                     "bodyPath":  "FRUIT_M03"
+                 },
+                 {
+                     "id":  "1013",
+                     "hp":  6330,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  2,
+                     "staticBuffs":  null,
+                     "boxPath":  "image/item/baoxiang1",
+                     "bodyPath":  "FRUIT_M02"
+                 },
+                 {
+                     "id":  "1014",
+                     "hp":  7230,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  2,
+                     "staticBuffs":  null,
+                     "boxPath":  "image/item/baoxiang1",
+                     "bodyPath":  "FRUIT_M03"
+                 },
+                 {
+                     "id":  "1015",
+                     "hp":  8890,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  2,
+                     "staticBuffs":  null,
+                     "boxPath":  "image/item/baoxiang1",
+                     "bodyPath":  "FRUIT_M02"
+                 },
+                 {
+                     "id":  "1016",
+                     "hp":  10900,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  2,
+                     "staticBuffs":  null,
+                     "boxPath":  "image/item/baoxiang1",
+                     "bodyPath":  "FRUIT_M03"
+                 },
+                 {
+                     "id":  "1017",
+                     "hp":  12800,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  2,
+                     "staticBuffs":  null,
+                     "boxPath":  "image/item/baoxiang1",
+                     "bodyPath":  "FRUIT_M02"
+                 },
+                 {
+                     "id":  "1018",
+                     "hp":  16500,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  2,
+                     "staticBuffs":  null,
+                     "boxPath":  "image/item/baoxiang1",
+                     "bodyPath":  "FRUIT_M03"
+                 },
+                 {
+                     "id":  "1019",
+                     "hp":  19265,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  2,
+                     "staticBuffs":  null,
+                     "boxPath":  "image/item/baoxiang1",
+                     "bodyPath":  "FRUIT_M02"
+                 },
+                 {
+                     "id":  "1020",
+                     "hp":  22210,
+                     "size":  [
+                                  100,
+                                  100
+                              ],
+                     "bodyNum":  6,
+                     "buffCnt":  2,
+                     "staticBuffs":  null,
+                     "boxPath":  "image/item/baoxiang1",
+                     "bodyPath":  "FRUIT_M03"
+                 }
+             ],
+    "sourceLength":  178,
+    "expectedLength":  178,
+    "validLength":  true
+}

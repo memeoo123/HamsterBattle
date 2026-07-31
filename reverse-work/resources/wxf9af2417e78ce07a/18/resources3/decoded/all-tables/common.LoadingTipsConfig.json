@@ -1,0 +1,36 @@
+﻿{
+    "table":  "common.LoadingTipsConfig",
+    "columnCount":  2,
+    "rowCount":  3,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "content":  "i18n:LoadingTipsConfig.content.1"
+                 },
+                 {
+                     "id":  2,
+                     "content":  "i18n:LoadingTipsConfig.content.2"
+                 },
+                 {
+                     "id":  3,
+                     "content":  "i18n:LoadingTipsConfig.content.3"
+                 }
+             ],
+    "sourceLength":  12,
+    "expectedLength":  12,
+    "validLength":  true
+}

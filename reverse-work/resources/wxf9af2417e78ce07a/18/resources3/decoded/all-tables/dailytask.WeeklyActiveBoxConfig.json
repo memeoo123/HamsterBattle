@@ -1,0 +1,55 @@
+﻿{
+    "table":  "dailytask.WeeklyActiveBoxConfig",
+    "columnCount":  3,
+    "rowCount":  5,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "rewardText",
+                       "token":  "rewardText",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "needWeekScore",
+                       "token":  "needWeekScore",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "rewardText":  "90511:1;",
+                     "needWeekScore":  100
+                 },
+                 {
+                     "id":  2,
+                     "rewardText":  "9:5;",
+                     "needWeekScore":  200
+                 },
+                 {
+                     "id":  3,
+                     "rewardText":  "91605:5;",
+                     "needWeekScore":  300
+                 },
+                 {
+                     "id":  4,
+                     "rewardText":  "10:10;",
+                     "needWeekScore":  400
+                 },
+                 {
+                     "id":  5,
+                     "rewardText":  "90611:1;",
+                     "needWeekScore":  500
+                 }
+             ],
+    "sourceLength":  23,
+    "expectedLength":  23,
+    "validLength":  true
+}

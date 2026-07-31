@@ -1,0 +1,40 @@
+﻿{
+    "table":  "shop.ShopConstantConfig",
+    "columnCount":  2,
+    "rowCount":  4,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "SHOP:BOX_FREE_INTERVAL",
+                     "content":  "480"
+                 },
+                 {
+                     "id":  "SHOP:BOX_DRAW_ONE_COST",
+                     "content":  "3:50;"
+                 },
+                 {
+                     "id":  "SHOP:BOX_DRAW_TEN_COST",
+                     "content":  "3:400;"
+                 },
+                 {
+                     "id":  "SHOP:BOX_DRAW_EXP",
+                     "content":  "10"
+                 }
+             ],
+    "sourceLength":  14,
+    "expectedLength":  14,
+    "validLength":  true
+}

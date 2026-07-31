@@ -1,0 +1,68 @@
+﻿{
+    "table":  "skin.SkinConstantConfig",
+    "columnCount":  2,
+    "rowCount":  11,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "SKIN:CHEST_REWARD",
+                     "content":  "2021"
+                 },
+                 {
+                     "id":  "SKIN:HEAD_PATH_PREFIX",
+                     "content":  "image/heroNormalHead/"
+                 },
+                 {
+                     "id":  "SKIN:SMALL_HEAD_PATH_PREFIX",
+                     "content":  "image/heroSmallHead/"
+                 },
+                 {
+                     "id":  "SKIN:DAILY_BOX_FREE_TIMES",
+                     "content":  "1"
+                 },
+                 {
+                     "id":  "SKIN:BOX_DRAW_ONE_COST",
+                     "content":  "7:1;"
+                 },
+                 {
+                     "id":  "SKIN:BOX_DRAW_TEN_COST",
+                     "content":  "7:9;"
+                 },
+                 {
+                     "id":  "SKIN:CHEST_GUARANTEE_REWARD",
+                     "content":  "2022"
+                 },
+                 {
+                     "id":  "SKIN:CHEST_GUARANTEE_COUNT",
+                     "content":  "10"
+                 },
+                 {
+                     "id":  "SKIN:CHEST_GUARANTEE_DISORDER_ROUND",
+                     "content":  "3"
+                 },
+                 {
+                     "id":  "SKIN:DAILY_MAX_FREE_FRAGMENT_TIMES",
+                     "content":  "3"
+                 },
+                 {
+                     "id":  "SKIN:FREE_FRAGMENT_CNT_WEIGHT",
+                     "content":  "1:10;2:30;3:10;"
+                 }
+             ],
+    "sourceLength":  28,
+    "expectedLength":  28,
+    "validLength":  true
+}

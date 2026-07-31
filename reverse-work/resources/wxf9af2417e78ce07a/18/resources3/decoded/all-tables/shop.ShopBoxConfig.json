@@ -1,0 +1,336 @@
+﻿{
+    "table":  "shop.ShopBoxConfig",
+    "columnCount":  4,
+    "rowCount":  20,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "exp",
+                       "token":  491,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "rewardId",
+                       "token":  1001,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "showRewards",
+                       "token":  958,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "exp":  0,
+                     "rewardId":  2000,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  100
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  10
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  2,
+                     "exp":  1000,
+                     "rewardId":  2001,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  110
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  12
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  3,
+                     "exp":  2000,
+                     "rewardId":  2002,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  120
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  14
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  4,
+                     "exp":  3000,
+                     "rewardId":  2003,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  130
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  16
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  5,
+                     "exp":  4000,
+                     "rewardId":  2004,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  140
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  18
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  6,
+                     "exp":  5000,
+                     "rewardId":  2005,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  150
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  20
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  7,
+                     "exp":  6000,
+                     "rewardId":  2006,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  160
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  22
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  8,
+                     "exp":  7000,
+                     "rewardId":  2007,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  170
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  24
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  9,
+                     "exp":  8000,
+                     "rewardId":  2008,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  180
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  26
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  10,
+                     "exp":  9000,
+                     "rewardId":  2009,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  190
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  28
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  11,
+                     "exp":  10000,
+                     "rewardId":  2010,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  200
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  30
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  12,
+                     "exp":  11000,
+                     "rewardId":  2011,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  210
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  32
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  13,
+                     "exp":  12000,
+                     "rewardId":  2012,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  220
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  34
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  14,
+                     "exp":  13000,
+                     "rewardId":  2013,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  230
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  36
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  15,
+                     "exp":  14000,
+                     "rewardId":  2014,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  240
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  38
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  16,
+                     "exp":  15000,
+                     "rewardId":  2015,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  250
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  40
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  17,
+                     "exp":  16000,
+                     "rewardId":  2016,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  260
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  42
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  18,
+                     "exp":  17000,
+                     "rewardId":  2017,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  270
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  44
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  19,
+                     "exp":  18000,
+                     "rewardId":  2018,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  280
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  46
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  20,
+                     "exp":  19000,
+                     "rewardId":  2019,
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  290
+                                         },
+                                         {
+                                             "k":  "F99",
+                                             "v":  48
+                                         }
+                                     ]
+                 }
+             ],
+    "sourceLength":  90,
+    "expectedLength":  90,
+    "validLength":  true
+}

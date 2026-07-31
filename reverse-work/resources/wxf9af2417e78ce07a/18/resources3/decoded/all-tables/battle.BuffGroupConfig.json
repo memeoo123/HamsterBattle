@@ -1,0 +1,738 @@
+﻿{
+    "table":  "battle.BuffGroupConfig",
+    "columnCount":  14,
+    "rowCount":  35,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "flag",
+                       "token":  "flag",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "flagParm",
+                       "token":  "flagParm",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  3,
+                       "name":  "isBreak",
+                       "token":  "isBreak",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "animPosType",
+                       "token":  686,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "modelId",
+                       "token":  347,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  6,
+                       "name":  "upLow1",
+                       "token":  "upLow1",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  7,
+                       "name":  "animPosType2",
+                       "token":  "animPosType2",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "modelId2",
+                       "token":  "modelId2",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  9,
+                       "name":  "upLow2",
+                       "token":  "upLow2",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  10,
+                       "name":  "param",
+                       "token":  20,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  11,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  12,
+                       "name":  "timeLimit",
+                       "token":  772,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  13,
+                       "name":  "buff",
+                       "token":  773,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "RG_ALL_bf01",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "RG_ALL_bf0101"
+                              ]
+                 },
+                 {
+                     "id":  "RG_ALL_bf02",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "RG_ALL_bf0201"
+                              ]
+                 },
+                 {
+                     "id":  "RG_ALL_bf03",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "RG_ALL_bf0301"
+                              ]
+                 },
+                 {
+                     "id":  "RG_ALL_bf04",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "RG_ALL_bf0401"
+                              ]
+                 },
+                 {
+                     "id":  "RG_ALL_bf05",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "RG_ALL_bf0501"
+                              ]
+                 },
+                 {
+                     "id":  "RG_ALL_bf06",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "RG_ALL_bf0601"
+                              ]
+                 },
+                 {
+                     "id":  "RG_H01_bf01",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "RG_H01_bf0101"
+                              ]
+                 },
+                 {
+                     "id":  "RG_H02_bf01",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "RG_H02_bf0101"
+                              ]
+                 },
+                 {
+                     "id":  "1002_bf2",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "1002_bf2_1"
+                              ]
+                 },
+                 {
+                     "id":  "1002_bf3",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "1002_bf3_1"
+                              ]
+                 },
+                 {
+                     "id":  "1002_bf4",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "1002_bf4_1"
+                              ]
+                 },
+                 {
+                     "id":  "1002_bf5",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "1002_bf4_1",
+                                  "1002_bf5_1"
+                              ]
+                 },
+                 {
+                     "id":  "2001_bf5",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  3000,
+                     "buff":  [
+                                  "2001_bf5_1"
+                              ]
+                 },
+                 {
+                     "id":  "2001_bf6",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  4000,
+                     "buff":  [
+                                  "2001_bf5_1"
+                              ]
+                 },
+                 {
+                     "id":  "3001_bf2",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  12,
+                     "modelId":  [
+                                     "H28_S1"
+                                 ],
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  3000,
+                     "buff":  [
+                                  "3001_bf2_1"
+                              ]
+                 },
+                 {
+                     "id":  "3001_bf3",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  13,
+                     "modelId":  [
+                                     "H28_S2"
+                                 ],
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  2000,
+                     "buff":  [
+                                  "3001_bf3_1"
+                              ]
+                 },
+                 {
+                     "id":  "3001_bf4",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  13,
+                     "modelId":  [
+                                     "H28_S2"
+                                 ],
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  2000,
+                     "buff":  [
+                                  "3001_bf4_1"
+                              ]
+                 },
+                 {
+                     "id":  "4001_bf3",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  2000,
+                     "buff":  [
+                                  "4001_bf3_1"
+                              ]
+                 },
+                 {
+                     "id":  "4001_bf4",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  2000,
+                     "buff":  [
+                                  "4001_bf3_1",
+                                  "4001_bf4_1"
+                              ]
+                 },
+                 {
+                     "id":  "5001_bf2",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  5000,
+                     "buff":  [
+                                  "5001_bf2_1"
+                              ]
+                 },
+                 {
+                     "id":  "5001_bf3",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  5000,
+                     "buff":  [
+                                  "5001_bf3_1"
+                              ]
+                 },
+                 {
+                     "id":  "5001_bf6",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "5001_bf6_1"
+                              ]
+                 },
+                 {
+                     "id":  "6001_bf2",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "6001_bf2_1"
+                              ]
+                 },
+                 {
+                     "id":  "6001_bf3",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "6001_bf3_1"
+                              ]
+                 },
+                 {
+                     "id":  "6001_bf5",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "6001_bf5_1"
+                              ]
+                 },
+                 {
+                     "id":  "6001_bf6",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "6001_bf6_1"
+                              ]
+                 },
+                 {
+                     "id":  "LY_bf1202",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  1000,
+                     "buff":  [
+                                  "LY_bf1202_1"
+                              ]
+                 },
+                 {
+                     "id":  "LY_bf1203",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  2000,
+                     "buff":  [
+                                  "LY_bf1203_1"
+                              ]
+                 },
+                 {
+                     "id":  "LY_bf1204",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "LY_bf1204_1"
+                              ]
+                 },
+                 {
+                     "id":  "7001_bf3",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  2000,
+                     "buff":  [
+                                  "7001_bf301"
+                              ]
+                 },
+                 {
+                     "id":  "BT_bf001",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  0,
+                     "buff":  [
+                                  "BT_bf001_1"
+                              ]
+                 },
+                 {
+                     "id":  "11001_bf2",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  3000,
+                     "buff":  [
+                                  "11001_bf2_1"
+                              ]
+                 },
+                 {
+                     "id":  "11001_bf3",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  4000,
+                     "buff":  [
+                                  "11001_bf3_1"
+                              ]
+                 },
+                 {
+                     "id":  "1501_bf2",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "upLow1":  null,
+                     "animPosType2":  0,
+                     "modelId2":  null,
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  1000,
+                     "buff":  [
+                                  "1501_bf2_1"
+                              ]
+                 },
+                 {
+                     "id":  "P02_bf1",
+                     "flag":  0,
+                     "flagParm":  null,
+                     "isBreak":  0,
+                     "animPosType":  1,
+                     "modelId":  [
+                                     "P02_S1"
+                                 ],
+                     "upLow1":  null,
+                     "animPosType2":  8,
+                     "modelId2":  [
+                                      "P02_S2"
+                                  ],
+                     "upLow2":  null,
+                     "param":  null,
+                     "icon":  "",
+                     "timeLimit":  5000,
+                     "buff":  [
+                                  "P02_bf1_1"
+                              ]
+                 }
+             ],
+    "sourceLength":  520,
+    "expectedLength":  520,
+    "validLength":  true
+}

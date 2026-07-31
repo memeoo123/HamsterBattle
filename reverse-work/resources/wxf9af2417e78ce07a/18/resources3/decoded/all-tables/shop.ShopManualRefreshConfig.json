@@ -1,0 +1,276 @@
+﻿{
+    "table":  "shop.ShopManualRefreshConfig",
+    "columnCount":  4,
+    "rowCount":  20,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "shopId",
+                       "token":  1451,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "refreshTimes",
+                       "token":  "refreshTimes",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "cost",
+                       "token":  553,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "shopId":  101,
+                     "refreshTimes":  1,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  2,
+                     "shopId":  101,
+                     "refreshTimes":  2,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  3,
+                     "shopId":  101,
+                     "refreshTimes":  3,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  4,
+                     "shopId":  101,
+                     "refreshTimes":  4,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  5,
+                     "shopId":  101,
+                     "refreshTimes":  5,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  6,
+                     "shopId":  101,
+                     "refreshTimes":  6,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  7,
+                     "shopId":  101,
+                     "refreshTimes":  7,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  8,
+                     "shopId":  101,
+                     "refreshTimes":  8,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  9,
+                     "shopId":  101,
+                     "refreshTimes":  9,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  10,
+                     "shopId":  101,
+                     "refreshTimes":  10,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  11,
+                     "shopId":  101,
+                     "refreshTimes":  11,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  12,
+                     "shopId":  101,
+                     "refreshTimes":  12,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  13,
+                     "shopId":  101,
+                     "refreshTimes":  13,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  14,
+                     "shopId":  101,
+                     "refreshTimes":  14,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  15,
+                     "shopId":  101,
+                     "refreshTimes":  15,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  16,
+                     "shopId":  101,
+                     "refreshTimes":  16,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  17,
+                     "shopId":  101,
+                     "refreshTimes":  17,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  18,
+                     "shopId":  101,
+                     "refreshTimes":  18,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  19,
+                     "shopId":  101,
+                     "refreshTimes":  19,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 },
+                 {
+                     "id":  20,
+                     "shopId":  101,
+                     "refreshTimes":  20,
+                     "cost":  [
+                                  [
+                                      "AD",
+                                      0,
+                                      0
+                                  ]
+                              ]
+                 }
+             ],
+    "sourceLength":  90,
+    "expectedLength":  90,
+    "validLength":  true
+}

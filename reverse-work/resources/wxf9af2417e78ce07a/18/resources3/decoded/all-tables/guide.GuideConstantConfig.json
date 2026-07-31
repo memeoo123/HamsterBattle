@@ -1,0 +1,36 @@
+﻿{
+    "table":  "guide.GuideConstantConfig",
+    "columnCount":  2,
+    "rowCount":  3,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "JUDGE_GUIDE_DONE_ID",
+                     "content":  "12003"
+                 },
+                 {
+                     "id":  "JUDGE_GUIDE_CHECK_GUIDE_IDS",
+                     "content":  "101;201;301;1201;1501;1601;1901;2401;"
+                 },
+                 {
+                     "id":  "GUIDE_ASSIGN_GROUPID",
+                     "content":  "1901"
+                 }
+             ],
+    "sourceLength":  12,
+    "expectedLength":  12,
+    "validLength":  true
+}

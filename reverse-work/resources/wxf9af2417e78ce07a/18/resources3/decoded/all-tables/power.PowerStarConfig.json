@@ -1,0 +1,177 @@
+﻿{
+    "table":  "power.PowerStarConfig",
+    "columnCount":  5,
+    "rowCount":  9,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "star",
+                       "token":  1102,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "cost",
+                       "token":  553,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "attrs",
+                       "token":  "attrs",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  4,
+                       "name":  "maxLevel",
+                       "token":  "maxLevel",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "star":  0,
+                     "cost":  10,
+                     "attrs":  null,
+                     "maxLevel":  20
+                 },
+                 {
+                     "id":  2,
+                     "star":  1,
+                     "cost":  10,
+                     "attrs":  [
+                                   {
+                                       "k":  "ATK_BONUS",
+                                       "v":  1000
+                                   },
+                                   {
+                                       "k":  "HP_BONUS",
+                                       "v":  1000
+                                   }
+                               ],
+                     "maxLevel":  40
+                 },
+                 {
+                     "id":  3,
+                     "star":  2,
+                     "cost":  20,
+                     "attrs":  [
+                                   {
+                                       "k":  "ATK_BONUS",
+                                       "v":  2000
+                                   },
+                                   {
+                                       "k":  "HP_BONUS",
+                                       "v":  2000
+                                   }
+                               ],
+                     "maxLevel":  60
+                 },
+                 {
+                     "id":  4,
+                     "star":  3,
+                     "cost":  30,
+                     "attrs":  [
+                                   {
+                                       "k":  "ATK_BONUS",
+                                       "v":  3000
+                                   },
+                                   {
+                                       "k":  "HP_BONUS",
+                                       "v":  3000
+                                   }
+                               ],
+                     "maxLevel":  80
+                 },
+                 {
+                     "id":  5,
+                     "star":  4,
+                     "cost":  40,
+                     "attrs":  [
+                                   {
+                                       "k":  "ATK_BONUS",
+                                       "v":  4000
+                                   },
+                                   {
+                                       "k":  "HP_BONUS",
+                                       "v":  4000
+                                   }
+                               ],
+                     "maxLevel":  100
+                 },
+                 {
+                     "id":  6,
+                     "star":  5,
+                     "cost":  50,
+                     "attrs":  [
+                                   {
+                                       "k":  "ATK_BONUS",
+                                       "v":  5000
+                                   },
+                                   {
+                                       "k":  "HP_BONUS",
+                                       "v":  5000
+                                   }
+                               ],
+                     "maxLevel":  120
+                 },
+                 {
+                     "id":  7,
+                     "star":  6,
+                     "cost":  60,
+                     "attrs":  [
+                                   {
+                                       "k":  "ATK_BONUS",
+                                       "v":  6000
+                                   },
+                                   {
+                                       "k":  "HP_BONUS",
+                                       "v":  6000
+                                   }
+                               ],
+                     "maxLevel":  140
+                 },
+                 {
+                     "id":  8,
+                     "star":  7,
+                     "cost":  70,
+                     "attrs":  [
+                                   {
+                                       "k":  "ATK_BONUS",
+                                       "v":  7000
+                                   },
+                                   {
+                                       "k":  "HP_BONUS",
+                                       "v":  7000
+                                   }
+                               ],
+                     "maxLevel":  160
+                 },
+                 {
+                     "id":  9,
+                     "star":  8,
+                     "cost":  80,
+                     "attrs":  [
+                                   {
+                                       "k":  "ATK_BONUS",
+                                       "v":  8000
+                                   },
+                                   {
+                                       "k":  "HP_BONUS",
+                                       "v":  8000
+                                   }
+                               ],
+                     "maxLevel":  180
+                 }
+             ],
+    "sourceLength":  57,
+    "expectedLength":  57,
+    "validLength":  true
+}

@@ -1,0 +1,390 @@
+﻿{
+    "table":  "mainpage.MainPageTabItemConfig",
+    "columnCount":  17,
+    "rowCount":  14,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "sideType",
+                       "token":  "sideType",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "sort",
+                       "token":  1088,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "systemId",
+                       "token":  "systemId",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "nameForClient",
+                       "token":  "nameForClient",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "activityIds",
+                       "token":  "activityIds",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  6,
+                       "name":  "showName",
+                       "token":  3,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "conditionText",
+                       "token":  "conditionText",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  8,
+                       "name":  "modelId",
+                       "token":  347,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  9,
+                       "name":  "showEffect",
+                       "token":  "showEffect",
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  10,
+                       "name":  "iconEffect",
+                       "token":  "iconEffect",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  11,
+                       "name":  "isShowInFold",
+                       "token":  "isShowInFold",
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  12,
+                       "name":  "showEndTime",
+                       "token":  "showEndTime",
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  13,
+                       "name":  "iconNormalAssetPath",
+                       "token":  "iconNormalAssetPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  14,
+                       "name":  "iconModelId",
+                       "token":  "iconModelId",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  15,
+                       "name":  "viewName",
+                       "token":  "viewName",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  16,
+                       "name":  "viewArge",
+                       "token":  "viewArge",
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "sideType":  "bottom",
+                     "sort":  1,
+                     "systemId":  "SHOP",
+                     "nameForClient":  "SHOP",
+                     "activityIds":  null,
+                     "showName":  "商店",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "",
+                     "iconModelId":  "UI10027",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  2,
+                     "sideType":  "bottom",
+                     "sort":  2,
+                     "systemId":  "ROLE",
+                     "nameForClient":  "ROLE",
+                     "activityIds":  null,
+                     "showName":  "角色",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "",
+                     "iconModelId":  "UI10028",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  3,
+                     "sideType":  "bottom",
+                     "sort":  3,
+                     "systemId":  "TRUNK_INSTANCE",
+                     "nameForClient":  "TRUNK_INSTANCE",
+                     "activityIds":  null,
+                     "showName":  "战斗",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "",
+                     "iconModelId":  "UI10029",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  4,
+                     "sideType":  "bottom",
+                     "sort":  4,
+                     "systemId":  "HERO",
+                     "nameForClient":  "HERO",
+                     "activityIds":  null,
+                     "showName":  "培养",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "",
+                     "iconModelId":  "UI10030",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  5,
+                     "sideType":  "bottom",
+                     "sort":  5,
+                     "systemId":  "GAMEPLAY",
+                     "nameForClient":  "GAMEPLAY",
+                     "activityIds":  null,
+                     "showName":  "活动",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "",
+                     "iconModelId":  "UI10031",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  6,
+                     "sideType":  "left",
+                     "sort":  1,
+                     "systemId":  "WX_GAME_CLUB",
+                     "nameForClient":  "",
+                     "activityIds":  null,
+                     "showName":  "游戏圈",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "image/main/zjm006",
+                     "iconModelId":  "",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  7,
+                     "sideType":  "right_top",
+                     "sort":  2,
+                     "systemId":  "SETTING",
+                     "nameForClient":  "SETTING",
+                     "activityIds":  null,
+                     "showName":  "",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "image/main/zjm002_icon",
+                     "iconModelId":  "",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  8,
+                     "sideType":  "right",
+                     "sort":  3,
+                     "systemId":  "DAILY_TASK",
+                     "nameForClient":  "DAILY_TASK",
+                     "activityIds":  null,
+                     "showName":  "每日任务",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "image/main/zjm001_icon",
+                     "iconModelId":  "",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  9,
+                     "sideType":  "left",
+                     "sort":  2,
+                     "systemId":  "",
+                     "nameForClient":  "SEVEN_DAY",
+                     "activityIds":  [
+                                         "SEVEN_DAY"
+                                     ],
+                     "showName":  "七天登录",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "image/main/zjm004",
+                     "iconModelId":  "",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  11,
+                     "sideType":  "right",
+                     "sort":  1,
+                     "systemId":  "",
+                     "nameForClient":  "INVITE_GIFT",
+                     "activityIds":  [
+                                         "INVITE_GIFT"
+                                     ],
+                     "showName":  "邀请有礼",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "image/main/zjm005",
+                     "iconModelId":  "",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  12,
+                     "sideType":  "left",
+                     "sort":  4,
+                     "systemId":  "",
+                     "nameForClient":  "KAXIXI",
+                     "activityIds":  [
+                                         "KAXIXI"
+                                     ],
+                     "showName":  "卡西西",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "image/main/kxx_icon",
+                     "iconModelId":  "",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  13,
+                     "sideType":  "right",
+                     "sort":  5,
+                     "systemId":  "MORE_GAME",
+                     "nameForClient":  "MORE_GAME",
+                     "activityIds":  null,
+                     "showName":  "更多游戏",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "image/main/gdyx_icon",
+                     "iconModelId":  "",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  14,
+                     "sideType":  "left_bottom",
+                     "sort":  1,
+                     "systemId":  "",
+                     "nameForClient":  "SHORT_CUT",
+                     "activityIds":  [
+                                         "SHORT_CUT"
+                                     ],
+                     "showName":  "加桌",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "image/main/tjzm_icon",
+                     "iconModelId":  "",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 },
+                 {
+                     "id":  15,
+                     "sideType":  "left_bottom",
+                     "sort":  2,
+                     "systemId":  "",
+                     "nameForClient":  "FEED",
+                     "activityIds":  [
+                                         "FEED"
+                                     ],
+                     "showName":  "订阅有奖",
+                     "conditionText":  null,
+                     "modelId":  0,
+                     "showEffect":  false,
+                     "iconEffect":  null,
+                     "isShowInFold":  false,
+                     "showEndTime":  false,
+                     "iconNormalAssetPath":  "image/main/dyyj_icon",
+                     "iconModelId":  "",
+                     "viewName":  "",
+                     "viewArge":  ""
+                 }
+             ],
+    "sourceLength":  274,
+    "expectedLength":  274,
+    "validLength":  true
+}

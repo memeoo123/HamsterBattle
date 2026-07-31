@@ -1,0 +1,2799 @@
+﻿{
+    "table":  "model.ModelConfig",
+    "columnCount":  12,
+    "rowCount":  162,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "modelPath",
+                       "token":  "modelPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "framePath",
+                       "token":  "framePath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "spriteFrame",
+                       "token":  "spriteFrame",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "frameAnchor",
+                       "token":  "frameAnchor",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  5,
+                       "name":  "pos",
+                       "token":  777,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  6,
+                       "name":  "scale",
+                       "token":  "scale",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  7,
+                       "name":  "action",
+                       "token":  "action",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  8,
+                       "name":  "noPremultipliedAlpha",
+                       "token":  "noPremultipliedAlpha",
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  9,
+                       "name":  "cache",
+                       "token":  "cache",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  10,
+                       "name":  "width",
+                       "token":  "width",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  11,
+                       "name":  "height",
+                       "token":  "height",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "P01",
+                     "modelPath":  "spine/power/pao_paopaoshu/pao_paopaoshu",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  -10
+                             },
+                     "scale":  {
+                                   "scaleX":  1,
+                                   "scaleY":  1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "P02",
+                     "modelPath":  "spine/power/pao_shandianxia/pao_shandianxia",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  -10
+                             },
+                     "scale":  {
+                                   "scaleX":  1,
+                                   "scaleY":  1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "P03",
+                     "modelPath":  "spine/power/pao_suonike/pao_suonike",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  -10
+                             },
+                     "scale":  {
+                                   "scaleX":  1,
+                                   "scaleY":  1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "P04",
+                     "modelPath":  "spine/power/pao_kakaxi/pao_kakaxi",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  -10
+                             },
+                     "scale":  {
+                                   "scaleX":  1,
+                                   "scaleY":  1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "P01L",
+                     "modelPath":  "spine/power/pao_paopaoshu0.75/pao_paopaoshu",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  -20
+                             },
+                     "scale":  {
+                                   "scaleX":  0.7,
+                                   "scaleY":  0.7
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "P02L",
+                     "modelPath":  "spine/power/pao_shandianxia0.75/pao_shandianxia",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  -20
+                             },
+                     "scale":  {
+                                   "scaleX":  0.7,
+                                   "scaleY":  0.7
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "P03L",
+                     "modelPath":  "spine/power/pao_suonike0.75/pao_suonike",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  -20
+                             },
+                     "scale":  {
+                                   "scaleX":  0.7,
+                                   "scaleY":  0.7
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "P04L",
+                     "modelPath":  "spine/power/pao_kakaxi0.75/pao_kakaxi",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  -20
+                             },
+                     "scale":  {
+                                   "scaleX":  0.7,
+                                   "scaleY":  0.7
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0101",
+                     "modelPath":  "spine/hero/js_zhanshi_1/js_zhanshi_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0102",
+                     "modelPath":  "spine/hero/js_zhanshi_2/js_zhanshi_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0103",
+                     "modelPath":  "spine/hero/js_zhanshi_3/js_zhanshi_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0104",
+                     "modelPath":  "spine/hero/js_zhanshi_4/js_zhanshi_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0201",
+                     "modelPath":  "spine/hero/js_sheshou_1/js_sheshou_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0202",
+                     "modelPath":  "spine/hero/js_sheshou_2/js_sheshou_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0203",
+                     "modelPath":  "spine/hero/js_sheshou_3/js_sheshou_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0204",
+                     "modelPath":  "spine/hero/js_sheshou_4/js_sheshou_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0301",
+                     "modelPath":  "spine/hero/js_fashi_1/js_fashi_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0302",
+                     "modelPath":  "spine/hero/js_fashi_2/js_fashi_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0303",
+                     "modelPath":  "spine/hero/js_fashi_3/js_fashi_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0304",
+                     "modelPath":  "spine/hero/js_fashi_4/js_fashi_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0401",
+                     "modelPath":  "spine/hero/js_qishi_1/js_qishi_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0402",
+                     "modelPath":  "spine/hero/js_qishi_2/js_qishi_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0403",
+                     "modelPath":  "spine/hero/js_qishi_3/js_qishi_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0404",
+                     "modelPath":  "spine/hero/js_qishi_4/js_qishi_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0501",
+                     "modelPath":  "spine/hero/js_lieren_1/js_lieren_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0502",
+                     "modelPath":  "spine/hero/js_lieren_2/js_lieren_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0503",
+                     "modelPath":  "spine/hero/js_lieren_3/js_lieren_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0504",
+                     "modelPath":  "spine/hero/js_lieren_4/js_lieren_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0601",
+                     "modelPath":  "spine/hero/js_feixingyuan_1/js_feixingyuan_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  150
+                             },
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0602",
+                     "modelPath":  "spine/hero/js_feixingyuan_2/js_feixingyuan_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  150
+                             },
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0603",
+                     "modelPath":  "spine/hero/js_feixingyuan_3/js_feixingyuan_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  150
+                             },
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H0604",
+                     "modelPath":  "spine/hero/js_feixingyuan_4/js_feixingyuan_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  150
+                             },
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H1601",
+                     "modelPath":  "spine/hero/js_konglong_1/js_konglong_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H1602",
+                     "modelPath":  "spine/hero/js_konglong_2/js_konglong_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H1603",
+                     "modelPath":  "spine/hero/js_konglong_3/js_konglong_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "H1604",
+                     "modelPath":  "spine/hero/js_konglong_4/js_konglong_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1,
+                                   "scaleY":  1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "R1001",
+                     "modelPath":  "spine/hero/js_tietiexia/js_gangtiexia",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.2,
+                                   "scaleY":  1.2
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "R1002",
+                     "modelPath":  "spine/hero/js_aoteman/js_aoteman",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1,
+                                   "scaleY":  1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "R1003",
+                     "modelPath":  "spine/hero/js_zhanche/js_zhanche",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1,
+                                   "scaleY":  1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "R1004",
+                     "modelPath":  "spine/hero/js_feidieshu/js_feidieshu",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  {
+                                 "x":  1,
+                                 "y":  150
+                             },
+                     "scale":  {
+                                   "scaleX":  1.1,
+                                   "scaleY":  1.1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "R1005",
+                     "modelPath":  "spine/hero/js_gesila/js_gesila",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1,
+                                   "scaleY":  1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0101_Skin02_Model",
+                     "modelPath":  "spine/skin/js_guigui_1/js_guigui_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0102_Skin02_Model",
+                     "modelPath":  "spine/skin/js_guigui_2/js_guigui_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0103_Skin02_Model",
+                     "modelPath":  "spine/skin/js_guigui_3/js_guigui_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0104_Skin02_Model",
+                     "modelPath":  "spine/skin/js_guigui_4/js_guigui_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0201_Skin02_Model",
+                     "modelPath":  "spine/skin/js_taikong_1/js_taikong_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0202_Skin02_Model",
+                     "modelPath":  "spine/skin/js_taikong_2/js_taikong_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0203_Skin02_Model",
+                     "modelPath":  "spine/skin/js_taikong_3/js_taikong_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0204_Skin02_Model",
+                     "modelPath":  "spine/skin/js_taikong_4/js_taikong_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H02_Skin02_Missile",
+                     "modelPath":  "spine/skin/js_taikong_dandao/js_taikong_dandao",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "IS_H0301_Skin02_Model",
+                     "modelPath":  "spine/skin/js_wushi_1/js_wushi_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0302_Skin02_Model",
+                     "modelPath":  "spine/skin/js_wushi_2/js_wushi_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0303_Skin02_Model",
+                     "modelPath":  "spine/skin/js_wushi_3/js_wushi_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0304_Skin02_Model",
+                     "modelPath":  "spine/skin/js_wushi_4/js_wushi_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0401_Skin02_Model",
+                     "modelPath":  "spine/skin/js_waixing_1/js_waixing_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.9,
+                                   "scaleY":  0.9
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0402_Skin02_Model",
+                     "modelPath":  "spine/skin/js_waixing_2/js_waixing_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.9,
+                                   "scaleY":  0.9
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0403_Skin02_Model",
+                     "modelPath":  "spine/skin/js_waixing_3/js_waixing_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.9,
+                                   "scaleY":  0.9
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H0404_Skin02_Model",
+                     "modelPath":  "spine/skin/js_waixing_4/js_waixing_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.98,
+                                   "scaleY":  0.98
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H1601_Skin02_Model",
+                     "modelPath":  "spine/skin/js_labubu_1/js_labubu_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H1602_Skin02_Model",
+                     "modelPath":  "spine/skin/js_labubu_2/js_labubu_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H1603_Skin02_Model",
+                     "modelPath":  "spine/skin/js_labubu_3/js_labubu_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.88,
+                                   "scaleY":  0.88
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "IS_H1604_Skin02_Model",
+                     "modelPath":  "spine/skin/js_labubu_4/js_labubu_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1,
+                                   "scaleY":  1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "M01",
+                     "modelPath":  "spine/moster/gw_01/gw_01",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.6,
+                                   "scaleY":  0.6
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  50
+                 },
+                 {
+                     "id":  "M02",
+                     "modelPath":  "spine/moster/gw_02/gw_02",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.6,
+                                   "scaleY":  0.6
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  50
+                 },
+                 {
+                     "id":  "M03",
+                     "modelPath":  "spine/moster/gw_03/gw_03",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.6,
+                                   "scaleY":  0.6
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  50
+                 },
+                 {
+                     "id":  "M04",
+                     "modelPath":  "spine/moster/gw_04/gw_04",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.9,
+                                   "scaleY":  0.9
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  50
+                 },
+                 {
+                     "id":  "M05",
+                     "modelPath":  "spine/moster/gw_05/gw_05",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.6,
+                                   "scaleY":  0.6
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  50
+                 },
+                 {
+                     "id":  "M06",
+                     "modelPath":  "spine/moster/gw_06/gw_06",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.6,
+                                   "scaleY":  0.6
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "M07",
+                     "modelPath":  "spine/moster/gw_07/gw_07",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.7,
+                                   "scaleY":  0.7
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "M08",
+                     "modelPath":  "spine/moster/gw_08/gw_08",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.6,
+                                   "scaleY":  0.6
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "M09",
+                     "modelPath":  "spine/moster/gw_09/gw_09",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.6,
+                                   "scaleY":  0.6
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "M10",
+                     "modelPath":  "spine/moster/gw_10/gw_10",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.6,
+                                   "scaleY":  0.6
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "M11",
+                     "modelPath":  "spine/moster/gw_11/gw_11",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.6,
+                                   "scaleY":  0.6
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "M12",
+                     "modelPath":  "spine/moster/gw_12/gw_12",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.6,
+                                   "scaleY":  0.6
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "M13",
+                     "modelPath":  "spine/moster/gw_13/gw_13",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.6,
+                                   "scaleY":  0.6
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "M14",
+                     "modelPath":  "spine/moster/gw_14/gw_14",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.6,
+                                   "scaleY":  0.6
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "Boss01",
+                     "modelPath":  "spine/moster/gw_01/gw_01",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.2,
+                                   "scaleY":  1.2
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "Boss02",
+                     "modelPath":  "spine/moster/gw_02/gw_02",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.2,
+                                   "scaleY":  1.2
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "Boss03",
+                     "modelPath":  "spine/moster/gw_03/gw_03",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.2,
+                                   "scaleY":  1.2
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "Boss04",
+                     "modelPath":  "spine/moster/gw_04/gw_04",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.2,
+                                   "scaleY":  1.2
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "Boss05",
+                     "modelPath":  "spine/moster/gw_05/gw_05",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.2,
+                                   "scaleY":  1.2
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "Boss06",
+                     "modelPath":  "spine/moster/gw_06/gw_06",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.2,
+                                   "scaleY":  1.2
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "Boss07",
+                     "modelPath":  "spine/moster/gw_07/gw_07",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.1,
+                                   "scaleY":  1.1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "Boss08",
+                     "modelPath":  "spine/moster/gw_08/gw_08",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.9,
+                                   "scaleY":  0.9
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "Boss09",
+                     "modelPath":  "spine/moster/gw_09/gw_09",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.2,
+                                   "scaleY":  1.2
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "Boss10",
+                     "modelPath":  "spine/moster/gw_10/gw_10",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.2,
+                                   "scaleY":  1.2
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "Boss11",
+                     "modelPath":  "spine/moster/gw_11/gw_11",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.2,
+                                   "scaleY":  1.2
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "Boss14",
+                     "modelPath":  "spine/moster/gw_14/gw_14",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.2,
+                                   "scaleY":  1.2
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "B01",
+                     "modelPath":  "spine/moster/boss_1/boss_1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.9,
+                                   "scaleY":  0.9
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "B02",
+                     "modelPath":  "spine/moster/boss_2/boss_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.9,
+                                   "scaleY":  0.9
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "B03",
+                     "modelPath":  "spine/moster/boss_3/boss_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.9,
+                                   "scaleY":  0.9
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "10010012",
+                     "modelPath":  "spine/ui/chuping/chuping _upper",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "chuping",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10002",
+                     "modelPath":  "spine/ui/zhuanshi_shaoguang/zhuanshi_shaoguang_lv",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10008",
+                     "modelPath":  "spine/ui/jinbi_shaoguang/jinbi_shaoguang_jin",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10009",
+                     "modelPath":  "spine/ui/sd_xingguangdianzui/sd_xingguangdianzui",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10010",
+                     "modelPath":  "spine/ui/sd_xingguangdianzui_shaoguang/sd_xingguangdianzui_xunhuan",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10011",
+                     "modelPath":  "spine/ui/sd_xingguangdianzui_shaoguang/sd_xingguangdianzui_shaoguang",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10012",
+                     "modelPath":  "spine/ui/chilunpy_shengjishanguang/chilunpy_shengjishanguang",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10013",
+                     "modelPath":  "spine/ui/zhujue_chitiaoguangxiao/zhujue_chitiaoguangxiao",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10014",
+                     "modelPath":  "spine/ui/zhandou_shandian/zhandou_shandian",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10015",
+                     "modelPath":  "spine/ui/zhandou_hechengguangquan/zhandou_hechengguangquan",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10016",
+                     "modelPath":  "spine/ui/zhandou_BOSSlaixi/zhandou_BOSSlaixi",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10017",
+                     "modelPath":  "spine/ui/zhandou_shuangdao/zhandou_shuangdao",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10018",
+                     "modelPath":  "spine/ui/zhujue_xingxianggx/zhujue_xingxianggx",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10019",
+                     "modelPath":  "spine/ui/zhandou_chuchanggaungxiao/zhandou_chuchanggaungxiao",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10020",
+                     "modelPath":  "spine/ui/chilun_hongse/chilun_hongse_2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10021",
+                     "modelPath":  "spine/ui/chilun_hongse/chilun_hongse_3",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10022",
+                     "modelPath":  "spine/ui/chilun_hongse/chilun_hongse_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10023",
+                     "modelPath":  "spine/ui/zhandou_shuaxinguangxiao/zhandou_shuaxinguangxiao",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10024",
+                     "modelPath":  "spine/ui/zhandou_yunqi/zhandou_yunqi",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10025",
+                     "modelPath":  "spine/ui/zhandou_sg/zhandou_sg1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10026",
+                     "modelPath":  "spine/ui/zhandou_sg/zhandou_sg2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10027",
+                     "modelPath":  "spine/ui/zjm_dibutubiao/zjm_shangdian",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10028",
+                     "modelPath":  "spine/ui/zjm_dibutubiao/zjm_juese",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10029",
+                     "modelPath":  "spine/ui/zjm_dibutubiao/zjm_zhandou",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10030",
+                     "modelPath":  "spine/ui/zjm_dibutubiao/zjm_peiyang",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10031",
+                     "modelPath":  "spine/ui/zjm_dibutubiao/zjm_huodong",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "UI10032",
+                     "modelPath":  "spine/ui/sd_xingguangdianzui_shaoguang/sd_xingguang_shaoguang",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H11_S1",
+                     "modelPath":  "spine/skill/ziliao/skill01_hit_upper",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "skill01_hit_upper",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H12_S1",
+                     "modelPath":  "spine/skill/chilun_leiyun/chilun_leiyun",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "attack",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H13_S1",
+                     "modelPath":  "spine/skill/touzhi/zidan",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H13_S1_LOWER",
+                     "modelPath":  "spine/skill/touzhi/baomihua_hill",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "pskill01",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H14_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/chilun_haidaosha",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.2
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H14_S2",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/chilun_haidaosha",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.2
+                                     },
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.5,
+                                   "scaleY":  1.5
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H15_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/chilun_chuangzhangsha",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.2
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H160_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/hedang",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.2
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H17_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/js_feixingyuan_dandao3",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "1",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H17_S1_LOWER",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/js_feixingyuan_hill_baozha1",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.5,
+                                   "scaleY":  1.5
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H18_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/js_fashi_dandao",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.3,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  -1,
+                                   "scaleY":  1
+                               },
+                     "action":  "attack",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H19_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/js_feixingyuan_dandao2",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  -1.5,
+                                   "scaleY":  1.5
+                               },
+                     "action":  "1",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H19_S1_LOWER",
+                     "modelPath":  "spine/skill/js_feixingyuan_hill_baozha2/js_feixingyuan_hill_baozha2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H20_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/js_feixingyuan_dandao",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "1",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H20_S1_LOWER",
+                     "modelPath":  "spine/skill/js_feixingyuan_hill_baozha2/js_feixingyuan_hill_baozha2",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.5,
+                                   "scaleY":  1.5
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H21_S1_LOWER",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/js_aoteman_hill",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.5,
+                                   "scaleY":  1.5
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H22_S1_LOWER",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/js_gangtiexia_hill_baozha",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.3,
+                                         "y":  0.2
+                                     },
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.8,
+                                   "scaleY":  0.8
+                               },
+                     "action":  "1",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H23_S1_LOWER",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/js_lieren_hill_baozha",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.3,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H24_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/js_zhanche_dandao",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.2
+                                     },
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.7,
+                                   "scaleY":  0.7
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H24_S1_LOWER",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/js_zhanche_hill",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.4,
+                                         "y":  0.3
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H25_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/baomihuali",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.5,
+                                   "scaleY":  1.5
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H26_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/baomihua",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.2
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H27_S1",
+                     "modelPath":  "spine/skill/js_feidieshu_dandao/js_feidieshu_dandao",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H27_S2",
+                     "modelPath":  "spine/skill/hedang/hedang",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H28_S1",
+                     "modelPath":  "spine/skill/js_fashi_hill_binkuai/hit_binkuai",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  100,
+                     "height":  100
+                 },
+                 {
+                     "id":  "H28_S2",
+                     "modelPath":  "spine/skill/js_fashi_hit_lizi/hit_lizi",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.5,
+                                   "scaleY":  0.5
+                               },
+                     "action":  "hit",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  100,
+                     "height":  100
+                 },
+                 {
+                     "id":  "H29_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/js_sheshou_zidan",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.2
+                                     },
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  -1,
+                                   "scaleY":  1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H29_S2",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/js_sheshou_lanqiu",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.2
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H30_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/boss_1_dandao",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.2
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H31_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/yugutou_dandao",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.2
+                                     },
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  -1,
+                                   "scaleY":  1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H32_S1",
+                     "modelPath":  "spine/skill/chilun_shexian1/chilun_shexian1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.3,
+                                   "scaleY":  1.5
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H33_S1",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/feibiao",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "H34_S2",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/skill/touming",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "M10_S1",
+                     "modelPath":  "spine/moster/gw_10/gw_10_zidan",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  -1,
+                                   "scaleY":  1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "M10_S1_LOWER",
+                     "modelPath":  "spine/moster/gw_10/gw_10_hit",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  0.7,
+                                   "scaleY":  0.7
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "P02_S1",
+                     "modelPath":  "spine/skill/shandianxia_hit/shandianxia_hit",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "P02_S2",
+                     "modelPath":  "spine/skill/shandianxia_hit/shandianxia_hit_nu",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 },
+                 {
+                     "id":  "FRUIT_H01",
+                     "modelPath":  "spine/hero/js_zhanshi_4/js_zhanshi_4",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.1,
+                                   "scaleY":  1.1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "FRUIT_H02",
+                     "modelPath":  "spine/hero/js_tietiexia/js_gangtiexia",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.1,
+                                   "scaleY":  1.1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  50
+                 },
+                 {
+                     "id":  "FRUIT_H03",
+                     "modelPath":  "spine/hero/js_aoteman/js_aoteman",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  1.1,
+                                   "scaleY":  1.1
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "FRUIT_M01",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/monster/sg_xigua1",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  50
+                 },
+                 {
+                     "id":  "FRUIT_M02",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/monster/sg_xigua2",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "FRUIT_M03",
+                     "modelPath":  "",
+                     "framePath":  "spriteFrame/monster/sg_xigua3",
+                     "spriteFrame":  1,
+                     "frameAnchor":  {
+                                         "x":  0.5,
+                                         "y":  0.5
+                                     },
+                     "pos":  null,
+                     "scale":  null,
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  80
+                 },
+                 {
+                     "id":  "FRUIT_H02_S1",
+                     "modelPath":  "spine/skill/chilun_shexian1/chilun_shexian1",
+                     "framePath":  "",
+                     "spriteFrame":  0,
+                     "frameAnchor":  null,
+                     "pos":  null,
+                     "scale":  {
+                                   "scaleX":  3,
+                                   "scaleY":  3
+                               },
+                     "action":  "idle",
+                     "noPremultipliedAlpha":  false,
+                     "cache":  0,
+                     "width":  0,
+                     "height":  0
+                 }
+             ],
+    "sourceLength":  1970,
+    "expectedLength":  1970,
+    "validLength":  true
+}

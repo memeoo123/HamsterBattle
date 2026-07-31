@@ -1,0 +1,387 @@
+{
+  "schemaVersion": "1.0",
+  "implementationReady": false,
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "version": "18",
+    "engine": "cocos",
+    "engineVersion": "3.8.2"
+  },
+  "design": {
+    "width": {
+      "value": 750,
+      "status": "confirmed",
+      "evidence": ["K-C001"]
+    },
+    "height": {
+      "value": 1334,
+      "status": "confirmed",
+      "evidence": ["K-C001"]
+    },
+    "orientation": {
+      "value": "portrait",
+      "status": "confirmed",
+      "evidence": ["K-C001", "K-C002"]
+    },
+    "currentImplementationMismatch": {
+      "value": "CangshuGame.ts currently calls view.setDesignResolutionSize(750, 1000)",
+      "status": "confirmed",
+      "evidence": ["K-C012"]
+    }
+  },
+  "representativeLevel": {
+    "id": {
+      "value": 1001,
+      "status": "confirmed",
+      "evidence": ["K-C004"]
+    },
+    "name": {
+      "value": "宁静森林",
+      "status": "confirmed",
+      "evidence": ["K-C004"]
+    },
+    "objective": {
+      "value": "deploy hero/coin gears, survive five automatic rounds, and reduce the enemy mushroom camp from 4000 HP to zero before the player camp reaches zero",
+      "status": "confirmed",
+      "evidence": ["K-C004", "K-C007"]
+    },
+    "phases": {
+      "value": ["deploy", "battle", "roundClear", "won", "lost"],
+      "status": "confirmed",
+      "evidence": ["K-C007"]
+    },
+    "playerBaseHp": {
+      "value": 500,
+      "status": "confirmed",
+      "evidence": ["K-C004"]
+    },
+    "enemyBaseHp": {
+      "value": 4000,
+      "status": "confirmed",
+      "evidence": ["K-C004"]
+    },
+    "levelAtkMultiple": {
+      "value": 4000,
+      "status": "confirmed",
+      "evidence": ["K-C004", "K-C009"]
+    },
+    "levelHpMultiple": {
+      "value": 4000,
+      "status": "confirmed",
+      "evidence": ["K-C004", "K-C009"]
+    }
+  },
+  "scene": {
+    "anchors": [
+      {
+        "id": "playerCamp",
+        "currentImplementation": {"x": -300, "yWithinBattleLayer": -18, "battleLayerY": 185},
+        "status": "inferred",
+        "evidence": ["K-C012"],
+        "note": "Implementation anchor only; not accepted as original pixel geometry."
+      },
+      {
+        "id": "enemyCamp",
+        "currentImplementation": {"x": 300, "yWithinBattleLayer": -18, "battleLayerY": 185},
+        "status": "inferred",
+        "evidence": ["K-C012"],
+        "note": "Implementation anchor only; not accepted as original pixel geometry."
+      },
+      {
+        "id": "backpackGrid",
+        "currentImplementation": {"left": -216, "top": -100, "cell": 72, "columns": 7, "rows": 5, "powerIndex": 17},
+        "status": "inferred",
+        "evidence": ["K-C011", "K-C012"],
+        "note": "The 7x5 structure and center unlock semantics are supported; exact original spacing still needs a matched capture."
+      }
+    ],
+    "layers": [
+      {
+        "value": ["background", "battlefield", "units", "bases", "backpack", "HUD", "result overlay"],
+        "status": "inferred",
+        "evidence": ["K-C011", "K-C012"]
+      }
+    ],
+    "uiHierarchy": [
+      {
+        "value": "upper battlefield over lower 7x5 backpack grid with a centered 3x3 unlocked region",
+        "status": "inferred",
+        "evidence": ["K-C011"]
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "fightscene_01",
+      "kind": "sprite",
+      "source": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\original\\fightscene_01.jpg",
+      "target": "assets/resources/original/fightscene_01.jpg",
+      "status": "confirmed",
+      "evidence": ["K-C010"]
+    },
+    {
+      "id": "playerCamp",
+      "kind": "sprite",
+      "source": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\original\\blue_base.png",
+      "target": "assets/resources/original/blue_base.png",
+      "status": "confirmed",
+      "evidence": ["K-C010"]
+    },
+    {
+      "id": "enemyCamp",
+      "kind": "sprite",
+      "source": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\original\\red_base.png",
+      "target": "assets/resources/original/red_base.png",
+      "status": "confirmed",
+      "evidence": ["K-C010"]
+    },
+    {
+      "id": "H0101",
+      "kind": "spine-3.8.99",
+      "source": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\spine\\H0101",
+      "target": "assets/resources/spine/H0101",
+      "status": "confirmed",
+      "evidence": ["K-C010"]
+    },
+    {
+      "id": "H0201",
+      "kind": "spine-3.8.99",
+      "source": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\spine\\H0201",
+      "target": "assets/resources/spine/H0201",
+      "status": "confirmed",
+      "evidence": ["K-C010"]
+    },
+    {
+      "id": "M02",
+      "kind": "spine-3.8.99",
+      "source": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\spine\\M02",
+      "target": "assets/resources/spine/M02",
+      "status": "confirmed",
+      "evidence": ["K-C010"]
+    },
+    {
+      "id": "M03",
+      "kind": "spine-3.8.99",
+      "source": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\spine\\M03",
+      "target": "assets/resources/spine/M03",
+      "status": "confirmed",
+      "evidence": ["K-C010"]
+    }
+  ],
+  "entities": [
+    {
+      "id": "H01",
+      "name": "仓鼠战士",
+      "atk": 20,
+      "hp": 70,
+      "status": "confirmed",
+      "evidence": ["K-C005"]
+    },
+    {
+      "id": "H02",
+      "name": "仓鼠射手",
+      "atk": 27,
+      "hp": 51,
+      "status": "confirmed",
+      "evidence": ["K-C005"]
+    },
+    {
+      "id": "M02",
+      "name": "云云猪",
+      "atk": 20,
+      "hp": 70,
+      "gold": 5,
+      "status": "confirmed",
+      "evidence": ["K-C005"]
+    },
+    {
+      "id": "M03",
+      "name": "僵僵猫",
+      "atk": 16,
+      "hp": 30,
+      "gold": 5,
+      "status": "confirmed",
+      "evidence": ["K-C005"]
+    },
+    {
+      "id": "Boss03",
+      "name": "精英僵僵猫",
+      "atk": 24,
+      "hp": 296,
+      "gold": 20,
+      "status": "confirmed",
+      "evidence": ["K-C005"]
+    }
+  ],
+  "spawners": [
+    {
+      "id": "H01Gear",
+      "entity": "H01",
+      "spawnAtBattleStart": true,
+      "intervalSeconds": 10,
+      "status": "confirmed",
+      "evidence": ["K-C008"]
+    },
+    {
+      "id": "H02Gear",
+      "entity": "H02",
+      "spawnAtBattleStart": true,
+      "intervalSeconds": 8,
+      "status": "confirmed",
+      "evidence": ["K-C008"]
+    },
+    {
+      "id": "enemyRoundSpawner",
+      "timeUnit": "milliseconds from round start",
+      "status": "confirmed",
+      "evidence": ["K-C005"]
+    }
+  ],
+  "combat": {
+    "regularDamage": {
+      "formula": "max(1, floor(attack * effectRatio/10000 * hitFactor/10000 * critFactor/10000 * damageCoefficient/10000))",
+      "modifierOrder": ["attack", "effectRatio", "hitFactor", "critFactor", "damageIncrease-minus-resistances"],
+      "defaultEffectRatio": 10000,
+      "defaultCritFactor": 15000,
+      "minimumDamage": 1,
+      "status": "confirmed",
+      "evidence": ["K-C006"]
+    },
+    "enemyScaling": {
+      "attack": "baseAtk * levelAtkMultiple/10000 * roundAtkMultiple/10000 * defeatCompensation/10000",
+      "hp": "baseHp * levelHpMultiple/10000 * roundHpMultiple/10000 * defeatCompensation/10000",
+      "status": "confirmed",
+      "evidence": ["K-C009"]
+    },
+    "timing": {
+      "commonAttackCooldownSeconds": 1,
+      "hitDelaySeconds": 0.3,
+      "status": "confirmed",
+      "evidence": ["K-C006"]
+    }
+  },
+  "rounds": [
+    {
+      "id": 100101,
+      "index": 1,
+      "times": [5000],
+      "entities": ["M02"],
+      "atkMultiple": 18100,
+      "hpMultiple": 19139,
+      "status": "confirmed",
+      "evidence": ["K-C005"]
+    },
+    {
+      "id": 100102,
+      "index": 2,
+      "times": [1000, 4000, 6000, 8000, 11000, 13000, 15000],
+      "entities": ["M02", "M02", "M02", "M03", "M02", "M02", "M02"],
+      "atkMultiple": 18121,
+      "hpMultiple": 20116,
+      "status": "confirmed",
+      "evidence": ["K-C005"]
+    },
+    {
+      "id": 100103,
+      "index": 3,
+      "times": [1000, 4000, 6000, 9500, 10000, 11000, 11500, 12500, 13000, 13500, 14000, 14500, 15000],
+      "entities": ["M02", "M02", "M02", "M03", "M02", "M02", "M02", "M02", "M03", "M02", "M02", "M02", "M03"],
+      "atkMultiple": 23879,
+      "hpMultiple": 27665,
+      "status": "confirmed",
+      "evidence": ["K-C005"]
+    },
+    {
+      "id": 100104,
+      "index": 4,
+      "times": [1000, 4000, 6000, 9500, 10000, 11000, 11500, 12000, 12500, 13000, 13500, 14000, 14500, 15000],
+      "entities": ["M02", "M02", "M02", "M03", "M02", "M02", "M02", "M02", "M02", "M03", "M02", "M02", "M02", "M03"],
+      "atkMultiple": 28614,
+      "hpMultiple": 34434,
+      "status": "confirmed",
+      "evidence": ["K-C005"]
+    },
+    {
+      "id": 100105,
+      "index": 5,
+      "times": [1000, 3500, 5500, 8500, 9000, 10000, 10500, 11000, 11500, 12000],
+      "entities": ["M02", "M02", "M02", "M02", "M03", "M02", "M02", "M03", "M02", "Boss03"],
+      "atkMultiple": 34013,
+      "hpMultiple": 42342,
+      "status": "confirmed",
+      "evidence": ["K-C005"]
+    }
+  ],
+  "goldenCases": "golden-cases.json",
+  "unknowns": [
+    {
+      "field": "scene.anchors.exactOriginalPositions",
+      "verification": "Capture level 1001 at the same 750x1334 viewport during deployment and battle, then measure base, grid, and HUD anchors."
+    },
+    {
+      "field": "scene.uiHierarchy.pixelGeometry",
+      "verification": "Compare a Creator preview with a matched original capture and record component rectangles, spacing, scale, and sorting."
+    },
+    {
+      "field": "validation.originalReference",
+      "verification": "Record or capture the original level 1001 at a named phase, round, and elapsed timestamp."
+    },
+    {
+      "field": "audioAndEffects",
+      "verification": "Recover and map the representative level's sound, hit, skill, and result effects after the visual baseline is accepted."
+    }
+  ],
+  "evidenceIndex": {
+    "K-C001": {
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\unpacked\\wxf9af2417e78ce07a\\18\\main\\src\\settings.37a11.json",
+      "finding": "Cocos 3.8.2 and exactFit 750x1334 design resolution"
+    },
+    "K-C002": {
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\unpacked\\wxf9af2417e78ce07a\\18\\main\\app-config.json",
+      "finding": "portrait device orientation"
+    },
+    "K-C003": {
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\resources\\wxf9af2417e78ce07a\\18\\resources3\\localData.4952c.bin",
+      "finding": "validated compact configuration archive"
+    },
+    "K-C004": {
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\data\\normal-levels.json",
+      "finding": "level 1001 bases, multipliers, recommended heroes, and five round references"
+    },
+    "K-C005": {
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\data\\normal-levels.json",
+      "finding": "round 100101-100105 timestamps/entities/multipliers and H01/H02/M02/M03/Boss03 attributes"
+    },
+    "K-C006": {
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\cocos-runtime-and-special-rounds-analysis.md",
+      "finding": "regular damage order, integer floor, minimum 1, common attack timing, and modifier semantics"
+    },
+    "K-C007": {
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\scripts\\CangshuGame.ts",
+      "lines": "24-25, 435-461, 697-730",
+      "finding": "implemented deploy/battle/roundClear/won/lost phases and base HP transitions"
+    },
+    "K-C008": {
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\scripts\\CangshuGame.ts",
+      "lines": "224-228, 443-459, 610-620",
+      "finding": "immediate hero creation and H01/H02 10/8 second intervals"
+    },
+    "K-C009": {
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\cocos-runtime-and-special-rounds-analysis.md",
+      "finding": "base x level x round x defeat-compensation multiplier chain"
+    },
+    "K-C010": {
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\RESTORE_PROGRESS.md",
+      "finding": "original background, camps, and Spine 3.8.99 assets imported"
+    },
+    "K-C011": {
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\RESTORE_PROGRESS.md",
+      "finding": "upper battlefield, lower 7x5 backpack grid, centered 3x3 unlock area, and power core index 17"
+    },
+    "K-C012": {
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\scripts\\CangshuGame.ts",
+      "lines": "125-137, 341-373",
+      "finding": "current implementation uses 750x1000 and provisional base/grid anchors"
+    }
+  }
+}

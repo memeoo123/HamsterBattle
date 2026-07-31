@@ -1,0 +1,148 @@
+﻿{
+    "table":  "baglike.BagLikeConstantConfig",
+    "columnCount":  2,
+    "rowCount":  31,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "BAGLIKE:NORMAL_REFRESH",
+                     "content":  "3001;3002;3003"
+                 },
+                 {
+                     "id":  "BAGLIKE:AD_GRID",
+                     "content":  "3032"
+                 },
+                 {
+                     "id":  "BAGLIKE:AD_GRID_TIMES",
+                     "content":  "3"
+                 },
+                 {
+                     "id":  "BAGLIKE:AD_NORMAL_REFRESH",
+                     "content":  "3002;3003;3004;"
+                 },
+                 {
+                     "id":  "BAGLIKE:NORMAL_REFRESH_COST",
+                     "content":  "5:15;"
+                 },
+                 {
+                     "id":  "BAGLIKE:AD_BUFF_CHANGE",
+                     "content":  "10"
+                 },
+                 {
+                     "id":  "BAGLIKE:AD_BUFF_ALL",
+                     "content":  "3"
+                 },
+                 {
+                     "id":  "BAGLIKE:AD_COIN_COUNT",
+                     "content":  "30"
+                 },
+                 {
+                     "id":  "BAGLIKE:AD_ITEM_LEVELS",
+                     "content":  "3;5;"
+                 },
+                 {
+                     "id":  "BAGLIKE:MUST_GRID_REFRESH_TIMES",
+                     "content":  "7"
+                 },
+                 {
+                     "id":  "BAGLIKE:NORMAL_REFRESH_FRIST",
+                     "content":  "3000;3000;3000;"
+                 },
+                 {
+                     "id":  "BAGLIKE:MUST_GRID_REWARD_ID",
+                     "content":  "3030"
+                 },
+                 {
+                     "id":  "BAGLIKE:THREE_LV_RATE",
+                     "content":  "2000"
+                 },
+                 {
+                     "id":  "BAGLIKE:FIRST_UNLOCK_REFRESH_RATE",
+                     "content":  "10000"
+                 },
+                 {
+                     "id":  "BAGLIKE:MAX_BATTLE_BRICK_TYPE",
+                     "content":  "5"
+                 },
+                 {
+                     "id":  "BAGLIKE:NORMAL_REFRESH_NO_GRID",
+                     "content":  "3002;3002;3002;"
+                 },
+                 {
+                     "id":  "BAGLIKE:FAILED_REFRESH_ITEMS",
+                     "content":  "H1302;H1303;G07;"
+                 },
+                 {
+                     "id":  "BAGLIKE:MULTIPLE_CREATE_HERO_INTERVAL",
+                     "content":  "100"
+                 },
+                 {
+                     "id":  "BAGLIKE:MULTIPLE_CREATE_TOWER_INTERVAL",
+                     "content":  "100"
+                 },
+                 {
+                     "id":  "BAGLIKE:REVIVE_REFRESH",
+                     "content":  "3016;3016;3033;"
+                 },
+                 {
+                     "id":  "BAGLIKE:REVIVE_REFRESH_NO_GRID",
+                     "content":  "3016;3016;3016;"
+                 },
+                 {
+                     "id":  "BAGLIKE:NORMAL_REFRESH_FOR_ENDLESS",
+                     "content":  "3001;3003;3003"
+                 },
+                 {
+                     "id":  "BAGLIKE:MUST_GRID_REFRESH_TIMES_FOR_ENDLESS",
+                     "content":  "5"
+                 },
+                 {
+                     "id":  "BAGLIKE:NORMAL_REFRESH_NO_GRID_FOR_ENDLESS",
+                     "content":  "3003;3003;3003;"
+                 },
+                 {
+                     "id":  "BAGLIKE:AD_NORMAL_REFRESH_FOR_ENDLESS",
+                     "content":  "3003;3003;3004;"
+                 },
+                 {
+                     "id":  "BAGLIKE:INIT_ALL_BUFF_BLACK_LIST",
+                     "content":  "RG_H10_abl01_eff01;"
+                 },
+                 {
+                     "id":  "BAGLIKE:NOT_EXCLUDE_HEROS",
+                     "content":  "H11;"
+                 },
+                 {
+                     "id":  "BAGLIKE:BATTLE_SPEED_UP_MULTIPLE",
+                     "content":  "15000"
+                 },
+                 {
+                     "id":  "BAGLIKE:BATTLE_SPEED_AD_TIMES",
+                     "content":  "3"
+                 },
+                 {
+                     "id":  "BAGLIKE:AUTO_OPEN_SPEED_CHAPTER",
+                     "content":  "1001;1002;1003"
+                 },
+                 {
+                     "id":  "BAGLIKE:BUFF_REFRESH_MIN_QUALITY",
+                     "content":  "4"
+                 }
+             ],
+    "sourceLength":  68,
+    "expectedLength":  68,
+    "validLength":  true
+}

@@ -1,0 +1,63 @@
+﻿{
+    "table":  "battleFruit.FruitHeroConfig",
+    "columnCount":  5,
+    "rowCount":  3,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "headPath",
+                       "token":  346,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "modelId",
+                       "token":  347,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "skillId",
+                       "token":  640,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "H01",
+                     "name":  "i18n:FruitHeroConfig.name.H01",
+                     "headPath":  "",
+                     "modelId":  "FRUIT_H01",
+                     "skillId":  "SKILL_1001"
+                 },
+                 {
+                     "id":  "H02",
+                     "name":  "i18n:FruitHeroConfig.name.H02",
+                     "headPath":  "",
+                     "modelId":  "FRUIT_H02",
+                     "skillId":  "SKILL_1002"
+                 },
+                 {
+                     "id":  "H03",
+                     "name":  "i18n:FruitHeroConfig.name.H03",
+                     "headPath":  "",
+                     "modelId":  "FRUIT_H03",
+                     "skillId":  "SKILL_1003"
+                 }
+             ],
+    "sourceLength":  27,
+    "expectedLength":  27,
+    "validLength":  true
+}

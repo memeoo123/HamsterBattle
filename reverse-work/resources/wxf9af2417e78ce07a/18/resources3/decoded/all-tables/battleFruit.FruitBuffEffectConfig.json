@@ -1,0 +1,124 @@
+﻿{
+    "table":  "battleFruit.FruitBuffEffectConfig",
+    "columnCount":  3,
+    "rowCount":  12,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "effect",
+                       "token":  "effect",
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "BUFF_1001",
+                     "type":  "SKILL_ATTR",
+                     "effect":  [
+                                    "BULLET_CNT",
+                                    1
+                                ]
+                 },
+                 {
+                     "id":  "BUFF_1002",
+                     "type":  "SKILL_ATTR",
+                     "effect":  [
+                                    "BULLET_CNT",
+                                    2
+                                ]
+                 },
+                 {
+                     "id":  "BUFF_1003",
+                     "type":  "SKILL_ATTR",
+                     "effect":  [
+                                    "BULLET_CNT",
+                                    3
+                                ]
+                 },
+                 {
+                     "id":  "BUFF_1004",
+                     "type":  "SKILL_ATTR",
+                     "effect":  [
+                                    "BULLET_PASS_TIMES",
+                                    3
+                                ]
+                 },
+                 {
+                     "id":  "BUFF_1005",
+                     "type":  "SKILL_ATTR",
+                     "effect":  [
+                                    "BULLET_SPLIT_CNT",
+                                    3
+                                ]
+                 },
+                 {
+                     "id":  "BUFF_1006",
+                     "type":  "SKILL_ATTR",
+                     "effect":  [
+                                    "CD_PERCENT",
+                                    "-10"
+                                ]
+                 },
+                 {
+                     "id":  "BUFF_1007",
+                     "type":  "SKILL_ATTR",
+                     "effect":  [
+                                    "BULLET_BACK_TIMES",
+                                    3
+                                ]
+                 },
+                 {
+                     "id":  "BUFF_1008",
+                     "type":  "SKILL_ATTR",
+                     "effect":  [
+                                    "BULLET_SIZE_PERCENT",
+                                    50
+                                ]
+                 },
+                 {
+                     "id":  "BUFF_1009",
+                     "type":  "SKILL_ATTR",
+                     "effect":  [
+                                    "RANGE_PERCENT",
+                                    10
+                                ]
+                 },
+                 {
+                     "id":  "BUFF_1010",
+                     "type":  "SKILL_ATTR",
+                     "effect":  [
+                                    "DAMAGE_PRECENT",
+                                    10
+                                ]
+                 },
+                 {
+                     "id":  "BUFF_1011",
+                     "type":  "ADD_HERO",
+                     "effect":  [
+                                    "H02"
+                                ]
+                 },
+                 {
+                     "id":  "BUFF_1012",
+                     "type":  "ADD_HERO",
+                     "effect":  [
+                                    "H03"
+                                ]
+                 }
+             ],
+    "sourceLength":  44,
+    "expectedLength":  44,
+    "validLength":  true
+}

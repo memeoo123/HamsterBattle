@@ -1,0 +1,28 @@
+﻿{
+    "table":  "dailyInstance.DailyInstanceConstantConfig",
+    "columnCount":  2,
+    "rowCount":  1,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "DAILY_INSTANCE:DAILY_CHALLENGE_TIMES",
+                     "content":  "3"
+                 }
+             ],
+    "sourceLength":  8,
+    "expectedLength":  8,
+    "validLength":  true
+}

@@ -1,0 +1,280 @@
+﻿{
+    "table":  "baglike.BagLikeShapeConfig",
+    "columnCount":  9,
+    "rowCount":  11,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "panel",
+                       "token":  "panel",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "adIcon",
+                       "token":  "adIcon",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "mergeLightPath",
+                       "token":  "mergeLightPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "modelId",
+                       "token":  347,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  6,
+                       "name":  "panelRotate",
+                       "token":  "panelRotate",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  7,
+                       "name":  "rolePos",
+                       "token":  "rolePos",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  8,
+                       "name":  "shapeArr",
+                       "token":  "shapeArr",
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "panel":  "",
+                     "icon":  "image/shape/shape_icon1",
+                     "adIcon":  "image/shape/shape_ad1",
+                     "mergeLightPath":  "ui://bagLike/zhandou1_frame",
+                     "modelId":  "",
+                     "panelRotate":  0,
+                     "rolePos":  null,
+                     "shapeArr":  [
+                                      [
+                                          1
+                                      ]
+                                  ]
+                 },
+                 {
+                     "id":  2,
+                     "panel":  "ui://bagLike/panel1",
+                     "icon":  "image/shape/shape_icon2",
+                     "adIcon":  "image/shape/shape_ad2",
+                     "mergeLightPath":  "ui://bagLike/zhandou1_frame",
+                     "modelId":  "UI10020",
+                     "panelRotate":  0,
+                     "rolePos":  null,
+                     "shapeArr":  [
+                                      [
+                                          1,
+                                          1
+                                      ]
+                                  ]
+                 },
+                 {
+                     "id":  3,
+                     "panel":  "ui://bagLike/panel1",
+                     "icon":  "image/shape/shape_icon2",
+                     "adIcon":  "image/shape/shape_ad2",
+                     "mergeLightPath":  "ui://bagLike/zhandou1_frame",
+                     "modelId":  "UI10020",
+                     "panelRotate":  90,
+                     "rolePos":  null,
+                     "shapeArr":  [
+                                      [
+                                          1
+                                      ],
+                                      [
+                                          1
+                                      ]
+                                  ]
+                 },
+                 {
+                     "id":  4,
+                     "panel":  "ui://bagLike/panel3",
+                     "icon":  "image/shape/shape_icon3",
+                     "adIcon":  "image/shape/shape_ad3",
+                     "mergeLightPath":  "ui://bagLike/zhandou1_frame",
+                     "modelId":  "",
+                     "panelRotate":  90,
+                     "rolePos":  null,
+                     "shapeArr":  [
+                                      [
+                                          1,
+                                          1,
+                                          1
+                                      ]
+                                  ]
+                 },
+                 {
+                     "id":  5,
+                     "panel":  "ui://bagLike/panel3",
+                     "icon":  "image/shape/shape_icon3",
+                     "adIcon":  "image/shape/shape_ad3",
+                     "mergeLightPath":  "ui://bagLike/zhandou1_frame",
+                     "modelId":  "",
+                     "panelRotate":  0,
+                     "rolePos":  null,
+                     "shapeArr":  [
+                                      [
+                                          1
+                                      ],
+                                      [
+                                          1
+                                      ],
+                                      [
+                                          1
+                                      ]
+                                  ]
+                 },
+                 {
+                     "id":  6,
+                     "panel":  "ui://bagLike/panel2",
+                     "icon":  "image/shape/shape_icon4",
+                     "adIcon":  "image/shape/shape_ad4",
+                     "mergeLightPath":  "ui://bagLike/zhandou2_frame",
+                     "modelId":  "UI10021",
+                     "panelRotate":  -90,
+                     "rolePos":  {
+                                     "x":  50,
+                                     "y":  -50
+                                 },
+                     "shapeArr":  [
+                                      [
+                                          1,
+                                          0
+                                      ],
+                                      [
+                                          1,
+                                          1
+                                      ]
+                                  ]
+                 },
+                 {
+                     "id":  7,
+                     "panel":  "ui://bagLike/panel2",
+                     "icon":  "image/shape/shape_icon4",
+                     "adIcon":  "image/shape/shape_ad4",
+                     "mergeLightPath":  "ui://bagLike/zhandou2_frame",
+                     "modelId":  "UI10021",
+                     "panelRotate":  0,
+                     "rolePos":  {
+                                     "x":  50,
+                                     "y":  50
+                                 },
+                     "shapeArr":  [
+                                      [
+                                          1,
+                                          1
+                                      ],
+                                      [
+                                          1,
+                                          0
+                                      ]
+                                  ]
+                 },
+                 {
+                     "id":  8,
+                     "panel":  "ui://bagLike/panel2",
+                     "icon":  "image/shape/shape_icon4",
+                     "adIcon":  "image/shape/shape_ad4",
+                     "mergeLightPath":  "ui://bagLike/zhandou2_frame",
+                     "modelId":  "UI10021",
+                     "panelRotate":  180,
+                     "rolePos":  {
+                                     "x":  -50,
+                                     "y":  -50
+                                 },
+                     "shapeArr":  [
+                                      [
+                                          0,
+                                          1
+                                      ],
+                                      [
+                                          1,
+                                          1
+                                      ]
+                                  ]
+                 },
+                 {
+                     "id":  9,
+                     "panel":  "ui://bagLike/panel2",
+                     "icon":  "image/shape/shape_icon4",
+                     "adIcon":  "image/shape/shape_ad4",
+                     "mergeLightPath":  "ui://bagLike/zhandou2_frame",
+                     "modelId":  "UI10021",
+                     "panelRotate":  90,
+                     "rolePos":  {
+                                     "x":  -50,
+                                     "y":  50
+                                 },
+                     "shapeArr":  [
+                                      [
+                                          1,
+                                          1
+                                      ],
+                                      [
+                                          0,
+                                          1
+                                      ]
+                                  ]
+                 },
+                 {
+                     "id":  10,
+                     "panel":  "ui://bagLike/panel4",
+                     "icon":  "image/shape/shape_icon5",
+                     "adIcon":  "image/shape/shape_ad5",
+                     "mergeLightPath":  "ui://bagLike/zhandou1_frame",
+                     "modelId":  "UI10022",
+                     "panelRotate":  0,
+                     "rolePos":  null,
+                     "shapeArr":  [
+                                      [
+                                          1,
+                                          1
+                                      ],
+                                      [
+                                          1,
+                                          1
+                                      ]
+                                  ]
+                 },
+                 {
+                     "id":  1001,
+                     "panel":  "ui://bagLike/power1",
+                     "icon":  "image/shape/shape_icon1",
+                     "adIcon":  "",
+                     "mergeLightPath":  "",
+                     "modelId":  "",
+                     "panelRotate":  0,
+                     "rolePos":  null,
+                     "shapeArr":  [
+                                      [
+                                          1
+                                      ]
+                                  ]
+                 }
+             ],
+    "sourceLength":  119,
+    "expectedLength":  119,
+    "validLength":  true
+}

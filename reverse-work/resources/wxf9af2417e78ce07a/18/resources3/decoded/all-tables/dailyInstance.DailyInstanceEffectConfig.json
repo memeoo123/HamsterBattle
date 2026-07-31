@@ -1,0 +1,192 @@
+﻿{
+    "table":  "dailyInstance.DailyInstanceEffectConfig",
+    "columnCount":  8,
+    "rowCount":  12,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "effectiveId",
+                       "token":  237,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "rangeType",
+                       "token":  238,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "range",
+                       "token":  31,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  4,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "DI_BUFF_eff01",
+                     "effectiveId":  "DI_BUFF_eff01",
+                     "rangeType":  "",
+                     "range":  null,
+                     "icon":  "image/effect/buff_0059",
+                     "type":  1,
+                     "name":  "省钱能手",
+                     "desc":  "刷新消耗降低\u003ccolor=#28f27d\u003e20%\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "DI_BUFF_eff02",
+                     "effectiveId":  "DI_BUFF_eff02",
+                     "rangeType":  "",
+                     "range":  null,
+                     "icon":  "image/effect/buff_0045",
+                     "type":  1,
+                     "name":  "好运刷刷刷",
+                     "desc":  "备战阶段免费刷新时，提升\u003ccolor=#28f27d\u003e3\u003c/color\u003e级齿轮出现概率"
+                 },
+                 {
+                     "id":  "DI_BUFF_eff03",
+                     "effectiveId":  "DI_BUFF_eff03",
+                     "rangeType":  "HERO_SHAPE",
+                     "range":  [
+                                   1,
+                                   2,
+                                   3
+                               ],
+                     "icon":  "image/effect/buff_0046",
+                     "type":  1,
+                     "name":  "小小英雄·1",
+                     "desc":  "所有一格二格齿轮攻击加\u003ccolor=#28f27d\u003e20%\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "DI_BUFF_eff04",
+                     "effectiveId":  "DI_BUFF_eff04",
+                     "rangeType":  "HERO_SHAPE",
+                     "range":  [
+                                   4,
+                                   5,
+                                   6,
+                                   7,
+                                   8,
+                                   9,
+                                   10
+                               ],
+                     "icon":  "image/effect/buff_0049",
+                     "type":  1,
+                     "name":  "小小英雄·2",
+                     "desc":  "所有三格四格齿轮攻击加\u003ccolor=#28f27d\u003e20%\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "DI_BUFF_eff05",
+                     "effectiveId":  "DI_BUFF_eff05",
+                     "rangeType":  "",
+                     "range":  null,
+                     "icon":  "image/effect/buff_0047",
+                     "type":  1,
+                     "name":  "多重召唤",
+                     "desc":  "召唤齿轮每次以\u003ccolor=#28f27d\u003e1-3\u003c/color\u003e次效能召唤"
+                 },
+                 {
+                     "id":  "DI_BUFF_eff06",
+                     "effectiveId":  "DI_BUFF_eff06",
+                     "rangeType":  "",
+                     "range":  null,
+                     "icon":  "image/effect/buff_0048",
+                     "type":  1,
+                     "name":  "多重施法",
+                     "desc":  "法术齿轮每次以\u003ccolor=#28f27d\u003e1-3\u003c/color\u003e次效能释放"
+                 },
+                 {
+                     "id":  "DI_BUFF_eff07",
+                     "effectiveId":  "DI_BUFF_eff07",
+                     "rangeType":  "",
+                     "range":  null,
+                     "icon":  "image/effect/buff_0050",
+                     "type":  1,
+                     "name":  "红色闪光",
+                     "desc":  "刷新时有概率直接刷新出红色齿轮"
+                 },
+                 {
+                     "id":  "DI_DEBUFF_eff01",
+                     "effectiveId":  "DI_DEBUFF_eff01",
+                     "rangeType":  "MONSTER",
+                     "range":  null,
+                     "icon":  "image/effect/buff_0051",
+                     "type":  2,
+                     "name":  "怪物·迅捷",
+                     "desc":  "所有怪物移动速度提升\u003ccolor=#28f27d\u003e20%\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "DI_DEBUFF_eff02",
+                     "effectiveId":  "DI_DEBUFF_eff02",
+                     "rangeType":  "MONSTER",
+                     "range":  null,
+                     "icon":  "image/effect/buff_0052",
+                     "type":  2,
+                     "name":  "怪物·暴躁",
+                     "desc":  "所有怪物免疫控制"
+                 },
+                 {
+                     "id":  "DI_DEBUFF_eff03",
+                     "effectiveId":  "DI_DEBUFF_eff03",
+                     "rangeType":  "ELITE",
+                     "range":  null,
+                     "icon":  "image/effect/buff_0053",
+                     "type":  2,
+                     "name":  "精英·壁垒",
+                     "desc":  "精英怪物受到仓鼠伤害减免80%"
+                 },
+                 {
+                     "id":  "DI_DEBUFF_eff04",
+                     "effectiveId":  "DI_DEBUFF_eff04",
+                     "rangeType":  "ELITE",
+                     "range":  null,
+                     "icon":  "image/effect/buff_0054",
+                     "type":  2,
+                     "name":  "精英·禁魔",
+                     "desc":  "精英怪物受到法术齿轮伤害减免80%"
+                 },
+                 {
+                     "id":  "DI_DEBUFF_eff05",
+                     "effectiveId":  "DI_DEBUFF_eff05",
+                     "rangeType":  "",
+                     "range":  null,
+                     "icon":  "image/effect/buff_0055",
+                     "type":  2,
+                     "name":  "怪物·专注",
+                     "desc":  "增加特殊怪物类型，此怪物只会攻击我方大本营"
+                 }
+             ],
+    "sourceLength":  114,
+    "expectedLength":  114,
+    "validLength":  true
+}

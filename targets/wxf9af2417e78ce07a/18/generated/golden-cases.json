@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "1.0",
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "version": "18",
+    "representativeLevel": 1001
+  },
+  "damage": [
+    {
+      "name": "H01 regular unmodified hit",
+      "attack": 20,
+      "effectRatio": 10000,
+      "hitFactor": 10000,
+      "critFactor": 10000,
+      "damageCoefficient": 10000,
+      "expected": 20,
+      "evidence": ["K-C006"]
+    },
+    {
+      "name": "H02 default critical hit floors 40.5",
+      "attack": 27,
+      "effectRatio": 10000,
+      "hitFactor": 10000,
+      "critFactor": 15000,
+      "damageCoefficient": 10000,
+      "expected": 40,
+      "evidence": ["K-C006"]
+    },
+    {
+      "name": "H01 against 25 percent effective resistance",
+      "attack": 20,
+      "effectRatio": 10000,
+      "hitFactor": 10000,
+      "critFactor": 10000,
+      "damageCoefficient": 7500,
+      "expected": 15,
+      "evidence": ["K-C006"]
+    }
+  ],
+  "waves": [
+    {
+      "name": "level 1001 round 1",
+      "times": [5000],
+      "entities": ["M02"],
+      "expected": [[5000, "M02"]],
+      "evidence": ["K-C005"]
+    },
+    {
+      "name": "level 1001 round 2",
+      "times": [1000, 4000, 6000, 8000, 11000, 13000, 15000],
+      "entities": ["M02", "M02", "M02", "M03", "M02", "M02", "M02"],
+      "expected": [[1000, "M02"], [4000, "M02"], [6000, "M02"], [8000, "M03"], [11000, "M02"], [13000, "M02"], [15000, "M02"]],
+      "evidence": ["K-C005"]
+    },
+    {
+      "name": "level 1001 round 3",
+      "times": [1000, 4000, 6000, 9500, 10000, 11000, 11500, 12500, 13000, 13500, 14000, 14500, 15000],
+      "entities": ["M02", "M02", "M02", "M03", "M02", "M02", "M02", "M02", "M03", "M02", "M02", "M02", "M03"],
+      "expected": [[1000, "M02"], [4000, "M02"], [6000, "M02"], [9500, "M03"], [10000, "M02"], [11000, "M02"], [11500, "M02"], [12500, "M02"], [13000, "M03"], [13500, "M02"], [14000, "M02"], [14500, "M02"], [15000, "M03"]],
+      "evidence": ["K-C005"]
+    },
+    {
+      "name": "level 1001 round 4",
+      "times": [1000, 4000, 6000, 9500, 10000, 11000, 11500, 12000, 12500, 13000, 13500, 14000, 14500, 15000],
+      "entities": ["M02", "M02", "M02", "M03", "M02", "M02", "M02", "M02", "M02", "M03", "M02", "M02", "M02", "M03"],
+      "expected": [[1000, "M02"], [4000, "M02"], [6000, "M02"], [9500, "M03"], [10000, "M02"], [11000, "M02"], [11500, "M02"], [12000, "M02"], [12500, "M02"], [13000, "M03"], [13500, "M02"], [14000, "M02"], [14500, "M02"], [15000, "M03"]],
+      "evidence": ["K-C005"]
+    },
+    {
+      "name": "level 1001 round 5",
+      "times": [1000, 3500, 5500, 8500, 9000, 10000, 10500, 11000, 11500, 12000],
+      "entities": ["M02", "M02", "M02", "M02", "M03", "M02", "M02", "M03", "M02", "Boss03"],
+      "expected": [[1000, "M02"], [3500, "M02"], [5500, "M02"], [8500, "M02"], [9000, "M03"], [10000, "M02"], [10500, "M02"], [11000, "M03"], [11500, "M02"], [12000, "Boss03"]],
+      "evidence": ["K-C005"]
+    }
+  ],
+  "baseHp": [
+    {
+      "name": "player base survives two representative hits",
+      "start": 500,
+      "damage": [20, 27],
+      "expected": 453,
+      "evidence": ["K-C004", "K-C006"]
+    },
+    {
+      "name": "player defeat clamps base HP to zero",
+      "start": 500,
+      "damage": [200, 300],
+      "expected": 0,
+      "evidence": ["K-C004", "K-C007"]
+    },
+    {
+      "name": "enemy defeat clamps base HP to zero",
+      "start": 4000,
+      "damage": [1500, 2500],
+      "expected": 0,
+      "evidence": ["K-C004", "K-C007"]
+    }
+  ],
+  "intervals": [
+    {
+      "name": "H01 immediate spawn plus 10 second interval through 30 seconds",
+      "interval": 10,
+      "duration": 30,
+      "spawnAtZero": true,
+      "expectedCount": 4,
+      "evidence": ["K-C008"]
+    },
+    {
+      "name": "H02 immediate spawn plus 8 second interval through 24 seconds",
+      "interval": 8,
+      "duration": 24,
+      "spawnAtZero": true,
+      "expectedCount": 4,
+      "evidence": ["K-C008"]
+    }
+  ],
+  "conditions": [
+    {
+      "name": "victory",
+      "when": "enemy base HP reaches zero after all damage is applied",
+      "expectedPhase": "won",
+      "coveredBy": "enemy defeat clamps base HP to zero",
+      "evidence": ["K-C007"]
+    },
+    {
+      "name": "defeat",
+      "when": "player base HP reaches zero after all damage is applied",
+      "expectedPhase": "lost",
+      "coveredBy": "player defeat clamps base HP to zero",
+      "evidence": ["K-C007"]
+    }
+  ]
+}

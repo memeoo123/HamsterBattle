@@ -1,0 +1,44 @@
+﻿{
+    "table":  "mainpage.MainPageKvConfig",
+    "columnCount":  2,
+    "rowCount":  5,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "value",
+                       "token":  "value",
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "header:item:normalFontColor",
+                     "value":  "#FFFEFE"
+                 },
+                 {
+                     "id":  "header:item:fullCountFontColor",
+                     "value":  "43FFA4"
+                 },
+                 {
+                     "id":  "mainpage:spine:defaultAnimName",
+                     "value":  "anim1"
+                 },
+                 {
+                     "id":  "mainpage:spine:randomAnimNameCsv",
+                     "value":  "anim3,anim4,anim5"
+                 },
+                 {
+                     "id":  "mainpage:spine:randomPlayNextSecond",
+                     "value":  "10"
+                 }
+             ],
+    "sourceLength":  16,
+    "expectedLength":  16,
+    "validLength":  true
+}

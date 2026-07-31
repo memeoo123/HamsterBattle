@@ -1,0 +1,60 @@
+﻿{
+    "table":  "recruit.RecruitMainViewAnimConfig",
+    "columnCount":  3,
+    "rowCount":  6,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "spinePath",
+                       "token":  "spinePath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "animName",
+                       "token":  "animName",
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "spinePath":  "spine/building/zhaomudonghua/zm_hd",
+                     "animName":  "drawCardAnimMain"
+                 },
+                 {
+                     "id":  2,
+                     "spinePath":  "spine/building/zhaomudonghua/zm_ln",
+                     "animName":  "drawCardAnimMain"
+                 },
+                 {
+                     "id":  3,
+                     "spinePath":  "spine/building/zhaomudonghua/zm_xtj",
+                     "animName":  "drawCardAnimMain"
+                 },
+                 {
+                     "id":  4,
+                     "spinePath":  "spine/building/zhaomudonghua/zm_yj",
+                     "animName":  "drawCardAnimMain"
+                 },
+                 {
+                     "id":  5,
+                     "spinePath":  "spine/building/zhaomudonghua/zm_zd",
+                     "animName":  "drawCardAnimMain"
+                 },
+                 {
+                     "id":  6,
+                     "spinePath":  "spine/building/zhaomudonghua/zm_zzrx",
+                     "animName":  "drawCardAnimMain"
+                 }
+             ],
+    "sourceLength":  26,
+    "expectedLength":  26,
+    "validLength":  true
+}

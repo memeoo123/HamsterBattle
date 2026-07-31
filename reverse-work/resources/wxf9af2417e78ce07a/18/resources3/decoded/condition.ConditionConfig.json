@@ -1,0 +1,63 @@
+﻿{
+    "table":  "condition.ConditionConfig",
+    "columnCount":  5,
+    "rowCount":  3,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "title",
+                       "token":  517,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "unlockTxt",
+                       "token":  "unlockTxt",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "message",
+                       "token":  "message",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "jumpId",
+                       "token":  518,
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "PASS_TRUNK_INSTANCE",
+                     "title":  "i18n:ConditionConfig.title.PASS_TRUNK_INSTANCE",
+                     "unlockTxt":  "i18n:ConditionConfig.unlockTxt.PASS_TRUNK_INSTANCE",
+                     "message":  "i18n:ConditionConfig.message.PASS_TRUNK_INSTANCE",
+                     "jumpId":  0
+                 },
+                 {
+                     "id":  "HERO_STAR_GE",
+                     "title":  "i18n:ConditionConfig.title.HERO_STAR_GE",
+                     "unlockTxt":  "i18n:ConditionConfig.unlockTxt.HERO_STAR_GE",
+                     "message":  "i18n:ConditionConfig.message.HERO_STAR_GE",
+                     "jumpId":  0
+                 },
+                 {
+                     "id":  "GAME_VERSION_UPDATE",
+                     "title":  "i18n:ConditionConfig.title.GAME_VERSION_UPDATE",
+                     "unlockTxt":  "i18n:ConditionConfig.unlockTxt.GAME_VERSION_UPDATE",
+                     "message":  "i18n:ConditionConfig.message.GAME_VERSION_UPDATE",
+                     "jumpId":  0
+                 }
+             ],
+    "sourceLength":  27,
+    "expectedLength":  27,
+    "validLength":  true
+}

@@ -1,0 +1,76 @@
+﻿{
+    "table":  "trunkinstance.TrunkInstanceConstantConfig",
+    "columnCount":  2,
+    "rowCount":  13,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "TRUNK_INSTANCE:DAILY_SWEEP_TIMES",
+                     "content":  "5"
+                 },
+                 {
+                     "id":  "TRUNK_INSTANCE:DAILY_SHARE_TIMES",
+                     "content":  "3"
+                 },
+                 {
+                     "id":  "TRUNK_INSTANCE:CHAPTER_AD_REVIVE_TIMES",
+                     "content":  "1"
+                 },
+                 {
+                     "id":  "TRUNK_INSTANCE:REVIVE_COUNTDOWN",
+                     "content":  "8"
+                 },
+                 {
+                     "id":  "TRUNK_INSTANCE:FOREVER_STATIC_CHAPTERS",
+                     "content":  "1001;1002;1006;1007;"
+                 },
+                 {
+                     "id":  "ENDLESS_MODE:DAILY_CHALLENGE_TIMES",
+                     "content":  "3"
+                 },
+                 {
+                     "id":  "ENDLESS_MODE:ROUND_IDS",
+                     "content":  "400001;"
+                 },
+                 {
+                     "id":  "ENDLESS_MODE:COST",
+                     "content":  "1:5;"
+                 },
+                 {
+                     "id":  "ENDLESS_MODE:LOGO",
+                     "content":  "spine/ui/cj_shamo/cj_shamo"
+                 },
+                 {
+                     "id":  "ENDLESS_MODE:FIGHT_SCENE",
+                     "content":  "image/unpack/fightscene/fightscene_03"
+                 },
+                 {
+                     "id":  "ENDLESS_MODE:INIT_REWARDS",
+                     "content":  "5:300;"
+                 },
+                 {
+                     "id":  "ENDLESS_MODE:AD_TIMES",
+                     "content":  "3;"
+                 },
+                 {
+                     "id":  "TRUNK_INSTANCE:NEW_MONSTER_SHOW_TIME",
+                     "content":  "5"
+                 }
+             ],
+    "sourceLength":  32,
+    "expectedLength":  32,
+    "validLength":  true
+}

@@ -1,0 +1,1024 @@
+﻿{
+    "table":  "battle.MissileConfig",
+    "columnCount":  17,
+    "rowCount":  36,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "speed",
+                       "token":  635,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "timeLimit",
+                       "token":  772,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "distance",
+                       "token":  "distance",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "parameter",
+                       "token":  "parameter",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  6,
+                       "name":  "layer",
+                       "token":  718,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  7,
+                       "name":  "animPosType",
+                       "token":  686,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "effectModelId",
+                       "token":  "effectModelId",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  9,
+                       "name":  "modelId",
+                       "token":  347,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  10,
+                       "name":  "notLoop",
+                       "token":  "notLoop",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  11,
+                       "name":  "behaviors",
+                       "token":  "behaviors",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  12,
+                       "name":  "delays",
+                       "token":  "delays",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  13,
+                       "name":  "hitTips",
+                       "token":  "hitTips",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  14,
+                       "name":  "pos",
+                       "token":  777,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  15,
+                       "name":  "shootSound",
+                       "token":  "shootSound",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  16,
+                       "name":  "hitSound",
+                       "token":  "hitSound",
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "M_LY_1201",
+                     "speed":  0,
+                     "timeLimit":  100,
+                     "distance":  1000,
+                     "type":  4,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H12_S1",
+                     "notLoop":  1,
+                     "behaviors":  [
+                                       "H_LY_1201"
+                                   ],
+                     "delays":  [
+                                    500
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  "bullet_leiyun"
+                 },
+                 {
+                     "id":  "M_TZ_1301_1",
+                     "speed":  1000,
+                     "timeLimit":  2000,
+                     "distance":  2000,
+                     "type":  8,
+                     "parameter":  {
+                                       "times":  2,
+                                       "missile":  "M_TZ_1301_1"
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H25_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "B_TZ_1301_2"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_TZ_1302_1",
+                     "speed":  1000,
+                     "timeLimit":  2000,
+                     "distance":  2000,
+                     "type":  8,
+                     "parameter":  {
+                                       "times":  2,
+                                       "missile":  "M_TZ_1302_2",
+                                       "atk_ins":  1000
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H25_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "B_TZ_1301_2"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_TZ_1302_2",
+                     "speed":  1000,
+                     "timeLimit":  2000,
+                     "distance":  2000,
+                     "type":  8,
+                     "parameter":  {
+                                       "times":  2,
+                                       "missile":  "M_TZ_1302_2",
+                                       "atk_ins":  1000
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H26_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "B_TZ_1301_2"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_TZ_1303_1",
+                     "speed":  1000,
+                     "timeLimit":  2000,
+                     "distance":  2000,
+                     "type":  8,
+                     "parameter":  {
+                                       "times":  2,
+                                       "missile":  "M_TZ_1303_2",
+                                       "atk_ins":  1000,
+                                       "last_missile":  "M_TZ_1303_3"
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H25_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "B_TZ_1301_2"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_TZ_1303_2",
+                     "speed":  1000,
+                     "timeLimit":  2000,
+                     "distance":  2000,
+                     "type":  8,
+                     "parameter":  {
+                                       "times":  2,
+                                       "missile":  "M_TZ_1303_2",
+                                       "atk_ins":  1000,
+                                       "last_missile":  "M_TZ_1303_3"
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H26_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "B_TZ_1301_2"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_TZ_1303_3",
+                     "speed":  1000,
+                     "timeLimit":  2000,
+                     "distance":  2000,
+                     "type":  1,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H26_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "B_TZ_1303_3"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_SS_2001",
+                     "speed":  700,
+                     "timeLimit":  1000,
+                     "distance":  2000,
+                     "type":  1,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H29_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "M_SS_2001_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_SS_2002",
+                     "speed":  700,
+                     "timeLimit":  1000,
+                     "distance":  2000,
+                     "type":  1,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H29_S2",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "M_SS_2001_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_SS_2005",
+                     "speed":  700,
+                     "timeLimit":  1000,
+                     "distance":  2000,
+                     "type":  1,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H29_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "M_SS_2005_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_SY_1401",
+                     "speed":  0,
+                     "timeLimit":  100,
+                     "distance":  1000,
+                     "type":  4,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H14_S1",
+                     "notLoop":  1,
+                     "behaviors":  [
+                                       "M_SY_1401_1"
+                                   ],
+                     "delays":  [
+                                    300
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  "bullet_shayu"
+                 },
+                 {
+                     "id":  "M_SY_1402",
+                     "speed":  0,
+                     "timeLimit":  100,
+                     "distance":  1000,
+                     "type":  4,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H14_S2",
+                     "notLoop":  1,
+                     "behaviors":  [
+                                       "M_SY_1402_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_SY_1403",
+                     "speed":  0,
+                     "timeLimit":  100,
+                     "distance":  1000,
+                     "type":  4,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H15_S1",
+                     "notLoop":  1,
+                     "behaviors":  [
+                                       "M_SY_1403_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_FXY_1501",
+                     "speed":  100,
+                     "timeLimit":  1000,
+                     "distance":  1000,
+                     "type":  6,
+                     "parameter":  {
+                                       "times":  0,
+                                       "missile":  "M_FXY_1501"
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H17_S1",
+                     "notLoop":  1,
+                     "behaviors":  [
+                                       "H17_S1_LOWER"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_FS_1601",
+                     "speed":  300,
+                     "timeLimit":  1000,
+                     "distance":  1000,
+                     "type":  3,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H18_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "3001_11"
+                                   ],
+                     "delays":  [
+                                    300
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_FS_3001",
+                     "speed":  300,
+                     "timeLimit":  2000,
+                     "distance":  1000,
+                     "type":  1,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H13_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "M_FS_3001_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_FXY_6001",
+                     "speed":  800,
+                     "timeLimit":  2000,
+                     "distance":  200,
+                     "type":  6,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H19_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "M_FXY_6001_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_FXY_6004",
+                     "speed":  300,
+                     "timeLimit":  1000,
+                     "distance":  1000,
+                     "type":  3,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H20_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "bh6001_4_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  "bullet_zhadan"
+                 },
+                 {
+                     "id":  "M_ATM_7001",
+                     "speed":  500,
+                     "timeLimit":  2000,
+                     "distance":  2000,
+                     "type":  1,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H13_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "7001_11"
+                                   ],
+                     "delays":  [
+                                    300
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_TTX_8001",
+                     "speed":  100,
+                     "timeLimit":  2000,
+                     "distance":  0,
+                     "type":  5,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H13_S1",
+                     "notLoop":  1,
+                     "behaviors":  [
+                                       "8001_2_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_ZC_9001",
+                     "speed":  400,
+                     "timeLimit":  2000,
+                     "distance":  2000,
+                     "type":  8,
+                     "parameter":  {
+                                       "times":  2,
+                                       "missile":  "M_ZC_9001"
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H24_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "9001_11"
+                                   ],
+                     "delays":  [
+                                    300
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  "bullet_zhanche"
+                 },
+                 {
+                     "id":  "M_FD_10001",
+                     "speed":  1000,
+                     "timeLimit":  4000,
+                     "distance":  500,
+                     "type":  11,
+                     "parameter":  {
+                                       "width":  600,
+                                       "interval":  1000,
+                                       "autoLock":  600
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H27_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "10001_bh02_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_FD_10004",
+                     "speed":  300,
+                     "timeLimit":  1000,
+                     "distance":  1000,
+                     "type":  4,
+                     "parameter":  {
+                                       "path":  "middle",
+                                       "under":  1
+                                   },
+                     "layer":  0,
+                     "animPosType":  3,
+                     "effectModelId":  null,
+                     "modelId":  "H27_S2",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "bh10001_2_1",
+                                       "bh10001_2_1",
+                                       "bh10001_2_1",
+                                       "bh10001_2_1",
+                                       "bh10001_2_1"
+                                   ],
+                     "delays":  [
+                                    1000,
+                                    2000,
+                                    3000,
+                                    4000,
+                                    5000
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  "bullet_hedan"
+                 },
+                 {
+                     "id":  "M_FD_10005",
+                     "speed":  300,
+                     "timeLimit":  1000,
+                     "distance":  1000,
+                     "type":  4,
+                     "parameter":  {
+                                       "path":  "middle",
+                                       "under":  1
+                                   },
+                     "layer":  0,
+                     "animPosType":  3,
+                     "effectModelId":  null,
+                     "modelId":  "H27_S2",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "bh10001_2_2",
+                                       "bh10001_2_1",
+                                       "bh10001_2_1",
+                                       "bh10001_2_1",
+                                       "bh10001_2_1"
+                                   ],
+                     "delays":  [
+                                    1000,
+                                    2000,
+                                    3000,
+                                    4000,
+                                    5000
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  "bullet_hedan"
+                 },
+                 {
+                     "id":  "M_HS_50001",
+                     "speed":  300,
+                     "timeLimit":  1000,
+                     "distance":  1000,
+                     "type":  1,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H30_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "M_HS_50001_1"
+                                   ],
+                     "delays":  [
+                                    300
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_HS_50002",
+                     "speed":  300,
+                     "timeLimit":  1000,
+                     "distance":  1000,
+                     "type":  1,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H30_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "M_HS_50002_1"
+                                   ],
+                     "delays":  [
+                                    300
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_YGT_50002",
+                     "speed":  800,
+                     "timeLimit":  2000,
+                     "distance":  200,
+                     "type":  6,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H31_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "M_YGT_50002_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_LS_1501",
+                     "speed":  0,
+                     "timeLimit":  2000,
+                     "distance":  2000,
+                     "type":  18,
+                     "parameter":  {
+                                       "originalW":  370,
+                                       " fixed":  1
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H32_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "H_LS_1501",
+                                       "H_LS_1501",
+                                       "H_LS_1501",
+                                       "H_LS_1501",
+                                       "H_LS_1501",
+                                       "H_LS_1501"
+                                   ],
+                     "delays":  [
+                                    330,
+                                    660,
+                                    1000,
+                                    1300,
+                                    1400
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_LS_bh1501_1",
+                     "speed":  0,
+                     "timeLimit":  2000,
+                     "distance":  2000,
+                     "type":  18,
+                     "parameter":  {
+                                       "originalW":  370,
+                                       "fixed":  1
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H32_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "H_LS_1501",
+                                       "H_LS_1501_1_1",
+                                       "H_LS_1501_1_2",
+                                       "H_LS_1501_1_3",
+                                       "H_LS_1501_1_4",
+                                       "H_LS_1501_1_5"
+                                   ],
+                     "delays":  [
+                                    330,
+                                    660,
+                                    1000,
+                                    1300,
+                                    1400
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_LS_bh1501_2",
+                     "speed":  0,
+                     "timeLimit":  2000,
+                     "distance":  2000,
+                     "type":  18,
+                     "parameter":  {
+                                       "originalW":  370,
+                                       "fixed":  1
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H32_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "bh1501_2",
+                                       "H_LS_1501",
+                                       "H_LS_1501_1_1",
+                                       "H_LS_1501_1_2",
+                                       "H_LS_1501_1_3",
+                                       "H_LS_1501_1_4",
+                                       "H_LS_1501_1_5"
+                                   ],
+                     "delays":  [
+                                    0,
+                                    330,
+                                    660,
+                                    1000,
+                                    1300,
+                                    1400
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_LS_bh1502",
+                     "speed":  0,
+                     "timeLimit":  2000,
+                     "distance":  2000,
+                     "type":  18,
+                     "parameter":  {
+                                       "originalW":  370,
+                                       "fixed":  1,
+                                       "offAngle":  30
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H32_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "bh1501_2",
+                                       "H_LS_1501",
+                                       "H_LS_1501_1_1",
+                                       "H_LS_1501_1_2",
+                                       "H_LS_1501_1_3",
+                                       "H_LS_1501_1_4",
+                                       "H_LS_1501_1_5"
+                                   ],
+                     "delays":  [
+                                    0,
+                                    330,
+                                    660,
+                                    1000,
+                                    1300,
+                                    1600,
+                                    1900
+                                ],
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_FB_P04_1",
+                     "speed":  1000,
+                     "timeLimit":  0,
+                     "distance":  0,
+                     "type":  19,
+                     "parameter":  {
+                                       "fixed":  1,
+                                       "offY":  0,
+                                       "angleSpeed":  3,
+                                       "path":  "screnLR",
+                                       "actNum":  10,
+                                       "amount_Dec":  1000
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H33_S1",
+                     "notLoop":  1,
+                     "behaviors":  [
+                                       "H_FB_P04_1_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_FB_P04_2",
+                     "speed":  1000,
+                     "timeLimit":  0,
+                     "distance":  0,
+                     "type":  19,
+                     "parameter":  {
+                                       "fixed":  1,
+                                       "offY":  0,
+                                       "angleSpeed":  3,
+                                       "path":  "screnLR",
+                                       "actNum":  10,
+                                       "amount_Dec":  1000
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H33_S1",
+                     "notLoop":  1,
+                     "behaviors":  [
+                                       "H_FB_P04_2_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_FB_P04_3",
+                     "speed":  1000,
+                     "timeLimit":  0,
+                     "distance":  0,
+                     "type":  19,
+                     "parameter":  {
+                                       "fixed":  1,
+                                       "offY":  0,
+                                       "angleSpeed":  3,
+                                       "path":  "screnLR",
+                                       "actNum":  10,
+                                       "amount_Dec":  1000
+                                   },
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H33_S1",
+                     "notLoop":  1,
+                     "behaviors":  [
+                                       "H_FB_P04_3_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M_ZB_1701",
+                     "speed":  0,
+                     "timeLimit":  0,
+                     "distance":  1000,
+                     "type":  4,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "H34_S2",
+                     "notLoop":  1,
+                     "behaviors":  [
+                                       "H_ZB_1701_1"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 },
+                 {
+                     "id":  "M10_attack_M",
+                     "speed":  800,
+                     "timeLimit":  2000,
+                     "distance":  500,
+                     "type":  6,
+                     "parameter":  null,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "effectModelId":  null,
+                     "modelId":  "M10_S1",
+                     "notLoop":  0,
+                     "behaviors":  [
+                                       "M10_attack_D"
+                                   ],
+                     "delays":  null,
+                     "hitTips":  null,
+                     "pos":  null,
+                     "shootSound":  "",
+                     "hitSound":  ""
+                 }
+             ],
+    "sourceLength":  648,
+    "expectedLength":  648,
+    "validLength":  true
+}

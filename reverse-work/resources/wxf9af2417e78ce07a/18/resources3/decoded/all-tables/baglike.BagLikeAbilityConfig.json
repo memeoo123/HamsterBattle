@@ -1,0 +1,994 @@
+﻿{
+    "table":  "baglike.BagLikeAbilityConfig",
+    "columnCount":  8,
+    "rowCount":  84,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "quality",
+                       "token":  30,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "effectCfgId",
+                       "token":  "effectCfgId",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "range",
+                       "token":  31,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  5,
+                       "name":  "attr",
+                       "token":  32,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  6,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "RG_H01_s01",
+                     "icon":  "image/effect/buff_0002",
+                     "quality":  2,
+                     "effectCfgId":  "RG_H01_abl01_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "1级",
+                     "desc":  "解锁\u003ccolor=#51fa62\u003e【精英战士】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H01_s02",
+                     "icon":  "image/effect/buff_0041",
+                     "quality":  6,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "2级",
+                     "desc":  "解锁【融合进化】：可在战斗中与【仓鼠射手】融合进化为\u003ccolor=#FF6347\u003e【仓鼠铁铁侠】\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "RG_H01_s03",
+                     "icon":  "image/effect/buff_0003",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H01_abl02_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "3级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【鼠鼠重击】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H01_s04",
+                     "icon":  "image/effect/buff_0003",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H01_abl02_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "5级",
+                     "desc":  "\u003ccolor=#d572ff\u003e【鼠鼠重击】\u003c/color\u003e触发暴击时，暴击伤害额外增加"
+                 },
+                 {
+                     "id":  "RG_H01_s05",
+                     "icon":  "image/effect/buff_0004",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H01_abl03_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "7级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【叠中叠】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H01_s06",
+                     "icon":  "image/effect/buff_0003",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H01_abl02_eff03",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "8级",
+                     "desc":  "\u003ccolor=#d572ff\u003e【鼠鼠重击】\u003c/color\u003e的触发要求攻击次数-1"
+                 },
+                 {
+                     "id":  "RG_H01_s07",
+                     "icon":  "image/effect/buff_0003",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H01_abl02_eff04",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "10级",
+                     "desc":  "\u003ccolor=#d572ff\u003e【鼠鼠重击】\u003c/color\u003e暴击时可以恢复一定比例的生命值"
+                 },
+                 {
+                     "id":  "RG_H02_s01",
+                     "icon":  "image/effect/buff_0037",
+                     "quality":  2,
+                     "effectCfgId":  "RG_H02_abl01_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "1级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【精英射手】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H02_s02",
+                     "icon":  "image/effect/buff_0041",
+                     "quality":  6,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "2级",
+                     "desc":  "解锁【融合进化】：可在战斗中与【仓鼠战士】融合进化为\u003ccolor=#FF6347\u003e【仓鼠铁铁侠】\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "RG_H02_s03",
+                     "icon":  "image/effect/buff_0036",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H02_abl02_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "3级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【分裂射击】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H02_s04",
+                     "icon":  "image/effect/buff_0036",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H02_abl02_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "5级",
+                     "desc":  "\u003ccolor=#2ed0ff\u003e【分裂射击】\u003c/color\u003e触发分裂箭的概率提升"
+                 },
+                 {
+                     "id":  "RG_H02_s05",
+                     "icon":  "image/effect/buff_0001",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H02_abl03_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "7级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【弹幕时间】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H02_s06",
+                     "icon":  "image/effect/buff_0001",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H02_abl03_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "8级",
+                     "desc":  "\u003ccolor=#d572ff\u003e【弹幕时间】\u003c/color\u003e的持续时间增加"
+                 },
+                 {
+                     "id":  "RG_H02_s07",
+                     "icon":  "image/effect/buff_0036",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H02_abl02_eff03",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "10级",
+                     "desc":  "\u003ccolor=#2ed0ff\u003e【分裂射击】\u003c/color\u003e的分裂箭必定触发"
+                 },
+                 {
+                     "id":  "RG_H03_s01",
+                     "icon":  "image/effect/buff_0005",
+                     "quality":  2,
+                     "effectCfgId":  "RG_H03_abl01_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "1级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【可乐加冰】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H03_s02",
+                     "icon":  "image/effect/buff_0006",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H03_abl02_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "2级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【精英法师】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H03_s03",
+                     "icon":  "image/effect/buff_0040",
+                     "quality":  6,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "3级",
+                     "desc":  "解锁【融合进化】：可在战斗中与【雷云齿轮】融合进化为\u003ccolor=#FF6347\u003e【仓鼠凹凸曼】\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "RG_H03_s04",
+                     "icon":  "image/effect/buff_0006",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H03_abl02_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "5级",
+                     "desc":  "\u003ccolor=#d572ff\u003e【可乐加冰】\u003c/color\u003e冰冻时间延长1秒"
+                 },
+                 {
+                     "id":  "RG_H03_s05",
+                     "icon":  "image/effect/buff_0007",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H03_abl03_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "7级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【鼠鼠变形术】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H03_s06",
+                     "icon":  "image/effect/buff_0007",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H03_abl03_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "8级",
+                     "desc":  "\u003ccolor=#2ed0ff\u003e【鼠鼠变形术】\u003c/color\u003e被变形的目标受到伤害增加"
+                 },
+                 {
+                     "id":  "RG_H03_s07",
+                     "icon":  "image/effect/buff_0008",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H03_abl04_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "10级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【鼠鼠激光】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H04_s01",
+                     "icon":  "image/effect/buff_0038",
+                     "quality":  2,
+                     "effectCfgId":  "RG_H04_abl01_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "1级",
+                     "desc":  "解锁\u003ccolor=#51fa62\u003e【精英骑士】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H04_s02",
+                     "icon":  "image/effect/buff_0035",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H04_abl02_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "2级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【骑士活力】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H04_s03",
+                     "icon":  "image/effect/buff_0035",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H04_abl02_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "3级",
+                     "desc":  "\u003ccolor=#2ed0ff\u003e【骑士活力】\u003c/color\u003e的恢复量增加"
+                 },
+                 {
+                     "id":  "RG_H04_s04",
+                     "icon":  "image/effect/buff_0042",
+                     "quality":  6,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "5级",
+                     "desc":  "解锁【融合进化】：可在战斗中与【火炮齿轮】融合进化为\u003ccolor=#FF6347\u003e【仓鼠战车】\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "RG_H04_s05",
+                     "icon":  "image/effect/buff_0034",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H04_abl03_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "7级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【鼠鼠盾墙】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H04_s06",
+                     "icon":  "image/effect/buff_0033",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H04_abl04_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "8级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【进击的鼠鼠】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H04_s07",
+                     "icon":  "image/effect/buff_0034",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H04_abl03_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "10级",
+                     "desc":  "\u003ccolor=#2ed0ff\u003e【鼠鼠盾墙】\u003c/color\u003e期间受到的伤害会进行反伤"
+                 },
+                 {
+                     "id":  "RG_H05_s01",
+                     "icon":  "image/effect/buff_0039",
+                     "quality":  2,
+                     "effectCfgId":  "RG_H05_abl01_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "1级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【火力压制】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H05_s02",
+                     "icon":  "image/effect/buff_0030",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H05_abl02_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "2级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【精英召唤师】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H05_s03",
+                     "icon":  "image/effect/buff_0030",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H05_abl02_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "3级",
+                     "desc":  "\u003ccolor=#2ed0ff\u003e【火力压制】\u003c/color\u003e还能降低敌人的攻速"
+                 },
+                 {
+                     "id":  "RG_H05_s04",
+                     "icon":  "image/effect/buff_0043",
+                     "quality":  6,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "5级",
+                     "desc":  "解锁【融合进化】：可在战斗中与【仓鼠飞行员】融合进化为\u003ccolor=#FF6347\u003e【仓鼠飞碟】\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "RG_H05_s05",
+                     "icon":  "image/effect/buff_0029",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H05_abl03_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "7级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【鼠鼠空投】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H05_s06",
+                     "icon":  "image/effect/buff_0029",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H05_abl03_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "8级",
+                     "desc":  "\u003ccolor=#d572ff\u003e【鼠鼠空投】\u003c/color\u003e的恢复量增加"
+                 },
+                 {
+                     "id":  "RG_H05_s07",
+                     "icon":  "image/effect/buff_0029",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H05_abl03_eff03",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "10级",
+                     "desc":  "\u003ccolor=#d572ff\u003e【鼠鼠空投】\u003c/color\u003e还能额外增加攻击力"
+                 },
+                 {
+                     "id":  "RG_H06_s01",
+                     "icon":  "image/effect/buff_0028",
+                     "quality":  2,
+                     "effectCfgId":  "RG_H06_abl01_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "1级",
+                     "desc":  "解锁\u003ccolor=#51fa62\u003e【精英飞行员】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H06_s02",
+                     "icon":  "image/effect/buff_0027",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H06_abl02_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "2级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【爆炸奶油】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H06_s03",
+                     "icon":  "image/effect/buff_0027",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H06_abl02_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "3级",
+                     "desc":  "\u003ccolor=#2ed0ff\u003e【爆炸奶油】\u003c/color\u003e还能降低敌人的攻速"
+                 },
+                 {
+                     "id":  "RG_H06_s04",
+                     "icon":  "image/effect/buff_0043",
+                     "quality":  6,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "5级",
+                     "desc":  "解锁【融合进化】：可在战斗中与【仓鼠召唤师】融合进化为\u003ccolor=#FF6347\u003e【仓鼠飞碟】\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "RG_H06_s05",
+                     "icon":  "image/effect/buff_0026",
+                     "quality":  2,
+                     "effectCfgId":  "RG_H06_abl03_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "7级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【坚果炸弹】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H06_s06",
+                     "icon":  "image/effect/buff_0025",
+                     "quality":  4,
+                     "effectCfgId":  "",
+                     "range":  [
+                                   "H01",
+                                   "H02",
+                                   "H03",
+                                   "H04",
+                                   "H05",
+                                   "H06",
+                                   "H07",
+                                   "H08",
+                                   "H09",
+                                   "H10",
+                                   "H16"
+                               ],
+                     "attr":  [
+                                  {
+                                      "DMG_INC":  2000
+                                  }
+                              ],
+                     "name":  "8级",
+                     "desc":  "当自身在场时所有友方单位获得20%伤害加成"
+                 },
+                 {
+                     "id":  "RG_H06_s07",
+                     "icon":  "image/effect/buff_0022",
+                     "quality":  4,
+                     "effectCfgId":  "",
+                     "range":  [
+                                   "H01",
+                                   "H02",
+                                   "H03",
+                                   "H04",
+                                   "H05",
+                                   "H06",
+                                   "H07",
+                                   "H08",
+                                   "H09",
+                                   "H10",
+                                   "H16"
+                               ],
+                     "attr":  [
+                                  {
+                                      "DMG_RES":  2000
+                                  }
+                              ],
+                     "name":  "10级",
+                     "desc":  "当自身在场时所有友方单位获得20%伤害减免"
+                 },
+                 {
+                     "id":  "RG_H11_s01",
+                     "icon":  "image/effect/buff_0013",
+                     "quality":  2,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "1级",
+                     "desc":  "治疗齿轮能够治疗场上的仓鼠，并同时为基地恢复攻击力\u003ccolor=#28f27d\u003e50%\u003c/color\u003e生命值"
+                 },
+                 {
+                     "id":  "RG_H11_s02",
+                     "icon":  "image/effect/buff_0014",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H11_abl02_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "2级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【护盾生成】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H11_s03",
+                     "icon":  "image/effect/buff_0017",
+                     "quality":  3,
+                     "effectCfgId":  "",
+                     "range":  [
+                                   "H11"
+                               ],
+                     "attr":  [
+                                  {
+                                      "HL_INC":  1500
+                                  }
+                              ],
+                     "name":  "3级",
+                     "desc":  "提升治疗齿轮的治疗量"
+                 },
+                 {
+                     "id":  "RG_H11_s04",
+                     "icon":  "image/effect/buff_0013",
+                     "quality":  2,
+                     "effectCfgId":  "RG_H11_abl01_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "5级",
+                     "desc":  "\u003ccolor=#51fa62\u003e【基地修复】\u003c/color\u003e的治疗量提升"
+                 },
+                 {
+                     "id":  "RG_H11_s05",
+                     "icon":  "image/effect/buff_0015",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H11_abl03_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "7级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【群体治疗】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H11_s06",
+                     "icon":  "image/effect/buff_0017",
+                     "quality":  3,
+                     "effectCfgId":  "",
+                     "range":  [
+                                   "H11"
+                               ],
+                     "attr":  [
+                                  {
+                                      "HL_INC":  1500
+                                  }
+                              ],
+                     "name":  "8级",
+                     "desc":  "提升治疗齿轮的治疗量"
+                 },
+                 {
+                     "id":  "RG_H11_s07",
+                     "icon":  "image/effect/buff_0017",
+                     "quality":  3,
+                     "effectCfgId":  "",
+                     "range":  [
+                                   "H11"
+                               ],
+                     "attr":  [
+                                  {
+                                      "HL_INC":  2000
+                                  }
+                              ],
+                     "name":  "10级",
+                     "desc":  "提升治疗齿轮的治疗量"
+                 },
+                 {
+                     "id":  "RG_H12_s01",
+                     "icon":  "image/effect/buff_0019",
+                     "quality":  2,
+                     "effectCfgId":  "RG_H12_abl01_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "1级",
+                     "desc":  "解锁\u003ccolor=#51fa62\u003e【高压电击】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H12_s02",
+                     "icon":  "image/effect/buff_0019",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H12_abl02_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "2级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【十万伏特】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H12_s03",
+                     "icon":  "image/effect/buff_0040",
+                     "quality":  6,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "3级",
+                     "desc":  "解锁【融合进化】：可在战斗中与【仓鼠法师】融合进化为\u003ccolor=#FF6347\u003e【仓鼠凹凸曼】\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "RG_H12_s04",
+                     "icon":  "image/effect/buff_0019",
+                     "quality":  2,
+                     "effectCfgId":  "RG_H12_abl01_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "5级",
+                     "desc":  "\u003ccolor=#51fa62\u003e【高压电击】\u003c/color\u003e控制时间延长"
+                 },
+                 {
+                     "id":  "RG_H12_s05",
+                     "icon":  "image/effect/buff_0021",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H12_abl03_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "7级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【百万伏特】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H12_s06",
+                     "icon":  "image/effect/buff_0019",
+                     "quality":  4,
+                     "effectCfgId":  "",
+                     "range":  [
+                                   "H12",
+                                   "H8"
+                               ],
+                     "attr":  [
+                                  {
+                                      "DMG_INC":  1500
+                                  }
+                              ],
+                     "name":  "8级",
+                     "desc":  "大幅提升雷云伤害"
+                 },
+                 {
+                     "id":  "RG_H12_s07",
+                     "icon":  "image/effect/buff_0008",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H12_abl04_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "10级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【感电效应】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H13_s01",
+                     "icon":  "image/effect/buff_0018",
+                     "quality":  2,
+                     "effectCfgId":  "",
+                     "range":  [
+                                   "H09",
+                                   "H13"
+                               ],
+                     "attr":  [
+                                  {
+                                      "DMG_INC":  0
+                                  }
+                              ],
+                     "name":  "1级",
+                     "desc":  "增加火炮齿轮的伤害"
+                 },
+                 {
+                     "id":  "RG_H13_s02",
+                     "icon":  "image/effect/buff_0026",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H13_abl01_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "2级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【玉米弹射】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H13_s03",
+                     "icon":  "image/effect/buff_0026",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H13_abl01_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "3级",
+                     "desc":  "\u003ccolor=#2ed0ff\u003e【玉米弹射】\u003c/color\u003e的次数增加"
+                 },
+                 {
+                     "id":  "RG_H13_s04",
+                     "icon":  "image/effect/buff_0042",
+                     "quality":  6,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "5级",
+                     "desc":  "解锁【融合进化】：可在战斗中与【仓鼠骑士】融合进化为\u003ccolor=#FF6347\u003e【仓鼠战车】\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "RG_H13_s05",
+                     "icon":  "image/effect/buff_0027",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H13_abl02_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "7级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【爆米花弹射】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H13_s06",
+                     "icon":  "image/effect/buff_0018",
+                     "quality":  2,
+                     "effectCfgId":  "",
+                     "range":  [
+                                   "H09",
+                                   "H13"
+                               ],
+                     "attr":  [
+                                  {
+                                      "DMG_INC":  1500
+                                  }
+                              ],
+                     "name":  "8级",
+                     "desc":  "增加火炮齿轮的伤害"
+                 },
+                 {
+                     "id":  "RG_H13_s07",
+                     "icon":  "image/effect/buff_0027",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H13_abl02_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "10级",
+                     "desc":  "\u003ccolor=#d572ff\u003e【爆米花弹射】\u003c/color\u003e最后一次弹射命中敌人后会发生爆炸"
+                 },
+                 {
+                     "id":  "RG_H14_s01",
+                     "icon":  "image/effect/buff_0020",
+                     "quality":  2,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "1级",
+                     "desc":  "鲨鱼会寻找敌人最密集的区域进行攻击"
+                 },
+                 {
+                     "id":  "RG_H14_s02",
+                     "icon":  "image/effect/buff_0031",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H14_abl01_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "2级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【大大白鲨】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H14_s03",
+                     "icon":  "image/effect/buff_0025",
+                     "quality":  3,
+                     "effectCfgId":  "",
+                     "range":  [
+                                   "H14",
+                                   "H15"
+                               ],
+                     "attr":  [
+                                  {
+                                      "DMG_INC":  1500
+                                  }
+                              ],
+                     "name":  "3级",
+                     "desc":  "增加鲨鱼齿轮的伤害"
+                 },
+                 {
+                     "id":  "RG_H14_s04",
+                     "icon":  "image/effect/buff_0044",
+                     "quality":  6,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "5级",
+                     "desc":  "解锁【融合进化】：可在战斗中与【金币齿轮】融合进化为\u003ccolor=#FF6347\u003e【吞宝鲨】\u003c/color\u003e；\u003ccolor=#FF6347\u003e【吞宝鲨】\u003c/color\u003e每击杀一个敌人可以获得1个银币，并且在每波战斗结束后额外获得16银币"
+                 },
+                 {
+                     "id":  "RG_H14_s05",
+                     "icon":  "image/effect/buff_0012",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H14_abl02_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "7级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【精英克星】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H14_s06",
+                     "icon":  "image/effect/buff_0025",
+                     "quality":  3,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  [
+                                  {
+                                      "DMG_INC":  1500
+                                  }
+                              ],
+                     "name":  "8级",
+                     "desc":  "增加鲨鱼齿轮的伤害"
+                 },
+                 {
+                     "id":  "RG_H14_s07",
+                     "icon":  "image/effect/buff_0025",
+                     "quality":  3,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  [
+                                  {
+                                      "DMG_INC":  2000
+                                  }
+                              ],
+                     "name":  "10级",
+                     "desc":  "增加鲨鱼齿轮的伤害"
+                 },
+                 {
+                     "id":  "RG_H16_s01",
+                     "icon":  "image/effect/buff_0074",
+                     "quality":  2,
+                     "effectCfgId":  "RG_H16_abl01_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "1级",
+                     "desc":  "解锁\u003ccolor=#51fa62\u003e【精英怪兽】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H16_s02",
+                     "icon":  "image/effect/buff_0073",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H16_abl02_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "2级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【怪兽坦克】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H16_s03",
+                     "icon":  "image/effect/buff_0073",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H16_abl02_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "3级",
+                     "desc":  "\u003ccolor=#2ed0ff\u003e【怪兽坦克】\u003c/color\u003e还能额外减少30%受到伤害，持续4秒"
+                 },
+                 {
+                     "id":  "RG_H16_s04",
+                     "icon":  "image/effect/buff_0068",
+                     "quality":  6,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "5级",
+                     "desc":  "解锁【融合进化】：可在战斗中与【镭射齿轮】融合进化为\u003ccolor=#FF6347\u003e【仓鼠哥吱拉】\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "RG_H16_s05",
+                     "icon":  "image/effect/buff_0071",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H16_abl03_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "7级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【超级大怪兽】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H16_s06",
+                     "icon":  "image/effect/buff_0070",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H16_abl03_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "8级",
+                     "desc":  "\u003ccolor=#d572ff\u003e【超级大怪兽】\u003c/color\u003e会受到己方当前齿轮总数量的额外加成"
+                 },
+                 {
+                     "id":  "RG_H16_s07",
+                     "icon":  "image/effect/buff_0048",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H16_fmt01_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "10级",
+                     "desc":  "当自身在场时，所有的法术齿轮获得20%伤害加成"
+                 },
+                 {
+                     "id":  "RG_H17_s01",
+                     "icon":  "image/effect/buff_0065",
+                     "quality":  2,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "1级",
+                     "desc":  "镭射光线只能向布阵位置的正上方攻击，充能效率+30%"
+                 },
+                 {
+                     "id":  "RG_H17_s02",
+                     "icon":  "image/effect/buff_0064",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H17_abl01_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "2级",
+                     "desc":  "解锁\u003ccolor=#2ed0ff\u003e【镭射增幅】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H17_s03",
+                     "icon":  "image/effect/buff_0063",
+                     "quality":  3,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  [
+                                  {
+                                      "DMG_INC":  1500
+                                  }
+                              ],
+                     "name":  "3级",
+                     "desc":  "增加镭射齿轮的伤害"
+                 },
+                 {
+                     "id":  "RG_H17_s04",
+                     "icon":  "image/effect/buff_0068",
+                     "quality":  6,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "5级",
+                     "desc":  "解锁【融合进化】：可在战斗中与【仓鼠怪兽】融合进化为\u003ccolor=#FF6347\u003e【仓鼠哥吱拉】\u003c/color\u003e"
+                 },
+                 {
+                     "id":  "RG_H17_s05",
+                     "icon":  "image/effect/buff_0062",
+                     "quality":  4,
+                     "effectCfgId":  "RG_H17_abl02_eff01",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "7级",
+                     "desc":  "解锁\u003ccolor=#d572ff\u003e【摇头射线】\u003c/color\u003e能力"
+                 },
+                 {
+                     "id":  "RG_H17_s06",
+                     "icon":  "image/effect/buff_0063",
+                     "quality":  3,
+                     "effectCfgId":  "",
+                     "range":  null,
+                     "attr":  [
+                                  {
+                                      "DMG_INC":  3000
+                                  }
+                              ],
+                     "name":  "8级",
+                     "desc":  "增加镭射齿轮的伤害"
+                 },
+                 {
+                     "id":  "RG_H17_s07",
+                     "icon":  "image/effect/buff_0060",
+                     "quality":  3,
+                     "effectCfgId":  "RG_H17_abl01_eff02",
+                     "range":  null,
+                     "attr":  null,
+                     "name":  "10级",
+                     "desc":  "\u003ccolor=#2ed0ff\u003e【镭射增幅】\u003c/color\u003e的攻击附加减速能力"
+                 }
+             ],
+    "sourceLength":  690,
+    "expectedLength":  690,
+    "validLength":  true
+}

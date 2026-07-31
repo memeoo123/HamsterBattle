@@ -1,0 +1,130 @@
+﻿{
+    "table":  "dailytask.DailyTaskConfig",
+    "columnCount":  8,
+    "rowCount":  7,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "condition",
+                       "token":  817,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  2,
+                       "name":  "eventType",
+                       "token":  "eventType",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "totalProgress",
+                       "token":  "totalProgress",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "activeScore",
+                       "token":  "activeScore",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "jumpId",
+                       "token":  518,
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1001,
+                     "condition":  null,
+                     "eventType":  "KILL_MONSTER",
+                     "content":  "",
+                     "totalProgress":  100,
+                     "activeScore":  20,
+                     "desc":  "i18n:DailyTaskConfig.desc.1001",
+                     "jumpId":  0
+                 },
+                 {
+                     "id":  1002,
+                     "condition":  null,
+                     "eventType":  "COMPOUND_WHEEL",
+                     "content":  "4",
+                     "totalProgress":  5,
+                     "activeScore":  20,
+                     "desc":  "i18n:DailyTaskConfig.desc.1002",
+                     "jumpId":  0
+                 },
+                 {
+                     "id":  1003,
+                     "condition":  null,
+                     "eventType":  "CHALLENGE_TRUNK_INSTANCE",
+                     "content":  "",
+                     "totalProgress":  5,
+                     "activeScore":  15,
+                     "desc":  "i18n:DailyTaskConfig.desc.1003",
+                     "jumpId":  0
+                 },
+                 {
+                     "id":  1004,
+                     "condition":  null,
+                     "eventType":  "COST_POWER",
+                     "content":  "",
+                     "totalProgress":  30,
+                     "activeScore":  20,
+                     "desc":  "i18n:DailyTaskConfig.desc.1004",
+                     "jumpId":  0
+                 },
+                 {
+                     "id":  1005,
+                     "condition":  null,
+                     "eventType":  "PLAY_AD",
+                     "content":  "",
+                     "totalProgress":  10,
+                     "activeScore":  20,
+                     "desc":  "i18n:DailyTaskConfig.desc.1005",
+                     "jumpId":  0
+                 },
+                 {
+                     "id":  1006,
+                     "condition":  null,
+                     "eventType":  "SWEEP_TRUNK_INSTANCE",
+                     "content":  "",
+                     "totalProgress":  4,
+                     "activeScore":  15,
+                     "desc":  "i18n:DailyTaskConfig.desc.1006",
+                     "jumpId":  0
+                 },
+                 {
+                     "id":  1007,
+                     "condition":  null,
+                     "eventType":  "BUY_IN_SHOP",
+                     "content":  "",
+                     "totalProgress":  1,
+                     "activeScore":  15,
+                     "desc":  "i18n:DailyTaskConfig.desc.1007",
+                     "jumpId":  0
+                 }
+             ],
+    "sourceLength":  74,
+    "expectedLength":  74,
+    "validLength":  true
+}

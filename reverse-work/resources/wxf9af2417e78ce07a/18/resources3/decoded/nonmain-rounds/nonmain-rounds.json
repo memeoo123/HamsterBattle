@@ -1,0 +1,1252 @@
+﻿[
+    {
+        "id":  200001,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2001/宁静森林",
+                        "DailyInstanceConfig:2003/荒漠边缘",
+                        "DailyInstanceConfig:2004/荒漠沙地",
+                        "DailyInstanceConfig:2009/初见火山",
+                        "DailyInstanceConfig:2010/火山熔岩"
+                    ],
+        "round":  1,
+        "spawnCount":  8,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  35050,
+        "hpMultiple":  37063,
+        "monsters":  [
+                         {
+                             "id":  "M01",
+                             "name":  "莱莱姆",
+                             "count":  4
+                         },
+                         {
+                             "id":  "M08",
+                             "name":  "生气烛",
+                             "count":  1
+                         },
+                         {
+                             "id":  "M09",
+                             "name":  "恶魔犬",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200002,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2001/宁静森林",
+                        "DailyInstanceConfig:2003/荒漠边缘",
+                        "DailyInstanceConfig:2004/荒漠沙地",
+                        "DailyInstanceConfig:2009/初见火山",
+                        "DailyInstanceConfig:2010/火山熔岩"
+                    ],
+        "round":  2,
+        "spawnCount":  15,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  34172,
+        "hpMultiple":  37934,
+        "monsters":  [
+                         {
+                             "id":  "M01",
+                             "name":  "莱莱姆",
+                             "count":  11
+                         },
+                         {
+                             "id":  "M08",
+                             "name":  "生气烛",
+                             "count":  2
+                         },
+                         {
+                             "id":  "M09",
+                             "name":  "恶魔犬",
+                             "count":  2
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200003,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2001/宁静森林",
+                        "DailyInstanceConfig:2003/荒漠边缘",
+                        "DailyInstanceConfig:2004/荒漠沙地",
+                        "DailyInstanceConfig:2009/初见火山",
+                        "DailyInstanceConfig:2010/火山熔岩"
+                    ],
+        "round":  3,
+        "spawnCount":  17,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  44250,
+        "hpMultiple":  51268,
+        "monsters":  [
+                         {
+                             "id":  "M01",
+                             "name":  "莱莱姆",
+                             "count":  12
+                         },
+                         {
+                             "id":  "M08",
+                             "name":  "生气烛",
+                             "count":  3
+                         },
+                         {
+                             "id":  "M09",
+                             "name":  "恶魔犬",
+                             "count":  2
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200004,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2001/宁静森林",
+                        "DailyInstanceConfig:2003/荒漠边缘",
+                        "DailyInstanceConfig:2004/荒漠沙地",
+                        "DailyInstanceConfig:2009/初见火山",
+                        "DailyInstanceConfig:2010/火山熔岩"
+                    ],
+        "round":  4,
+        "spawnCount":  20,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  52453,
+        "hpMultiple":  63121,
+        "monsters":  [
+                         {
+                             "id":  "M01",
+                             "name":  "莱莱姆",
+                             "count":  13
+                         },
+                         {
+                             "id":  "M08",
+                             "name":  "生气烛",
+                             "count":  3
+                         },
+                         {
+                             "id":  "M09",
+                             "name":  "恶魔犬",
+                             "count":  4
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200005,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2001/宁静森林",
+                        "DailyInstanceConfig:2003/荒漠边缘",
+                        "DailyInstanceConfig:2004/荒漠沙地",
+                        "DailyInstanceConfig:2009/初见火山",
+                        "DailyInstanceConfig:2010/火山熔岩"
+                    ],
+        "round":  5,
+        "spawnCount":  22,
+        "distinctMonsterCount":  4,
+        "atkMultiple":  61981,
+        "hpMultiple":  77160,
+        "monsters":  [
+                         {
+                             "id":  "Boss09",
+                             "name":  "巨型恶魔犬",
+                             "count":  1
+                         },
+                         {
+                             "id":  "M01",
+                             "name":  "莱莱姆",
+                             "count":  14
+                         },
+                         {
+                             "id":  "M08",
+                             "name":  "生气烛",
+                             "count":  3
+                         },
+                         {
+                             "id":  "M09",
+                             "name":  "恶魔犬",
+                             "count":  4
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200006,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2001/宁静森林",
+                        "DailyInstanceConfig:2003/荒漠边缘",
+                        "DailyInstanceConfig:2004/荒漠沙地",
+                        "DailyInstanceConfig:2009/初见火山",
+                        "DailyInstanceConfig:2010/火山熔岩"
+                    ],
+        "round":  6,
+        "spawnCount":  24,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  63247,
+        "hpMultiple":  81175,
+        "monsters":  [
+                         {
+                             "id":  "M01",
+                             "name":  "莱莱姆",
+                             "count":  17
+                         },
+                         {
+                             "id":  "M08",
+                             "name":  "生气烛",
+                             "count":  4
+                         },
+                         {
+                             "id":  "M09",
+                             "name":  "恶魔犬",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200007,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2001/宁静森林",
+                        "DailyInstanceConfig:2003/荒漠边缘",
+                        "DailyInstanceConfig:2004/荒漠沙地",
+                        "DailyInstanceConfig:2009/初见火山",
+                        "DailyInstanceConfig:2010/火山熔岩"
+                    ],
+        "round":  7,
+        "spawnCount":  25,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  74329,
+        "hpMultiple":  98070,
+        "monsters":  [
+                         {
+                             "id":  "M01",
+                             "name":  "莱莱姆",
+                             "count":  18
+                         },
+                         {
+                             "id":  "M08",
+                             "name":  "生气烛",
+                             "count":  4
+                         },
+                         {
+                             "id":  "M09",
+                             "name":  "恶魔犬",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200008,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2001/宁静森林",
+                        "DailyInstanceConfig:2003/荒漠边缘",
+                        "DailyInstanceConfig:2004/荒漠沙地",
+                        "DailyInstanceConfig:2009/初见火山",
+                        "DailyInstanceConfig:2010/火山熔岩"
+                    ],
+        "round":  8,
+        "spawnCount":  26,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  87146,
+        "hpMultiple":  117903,
+        "monsters":  [
+                         {
+                             "id":  "M01",
+                             "name":  "莱莱姆",
+                             "count":  19
+                         },
+                         {
+                             "id":  "M08",
+                             "name":  "生气烛",
+                             "count":  4
+                         },
+                         {
+                             "id":  "M09",
+                             "name":  "恶魔犬",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200009,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2001/宁静森林",
+                        "DailyInstanceConfig:2003/荒漠边缘",
+                        "DailyInstanceConfig:2004/荒漠沙地",
+                        "DailyInstanceConfig:2009/初见火山",
+                        "DailyInstanceConfig:2010/火山熔岩"
+                    ],
+        "round":  9,
+        "spawnCount":  27,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  101947,
+        "hpMultiple":  141130,
+        "monsters":  [
+                         {
+                             "id":  "M01",
+                             "name":  "莱莱姆",
+                             "count":  20
+                         },
+                         {
+                             "id":  "M08",
+                             "name":  "生气烛",
+                             "count":  4
+                         },
+                         {
+                             "id":  "M09",
+                             "name":  "恶魔犬",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200010,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2001/宁静森林",
+                        "DailyInstanceConfig:2003/荒漠边缘",
+                        "DailyInstanceConfig:2004/荒漠沙地",
+                        "DailyInstanceConfig:2009/初见火山",
+                        "DailyInstanceConfig:2010/火山熔岩"
+                    ],
+        "round":  10,
+        "spawnCount":  28,
+        "distinctMonsterCount":  4,
+        "atkMultiple":  119020,
+        "hpMultiple":  168270,
+        "monsters":  [
+                         {
+                             "id":  "B01",
+                             "name":  "大恶魔",
+                             "count":  1
+                         },
+                         {
+                             "id":  "M01",
+                             "name":  "莱莱姆",
+                             "count":  20
+                         },
+                         {
+                             "id":  "M08",
+                             "name":  "生气烛",
+                             "count":  4
+                         },
+                         {
+                             "id":  "M09",
+                             "name":  "恶魔犬",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200101,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2002/密林深处",
+                        "DailyInstanceConfig:2005/雪山脚下",
+                        "DailyInstanceConfig:2006/无尽雪山",
+                        "DailyInstanceConfig:2007/青绿草原",
+                        "DailyInstanceConfig:2008/草原咆哮"
+                    ],
+        "round":  1,
+        "spawnCount":  8,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  35050,
+        "hpMultiple":  37063,
+        "monsters":  [
+                         {
+                             "id":  "M02",
+                             "name":  "云云猪",
+                             "count":  4
+                         },
+                         {
+                             "id":  "M03",
+                             "name":  "僵僵猫",
+                             "count":  1
+                         },
+                         {
+                             "id":  "M04",
+                             "name":  "冰坨坨",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200102,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2002/密林深处",
+                        "DailyInstanceConfig:2005/雪山脚下",
+                        "DailyInstanceConfig:2006/无尽雪山",
+                        "DailyInstanceConfig:2007/青绿草原",
+                        "DailyInstanceConfig:2008/草原咆哮"
+                    ],
+        "round":  2,
+        "spawnCount":  15,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  34172,
+        "hpMultiple":  37934,
+        "monsters":  [
+                         {
+                             "id":  "M02",
+                             "name":  "云云猪",
+                             "count":  11
+                         },
+                         {
+                             "id":  "M03",
+                             "name":  "僵僵猫",
+                             "count":  2
+                         },
+                         {
+                             "id":  "M04",
+                             "name":  "冰坨坨",
+                             "count":  2
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200103,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2002/密林深处",
+                        "DailyInstanceConfig:2005/雪山脚下",
+                        "DailyInstanceConfig:2006/无尽雪山",
+                        "DailyInstanceConfig:2007/青绿草原",
+                        "DailyInstanceConfig:2008/草原咆哮"
+                    ],
+        "round":  3,
+        "spawnCount":  17,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  44250,
+        "hpMultiple":  51268,
+        "monsters":  [
+                         {
+                             "id":  "M02",
+                             "name":  "云云猪",
+                             "count":  12
+                         },
+                         {
+                             "id":  "M03",
+                             "name":  "僵僵猫",
+                             "count":  3
+                         },
+                         {
+                             "id":  "M04",
+                             "name":  "冰坨坨",
+                             "count":  2
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200104,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2002/密林深处",
+                        "DailyInstanceConfig:2005/雪山脚下",
+                        "DailyInstanceConfig:2006/无尽雪山",
+                        "DailyInstanceConfig:2007/青绿草原",
+                        "DailyInstanceConfig:2008/草原咆哮"
+                    ],
+        "round":  4,
+        "spawnCount":  20,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  52453,
+        "hpMultiple":  63121,
+        "monsters":  [
+                         {
+                             "id":  "M02",
+                             "name":  "云云猪",
+                             "count":  13
+                         },
+                         {
+                             "id":  "M03",
+                             "name":  "僵僵猫",
+                             "count":  3
+                         },
+                         {
+                             "id":  "M04",
+                             "name":  "冰坨坨",
+                             "count":  4
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200105,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2002/密林深处",
+                        "DailyInstanceConfig:2005/雪山脚下",
+                        "DailyInstanceConfig:2006/无尽雪山",
+                        "DailyInstanceConfig:2007/青绿草原",
+                        "DailyInstanceConfig:2008/草原咆哮"
+                    ],
+        "round":  5,
+        "spawnCount":  22,
+        "distinctMonsterCount":  4,
+        "atkMultiple":  61981,
+        "hpMultiple":  77160,
+        "monsters":  [
+                         {
+                             "id":  "Boss09",
+                             "name":  "巨型恶魔犬",
+                             "count":  1
+                         },
+                         {
+                             "id":  "M02",
+                             "name":  "云云猪",
+                             "count":  14
+                         },
+                         {
+                             "id":  "M03",
+                             "name":  "僵僵猫",
+                             "count":  3
+                         },
+                         {
+                             "id":  "M04",
+                             "name":  "冰坨坨",
+                             "count":  4
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200106,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2002/密林深处",
+                        "DailyInstanceConfig:2005/雪山脚下",
+                        "DailyInstanceConfig:2006/无尽雪山",
+                        "DailyInstanceConfig:2007/青绿草原",
+                        "DailyInstanceConfig:2008/草原咆哮"
+                    ],
+        "round":  6,
+        "spawnCount":  24,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  63247,
+        "hpMultiple":  81175,
+        "monsters":  [
+                         {
+                             "id":  "M02",
+                             "name":  "云云猪",
+                             "count":  17
+                         },
+                         {
+                             "id":  "M03",
+                             "name":  "僵僵猫",
+                             "count":  4
+                         },
+                         {
+                             "id":  "M04",
+                             "name":  "冰坨坨",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200107,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2002/密林深处",
+                        "DailyInstanceConfig:2005/雪山脚下",
+                        "DailyInstanceConfig:2006/无尽雪山",
+                        "DailyInstanceConfig:2007/青绿草原",
+                        "DailyInstanceConfig:2008/草原咆哮"
+                    ],
+        "round":  7,
+        "spawnCount":  25,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  74329,
+        "hpMultiple":  98070,
+        "monsters":  [
+                         {
+                             "id":  "M02",
+                             "name":  "云云猪",
+                             "count":  18
+                         },
+                         {
+                             "id":  "M03",
+                             "name":  "僵僵猫",
+                             "count":  4
+                         },
+                         {
+                             "id":  "M04",
+                             "name":  "冰坨坨",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200108,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2002/密林深处",
+                        "DailyInstanceConfig:2005/雪山脚下",
+                        "DailyInstanceConfig:2006/无尽雪山",
+                        "DailyInstanceConfig:2007/青绿草原",
+                        "DailyInstanceConfig:2008/草原咆哮"
+                    ],
+        "round":  8,
+        "spawnCount":  26,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  87146,
+        "hpMultiple":  117903,
+        "monsters":  [
+                         {
+                             "id":  "M02",
+                             "name":  "云云猪",
+                             "count":  19
+                         },
+                         {
+                             "id":  "M03",
+                             "name":  "僵僵猫",
+                             "count":  4
+                         },
+                         {
+                             "id":  "M04",
+                             "name":  "冰坨坨",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200109,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2002/密林深处",
+                        "DailyInstanceConfig:2005/雪山脚下",
+                        "DailyInstanceConfig:2006/无尽雪山",
+                        "DailyInstanceConfig:2007/青绿草原",
+                        "DailyInstanceConfig:2008/草原咆哮"
+                    ],
+        "round":  9,
+        "spawnCount":  27,
+        "distinctMonsterCount":  3,
+        "atkMultiple":  101947,
+        "hpMultiple":  141130,
+        "monsters":  [
+                         {
+                             "id":  "M02",
+                             "name":  "云云猪",
+                             "count":  20
+                         },
+                         {
+                             "id":  "M03",
+                             "name":  "僵僵猫",
+                             "count":  4
+                         },
+                         {
+                             "id":  "M04",
+                             "name":  "冰坨坨",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  200110,
+        "category":  "daily_instance",
+        "sources":  [
+                        "DailyInstanceConfig:2002/密林深处",
+                        "DailyInstanceConfig:2005/雪山脚下",
+                        "DailyInstanceConfig:2006/无尽雪山",
+                        "DailyInstanceConfig:2007/青绿草原",
+                        "DailyInstanceConfig:2008/草原咆哮"
+                    ],
+        "round":  10,
+        "spawnCount":  28,
+        "distinctMonsterCount":  4,
+        "atkMultiple":  119020,
+        "hpMultiple":  168270,
+        "monsters":  [
+                         {
+                             "id":  "B01",
+                             "name":  "大恶魔",
+                             "count":  1
+                         },
+                         {
+                             "id":  "M02",
+                             "name":  "云云猪",
+                             "count":  20
+                         },
+                         {
+                             "id":  "M03",
+                             "name":  "僵僵猫",
+                             "count":  4
+                         },
+                         {
+                             "id":  "M04",
+                             "name":  "冰坨坨",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        {
+                            "k":  "DI_Gold",
+                            "v":  500
+                        }
+                    ],
+        "coinRewards":  [
+                            {
+                                "k":  5,
+                                "v":  20
+                            }
+                        ]
+    },
+    {
+        "id":  300001,
+        "category":  "extra_monster_buff",
+        "sources":  [
+                        "BagLikeAbilityEffectiveConfig:DI_DEBUFF_eff05/ADD_EXTRA_MONSTER"
+                    ],
+        "round":  1,
+        "spawnCount":  1,
+        "distinctMonsterCount":  1,
+        "atkMultiple":  28619,
+        "hpMultiple":  30262,
+        "monsters":  [
+                         {
+                             "id":  "M12",
+                             "name":  "先锋狼",
+                             "count":  1
+                         }
+                     ],
+        "rewards":  [
+                        null
+                    ],
+        "coinRewards":  [
+                            null
+                        ]
+    },
+    {
+        "id":  300002,
+        "category":  "extra_monster_buff",
+        "sources":  [
+                        "BagLikeAbilityEffectiveConfig:DI_DEBUFF_eff05/ADD_EXTRA_MONSTER"
+                    ],
+        "round":  2,
+        "spawnCount":  2,
+        "distinctMonsterCount":  1,
+        "atkMultiple":  28473,
+        "hpMultiple":  31607,
+        "monsters":  [
+                         {
+                             "id":  "M12",
+                             "name":  "先锋狼",
+                             "count":  2
+                         }
+                     ],
+        "rewards":  [
+                        null
+                    ],
+        "coinRewards":  [
+                            null
+                        ]
+    },
+    {
+        "id":  300003,
+        "category":  "extra_monster_buff",
+        "sources":  [
+                        "BagLikeAbilityEffectiveConfig:DI_DEBUFF_eff05/ADD_EXTRA_MONSTER"
+                    ],
+        "round":  3,
+        "spawnCount":  2,
+        "distinctMonsterCount":  1,
+        "atkMultiple":  37625,
+        "hpMultiple":  43592,
+        "monsters":  [
+                         {
+                             "id":  "M12",
+                             "name":  "先锋狼",
+                             "count":  2
+                         }
+                     ],
+        "rewards":  [
+                        null
+                    ],
+        "coinRewards":  [
+                            null
+                        ]
+    },
+    {
+        "id":  300004,
+        "category":  "extra_monster_buff",
+        "sources":  [
+                        "BagLikeAbilityEffectiveConfig:DI_DEBUFF_eff05/ADD_EXTRA_MONSTER"
+                    ],
+        "round":  4,
+        "spawnCount":  2,
+        "distinctMonsterCount":  1,
+        "atkMultiple":  45513,
+        "hpMultiple":  54770,
+        "monsters":  [
+                         {
+                             "id":  "M12",
+                             "name":  "先锋狼",
+                             "count":  2
+                         }
+                     ],
+        "rewards":  [
+                        null
+                    ],
+        "coinRewards":  [
+                            null
+                        ]
+    },
+    {
+        "id":  300005,
+        "category":  "extra_monster_buff",
+        "sources":  [
+                        "BagLikeAbilityEffectiveConfig:DI_DEBUFF_eff05/ADD_EXTRA_MONSTER"
+                    ],
+        "round":  5,
+        "spawnCount":  2,
+        "distinctMonsterCount":  1,
+        "atkMultiple":  54882,
+        "hpMultiple":  68322,
+        "monsters":  [
+                         {
+                             "id":  "M12",
+                             "name":  "先锋狼",
+                             "count":  2
+                         }
+                     ],
+        "rewards":  [
+                        null
+                    ],
+        "coinRewards":  [
+                            null
+                        ]
+    },
+    {
+        "id":  300006,
+        "category":  "extra_monster_buff",
+        "sources":  [
+                        "BagLikeAbilityEffectiveConfig:DI_DEBUFF_eff05/ADD_EXTRA_MONSTER"
+                    ],
+        "round":  6,
+        "spawnCount":  3,
+        "distinctMonsterCount":  1,
+        "atkMultiple":  57150,
+        "hpMultiple":  73350,
+        "monsters":  [
+                         {
+                             "id":  "M12",
+                             "name":  "先锋狼",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        null
+                    ],
+        "coinRewards":  [
+                            null
+                        ]
+    },
+    {
+        "id":  300007,
+        "category":  "extra_monster_buff",
+        "sources":  [
+                        "BagLikeAbilityEffectiveConfig:DI_DEBUFF_eff05/ADD_EXTRA_MONSTER"
+                    ],
+        "round":  7,
+        "spawnCount":  3,
+        "distinctMonsterCount":  1,
+        "atkMultiple":  68540,
+        "hpMultiple":  90431,
+        "monsters":  [
+                         {
+                             "id":  "M12",
+                             "name":  "先锋狼",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        null
+                    ],
+        "coinRewards":  [
+                            null
+                        ]
+    },
+    {
+        "id":  300008,
+        "category":  "extra_monster_buff",
+        "sources":  [
+                        "BagLikeAbilityEffectiveConfig:DI_DEBUFF_eff05/ADD_EXTRA_MONSTER"
+                    ],
+        "round":  8,
+        "spawnCount":  3,
+        "distinctMonsterCount":  1,
+        "atkMultiple":  82004,
+        "hpMultiple":  110946,
+        "monsters":  [
+                         {
+                             "id":  "M12",
+                             "name":  "先锋狼",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        null
+                    ],
+        "coinRewards":  [
+                            null
+                        ]
+    },
+    {
+        "id":  300009,
+        "category":  "extra_monster_buff",
+        "sources":  [
+                        "BagLikeAbilityEffectiveConfig:DI_DEBUFF_eff05/ADD_EXTRA_MONSTER"
+                    ],
+        "round":  9,
+        "spawnCount":  3,
+        "distinctMonsterCount":  1,
+        "atkMultiple":  97896,
+        "hpMultiple":  135522,
+        "monsters":  [
+                         {
+                             "id":  "M12",
+                             "name":  "先锋狼",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        null
+                    ],
+        "coinRewards":  [
+                            null
+                        ]
+    },
+    {
+        "id":  300010,
+        "category":  "extra_monster_buff",
+        "sources":  [
+                        "BagLikeAbilityEffectiveConfig:DI_DEBUFF_eff05/ADD_EXTRA_MONSTER"
+                    ],
+        "round":  10,
+        "spawnCount":  3,
+        "distinctMonsterCount":  1,
+        "atkMultiple":  116632,
+        "hpMultiple":  164893,
+        "monsters":  [
+                         {
+                             "id":  "M12",
+                             "name":  "先锋狼",
+                             "count":  3
+                         }
+                     ],
+        "rewards":  [
+                        null
+                    ],
+        "coinRewards":  [
+                            null
+                        ]
+    },
+    {
+        "id":  400001,
+        "category":  "endless_mode",
+        "sources":  [
+                        "TrunkInstanceConstantConfig:ENDLESS_MODE:ROUND_IDS"
+                    ],
+        "round":  1,
+        "spawnCount":  560,
+        "distinctMonsterCount":  12,
+        "atkMultiple":  200000,
+        "hpMultiple":  200000,
+        "monsters":  [
+                         {
+                             "id":  "B02",
+                             "name":  "惊乍怪",
+                             "count":  2
+                         },
+                         {
+                             "id":  "M01",
+                             "name":  "莱莱姆",
+                             "count":  30
+                         },
+                         {
+                             "id":  "M02",
+                             "name":  "云云猪",
+                             "count":  39
+                         },
+                         {
+                             "id":  "M03",
+                             "name":  "僵僵猫",
+                             "count":  32
+                         },
+                         {
+                             "id":  "M04",
+                             "name":  "冰坨坨",
+                             "count":  21
+                         },
+                         {
+                             "id":  "M05",
+                             "name":  "火火炉",
+                             "count":  134
+                         },
+                         {
+                             "id":  "M06",
+                             "name":  "冰冰狗",
+                             "count":  54
+                         },
+                         {
+                             "id":  "M07",
+                             "name":  "鬼鬼羊",
+                             "count":  29
+                         },
+                         {
+                             "id":  "M08",
+                             "name":  "生气烛",
+                             "count":  24
+                         },
+                         {
+                             "id":  "M09",
+                             "name":  "恶魔犬",
+                             "count":  133
+                         },
+                         {
+                             "id":  "M10",
+                             "name":  "脏脏蛇",
+                             "count":  10
+                         },
+                         {
+                             "id":  "M12",
+                             "name":  "先锋狼",
+                             "count":  52
+                         }
+                     ],
+        "rewards":  [
+                        null
+                    ],
+        "coinRewards":  [
+                            null
+                        ]
+    }
+]

@@ -1,0 +1,280 @@
+﻿{
+    "table":  "battle.SkillEffectConfig",
+    "columnCount":  12,
+    "rowCount":  14,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "anim",
+                       "token":  858,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "animLoopTimes",
+                       "token":  "animLoopTimes",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "animHorse",
+                       "token":  "animHorse",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "sceneEffect",
+                       "token":  "sceneEffect",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "layer",
+                       "token":  718,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "animPosType",
+                       "token":  686,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  7,
+                       "name":  "modelId",
+                       "token":  347,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  8,
+                       "name":  "modelUpId",
+                       "token":  "modelUpId",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  9,
+                       "name":  "bgModelId",
+                       "token":  "bgModelId",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  10,
+                       "name":  "bgModelUpId",
+                       "token":  "bgModelUpId",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  11,
+                       "name":  "param",
+                       "token":  20,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "1",
+                     "anim":  "attack",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "2001_5",
+                     "anim":  "skill01_charged",
+                     "animLoopTimes":  -1,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "3001_4",
+                     "anim":  "skill01",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "7001_2",
+                     "anim":  "skill01",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "8001_2",
+                     "anim":  "skill01",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "8001_3",
+                     "anim":  "skill02",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "9001_2",
+                     "anim":  "skill01",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "2",
+                     "anim":  "skill01",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "GWZX_001",
+                     "anim":  "skill01",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "GWZX_002",
+                     "anim":  "skill01",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "GWFW_001",
+                     "anim":  "skill01",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "11001_2",
+                     "anim":  "skill01",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "12001_2",
+                     "anim":  "skill01",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 },
+                 {
+                     "id":  "CS_1801",
+                     "anim":  "skill01",
+                     "animLoopTimes":  0,
+                     "animHorse":  "",
+                     "sceneEffect":  0,
+                     "layer":  0,
+                     "animPosType":  0,
+                     "modelId":  null,
+                     "modelUpId":  null,
+                     "bgModelId":  null,
+                     "bgModelUpId":  null,
+                     "param":  null
+                 }
+             ],
+    "sourceLength":  194,
+    "expectedLength":  194,
+    "validLength":  true
+}

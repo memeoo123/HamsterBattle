@@ -1,0 +1,42 @@
+﻿{
+    "table":  "otherGames.OtherGamesConfig",
+    "columnCount":  4,
+    "rowCount":  1,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "moduleId",
+                       "token":  956,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "moduleId":  "GAME_FRUIT",
+                     "icon":  "image/otherGames/icon_fruit",
+                     "name":  "仓鼠打水果"
+                 }
+             ],
+    "sourceLength":  14,
+    "expectedLength":  14,
+    "validLength":  true
+}

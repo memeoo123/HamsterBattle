@@ -1,0 +1,89 @@
+﻿{
+    "table":  "trunkinstance.TrunkInstanceClickConfig",
+    "columnCount":  7,
+    "rowCount":  1,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "trunkid",
+                       "token":  "trunkid",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "rewards1",
+                       "token":  555,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  3,
+                       "name":  "rewards2",
+                       "token":  556,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  4,
+                       "name":  "times1",
+                       "token":  "times1",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "times2",
+                       "token":  "times2",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "times",
+                       "token":  241,
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "trunkid":  1001,
+                     "rewards1":  [
+                                      {
+                                          "k":  2,
+                                          "v":  10000
+                                      },
+                                      {
+                                          "k":  3,
+                                          "v":  10000
+                                      },
+                                      {
+                                          "k":  4,
+                                          "v":  10
+                                      }
+                                  ],
+                     "rewards2":  [
+                                      {
+                                          "k":  2,
+                                          "v":  1000
+                                      },
+                                      {
+                                          "k":  3,
+                                          "v":  100
+                                      },
+                                      {
+                                          "k":  4,
+                                          "v":  1
+                                      }
+                                  ],
+                     "times1":  99,
+                     "times2":  1,
+                     "times":  10
+                 }
+             ],
+    "sourceLength":  23,
+    "expectedLength":  23,
+    "validLength":  true
+}

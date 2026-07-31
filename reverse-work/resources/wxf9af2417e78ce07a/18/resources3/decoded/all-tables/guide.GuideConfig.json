@@ -1,0 +1,823 @@
+﻿{
+    "table":  "guide.GuideConfig",
+    "columnCount":  19,
+    "rowCount":  26,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "nextId",
+                       "token":  345,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "group",
+                       "token":  236,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "partId",
+                       "token":  964,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "savePoint",
+                       "token":  965,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "passEnd",
+                       "token":  966,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "typeParam",
+                       "token":  967,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  8,
+                       "name":  "plot",
+                       "token":  968,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  9,
+                       "name":  "isForce",
+                       "token":  969,
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  10,
+                       "name":  "triggerCondition",
+                       "token":  970,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  11,
+                       "name":  "finishCondition",
+                       "token":  971,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  12,
+                       "name":  "maskAlpha",
+                       "token":  972,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  13,
+                       "name":  "UI",
+                       "token":  973,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  14,
+                       "name":  "item",
+                       "token":  974,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  15,
+                       "name":  "focusAni",
+                       "token":  "focusAni",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  16,
+                       "name":  "script",
+                       "token":  975,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  17,
+                       "name":  "scriptParam",
+                       "token":  976,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  18,
+                       "name":  "canJump",
+                       "token":  977,
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  10101,
+                     "nextId":  10102,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "DELAY",
+                     "typeParam":  [
+                                       0.2
+                                   ],
+                     "plot":  null,
+                     "isForce":  false,
+                     "triggerCondition":  [
+                                              "BAGLIKE_BATTLE_ROUND_PREPARE",
+                                              1001,
+                                              0
+                                          ],
+                     "finishCondition":  null,
+                     "maskAlpha":  60,
+                     "UI":  "",
+                     "item":  "",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10102,
+                     "nextId":  10103,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "PLOT",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  101
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  null,
+                     "maskAlpha":  80,
+                     "UI":  "BagLikeView",
+                     "item":  "",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10103,
+                     "nextId":  10104,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "PLOT",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "teach":  101
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "TAKE_ON_BRICK",
+                                             "H0101",
+                                             16
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeView",
+                     "item":  "operComp.operArea",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10104,
+                     "nextId":  10105,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  103
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "BUTTON",
+                                             0,
+                                             1
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeView",
+                     "item":  "operComp.battleBtn",
+                     "focusAni":  [
+                                      "DOWN_LEFT",
+                                      0,
+                                      0
+                                  ],
+                     "script":  "GUIDE_ADD_PRODUCTIVITY",
+                     "scriptParam":  [
+                                         8000,
+                                         100
+                                     ],
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10105,
+                     "nextId":  10106,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "DELAY",
+                     "typeParam":  [
+                                       0.6
+                                   ],
+                     "plot":  null,
+                     "isForce":  false,
+                     "triggerCondition":  [
+                                              "BAGLIKE_BATTLE_ROUND_PREPARE",
+                                              1001,
+                                              1
+                                          ],
+                     "finishCondition":  null,
+                     "maskAlpha":  60,
+                     "UI":  "",
+                     "item":  "",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10106,
+                     "nextId":  10107,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "PLOT",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "teach":  102
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "TAKE_ON_BRICK",
+                                             "H0201",
+                                             23
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeView",
+                     "item":  "operComp.operArea",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10107,
+                     "nextId":  10108,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "PLOT",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "teach":  103
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "TAKE_ON_BRICK",
+                                             "C01",
+                                             9
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeView",
+                     "item":  "operComp.operArea",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10108,
+                     "nextId":  10109,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "PLOT",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  106
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  null,
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeView",
+                     "item":  "operComp.list.9",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10109,
+                     "nextId":  10110,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  107
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "BUTTON",
+                                             0,
+                                             1
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeView",
+                     "item":  "operComp.battleBtn",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10110,
+                     "nextId":  10111,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "DELAY",
+                     "typeParam":  [
+                                       0.2
+                                   ],
+                     "plot":  null,
+                     "isForce":  false,
+                     "triggerCondition":  [
+                                              "BAGLIKE_BATTLE_BUFF_START",
+                                              1001,
+                                              2
+                                          ],
+                     "finishCondition":  null,
+                     "maskAlpha":  60,
+                     "UI":  "",
+                     "item":  "",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10111,
+                     "nextId":  10112,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  108
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "BUTTON",
+                                             0,
+                                             1
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeBuffWin",
+                     "item":  "list.0",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10112,
+                     "nextId":  10113,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "DELAY",
+                     "typeParam":  [
+                                       0.6
+                                   ],
+                     "plot":  null,
+                     "isForce":  false,
+                     "triggerCondition":  [
+                                              "BAGLIKE_BATTLE_ROUND_PREPARE",
+                                              1001,
+                                              2
+                                          ],
+                     "finishCondition":  null,
+                     "maskAlpha":  60,
+                     "UI":  "",
+                     "item":  "",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10113,
+                     "nextId":  10114,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "PLOT",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "teach":  104
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "TAKE_ON_BRICK",
+                                             "G02",
+                                             "-1"
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeView",
+                     "item":  "operComp.operArea",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10114,
+                     "nextId":  10115,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  110
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "BUTTON",
+                                             0,
+                                             1
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeView",
+                     "item":  "operComp.refreshBtn",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10115,
+                     "nextId":  10116,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "PLOT",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "teach":  105
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "BAGLIKE_COMPOUND_WHEEL",
+                                             "H0102",
+                                             16
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeView",
+                     "item":  "operComp.operArea",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10116,
+                     "nextId":  10117,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "PLOT",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "teach":  106
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "BAGLIKE_BATTLE_CLEAR_CHOOSE",
+                                             0,
+                                             0
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeView",
+                     "item":  "operComp.operArea",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10117,
+                     "nextId":  0,
+                     "group":  101,
+                     "partId":  10,
+                     "savePoint":  1,
+                     "passEnd":  0,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  113
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "BUTTON",
+                                             0,
+                                             2
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeView",
+                     "item":  "operComp.battleBtn",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10201,
+                     "nextId":  10202,
+                     "group":  102,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  114
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  [
+                                              "HERO_UNLOCK_VIEW_CLOSE",
+                                              0,
+                                              "H13"
+                                          ],
+                     "finishCondition":  [
+                                             "BUTTON",
+                                             0,
+                                             1
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "MainPage",
+                     "item":  "listBottom.3",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10202,
+                     "nextId":  10203,
+                     "group":  102,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  115
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "BUTTON",
+                                             0,
+                                             2
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "HeroMainView",
+                     "item":  "listHero.0",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10203,
+                     "nextId":  10204,
+                     "group":  102,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  116
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "BUTTON",
+                                             0,
+                                             3
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "HeroInfoView",
+                     "item":  "btnUp",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10204,
+                     "nextId":  10205,
+                     "group":  102,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "DELAY",
+                     "typeParam":  [
+                                       0.6
+                                   ],
+                     "plot":  null,
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  null,
+                     "maskAlpha":  60,
+                     "UI":  "",
+                     "item":  "",
+                     "focusAni":  null,
+                     "script":  "GUIDE_JUMP_TO_MAIN_VIEW",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10205,
+                     "nextId":  0,
+                     "group":  102,
+                     "partId":  10,
+                     "savePoint":  1,
+                     "passEnd":  0,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  117
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "BUTTON",
+                                             0,
+                                             4
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "MainView",
+                     "item":  "btnComp.btnStart",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10301,
+                     "nextId":  10302,
+                     "group":  103,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "PLOT",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  118
+                              },
+                     "isForce":  false,
+                     "triggerCondition":  [
+                                              "BAGLIKE_BATTLE_ROUND_PREPARE",
+                                              1002,
+                                              7
+                                          ],
+                     "finishCondition":  null,
+                     "maskAlpha":  60,
+                     "UI":  "",
+                     "item":  "",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10302,
+                     "nextId":  10303,
+                     "group":  103,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "DELAY",
+                     "typeParam":  [
+                                       0.1
+                                   ],
+                     "plot":  null,
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  null,
+                     "maskAlpha":  60,
+                     "UI":  "",
+                     "item":  "",
+                     "focusAni":  null,
+                     "script":  "GUIDE_OPEN_HERO_UNLOCK",
+                     "scriptParam":  [
+                                         "H07"
+                                     ],
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10303,
+                     "nextId":  10304,
+                     "group":  103,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "WAIT",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  119
+                              },
+                     "isForce":  true,
+                     "triggerCondition":  null,
+                     "finishCondition":  [
+                                             "VIEW",
+                                             0,
+                                             "GuideHeroUnlockView"
+                                         ],
+                     "maskAlpha":  60,
+                     "UI":  "",
+                     "item":  "",
+                     "focusAni":  null,
+                     "script":  "GUIDE_ADD_BRICK",
+                     "scriptParam":  [
+                                         "H0705"
+                                     ],
+                     "canJump":  0
+                 },
+                 {
+                     "id":  10304,
+                     "nextId":  0,
+                     "group":  103,
+                     "partId":  10,
+                     "savePoint":  1,
+                     "passEnd":  0,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  {
+                                  "dialog":  120
+                              },
+                     "isForce":  false,
+                     "triggerCondition":  null,
+                     "finishCondition":  null,
+                     "maskAlpha":  60,
+                     "UI":  "BagLikeView",
+                     "item":  "operComp.operArea",
+                     "focusAni":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 }
+             ],
+    "sourceLength":  534,
+    "expectedLength":  534,
+    "validLength":  true
+}

@@ -1,0 +1,90 @@
+﻿{
+    "table":  "gameplay.GameplayConfig",
+    "columnCount":  6,
+    "rowCount":  3,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "moduleId",
+                       "token":  956,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "bg",
+                       "token":  957,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "showRewards",
+                       "token":  958,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  4,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "moduleId":  "ENDLESS_MODE",
+                     "bg":  "image/unpack/gameplay/picture02",
+                     "showRewards":  [
+                                         {
+                                             "k":  2,
+                                             "v":  0
+                                         }
+                                     ],
+                     "name":  "无尽试炼",
+                     "desc":  ""
+                 },
+                 {
+                     "id":  2,
+                     "moduleId":  "DAILY_INSTANCE",
+                     "bg":  "image/unpack/gameplay/picture01",
+                     "showRewards":  [
+                                         {
+                                             "k":  3,
+                                             "v":  0
+                                         },
+                                         {
+                                             "k":  "BOX_RF",
+                                             "v":  0
+                                         },
+                                         {
+                                             "k":  7,
+                                             "v":  0
+                                         }
+                                     ],
+                     "name":  "每日挑战",
+                     "desc":  ""
+                 },
+                 {
+                     "id":  3,
+                     "moduleId":  "OTHER_GAMES",
+                     "bg":  "image/unpack/gameplay/picture03",
+                     "showRewards":  null,
+                     "name":  "玩法合集",
+                     "desc":  "趣味小游戏，快来挑战吧"
+                 }
+             ],
+    "sourceLength":  32,
+    "expectedLength":  32,
+    "validLength":  true
+}

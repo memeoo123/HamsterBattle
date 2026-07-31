@@ -1,0 +1,76 @@
+﻿{
+    "table":  "common.ConfigValue",
+    "columnCount":  2,
+    "rowCount":  13,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "TASK:PROPS_ITEM_IDS",
+                     "content":  "[]"
+                 },
+                 {
+                     "id":  "TASK:CURRENCY_ITEM_IDS",
+                     "content":  "[]"
+                 },
+                 {
+                     "id":  "SYSTEM:OPEN_SIZE",
+                     "content":  "1"
+                 },
+                 {
+                     "id":  "SYSTEM:DAILY_RESET_CORN",
+                     "content":  "0 0 0 * * ?"
+                 },
+                 {
+                     "id":  "SYSTEM:WEEK_RESET_CORN",
+                     "content":  "0 0 0 ? * MON"
+                 },
+                 {
+                     "id":  "SYSTEM:MONTH_RESET_CORN",
+                     "content":  "0 0 0 1 * ?"
+                 },
+                 {
+                     "id":  "SYSTEM:START_HOUR_OF_DAY",
+                     "content":  "0"
+                 },
+                 {
+                     "id":  "CURRENCY:DIAMOND_TYPES",
+                     "content":  "{\"DIAMOND\":[\"BIND_DIAMOND\",\"INTER_DIAMOND\"],\"BIND_DIAMOND\":[\"DIAMOND\",\"INTER_DIAMOND\"]}"
+                 },
+                 {
+                     "id":  "MODIFICATION_MAIL_EXPIRE_HOURS",
+                     "content":  "6"
+                 },
+                 {
+                     "id":  "ADULT_AGE",
+                     "content":  "18"
+                 },
+                 {
+                     "id":  "FORBID_LOGIN_HOUR_RANGES",
+                     "content":  "[[22,23],[0,19]]"
+                 },
+                 {
+                     "id":  "NONAGE_MAX_ONLINE_MINUTES",
+                     "content":  "60"
+                 },
+                 {
+                     "id":  "NONAGE_ENABLE_LOGIN_DAYS",
+                     "content":  "[\"FRIDAY\",\"SATURDAY\",\"SUNDAY\"]"
+                 }
+             ],
+    "sourceLength":  32,
+    "expectedLength":  32,
+    "validLength":  true
+}

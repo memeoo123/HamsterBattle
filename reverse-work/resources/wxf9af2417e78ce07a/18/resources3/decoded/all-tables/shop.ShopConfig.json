@@ -1,0 +1,50 @@
+﻿{
+    "table":  "shop.ShopConfig",
+    "columnCount":  3,
+    "rowCount":  4,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "refreshType",
+                       "token":  "refreshType",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "shopName",
+                       "token":  "shopName",
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  101,
+                     "refreshType":  "DAILY",
+                     "shopName":  "i18n:ShopConfig.shopName.101"
+                 },
+                 {
+                     "id":  102,
+                     "refreshType":  "",
+                     "shopName":  "i18n:ShopConfig.shopName.102"
+                 },
+                 {
+                     "id":  103,
+                     "refreshType":  "DAILY",
+                     "shopName":  "i18n:ShopConfig.shopName.103"
+                 },
+                 {
+                     "id":  104,
+                     "refreshType":  "DAILY",
+                     "shopName":  "i18n:ShopConfig.shopName.104"
+                 }
+             ],
+    "sourceLength":  20,
+    "expectedLength":  20,
+    "validLength":  true
+}

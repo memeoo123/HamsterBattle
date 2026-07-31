@@ -1,0 +1,87 @@
+﻿{
+    "table":  "jump.JumpConfig",
+    "columnCount":  5,
+    "rowCount":  5,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "keyName",
+                       "token":  "keyName",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "needModuleName",
+                       "token":  "needModuleName",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "args",
+                       "token":  "args",
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "type":  "ui",
+                     "keyName":  "ShopPowerBuyView",
+                     "needModuleName":  "",
+                     "args":  null
+                 },
+                 {
+                     "id":  2,
+                     "type":  "code",
+                     "keyName":  "MainPage",
+                     "needModuleName":  "SHOP",
+                     "args":  {
+                                  "index":  0,
+                                  "data":  {
+                                               "shopId":  103
+                                           }
+                              }
+                 },
+                 {
+                     "id":  3,
+                     "type":  "code",
+                     "keyName":  "MainPage",
+                     "needModuleName":  "SHOP",
+                     "args":  {
+                                  "index":  0,
+                                  "data":  {
+                                               "shopId":  101
+                                           }
+                              }
+                 },
+                 {
+                     "id":  4,
+                     "type":  "ui",
+                     "keyName":  "",
+                     "needModuleName":  "",
+                     "args":  null
+                 },
+                 {
+                     "id":  5,
+                     "type":  "ui",
+                     "keyName":  "",
+                     "needModuleName":  "",
+                     "args":  null
+                 }
+             ],
+    "sourceLength":  37,
+    "expectedLength":  37,
+    "validLength":  true
+}

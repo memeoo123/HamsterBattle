@@ -1,0 +1,2935 @@
+﻿{
+    "table":  "i18n.I18nConfig",
+    "columnCount":  3,
+    "rowCount":  581,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "Chinese",
+                       "token":  1103,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "English",
+                       "token":  1104,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "i18n:LoadingTipsConfig.content.1",
+                     "Chinese":  "正在与主舰取得通讯...",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:LoadingTipsConfig.content.2",
+                     "Chinese":  "不要东张西望，掉进宇宙裂隙可没人救...",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:LoadingTipsConfig.content.3",
+                     "Chinese":  "通向未知的折跃门正在开启...",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ConditionConfig.title.PASS_TRUNK_INSTANCE",
+                     "Chinese":  "第${key0}章解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ConditionConfig.unlockTxt.PASS_TRUNK_INSTANCE",
+                     "Chinese":  "通关章节${key0}解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ConditionConfig.message.PASS_TRUNK_INSTANCE",
+                     "Chinese":  "通关章节${key0}解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:DailyTaskConfig.desc.1001",
+                     "Chinese":  "击杀${key0}只怪物",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:DailyTaskConfig.desc.1002",
+                     "Chinese":  "合成${key1}级齿轮${key0}次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:DailyTaskConfig.desc.1003",
+                     "Chinese":  "挑战主线关卡${key0}次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:DailyTaskConfig.desc.1004",
+                     "Chinese":  "消耗${key0}点体力",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:DailyTaskConfig.desc.1005",
+                     "Chinese":  "观看广告${key0}次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:DailyTaskConfig.desc.1006",
+                     "Chinese":  "扫荡${key0}次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:DailyTaskConfig.desc.1007",
+                     "Chinese":  "商店购买${key0}次道具",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.1",
+                     "Chinese":  "体力",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.1",
+                     "Chinese":  "途径：完成主线任务获得",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.2",
+                     "Chinese":  "金币",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.3",
+                     "Chinese":  "钻石",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.4",
+                     "Chinese":  "观影券",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.5",
+                     "Chinese":  "银币",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.PLAYER_FIGHT",
+                     "Chinese":  "战力榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.PLAYER_FIGHT",
+                     "Chinese":  "战力榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.PLAYER_FIGHT",
+                     "Chinese":  "战力",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.TRUNK_INSTANCE",
+                     "Chinese":  "关卡榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.TRUNK_INSTANCE",
+                     "Chinese":  "关卡榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.TRUNK_INSTANCE",
+                     "Chinese":  "关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.ARENA",
+                     "Chinese":  "竞技场排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.ARENA",
+                     "Chinese":  "本服排行",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.DAILY_BOSS",
+                     "Chinese":  "虫王来袭",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.DAILY_BOSS",
+                     "Chinese":  "每日boss",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.LEAGUE_FIGHT",
+                     "Chinese":  "联盟排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.LEAGUE_BOSS",
+                     "Chinese":  "联盟BOSS排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.WORLD_BOSS",
+                     "Chinese":  "世界BOSS排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.SECRET_INSTANCE",
+                     "Chinese":  "秘境排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.SECRET_INSTANCE",
+                     "Chinese":  "层",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.LADDER",
+                     "Chinese":  "职业校验",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.LADDER",
+                     "Chinese":  "层",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.DAILY_BOSS_HURT_FORMATION",
+                     "Chinese":  "每日Boss伤害阵容排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.GUARD_SHIP",
+                     "Chinese":  "守卫母舰每周排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.FACTORY",
+                     "Chinese":  "星际工厂排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.HERO_RECRUIT_SCORE",
+                     "Chinese":  "英雄招募积分",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.SECRET_INSTANCE_WEEK_PASS_AMT",
+                     "Chinese":  "秘境周通关次数",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.TEAM_INSTANCE",
+                     "Chinese":  "异星合击榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.SEASON_SCORE",
+                     "Chinese":  "赛季积分榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.LEAGUE_EXPLORE_PERSON_SCORE",
+                     "Chinese":  "勘探个人积分",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.LEAGUE_EXPLORE_PERSON_SCORE",
+                     "Chinese":  "个人榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.LEAGUE_EXPLORE_PERSON_SCORE",
+                     "Chinese":  "积分",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.LEAGUE_EXPLORE_SCORE",
+                     "Chinese":  "勘探联盟积分",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.LEAGUE_EXPLORE_SCORE",
+                     "Chinese":  "联盟榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.LEAGUE_EXPLORE_SCORE",
+                     "Chinese":  "积分",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.SEASON_SECRET",
+                     "Chinese":  "赛季秘境榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.SEASON_BOSS",
+                     "Chinese":  "赛季Boss榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.PET_DUNGEON",
+                     "Chinese":  "次元裂隙排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.COLLECTIBLES_DUNGEON",
+                     "Chinese":  "沙盘演兵排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.RUSH_LADDER",
+                     "Chinese":  "职业塔冲榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.ENDLESS_SECRET",
+                     "Chinese":  "无尽秘境排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.ENDLESS_SECRET",
+                     "Chinese":  "层",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.name.PARALLEL_ACTIVITY_SCORE",
+                     "Chinese":  "次元连通活动积分",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingSubTypeTabConfig.name.1",
+                     "Chinese":  "射击序列",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingSubTypeTabConfig.name.2",
+                     "Chinese":  "异能序列",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingSubTypeTabConfig.name.3",
+                     "Chinese":  "格斗序列",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingSubTypeTabConfig.name.4",
+                     "Chinese":  "重骑序列",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ShopConfig.shopName.101",
+                     "Chinese":  "每日商店",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ShopConfig.shopName.102",
+                     "Chinese":  "宝箱",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ShopConfig.shopName.103",
+                     "Chinese":  "金币商店",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ShopConfig.shopName.104",
+                     "Chinese":  "体力商店",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ShopGoodsLimitBuyConfig.refreshStr.NEVER",
+                     "Chinese":  "不限购",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ShopGoodsLimitBuyConfig.refreshStr.DAILY",
+                     "Chinese":  "每日限购",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ShopGoodsLimitBuyConfig.refreshStr.WEEKLY",
+                     "Chinese":  "每周限购",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ShopGoodsLimitBuyConfig.refreshStr.MONTH",
+                     "Chinese":  "每月限购",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ShopGoodsLimitBuyConfig.refreshStr.FOREVER",
+                     "Chinese":  "永久限购",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ConditionConfig.title.HERO_STAR_GE",
+                     "Chinese":  "升至${key0}级解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ConditionConfig.unlockTxt.HERO_STAR_GE",
+                     "Chinese":  "升至${key0}级解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ConditionConfig.message.HERO_STAR_GE",
+                     "Chinese":  "升至${key0}级解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ConditionConfig.title.GAME_VERSION_UPDATE",
+                     "Chinese":  "暂未开放，敬请期待",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ConditionConfig.unlockTxt.GAME_VERSION_UPDATE",
+                     "Chinese":  "暂未开放，敬请期待",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ConditionConfig.message.GAME_VERSION_UPDATE",
+                     "Chinese":  "暂未开放，敬请期待",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:BattleConfig.name.1",
+                     "Chinese":  "主线关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:BattleConfig.name.2",
+                     "Chinese":  "每日挑战",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.IR_Exp",
+                     "Chinese":  "主角升级经验",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.DI_Gold",
+                     "Chinese":  "每日挑战金币",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.BOX_01",
+                     "Chinese":  "广告券宝箱",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.BOX_RF",
+                     "Chinese":  "随机碎片宝箱",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.6",
+                     "Chinese":  "自定义关卡金币",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1001",
+                     "Chinese":  "苦无增加",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1001",
+                     "Chinese":  "[忍者鼠]子弹数量+1",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1002",
+                     "Chinese":  "苦无增加",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1002",
+                     "Chinese":  "[忍者鼠]子弹数量+2",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1003",
+                     "Chinese":  "苦无增加",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1003",
+                     "Chinese":  "[忍者鼠]子弹数量+3",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1004",
+                     "Chinese":  "苦无穿透",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1004",
+                     "Chinese":  "[忍者鼠]子弹穿透次数+3",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1005",
+                     "Chinese":  "苦无分裂",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1005",
+                     "Chinese":  "[忍者鼠]子弹分裂个数+3",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1007",
+                     "Chinese":  "光波增加",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1007",
+                     "Chinese":  "[凹凸曼]子弹数量+1",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1008",
+                     "Chinese":  "光波增加",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1008",
+                     "Chinese":  "[凹凸曼]子弹数量+2",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1009",
+                     "Chinese":  "光波增加",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1009",
+                     "Chinese":  "[凹凸曼]子弹数量+3",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1010",
+                     "Chinese":  "光波回能",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1010",
+                     "Chinese":  "[凹凸曼]减cd 10%",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1011",
+                     "Chinese":  "光波弹射",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1011",
+                     "Chinese":  "[凹凸曼]子弹回弹次数+3",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1012",
+                     "Chinese":  "超大光波",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1012",
+                     "Chinese":  "[凹凸曼]子弹大小增加10%",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1013",
+                     "Chinese":  "光波分裂",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1013",
+                     "Chinese":  "[凹凸曼]子弹分裂个数+3",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1014",
+                     "Chinese":  "超大激光",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1014",
+                     "Chinese":  "[铁铁侠]技能宽度+10%",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1015",
+                     "Chinese":  "激光增强",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1015",
+                     "Chinese":  "[铁铁侠]增加技能伤害+10%",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1016",
+                     "Chinese":  "激光充能",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1016",
+                     "Chinese":  "[铁铁侠]cd -10%",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1017",
+                     "Chinese":  "铁铁侠登场！",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1017",
+                     "Chinese":  "新增英雄[铁铁侠]",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.name.1018",
+                     "Chinese":  "凹凸曼登场！",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitBuffPoolConfig.desc.1018",
+                     "Chinese":  "新增英雄[凹凸曼]",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitHeroConfig.name.H01",
+                     "Chinese":  "忍者鼠",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitHeroConfig.name.H02",
+                     "Chinese":  "铁铁侠",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:FruitHeroConfig.name.H03",
+                     "Chinese":  "凹凸曼",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.7",
+                     "Chinese":  "皮肤宝箱钥匙",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:QualityConfig.desc.1",
+                     "Chinese":  "白",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:QualityConfig.desc.2",
+                     "Chinese":  "绿",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:QualityConfig.desc.3",
+                     "Chinese":  "蓝",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:QualityConfig.desc.4",
+                     "Chinese":  "紫",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:QualityConfig.desc.5",
+                     "Chinese":  "橙",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:QualityConfig.desc.6",
+                     "Chinese":  "红",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.2",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.3",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.4",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.5",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.IR_Exp",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.DI_Gold",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.6",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.7",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.H01",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.H01",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.H02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.H02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.H03",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.H03",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.H04",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.H04",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.H05",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.H05",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.H06",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.H06",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.H11",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.H11",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.H12",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.H12",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.H13",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.H13",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.H14",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.H14",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.H16",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.H16",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.H17",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.H17",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F01",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F01",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F03",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F03",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F04",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F04",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F05",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F05",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F06",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F06",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F11",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F11",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F12",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F12",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F13",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F13",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F14",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F14",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F16",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F16",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F17",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F17",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.F99",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.F99",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.FP01",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.FP01",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.FP02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.FP02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.FP03",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.FP03",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.FP04",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.FP04",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.BOX_01",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.BOX_RF",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.IS_H01_Skin02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.IS_H01_Skin02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.IS_H01_Skin02_F",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.IS_H01_Skin02_F",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.IS_H02_Skin02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.IS_H02_Skin02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.IS_H02_Skin02_F",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.IS_H02_Skin02_F",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.IS_H03_Skin02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.IS_H03_Skin02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.IS_H03_Skin02_F",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.IS_H03_Skin02_F",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.IS_H04_Skin02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.IS_H04_Skin02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.IS_H04_Skin02_F",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.IS_H04_Skin02_F",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.IS_H16_Skin02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.IS_H16_Skin02",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.desc.IS_H16_Skin02_F",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ItemConfig.comeFromText.IS_H16_Skin02_F",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.PLAYER_FIGHT",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.TRUNK_INSTANCE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.ARENA",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.ARENA",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.DAILY_BOSS",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.DAILY_BOSS",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.LEAGUE_FIGHT",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.LEAGUE_FIGHT",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.LEAGUE_FIGHT",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.LEAGUE_BOSS",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.LEAGUE_BOSS",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.LEAGUE_BOSS",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.WORLD_BOSS",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.WORLD_BOSS",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.WORLD_BOSS",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.SECRET_INSTANCE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.SECRET_INSTANCE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.LADDER",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.LADDER",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.DAILY_BOSS_HURT_FORMATION",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.DAILY_BOSS_HURT_FORMATION",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.DAILY_BOSS_HURT_FORMATION",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.GUARD_SHIP",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.GUARD_SHIP",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.GUARD_SHIP",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.FACTORY",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.FACTORY",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.FACTORY",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.HERO_RECRUIT_SCORE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.HERO_RECRUIT_SCORE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.HERO_RECRUIT_SCORE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.SECRET_INSTANCE_WEEK_PASS_AMT",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.SECRET_INSTANCE_WEEK_PASS_AMT",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.SECRET_INSTANCE_WEEK_PASS_AMT",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.TEAM_INSTANCE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.TEAM_INSTANCE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.TEAM_INSTANCE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.SEASON_SCORE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.SEASON_SCORE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.SEASON_SCORE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.LEAGUE_EXPLORE_PERSON_SCORE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.LEAGUE_EXPLORE_SCORE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.SEASON_SECRET",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.SEASON_SECRET",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.SEASON_SECRET",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.SEASON_BOSS",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.SEASON_BOSS",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.SEASON_BOSS",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.PET_DUNGEON",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.PET_DUNGEON",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.PET_DUNGEON",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.COLLECTIBLES_DUNGEON",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.COLLECTIBLES_DUNGEON",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.COLLECTIBLES_DUNGEON",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.RUSH_LADDER",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.RUSH_LADDER",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.RUSH_LADDER",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.ENDLESS_SECRET",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.ENDLESS_SECRET",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.tabName.PARALLEL_ACTIVITY_SCORE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankValuePrefixText.PARALLEL_ACTIVITY_SCORE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:RankingConfig.rankSuffixText.PARALLEL_ACTIVITY_SCORE",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ShopGoodsLimitBuyConfig.refreshStr.CUSTOM",
+                     "Chinese":  "",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityFeed.ActivityFeedMainView.n3_087c.text",
+                     "Chinese":  "订阅有奖",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityFeed.ActivityFeedMainView.n6_087c.text",
+                     "Chinese":  "点击设置",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityFeed.ActivityFeedMainView.n8_087c.text",
+                     "Chinese":  "1",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityFeed.ActivityFeedMainView.n9_087c.text",
+                     "Chinese":  "打开“游戏进度提醒”",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityFeed.ActivityFeedMainView.n11_087c.text",
+                     "Chinese":  "领取奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityFeed.ActivityFeedMainView.n23_l4bz.text",
+                     "Chinese":  "2",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityFeed.ActivityFeedMainView.n26_l4bz.text",
+                     "Chinese":  "3",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityFeed.ActivityFeedMainView.n16_087c.text",
+                     "Chinese":  "×200",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityFeed.ActivityFeedMainView.n19_l4bz.title",
+                     "Chinese":  "前往订阅",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityFeed.ActivityFeedMainView.n20_l4bz.title",
+                     "Chinese":  "领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityKaxixi.ActivityKaxixiAdBtn.n4_c1c0.text",
+                     "Chinese":  "获取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityKaxixi.ActivityKaxixiDrawBtn.n10_ga7n.title",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityKaxixi.ActivityKaxixiDrawBtn.n11_ga7n.title",
+                     "Chinese":  "已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.activityKaxixi.ActivityKaxixiFreeBtn.n7_c627.text",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BtnWithCost.n4_t642.text",
+                     "Chinese":  "刷新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.AdBtn.n77_a936.text",
+                     "Chinese":  "刷新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.AdBtn.n79_a936.text",
+                     "Chinese":  "必出高级齿轮",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.AdGetGrid.n70_a936.text",
+                     "Chinese":  "获取格子",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.AdGetGrid.n71_a936.text",
+                     "Chinese":  "×2",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BtnYellowS.n85_a936.text",
+                     "Chinese":  "开战",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeTakeOnADTipView.n9_80c5.text",
+                     "Chinese":  "幸运降临",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeTakeOnADTipView.n15_80c5.text",
+                     "Chinese":  "是否观看视频，获取30银币",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeAdBtn.n7_80c5.text",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeGetCoinView.n5_80c5.title",
+                     "Chinese":  "获得",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeGetCoinView.n9_80c5.text",
+                     "Chinese":  "提示",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeGetCoinView.n10_80c5.text",
+                     "Chinese":  "银币不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeGetCoinView.n15_80c5.text",
+                     "Chinese":  "是否观看视频，获取30银币",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeHeroBtn.n14_5b70.text",
+                     "Chinese":  "返回",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeHeroInfoView.n44_cmb3.custom.title",
+                     "Chinese":  "类型",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeHeroInfoView.n45_cmb3.custom.title",
+                     "Chinese":  "效率",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeHeroInfoView.n46_cmb3.custom.title",
+                     "Chinese":  "攻击",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeHeroInfoView.n47_cmb3.custom.title",
+                     "Chinese":  "生命",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeHeroInfoView.n17_5b70.text",
+                     "Chinese":  "本局可获得特性",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeMergeTipView.n7_79c4.text",
+                     "Chinese":  "点击继续",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeMergeIcon.n3_jsbq.text",
+                     "Chinese":  "合",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeSpeedView.n15_grsm.title",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeSpeedView.n3_284c.text",
+                     "Chinese":  "获得2倍提升",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeSpeedView.n5_284c.text",
+                     "Chinese":  "是否观看视频，在本局获得2倍提升",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLikeBuff.BagLikeBuffWin.n88_a936.text",
+                     "Chinese":  "选择激活特性",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLikeBuff.BagLikeBuffWin.n89_a936.text",
+                     "Chinese":  "剩余次数",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLikeBuff.BagLikeBuffWin.n129_uv0s.text",
+                     "Chinese":  "剩余次数",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLikeBuff.BagLikeBuffWin.n136_qozb.text",
+                     "Chinese":  "全选胜率加倍",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLikeBuff.BtnBlue80.n94_a936.text",
+                     "Chinese":  "换一批",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLikeBuff.BtnGreen80.n97_a936.text",
+                     "Chinese":  "全都要",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLikeBuff.BuffItemContent.n129_o896.text",
+                     "Chinese":  "推荐",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLikeBuff.BagLikeBuffLbTip1.n142_kes2.text",
+                     "Chinese":  "必出",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLikeBuff.BagLikeBuffLbTip1.n143_kes2.text",
+                     "Chinese":  "紫品以上属性",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleReviveView.n11_jncg.title",
+                     "Chinese":  "点击复活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleReviveView.n6_c627.text",
+                     "Chinese":  "是否复活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleReviveView.n0_c627.text",
+                     "Chinese":  "可获得一轮银币，并开启局内商店",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattlePauseView.n16_jncg.title",
+                     "Chinese":  "退出",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattlePauseView.n17_jncg.title",
+                     "Chinese":  "继续游戏",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattlePauseView.n2_c627.text",
+                     "Chinese":  "已激活特性",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattlePauseView.n3_c627.text",
+                     "Chinese":  "暂停",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleLbExitBtn.n9_c627.text",
+                     "Chinese":  "不用，谢谢",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleBtnComp.n23_ufui.ctrl.gearText.0",
+                     "Chinese":  "双倍奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleBtnComp.n23_ufui.ctrl.gearText.1",
+                     "Chinese":  "双倍奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleBtnComp.n23_ufui.title",
+                     "Chinese":  "双倍奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleBtnComp.n22_jncg.title",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleWinTitle.n5_c627.text",
+                     "Chinese":  "胜利",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleWinTitle.n1_c627.text",
+                     "Chinese":  "奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleFailTitle.n5_c627.text",
+                     "Chinese":  "失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleFailTitle.n1_c627.text",
+                     "Chinese":  "奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battle.BattleGetCoinBtn.n7_80c5.text",
+                     "Chinese":  "获得",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battleFruit.BattleFruitMainView.n19_d1a9.text",
+                     "Chinese":  "进度：14%",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battleFruit.BattleFruitHp.n25_sqkq.text",
+                     "Chinese":  "9999",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battleFruit.BattleFruitDropItem.n6_hhak.text",
+                     "Chinese":  "buff名称",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battleFruit.BattleFruitDropItem.n7_hhak.text",
+                     "Chinese":  "buff描述",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.battleFruit.FruitHurtNum.n0_s9r0.text",
+                     "Chinese":  "999",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.comm.BtnWithCost.n4_t642.text",
+                     "Chinese":  "开始",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.comm.BtnGreen.n7_c627.text",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.comm.BtnBule.n7_c627.text",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.comm.BtnYellow.n7_c627.text",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.comm.BtnBuleWithIcon.n7_c627.text",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.comm.BtnGreenWithIcon.n7_c627.text",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.comm.BtnYellowWithIcon.n7_c627.text",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.comm.BtnPurple.n7_c627.text",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.comm.BtnPurpleWithIcon.n7_c627.text",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.dailyInstance.DailyInstanceView.n2_a302.text",
+                     "Chinese":  "每日挑战",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.dailyTask.DailyTaskBlueBtn.n6_33d7.text",
+                     "Chinese":  "未完成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.dailyTask.DailyTaskGreenBtn.n6_33d7.text",
+                     "Chinese":  "领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.dailyTask.OnlineRewardItem.n14_xp8q.title",
+                     "Chinese":  "领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.dailyTask.OnlineRewardItem.n15_xp8q.title",
+                     "Chinese":  "未完成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.dailyTask.OnlineRewardBar.n9_33d7.text",
+                     "Chinese":  "2/5",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.dailyTask.TotalRewardItem.n14_xp8q.title",
+                     "Chinese":  "领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.dailyTask.TotalRewardItem.n15_xp8q.title",
+                     "Chinese":  "未完成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.dailyTask.DailyTaskItemContent.n37_llew.title",
+                     "Chinese":  "领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.dailyTask.DailyTaskItemContent.n5_33d7.title",
+                     "Chinese":  "未完成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.endlessMode.EndlessModeView.n27_rvq8.text",
+                     "Chinese":  "无尽试炼",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.endlessMode.EndlessModeView.n5_a590.text",
+                     "Chinese":  "个人历史最佳战绩",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.endlessMode.EndlessModeView.n10_a590.text",
+                     "Chinese":  "16",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.endlessMode.EndlessModeView.n11_a590.text",
+                     "Chinese":  "136",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.gameplay.GameplayGreenBtn.n9_a707.text",
+                     "Chinese":  "开始",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.gameplay.GameplayItem.n20_xaea.text",
+                     "Chinese":  "通关第10章解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.handbook.HandbookMixView.n23_80c3.text",
+                     "Chinese":  "齿轮融合公式：",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.handbook.HandbookMixView.n27_80c3.text",
+                     "Chinese":  "融合进化",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.handbook.HandbookMixView.n25_80c3.text",
+                     "Chinese":  "相同齿轮可以合成升阶 最高升至4阶",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.handbook.HandbookMixView.n31_np6e.text",
+                     "Chinese":  "4阶齿轮根据融合进化指南可升至5阶",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroInfoView.n60_sgdf.title",
+                     "Chinese":  "已满级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroInfoView.n51_sgdf.title",
+                     "Chinese":  "升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroInfoView.n52_sgdf.custom.title",
+                     "Chinese":  "类型",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroInfoView.n53_sgdf.custom.title",
+                     "Chinese":  "效率",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroInfoView.n54_sgdf.custom.title",
+                     "Chinese":  "生命",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroInfoView.n55_sgdf.custom.title",
+                     "Chinese":  "攻击",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroResetView.n35_sgdf.title",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroResetView.n10_79c4.text",
+                     "Chinese":  "齿轮重置",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroResetView.n3_79c4.text",
+                     "Chinese":  "返还资源",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroResetView.n15_79c4.text",
+                     "Chinese":  "重置等级返还100%消耗资源",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroUnlockView.n7_79c4.text",
+                     "Chinese":  "点击继续",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroMainView.n65_fyiu.title",
+                     "Chinese":  "齿轮皮肤",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.hero.HeroMainView.n64_np6e.title",
+                     "Chinese":  "融合图鉴",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinInfoView.n19_b2d2.text",
+                     "Chinese":  "全队加成:",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinOperComp.n24_fyiu.title",
+                     "Chinese":  "升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinOperComp.n28_fyiu.title",
+                     "Chinese":  "装备",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinOperComp.n23_b2d2.text",
+                     "Chinese":  "未获得",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinOperComp.n32_kw6g.title",
+                     "Chinese":  "合成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinBoxItem.n46_fyiu.title",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinBoxItem.n47_fyiu.title",
+                     "Chinese":  "抽1次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinBoxItem.n48_fyiu.title",
+                     "Chinese":  "抽10次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinBoxItem.n17_b2d2.text",
+                     "Chinese":  "皮肤宝箱",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinBoxBuyBtn.n4_t642.text",
+                     "Chinese":  "开始",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinTitleItem.n37_b2d2.text",
+                     "Chinese":  "全队加成：",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinTitleItem.n44_fyiu.text",
+                     "Chinese":  "皮肤总览",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinItem.n31_b2d2.text",
+                     "Chinese":  "未获得",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinItem.n34_b2d2.text",
+                     "Chinese":  "默认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinAdBtn.n7_c627.text",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinPreview.n2_6af6.text",
+                     "Chinese":  "预览",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinPreview.n8_6af6.text",
+                     "Chinese":  "进阶路径",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.heroSkin.HeroSkinPreviewBtn.n3_6af6.text",
+                     "Chinese":  "预览",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.inviteGift.InviteGiftView.n25_xp8q.title",
+                     "Chinese":  "邀请好友",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.inviteGift.InviteGiftView.n28_xp8q.title",
+                     "Chinese":  "领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.inviteGift.InviteGiftView.n11_14bf.text",
+                     "Chinese":  "成功邀请1名好友即可获得奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.inviteGift.InviteGiftView.n12_14bf.text",
+                     "Chinese":  "（新玩家需要完成第一章挑战）",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.inviteGift.InviteGiftView.n14_14bf.text",
+                     "Chinese":  "奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.inviteGift.InviteGiftView.n24_14bf.text",
+                     "Chinese":  "邀请好礼",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.main.MainSweepBtn.n77_t642.title",
+                     "Chinese":  "扫荡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.main.SidebarBtn.n3_ded3.text",
+                     "Chinese":  "入口奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.moreGame.MoreGameView.n12_9mcf.title",
+                     "Chinese":  "前往游戏",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.moreGame.MoreGameView.n9_4f5f.text",
+                     "Chinese":  "更多游戏",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.otherGames.OtherGamesView.n15_wdo7.text",
+                     "Chinese":  "玩法合集",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.otherGames.OtherGamesBtn.n7_ab9a.text",
+                     "Chinese":  "开始",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.otherGames.OtherGamesLastItem.n11_wdo7.text",
+                     "Chinese":  "后续敬请期待...",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.reward.RewardGetView.n2_c627.text",
+                     "Chinese":  "点击继续",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.reward.RewardGetTitle.n1_c627.text",
+                     "Chinese":  "你获得了",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.role.RoleSetUpBtn.n58_0c98.text",
+                     "Chinese":  "上阵",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.role.RoleLvAttrItem.n42_0c98.text",
+                     "Chinese":  "所有角色",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.role.RoleLvComp.n37_0c98.text",
+                     "Chinese":  "觉醒",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.role.RoleLvComp.n38_0c98.text",
+                     "Chinese":  "升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.role.RoleStarComp.n37_0c98.text",
+                     "Chinese":  "觉醒",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.role.RoleStarComp.n38_0c98.text",
+                     "Chinese":  "升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.role.RoleOperComp.n34_lt3t.title",
+                     "Chinese":  "已满级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.role.RoleUpBtn.n31_0c98.text",
+                     "Chinese":  "升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.role.RoleFreeUpBtn.n28_0c98.text",
+                     "Chinese":  "免费升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.role.RoleBottomComp.n72_lt3t.item0.name",
+                     "Chinese":  "升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.role.RoleBottomComp.n72_lt3t.item1.name",
+                     "Chinese":  "升星",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.setting.SettingCodeView.n9_llew.prompt",
+                     "Chinese":  "输入兑换码",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.setting.SettingCodeView.n5_b497.text",
+                     "Chinese":  "兑换码",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.setting.SettingCopyBtn.n3_np6e.text",
+                     "Chinese":  "一键复制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.setting.SettingMainContent.n7_b497.text",
+                     "Chinese":  "音乐：",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.setting.SettingMainContent.n11_b497.text",
+                     "Chinese":  "音效：",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.setting.SettingMainContent.n5_b497.text",
+                     "Chinese":  "设置",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.setting.SettingMainContent.n13_llew.title",
+                     "Chinese":  "兑换码",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.setting.SettingMainContent.n23_qfs8.title",
+                     "Chinese":  "问题反馈",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.sevenDay.SevenDayView.n16_033c.text",
+                     "Chinese":  "七日登录",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.sevenDay.SevenDayDrawBtn.n32_maps.text",
+                     "Chinese":  "领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.sevenDay.SevenDayAdBtn.n29_033c.text",
+                     "Chinese":  "双倍领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxUpView.n13_13c6.text",
+                     "Chinese":  "奖励增加",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxUpView.n7_13c6.text",
+                     "Chinese":  "宝箱等级提升",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxUpView.n8_13c6.text",
+                     "Chinese":  "点击继续",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxOpenView.n13_mt1f.text",
+                     "Chinese":  "立即打开",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxInfoView.n19_sgdf.title",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxInfoView.n20_sgdf.title",
+                     "Chinese":  "抽1次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxInfoView.n21_sgdf.title",
+                     "Chinese":  "抽10次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxInfoView.n17_13c6.text",
+                     "Chinese":  "宝箱详情",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopDailyPage.n52_sgdf.title",
+                     "Chinese":  "刷新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopDailyItem.n28_lt3t.text",
+                     "Chinese":  "5折",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopDailyFreeBtn.n20_sgdf.text",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxPage.n49_sgdf.title",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxPage.n50_sgdf.title",
+                     "Chinese":  "抽1次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxPage.n51_sgdf.title",
+                     "Chinese":  "抽10次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopSellOutBtn.n16_13c6.text",
+                     "Chinese":  "已售空",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopPowerBuyView.n16_9a2a.text",
+                     "Chinese":  "购买体力",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxRewardView.n12_9a2a.text",
+                     "Chinese":  "宝箱奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxRewardView.n13_9a2a.text",
+                     "Chinese":  "开宝箱提升宝箱等级，增加宝箱奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopGoldFreeBtn.n27_9a2a.text",
+                     "Chinese":  "免费(10)",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopGoldFreeBtn.n31_djj9.text",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopGoldItem.n29_9a2a.text",
+                     "Chinese":  "×100",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopPowerFreeBtn.n20_sgdf.text",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxCenterTitle.n7_13c6.text",
+                     "Chinese":  "精致宝箱",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.shop.ShopBoxBuyBtn.n4_t642.text",
+                     "Chinese":  "开始",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.threeDay.ThreeDayView.n25_maps.title",
+                     "Chinese":  "领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.threeDay.ThreeDayView.n26_maps.title",
+                     "Chinese":  "领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.threeDay.ThreeDayView.n7_84ee.text",
+                     "Chinese":  "极致速度 红闪电鼠",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.threeDay.ThreeDayView.n8_84ee.text",
+                     "Chinese":  "大幅[color=#57FF67]提升[/color]齿轮攻击",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.tip.TipBuleBtn.n7_c627.text",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.tip.TipGreenBtn.n7_c627.text",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.trunkInstance.TrunkInstanceDetailView.n3_d871.text",
+                     "Chinese":  "关卡详情",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.trunkInstance.TrunkInstanceMonsterInfoView.n4_d871.text",
+                     "Chinese":  "怪物详情",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.trunkInstance.TrunkInstanceMonsterContent.n0_kes2.custom.lbTitle",
+                     "Chinese":  "关卡怪物",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.trunkInstance.TrunkInstanceHeroContent.n0_kes2.custom.lbTitle",
+                     "Chinese":  "推荐齿轮",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.trunkInstance.TrunkInstanceRewardContent.n0_kes2.custom.lbTitle",
+                     "Chinese":  "关卡掉落",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeUpGearByADView.n5_80c5.title",
+                     "Chinese":  "免费升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:ui.bagLike.BagLikeUpGearByADView.n9_80c5.text",
+                     "Chinese":  "直升4级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_year",
+                     "Chinese":  "年",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_month",
+                     "Chinese":  "月",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_day",
+                     "Chinese":  "天",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_hour",
+                     "Chinese":  "时",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_minute",
+                     "Chinese":  "分",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_minute2",
+                     "Chinese":  "分钟",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_second",
+                     "Chinese":  "秒",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_beforeDay",
+                     "Chinese":  "${key0}天前",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_beforeHour",
+                     "Chinese":  "${key0}小时前",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_beforeMinute",
+                     "Chinese":  "${key0}分钟前",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_beforeSecond",
+                     "Chinese":  "${key0}秒前",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_afterHour",
+                     "Chinese":  "${key0}小时后",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_afterMinute",
+                     "Chinese":  "${key0}分钟后",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_timeDayHour",
+                     "Chinese":  "${key0}天${key1}小时",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_timeHourMinute",
+                     "Chinese":  "${key0}时${key1}分",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TimeUtils_timeMinuteSecond",
+                     "Chinese":  "${key0}分${key1}秒",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_notEnoughTimes",
+                     "Chinese":  "次数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_notEnough",
+                     "Chinese":  "${key0}不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_notEnoughItem",
+                     "Chinese":  "道具不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_notEnoughTimesToday",
+                     "Chinese":  "今日次数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_unlock",
+                     "Chinese":  "解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_isUnlock",
+                     "Chinese":  "${key0}已解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_isLock",
+                     "Chinese":  "未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_remainTimes",
+                     "Chinese":  "剩余次数${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_remainTimes2",
+                     "Chinese":  "剩余${key0}次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_remainTimesToday",
+                     "Chinese":  "今日剩余次数${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_remainTimesToday2",
+                     "Chinese":  "今日剩余次数：${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_remainTimesToday3",
+                     "Chinese":  "今日剩余${key0}次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_noRemainTimesToday",
+                     "Chinese":  "今日剩余次数已用完",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_confirm",
+                     "Chinese":  "确认",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_cancel",
+                     "Chinese":  "取消",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_continue",
+                     "Chinese":  "继续",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_tip",
+                     "Chinese":  "提示",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_remainTime",
+                     "Chinese":  "剩余时间：${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_challengeTimes",
+                     "Chinese":  "挑战次数：${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_totalToday",
+                     "Chinese":  "今日累计：${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_upLv",
+                     "Chinese":  "升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_draw",
+                     "Chinese":  "领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_hasDrew",
+                     "Chinese":  "已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_drawOnceMore",
+                     "Chinese":  "再领一次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_drawDouble",
+                     "Chinese":  "双倍领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_canDrawTomorrow",
+                     "Chinese":  "明日可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_countDownFree",
+                     "Chinese":  "免费倒计时：${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_lv",
+                     "Chinese":  "等级${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_day",
+                     "Chinese":  "第${key0}天",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_discount",
+                     "Chinese":  "${key0}折",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.Comm_free",
+                     "Chinese":  "免费",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.AdManager_freeTimes",
+                     "Chinese":  "剩余免广告次数：${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.RoleMgr_needUpLv",
+                     "Chinese":  "需要觉醒提升等级上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.RoleMainView_freeFragment",
+                     "Chinese":  "免费碎片",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.RoleMainView_upStar",
+                     "Chinese":  "觉醒",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.RoleMainView_freeUp",
+                     "Chinese":  "免费升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.RoleMainView_tipUnlock",
+                     "Chinese":  "需觉醒\u003ccolor=#33f369\u003e${key0}星\u003c/color\u003e解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.RoleUnlockView_unlock",
+                     "Chinese":  "解锁新角色",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.RoleAttrItem_addition",
+                     "Chinese":  "${key0}加成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.RoleLvAttrItem_allHero",
+                     "Chinese":  "所有齿轮${key0}${key1}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.SettingMgr_codeNotExist",
+                     "Chinese":  "兑换码不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.SettingMgr_codeHasDrew",
+                     "Chinese":  "兑换码已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.SettingMgr_codeNone",
+                     "Chinese":  "兑换码不能为空",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.ShareManager_success",
+                     "Chinese":  "分享成功",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.ShareManager_fail",
+                     "Chinese":  "分享失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.ShopMgr_sellOut",
+                     "Chinese":  "已售罄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.ActivityUnlockView_unlock",
+                     "Chinese":  "解锁新活动",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.ActivityKaxixiView1_tip",
+                     "Chinese":  "观看${key0}次广告可获得",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BagLikeHandbook_tip",
+                     "Chinese":  "${key0}可与${key1}融合进化为${key2}阶${key3}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BagLikeRoleSkillBtn_tip",
+                     "Chinese":  "技能尚未完成充能",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BagLikeTopItem_round",
+                     "Chinese":  "${key0}/${key1}波",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BagLikeHeroInfoView_mergeLv",
+                     "Chinese":  "合成Lv.${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BagLikeTakeOnADTipView_tip1",
+                     "Chinese":  "是否观看视频获得强力空格",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BagLikeTakeOnADTipView_tip2",
+                     "Chinese":  "是否观看视频获得强力齿轮",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BagLikeView_tipUpPower",
+                     "Chinese":  "请先上阵动力轮",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BagLikeView_tipNoPower",
+                     "Chinese":  "未上阵动力轮",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BagLikeView_tipNoHero",
+                     "Chinese":  "未有驱动英雄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BagLikeView_tipFight",
+                     "Chinese":  "开战后将不再进入备战阶段，是否确认？",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BattleGetCoinView_tip",
+                     "Chinese":  "是否观看视频，获取${key0}银币",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BattlePauseView_tipExit",
+                     "Chinese":  "退出挑战将不会返还体力，确认退出？",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BagLikeSpeedView_tip",
+                     "Chinese":  "（再观看${key0}次后，可永久生效）",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.DailyTaskMainView_dailyTask",
+                     "Chinese":  "每日任务",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.DailyTaskMainView_onlineReward",
+                     "Chinese":  "在线奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.DailyTaskMainView_totalReward",
+                     "Chinese":  "累计奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.GuideHeroUnlockView_unlock",
+                     "Chinese":  "获得新齿轮",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.HeroModel_typeHamster",
+                     "Chinese":  "英雄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.HeroModel_typeWheel",
+                     "Chinese":  "法术",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.HeroUnlockView_unlock",
+                     "Chinese":  "解锁新${key0}",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.HeroSkillItem_lockDes",
+                     "Chinese":  "\u003ccolor=#3ff950\u003eLV${key0} 解锁 \u003ccolor=#59628a\u003e${key1}\u003c/color\u003e\u003c/color\u003e",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.MainView_tipContinueFight",
+                     "Chinese":  "是否继续上次战斗？",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.MainView_tipFightOutDate",
+                     "Chinese":  "战斗信息已过期, 无法继续",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.MainView_isPass",
+                     "Chinese":  "已通关",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.MainView_maxRound",
+                     "Chinese":  "最高记录：${key0}波",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.MainView_tipChapterUnlock",
+                     "Chinese":  "通关章节${key0}解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.MainRewardItem_round",
+                     "Chinese":  "第${key0}波",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.ModuleOpenView_unlock",
+                     "Chinese":  "解锁新功能",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.OnlineRewardItem_onlineTotal",
+                     "Chinese":  "累计在线${key0}分钟",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.TotalRewardItem_adTimes",
+                     "Chinese":  "累计观看广告${key0}次",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BattleFruitMainView_tipExit",
+                     "Chinese":  "是否确认退出？",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BattleFruitMainView_progress",
+                     "Chinese":  "进度：${key0}%",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BattleFruitWorldView_tipAddHero",
+                     "Chinese":  "[${key0}]已加入",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.HeroSkinUnlockView_unlock",
+                     "Chinese":  "解锁新皮肤",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.HeroSkinBoxOpenView_title",
+                     "Chinese":  "皮肤宝箱",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n.BagLikeUpGearByADView_tip",
+                     "Chinese":  "观看视频可直接升级成4级${key0}",
+                     "English":  ""
+                 }
+             ],
+    "sourceLength":  1751,
+    "expectedLength":  1751,
+    "validLength":  true
+}

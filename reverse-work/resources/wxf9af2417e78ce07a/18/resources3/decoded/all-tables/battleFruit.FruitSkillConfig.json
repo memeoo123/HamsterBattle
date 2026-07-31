@@ -1,0 +1,129 @@
+﻿{
+    "table":  "battleFruit.FruitSkillConfig",
+    "columnCount":  11,
+    "rowCount":  3,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "cdTime",
+                       "token":  "cdTime",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "effectId",
+                       "token":  584,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "bulletCnt",
+                       "token":  "bulletCnt",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "triggerPos",
+                       "token":  "triggerPos",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  6,
+                       "name":  "range",
+                       "token":  31,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  7,
+                       "name":  "duration",
+                       "token":  "duration",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "triggerTimes",
+                       "token":  "triggerTimes",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  9,
+                       "name":  "triggerDelay",
+                       "token":  "triggerDelay",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  10,
+                       "name":  "damage",
+                       "token":  "damage",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "SKILL_1001",
+                     "type":  "BULLET",
+                     "cdTime":  500,
+                     "effectId":  "BULLET_1001",
+                     "bulletCnt":  1,
+                     "triggerPos":  [
+                                        0,
+                                        100
+                                    ],
+                     "range":  null,
+                     "duration":  0,
+                     "triggerTimes":  0,
+                     "triggerDelay":  0,
+                     "damage":  10
+                 },
+                 {
+                     "id":  "SKILL_1002",
+                     "type":  "RAY",
+                     "cdTime":  1000,
+                     "effectId":  "FRUIT_H02_S1",
+                     "bulletCnt":  0,
+                     "triggerPos":  [
+                                        0,
+                                        100
+                                    ],
+                     "range":  [
+                                   30,
+                                   3000
+                               ],
+                     "duration":  500,
+                     "triggerTimes":  5,
+                     "triggerDelay":  20,
+                     "damage":  5
+                 },
+                 {
+                     "id":  "SKILL_1003",
+                     "type":  "BULLET",
+                     "cdTime":  500,
+                     "effectId":  "BULLET_1002",
+                     "bulletCnt":  1,
+                     "triggerPos":  [
+                                        0,
+                                        100
+                                    ],
+                     "range":  null,
+                     "duration":  0,
+                     "triggerTimes":  0,
+                     "triggerDelay":  0,
+                     "damage":  20
+                 }
+             ],
+    "sourceLength":  57,
+    "expectedLength":  57,
+    "validLength":  true
+}

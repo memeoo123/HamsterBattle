@@ -1,0 +1,435 @@
+﻿{
+    "table":  "verify.PlayerSystemOpenConfig",
+    "columnCount":  13,
+    "rowCount":  17,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "verifyModels",
+                       "token":  1,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  2,
+                       "name":  "lockDesc",
+                       "token":  "lockDesc",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "serverOpenDays",
+                       "token":  "serverOpenDays",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "seeVerify",
+                       "token":  "seeVerify",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "iosAppExamineHide",
+                       "token":  "iosAppExamineHide",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "appExamineHide",
+                       "token":  "appExamineHide",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  7,
+                       "name":  "iosMiniExamineHide",
+                       "token":  "iosMiniExamineHide",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "miniExamineHide",
+                       "token":  "miniExamineHide",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  9,
+                       "name":  "jumpId",
+                       "token":  518,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  10,
+                       "name":  "showOpen",
+                       "token":  2,
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  11,
+                       "name":  "showName",
+                       "token":  3,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  12,
+                       "name":  "icon_path",
+                       "token":  4,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "TRUNK_INSTANCE",
+                     "verifyModels":  null,
+                     "lockDesc":  "",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  false,
+                     "showName":  "主线",
+                     "icon_path":  "image/main/zhandou_icon"
+                 },
+                 {
+                     "id":  "HERO",
+                     "verifyModels":  null,
+                     "lockDesc":  "",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  true,
+                     "showName":  "养成",
+                     "icon_path":  "image/main/peiyang_icon"
+                 },
+                 {
+                     "id":  "SHOP",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1003,
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "通关关卡3",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  true,
+                     "showName":  "商店",
+                     "icon_path":  "image/main/shagndian_icon"
+                 },
+                 {
+                     "id":  "ROLE",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1005,
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "通关关卡5",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  true,
+                     "showName":  "主角",
+                     "icon_path":  "image/main/yingxiong_icon"
+                 },
+                 {
+                     "id":  "GAMEPLAY",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1006,
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "通关关卡6",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  true,
+                     "showName":  "活动",
+                     "icon_path":  "image/main/huodong_icon"
+                 },
+                 {
+                     "id":  "DAILY_TASK",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1002,
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "通关关卡2",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  true,
+                     "showName":  "每日任务",
+                     "icon_path":  "image/main/zjm001_icon"
+                 },
+                 {
+                     "id":  "DAILY_INSTANCE",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1010,
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "通关关卡10",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  false,
+                     "showName":  "每日挑战",
+                     "icon_path":  "image/main/zjm001_icon"
+                 },
+                 {
+                     "id":  "ENDLESS_MODE",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1006,
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "通关关卡6",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  false,
+                     "showName":  "无尽试炼",
+                     "icon_path":  "image/main/zjm001_icon"
+                 },
+                 {
+                     "id":  "WX_GAME_CLUB",
+                     "verifyModels":  [
+                                          [
+                                              "SDK_FUNTIONS",
+                                              "GameClub",
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  false,
+                     "showName":  "微信游戏圈",
+                     "icon_path":  ""
+                 },
+                 {
+                     "id":  "HAND_BOOK",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1002,
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "通关关卡2",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  false,
+                     "showName":  "融合图鉴",
+                     "icon_path":  ""
+                 },
+                 {
+                     "id":  "BATTLE_RECORD",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1002,
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "通关关卡2",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  false,
+                     "showName":  "战斗统计",
+                     "icon_path":  ""
+                 },
+                 {
+                     "id":  "UNLOCK_PREIVEW",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1002,
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "通关关卡2",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  false,
+                     "showName":  "解锁预览",
+                     "icon_path":  ""
+                 },
+                 {
+                     "id":  "OTHER_GAMES",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1006,
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "通关关卡6",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  false,
+                     "showName":  "玩法合集",
+                     "icon_path":  ""
+                 },
+                 {
+                     "id":  "GAME_FRUIT",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1006,
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "通关关卡6",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  false,
+                     "showName":  "仓鼠打水果",
+                     "icon_path":  ""
+                 },
+                 {
+                     "id":  "MORE_GAME",
+                     "verifyModels":  [
+                                          [
+                                              "SDK_FUNTIONS",
+                                              "MoreGame",
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  false,
+                     "showName":  "",
+                     "icon_path":  ""
+                 },
+                 {
+                     "id":  "HERO_SKIN",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1006,
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "通关关卡6",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  true,
+                     "showName":  "皮肤",
+                     "icon_path":  "ui://comm/clpf_icon"
+                 },
+                 {
+                     "id":  "BATTLE_SPEED",
+                     "verifyModels":  [
+                                          [
+                                              "SDK_FUNTIONS",
+                                              "BattleSpeed",
+                                              0
+                                          ]
+                                      ],
+                     "lockDesc":  "",
+                     "serverOpenDays":  0,
+                     "seeVerify":  "",
+                     "iosAppExamineHide":  0,
+                     "appExamineHide":  0,
+                     "iosMiniExamineHide":  0,
+                     "miniExamineHide":  0,
+                     "jumpId":  0,
+                     "showOpen":  false,
+                     "showName":  "战斗加速",
+                     "icon_path":  ""
+                 }
+             ],
+    "sourceLength":  249,
+    "expectedLength":  249,
+    "validLength":  true
+}

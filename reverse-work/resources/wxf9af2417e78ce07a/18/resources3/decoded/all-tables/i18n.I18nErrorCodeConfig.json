@@ -1,0 +1,4245 @@
+﻿{
+    "table":  "i18n.I18nErrorCodeConfig",
+    "columnCount":  3,
+    "rowCount":  843,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "Chinese",
+                       "token":  1103,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "English",
+                       "token":  1104,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "i18n:errorCode:-100",
+                     "Chinese":  "铜币不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-101",
+                     "Chinese":  "金币不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-102",
+                     "Chinese":  "礼卷不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-103",
+                     "Chinese":  "内币不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-105",
+                     "Chinese":  "货币不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-106",
+                     "Chinese":  "贡献点不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-107",
+                     "Chinese":  "荣誉值不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-108",
+                     "Chinese":  "兑换值不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-109",
+                     "Chinese":  "妖魂",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-110",
+                     "Chinese":  "无效的货币类型",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-111",
+                     "Chinese":  "非法的货币值",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-112",
+                     "Chinese":  "宝物积分不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113",
+                     "Chinese":  "钻石不允许作为奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-201",
+                     "Chinese":  "奖励配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-204",
+                     "Chinese":  "背包已满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-205",
+                     "Chinese":  "奖励内容无效",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-206",
+                     "Chinese":  "奖励内容不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-208",
+                     "Chinese":  "奖励配置出错",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-209",
+                     "Chinese":  "奖励数量不能小于0",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-211",
+                     "Chinese":  "奖励配置缺少保底奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-213",
+                     "Chinese":  "REASON 不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-214",
+                     "Chinese":  "奖励不能为空",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-215",
+                     "Chinese":  "道具数量不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-301",
+                     "Chinese":  "扣减物品数量不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-302",
+                     "Chinese":  "扣减服务不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-303",
+                     "Chinese":  "扣减物品不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-305",
+                     "Chinese":  "扣减物品数量值非法",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-306",
+                     "Chinese":  "不支持的操作",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-308",
+                     "Chinese":  "宠物扣减格式不正确",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-309",
+                     "Chinese":  "扣除物品不能为空",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-311",
+                     "Chinese":  "经验扣减不能为负数",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-312",
+                     "Chinese":  "藏宝图扣费格式错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-313",
+                     "Chinese":  "REASON不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-401",
+                     "Chinese":  "功能未开放",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-402",
+                     "Chinese":  "玩家等级不足，功能未开放",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-403",
+                     "Chinese":  "玩家等级太高，功能未开放",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-404",
+                     "Chinese":  "创角天数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-405",
+                     "Chinese":  "充值总金额不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-406",
+                     "Chinese":  "时机未到，不能进入功能",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-407",
+                     "Chinese":  "角色创建时间太长",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-408",
+                     "Chinese":  "未解锁前置建筑",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-409",
+                     "Chinese":  "功能前置条件未通过",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-410",
+                     "Chinese":  "未探索指定地图",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-3001",
+                     "Chinese":  "福利码不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-3002",
+                     "Chinese":  "已经领取过该福利码了",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-3003",
+                     "Chinese":  "福利码已失效",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-3004",
+                     "Chinese":  "没实现增加方式",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-3005",
+                     "Chinese":  "该礼包码已经被领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-3006",
+                     "Chinese":  "该批次领取数量已达上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-3007",
+                     "Chinese":  "未达到领取间隔时间",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-3008",
+                     "Chinese":  "礼包服休息中，请稍后重试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-3009",
+                     "Chinese":  "请求人数太多，请稍后再试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4001",
+                     "Chinese":  "充值物品不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4002",
+                     "Chinese":  "年龄太小，不能充值",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4003",
+                     "Chinese":  "单次充值金额超过限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4004",
+                     "Chinese":  "当月累计充值金额超过限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4005",
+                     "Chinese":  "获取充值信息失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4006",
+                     "Chinese":  "该种月卡不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4007",
+                     "Chinese":  "当前无指定月卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4008",
+                     "Chinese":  "已经领取了今日奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4009",
+                     "Chinese":  "月卡不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4010",
+                     "Chinese":  "充值商品当前未开放",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4011",
+                     "Chinese":  "不支持使用宝券",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4012",
+                     "Chinese":  "SDK不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4013",
+                     "Chinese":  "账号不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4014",
+                     "Chinese":  "该商品不能被订阅",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4015",
+                     "Chinese":  "充值额度不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4016",
+                     "Chinese":  "充值额度过多",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-4017",
+                     "Chinese":  "商品充值数量不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9001",
+                     "Chinese":  "目标服连接失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9002",
+                     "Chinese":  "当前非注册时间",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9003",
+                     "Chinese":  "动态战区开始时间不一致",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9004",
+                     "Chinese":  "已经加入了本期动态战区",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9005",
+                     "Chinese":  "动态战区还未生成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9006",
+                     "Chinese":  "还未注册动态战区",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9007",
+                     "Chinese":  "次元连通游戏服注册失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9008",
+                     "Chinese":  "未知的次元连通玩法",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9009",
+                     "Chinese":  "初始化逻辑中心服玩法失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9010",
+                     "Chinese":  "次元连通手动匹配失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9011",
+                     "Chinese":  "游戏服取消次元连通失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9012",
+                     "Chinese":  "游戏服跨服组已手动指定匹配",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9013",
+                     "Chinese":  "初始化游戏服玩法失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-9014",
+                     "Chinese":  "游戏服未注册",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11001",
+                     "Chinese":  "请求参数非法",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11002",
+                     "Chinese":  "无效的角色名",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11003",
+                     "Chinese":  "重复的角色名",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11004",
+                     "Chinese":  "角色名称太长",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11005",
+                     "Chinese":  "角色名称太短",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11006",
+                     "Chinese":  "玩家不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11007",
+                     "Chinese":  "体力值已达上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11008",
+                     "Chinese":  "体力不够",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11009",
+                     "Chinese":  "创角时间不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11010",
+                     "Chinese":  "远程玩家不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11011",
+                     "Chinese":  "请求过于频繁,请稍后操作",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11012",
+                     "Chinese":  "跨服玩家无法对比",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11013",
+                     "Chinese":  "名字含有特殊字符",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11014",
+                     "Chinese":  "当前账号已绑定过手机",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11015",
+                     "Chinese":  "绑定失败,请稍后重试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11016",
+                     "Chinese":  "账号绑定手机奖励已领取过了",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11017",
+                     "Chinese":  "账号绑定手机奖励领取失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11018",
+                     "Chinese":  "验证码发送频繁,请稍后再试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11019",
+                     "Chinese":  "验证码发送失败,请稍后再试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11020",
+                     "Chinese":  "无效的手机号码",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11021",
+                     "Chinese":  "当前账号未绑定手机",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11022",
+                     "Chinese":  "无效的验证码",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11023",
+                     "Chinese":  "找不到玩家信息",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11024",
+                     "Chinese":  "开服天数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11025",
+                     "Chinese":  "开服小时数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-11026",
+                     "Chinese":  "找不到试玩的配置",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12001",
+                     "Chinese":  "账号已经存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12002",
+                     "Chinese":  "角色已经存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12003",
+                     "Chinese":  "角色名非法",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12004",
+                     "Chinese":  "登录密匙非法",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12005",
+                     "Chinese":  "账号不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12006",
+                     "Chinese":  "创角密匙非法",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12007",
+                     "Chinese":  "非法的账号名",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12009",
+                     "Chinese":  "账号已经被封",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12010",
+                     "Chinese":  "停止注册",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12012",
+                     "Chinese":  "角色不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12013",
+                     "Chinese":  "账号临时被禁止登录，请稍后再试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12014",
+                     "Chinese":  "当前时段禁止未成年人登录",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12015",
+                     "Chinese":  "今日在线时长已达最大值",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12017",
+                     "Chinese":  "不支持该操作",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12018",
+                     "Chinese":  "重连密匙非法",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12019",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12020",
+                     "Chinese":  "TOKEN过期",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12021",
+                     "Chinese":  "区服ID错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-12022",
+                     "Chinese":  "登录失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-13001",
+                     "Chinese":  "商品不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-13002",
+                     "Chinese":  "商店未开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-13003",
+                     "Chinese":  "商店不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-13004",
+                     "Chinese":  "商店今日刷新次数已用完",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-13005",
+                     "Chinese":  "商品购买次数限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-13006",
+                     "Chinese":  "商品购买条件不满足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-13007",
+                     "Chinese":  "参数异常",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-13008",
+                     "Chinese":  "商品购买次数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14001",
+                     "Chinese":  "无效的任务标识",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14002",
+                     "Chinese":  "任务已经被完成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14003",
+                     "Chinese":  "任务已经被接取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14004",
+                     "Chinese":  "接取条件未达成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14005",
+                     "Chinese":  "任务未被接取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14006",
+                     "Chinese":  "任务未完成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14007",
+                     "Chinese":  "无效的任务类型",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14008",
+                     "Chinese":  "任务不能放弃",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14009",
+                     "Chinese":  "任务已提交过",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14010",
+                     "Chinese":  "获取任务奖励失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14011",
+                     "Chinese":  "获取初始化任务失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14012",
+                     "Chinese":  "背包已满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14013",
+                     "Chinese":  "任务已完成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14014",
+                     "Chinese":  "货币不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14016",
+                     "Chinese":  "该任务不需要提交任务物品",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14017",
+                     "Chinese":  "任务配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14019",
+                     "Chinese":  "无效的任务标识",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14020",
+                     "Chinese":  "不能手动领取奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14022",
+                     "Chinese":  "没有处理器",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14023",
+                     "Chinese":  "任务配置错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14024",
+                     "Chinese":  "前置任务还没完成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-14025",
+                     "Chinese":  "任务接取方式错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15001",
+                     "Chinese":  "参数非法",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15002",
+                     "Chinese":  "无效的频道",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15003",
+                     "Chinese":  "冷却中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15004",
+                     "Chinese":  "条件不符合",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15005",
+                     "Chinese":  "您已经被禁言禁言",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15006",
+                     "Chinese":  "消息太长了",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15007",
+                     "Chinese":  "频道无法发送该消息",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15008",
+                     "Chinese":  "频道无法发送该类型消息",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15009",
+                     "Chinese":  "聊天框未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15010",
+                     "Chinese":  "举报说明内容长度限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15011",
+                     "Chinese":  "举报的消息数量超过上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15012",
+                     "Chinese":  "举报太频繁,请稍等一下再来",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15013",
+                     "Chinese":  "举报的聊天内容信息异常",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15014",
+                     "Chinese":  "今日举报次数达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15015",
+                     "Chinese":  "举报所需玩家等级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15016",
+                     "Chinese":  "不能发送重复内容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-15017",
+                     "Chinese":  "内容安全识别为非法内容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-16001",
+                     "Chinese":  "参数非法",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-16002",
+                     "Chinese":  "邮件不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-16003",
+                     "Chinese":  "不存在奖励或已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-16004",
+                     "Chinese":  "奖励未领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-16005",
+                     "Chinese":  "邮件模板不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-16006",
+                     "Chinese":  "背包已满，无法领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-16007",
+                     "Chinese":  "标题太长",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-16008",
+                     "Chinese":  "内容太长",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-16009",
+                     "Chinese":  "过期时间不能小于当前时间",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-16010",
+                     "Chinese":  "运营商不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17002",
+                     "Chinese":  "非法调用",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17003",
+                     "Chinese":  "道具不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17004",
+                     "Chinese":  "道具消耗不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17005",
+                     "Chinese":  "道具不在背包",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17006",
+                     "Chinese":  "道具使用非法",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17007",
+                     "Chinese":  "道具不可使用",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17008",
+                     "Chinese":  "非自选宝箱",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17009",
+                     "Chinese":  "当前没有该道具",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17010",
+                     "Chinese":  "宝箱中没有该奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17011",
+                     "Chinese":  "非限制开放宝箱",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17012",
+                     "Chinese":  "宝箱奖励未开放",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17013",
+                     "Chinese":  "宝箱奖励未对该玩家开放",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17017",
+                     "Chinese":  "道具碎片合成奖励不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-17018",
+                     "Chinese":  "道具碎片合成消耗不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-18001",
+                     "Chinese":  "积分货币不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19001",
+                     "Chinese":  "请求参数异常",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19002",
+                     "Chinese":  "地图资源配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19003",
+                     "Chinese":  "没有地图资源可采集",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19004",
+                     "Chinese":  "建筑不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19005",
+                     "Chinese":  "资源处理不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19006",
+                     "Chinese":  "资源点配置的地图类型不一致",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19007",
+                     "Chinese":  "资源点未到刷新时间",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19008",
+                     "Chinese":  "没有资源可刷新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19009",
+                     "Chinese":  "资源点已初始化",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19010",
+                     "Chinese":  "资源点区域不一致",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19011",
+                     "Chinese":  "资源不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19012",
+                     "Chinese":  "资源信息异常",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19013",
+                     "Chinese":  "资源点未刷新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19014",
+                     "Chinese":  "已救助过该英雄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19015",
+                     "Chinese":  "地图副本不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19016",
+                     "Chinese":  "建筑未激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19017",
+                     "Chinese":  "该地图副本已通关",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19018",
+                     "Chinese":  "建筑已解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19019",
+                     "Chinese":  "地图章节任务未完成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19020",
+                     "Chinese":  "已领取该地图章节奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19021",
+                     "Chinese":  "已领取该地图探索进度奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19022",
+                     "Chinese":  "未完成地图章节任务",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19023",
+                     "Chinese":  "地图探索进度不满足条件",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19024",
+                     "Chinese":  "次数已用完",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19025",
+                     "Chinese":  "领取时间已过期",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-19026",
+                     "Chinese":  "奖励已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20001",
+                     "Chinese":  "英雄配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20002",
+                     "Chinese":  "英雄已激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20003",
+                     "Chinese":  "英雄未激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20004",
+                     "Chinese":  "英雄已达到最高星级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20005",
+                     "Chinese":  "英雄已达到最高等级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20006",
+                     "Chinese":  "英雄已达到最高等阶",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20007",
+                     "Chinese":  "英雄等级和共鸣等级差距过大,无法升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20008",
+                     "Chinese":  "请先提升英雄等阶",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20009",
+                     "Chinese":  "请先提升英雄等级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20010",
+                     "Chinese":  "需要上阵英雄才能升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20011",
+                     "Chinese":  "激活的英雄数量或英雄星级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20012",
+                     "Chinese":  "英雄皮肤配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20013",
+                     "Chinese":  "未拥有该皮肤",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20014",
+                     "Chinese":  "英雄皮肤已穿戴",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20015",
+                     "Chinese":  "英雄碎片太多",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20016",
+                     "Chinese":  "英雄星级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20017",
+                     "Chinese":  "该阶段有已随机了觉醒的英雄，请先替换",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20018",
+                     "Chinese":  "潜能等级已满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20019",
+                     "Chinese":  "潜能该阶级的等级未满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-20020",
+                     "Chinese":  "没有该阶段觉醒属性可替换",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21001",
+                     "Chinese":  "阵位未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21002",
+                     "Chinese":  "阵位不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21003",
+                     "Chinese":  "卡槽不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21004",
+                     "Chinese":  "布置阵容参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21005",
+                     "Chinese":  "布置阵容阵位信息错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21006",
+                     "Chinese":  "阵位和卡槽信息不匹配",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21007",
+                     "Chinese":  "阵位不能为空",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21008",
+                     "Chinese":  "上阵英雄重复",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21009",
+                     "Chinese":  "英雄已上阵,无法重复上阵",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21010",
+                     "Chinese":  "阵位信息重复",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21011",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21012",
+                     "Chinese":  "不需要保存该自定义布阵",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21013",
+                     "Chinese":  "战队科技不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21014",
+                     "Chinese":  "战队科技未激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21015",
+                     "Chinese":  "上阵英雄不符合条件",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21016",
+                     "Chinese":  "自定义阵容未设置子类型",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21017",
+                     "Chinese":  "布置的阵容数量不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21018",
+                     "Chinese":  "战队科技重复上阵",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21019",
+                     "Chinese":  "星灵宠物不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21020",
+                     "Chinese":  "星灵宠物未激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21021",
+                     "Chinese":  "战队科技功能未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21022",
+                     "Chinese":  "星灵宠物功能未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21023",
+                     "Chinese":  "星灵宠物重复上阵",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21024",
+                     "Chinese":  "收藏品不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21025",
+                     "Chinese":  "收藏品未激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-21026",
+                     "Chinese":  "上阵收藏品重复",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-22001",
+                     "Chinese":  "没有英雄上阵",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-22002",
+                     "Chinese":  "战斗服务已经停止",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-22003",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-22004",
+                     "Chinese":  "战斗太频繁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-22005",
+                     "Chinese":  "玩家已在战斗中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-22006",
+                     "Chinese":  "战斗不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-22007",
+                     "Chinese":  "战斗无法退出",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-22008",
+                     "Chinese":  "战斗内无法复活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23001",
+                     "Chinese":  "激活英雄积分已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23002",
+                     "Chinese":  "英雄星级积分已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23003",
+                     "Chinese":  "请先领取上一星级的积分",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23004",
+                     "Chinese":  "英雄星级不满足领取条件",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23005",
+                     "Chinese":  "已领取该图鉴等级奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23006",
+                     "Chinese":  "请先领取图鉴上一等级的奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23007",
+                     "Chinese":  "图鉴等级配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23008",
+                     "Chinese":  "激活专属武器积分已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23009",
+                     "Chinese":  "积分不满足领取条件",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23010",
+                     "Chinese":  "星灵宠物星级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23011",
+                     "Chinese":  "星灵宠物星级积分已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23012",
+                     "Chinese":  "激活宠物积分已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23013",
+                     "Chinese":  "收藏品星级积分已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-23014",
+                     "Chinese":  "激活收藏品积分已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-24001",
+                     "Chinese":  "参数异常",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-24002",
+                     "Chinese":  "日常任务不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-24003",
+                     "Chinese":  "没有日常任务奖励可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-24004",
+                     "Chinese":  "日活跃宝箱不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-24005",
+                     "Chinese":  "周活跃宝箱不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-24006",
+                     "Chinese":  "没有奖励可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-25001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-25002",
+                     "Chinese":  "成就任务不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-26001",
+                     "Chinese":  "任务不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-26002",
+                     "Chinese":  "未完结指定主线任务",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-26003",
+                     "Chinese":  "未完成指定主线任务",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-27001",
+                     "Chinese":  "天赋不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-27002",
+                     "Chinese":  "天赋已激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-27003",
+                     "Chinese":  "天赋未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-27004",
+                     "Chinese":  "未激活前置天赋",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-27005",
+                     "Chinese":  "天赋激活数量不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-27006",
+                     "Chinese":  "天赋未激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28002",
+                     "Chinese":  "宝箱配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28003",
+                     "Chinese":  "批量开启宝箱条件未达成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28004",
+                     "Chinese":  "没有能量宝箱可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28005",
+                     "Chinese":  "招募失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28006",
+                     "Chinese":  "招募英雄不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28007",
+                     "Chinese":  "无法设置该心愿英雄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28008",
+                     "Chinese":  "普通招募次数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28009",
+                     "Chinese":  "进度奖励不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28010",
+                     "Chinese":  "请先领取上一个进度奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28011",
+                     "Chinese":  "已领取过该进度奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28012",
+                     "Chinese":  "专属武器招募积分不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28013",
+                     "Chinese":  "请先设置心愿英雄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28014",
+                     "Chinese":  "次数已用完",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28015",
+                     "Chinese":  "进度轮次领取错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28016",
+                     "Chinese":  "当前轮次进度奖励未领取完毕",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28017",
+                     "Chinese":  "普通招募广告未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-28018",
+                     "Chinese":  "专属武器招募广告未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29001",
+                     "Chinese":  "关卡不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29002",
+                     "Chinese":  "请先通关前置关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29003",
+                     "Chinese":  "关卡已通关",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29004",
+                     "Chinese":  "没有挂机奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29005",
+                     "Chinese":  "未通关关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29006",
+                     "Chinese":  "快速挂机领取次数达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29007",
+                     "Chinese":  "没有快速挂机奖励可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29008",
+                     "Chinese":  "没有关卡奖励可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29009",
+                     "Chinese":  "关卡奖励已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29010",
+                     "Chinese":  "请先领取前置关卡奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29011",
+                     "Chinese":  "未通关指定主线关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29012",
+                     "Chinese":  "挂机战斗太频繁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-29013",
+                     "Chinese":  "次数已用完",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-30001",
+                     "Chinese":  "没有BOSS信息",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-30002",
+                     "Chinese":  "BOSS进度不满足条件",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-30003",
+                     "Chinese":  "BOSS进度奖励已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-30004",
+                     "Chinese":  "进度奖励不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-30005",
+                     "Chinese":  "参数异常",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-30006",
+                     "Chinese":  "今日购买挑战次数达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-30007",
+                     "Chinese":  "设置阵容失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-30008",
+                     "Chinese":  "挑战次数达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-30009",
+                     "Chinese":  "请先布置阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-30010",
+                     "Chinese":  "难度不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-30011",
+                     "Chinese":  "即将结算排名奖励,暂时无法挑战",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-30012",
+                     "Chinese":  "次数已用完",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-31001",
+                     "Chinese":  "装备不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-31002",
+                     "Chinese":  "装备已穿戴",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-31003",
+                     "Chinese":  "该部位已经穿戴装备",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-31004",
+                     "Chinese":  "装备未穿戴",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-31005",
+                     "Chinese":  "装备无法洗练",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-31006",
+                     "Chinese":  "洗练属性不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-31007",
+                     "Chinese":  "没有装备可分解",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-31008",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-31009",
+                     "Chinese":  "穿戴装备数量不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-31010",
+                     "Chinese":  "未获得指定部位装备",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-32001",
+                     "Chinese":  "该职业科技已解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-32002",
+                     "Chinese":  "职业科技未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-32003",
+                     "Chinese":  "该职业科技已升至满级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-32004",
+                     "Chinese":  "职业科技升级条件不满足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-32005",
+                     "Chinese":  "职业科技不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-32006",
+                     "Chinese":  "职业科技不需要重置",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-32007",
+                     "Chinese":  "职业科技重置太频繁, 请稍后再试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-32008",
+                     "Chinese":  "职业核心已满级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-32009",
+                     "Chinese":  "请先提升职业核心等级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-32010",
+                     "Chinese":  "职业科技等级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-32011",
+                     "Chinese":  "职业核心等级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-33001",
+                     "Chinese":  "序列校验配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-33002",
+                     "Chinese":  "请先布置该序列阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-33003",
+                     "Chinese":  "已通关该层数关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-33004",
+                     "Chinese":  "上一层关卡未通关",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-33005",
+                     "Chinese":  "序列层数差限制,请先通关其他序列关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-33006",
+                     "Chinese":  "今日未开启该序列关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-33007",
+                     "Chinese":  "通关总层数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-33008",
+                     "Chinese":  "当前阵容无法挑战此关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-33009",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-34001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-34002",
+                     "Chinese":  "请先通关上一层秘境",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-34003",
+                     "Chinese":  "共鸣等级条件不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-34004",
+                     "Chinese":  "秘境层数不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-34005",
+                     "Chinese":  "请先布置阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-34006",
+                     "Chinese":  "通关层数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-34007",
+                     "Chinese":  "通关层数不匹配",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-34008",
+                     "Chinese":  "未通关此层秘境,无法扫荡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-34009",
+                     "Chinese":  "未通过该层秘境",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-34010",
+                     "Chinese":  "通关秒数过多",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-34011",
+                     "Chinese":  "扫荡广告未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35002",
+                     "Chinese":  "被挑战方不存在,请重新刷新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35003",
+                     "Chinese":  "挑战列表未匹配到该对手,无法挑战",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35004",
+                     "Chinese":  "每日挑战次数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35005",
+                     "Chinese":  "每日挑战次数奖励已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35006",
+                     "Chinese":  "获取防守方战斗单位失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35007",
+                     "Chinese":  "匹配对手失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35008",
+                     "Chinese":  "今日刷新次数达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35009",
+                     "Chinese":  "请先获取挑战列表",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35010",
+                     "Chinese":  "已匹配挑战列表,请挑战/刷新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35011",
+                     "Chinese":  "今日购买挑战次数达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35012",
+                     "Chinese":  "当前没有段位奖励可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35013",
+                     "Chinese":  "挑战次数已满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-35014",
+                     "Chinese":  "竞技场历史最高段位不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-36001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-36002",
+                     "Chinese":  "世界BOSS未开放",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-36003",
+                     "Chinese":  "世界BOSS已被击杀",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-36004",
+                     "Chinese":  "未布置BOSS挑战阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-36005",
+                     "Chinese":  "BOSS未被击杀",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-36006",
+                     "Chinese":  "BOSS排名奖励已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-36007",
+                     "Chinese":  "BOSS没有排名奖励可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-36008",
+                     "Chinese":  "未挑战BOSS无法领取奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-36009",
+                     "Chinese":  "BOSS服务器击杀奖励已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-36010",
+                     "Chinese":  "BOSS没有服务器击杀奖励可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-36011",
+                     "Chinese":  "BOSS挑战次数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37002",
+                     "Chinese":  "未加入联盟",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37003",
+                     "Chinese":  "联盟不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37004",
+                     "Chinese":  "非法的联盟名称",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37005",
+                     "Chinese":  "已加入联盟",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37006",
+                     "Chinese":  "联盟名称已被使用",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37007",
+                     "Chinese":  "非法的联盟图案",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37008",
+                     "Chinese":  "非法的联盟旗帜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37009",
+                     "Chinese":  "联盟已解散",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37010",
+                     "Chinese":  "当前联盟职位权限限制,无法操作",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37011",
+                     "Chinese":  "本周联盟邮件发送次数达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37012",
+                     "Chinese":  "联盟名称长度限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37013",
+                     "Chinese":  "联盟邮件内容含有非法字符",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37014",
+                     "Chinese":  "联盟邮件内容长度限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37015",
+                     "Chinese":  "加入/退出联盟过于频繁,请稍后操作",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37016",
+                     "Chinese":  "联盟成员已满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37017",
+                     "Chinese":  "联盟申请加入人数过多,请选择其他联盟",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37018",
+                     "Chinese":  "非联盟成员",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37019",
+                     "Chinese":  "玩家未申请加入",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37020",
+                     "Chinese":  "申请人已加入联盟",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37021",
+                     "Chinese":  "副盟主人数已满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37022",
+                     "Chinese":  "联盟公告内容长度限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37023",
+                     "Chinese":  "联盟公告内容含有非法字符",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37024",
+                     "Chinese":  "已领取过该挑战任务奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37025",
+                     "Chinese":  "挑战任务未完成",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37026",
+                     "Chinese":  "需要您先完成挑战方可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37027",
+                     "Chinese":  "联盟聊天招募内容含有非法字符",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37028",
+                     "Chinese":  "联盟聊天招募内容长度限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37029",
+                     "Chinese":  "上一个卡槽未升满级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37030",
+                     "Chinese":  "卡槽等级已满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37031",
+                     "Chinese":  "未设置挑战阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37032",
+                     "Chinese":  "联盟BOSS已被击杀",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37033",
+                     "Chinese":  "联盟BOSS阶段不一致",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37034",
+                     "Chinese":  "排行榜配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37035",
+                     "Chinese":  "修改联盟名称过于频繁,请稍后重试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37036",
+                     "Chinese":  "修改联盟旗帜过于频繁,请稍后重试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37037",
+                     "Chinese":  "职业之间卡槽总等级差距过大,请先升级其他职业卡槽",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37038",
+                     "Chinese":  "联盟赠礼道具不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37039",
+                     "Chinese":  "联盟赠礼不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37040",
+                     "Chinese":  "联盟赠礼配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37041",
+                     "Chinese":  "该联盟赠礼已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37042",
+                     "Chinese":  "联盟赠礼领取达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37043",
+                     "Chinese":  "联盟任务不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37044",
+                     "Chinese":  "没有联盟宝箱可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37045",
+                     "Chinese":  "联盟宝箱已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37046",
+                     "Chinese":  "联盟等级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37047",
+                     "Chinese":  "联盟BOSS不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37048",
+                     "Chinese":  "BOSS未刷新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37049",
+                     "Chinese":  "超出邀请上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37050",
+                     "Chinese":  "联盟砍价活动未开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37051",
+                     "Chinese":  "已参与本轮砍价",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37052",
+                     "Chinese":  "砍价时间冷却中,请稍后重试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37053",
+                     "Chinese":  "已达到最低折扣,无法继续砍价",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37054",
+                     "Chinese":  "砍价礼包已刷新",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37055",
+                     "Chinese":  "已购买过该礼包",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37056",
+                     "Chinese":  "参与砍价后才可购买礼包",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-37057",
+                     "Chinese":  "联盟BOSS挑战次数限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38002",
+                     "Chinese":  "头像不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38003",
+                     "Chinese":  "头像框不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38004",
+                     "Chinese":  "形象不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38005",
+                     "Chinese":  "称号不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38006",
+                     "Chinese":  "未拥有该头像",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38007",
+                     "Chinese":  "未拥有该头像框",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38008",
+                     "Chinese":  "未拥有该形象",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38009",
+                     "Chinese":  "未拥有该称号",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38010",
+                     "Chinese":  "聊天框不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38011",
+                     "Chinese":  "未拥有该聊天框",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38012",
+                     "Chinese":  "聊天框文字颜色不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-38013",
+                     "Chinese":  "未拥有该聊天文字颜色",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39001",
+                     "Chinese":  "玩家已经是好友了",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39002",
+                     "Chinese":  "目标已被加入黑名单",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39003",
+                     "Chinese":  "已被对方加入黑名单，申请失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39004",
+                     "Chinese":  "对方被申请数量已达上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39005",
+                     "Chinese":  "对方没有申请好友",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39006",
+                     "Chinese":  "好友已经达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39007",
+                     "Chinese":  "已被对方加入黑名单，添加好友失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39008",
+                     "Chinese":  "对方好友已经达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39009",
+                     "Chinese":  "操作目标为空",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39010",
+                     "Chinese":  "玩家不是好友",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39011",
+                     "Chinese":  "黑名单容量已达上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39012",
+                     "Chinese":  "已申请该玩家为好友",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39013",
+                     "Chinese":  "申请数量达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39014",
+                     "Chinese":  "参数非法",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-39015",
+                     "Chinese":  "不能申请自己为好友",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-40001",
+                     "Chinese":  "专属武器不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-40002",
+                     "Chinese":  "专属武器已满星",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-40003",
+                     "Chinese":  "消耗的同星级专属武器不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-40004",
+                     "Chinese":  "消耗的专属武器品质或星级不满足条件",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-40005",
+                     "Chinese":  "专属武器已穿戴",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-40006",
+                     "Chinese":  "专属武器未穿戴",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-40007",
+                     "Chinese":  "专属武器正在穿戴",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-40008",
+                     "Chinese":  "专属武器已锁定",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-40009",
+                     "Chinese":  "当前英雄无法穿戴专属武器",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-40010",
+                     "Chinese":  "配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-40011",
+                     "Chinese":  "专属武器星级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-40012",
+                     "Chinese":  "专属武器数量不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-41001",
+                     "Chinese":  "VIP等级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-42001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-42002",
+                     "Chinese":  "未支持的排行榜操作",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-42003",
+                     "Chinese":  "等级太低，不能查看该排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-43001",
+                     "Chinese":  "奖励不可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-43002",
+                     "Chinese":  "奖励已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-43003",
+                     "Chinese":  "已领取全部奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-44001",
+                     "Chinese":  "超出购买上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-44002",
+                     "Chinese":  "商品不可购买",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-44003",
+                     "Chinese":  "推送礼包已过期",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-44004",
+                     "Chinese":  "未按顺序购买推送礼包",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-45001",
+                     "Chinese":  "奖励已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-45002",
+                     "Chinese":  "特权卡已失效",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-45003",
+                     "Chinese":  "特权卡未激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-45004",
+                     "Chinese":  "不能激活该特权卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-46001",
+                     "Chinese":  "免费挑战次数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-46002",
+                     "Chinese":  "未通过该关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-46003",
+                     "Chinese":  "未通过前置关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-46004",
+                     "Chinese":  "请先布置阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-47001",
+                     "Chinese":  "魔方已激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-47002",
+                     "Chinese":  "魔方不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-47003",
+                     "Chinese":  "魔方不可激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-47004",
+                     "Chinese":  "魔方不可升级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-47005",
+                     "Chinese":  "魔方已达最高级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-47006",
+                     "Chinese":  "魔方不可转换",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-47007",
+                     "Chinese":  "魔方不存在转换结果",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-47008",
+                     "Chinese":  "指定等级魔方不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48001",
+                     "Chinese":  "当前非布阵阶段",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48002",
+                     "Chinese":  "联盟未参与对决",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48003",
+                     "Chinese":  "队伍数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48004",
+                     "Chinese":  "非对战阶段",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48005",
+                     "Chinese":  "目标不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48006",
+                     "Chinese":  "目标队伍已死亡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48007",
+                     "Chinese":  "当前阶段不能获取战报",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48008",
+                     "Chinese":  "当前阶段不能获取成员排行榜",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48009",
+                     "Chinese":  "第一次对决还未开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48010",
+                     "Chinese":  "挑战次数不够",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48011",
+                     "Chinese":  "赛季还未开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48012",
+                     "Chinese":  "未加入联盟",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48013",
+                     "Chinese":  "开始时间不同，报名失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48014",
+                     "Chinese":  "报名阶段已结束",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48015",
+                     "Chinese":  "还未开始分组",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48016",
+                     "Chinese":  "当前处于结束阶段",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48017",
+                     "Chinese":  "玩家未参与对决",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48018",
+                     "Chinese":  "目标战斗中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48019",
+                     "Chinese":  "进入对决界面次数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-48020",
+                     "Chinese":  "挑战对手次数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49002",
+                     "Chinese":  "目标玩家不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49003",
+                     "Chinese":  "体力已满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49004",
+                     "Chinese":  "生产线不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49005",
+                     "Chinese":  "未占领生产线",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49006",
+                     "Chinese":  "生产线占领时间已结束",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49007",
+                     "Chinese":  "生产线占领时间未结束",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49008",
+                     "Chinese":  "上阵的战队科技已占领了其他生产线",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49009",
+                     "Chinese":  "上阵的英雄已占领了其他生产线",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49010",
+                     "Chinese":  "占领的生产线达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49011",
+                     "Chinese":  "体力不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49012",
+                     "Chinese":  "占领失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49013",
+                     "Chinese":  "同时占领生产线数量达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49014",
+                     "Chinese":  "今日领取占领奖励次数达到上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-49015",
+                     "Chinese":  "上阵的星灵宠物已占领了其他生产线",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50001",
+                     "Chinese":  "参数异常",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50002",
+                     "Chinese":  "星灵不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50003",
+                     "Chinese":  "星灵等阶不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50004",
+                     "Chinese":  "星灵已满级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50005",
+                     "Chinese":  "星灵等级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50006",
+                     "Chinese":  "星灵已满阶",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50007",
+                     "Chinese":  "星灵已满星",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50008",
+                     "Chinese":  "星灵已激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50009",
+                     "Chinese":  "星灵宠物配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50010",
+                     "Chinese":  "星灵宠物未激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50011",
+                     "Chinese":  "超出等级上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50012",
+                     "Chinese":  "星灵羁绊配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-50013",
+                     "Chinese":  "羁绊已激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-51001",
+                     "Chinese":  "设备已激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-51002",
+                     "Chinese":  "设备未激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-51003",
+                     "Chinese":  "设备已达最大等级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-51004",
+                     "Chinese":  "已派遣至其他设备",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-51005",
+                     "Chinese":  "设备奖励不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-51006",
+                     "Chinese":  "设备等级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-51007",
+                     "Chinese":  "设备未处于等待等级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-51008",
+                     "Chinese":  "设备不可跳过升级等待",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-51009",
+                     "Chinese":  "超出观看广告上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-51010",
+                     "Chinese":  "设备处于等待等级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-52001",
+                     "Chinese":  "奖励已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53002",
+                     "Chinese":  "阵容不能为空",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53003",
+                     "Chinese":  "阵容最多上阵两个英雄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53004",
+                     "Chinese":  "战队科技无法上阵",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53005",
+                     "Chinese":  "星灵宠物无法上阵",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53006",
+                     "Chinese":  "未加入队伍",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53007",
+                     "Chinese":  "已加入队伍",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53008",
+                     "Chinese":  "组队副本不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53009",
+                     "Chinese":  "队伍不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53010",
+                     "Chinese":  "队伍已解散",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53011",
+                     "Chinese":  "TA已加入队伍",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53012",
+                     "Chinese":  "不是队长无法操作",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53013",
+                     "Chinese":  "TA未申请加入",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53014",
+                     "Chinese":  "TA不在队伍中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53015",
+                     "Chinese":  "当前不在队伍中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53016",
+                     "Chinese":  "队伍名称不符条件",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53017",
+                     "Chinese":  "队伍战力限制错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53018",
+                     "Chinese":  "TA的队伍申请人数太火爆了,请选择其他队伍",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53019",
+                     "Chinese":  "队伍已满员",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53020",
+                     "Chinese":  "队伍已邀请TA",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53021",
+                     "Chinese":  "私聊邀请冷却中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53022",
+                     "Chinese":  "频道邀请冷却中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53023",
+                     "Chinese":  "章节不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53024",
+                     "Chinese":  "章节未通关",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53025",
+                     "Chinese":  "章节奖励已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53026",
+                     "Chinese":  "未通关上一个副本",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53027",
+                     "Chinese":  "副本章节未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53028",
+                     "Chinese":  "TA未解锁该副本",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53029",
+                     "Chinese":  "队伍私聊邀请太过频繁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53030",
+                     "Chinese":  "请先设置阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53031",
+                     "Chinese":  "已通关该副本关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53032",
+                     "Chinese":  "不满足队伍战力要求",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53033",
+                     "Chinese":  "收藏品无法上阵",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53034",
+                     "Chinese":  "暂无可快速加入队伍",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53035",
+                     "Chinese":  "队伍战斗中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53036",
+                     "Chinese":  "无法转让队长给对方",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53037",
+                     "Chinese":  "今日拉取镜像次数已耗尽",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53038",
+                     "Chinese":  "好友的该玩法功能未开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53039",
+                     "Chinese":  "好友未设置阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53040",
+                     "Chinese":  "该玩家已在队伍中",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53041",
+                     "Chinese":  "TA今天已经被邀请了很多次镜像了，明天再来试试吧",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53042",
+                     "Chinese":  "队伍中已有您的镜像",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-53043",
+                     "Chinese":  "队伍战斗中,不能踢人",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54002",
+                     "Chinese":  "活动未开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54003",
+                     "Chinese":  "未占领建筑",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54004",
+                     "Chinese":  "快速挂机失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54005",
+                     "Chinese":  "没有挂机奖励可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54006",
+                     "Chinese":  "未加入联盟",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54007",
+                     "Chinese":  "建筑不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54008",
+                     "Chinese":  "分享的频道不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54009",
+                     "Chinese":  "无法分享到该频道",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54010",
+                     "Chinese":  "无法分享给自己",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54011",
+                     "Chinese":  "星球不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54012",
+                     "Chinese":  "当前已在置顶位置",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54013",
+                     "Chinese":  "当前已占领建筑",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54014",
+                     "Chinese":  "建筑当前状态无法挑战",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54015",
+                     "Chinese":  "请先布置阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54016",
+                     "Chinese":  "建筑处于被攻打状态,无法退出驻守",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54017",
+                     "Chinese":  "其他联盟正在攻打此建筑,请稍后再试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54018",
+                     "Chinese":  "同盟玩家正在攻打此建筑,请稍后再试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54019",
+                     "Chinese":  "工厂当前无人驻守,无需攻打",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54020",
+                     "Chinese":  "工厂机器人已被击败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54021",
+                     "Chinese":  "占领保护期无法被攻打",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54022",
+                     "Chinese":  "攻打失败,请稍后再试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54023",
+                     "Chinese":  "联盟未占领建筑",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54024",
+                     "Chinese":  "当前建筑状态无法驻守",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54025",
+                     "Chinese":  "当前建筑状态无法占领",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54026",
+                     "Chinese":  "互换的目标建筑不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54027",
+                     "Chinese":  "当前建筑状态无法互换",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54028",
+                     "Chinese":  "互换的目标建筑位置未驻守玩家",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54029",
+                     "Chinese":  "建筑当前驻守位置正在被攻打",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54030",
+                     "Chinese":  "建筑驻守联盟不同,无法互换",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54031",
+                     "Chinese":  "当前建筑无需攻打",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54032",
+                     "Chinese":  "当前建筑驻守玩家正在进攻其他建筑",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54033",
+                     "Chinese":  "当前正在进攻其他建筑",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54034",
+                     "Chinese":  "需要先击败工厂驻守者",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54035",
+                     "Chinese":  "当前为停战时间",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54036",
+                     "Chinese":  "当前驻守建筑正在被攻击",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54037",
+                     "Chinese":  "目标建筑驻守玩家正在进攻其他建筑",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54038",
+                     "Chinese":  "目标建筑正在被攻击",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54039",
+                     "Chinese":  "无法攻打同盟建筑",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54040",
+                     "Chinese":  "建筑等级差距过大,无法互换",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54041",
+                     "Chinese":  "无法攻打自己的建筑",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54042",
+                     "Chinese":  "沦陷重新驻守时间限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54043",
+                     "Chinese":  "进攻时间限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54044",
+                     "Chinese":  "防守失败重新驻守时间限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54045",
+                     "Chinese":  "建筑没有位置可驻守",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54046",
+                     "Chinese":  "建筑当前有空位,只能驻守",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54047",
+                     "Chinese":  "星球未开放",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54048",
+                     "Chinese":  "活动即将结算,无法对建筑操作",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-54049",
+                     "Chinese":  "重置进攻冷却次数限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-55001",
+                     "Chinese":  "收藏品配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-55002",
+                     "Chinese":  "收藏品已激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-55003",
+                     "Chinese":  "收藏品未激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-55004",
+                     "Chinese":  "收藏品已满星",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-55005",
+                     "Chinese":  "收藏品已满级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-55006",
+                     "Chinese":  "套装配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-55007",
+                     "Chinese":  "套装组件不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-55008",
+                     "Chinese":  "套装已激活",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-55009",
+                     "Chinese":  "收藏品星级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56002",
+                     "Chinese":  "活动未开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56003",
+                     "Chinese":  "已设置过备战英雄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56004",
+                     "Chinese":  "备战英雄已满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56005",
+                     "Chinese":  "备战英雄数量超过限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56006",
+                     "Chinese":  "重复设置备战英雄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56007",
+                     "Chinese":  "未设置备战英雄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56008",
+                     "Chinese":  "请设置挑战阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56009",
+                     "Chinese":  "已通关该关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56010",
+                     "Chinese":  "不是第一关开始无法扫荡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56011",
+                     "Chinese":  "本赛季未通关关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56012",
+                     "Chinese":  "本赛季最高关卡过低,无法扫荡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56013",
+                     "Chinese":  "扫荡失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56014",
+                     "Chinese":  "无法上阵未备战的英雄",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56015",
+                     "Chinese":  "活动即将结束,无法进行挑战",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56016",
+                     "Chinese":  "请先通关前置关卡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56017",
+                     "Chinese":  "玩具占据得格子重叠",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56018",
+                     "Chinese":  "仓库中找不到要上阵的玩具",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56019",
+                     "Chinese":  "无法下阵玩具，物资仓库已满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56020",
+                     "Chinese":  "物资补给箱中找不到要下阵的的玩具",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56021",
+                     "Chinese":  "找不到要丢弃的的玩具",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56022",
+                     "Chinese":  "玩具宝箱仓库为空",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56023",
+                     "Chinese":  "无法开启宝箱，物资仓库已满",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56024",
+                     "Chinese":  "未获得宝箱",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56025",
+                     "Chinese":  "该宝箱没有刷新次数",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56026",
+                     "Chinese":  "宝箱刷新次数限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56027",
+                     "Chinese":  "宝箱无法刷新（已开启过的宝箱不能再刷新）",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-56028",
+                     "Chinese":  "宝箱中找不到指定的玩具",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-57001",
+                     "Chinese":  "收藏品玩法不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-57002",
+                     "Chinese":  "上一关卡未通关",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-57003",
+                     "Chinese":  "请设置挑战阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-57004",
+                     "Chinese":  "没有挑战次数",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-57005",
+                     "Chinese":  "未通关任何关卡无法扫荡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-57006",
+                     "Chinese":  "找不到配置表数据",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-57007",
+                     "Chinese":  "没用可用得扫荡次数",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-57008",
+                     "Chinese":  "星星数量不满足条件",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-57009",
+                     "Chinese":  "已领取过奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-58001",
+                     "Chinese":  "抽卡失败",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-58002",
+                     "Chinese":  "没有找到神装抽卡配置中相对应的奖池配置",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-59001",
+                     "Chinese":  "神装不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-59002",
+                     "Chinese":  "神装已穿戴",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-59003",
+                     "Chinese":  "神装未穿戴",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-59004",
+                     "Chinese":  "神装已锁定",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-59005",
+                     "Chinese":  "定制神装道具不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-59006",
+                     "Chinese":  "无需洗练",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-59007",
+                     "Chinese":  "无需保存洗练",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60002",
+                     "Chinese":  "请先通关上一层秘境",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60003",
+                     "Chinese":  "共鸣等级条件不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60004",
+                     "Chinese":  "无尽秘境不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60005",
+                     "Chinese":  "请先布置阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60006",
+                     "Chinese":  "通关层数不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60007",
+                     "Chinese":  "通关层数不匹配",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60008",
+                     "Chinese":  "未通关此层无尽秘境,无法扫荡",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60009",
+                     "Chinese":  "未通过该层无尽秘境",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60010",
+                     "Chinese":  "通关秒数过多",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60011",
+                     "Chinese":  "扫荡广告未解锁",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60012",
+                     "Chinese":  "无法无尽秘境获取排行版数据",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60013",
+                     "Chinese":  "未通关此层无尽秘境,无法领取星级奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-60014",
+                     "Chinese":  "已领取该层星级奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-65001",
+                     "Chinese":  "次元连通未开放",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113001",
+                     "Chinese":  "请求参数非法",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113002",
+                     "Chinese":  "活动未开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113003",
+                     "Chinese":  "奖励已领取或已达领取次数上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113004",
+                     "Chinese":  "未达到领取条件",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113005",
+                     "Chinese":  "该阶段不能领取活动奖励",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113006",
+                     "Chinese":  "未支持的活动操作",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113007",
+                     "Chinese":  "VIP等级限制",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113008",
+                     "Chinese":  "配置找不到",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113009",
+                     "Chinese":  "奖励项不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113010",
+                     "Chinese":  "找不到该活动",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113011",
+                     "Chinese":  "购买的商品数量超出了上线",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113012",
+                     "Chinese":  "该阶段不能购买商品",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113013",
+                     "Chinese":  "不能充值",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113014",
+                     "Chinese":  "无效的奖励项",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113015",
+                     "Chinese":  "活动剩余时间不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113016",
+                     "Chinese":  "未到领取奖励时间",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113017",
+                     "Chinese":  "未选择奖励项",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113018",
+                     "Chinese":  "已选择奖励项",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113019",
+                     "Chinese":  "超出选择上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113020",
+                     "Chinese":  "奖励未获取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-113021",
+                     "Chinese":  "不能抽奖",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121001",
+                     "Chinese":  "赛季活动未开放",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121002",
+                     "Chinese":  "赛季子活动未开放",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121003",
+                     "Chinese":  "无效的奖励项",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121004",
+                     "Chinese":  "奖励项已领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121005",
+                     "Chinese":  "奖励项不可领取",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121006",
+                     "Chinese":  "不可充值",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121007",
+                     "Chinese":  "非法操作",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121008",
+                     "Chinese":  "未通过前一层",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121009",
+                     "Chinese":  "等级不足",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121010",
+                     "Chinese":  "未设置阵容",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121011",
+                     "Chinese":  "超出挑战上限",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121012",
+                     "Chinese":  "Boss已被击杀",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121013",
+                     "Chinese":  "已报名",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-121014",
+                     "Chinese":  "非挑战时间",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999001",
+                     "Chinese":  "参数错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999003",
+                     "Chinese":  "增加的分钟数至少1分钟",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999004",
+                     "Chinese":  "增加的分钟不能超过1天以上，超过请多次操作",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999005",
+                     "Chinese":  "该系统不支持调整时间",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999006",
+                     "Chinese":  "邮件模板不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999007",
+                     "Chinese":  "更新并加载资源功能未开启",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999008",
+                     "Chinese":  "更新并加载资源出错，请离线服务端查看",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999009",
+                     "Chinese":  "有人正在更新并加载资源，请稍后再试",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999010",
+                     "Chinese":  "GM指定不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999011",
+                     "Chinese":  "未设置faketime文件，不能挑战linux系统时间",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999012",
+                     "Chinese":  "自定义攻方单位为空",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999013",
+                     "Chinese":  "自定义守方单位为空",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999014",
+                     "Chinese":  "自定义攻方单位英雄配置ID不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999015",
+                     "Chinese":  "自定义守方单位英雄配置ID不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999016",
+                     "Chinese":  "自定义攻方单位怪物配置ID不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999017",
+                     "Chinese":  "自定义守方单位怪物配置ID不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999018",
+                     "Chinese":  "自定义攻方单位阵位重复",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999019",
+                     "Chinese":  "自定义守方单位阵位重复",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999020",
+                     "Chinese":  "自定义攻方单位类型错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999021",
+                     "Chinese":  "自定义守方单位类型错误",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999022",
+                     "Chinese":  "无法往前跳主线任务",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999023",
+                     "Chinese":  "账号模板配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999024",
+                     "Chinese":  "账号模板未设置英雄星级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999025",
+                     "Chinese":  "账号模板未设置英雄等级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999026",
+                     "Chinese":  "账号模板英雄未设置对应等级/星级",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999027",
+                     "Chinese":  "英雄配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999028",
+                     "Chinese":  "英雄星级不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999029",
+                     "Chinese":  "英雄等级不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999030",
+                     "Chinese":  "装备配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999031",
+                     "Chinese":  "装备位置重复",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999032",
+                     "Chinese":  "战队科技配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999033",
+                     "Chinese":  "战队科技等级配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999034",
+                     "Chinese":  "主线关卡配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999035",
+                     "Chinese":  "主线任务配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999036",
+                     "Chinese":  "战队科技等级未设置",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999037",
+                     "Chinese":  "每日BOSS难度配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999038",
+                     "Chinese":  "秘境关卡配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999039",
+                     "Chinese":  "序列校验关卡不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999040",
+                     "Chinese":  "星灵宠物配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999041",
+                     "Chinese":  "星灵宠物等级配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999042",
+                     "Chinese":  "星灵宠物阶段配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999043",
+                     "Chinese":  "收藏品配置不存在",
+                     "English":  ""
+                 },
+                 {
+                     "id":  "i18n:errorCode:-999044",
+                     "Chinese":  "魔方配置不存在",
+                     "English":  ""
+                 }
+             ],
+    "sourceLength":  2537,
+    "expectedLength":  2537,
+    "validLength":  true
+}

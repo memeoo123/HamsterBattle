@@ -1,0 +1,659 @@
+﻿{
+    "table":  "hero.HeroConfig",
+    "columnCount":  23,
+    "rowCount":  18,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "unitType",
+                       "token":  "unitType",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "sort",
+                       "token":  1088,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "fragmentItemId",
+                       "token":  1089,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  6,
+                       "name":  "shapeId",
+                       "token":  343,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  7,
+                       "name":  "initStar",
+                       "token":  "initStar",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "upStarType",
+                       "token":  "upStarType",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  9,
+                       "name":  "headPath",
+                       "token":  346,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  10,
+                       "name":  "searchRange",
+                       "token":  1090,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  11,
+                       "name":  "atk",
+                       "token":  1091,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  12,
+                       "name":  "hp",
+                       "token":  650,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  13,
+                       "name":  "baseSecondAttrs",
+                       "token":  1092,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  14,
+                       "name":  "skill1",
+                       "token":  "skill1",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  15,
+                       "name":  "skill2",
+                       "token":  "skill2",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  16,
+                       "name":  "skill3",
+                       "token":  "skill3",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  17,
+                       "name":  "skill4",
+                       "token":  "skill4",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  18,
+                       "name":  "skill5",
+                       "token":  "skill5",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  19,
+                       "name":  "skill6",
+                       "token":  "skill6",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  20,
+                       "name":  "skill7",
+                       "token":  "skill7",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  21,
+                       "name":  "unlockCondition",
+                       "token":  "unlockCondition",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  22,
+                       "name":  "formationEffectives",
+                       "token":  "formationEffectives",
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "H01",
+                     "name":  "仓鼠战士",
+                     "type":  "HAMSTER",
+                     "unitType":  0,
+                     "sort":  1,
+                     "fragmentItemId":  "F01",
+                     "shapeId":  1,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H0101",
+                     "searchRange":  400,
+                     "atk":  20,
+                     "hp":  70,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "RG_H01_s01",
+                     "skill2":  "RG_H01_s02",
+                     "skill3":  "RG_H01_s03",
+                     "skill4":  "RG_H01_s04",
+                     "skill5":  "RG_H01_s05",
+                     "skill6":  "RG_H01_s06",
+                     "skill7":  "RG_H01_s07",
+                     "unlockCondition":  null,
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H02",
+                     "name":  "仓鼠射手",
+                     "type":  "HAMSTER",
+                     "unitType":  0,
+                     "sort":  2,
+                     "fragmentItemId":  "F02",
+                     "shapeId":  2,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H0201",
+                     "searchRange":  400,
+                     "atk":  27,
+                     "hp":  51,
+                     "baseSecondAttrs":  {
+                                             "ATK_SPD":  1500
+                                         },
+                     "skill1":  "RG_H02_s01",
+                     "skill2":  "RG_H02_s02",
+                     "skill3":  "RG_H02_s03",
+                     "skill4":  "RG_H02_s04",
+                     "skill5":  "RG_H02_s05",
+                     "skill6":  "RG_H02_s06",
+                     "skill7":  "RG_H02_s07",
+                     "unlockCondition":  null,
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H03",
+                     "name":  "仓鼠法师",
+                     "type":  "HAMSTER",
+                     "unitType":  0,
+                     "sort":  6,
+                     "fragmentItemId":  "F03",
+                     "shapeId":  3,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H0301",
+                     "searchRange":  400,
+                     "atk":  30,
+                     "hp":  55,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "RG_H03_s01",
+                     "skill2":  "RG_H03_s02",
+                     "skill3":  "RG_H03_s03",
+                     "skill4":  "RG_H03_s04",
+                     "skill5":  "RG_H03_s05",
+                     "skill6":  "RG_H03_s06",
+                     "skill7":  "RG_H03_s07",
+                     "unlockCondition":  [
+                                             [
+                                                 "PASS_TRUNK_INSTANCE",
+                                                 1002,
+                                                 0
+                                             ]
+                                         ],
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H04",
+                     "name":  "仓鼠骑士",
+                     "type":  "HAMSTER",
+                     "unitType":  0,
+                     "sort":  3,
+                     "fragmentItemId":  "F04",
+                     "shapeId":  5,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H0401",
+                     "searchRange":  400,
+                     "atk":  51,
+                     "hp":  179,
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000
+                                         },
+                     "skill1":  "RG_H04_s01",
+                     "skill2":  "RG_H04_s02",
+                     "skill3":  "RG_H04_s03",
+                     "skill4":  "RG_H04_s04",
+                     "skill5":  "RG_H04_s05",
+                     "skill6":  "RG_H04_s06",
+                     "skill7":  "RG_H04_s07",
+                     "unlockCondition":  null,
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H05",
+                     "name":  "仓鼠召唤师",
+                     "type":  "HAMSTER",
+                     "unitType":  0,
+                     "sort":  8,
+                     "fragmentItemId":  "F05",
+                     "shapeId":  6,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H0501",
+                     "searchRange":  400,
+                     "atk":  30,
+                     "hp":  128,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "RG_H05_s01",
+                     "skill2":  "RG_H05_s02",
+                     "skill3":  "RG_H05_s03",
+                     "skill4":  "RG_H05_s04",
+                     "skill5":  "RG_H05_s05",
+                     "skill6":  "RG_H05_s06",
+                     "skill7":  "RG_H05_s07",
+                     "unlockCondition":  [
+                                             [
+                                                 "PASS_TRUNK_INSTANCE",
+                                                 1005,
+                                                 0
+                                             ]
+                                         ],
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H06",
+                     "name":  "仓鼠飞行员",
+                     "type":  "HAMSTER",
+                     "unitType":  1,
+                     "sort":  10,
+                     "fragmentItemId":  "F06",
+                     "shapeId":  10,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H0601",
+                     "searchRange":  400,
+                     "atk":  146,
+                     "hp":  137,
+                     "baseSecondAttrs":  {
+                                             "ATK_SPD":  "-5000"
+                                         },
+                     "skill1":  "RG_H06_s01",
+                     "skill2":  "RG_H06_s02",
+                     "skill3":  "RG_H06_s03",
+                     "skill4":  "RG_H06_s04",
+                     "skill5":  "RG_H06_s05",
+                     "skill6":  "RG_H06_s06",
+                     "skill7":  "RG_H06_s07",
+                     "unlockCondition":  [
+                                             [
+                                                 "PASS_TRUNK_INSTANCE",
+                                                 1009,
+                                                 0
+                                             ]
+                                         ],
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H07",
+                     "name":  "仓鼠铁铁侠",
+                     "type":  "HAMSTER",
+                     "unitType":  0,
+                     "sort":  0,
+                     "fragmentItemId":  "",
+                     "shapeId":  2,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H0705",
+                     "searchRange":  400,
+                     "atk":  137,
+                     "hp":  258,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "",
+                     "skill2":  "",
+                     "skill3":  "",
+                     "skill4":  "",
+                     "skill5":  "",
+                     "skill6":  "",
+                     "skill7":  "",
+                     "unlockCondition":  null,
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H08",
+                     "name":  "仓鼠凹凸曼",
+                     "type":  "HAMSTER",
+                     "unitType":  0,
+                     "sort":  0,
+                     "fragmentItemId":  "",
+                     "shapeId":  3,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H0805",
+                     "searchRange":  400,
+                     "atk":  152,
+                     "hp":  278,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "",
+                     "skill2":  "",
+                     "skill3":  "",
+                     "skill4":  "",
+                     "skill5":  "",
+                     "skill6":  "",
+                     "skill7":  "",
+                     "unlockCondition":  null,
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H09",
+                     "name":  "仓鼠战车",
+                     "type":  "HAMSTER",
+                     "unitType":  0,
+                     "sort":  0,
+                     "fragmentItemId":  "",
+                     "shapeId":  7,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H0905",
+                     "searchRange":  400,
+                     "atk":  258,
+                     "hp":  906,
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000
+                                         },
+                     "skill1":  "",
+                     "skill2":  "",
+                     "skill3":  "",
+                     "skill4":  "",
+                     "skill5":  "",
+                     "skill6":  "",
+                     "skill7":  "",
+                     "unlockCondition":  null,
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H10",
+                     "name":  "仓鼠飞碟",
+                     "type":  "HAMSTER",
+                     "unitType":  1,
+                     "sort":  0,
+                     "fragmentItemId":  "",
+                     "shapeId":  10,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H1005",
+                     "searchRange":  400,
+                     "atk":  370,
+                     "hp":  694,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "",
+                     "skill2":  "",
+                     "skill3":  "",
+                     "skill4":  "",
+                     "skill5":  "",
+                     "skill6":  "",
+                     "skill7":  "",
+                     "unlockCondition":  null,
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H11",
+                     "name":  "治疗齿轮",
+                     "type":  "WHEEL",
+                     "unitType":  0,
+                     "sort":  7,
+                     "fragmentItemId":  "F11",
+                     "shapeId":  3,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H1101",
+                     "searchRange":  400,
+                     "atk":  63,
+                     "hp":  220,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "RG_H11_s01",
+                     "skill2":  "RG_H11_s02",
+                     "skill3":  "RG_H11_s03",
+                     "skill4":  "RG_H11_s04",
+                     "skill5":  "RG_H11_s05",
+                     "skill6":  "RG_H11_s06",
+                     "skill7":  "RG_H11_s07",
+                     "unlockCondition":  [
+                                             [
+                                                 "PASS_TRUNK_INSTANCE",
+                                                 1004,
+                                                 0
+                                             ]
+                                         ],
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H12",
+                     "name":  "雷云齿轮",
+                     "type":  "WHEEL",
+                     "unitType":  0,
+                     "sort":  4,
+                     "fragmentItemId":  "F12",
+                     "shapeId":  2,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H1201",
+                     "searchRange":  400,
+                     "atk":  49,
+                     "hp":  200,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "RG_H12_s01",
+                     "skill2":  "RG_H12_s02",
+                     "skill3":  "RG_H12_s03",
+                     "skill4":  "RG_H12_s04",
+                     "skill5":  "RG_H12_s05",
+                     "skill6":  "RG_H12_s06",
+                     "skill7":  "RG_H12_s07",
+                     "unlockCondition":  null,
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H13",
+                     "name":  "火炮齿轮",
+                     "type":  "WHEEL",
+                     "unitType":  0,
+                     "sort":  5,
+                     "fragmentItemId":  "F13",
+                     "shapeId":  7,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H1301",
+                     "searchRange":  400,
+                     "atk":  66,
+                     "hp":  300,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "RG_H13_s01",
+                     "skill2":  "RG_H13_s02",
+                     "skill3":  "RG_H13_s03",
+                     "skill4":  "RG_H13_s04",
+                     "skill5":  "RG_H13_s05",
+                     "skill6":  "RG_H13_s06",
+                     "skill7":  "RG_H13_s07",
+                     "unlockCondition":  [
+                                             [
+                                                 "PASS_TRUNK_INSTANCE",
+                                                 1001,
+                                                 0
+                                             ]
+                                         ],
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H14",
+                     "name":  "鲨鱼齿轮",
+                     "type":  "WHEEL",
+                     "unitType":  0,
+                     "sort":  9,
+                     "fragmentItemId":  "F14",
+                     "shapeId":  8,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H1401",
+                     "searchRange":  400,
+                     "atk":  71,
+                     "hp":  280,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "RG_H14_s01",
+                     "skill2":  "RG_H14_s02",
+                     "skill3":  "RG_H14_s03",
+                     "skill4":  "RG_H14_s04",
+                     "skill5":  "RG_H14_s05",
+                     "skill6":  "RG_H14_s06",
+                     "skill7":  "RG_H14_s07",
+                     "unlockCondition":  [
+                                             [
+                                                 "PASS_TRUNK_INSTANCE",
+                                                 1007,
+                                                 0
+                                             ]
+                                         ],
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H15",
+                     "name":  "吞宝鲨",
+                     "type":  "WHEEL",
+                     "unitType":  0,
+                     "sort":  0,
+                     "fragmentItemId":  "",
+                     "shapeId":  8,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H1505",
+                     "searchRange":  400,
+                     "atk":  288,
+                     "hp":  1134,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "",
+                     "skill2":  "",
+                     "skill3":  "",
+                     "skill4":  "",
+                     "skill5":  "",
+                     "skill6":  "",
+                     "skill7":  "",
+                     "unlockCondition":  null,
+                     "formationEffectives":  [
+                                                 "RG_H15_fmt01_eff01",
+                                                 "RG_H15_fmt02_eff01"
+                                             ]
+                 },
+                 {
+                     "id":  "H16",
+                     "name":  "仓鼠怪兽",
+                     "type":  "HAMSTER",
+                     "unitType":  0,
+                     "sort":  11,
+                     "fragmentItemId":  "F16",
+                     "shapeId":  9,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H1601",
+                     "searchRange":  400,
+                     "atk":  43,
+                     "hp":  341,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "RG_H16_s01",
+                     "skill2":  "RG_H16_s02",
+                     "skill3":  "RG_H16_s03",
+                     "skill4":  "RG_H16_s04",
+                     "skill5":  "RG_H16_s05",
+                     "skill6":  "RG_H16_s06",
+                     "skill7":  "RG_H16_s07",
+                     "unlockCondition":  [
+                                             [
+                                                 "PASS_TRUNK_INSTANCE",
+                                                 1012,
+                                                 0
+                                             ]
+                                         ],
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H17",
+                     "name":  "镭射齿轮",
+                     "type":  "WHEEL",
+                     "unitType":  0,
+                     "sort":  12,
+                     "fragmentItemId":  "F17",
+                     "shapeId":  4,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H1701",
+                     "searchRange":  400,
+                     "atk":  140,
+                     "hp":  320,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "RG_H17_s01",
+                     "skill2":  "RG_H17_s02",
+                     "skill3":  "RG_H17_s03",
+                     "skill4":  "RG_H17_s04",
+                     "skill5":  "RG_H17_s05",
+                     "skill6":  "RG_H17_s06",
+                     "skill7":  "RG_H17_s07",
+                     "unlockCondition":  [
+                                             [
+                                                 "PASS_TRUNK_INSTANCE",
+                                                 1015,
+                                                 0
+                                             ]
+                                         ],
+                     "formationEffectives":  null
+                 },
+                 {
+                     "id":  "H18",
+                     "name":  "仓鼠哥吱拉",
+                     "type":  "HAMSTER",
+                     "unitType":  0,
+                     "sort":  0,
+                     "fragmentItemId":  "",
+                     "shapeId":  9,
+                     "initStar":  1,
+                     "upStarType":  1,
+                     "headPath":  "image/heroNormalHead/H1805",
+                     "searchRange":  400,
+                     "atk":  218,
+                     "hp":  1726,
+                     "baseSecondAttrs":  null,
+                     "skill1":  "",
+                     "skill2":  "",
+                     "skill3":  "",
+                     "skill4":  "",
+                     "skill5":  "",
+                     "skill6":  "",
+                     "skill7":  "",
+                     "unlockCondition":  null,
+                     "formationEffectives":  null
+                 }
+             ],
+    "sourceLength":  462,
+    "expectedLength":  462,
+    "validLength":  true
+}

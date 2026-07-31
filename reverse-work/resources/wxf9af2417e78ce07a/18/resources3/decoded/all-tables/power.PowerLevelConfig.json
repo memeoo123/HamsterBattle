@@ -1,0 +1,3726 @@
+﻿{
+    "table":  "power.PowerLevelConfig",
+    "columnCount":  4,
+    "rowCount":  180,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "level",
+                       "token":  344,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "costItems",
+                       "token":  1384,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  2,
+                       "name":  "attrs1",
+                       "token":  "attrs1",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  3,
+                       "name":  "attrs2",
+                       "token":  "attrs2",
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "level":  1,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  100
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  2,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  100
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  3,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  100
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  4,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  100
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  5,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  100
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  6,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  100
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  7,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  100
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  8,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  100
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  9,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  100
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  10,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  100
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  11,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  120
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  12,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  120
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  13,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  120
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  14,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  120
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  15,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  120
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  16,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  120
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  17,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  120
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  18,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  120
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  19,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  120
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  20,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  120
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  2000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  2000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  21,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  140
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  2100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  2100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  22,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  140
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  2200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  2200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  23,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  140
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  2300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  2300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  24,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  140
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  2400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  2400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  25,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  140
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  2500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  2500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  26,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  140
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  2600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  2600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  27,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  140
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  2700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  2700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  28,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  140
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  2800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  2800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  29,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  140
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  2900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  2900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  30,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  140
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  3000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  3000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  31,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  160
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  3100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  3100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  32,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  160
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  3200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  3200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  33,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  160
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  3300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  3300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  34,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  160
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  3400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  3400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  35,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  160
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  3500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  3500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  36,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  160
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  3600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  3600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  37,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  160
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  3700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  3700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  38,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  160
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  3800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  3800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  39,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  160
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  3900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  3900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  40,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  160
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  4000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  4000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  41,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  180
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  4100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  4100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  42,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  180
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  4200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  4200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  43,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  180
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  4300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  4300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  44,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  180
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  4400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  4400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  45,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  180
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  4500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  4500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  46,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  180
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  4600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  4600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  47,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  180
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  4700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  4700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  48,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  180
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  4800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  4800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  49,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  180
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  4900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  4900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  50,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  180
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  5000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  5000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  51,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  200
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  5100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  5100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  52,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  200
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  5200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  5200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  53,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  200
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  5300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  5300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  54,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  200
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  5400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  5400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  55,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  200
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  5500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  5500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  56,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  200
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  5600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  5600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  57,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  200
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  5700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  5700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  58,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  200
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  5800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  5800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  59,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  200
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  5900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  5900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  60,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  200
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  6000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  6000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  61,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  220
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  6100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  6100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  62,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  220
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  6200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  6200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  63,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  220
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  6300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  6300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  64,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  220
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  6400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  6400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  65,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  220
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  6500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  6500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  66,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  220
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  6600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  6600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  67,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  220
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  6700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  6700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  68,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  220
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  6800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  6800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  69,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  220
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  6900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  6900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  70,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  220
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  7000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  7000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  71,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  240
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  7100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  7100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  72,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  240
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  7200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  7200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  73,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  240
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  7300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  7300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  74,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  240
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  7400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  7400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  75,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  240
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  7500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  7500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  76,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  240
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  7600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  7600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  77,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  240
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  7700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  7700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  78,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  240
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  7800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  7800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  79,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  240
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  7900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  7900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  80,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  240
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  8000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  8000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  81,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  260
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  8100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  8100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  82,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  260
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  8200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  8200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  83,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  260
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  8300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  8300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  84,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  260
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  8400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  8400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  85,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  260
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  8500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  8500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  86,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  260
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  8600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  8600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  87,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  260
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  8700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  8700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  88,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  260
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  8800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  8800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  89,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  260
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  8900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  8900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  90,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  260
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  9000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  9000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  91,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  280
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  9100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  9100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  92,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  280
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  9200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  9200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  93,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  280
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  9300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  9300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  94,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  280
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  9400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  9400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  95,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  280
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  9500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  9500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  96,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  280
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  9600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  9600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  97,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  280
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  9700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  9700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  98,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  280
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  9800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  9800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  99,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  280
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  9900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  9900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  100,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  280
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  10000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  10000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  101,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  300
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  10100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  10100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  102,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  300
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  10200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  10200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  103,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  300
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  10300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  10300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  104,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  300
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  10400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  10400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  105,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  300
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  10500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  10500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  106,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  300
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  10600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  10600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  107,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  300
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  10700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  10700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  108,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  300
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  10800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  10800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  109,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  300
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  10900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  10900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  110,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  300
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  11000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  11000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  111,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  320
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  11100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  11100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  112,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  320
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  11200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  11200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  113,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  320
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  11300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  11300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  114,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  320
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  11400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  11400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  115,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  320
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  11500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  11500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  116,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  320
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  11600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  11600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  117,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  320
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  11700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  11700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  118,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  320
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  11800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  11800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  119,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  320
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  11900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  11900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  120,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  320
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  12000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  12000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  121,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  340
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  12100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  12100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  122,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  340
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  12200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  12200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  123,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  340
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  12300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  12300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  124,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  340
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  12400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  12400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  125,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  340
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  12500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  12500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  126,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  340
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  12600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  12600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  127,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  340
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  12700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  12700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  128,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  340
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  12800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  12800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  129,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  340
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  12900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  12900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  130,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  340
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  13000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  13000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  131,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  360
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  13100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  13100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  132,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  360
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  13200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  13200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  133,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  360
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  13300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  13300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  134,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  360
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  13400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  13400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  135,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  360
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  13500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  13500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  136,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  360
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  13600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  13600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  137,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  360
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  13700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  13700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  138,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  360
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  13800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  13800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  139,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  360
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  13900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  13900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  140,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  360
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  14000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  14000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  141,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  380
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  14100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  14100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  142,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  380
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  14200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  14200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  143,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  380
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  14300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  14300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  144,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  380
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  14400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  14400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  145,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  380
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  14500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  14500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  146,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  380
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  14600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  14600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  147,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  380
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  14700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  14700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  148,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  380
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  14800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  14800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  149,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  380
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  14900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  14900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  150,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  380
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  15000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  15000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  151,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  400
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  15100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  15100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  152,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  400
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  15200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  15200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  153,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  400
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  15300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  15300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  154,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  400
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  15400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  15400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  155,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  400
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  15500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  15500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  156,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  400
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  15600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  15600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  157,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  400
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  15700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  15700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  158,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  400
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  15800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  15800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  159,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  400
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  15900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  15900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  160,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  400
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  16000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  16000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  161,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  420
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  16100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  16100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  162,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  420
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  16200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  16200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  163,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  420
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  16300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  16300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  164,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  420
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  16400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  16400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  165,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  420
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  16500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  16500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  166,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  420
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  16600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  16600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  167,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  420
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  16700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  16700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  168,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  420
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  16800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  16800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  169,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  420
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  16900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  16900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  170,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  420
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  17000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  17000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 },
+                 {
+                     "level":  171,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  440
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  17100
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  17100
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  172,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  440
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  17200
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  17200
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  173,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  440
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  17300
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  17300
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  174,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  440
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  17400
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  17400
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  175,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  440
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  17500
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  17500
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  176,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  440
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  17600
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  17600
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  177,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  440
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  17700
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  17700
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  178,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  440
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  17800
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  17800
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  179,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  440
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  17900
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  17900
+                                    }
+                                ],
+                     "attrs2":  null
+                 },
+                 {
+                     "level":  180,
+                     "costItems":  [
+                                       {
+                                           "k":  "IR_Exp",
+                                           "v":  440
+                                       }
+                                   ],
+                     "attrs1":  [
+                                    {
+                                        "k":  "ATK_BONUS",
+                                        "v":  18000
+                                    },
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  18000
+                                    }
+                                ],
+                     "attrs2":  [
+                                    {
+                                        "k":  "HP_BONUS",
+                                        "v":  1000
+                                    }
+                                ]
+                 }
+             ],
+    "sourceLength":  730,
+    "expectedLength":  730,
+    "validLength":  true
+}

@@ -1,0 +1,36 @@
+﻿{
+    "table":  "hero.HeroConstantConfig",
+    "columnCount":  2,
+    "rowCount":  3,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "HERO:INIT_IN_BATTLE_HERO_BASE_ID",
+                     "content":  "4010"
+                 },
+                 {
+                     "id":  "HERO:CLIENT_MODEL_SCALE",
+                     "content":  "[-3, 3]"
+                 },
+                 {
+                     "id":  "HERO:UPDATE_RED_ITEMS",
+                     "content":  "5;6"
+                 }
+             ],
+    "sourceLength":  12,
+    "expectedLength":  12,
+    "validLength":  true
+}

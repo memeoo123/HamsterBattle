@@ -1,0 +1,252 @@
+﻿{
+    "table":  "skin.SkinLevelConfig",
+    "columnCount":  5,
+    "rowCount":  30,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "quality",
+                       "token":  30,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "level",
+                       "token":  344,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "cost",
+                       "token":  553,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "chestWeightMod",
+                       "token":  "chestWeightMod",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "quality":  3,
+                     "level":  1,
+                     "cost":  50,
+                     "chestWeightMod":  10000
+                 },
+                 {
+                     "id":  2,
+                     "quality":  3,
+                     "level":  2,
+                     "cost":  70,
+                     "chestWeightMod":  8000
+                 },
+                 {
+                     "id":  3,
+                     "quality":  3,
+                     "level":  3,
+                     "cost":  90,
+                     "chestWeightMod":  6000
+                 },
+                 {
+                     "id":  4,
+                     "quality":  3,
+                     "level":  4,
+                     "cost":  110,
+                     "chestWeightMod":  4000
+                 },
+                 {
+                     "id":  5,
+                     "quality":  3,
+                     "level":  5,
+                     "cost":  130,
+                     "chestWeightMod":  2000
+                 },
+                 {
+                     "id":  6,
+                     "quality":  3,
+                     "level":  6,
+                     "cost":  170,
+                     "chestWeightMod":  1000
+                 },
+                 {
+                     "id":  7,
+                     "quality":  3,
+                     "level":  7,
+                     "cost":  190,
+                     "chestWeightMod":  800
+                 },
+                 {
+                     "id":  8,
+                     "quality":  3,
+                     "level":  8,
+                     "cost":  210,
+                     "chestWeightMod":  600
+                 },
+                 {
+                     "id":  9,
+                     "quality":  3,
+                     "level":  9,
+                     "cost":  230,
+                     "chestWeightMod":  400
+                 },
+                 {
+                     "id":  10,
+                     "quality":  3,
+                     "level":  10,
+                     "cost":  0,
+                     "chestWeightMod":  200
+                 },
+                 {
+                     "id":  11,
+                     "quality":  4,
+                     "level":  1,
+                     "cost":  50,
+                     "chestWeightMod":  10000
+                 },
+                 {
+                     "id":  12,
+                     "quality":  4,
+                     "level":  2,
+                     "cost":  70,
+                     "chestWeightMod":  8000
+                 },
+                 {
+                     "id":  13,
+                     "quality":  4,
+                     "level":  3,
+                     "cost":  90,
+                     "chestWeightMod":  6000
+                 },
+                 {
+                     "id":  14,
+                     "quality":  4,
+                     "level":  4,
+                     "cost":  110,
+                     "chestWeightMod":  4000
+                 },
+                 {
+                     "id":  15,
+                     "quality":  4,
+                     "level":  5,
+                     "cost":  130,
+                     "chestWeightMod":  2000
+                 },
+                 {
+                     "id":  16,
+                     "quality":  4,
+                     "level":  6,
+                     "cost":  170,
+                     "chestWeightMod":  1000
+                 },
+                 {
+                     "id":  17,
+                     "quality":  4,
+                     "level":  7,
+                     "cost":  190,
+                     "chestWeightMod":  800
+                 },
+                 {
+                     "id":  18,
+                     "quality":  4,
+                     "level":  8,
+                     "cost":  210,
+                     "chestWeightMod":  600
+                 },
+                 {
+                     "id":  19,
+                     "quality":  4,
+                     "level":  9,
+                     "cost":  230,
+                     "chestWeightMod":  400
+                 },
+                 {
+                     "id":  20,
+                     "quality":  4,
+                     "level":  10,
+                     "cost":  0,
+                     "chestWeightMod":  200
+                 },
+                 {
+                     "id":  21,
+                     "quality":  5,
+                     "level":  1,
+                     "cost":  50,
+                     "chestWeightMod":  10000
+                 },
+                 {
+                     "id":  22,
+                     "quality":  5,
+                     "level":  2,
+                     "cost":  70,
+                     "chestWeightMod":  8000
+                 },
+                 {
+                     "id":  23,
+                     "quality":  5,
+                     "level":  3,
+                     "cost":  90,
+                     "chestWeightMod":  6000
+                 },
+                 {
+                     "id":  24,
+                     "quality":  5,
+                     "level":  4,
+                     "cost":  110,
+                     "chestWeightMod":  4000
+                 },
+                 {
+                     "id":  25,
+                     "quality":  5,
+                     "level":  5,
+                     "cost":  130,
+                     "chestWeightMod":  2000
+                 },
+                 {
+                     "id":  26,
+                     "quality":  5,
+                     "level":  6,
+                     "cost":  170,
+                     "chestWeightMod":  1000
+                 },
+                 {
+                     "id":  27,
+                     "quality":  5,
+                     "level":  7,
+                     "cost":  190,
+                     "chestWeightMod":  800
+                 },
+                 {
+                     "id":  28,
+                     "quality":  5,
+                     "level":  8,
+                     "cost":  210,
+                     "chestWeightMod":  600
+                 },
+                 {
+                     "id":  29,
+                     "quality":  5,
+                     "level":  9,
+                     "cost":  230,
+                     "chestWeightMod":  400
+                 },
+                 {
+                     "id":  30,
+                     "quality":  5,
+                     "level":  10,
+                     "cost":  0,
+                     "chestWeightMod":  200
+                 }
+             ],
+    "sourceLength":  162,
+    "expectedLength":  162,
+    "validLength":  true
+}

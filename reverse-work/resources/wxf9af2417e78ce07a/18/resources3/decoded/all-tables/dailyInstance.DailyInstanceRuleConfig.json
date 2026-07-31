@@ -1,0 +1,63 @@
+﻿{
+    "table":  "dailyInstance.DailyInstanceRuleConfig",
+    "columnCount":  5,
+    "rowCount":  3,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "quality",
+                       "token":  30,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "title",
+                       "token":  517,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "icon":  "image/effect/buff_0056",
+                     "quality":  4,
+                     "title":  "丰厚奖励",
+                     "desc":  "主线章节决定每日挑战章节难度，章节越高，奖励越丰富"
+                 },
+                 {
+                     "id":  2,
+                     "icon":  "image/effect/buff_0057",
+                     "quality":  4,
+                     "title":  "挑战次数",
+                     "desc":  "每天最多挑战3次，跨天不累积"
+                 },
+                 {
+                     "id":  3,
+                     "icon":  "image/effect/buff_0058",
+                     "quality":  4,
+                     "title":  "花式战斗",
+                     "desc":  "每天有三种不同的随机增益和减益效果，让战局更加扑朔迷离"
+                 }
+             ],
+    "sourceLength":  27,
+    "expectedLength":  27,
+    "validLength":  true
+}

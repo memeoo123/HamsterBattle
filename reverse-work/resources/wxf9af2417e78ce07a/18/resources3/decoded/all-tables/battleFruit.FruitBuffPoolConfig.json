@@ -1,0 +1,253 @@
+﻿{
+    "table":  "battleFruit.FruitBuffPoolConfig",
+    "columnCount":  9,
+    "rowCount":  17,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "heroId",
+                       "token":  583,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "effectId",
+                       "token":  584,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "weight",
+                       "token":  240,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "times",
+                       "token":  241,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  6,
+                       "name":  "quality",
+                       "token":  30,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  7,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  8,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "1001",
+                     "heroId":  "H01",
+                     "effectId":  "BUFF_1001",
+                     "weight":  10,
+                     "times":  1,
+                     "icon":  "image/heroSmallHead/H0104",
+                     "quality":  2,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1001",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1001"
+                 },
+                 {
+                     "id":  "1002",
+                     "heroId":  "H01",
+                     "effectId":  "BUFF_1002",
+                     "weight":  10,
+                     "times":  1,
+                     "icon":  "image/heroSmallHead/H0104",
+                     "quality":  3,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1002",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1002"
+                 },
+                 {
+                     "id":  "1003",
+                     "heroId":  "H01",
+                     "effectId":  "BUFF_1003",
+                     "weight":  10,
+                     "times":  1,
+                     "icon":  "image/heroSmallHead/H0104",
+                     "quality":  4,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1003",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1003"
+                 },
+                 {
+                     "id":  "1004",
+                     "heroId":  "H01",
+                     "effectId":  "BUFF_1004",
+                     "weight":  10,
+                     "times":  2,
+                     "icon":  "image/heroSmallHead/H0104",
+                     "quality":  4,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1004",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1004"
+                 },
+                 {
+                     "id":  "1005",
+                     "heroId":  "H01",
+                     "effectId":  "BUFF_1005",
+                     "weight":  10,
+                     "times":  2,
+                     "icon":  "image/heroSmallHead/H0104",
+                     "quality":  4,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1005",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1005"
+                 },
+                 {
+                     "id":  "1007",
+                     "heroId":  "H03",
+                     "effectId":  "BUFF_1001",
+                     "weight":  10,
+                     "times":  1,
+                     "icon":  "image/heroSmallHead/H0805",
+                     "quality":  2,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1007",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1007"
+                 },
+                 {
+                     "id":  "1008",
+                     "heroId":  "H03",
+                     "effectId":  "BUFF_1002",
+                     "weight":  10,
+                     "times":  1,
+                     "icon":  "image/heroSmallHead/H0805",
+                     "quality":  3,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1008",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1008"
+                 },
+                 {
+                     "id":  "1009",
+                     "heroId":  "H03",
+                     "effectId":  "BUFF_1003",
+                     "weight":  10,
+                     "times":  1,
+                     "icon":  "image/heroSmallHead/H0805",
+                     "quality":  4,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1009",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1009"
+                 },
+                 {
+                     "id":  "1010",
+                     "heroId":  "H03",
+                     "effectId":  "BUFF_1006",
+                     "weight":  10,
+                     "times":  2,
+                     "icon":  "image/heroSmallHead/H0805",
+                     "quality":  3,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1010",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1010"
+                 },
+                 {
+                     "id":  "1011",
+                     "heroId":  "H03",
+                     "effectId":  "BUFF_1007",
+                     "weight":  10,
+                     "times":  2,
+                     "icon":  "image/heroSmallHead/H0805",
+                     "quality":  4,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1011",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1011"
+                 },
+                 {
+                     "id":  "1012",
+                     "heroId":  "H03",
+                     "effectId":  "BUFF_1008",
+                     "weight":  10,
+                     "times":  1,
+                     "icon":  "image/heroSmallHead/H0805",
+                     "quality":  4,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1012",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1012"
+                 },
+                 {
+                     "id":  "1013",
+                     "heroId":  "H03",
+                     "effectId":  "BUFF_1008",
+                     "weight":  10,
+                     "times":  2,
+                     "icon":  "image/heroSmallHead/H0805",
+                     "quality":  4,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1013",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1013"
+                 },
+                 {
+                     "id":  "1014",
+                     "heroId":  "H02",
+                     "effectId":  "BUFF_1009",
+                     "weight":  10,
+                     "times":  1,
+                     "icon":  "image/heroSmallHead/H0705",
+                     "quality":  2,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1014",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1014"
+                 },
+                 {
+                     "id":  "1015",
+                     "heroId":  "H02",
+                     "effectId":  "BUFF_1010",
+                     "weight":  10,
+                     "times":  3,
+                     "icon":  "image/heroSmallHead/H0705",
+                     "quality":  3,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1015",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1015"
+                 },
+                 {
+                     "id":  "1016",
+                     "heroId":  "H02",
+                     "effectId":  "BUFF_1006",
+                     "weight":  10,
+                     "times":  2,
+                     "icon":  "image/heroSmallHead/H0705",
+                     "quality":  4,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1016",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1016"
+                 },
+                 {
+                     "id":  "1017",
+                     "heroId":  "",
+                     "effectId":  "BUFF_1011",
+                     "weight":  10,
+                     "times":  1,
+                     "icon":  "image/heroSmallHead/H0705",
+                     "quality":  5,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1017",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1017"
+                 },
+                 {
+                     "id":  "1018",
+                     "heroId":  "",
+                     "effectId":  "BUFF_1012",
+                     "weight":  10,
+                     "times":  1,
+                     "icon":  "image/heroSmallHead/H0805",
+                     "quality":  5,
+                     "name":  "i18n:FruitBuffPoolConfig.name.1018",
+                     "desc":  "i18n:FruitBuffPoolConfig.desc.1018"
+                 }
+             ],
+    "sourceLength":  173,
+    "expectedLength":  173,
+    "validLength":  true
+}

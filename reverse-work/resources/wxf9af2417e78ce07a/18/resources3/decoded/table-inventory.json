@@ -1,0 +1,1064 @@
+﻿[
+    {
+        "table":  "activity.ActivityConfig",
+        "rows":  6,
+        "columns":  5,
+        "compressedBytes":  212,
+        "uncompressedBytes":  324,
+        "validLength":  true,
+        "schema":  "id:t3, verifyModels:t4, showOpen:t5, showName:t3, icon_path:t3"
+    },
+    {
+        "table":  "activity.ActivityGroupConfig",
+        "rows":  3,
+        "columns":  4,
+        "compressedBytes":  93,
+        "uncompressedBytes":  147,
+        "validLength":  true,
+        "schema":  "id:t1, activityId:t3, goodsList:t4, ui:t3"
+    },
+    {
+        "table":  "activity.ActivityGroupGoodsConfig",
+        "rows":  4,
+        "columns":  3,
+        "compressedBytes":  110,
+        "uncompressedBytes":  292,
+        "validLength":  true,
+        "schema":  "id:t1, rewards:t4, adCost:t1"
+    },
+    {
+        "table":  "activity.feed.ActivityFeedConstantConfig",
+        "rows":  1,
+        "columns":  2,
+        "compressedBytes":  39,
+        "uncompressedBytes":  37,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "activity.inviteGift.InviteGiftConfig",
+        "rows":  1,
+        "columns":  4,
+        "compressedBytes":  71,
+        "uncompressedBytes":  91,
+        "validLength":  true,
+        "schema":  "id:t1, count:t1, chapterId:t1, rewards:t4"
+    },
+    {
+        "table":  "activity.sevenDay.SevenDayConfig",
+        "rows":  7,
+        "columns":  6,
+        "compressedBytes":  185,
+        "uncompressedBytes":  304,
+        "validLength":  true,
+        "schema":  "id:t1, type:t1, rewards:t4, showItem:t4, showName:t3, extraItemIds:t4"
+    },
+    {
+        "table":  "activity.threeDay.ThreeDayConfig",
+        "rows":  3,
+        "columns":  2,
+        "compressedBytes":  75,
+        "uncompressedBytes":  169,
+        "validLength":  true,
+        "schema":  "id:t1, rewards:t4"
+    },
+    {
+        "table":  "advertising.AdvertisingConfig",
+        "rows":  16,
+        "columns":  4,
+        "compressedBytes":  215,
+        "uncompressedBytes":  360,
+        "validLength":  true,
+        "schema":  "id:t1, type:t3, param:t3, advertTimes:t1"
+    },
+    {
+        "table":  "baglike.BagLikeAbilityConfig",
+        "rows":  84,
+        "columns":  8,
+        "compressedBytes":  2155,
+        "uncompressedBytes":  7834,
+        "validLength":  true,
+        "schema":  "id:t3, icon:t3, quality:t1, effectCfgId:t3, range:t4, attr:t4, name:t3, desc:t3"
+    },
+    {
+        "table":  "baglike.BagLikeAbilityEffectConfig",
+        "rows":  78,
+        "columns":  14,
+        "compressedBytes":  3160,
+        "uncompressedBytes":  13290,
+        "validLength":  true,
+        "schema":  "id:t3, group:t3, effectiveId:t3, rangeType:t3, range:t4, verifys:t4, conditions:t4, weight:t1, times:t1, icon:t3, quality:t1, name:t3, desc:t3, noRestore:t1"
+    },
+    {
+        "table":  "baglike.BagLikeAbilityEffectiveConfig",
+        "rows":  93,
+        "columns":  4,
+        "compressedBytes":  997,
+        "uncompressedBytes":  2935,
+        "validLength":  true,
+        "schema":  "id:t3, effectType:t3, param:t4, attr:t4"
+    },
+    {
+        "table":  "baglike.BagLikeCoinWeightConfig",
+        "rows":  100,
+        "columns":  3,
+        "compressedBytes":  248,
+        "uncompressedBytes":  1339,
+        "validLength":  true,
+        "schema":  "id:t1, rewardWeight:t4, itemWeight:t4"
+    },
+    {
+        "table":  "baglike.BagLikeConstantConfig",
+        "rows":  31,
+        "columns":  2,
+        "compressedBytes":  446,
+        "uncompressedBytes":  1306,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "baglike.BagLikeItemConfig",
+        "rows":  68,
+        "columns":  15,
+        "compressedBytes":  1419,
+        "uncompressedBytes":  6399,
+        "validLength":  true,
+        "schema":  "id:t3, shapeId:t1, level:t1, material1:t3, material2:t3, nextId:t3, type:t3, skill0:t4, params:t4, headPath:t3, modelId:t3, verifys:t4, name:t3, desc:t3, showEffects:t4"
+    },
+    {
+        "table":  "baglike.BagLikeLevelConfig",
+        "rows":  100,
+        "columns":  2,
+        "compressedBytes":  161,
+        "uncompressedBytes":  705,
+        "validLength":  true,
+        "schema":  "id:t1, exp:t1"
+    },
+    {
+        "table":  "baglike.BagLikeShapeConfig",
+        "rows":  11,
+        "columns":  9,
+        "compressedBytes":  279,
+        "uncompressedBytes":  708,
+        "validLength":  true,
+        "schema":  "id:t1, panel:t3, icon:t3, adIcon:t3, mergeLightPath:t3, modelId:t3, panelRotate:t1, rolePos:t4, shapeArr:t4"
+    },
+    {
+        "table":  "battle.AttributeConfig",
+        "rows":  23,
+        "columns":  10,
+        "compressedBytes":  767,
+        "uncompressedBytes":  1734,
+        "validLength":  true,
+        "schema":  "id:t3, attrName:t3, attrDesc:t3, tid:t1, type:t1, max:t1, min:t1, name:t3, icon:t3, isPermyriad:t1"
+    },
+    {
+        "table":  "battle.BattleConfig",
+        "rows":  2,
+        "columns":  15,
+        "compressedBytes":  198,
+        "uncompressedBytes":  319,
+        "validLength":  true,
+        "schema":  "id:t1, name:t3, fightType:t3, icon:t3, fightMaxSecond:t1, quitFight:t5, monsterResourceIds:t4, mapId:t1, atkMod:t1, defMod:t1, hpMod:t1, secondAttrAddition:t4, power:t1, cpDamageMod:t3, pveMinWarnFight:t1"
+    },
+    {
+        "table":  "battle.BattleConstantConfig",
+        "rows":  36,
+        "columns":  2,
+        "compressedBytes":  726,
+        "uncompressedBytes":  1590,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "battle.BattleSettingClientConfig",
+        "rows":  0,
+        "columns":  0,
+        "compressedBytes":  4,
+        "uncompressedBytes":  2,
+        "validLength":  true,
+        "schema":  ""
+    },
+    {
+        "table":  "battle.BattleSettingConfig",
+        "rows":  3,
+        "columns":  7,
+        "compressedBytes":  124,
+        "uncompressedBytes":  172,
+        "validLength":  true,
+        "schema":  "fightType:t3, initGridArea:t4, initSpGridArea:t4, totalTime:t1, lvMode:t1, showRound:t5, hasDropGold:t5"
+    },
+    {
+        "table":  "battle.BehaviorConfig",
+        "rows":  126,
+        "columns":  17,
+        "compressedBytes":  1478,
+        "uncompressedBytes":  10112,
+        "validLength":  true,
+        "schema":  "id:t3, rangeType:t1, rangeParam:t4, byAtkDistance:t5, notSelf:t1, num:t1, targetFaction:t1, targetType:t1, targetParam:t4, shake:t4, animPosType:t1, modelId:t4, param:t4, behavior:t4, behaviorDelay:t4, effectType:t3, effectParam:t4"
+    },
+    {
+        "table":  "battle.BuffConfig",
+        "rows":  34,
+        "columns":  24,
+        "compressedBytes":  1014,
+        "uncompressedBytes":  3415,
+        "validLength":  true,
+        "schema":  "id:t3, name:t3, desc:t3, group:t3, effectType:t3, effectParam:t4, effectParam2:t4, inheritTime:t1, endParam:t4, layer:t1, countLimit:t1, interval:t1, conditionType:t1, stateType:t1, isCtrlBuff:t1, abnormalType:t1, notExitBattleOutBuff:t1, range:t1, num:t1, targetFaction:t1, notSelf:t1, targetType:t1, targetParam:t4, missileNum:t1"
+    },
+    {
+        "table":  "battle.BuffGroupConfig",
+        "rows":  35,
+        "columns":  14,
+        "compressedBytes":  429,
+        "uncompressedBytes":  2610,
+        "validLength":  true,
+        "schema":  "id:t3, flag:t1, flagParm:t4, isBreak:t1, animPosType:t1, modelId:t4, upLow1:t4, animPosType2:t1, modelId2:t4, upLow2:t4, param:t4, icon:t3, timeLimit:t1, buff:t4"
+    },
+    {
+        "table":  "battle.ClientDropConfig",
+        "rows":  0,
+        "columns":  0,
+        "compressedBytes":  4,
+        "uncompressedBytes":  2,
+        "validLength":  true,
+        "schema":  ""
+    },
+    {
+        "table":  "battle.CollectionSkillConfig",
+        "rows":  0,
+        "columns":  0,
+        "compressedBytes":  4,
+        "uncompressedBytes":  2,
+        "validLength":  true,
+        "schema":  ""
+    },
+    {
+        "table":  "battle.FormationSkillConfig",
+        "rows":  0,
+        "columns":  0,
+        "compressedBytes":  4,
+        "uncompressedBytes":  2,
+        "validLength":  true,
+        "schema":  ""
+    },
+    {
+        "table":  "battle.GunConfig",
+        "rows":  0,
+        "columns":  0,
+        "compressedBytes":  4,
+        "uncompressedBytes":  2,
+        "validLength":  true,
+        "schema":  ""
+    },
+    {
+        "table":  "battle.GunGroupConfig",
+        "rows":  0,
+        "columns":  0,
+        "compressedBytes":  4,
+        "uncompressedBytes":  2,
+        "validLength":  true,
+        "schema":  ""
+    },
+    {
+        "table":  "battle.HaloConfig",
+        "rows":  0,
+        "columns":  0,
+        "compressedBytes":  4,
+        "uncompressedBytes":  2,
+        "validLength":  true,
+        "schema":  ""
+    },
+    {
+        "table":  "battle.MissileConfig",
+        "rows":  36,
+        "columns":  17,
+        "compressedBytes":  863,
+        "uncompressedBytes":  3687,
+        "validLength":  true,
+        "schema":  "id:t3, speed:t1, timeLimit:t1, distance:t1, type:t1, parameter:t4, layer:t1, animPosType:t1, effectModelId:t4, modelId:t3, notLoop:t1, behaviors:t4, delays:t4, hitTips:t4, pos:t4, shootSound:t3, hitSound:t3"
+    },
+    {
+        "table":  "battle.MonsterResourceConfig",
+        "rows":  0,
+        "columns":  0,
+        "compressedBytes":  4,
+        "uncompressedBytes":  2,
+        "validLength":  true,
+        "schema":  ""
+    },
+    {
+        "table":  "battle.PassivitySkillConfig",
+        "rows":  27,
+        "columns":  20,
+        "compressedBytes":  681,
+        "uncompressedBytes":  3048,
+        "validLength":  true,
+        "schema":  "id:t3, name:t3, desc:t3, group:t3, belongType:t3, subType:t1, exitClearCd:t1, notHatred:t1, precd:t1, interval:t1, cd:t1, condition:t1, conditionValue:t4, conditionValue2:t4, conditionNow:t1, statusGroup:t4, behavior_0:t4, behavior_1:t4, skills:t4, skillParm:t4"
+    },
+    {
+        "table":  "battle.SkillChargedShowConfig",
+        "rows":  0,
+        "columns":  0,
+        "compressedBytes":  4,
+        "uncompressedBytes":  2,
+        "validLength":  true,
+        "schema":  ""
+    },
+    {
+        "table":  "battle.SkillConfig",
+        "rows":  90,
+        "columns":  51,
+        "compressedBytes":  2651,
+        "uncompressedBytes":  20000,
+        "validLength":  true,
+        "schema":  "id:t3, group:t3, belongType:t3, level:t1, name:t3, careerCount:t1, type:t1, subType:t1, subTypeParm:t4, precd:t1, cd:t1, showCd:t4, castTime:t1, skills:t4, castingRange:t1, targetFaction:t1, clearTarget:t1, targetType:t1, targetParam:t4, notHatred:t1, isByAtkSpeed:t1, atkSpeed:t1, behavior_0:t4, behavior_1:t4, behavior_2:t4, behavior_3:t4, behavior_4:t4, behavior_5:t4, behavior_6:t4, behavior_7:t4, behavior_8:t4, behavior_9:t4, icon:t3, desc:t3, rangeDescType:t3, anim:t3, animList:t4, anim2:t3, rotateBoneName:t4, atkPoint:t4, activeSkill:t4, activeSkillNoRefreshCD:t1, horseSkill:t3, talk:t4, talkProbability:t1, skillAttrs:t4, shake:t4, cpWorth:t1, cpMod:t1, skillSound:t3, soundDelay:t2"
+    },
+    {
+        "table":  "battle.SkillEffectConfig",
+        "rows":  14,
+        "columns":  12,
+        "compressedBytes":  179,
+        "uncompressedBytes":  699,
+        "validLength":  true,
+        "schema":  "id:t3, anim:t3, animLoopTimes:t1, animHorse:t3, sceneEffect:t1, layer:t1, animPosType:t1, modelId:t4, modelUpId:t4, bgModelId:t4, bgModelUpId:t4, param:t4"
+    },
+    {
+        "table":  "battle.SummonConfig",
+        "rows":  0,
+        "columns":  0,
+        "compressedBytes":  4,
+        "uncompressedBytes":  2,
+        "validLength":  true,
+        "schema":  ""
+    },
+    {
+        "table":  "battleFruit.FruitBuffEffectConfig",
+        "rows":  12,
+        "columns":  3,
+        "compressedBytes":  170,
+        "uncompressedBytes":  401,
+        "validLength":  true,
+        "schema":  "id:t3, type:t3, effect:t4"
+    },
+    {
+        "table":  "battleFruit.FruitBuffPoolConfig",
+        "rows":  17,
+        "columns":  9,
+        "compressedBytes":  286,
+        "uncompressedBytes":  1701,
+        "validLength":  true,
+        "schema":  "id:t3, heroId:t3, effectId:t3, weight:t1, times:t1, icon:t3, quality:t1, name:t3, desc:t3"
+    },
+    {
+        "table":  "battleFruit.FruitBulletConifg",
+        "rows":  2,
+        "columns":  10,
+        "compressedBytes":  146,
+        "uncompressedBytes":  239,
+        "validLength":  true,
+        "schema":  "id:t3, speed:t1, asset:t3, size:t4, passTimes:t1, backTimes:t1, splitCnt:t1, splitTimes:t1, offsetX:t1, angleArea:t4"
+    },
+    {
+        "table":  "battleFruit.FruitConstantConfig",
+        "rows":  4,
+        "columns":  2,
+        "compressedBytes":  107,
+        "uncompressedBytes":  135,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "battleFruit.FruitHeroConfig",
+        "rows":  3,
+        "columns":  5,
+        "compressedBytes":  96,
+        "uncompressedBytes":  173,
+        "validLength":  true,
+        "schema":  "id:t3, name:t3, headPath:t3, modelId:t3, skillId:t3"
+    },
+    {
+        "table":  "battleFruit.FruitMonsterBodyConfig",
+        "rows":  20,
+        "columns":  8,
+        "compressedBytes":  229,
+        "uncompressedBytes":  733,
+        "validLength":  true,
+        "schema":  "id:t3, hp:t2, size:t4, bodyNum:t1, buffCnt:t1, staticBuffs:t4, boxPath:t3, bodyPath:t3"
+    },
+    {
+        "table":  "battleFruit.FruitMonsterConfig",
+        "rows":  1,
+        "columns":  9,
+        "compressedBytes":  164,
+        "uncompressedBytes":  253,
+        "validLength":  true,
+        "schema":  "id:t3, speed:t1, backSpeed:t1, headPath:t3, bodys:t4, offset:t1, hitAnimInterval:t1, deadResidualTime:t1, path:t3"
+    },
+    {
+        "table":  "battleFruit.FruitSkillConfig",
+        "rows":  3,
+        "columns":  11,
+        "compressedBytes":  157,
+        "uncompressedBytes":  242,
+        "validLength":  true,
+        "schema":  "id:t3, type:t3, cdTime:t1, effectId:t3, bulletCnt:t1, triggerPos:t4, range:t4, duration:t1, triggerTimes:t1, triggerDelay:t1, damage:t1"
+    },
+    {
+        "table":  "common.ConfigValue",
+        "rows":  13,
+        "columns":  2,
+        "compressedBytes":  294,
+        "uncompressedBytes":  571,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "common.LoadingTipsConfig",
+        "rows":  3,
+        "columns":  2,
+        "compressedBytes":  65,
+        "uncompressedBytes":  126,
+        "validLength":  true,
+        "schema":  "id:t1, content:t3"
+    },
+    {
+        "table":  "condition.ConditionConfig",
+        "rows":  3,
+        "columns":  5,
+        "compressedBytes":  170,
+        "uncompressedBytes":  550,
+        "validLength":  true,
+        "schema":  "id:t3, title:t3, unlockTxt:t3, message:t3, jumpId:t1"
+    },
+    {
+        "table":  "dailyInstance.DailyInstanceConfig",
+        "rows":  10,
+        "columns":  6,
+        "compressedBytes":  101,
+        "uncompressedBytes":  289,
+        "validLength":  true,
+        "schema":  "id:t1, roundIds:t4, name:t3, logoSpine:t3, fightscene:t3, initRewards:t4"
+    },
+    {
+        "table":  "dailyInstance.DailyInstanceConstantConfig",
+        "rows":  1,
+        "columns":  2,
+        "compressedBytes":  54,
+        "uncompressedBytes":  57,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "dailyInstance.DailyInstanceEffectConfig",
+        "rows":  12,
+        "columns":  8,
+        "compressedBytes":  629,
+        "uncompressedBytes":  1431,
+        "validLength":  true,
+        "schema":  "id:t3, effectiveId:t3, rangeType:t3, range:t4, icon:t3, type:t1, name:t3, desc:t3"
+    },
+    {
+        "table":  "dailyInstance.DailyInstanceRandomConfig",
+        "rows":  10,
+        "columns":  3,
+        "compressedBytes":  174,
+        "uncompressedBytes":  736,
+        "validLength":  true,
+        "schema":  "id:t1, dailyInstanceId:t3, buffIds:t4"
+    },
+    {
+        "table":  "dailyInstance.DailyInstanceRewardConfig",
+        "rows":  200,
+        "columns":  7,
+        "compressedBytes":  4467,
+        "uncompressedBytes":  49074,
+        "validLength":  true,
+        "schema":  "id:t1, cost:t4, rewardRounds:t4, rewards1:t4, rewards2:t4, rewards3:t4, rewards4:t4"
+    },
+    {
+        "table":  "dailyInstance.DailyInstanceRuleConfig",
+        "rows":  3,
+        "columns":  5,
+        "compressedBytes":  53,
+        "uncompressedBytes":  78,
+        "validLength":  true,
+        "schema":  "id:t1, icon:t3, quality:t1, title:t3, desc:t3"
+    },
+    {
+        "table":  "dailytask.DailyActiveBoxConfig",
+        "rows":  5,
+        "columns":  3,
+        "compressedBytes":  125,
+        "uncompressedBytes":  208,
+        "validLength":  true,
+        "schema":  "id:t1, rewards:t4, dailyActive:t1"
+    },
+    {
+        "table":  "dailytask.DailyTaskConfig",
+        "rows":  7,
+        "columns":  8,
+        "compressedBytes":  250,
+        "uncompressedBytes":  568,
+        "validLength":  true,
+        "schema":  "id:t1, condition:t4, eventType:t3, content:t3, totalProgress:t1, activeScore:t1, desc:t3, jumpId:t1"
+    },
+    {
+        "table":  "dailytask.WeeklyActiveBoxConfig",
+        "rows":  5,
+        "columns":  3,
+        "compressedBytes":  92,
+        "uncompressedBytes":  121,
+        "validLength":  true,
+        "schema":  "id:t1, rewardText:t3, needWeekScore:t1"
+    },
+    {
+        "table":  "formation.FormationConstantConfig",
+        "rows":  2,
+        "columns":  2,
+        "compressedBytes":  82,
+        "uncompressedBytes":  107,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "formation.FormationPositionConfig",
+        "rows":  6,
+        "columns":  2,
+        "compressedBytes":  34,
+        "uncompressedBytes":  51,
+        "validLength":  true,
+        "schema":  "id:t1, openVerify:t3"
+    },
+    {
+        "table":  "gameplay.GameplayConfig",
+        "rows":  3,
+        "columns":  6,
+        "compressedBytes":  192,
+        "uncompressedBytes":  304,
+        "validLength":  true,
+        "schema":  "id:t1, moduleId:t3, bg:t3, showRewards:t4, name:t3, desc:t3"
+    },
+    {
+        "table":  "guide.GuideConfig",
+        "rows":  26,
+        "columns":  19,
+        "compressedBytes":  776,
+        "uncompressedBytes":  2912,
+        "validLength":  true,
+        "schema":  "id:t1, nextId:t1, group:t1, partId:t1, savePoint:t1, passEnd:t1, type:t3, typeParam:t4, plot:t4, isForce:t5, triggerCondition:t4, finishCondition:t4, maskAlpha:t1, UI:t3, item:t3, focusAni:t4, script:t3, scriptParam:t4, canJump:t1"
+    },
+    {
+        "table":  "guide.GuideConstantConfig",
+        "rows":  3,
+        "columns":  2,
+        "compressedBytes":  101,
+        "uncompressedBytes":  145,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "guide.GuideDialogConfig",
+        "rows":  20,
+        "columns":  12,
+        "compressedBytes":  823,
+        "uncompressedBytes":  1815,
+        "validLength":  true,
+        "schema":  "id:t1, group:t1, xPercent:t1, yPercent:t1, yToBottom:t1, npcName:t3, time:t1, npcModel:t1, npcHead:t3, npcPos:t4, sound:t3, text:t3"
+    },
+    {
+        "table":  "guide.GuideGroupConfig",
+        "rows":  3,
+        "columns":  4,
+        "compressedBytes":  51,
+        "uncompressedBytes":  83,
+        "validLength":  true,
+        "schema":  "groupId:t1, openVerify:t4, closeVerify:t4, endGuideId:t1"
+    },
+    {
+        "table":  "guide.GuideTeachConfig",
+        "rows":  6,
+        "columns":  10,
+        "compressedBytes":  201,
+        "uncompressedBytes":  472,
+        "validLength":  true,
+        "schema":  "id:t1, group:t1, icon:t3, startUI:t3, startItem:t3, endUI:t3, endItem:t3, endIconStyle:t1, time:t1, dialogId:t1"
+    },
+    {
+        "table":  "guide.TrunkTaskGuideConfig",
+        "rows":  3,
+        "columns":  22,
+        "compressedBytes":  237,
+        "uncompressedBytes":  507,
+        "validLength":  true,
+        "schema":  "id:t1, nextId:t1, group:t1, partId:t1, savePoint:t1, passEnd:t1, type:t3, typeParam:t4, plot:t4, isForce:t5, battle:t3, time:t3, triggerCondition:t4, finishCondition:t4, maskAlpha:t1, UI:t3, item:t3, fingerPos:t4, maskInverted:t4, script:t3, scriptParam:t4, canJump:t1"
+    },
+    {
+        "table":  "guide.TrunkTaskGuideGroupConfig",
+        "rows":  1,
+        "columns":  4,
+        "compressedBytes":  40,
+        "uncompressedBytes":  47,
+        "validLength":  true,
+        "schema":  "groupId:t1, openVerify:t4, closeVerify:t4, endGuideId:t1"
+    },
+    {
+        "table":  "hero.HeroConfig",
+        "rows":  18,
+        "columns":  23,
+        "compressedBytes":  727,
+        "uncompressedBytes":  2066,
+        "validLength":  true,
+        "schema":  "id:t3, name:t3, type:t3, unitType:t1, sort:t1, fragmentItemId:t3, shapeId:t1, initStar:t1, upStarType:t1, headPath:t3, searchRange:t1, atk:t1, hp:t1, baseSecondAttrs:t4, skill1:t3, skill2:t3, skill3:t3, skill4:t3, skill5:t3, skill6:t3, skill7:t3, unlockCondition:t4, formationEffectives:t4"
+    },
+    {
+        "table":  "hero.HeroConstantConfig",
+        "rows":  3,
+        "columns":  2,
+        "compressedBytes":  102,
+        "uncompressedBytes":  123,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "hero.HeroStarConfig",
+        "rows":  40,
+        "columns":  9,
+        "compressedBytes":  322,
+        "uncompressedBytes":  1320,
+        "validLength":  true,
+        "schema":  "id:t1, type:t1, star:t1, quality:t1, cost:t1, costGold:t1, unlockSkillPos:t1, attrModifier:t1, normalRecruitWeightMod:t1"
+    },
+    {
+        "table":  "i18n.I18nConfig",
+        "rows":  581,
+        "columns":  3,
+        "compressedBytes":  6437,
+        "uncompressedBytes":  30689,
+        "validLength":  true,
+        "schema":  "id:t3, Chinese:t3, English:t3"
+    },
+    {
+        "table":  "i18n.I18nErrorCodeConfig",
+        "rows":  843,
+        "columns":  3,
+        "compressedBytes":  9709,
+        "uncompressedBytes":  44158,
+        "validLength":  true,
+        "schema":  "id:t3, Chinese:t3, English:t3"
+    },
+    {
+        "table":  "i18n.I18nTipsConfig",
+        "rows":  270,
+        "columns":  3,
+        "compressedBytes":  5011,
+        "uncompressedBytes":  13755,
+        "validLength":  true,
+        "schema":  "id:t3, Chinese:t3, English:t3"
+    },
+    {
+        "table":  "item.ItemConfig",
+        "rows":  50,
+        "columns":  24,
+        "compressedBytes":  1360,
+        "uncompressedBytes":  7624,
+        "validLength":  true,
+        "schema":  "id:t3, name:t3, bagId:t1, showBackpackFlag:t5, type:t3, secondsType:t3, itemType:t3, quality:t1, sortId:t1, holdingCountLimit:t1, stackLimit:t1, isRed:t1, iconPath:t3, smallIconPath:t3, bigIconPath:t3, desc:t3, showLvFlag:t5, buyJumpId:t1, way:t4, comeFromText:t3, rewardId:t1, adWords:t3, priceDiamond:t1, priceGold:t1"
+    },
+    {
+        "table":  "item.ItemConstantConfig",
+        "rows":  2,
+        "columns":  2,
+        "compressedBytes":  77,
+        "uncompressedBytes":  82,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "item.ItemGetAnimConfig",
+        "rows":  5,
+        "columns":  11,
+        "compressedBytes":  203,
+        "uncompressedBytes":  533,
+        "validLength":  true,
+        "schema":  "id:t1, smallIconPath:t3, radius:t1, random:t1, maxCount:t1, uiKey:t3, compPaths:t4, fixPos:t4, callBegin:t3, callback:t3, endPos:t4"
+    },
+    {
+        "table":  "jump.JumpConfig",
+        "rows":  5,
+        "columns":  5,
+        "compressedBytes":  146,
+        "uncompressedBytes":  229,
+        "validLength":  true,
+        "schema":  "id:t1, type:t3, keyName:t3, needModuleName:t3, args:t4"
+    },
+    {
+        "table":  "mainpage.MainPageHeaderItemConfig",
+        "rows":  4,
+        "columns":  4,
+        "compressedBytes":  85,
+        "uncompressedBytes":  104,
+        "validLength":  true,
+        "schema":  "id:t1, itemId:t3, canBuyFlag:t5, progressColor:t3"
+    },
+    {
+        "table":  "mainpage.MainPageKvConfig",
+        "rows":  5,
+        "columns":  2,
+        "compressedBytes":  146,
+        "uncompressedBytes":  239,
+        "validLength":  true,
+        "schema":  "id:t3, value:t3"
+    },
+    {
+        "table":  "mainpage.MainPageTabItemConfig",
+        "rows":  14,
+        "columns":  17,
+        "compressedBytes":  482,
+        "uncompressedBytes":  1238,
+        "validLength":  true,
+        "schema":  "id:t1, sideType:t3, sort:t1, systemId:t3, nameForClient:t3, activityIds:t4, showName:t3, conditionText:t4, modelId:t1, showEffect:t5, iconEffect:t4, isShowInFold:t5, showEndTime:t5, iconNormalAssetPath:t3, iconModelId:t3, viewName:t3, viewArge:t3"
+    },
+    {
+        "table":  "mainpage.MainPageTabListConfig",
+        "rows":  5,
+        "columns":  4,
+        "compressedBytes":  82,
+        "uncompressedBytes":  109,
+        "validLength":  true,
+        "schema":  "type:t3, layout:t1, maxRow:t1, showFoldCnt:t1"
+    },
+    {
+        "table":  "model.ModelConfig",
+        "rows":  162,
+        "columns":  12,
+        "compressedBytes":  1940,
+        "uncompressedBytes":  12003,
+        "validLength":  true,
+        "schema":  "id:t3, modelPath:t3, framePath:t3, spriteFrame:t1, frameAnchor:t4, pos:t4, scale:t4, action:t3, noPremultipliedAlpha:t5, cache:t1, width:t1, height:t1"
+    },
+    {
+        "table":  "monster.MonsterAttributeConfig",
+        "rows":  29,
+        "columns":  20,
+        "compressedBytes":  856,
+        "uncompressedBytes":  3281,
+        "validLength":  true,
+        "schema":  "id:t3, name:t3, modelId:t3, showModelId:t3, belongType:t1, belongId:t1, monsterType:t3, headPath:t3, halfBodyPath:t3, atk:t1, hp:t1, exp:t1, searchRange:t1, size:t1, hp_show:t3, skillIds:t4, passivitySkils:t4, gold:t1, desc:t3, baseSecondAttrs:t4"
+    },
+    {
+        "table":  "onlineReward.OnlineRewardConfig",
+        "rows":  6,
+        "columns":  3,
+        "compressedBytes":  79,
+        "uncompressedBytes":  133,
+        "validLength":  true,
+        "schema":  "id:t1, time:t1, rewards:t4"
+    },
+    {
+        "table":  "otherGames.OtherGamesConfig",
+        "rows":  1,
+        "columns":  4,
+        "compressedBytes":  64,
+        "uncompressedBytes":  67,
+        "validLength":  true,
+        "schema":  "id:t1, moduleId:t3, icon:t3, name:t3"
+    },
+    {
+        "table":  "power.PowerAbilityConfig",
+        "rows":  36,
+        "columns":  8,
+        "compressedBytes":  810,
+        "uncompressedBytes":  2940,
+        "validLength":  true,
+        "schema":  "id:t3, powerId:t3, star:t1, desc:t3, skillId:t3, effectType:t3, param:t4, attr:t4"
+    },
+    {
+        "table":  "power.PowerConfig",
+        "rows":  4,
+        "columns":  9,
+        "compressedBytes":  344,
+        "uncompressedBytes":  1234,
+        "validLength":  true,
+        "schema":  "id:t3, name:t3, modelId:t3, bigModelId:t3, quality:t1, fragmentItemId:t3, skills:t4, activeskillId:t3, desc:t3"
+    },
+    {
+        "table":  "power.PowerConstantConfig",
+        "rows":  7,
+        "columns":  2,
+        "compressedBytes":  162,
+        "uncompressedBytes":  285,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "power.PowerLevelConfig",
+        "rows":  180,
+        "columns":  4,
+        "compressedBytes":  1375,
+        "uncompressedBytes":  14344,
+        "validLength":  true,
+        "schema":  "level:t1, costItems:t4, attrs1:t4, attrs2:t4"
+    },
+    {
+        "table":  "power.PowerSkillConfig",
+        "rows":  12,
+        "columns":  11,
+        "compressedBytes":  214,
+        "uncompressedBytes":  745,
+        "validLength":  true,
+        "schema":  "id:t3, group:t3, anim:t3, triggerType:t3, effectType:t3, param:t4, preEnergy:t1, maxEnergy:t1, time:t1, icon:t3, buff:t3"
+    },
+    {
+        "table":  "power.PowerStarConfig",
+        "rows":  9,
+        "columns":  5,
+        "compressedBytes":  108,
+        "uncompressedBytes":  184,
+        "validLength":  true,
+        "schema":  "id:t1, star:t1, cost:t1, attrs:t4, maxLevel:t1"
+    },
+    {
+        "table":  "quality.QualityConfig",
+        "rows":  6,
+        "columns":  15,
+        "compressedBytes":  393,
+        "uncompressedBytes":  1579,
+        "validLength":  true,
+        "schema":  "id:t1, desc:t3, fontColorType:t3, fontColor:t3, fontColor2:t3, fontColor3:t3, itemBgPath:t3, heroBgPath:t3, heroLvBgPath:t3, heroShapeBgPath:t3, skillBgPath:t3, buffBgPath:t3, bloodBgPath:t3, monsterBgPath:t3, fruitBuffBgPath:t3"
+    },
+    {
+        "table":  "rank.RankingConfig",
+        "rows":  25,
+        "columns":  17,
+        "compressedBytes":  901,
+        "uncompressedBytes":  6314,
+        "validLength":  true,
+        "schema":  "id:t3, groupType:t3, tabType:t3, name:t3, tabName:t3, rankValuePrefixText:t3, rankSuffixText:t3, rankValueSmallLogo:t3, tapId:t1, isShowPrivate:t1, limit:t1, verifyStr:t4, systemType:t1, priority:t1, titleIcon:t3, icon1:t3, icon:t3"
+    },
+    {
+        "table":  "rank.RankingSubTypeTabConfig",
+        "rows":  4,
+        "columns":  6,
+        "compressedBytes":  113,
+        "uncompressedBytes":  274,
+        "validLength":  true,
+        "schema":  "id:t1, rankType:t3, subType:t2, name:t3, bg:t3, fg:t3"
+    },
+    {
+        "table":  "recruit.RecruitConfig",
+        "rows":  2,
+        "columns":  8,
+        "compressedBytes":  176,
+        "uncompressedBytes":  250,
+        "validLength":  true,
+        "schema":  "id:t1, type:t3, openCondition:t4, poolIdForNormal:t1, poolIdForXinYuan:t1, costItems:t4, costItems2:t4, costShopId:t1"
+    },
+    {
+        "table":  "recruit.RecruitConstantConfig",
+        "rows":  7,
+        "columns":  2,
+        "compressedBytes":  220,
+        "uncompressedBytes":  341,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "recruit.RecruitMainViewAnimConfig",
+        "rows":  6,
+        "columns":  3,
+        "compressedBytes":  110,
+        "uncompressedBytes":  303,
+        "validLength":  true,
+        "schema":  "id:t1, spinePath:t3, animName:t3"
+    },
+    {
+        "table":  "reward.RewardDropConfig",
+        "rows":  48,
+        "columns":  4,
+        "compressedBytes":  817,
+        "uncompressedBytes":  5616,
+        "validLength":  true,
+        "schema":  "id:t1, type:t3, rewardType:t3, rewards:t4"
+    },
+    {
+        "table":  "rule.RuleConfig",
+        "rows":  2,
+        "columns":  3,
+        "compressedBytes":  42,
+        "uncompressedBytes":  47,
+        "validLength":  true,
+        "schema":  "id:t1, title:t3, viewH:t1"
+    },
+    {
+        "table":  "rule.RuleItemConfig",
+        "rows":  7,
+        "columns":  6,
+        "compressedBytes":  325,
+        "uncompressedBytes":  424,
+        "validLength":  true,
+        "schema":  "id:t1, groupId:t1, icon:t3, quality:t1, title:t3, desc:t3"
+    },
+    {
+        "table":  "setting.SettingCodeConfig",
+        "rows":  7,
+        "columns":  3,
+        "compressedBytes":  132,
+        "uncompressedBytes":  438,
+        "validLength":  true,
+        "schema":  "id:t3, type:t1, rewards:t4"
+    },
+    {
+        "table":  "shop.ShopBoxConfig",
+        "rows":  20,
+        "columns":  4,
+        "compressedBytes":  248,
+        "uncompressedBytes":  1267,
+        "validLength":  true,
+        "schema":  "id:t1, exp:t1, rewardId:t1, showRewards:t4"
+    },
+    {
+        "table":  "shop.ShopConfig",
+        "rows":  4,
+        "columns":  3,
+        "compressedBytes":  95,
+        "uncompressedBytes":  196,
+        "validLength":  true,
+        "schema":  "id:t1, refreshType:t3, shopName:t3"
+    },
+    {
+        "table":  "shop.ShopConstantConfig",
+        "rows":  4,
+        "columns":  2,
+        "compressedBytes":  89,
+        "uncompressedBytes":  137,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "shop.ShopGoodsConfig",
+        "rows":  13,
+        "columns":  9,
+        "compressedBytes":  327,
+        "uncompressedBytes":  782,
+        "validLength":  true,
+        "schema":  "id:t1, shopId:t1, rewardId:t1, cost:t4, discount:t4, canManualRefresh:t5, name:t3, icon:t3, sort:t1"
+    },
+    {
+        "table":  "shop.ShopGoodsLimitBuyConfig",
+        "rows":  6,
+        "columns":  2,
+        "compressedBytes":  133,
+        "uncompressedBytes":  365,
+        "validLength":  true,
+        "schema":  "id:t3, refreshStr:t3"
+    },
+    {
+        "table":  "shop.ShopManualRefreshConfig",
+        "rows":  20,
+        "columns":  4,
+        "compressedBytes":  87,
+        "uncompressedBytes":  322,
+        "validLength":  true,
+        "schema":  "id:t1, shopId:t1, refreshTimes:t1, cost:t4"
+    },
+    {
+        "table":  "skin.SkinConfig",
+        "rows":  23,
+        "columns":  13,
+        "compressedBytes":  711,
+        "uncompressedBytes":  3051,
+        "validLength":  true,
+        "schema":  "id:t3, heroId:t3, isDefault:t5, sort:t1, name:t3, quality:t1, fragmentItemId:t3, activeCostFragment:t1, headPath:t3, smallHeadPaths:t4, modelIds:t4, baseAttrs:t4, upAttrs:t4"
+    },
+    {
+        "table":  "skin.SkinConstantConfig",
+        "rows":  11,
+        "columns":  2,
+        "compressedBytes":  223,
+        "uncompressedBytes":  441,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "skin.SkinLevelConfig",
+        "rows":  30,
+        "columns":  5,
+        "compressedBytes":  141,
+        "uncompressedBytes":  496,
+        "validLength":  true,
+        "schema":  "id:t1, quality:t1, level:t1, cost:t1, chestWeightMod:t1"
+    },
+    {
+        "table":  "totalReward.TotalRewardConfig",
+        "rows":  95,
+        "columns":  3,
+        "compressedBytes":  343,
+        "uncompressedBytes":  1167,
+        "validLength":  true,
+        "schema":  "id:t1, adTimes:t1, rewards:t4"
+    },
+    {
+        "table":  "trunkinstance.TrunkInstanceClickConfig",
+        "rows":  1,
+        "columns":  7,
+        "compressedBytes":  97,
+        "uncompressedBytes":  206,
+        "validLength":  true,
+        "schema":  "id:t1, trunkid:t1, rewards1:t4, rewards2:t4, times1:t1, times2:t1, times:t1"
+    },
+    {
+        "table":  "trunkinstance.TrunkInstanceConfig",
+        "rows":  200,
+        "columns":  22,
+        "compressedBytes":  13089,
+        "uncompressedBytes":  65360,
+        "validLength":  true,
+        "schema":  "id:t1, chapter:t1, roundIds:t4, cost:t4, rewardRounds:t4, rewards1:t4, rewards2:t4, rewards3:t4, name:t3, logoSpine:t3, fightscene:t3, initRewards:t4, staticBuffs:t4, staticBricks:t4, homeHp:t1, enemyHomeHp:t1, enemyHomeGold:t1, atkMultiple:t1, hpMultiple:t1, goldMultiple:t1, recommendHeroIds:t4, newMonsterIds:t4"
+    },
+    {
+        "table":  "trunkinstance.TrunkInstanceConstantConfig",
+        "rows":  13,
+        "columns":  2,
+        "compressedBytes":  227,
+        "uncompressedBytes":  506,
+        "validLength":  true,
+        "schema":  "id:t3, content:t3"
+    },
+    {
+        "table":  "trunkinstance.TrunkInstanceDefeatConfig",
+        "rows":  15,
+        "columns":  3,
+        "compressedBytes":  86,
+        "uncompressedBytes":  210,
+        "validLength":  true,
+        "schema":  "id:t1, atkMultiple:t1, hpMultiple:t1"
+    },
+    {
+        "table":  "trunkinstance.TrunkInstanceRoundConfig",
+        "rows":  3009,
+        "columns":  8,
+        "compressedBytes":  14455,
+        "uncompressedBytes":  147739,
+        "validLength":  true,
+        "schema":  "id:t1, round:t1, monsterTimes:t4, monsterIds:t4, atkMultiple:t1, hpMultiple:t1, rewards:t4, coinRewards:t4"
+    },
+    {
+        "table":  "verify.ModuleEntranceConfig",
+        "rows":  42,
+        "columns":  4,
+        "compressedBytes":  392,
+        "uncompressedBytes":  906,
+        "validLength":  true,
+        "schema":  "id:t3, type:t1, uiName:t3, itemPath:t3"
+    },
+    {
+        "table":  "verify.PlayerSystemOpenConfig",
+        "rows":  17,
+        "columns":  13,
+        "compressedBytes":  550,
+        "uncompressedBytes":  1252,
+        "validLength":  true,
+        "schema":  "id:t3, verifyModels:t4, lockDesc:t3, serverOpenDays:t1, seeVerify:t3, iosAppExamineHide:t1, appExamineHide:t1, iosMiniExamineHide:t1, miniExamineHide:t1, jumpId:t1, showOpen:t5, showName:t3, icon_path:t3"
+    }
+]

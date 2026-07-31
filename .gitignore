@@ -1,0 +1,44 @@
+# Dependency directories
+**/node_modules/
+
+# Front-end framework caches and generated output
+**/.next/
+**/.vinext/
+**/.wrangler/
+**/dist/
+**/out/
+**/coverage/
+
+# Cocos Creator generated directories
+**/library/
+**/temp/
+**/local/
+**/build/
+**/profiles/
+**/native/
+
+# Rust and other compiler output
+**/target/
+
+# Python bytecode
+**/__pycache__/
+*.py[cod]
+
+# Editor and OS files
+**/.vscode/
+**/.idea/
+.DS_Store
+Thumbs.db
+
+# Runtime and debug logs
+*.log
+*.stdout.log
+*.stderr.log
+
+# Local environment and credentials
+**/.env
+**/.env.*
+*.pem
+
+# Nested repository metadata is preserved locally but not vendored
+**/.git.nested-backup/

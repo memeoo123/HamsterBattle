@@ -1,0 +1,34 @@
+
+gw_02.png
+size: 64,41
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+01
+  rotate: false
+  xy: 2, 2
+  size: 42, 37
+  orig: 42, 37
+  offset: 0, 0
+  index: -1
+11
+  rotate: false
+  xy: 39, 3
+  size: 17, 4
+  orig: 17, 4
+  offset: 0, 0
+  index: -1
+22
+  rotate: true
+  xy: 46, 21
+  size: 18, 16
+  orig: 18, 16
+  offset: 0, 0
+  index: -1
+33
+  rotate: false
+  xy: 46, 8
+  size: 13, 11
+  orig: 13, 11
+  offset: 0, 0
+  index: -1

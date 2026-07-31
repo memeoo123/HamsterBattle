@@ -1,0 +1,120 @@
+﻿{
+    "table":  "dailyInstance.DailyInstanceRandomConfig",
+    "columnCount":  3,
+    "rowCount":  10,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "dailyInstanceId",
+                       "token":  "dailyInstanceId",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "buffIds",
+                       "token":  "buffIds",
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "dailyInstanceId":  "2001",
+                     "buffIds":  [
+                                     "DI_BUFF_eff01",
+                                     "DI_BUFF_eff04",
+                                     "DI_DEBUFF_eff04"
+                                 ]
+                 },
+                 {
+                     "id":  2,
+                     "dailyInstanceId":  "2002",
+                     "buffIds":  [
+                                     "DI_BUFF_eff02",
+                                     "DI_BUFF_eff03",
+                                     "DI_DEBUFF_eff03"
+                                 ]
+                 },
+                 {
+                     "id":  3,
+                     "dailyInstanceId":  "2003",
+                     "buffIds":  [
+                                     "DI_BUFF_eff05",
+                                     "DI_DEBUFF_eff01",
+                                     "DI_DEBUFF_eff02"
+                                 ]
+                 },
+                 {
+                     "id":  4,
+                     "dailyInstanceId":  "2004",
+                     "buffIds":  [
+                                     "DI_BUFF_eff06",
+                                     "DI_DEBUFF_eff01",
+                                     "DI_DEBUFF_eff05"
+                                 ]
+                 },
+                 {
+                     "id":  5,
+                     "dailyInstanceId":  "2005",
+                     "buffIds":  [
+                                     "DI_BUFF_eff07",
+                                     "DI_DEBUFF_eff02",
+                                     "DI_DEBUFF_eff05"
+                                 ]
+                 },
+                 {
+                     "id":  6,
+                     "dailyInstanceId":  "2006",
+                     "buffIds":  [
+                                     "DI_BUFF_eff01",
+                                     "DI_BUFF_eff03",
+                                     "DI_DEBUFF_eff04"
+                                 ]
+                 },
+                 {
+                     "id":  7,
+                     "dailyInstanceId":  "2007",
+                     "buffIds":  [
+                                     "DI_BUFF_eff02",
+                                     "DI_BUFF_eff04",
+                                     "DI_DEBUFF_eff03"
+                                 ]
+                 },
+                 {
+                     "id":  8,
+                     "dailyInstanceId":  "2008",
+                     "buffIds":  [
+                                     "DI_BUFF_eff05",
+                                     "DI_DEBUFF_eff01",
+                                     "DI_DEBUFF_eff05"
+                                 ]
+                 },
+                 {
+                     "id":  9,
+                     "dailyInstanceId":  "2009",
+                     "buffIds":  [
+                                     "DI_BUFF_eff06",
+                                     "DI_DEBUFF_eff02",
+                                     "DI_DEBUFF_eff05"
+                                 ]
+                 },
+                 {
+                     "id":  10,
+                     "dailyInstanceId":  "2010",
+                     "buffIds":  [
+                                     "DI_BUFF_eff07",
+                                     "DI_DEBUFF_eff01",
+                                     "DI_DEBUFF_eff02"
+                                 ]
+                 }
+             ],
+    "sourceLength":  38,
+    "expectedLength":  38,
+    "validLength":  true
+}

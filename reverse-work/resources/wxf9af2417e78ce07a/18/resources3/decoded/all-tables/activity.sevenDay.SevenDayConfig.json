@@ -1,0 +1,148 @@
+﻿{
+    "table":  "activity.sevenDay.SevenDayConfig",
+    "columnCount":  6,
+    "rowCount":  7,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "rewards",
+                       "token":  18,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  3,
+                       "name":  "showItem",
+                       "token":  "showItem",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  4,
+                       "name":  "showName",
+                       "token":  3,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "extraItemIds",
+                       "token":  "extraItemIds",
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "type":  0,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ],
+                     "showItem":  null,
+                     "showName":  "",
+                     "extraItemIds":  null
+                 },
+                 {
+                     "id":  2,
+                     "type":  1,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ],
+                     "showItem":  null,
+                     "showName":  "",
+                     "extraItemIds":  null
+                 },
+                 {
+                     "id":  3,
+                     "type":  1,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ],
+                     "showItem":  null,
+                     "showName":  "",
+                     "extraItemIds":  null
+                 },
+                 {
+                     "id":  4,
+                     "type":  1,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ],
+                     "showItem":  null,
+                     "showName":  "",
+                     "extraItemIds":  null
+                 },
+                 {
+                     "id":  5,
+                     "type":  1,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ],
+                     "showItem":  null,
+                     "showName":  "",
+                     "extraItemIds":  null
+                 },
+                 {
+                     "id":  6,
+                     "type":  1,
+                     "rewards":  [
+                                     {
+                                         "k":  3,
+                                         "v":  150
+                                     }
+                                 ],
+                     "showItem":  null,
+                     "showName":  "",
+                     "extraItemIds":  null
+                 },
+                 {
+                     "id":  7,
+                     "type":  1,
+                     "rewards":  [
+                                     {
+                                         "k":  "BOX_RF",
+                                         "v":  100
+                                     }
+                                 ],
+                     "showItem":  [
+                                      "image/item/dj0007_icon",
+                                      4,
+                                      100
+                                  ],
+                     "showName":  "豪华齿轮碎片",
+                     "extraItemIds":  [
+                                          "F03",
+                                          "F04",
+                                          "F05",
+                                          "F06"
+                                      ]
+                 }
+             ],
+    "sourceLength":  56,
+    "expectedLength":  56,
+    "validLength":  true
+}

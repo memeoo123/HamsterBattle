@@ -1,0 +1,183 @@
+﻿{
+    "table":  "item.ItemGetAnimConfig",
+    "columnCount":  11,
+    "rowCount":  5,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "smallIconPath",
+                       "token":  1000,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "radius",
+                       "token":  "radius",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "random",
+                       "token":  "random",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "maxCount",
+                       "token":  "maxCount",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "uiKey",
+                       "token":  "uiKey",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  6,
+                       "name":  "compPaths",
+                       "token":  "compPaths",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  7,
+                       "name":  "fixPos",
+                       "token":  "fixPos",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  8,
+                       "name":  "callBegin",
+                       "token":  "callBegin",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  9,
+                       "name":  "callback",
+                       "token":  "callback",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  10,
+                       "name":  "endPos",
+                       "token":  "endPos",
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "smallIconPath":  "image/itemsmall/1",
+                     "radius":  100,
+                     "random":  1,
+                     "maxCount":  10,
+                     "uiKey":  "MAIN_PAGE",
+                     "compPaths":  [
+                                       "headerItem1"
+                                   ],
+                     "fixPos":  [
+                                    5,
+                                    0
+                                ],
+                     "callBegin":  "itemEffectBeginCallback",
+                     "callback":  "itemEffectCallback",
+                     "endPos":  [
+                                    315,
+                                    80
+                                ]
+                 },
+                 {
+                     "id":  4,
+                     "smallIconPath":  "image/itemsmall/4",
+                     "radius":  100,
+                     "random":  1,
+                     "maxCount":  10,
+                     "uiKey":  "MAIN_PAGE",
+                     "compPaths":  [
+                                       "headerItem2"
+                                   ],
+                     "fixPos":  [
+                                    5,
+                                    0
+                                ],
+                     "callBegin":  "itemEffectBeginCallback",
+                     "callback":  "itemEffectCallback",
+                     "endPos":  [
+                                    470,
+                                    80
+                                ]
+                 },
+                 {
+                     "id":  5,
+                     "smallIconPath":  "image/itemsmall/5",
+                     "radius":  100,
+                     "random":  1,
+                     "maxCount":  10,
+                     "uiKey":  "MAIN_PAGE",
+                     "compPaths":  [
+                                       "headerItem3"
+                                   ],
+                     "fixPos":  [
+                                    5,
+                                    0
+                                ],
+                     "callBegin":  "itemEffectBeginCallback",
+                     "callback":  "itemEffectCallback",
+                     "endPos":  [
+                                    165,
+                                    130
+                                ]
+                 },
+                 {
+                     "id":  7,
+                     "smallIconPath":  "image/itemsmall/7",
+                     "radius":  100,
+                     "random":  1,
+                     "maxCount":  10,
+                     "uiKey":  "MAIN_PAGE",
+                     "compPaths":  [
+                                       "headerItem4"
+                                   ],
+                     "fixPos":  [
+                                    5,
+                                    0
+                                ],
+                     "callBegin":  "itemEffectBeginCallback",
+                     "callback":  "itemEffectCallback",
+                     "endPos":  [
+                                    300,
+                                    130
+                                ]
+                 },
+                 {
+                     "id":  8,
+                     "smallIconPath":  "image/itemsmall/8",
+                     "radius":  100,
+                     "random":  1,
+                     "maxCount":  10,
+                     "uiKey":  "MAIN_PAGE",
+                     "compPaths":  [
+                                       "headerItem5"
+                                   ],
+                     "fixPos":  [
+                                    5,
+                                    0
+                                ],
+                     "callBegin":  "itemEffectBeginCallback",
+                     "callback":  "itemEffectCallback",
+                     "endPos":  [
+                                    430,
+                                    130
+                                ]
+                 }
+             ],
+    "sourceLength":  79,
+    "expectedLength":  79,
+    "validLength":  true
+}

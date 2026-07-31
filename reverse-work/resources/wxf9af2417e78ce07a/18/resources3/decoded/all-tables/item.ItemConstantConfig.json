@@ -1,0 +1,32 @@
+﻿{
+    "table":  "item.ItemConstantConfig",
+    "columnCount":  2,
+    "rowCount":  2,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "ITEM:INIT_COUNT",
+                     "content":  "1:30;2:300;"
+                 },
+                 {
+                     "id":  "ITEM:POWER_RECOVERY_INTERVAL",
+                     "content":  "5"
+                 }
+             ],
+    "sourceLength":  10,
+    "expectedLength":  10,
+    "validLength":  true
+}

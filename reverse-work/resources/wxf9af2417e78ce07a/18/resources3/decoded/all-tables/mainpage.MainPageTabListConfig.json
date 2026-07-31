@@ -1,0 +1,66 @@
+﻿{
+    "table":  "mainpage.MainPageTabListConfig",
+    "columnCount":  4,
+    "rowCount":  5,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "layout",
+                       "token":  "layout",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "maxRow",
+                       "token":  "maxRow",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "showFoldCnt",
+                       "token":  "showFoldCnt",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "type":  "left",
+                     "layout":  1,
+                     "maxRow":  6,
+                     "showFoldCnt":  6
+                 },
+                 {
+                     "type":  "right",
+                     "layout":  2,
+                     "maxRow":  5,
+                     "showFoldCnt":  6
+                 },
+                 {
+                     "type":  "left_top",
+                     "layout":  1,
+                     "maxRow":  6,
+                     "showFoldCnt":  6
+                 },
+                 {
+                     "type":  "right_top",
+                     "layout":  2,
+                     "maxRow":  5,
+                     "showFoldCnt":  6
+                 },
+                 {
+                     "type":  "left_bottom",
+                     "layout":  1,
+                     "maxRow":  6,
+                     "showFoldCnt":  6
+                 }
+             ],
+    "sourceLength":  30,
+    "expectedLength":  30,
+    "validLength":  true
+}

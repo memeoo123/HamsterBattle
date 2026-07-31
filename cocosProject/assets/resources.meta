@@ -1,0 +1,20 @@
+{
+  "ver": "1.2.0",
+  "importer": "directory",
+  "imported": true,
+  "uuid": "5f60d616-3909-407d-bd68-e866c1ef4d96",
+  "files": [],
+  "subMetas": {},
+  "userData": {
+    "isBundle": true,
+    "bundleName": "resources",
+    "priority": 8,
+    "compressionType": {},
+    "optimizeHotUpdate": {},
+    "inlineSpriteFrames": {},
+    "isRemoteBundle": {},
+    "dependencies": {},
+    "encryptionConfig": {},
+    "bundleConfigID": "default"
+  }
+}

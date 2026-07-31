@@ -1,0 +1,40 @@
+﻿{
+    "table":  "rule.RuleConfig",
+    "columnCount":  3,
+    "rowCount":  2,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "title",
+                       "token":  517,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "viewH",
+                       "token":  "viewH",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "title":  "挑战规则",
+                     "viewH":  605
+                 },
+                 {
+                     "id":  2,
+                     "title":  "挑战规则",
+                     "viewH":  772
+                 }
+             ],
+    "sourceLength":  14,
+    "expectedLength":  14,
+    "validLength":  true
+}

@@ -1,0 +1,125 @@
+﻿{
+    "table":  "activity.ActivityConfig",
+    "columnCount":  5,
+    "rowCount":  6,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "verifyModels",
+                       "token":  1,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  2,
+                       "name":  "showOpen",
+                       "token":  2,
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  3,
+                       "name":  "showName",
+                       "token":  3,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "icon_path",
+                       "token":  4,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "SEVEN_DAY",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1002,
+                                              0
+                                          ]
+                                      ],
+                     "showOpen":  false,
+                     "showName":  "七天登录",
+                     "icon_path":  ""
+                 },
+                 {
+                     "id":  "THREE_DAY",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1999,
+                                              0
+                                          ]
+                                      ],
+                     "showOpen":  false,
+                     "showName":  "三日好礼",
+                     "icon_path":  ""
+                 },
+                 {
+                     "id":  "INVITE_GIFT",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1001,
+                                              0
+                                          ],
+                                          [
+                                              "SDK_FUNTIONS",
+                                              "Share",
+                                              0
+                                          ]
+                                      ],
+                     "showOpen":  false,
+                     "showName":  "分享有礼",
+                     "icon_path":  ""
+                 },
+                 {
+                     "id":  "KAXIXI",
+                     "verifyModels":  [
+                                          [
+                                              "PASS_TRUNK_INSTANCE",
+                                              1005,
+                                              0
+                                          ]
+                                      ],
+                     "showOpen":  false,
+                     "showName":  "卡西西",
+                     "icon_path":  ""
+                 },
+                 {
+                     "id":  "SHORT_CUT",
+                     "verifyModels":  [
+                                          [
+                                              "SDK_FUNTIONS",
+                                              "AddShortcut",
+                                              0
+                                          ]
+                                      ],
+                     "showOpen":  false,
+                     "showName":  "加桌",
+                     "icon_path":  ""
+                 },
+                 {
+                     "id":  "FEED",
+                     "verifyModels":  [
+                                          [
+                                              "SDK_FUNTIONS",
+                                              "FeedSubscribe",
+                                              0
+                                          ]
+                                      ],
+                     "showOpen":  false,
+                     "showName":  "feed订阅",
+                     "icon_path":  ""
+                 }
+             ],
+    "sourceLength":  42,
+    "expectedLength":  42,
+    "validLength":  true
+}

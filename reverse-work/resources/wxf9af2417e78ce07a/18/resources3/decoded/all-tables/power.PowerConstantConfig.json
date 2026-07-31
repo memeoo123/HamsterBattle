@@ -1,0 +1,52 @@
+﻿{
+    "table":  "power.PowerConstantConfig",
+    "columnCount":  2,
+    "rowCount":  7,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "POWER:DAILY_MAX_FREE_UP_TIMES",
+                     "content":  "3"
+                 },
+                 {
+                     "id":  "POWER:DAILY_MAX_FREE_FRAGMENT_TIMES",
+                     "content":  "3"
+                 },
+                 {
+                     "id":  "POWER:FREE_FRAGMENT_COUNT",
+                     "content":  "2"
+                 },
+                 {
+                     "id":  "POWER:INIT_DATA",
+                     "content":  "{\"P01\": {\"lv\":0,\"star\":0,\"isUp\":true}}"
+                 },
+                 {
+                     "id":  "POWER:ANI_NAME_FOR_ROLE",
+                     "content":  "idle"
+                 },
+                 {
+                     "id":  "POWER:ANI_NAME_FOR_MAIN",
+                     "content":  "idle"
+                 },
+                 {
+                     "id":  "POWER:ANI_NAME_FOR_BATTLE",
+                     "content":  "idle"
+                 }
+             ],
+    "sourceLength":  20,
+    "expectedLength":  20,
+    "validLength":  true
+}

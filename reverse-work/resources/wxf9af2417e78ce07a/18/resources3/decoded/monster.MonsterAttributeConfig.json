@@ -1,0 +1,899 @@
+﻿{
+    "table":  "monster.MonsterAttributeConfig",
+    "columnCount":  20,
+    "rowCount":  29,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "modelId",
+                       "token":  347,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "showModelId",
+                       "token":  "showModelId",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "belongType",
+                       "token":  812,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "belongId",
+                       "token":  "belongId",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "monsterType",
+                       "token":  "monsterType",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "headPath",
+                       "token":  346,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  8,
+                       "name":  "halfBodyPath",
+                       "token":  "halfBodyPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  9,
+                       "name":  "atk",
+                       "token":  1091,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  10,
+                       "name":  "hp",
+                       "token":  650,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  11,
+                       "name":  "exp",
+                       "token":  491,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  12,
+                       "name":  "searchRange",
+                       "token":  1090,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  13,
+                       "name":  "size",
+                       "token":  636,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  14,
+                       "name":  "hp_show",
+                       "token":  "hp_show",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  15,
+                       "name":  "skillIds",
+                       "token":  "skillIds",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  16,
+                       "name":  "passivitySkils",
+                       "token":  "passivitySkils",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  17,
+                       "name":  "gold",
+                       "token":  "gold",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  18,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  19,
+                       "name":  "baseSecondAttrs",
+                       "token":  1092,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "M01",
+                     "name":  "莱莱姆",
+                     "modelId":  "M01",
+                     "showModelId":  "M01",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "NORMAL",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  20,
+                     "hp":  70,
+                     "exp":  5,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "melee_attack"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  5,
+                     "desc":  "【近战】【单体攻击】【受到仓鼠伤害减少】",
+                     "baseSecondAttrs":  {
+                                             "HERO_DMG_RES":  5000
+                                         }
+                 },
+                 {
+                     "id":  "M02",
+                     "name":  "云云猪",
+                     "modelId":  "M02",
+                     "showModelId":  "M02",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "NORMAL",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  20,
+                     "hp":  70,
+                     "exp":  5,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "melee_attack"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  5,
+                     "desc":  "【近战】【单体攻击】",
+                     "baseSecondAttrs":  null
+                 },
+                 {
+                     "id":  "M03",
+                     "name":  "僵僵猫",
+                     "modelId":  "M03",
+                     "showModelId":  "M03",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "NORMAL",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  16,
+                     "hp":  30,
+                     "exp":  5,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "YGT_5002"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  5,
+                     "desc":  "【远程】【受到法术齿轮伤害增加】",
+                     "baseSecondAttrs":  {
+                                             "TOWER_DMG_RES":  "-5000"
+                                         }
+                 },
+                 {
+                     "id":  "M04",
+                     "name":  "冰坨坨",
+                     "modelId":  "M04",
+                     "showModelId":  "M04",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "ELITE",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  25,
+                     "hp":  164,
+                     "exp":  20,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "melee_attack"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  10,
+                     "desc":  "【近战】【单体攻击】",
+                     "baseSecondAttrs":  null
+                 },
+                 {
+                     "id":  "M05",
+                     "name":  "火火炉",
+                     "modelId":  "M05",
+                     "showModelId":  "M05",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "NORMAL",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  16,
+                     "hp":  30,
+                     "exp":  5,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "splash_attack"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  5,
+                     "desc":  "【远程】【范围攻击】",
+                     "baseSecondAttrs":  null
+                 },
+                 {
+                     "id":  "M06",
+                     "name":  "冰冰狗",
+                     "modelId":  "M06",
+                     "showModelId":  "M06",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "NORMAL",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  20,
+                     "hp":  70,
+                     "exp":  5,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "melee_attack"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  5,
+                     "desc":  "【近战】【单体攻击】【受到法术齿轮伤害减少】",
+                     "baseSecondAttrs":  {
+                                             "TOWER_DMG_RES":  5000
+                                         }
+                 },
+                 {
+                     "id":  "M07",
+                     "name":  "鬼鬼羊",
+                     "modelId":  "M07",
+                     "showModelId":  "M07",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "NORMAL",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  16,
+                     "hp":  30,
+                     "exp":  5,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "cleave_attack"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  5,
+                     "desc":  "【近战】【范围攻击】",
+                     "baseSecondAttrs":  null
+                 },
+                 {
+                     "id":  "M08",
+                     "name":  "生气烛",
+                     "modelId":  "M08",
+                     "showModelId":  "M08",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "ELITE",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  20,
+                     "hp":  70,
+                     "exp":  20,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "splash_attack"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  10,
+                     "desc":  "【远程】【范围攻击】",
+                     "baseSecondAttrs":  null
+                 },
+                 {
+                     "id":  "M09",
+                     "name":  "恶魔犬",
+                     "modelId":  "M09",
+                     "showModelId":  "M09",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "NORMAL",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  16,
+                     "hp":  30,
+                     "exp":  5,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "HS_5001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  5,
+                     "desc":  "【远程】【单体攻击】",
+                     "baseSecondAttrs":  null
+                 },
+                 {
+                     "id":  "M10",
+                     "name":  "脏脏蛇",
+                     "modelId":  "M10",
+                     "showModelId":  "M10",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "NORMAL",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  16,
+                     "hp":  30,
+                     "exp":  5,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "M10_attack"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  5,
+                     "desc":  "【超远程】【范围攻击】",
+                     "baseSecondAttrs":  null
+                 },
+                 {
+                     "id":  "M11",
+                     "name":  "海马狼",
+                     "modelId":  "M11",
+                     "showModelId":  "M11",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "NORMAL",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  20,
+                     "hp":  70,
+                     "exp":  5,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "melee_attack",
+                                      "JT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  5,
+                     "desc":  "【近战】【单体攻击】【击退】",
+                     "baseSecondAttrs":  null
+                 },
+                 {
+                     "id":  "M12",
+                     "name":  "先锋狼",
+                     "modelId":  "M12",
+                     "showModelId":  "M12",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "NORMAL",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  10,
+                     "hp":  140,
+                     "exp":  5,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "GJJD_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  5,
+                     "desc":  "【近战】【专注】",
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "M13",
+                     "name":  "爆爆虫",
+                     "modelId":  "M13",
+                     "showModelId":  "M13",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "NORMAL",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  20,
+                     "hp":  70,
+                     "exp":  5,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "ZB_1701"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  5,
+                     "desc":  "【专注】【自爆】",
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "M14",
+                     "name":  "厄厄怪",
+                     "modelId":  "M14",
+                     "showModelId":  "M14",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "NORMAL",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  18,
+                     "hp":  50,
+                     "exp":  5,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "0",
+                     "skillIds":  [
+                                      "melee_attack",
+                                      "CS_1801"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  5,
+                     "desc":  "【近战】【刺杀】",
+                     "baseSecondAttrs":  null
+                 },
+                 {
+                     "id":  "Boss01",
+                     "name":  "巨型莱莱姆",
+                     "modelId":  "Boss01",
+                     "showModelId":  "Boss01",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  30,
+                     "hp":  690,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "melee_attack",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【近战】【单体攻击】【受到仓鼠伤害减少】",
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000,
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "Boss02",
+                     "name":  "精英云云猪",
+                     "modelId":  "Boss02",
+                     "showModelId":  "Boss02",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  30,
+                     "hp":  690,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "melee_attack",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【近战】【单体攻击】",
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000,
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "Boss03",
+                     "name":  "精英僵僵猫",
+                     "modelId":  "Boss03",
+                     "showModelId":  "Boss03",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  24,
+                     "hp":  296,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "YGT_5002",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【远程】【受到法术齿轮伤害增加】",
+                     "baseSecondAttrs":  {
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "Boss04",
+                     "name":  "巨型冰坨坨",
+                     "modelId":  "Boss04",
+                     "showModelId":  "Boss04",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  30,
+                     "hp":  690,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "melee_attack",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【近战】【单体攻击】",
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000,
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "Boss05",
+                     "name":  "巨型火火炉",
+                     "modelId":  "Boss05",
+                     "showModelId":  "Boss05",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  24,
+                     "hp":  296,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "splash_attack_large",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【远程】【范围攻击】",
+                     "baseSecondAttrs":  {
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "Boss06",
+                     "name":  "精英冰冰狗",
+                     "modelId":  "Boss06",
+                     "showModelId":  "Boss06",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  24,
+                     "hp":  296,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "melee_attack",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【近战】【单体攻击】【受到法术齿轮伤害减少】",
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000,
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "Boss07",
+                     "name":  "精英鬼鬼羊",
+                     "modelId":  "Boss07",
+                     "showModelId":  "Boss07",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  24,
+                     "hp":  296,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "cleave_attack",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【近战】【范围攻击】",
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000,
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "Boss08",
+                     "name":  "巨型生气烛",
+                     "modelId":  "Boss08",
+                     "showModelId":  "Boss08",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  24,
+                     "hp":  296,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "splash_attack_large",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【远程】【范围攻击】",
+                     "baseSecondAttrs":  {
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "Boss09",
+                     "name":  "巨型恶魔犬",
+                     "modelId":  "Boss09",
+                     "showModelId":  "Boss09",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  30,
+                     "hp":  690,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "HS_5001",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【远程】【单体攻击】",
+                     "baseSecondAttrs":  {
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "Boss10",
+                     "name":  "精英脏脏蛇",
+                     "modelId":  "Boss10",
+                     "showModelId":  "Boss10",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  24,
+                     "hp":  296,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "M10_attack",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【超远程】【范围攻击】",
+                     "baseSecondAttrs":  {
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "Boss11",
+                     "name":  "精英海马狼",
+                     "modelId":  "Boss11",
+                     "showModelId":  "Boss11",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  30,
+                     "hp":  690,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "melee_attack",
+                                      "BT_001",
+                                      "JT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【近战】【单体攻击】【击退】",
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000,
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "Boss14",
+                     "name":  "巨型厄厄怪",
+                     "modelId":  "Boss14",
+                     "showModelId":  "Boss14",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  27,
+                     "hp":  493,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "melee_attack",
+                                      "BT_001",
+                                      "CS_1801"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【近战】【刺杀】",
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000,
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "B01",
+                     "name":  "大恶魔",
+                     "modelId":  "B01",
+                     "showModelId":  "B01",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  30,
+                     "hp":  690,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "HS_5002",
+                                      "GWZX_001",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【远程】【范围攻击】",
+                     "baseSecondAttrs":  {
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "B02",
+                     "name":  "惊乍怪",
+                     "modelId":  "B02",
+                     "showModelId":  "B02",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  30,
+                     "hp":  690,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "melee_attack",
+                                      "GWZX_002",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【近战】【范围攻击】",
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000,
+                                             "ATK_SPD":  5000
+                                         }
+                 },
+                 {
+                     "id":  "B03",
+                     "name":  "冰岩国王",
+                     "modelId":  "B03",
+                     "showModelId":  "B03",
+                     "belongType":  0,
+                     "belongId":  0,
+                     "monsterType":  "BOSS",
+                     "headPath":  "",
+                     "halfBodyPath":  "",
+                     "atk":  30,
+                     "hp":  690,
+                     "exp":  100,
+                     "searchRange":  1000,
+                     "size":  100,
+                     "hp_show":  "1",
+                     "skillIds":  [
+                                      "cleave_attack",
+                                      "GWFW_001",
+                                      "BT_001"
+                                  ],
+                     "passivitySkils":  null,
+                     "gold":  20,
+                     "desc":  "【近战】【范围攻击】",
+                     "baseSecondAttrs":  {
+                                             "MOVE_SPD":  5000,
+                                             "ATK_SPD":  5000
+                                         }
+                 }
+             ],
+    "sourceLength":  622,
+    "expectedLength":  622,
+    "validLength":  true
+}

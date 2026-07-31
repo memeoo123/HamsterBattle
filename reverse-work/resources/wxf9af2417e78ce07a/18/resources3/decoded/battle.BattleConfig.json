@@ -1,0 +1,136 @@
+﻿{
+    "table":  "battle.BattleConfig",
+    "columnCount":  15,
+    "rowCount":  2,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "fightType",
+                       "token":  669,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "icon",
+                       "token":  29,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "fightMaxSecond",
+                       "token":  "fightMaxSecond",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "quitFight",
+                       "token":  "quitFight",
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  6,
+                       "name":  "monsterResourceIds",
+                       "token":  "monsterResourceIds",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  7,
+                       "name":  "mapId",
+                       "token":  "mapId",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "atkMod",
+                       "token":  "atkMod",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  9,
+                       "name":  "defMod",
+                       "token":  "defMod",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  10,
+                       "name":  "hpMod",
+                       "token":  "hpMod",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  11,
+                       "name":  "secondAttrAddition",
+                       "token":  "secondAttrAddition",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  12,
+                       "name":  "power",
+                       "token":  "power",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  13,
+                       "name":  "cpDamageMod",
+                       "token":  "cpDamageMod",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  14,
+                       "name":  "pveMinWarnFight",
+                       "token":  "pveMinWarnFight",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "name":  "i18n:BattleConfig.name.1",
+                     "fightType":  "TRUNK_INSTANCE",
+                     "icon":  "",
+                     "fightMaxSecond":  0,
+                     "quitFight":  false,
+                     "monsterResourceIds":  null,
+                     "mapId":  0,
+                     "atkMod":  0,
+                     "defMod":  0,
+                     "hpMod":  0,
+                     "secondAttrAddition":  null,
+                     "power":  0,
+                     "cpDamageMod":  "",
+                     "pveMinWarnFight":  0
+                 },
+                 {
+                     "id":  2,
+                     "name":  "i18n:BattleConfig.name.2",
+                     "fightType":  "DAILY_INSTANCE",
+                     "icon":  "",
+                     "fightMaxSecond":  0,
+                     "quitFight":  false,
+                     "monsterResourceIds":  null,
+                     "mapId":  0,
+                     "atkMod":  0,
+                     "defMod":  0,
+                     "hpMod":  0,
+                     "secondAttrAddition":  null,
+                     "power":  0,
+                     "cpDamageMod":  "",
+                     "pveMinWarnFight":  0
+                 }
+             ],
+    "sourceLength":  62,
+    "expectedLength":  62,
+    "validLength":  true
+}

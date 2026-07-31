@@ -1,0 +1,242 @@
+﻿{
+    "table":  "power.PowerConfig",
+    "columnCount":  9,
+    "rowCount":  4,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "modelId",
+                       "token":  347,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "bigModelId",
+                       "token":  "bigModelId",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "quality",
+                       "token":  30,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "fragmentItemId",
+                       "token":  1089,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  6,
+                       "name":  "skills",
+                       "token":  820,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  7,
+                       "name":  "activeskillId",
+                       "token":  "activeskillId",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  8,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "P01",
+                     "name":  "跑跑鼠",
+                     "modelId":  "P01",
+                     "bigModelId":  "P01L",
+                     "quality":  3,
+                     "fragmentItemId":  "FP01",
+                     "skills":  [
+                                    {
+                                        "k":  1,
+                                        "v":  "P01_PS01"
+                                    },
+                                    {
+                                        "k":  2,
+                                        "v":  "P01_PS02"
+                                    },
+                                    {
+                                        "k":  3,
+                                        "v":  "P01_PS03"
+                                    },
+                                    {
+                                        "k":  4,
+                                        "v":  "P01_PS04"
+                                    },
+                                    {
+                                        "k":  5,
+                                        "v":  "P01_PS05"
+                                    },
+                                    {
+                                        "k":  6,
+                                        "v":  "P01_PS06"
+                                    },
+                                    {
+                                        "k":  7,
+                                        "v":  "P01_PS07"
+                                    },
+                                    {
+                                        "k":  8,
+                                        "v":  "P01_PS08"
+                                    }
+                                ],
+                     "activeskillId":  "P01_S01",
+                     "desc":  ""
+                 },
+                 {
+                     "id":  "P02",
+                     "name":  "红闪电鼠",
+                     "modelId":  "P02",
+                     "bigModelId":  "P02L",
+                     "quality":  4,
+                     "fragmentItemId":  "FP02",
+                     "skills":  [
+                                    {
+                                        "k":  1,
+                                        "v":  "P02_PS01"
+                                    },
+                                    {
+                                        "k":  2,
+                                        "v":  "P02_PS02"
+                                    },
+                                    {
+                                        "k":  3,
+                                        "v":  "P02_PS03"
+                                    },
+                                    {
+                                        "k":  4,
+                                        "v":  "P02_PS04"
+                                    },
+                                    {
+                                        "k":  5,
+                                        "v":  "P02_PS05"
+                                    },
+                                    {
+                                        "k":  6,
+                                        "v":  "P02_PS06"
+                                    },
+                                    {
+                                        "k":  7,
+                                        "v":  "P02_PS07"
+                                    },
+                                    {
+                                        "k":  8,
+                                        "v":  "P02_PS08"
+                                    }
+                                ],
+                     "activeskillId":  "P02_S01",
+                     "desc":  ""
+                 },
+                 {
+                     "id":  "P03",
+                     "name":  "蓝刺猬鼠",
+                     "modelId":  "P03",
+                     "bigModelId":  "P03L",
+                     "quality":  4,
+                     "fragmentItemId":  "FP03",
+                     "skills":  [
+                                    {
+                                        "k":  1,
+                                        "v":  "P03_PS01"
+                                    },
+                                    {
+                                        "k":  2,
+                                        "v":  "P03_PS02"
+                                    },
+                                    {
+                                        "k":  3,
+                                        "v":  "P03_PS03"
+                                    },
+                                    {
+                                        "k":  4,
+                                        "v":  "P03_PS04"
+                                    },
+                                    {
+                                        "k":  5,
+                                        "v":  "P03_PS05"
+                                    },
+                                    {
+                                        "k":  6,
+                                        "v":  "P03_PS06"
+                                    },
+                                    {
+                                        "k":  7,
+                                        "v":  "P03_PS07"
+                                    },
+                                    {
+                                        "k":  8,
+                                        "v":  "P03_PS08"
+                                    }
+                                ],
+                     "activeskillId":  "P03_S01",
+                     "desc":  ""
+                 },
+                 {
+                     "id":  "P04",
+                     "name":  "卡西西鼠",
+                     "modelId":  "P04",
+                     "bigModelId":  "P04L",
+                     "quality":  4,
+                     "fragmentItemId":  "FP04",
+                     "skills":  [
+                                    {
+                                        "k":  1,
+                                        "v":  "P04_PS01"
+                                    },
+                                    {
+                                        "k":  2,
+                                        "v":  "P04_PS02"
+                                    },
+                                    {
+                                        "k":  3,
+                                        "v":  "P04_PS03"
+                                    },
+                                    {
+                                        "k":  4,
+                                        "v":  "P04_PS04"
+                                    },
+                                    {
+                                        "k":  5,
+                                        "v":  "P04_PS05"
+                                    },
+                                    {
+                                        "k":  6,
+                                        "v":  "P04_PS06"
+                                    },
+                                    {
+                                        "k":  7,
+                                        "v":  "P04_PS07"
+                                    },
+                                    {
+                                        "k":  8,
+                                        "v":  "P04_PS08"
+                                    }
+                                ],
+                     "activeskillId":  "P04_S01",
+                     "desc":  "投掷巨大飞镖，造成高额伤害"
+                 }
+             ],
+    "sourceLength":  56,
+    "expectedLength":  56,
+    "validLength":  true
+}

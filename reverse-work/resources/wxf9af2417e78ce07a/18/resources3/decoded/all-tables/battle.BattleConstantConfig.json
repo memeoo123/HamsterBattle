@@ -1,0 +1,168 @@
+﻿{
+    "table":  "battle.BattleConstantConfig",
+    "columnCount":  2,
+    "rowCount":  36,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "BATTLE:HERO_MOVE_SPEED",
+                     "content":  "60"
+                 },
+                 {
+                     "id":  "BATTLE:MONSTER_MOVE_SPEED",
+                     "content":  "60"
+                 },
+                 {
+                     "id":  "BATTLE:SUMMON_MOVE_SPEED",
+                     "content":  "60"
+                 },
+                 {
+                     "id":  "BATTLE:HERO_MOVE_FORMATION_SPEED",
+                     "content":  "50"
+                 },
+                 {
+                     "id":  "BATTLE:HERO_MOVE_FORMATION_DIS",
+                     "content":  "300"
+                 },
+                 {
+                     "id":  "BATTLE:SAFE_AREA_HEAL",
+                     "content":  "1000"
+                 },
+                 {
+                     "id":  "BATTLE:REBIRTH_GREATER_DISTANCE_RESET_POSITION",
+                     "content":  "2000"
+                 },
+                 {
+                     "id":  "BATTLE:MONSTER_REFRESH_RANGE",
+                     "content":  "{\"w\":150,\"h\":150,\"a\":45}"
+                 },
+                 {
+                     "id":  "BATTLE:MONSTER_RANDOM_MOVE_TIME",
+                     "content":  "1000;5000"
+                 },
+                 {
+                     "id":  "BATTLE:MONSTER_RANDOM_MOVE_RANGE",
+                     "content":  "{\"w\":200,\"h\":120,\"a\":60}"
+                 },
+                 {
+                     "id":  "BATTLE:MONSTER_HATE_MAX_RADIUS",
+                     "content":  "1200"
+                 },
+                 {
+                     "id":  "BATTLE:HERO_HATE_MAX_RADIUS",
+                     "content":  "400"
+                 },
+                 {
+                     "id":  "BATTLE:HERO_HATE_COLLECT_MAX_RADIUS",
+                     "content":  "400"
+                 },
+                 {
+                     "id":  "BATTLE:HERO_ATTACK_VALUE",
+                     "content":  "2000"
+                 },
+                 {
+                     "id":  "BATTLE:HERO_BLOCK_VALUE",
+                     "content":  "15000"
+                 },
+                 {
+                     "id":  "BATTLE:HERO_CRIT_VALUE",
+                     "content":  "15000"
+                 },
+                 {
+                     "id":  "BATTLE:HERO_MISS_VALUE",
+                     "content":  "5000"
+                 },
+                 {
+                     "id":  "BATTLE:CRIT_TEXT_3",
+                     "content":  "2000"
+                 },
+                 {
+                     "id":  "BATTLE:CRIT_TEXT_2",
+                     "content":  "1000"
+                 },
+                 {
+                     "id":  "BATTLE:DISTANCE",
+                     "content":  "100"
+                 },
+                 {
+                     "id":  "BATTLE:CHECK_RANGE",
+                     "content":  "2000,2000"
+                 },
+                 {
+                     "id":  "BATTLE:Abnormal_1",
+                     "content":  "3,4,8,9,11,13,15"
+                 },
+                 {
+                     "id":  "BATTLE:Abnormal_2",
+                     "content":  "3,4,8,9,13,14,16"
+                 },
+                 {
+                     "id":  "BATTLE:Abnormal_3",
+                     "content":  "3,4,8,9,11,13,14,15,16,17,18"
+                 },
+                 {
+                     "id":  "BATTLE:Abnormal_4",
+                     "content":  "15,18"
+                 },
+                 {
+                     "id":  "BATTLE:TALK_KUANG",
+                     "content":  "{\"str\":[\"我爱采矿\",\"晶矿能解锁建筑\",\"我感觉我上辈子是个钻头\"],\"pro\":[5,5,1],\"talkProbability\":500}"
+                 },
+                 {
+                     "id":  "BATTLE:TALK_QI",
+                     "content":  "{\"str\":[\"哇 珍贵的气泉\",\"气泉能升级天赋\",\"我感觉我上辈子是个吸矿器\"],\"pro\":[5,5,1],\"talkProbability\":1000}"
+                 },
+                 {
+                     "id":  "BATTLE:UNIT_COLLISION",
+                     "content":  "60,60"
+                 },
+                 {
+                     "id":  "BATTLE:HERO_HATE_MAX_RADIUS_TIME",
+                     "content":  "1500"
+                 },
+                 {
+                     "id":  "BATTLE:failResultSpineAssetPath",
+                     "content":  "spine/building/ln_shengli_shibai/ln_shengli_shibai"
+                 },
+                 {
+                     "id":  "BATTLE:winResultSpineAssetPath",
+                     "content":  "spine/building/ln_shengli_shibai/ln_shengli_shibai"
+                 },
+                 {
+                     "id":  "BATTLE:PVP_WARN_FIGHT_FACTOR",
+                     "content":  "5000"
+                 },
+                 {
+                     "id":  "BATTLE:assist_Kill_Time",
+                     "content":  "30000"
+                 },
+                 {
+                     "id":  "BATTLE:EXTREME_RATE",
+                     "content":  "40000"
+                 },
+                 {
+                     "id":  "BATTLE:WHITELIST_SKILL",
+                     "content":  "PET502_s2;PET601_s2;3240_s2;"
+                 },
+                 {
+                     "id":  "BATTLE:PickingRegion",
+                     "content":  "300"
+                 }
+             ],
+    "sourceLength":  78,
+    "expectedLength":  78,
+    "validLength":  true
+}

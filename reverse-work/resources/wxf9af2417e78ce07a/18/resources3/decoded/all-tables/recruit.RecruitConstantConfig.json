@@ -1,0 +1,52 @@
+﻿{
+    "table":  "recruit.RecruitConstantConfig",
+    "columnCount":  2,
+    "rowCount":  7,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "RECRUIT:GUARANTEE_TIMES",
+                     "content":  "10"
+                 },
+                 {
+                     "id":  "RECRUIT:headIcon1",
+                     "content":  "1"
+                 },
+                 {
+                     "id":  "RECRUIT:headIcon2",
+                     "content":  "10"
+                 },
+                 {
+                     "id":  "RECRUIT:showHeroScale",
+                     "content":  "3"
+                 },
+                 {
+                     "id":  "RECRUIT:gainItemTitleSpineAssetPath",
+                     "content":  "spine/ui/gongxihuode/ui_get"
+                 },
+                 {
+                     "id":  "RECRUIT:newHeroTitleSpinePath",
+                     "content":  "spine/ui/huodexinjuese/ef_chouka_hong_biaotitexiao_upper"
+                 },
+                 {
+                     "id":  "RECRUIT:NORMAL_UNLOCK_ADVERT",
+                     "content":  "PASS_TRUNK_INSTANCE,10020,0;"
+                 }
+             ],
+    "sourceLength":  20,
+    "expectedLength":  20,
+    "validLength":  true
+}

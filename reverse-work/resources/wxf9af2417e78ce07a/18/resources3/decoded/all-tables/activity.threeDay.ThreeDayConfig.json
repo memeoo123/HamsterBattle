@@ -1,0 +1,63 @@
+﻿{
+    "table":  "activity.threeDay.ThreeDayConfig",
+    "columnCount":  2,
+    "rowCount":  3,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "rewards",
+                       "token":  18,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "rewards":  [
+                                     {
+                                         "k":  "FP02",
+                                         "v":  5
+                                     },
+                                     {
+                                         "k":  2,
+                                         "v":  200
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  2,
+                     "rewards":  [
+                                     {
+                                         "k":  "FP02",
+                                         "v":  10
+                                     },
+                                     {
+                                         "k":  2,
+                                         "v":  300
+                                     }
+                                 ]
+                 },
+                 {
+                     "id":  3,
+                     "rewards":  [
+                                     {
+                                         "k":  "FP02",
+                                         "v":  15
+                                     },
+                                     {
+                                         "k":  2,
+                                         "v":  500
+                                     }
+                                 ]
+                 }
+             ],
+    "sourceLength":  12,
+    "expectedLength":  12,
+    "validLength":  true
+}

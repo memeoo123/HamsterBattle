@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0",
+  "reverseAnalysisComplete": true,
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "version": "18",
+    "engine": "cocos",
+    "engineVersion": "3.8.2"
+  },
+  "authorization": {
+    "status": "authorized",
+    "scope": "user-approved local package analysis and reconstruction"
+  },
+  "createdAtUtc": "2026-07-31T10:00:31.568276+00:00",
+  "updatedAtUtc": "2026-07-31T10:00:09.0455171Z",
+  "sourceArtifacts": [
+    {
+      "role": "mainPackage",
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\input\\wxf9af2417e78ce07a\\18\\__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
+      "size": 3923061,
+      "sha256": "E1FB5EF76B1E27DC00005028022FC858F3107D1A5B0FFF73E92CC1714DEFEC42"
+    },
+    {
+      "role": "gameSubpackage",
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\input\\wxf9af2417e78ce07a\\18\\_subpackages_game_.wxapkg",
+      "size": 1434232,
+      "sha256": "2249382D636ACECC1B82D2FEA87DBA75FB63A044D6A76F4A61EE84FB8800F17F"
+    },
+    {
+      "role": "compactLocalData",
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\resources\\wxf9af2417e78ce07a\\18\\resources3\\localData.4952c.bin",
+      "size": 130712,
+      "sha256": "815FB0AFA56DDFAA7B8BAA7C26BF4DA6B47AE8B87195919406D313F5565CB31D"
+    }
+  ],
+  "generatedArtifacts": [
+    {
+      "kind": "extractedRoot",
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\unpacked\\wxf9af2417e78ce07a\\18"
+    },
+    {
+      "kind": "decodedTables",
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\resources\\wxf9af2417e78ce07a\\18\\resources3\\decoded"
+    },
+    {
+      "kind": "levelModel",
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\resources\\wxf9af2417e78ce07a\\18\\resources3\\decoded\\level-model"
+    },
+    {
+      "kind": "restoreSpec",
+      "path": "generated/RESTORE_SPEC.json"
+    },
+    {
+      "kind": "goldenCases",
+      "path": "generated/golden-cases.json"
+    },
+    {
+      "kind": "cocosProject",
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject"
+    }
+  ],
+  "commands": [
+    {
+      "tool": "unwx 0.4.0",
+      "result": "main and game subpackage decrypted and unpacked successfully"
+    },
+    {
+      "tool": "analyze-cocos-localdata.ps1",
+      "result": "119 ZIP entries and 118 compact tables decoded with length validation"
+    },
+    {
+      "tool": "build-cocos-level-model.ps1",
+      "result": "200 levels and 2,978 referenced rounds joined with zero missing primary foreign keys"
+    },
+    {
+      "tool": "runtime module extraction",
+      "result": "level/round/defeat multipliers and regular damage order recovered"
+    }
+  ],
+  "engineEvidence": [
+    {
+      "path": "reverse-work/unpacked/wxf9af2417e78ce07a/18/main/src/settings.37a11.json",
+      "finding": "CocosEngine 3.8.2, remote bundles, launch scene, and 750x1334 design resolution"
+    },
+    {
+      "path": "reverse-work/unpacked/wxf9af2417e78ce07a/18/main/game.js",
+      "finding": "Cocos remote bundle loader and remote/<bundle> URL mapping"
+    },
+    {
+      "path": "reverse-work/unpacked/wxf9af2417e78ce07a/18/subpackages-game/subpackages/game/game.js",
+      "finding": "System.register Cocos business modules"
+    }
+  ],
+  "currentStage": "produce-restoration-handoff",
+  "blockers": [
+    "exact original scene anchors and UI geometry require a matched original level capture",
+    "the existing reconstruction uses 750x1000 while the original settings confirm 750x1334",
+    "RESTORE_SPEC remains implementationReady=false until blocking visual/anchor unknowns are resolved"
+  ],
+  "handoff": {
+    "source": "E:\\Projects\\weichatAnalysis\\cangshu\\handoffs\\wxf9af2417e78ce07a-18.json",
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,288 @@
+﻿{
+    "table":  "verify.ModuleEntranceConfig",
+    "columnCount":  4,
+    "rowCount":  42,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "uiName",
+                       "token":  "uiName",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "itemPath",
+                       "token":  "itemPath",
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "CHARGE",
+                     "type":  1,
+                     "uiName":  "",
+                     "itemPath":  ""
+                 },
+                 {
+                     "id":  "GIFT",
+                     "type":  1,
+                     "uiName":  "",
+                     "itemPath":  ""
+                 },
+                 {
+                     "id":  "SHOP",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.moreBtn"
+                 },
+                 {
+                     "id":  "EMAIL",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.moreBtn"
+                 },
+                 {
+                     "id":  "MAP",
+                     "type":  1,
+                     "uiName":  "",
+                     "itemPath":  ""
+                 },
+                 {
+                     "id":  "HERO",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.0.iconNormal"
+                 },
+                 {
+                     "id":  "FORMATION",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.0.iconNormal"
+                 },
+                 {
+                     "id":  "ILLUSTRATIONS",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.0.iconNormal"
+                 },
+                 {
+                     "id":  "DAILY_TASK",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.moreBtn"
+                 },
+                 {
+                     "id":  "ACHIEVEMENT",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.moreBtn"
+                 },
+                 {
+                     "id":  "TRUNK_TASK",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "trunkTask"
+                 },
+                 {
+                     "id":  "TALENT",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.0.iconNormal"
+                 },
+                 {
+                     "id":  "RECRUIT",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.1.iconNormal"
+                 },
+                 {
+                     "id":  "TRUNK_INSTANCE",
+                     "type":  1,
+                     "uiName":  "",
+                     "itemPath":  ""
+                 },
+                 {
+                     "id":  "DAILY_BOSS",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.2.iconNormal"
+                 },
+                 {
+                     "id":  "EQUIP",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.0.iconNormal"
+                 },
+                 {
+                     "id":  "CAPTAIN",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.0.iconNormal"
+                 },
+                 {
+                     "id":  "LADDER",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.2.iconNormal"
+                 },
+                 {
+                     "id":  "SECRET_INSTANCE",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.2.iconNormal"
+                 },
+                 {
+                     "id":  "ARENA",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.2.iconNormal"
+                 },
+                 {
+                     "id":  "WORLD_BOSS",
+                     "type":  1,
+                     "uiName":  "",
+                     "itemPath":  ""
+                 },
+                 {
+                     "id":  "RANK",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.moreBtn"
+                 },
+                 {
+                     "id":  "LEAGUE",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.3.iconNormal"
+                 },
+                 {
+                     "id":  "LEAGUE_TECH",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.3.iconNormal"
+                 },
+                 {
+                     "id":  "SET",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.moreBtn"
+                 },
+                 {
+                     "id":  "LEAGUE_BOSS",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.3.iconNormal"
+                 },
+                 {
+                     "id":  "LEAGUE_BOX",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.3.iconNormal"
+                 },
+                 {
+                     "id":  "FRIEND",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.moreBtn"
+                 },
+                 {
+                     "id":  "AWAKE_WEAPON",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.0.iconNormal"
+                 },
+                 {
+                     "id":  "MALL_VIP",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "leftSideList.charge.icon"
+                 },
+                 {
+                     "id":  "MALL_LIMIT_BUY",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "leftSideList.charge.icon"
+                 },
+                 {
+                     "id":  "NORMAL_CHARGE",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "leftSideList.charge.icon"
+                 },
+                 {
+                     "id":  "DAILY_SALE",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "leftSideList.charge.icon"
+                 },
+                 {
+                     "id":  "MONTH_CARD",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "leftSideList.entrance.icon"
+                 },
+                 {
+                     "id":  "FETTER",
+                     "type":  1,
+                     "uiName":  "",
+                     "itemPath":  ""
+                 },
+                 {
+                     "id":  "TEAM_INSTANCE",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.2.iconNormal"
+                 },
+                 {
+                     "id":  "PET_DUNGEON",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.2.iconNormal"
+                 },
+                 {
+                     "id":  "GUARD_SHIP",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.2.iconNormal"
+                 },
+                 {
+                     "id":  "MAGIC_CUBE",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.0.iconNormal"
+                 },
+                 {
+                     "id":  "PET",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.0.iconNormal"
+                 },
+                 {
+                     "id":  "COLLECTIBLES",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.0.iconNormal"
+                 },
+                 {
+                     "id":  "COLLECTIBLES_DUNGEON",
+                     "type":  1,
+                     "uiName":  "MAIN_PAGE",
+                     "itemPath":  "footer.pageList.2.iconNormal"
+                 }
+             ],
+    "sourceLength":  178,
+    "expectedLength":  178,
+    "validLength":  true
+}

@@ -1,0 +1,482 @@
+﻿{
+    "table":  "power.PowerAbilityConfig",
+    "columnCount":  8,
+    "rowCount":  36,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "powerId",
+                       "token":  "powerId",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "star",
+                       "token":  1102,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "skillId",
+                       "token":  640,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "effectType",
+                       "token":  303,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  6,
+                       "name":  "param",
+                       "token":  20,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  7,
+                       "name":  "attr",
+                       "token":  32,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "P01_S01",
+                     "powerId":  "P01",
+                     "star":  0,
+                     "desc":  "每场战斗的前5秒，跑跑鼠会努力奔跑，提升效率10%",
+                     "skillId":  "P01_SKILL_S0",
+                     "effectType":  "NONE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P01_PS01",
+                     "powerId":  "P01",
+                     "star":  1,
+                     "desc":  "每场战斗开始时，额外获得1个1级随机齿轮",
+                     "skillId":  "P01_SKILL_S0",
+                     "effectType":  "ROLE_FEATURE",
+                     "param":  [
+                                   "START_ROUND_GET",
+                                   3011
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P01_PS02",
+                     "powerId":  "P01",
+                     "star":  2,
+                     "desc":  "所有齿轮攻击+10%",
+                     "skillId":  "P01_SKILL_S0",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  1000
+                              }
+                 },
+                 {
+                     "id":  "P01_PS03",
+                     "powerId":  "P01",
+                     "star":  3,
+                     "desc":  "每场战斗的前5秒，跑跑鼠会努力奔跑，提升效率15%",
+                     "skillId":  "P01_SKILL_S3",
+                     "effectType":  "NONE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P01_PS04",
+                     "powerId":  "P01",
+                     "star":  4,
+                     "desc":  "所有齿轮攻击+10%",
+                     "skillId":  "P01_SKILL_S3",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  1000
+                              }
+                 },
+                 {
+                     "id":  "P01_PS05",
+                     "powerId":  "P01",
+                     "star":  5,
+                     "desc":  "每场战斗开始时额外获得1个2级随机齿轮",
+                     "skillId":  "P01_SKILL_S3",
+                     "effectType":  "ROLE_FEATURE",
+                     "param":  [
+                                   "START_ROUND_GET",
+                                   3012
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P01_PS06",
+                     "powerId":  "P01",
+                     "star":  6,
+                     "desc":  "所有齿轮攻击+10%",
+                     "skillId":  "P01_SKILL_S3",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  1000
+                              }
+                 },
+                 {
+                     "id":  "P01_PS07",
+                     "powerId":  "P01",
+                     "star":  7,
+                     "desc":  "每场战斗的前5秒，跑跑鼠会努力奔跑，提升效率20%",
+                     "skillId":  "P01_SKILL_S7",
+                     "effectType":  "NONE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P01_PS08",
+                     "powerId":  "P01",
+                     "star":  8,
+                     "desc":  "所有齿轮攻击+20%",
+                     "skillId":  "P01_SKILL_S7",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  2000
+                              }
+                 },
+                 {
+                     "id":  "P02_S01",
+                     "powerId":  "P02",
+                     "star":  0,
+                     "desc":  "主动释放：使用闪电之力强化场上所有仓鼠，短暂提升攻击力30%",
+                     "skillId":  "P02_SKILL_S0",
+                     "effectType":  "NONE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P02_PS01",
+                     "powerId":  "P02",
+                     "star":  1,
+                     "desc":  "每场战斗开始时，跑步效率提升1%，最多叠加5层",
+                     "skillId":  "P02_SKILL_S0",
+                     "effectType":  "ROLE_FEATURE",
+                     "param":  [
+                                   "PER_ROUND_ADD",
+                                   100,
+                                   5
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P02_PS02",
+                     "powerId":  "P02",
+                     "star":  2,
+                     "desc":  "所有齿轮攻击+10%",
+                     "skillId":  "P02_SKILL_S0",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  1000
+                              }
+                 },
+                 {
+                     "id":  "P02_PS03",
+                     "powerId":  "P02",
+                     "star":  3,
+                     "desc":  "使用主动技能的效果提升至40%",
+                     "skillId":  "P02_SKILL_S3",
+                     "effectType":  "NONE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P02_PS04",
+                     "powerId":  "P02",
+                     "star":  4,
+                     "desc":  "所有齿轮攻击+10%",
+                     "skillId":  "P02_SKILL_S3",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  1000
+                              }
+                 },
+                 {
+                     "id":  "P02_PS05",
+                     "powerId":  "P02",
+                     "star":  5,
+                     "desc":  "每场战斗开始时，跑步效率提升1%，最多叠加10层",
+                     "skillId":  "P02_SKILL_S3",
+                     "effectType":  "ROLE_FEATURE",
+                     "param":  [
+                                   "PER_ROUND_ADD",
+                                   100,
+                                   10
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P02_PS06",
+                     "powerId":  "P02",
+                     "star":  6,
+                     "desc":  "所有齿轮攻击+10%",
+                     "skillId":  "P02_SKILL_S3",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  1000
+                              }
+                 },
+                 {
+                     "id":  "P02_PS07",
+                     "powerId":  "P02",
+                     "star":  7,
+                     "desc":  "使用主动技能的效果提升至50%",
+                     "skillId":  "P02_SKILL_S7",
+                     "effectType":  "NONE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P02_PS08",
+                     "powerId":  "P02",
+                     "star":  8,
+                     "desc":  "所有齿轮攻击+20%",
+                     "skillId":  "P02_SKILL_S7",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  2000
+                              }
+                 },
+                 {
+                     "id":  "P03_S01",
+                     "powerId":  "P03",
+                     "star":  0,
+                     "desc":  "主动释放：使用刺猬之力快速冲刺，短暂提升跑步效率15%",
+                     "skillId":  "P03_SKILL_S0",
+                     "effectType":  "NONE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P03_PS01",
+                     "powerId":  "P03",
+                     "star":  1,
+                     "desc":  "蓝刺猬鼠使用主动技能时，额外为我方基地恢复30%最大生命值",
+                     "skillId":  "P03_SKILL_S0",
+                     "effectType":  "ROLE_FEATURE",
+                     "param":  [
+                                   "SKILL_HEAL_HOME",
+                                   "ZJ_5001"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P03_PS02",
+                     "powerId":  "P03",
+                     "star":  2,
+                     "desc":  "所有齿轮攻击+10%",
+                     "skillId":  "P03_SKILL_S0",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  1000
+                              }
+                 },
+                 {
+                     "id":  "P03_PS03",
+                     "powerId":  "P03",
+                     "star":  3,
+                     "desc":  "使用主动技能的效果提升至20%",
+                     "skillId":  "P03_SKILL_S3",
+                     "effectType":  "NONE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P03_PS04",
+                     "powerId":  "P03",
+                     "star":  4,
+                     "desc":  "所有齿轮攻击+10%",
+                     "skillId":  "P03_SKILL_S3",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  1000
+                              }
+                 },
+                 {
+                     "id":  "P03_PS05",
+                     "powerId":  "P03",
+                     "star":  5,
+                     "desc":  "蓝刺猬鼠使用主动技能时，额外为我方基地恢复50%最大生命值",
+                     "skillId":  "P03_SKILL_S3",
+                     "effectType":  "ROLE_FEATURE",
+                     "param":  [
+                                   "SKILL_HEAL_HOME",
+                                   "ZJ_5002"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P03_PS06",
+                     "powerId":  "P03",
+                     "star":  6,
+                     "desc":  "所有齿轮攻击+10%",
+                     "skillId":  "P03_SKILL_S3",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  1000
+                              }
+                 },
+                 {
+                     "id":  "P03_PS07",
+                     "powerId":  "P03",
+                     "star":  7,
+                     "desc":  "使用主动技能的效果提升至25%",
+                     "skillId":  "P03_SKILL_S7",
+                     "effectType":  "NONE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P03_PS08",
+                     "powerId":  "P03",
+                     "star":  8,
+                     "desc":  "所有齿轮攻击+20%",
+                     "skillId":  "P03_SKILL_S7",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  2000
+                              }
+                 },
+                 {
+                     "id":  "P04_S01",
+                     "powerId":  "P04",
+                     "star":  0,
+                     "desc":  "主动释放：投掷巨大的飞镖攻击敌人",
+                     "skillId":  "P04_SKILL_S0",
+                     "effectType":  "NONE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P04_PS01",
+                     "powerId":  "P04",
+                     "star":  1,
+                     "desc":  "当局战斗内，主动技能每击杀一个敌人则提升1%跑步效率,最多叠加10次",
+                     "skillId":  "P04_SKILL_S0",
+                     "effectType":  "ROLE_FEATURE",
+                     "param":  [
+                                   "KILL_ROUND_ADD",
+                                   100,
+                                   10,
+                                   "FB_1601"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P04_PS02",
+                     "powerId":  "P04",
+                     "star":  2,
+                     "desc":  "所有齿轮攻击+10%",
+                     "skillId":  "P04_SKILL_S0",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  1000
+                              }
+                 },
+                 {
+                     "id":  "P04_PS03",
+                     "powerId":  "P04",
+                     "star":  3,
+                     "desc":  "使用主动技能的伤害效果提升至30%",
+                     "skillId":  "P04_SKILL_S3",
+                     "effectType":  "NONE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P04_PS04",
+                     "powerId":  "P04",
+                     "star":  4,
+                     "desc":  "所有齿轮攻击+10%",
+                     "skillId":  "P04_SKILL_S3",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  1000
+                              }
+                 },
+                 {
+                     "id":  "P04_PS05",
+                     "powerId":  "P04",
+                     "star":  5,
+                     "desc":  "当局战斗内，主动技能每击杀一个敌人则提升1%跑步效率，最多叠加20次",
+                     "skillId":  "P04_SKILL_S3",
+                     "effectType":  "ROLE_FEATURE",
+                     "param":  [
+                                   "KILL_ROUND_ADD",
+                                   100,
+                                   20,
+                                   "FB_1601"
+                               ],
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P04_PS06",
+                     "powerId":  "P04",
+                     "star":  6,
+                     "desc":  "所有齿轮攻击+10%",
+                     "skillId":  "P04_SKILL_S3",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  1000
+                              }
+                 },
+                 {
+                     "id":  "P04_PS07",
+                     "powerId":  "P04",
+                     "star":  7,
+                     "desc":  "使用主动技能的伤害效果提升至40%",
+                     "skillId":  "P04_SKILL_S7",
+                     "effectType":  "NONE",
+                     "param":  null,
+                     "attr":  null
+                 },
+                 {
+                     "id":  "P04_PS08",
+                     "powerId":  "P04",
+                     "star":  8,
+                     "desc":  "所有齿轮攻击+20%",
+                     "skillId":  "P04_SKILL_S7",
+                     "effectType":  "ATTR_BONUS",
+                     "param":  null,
+                     "attr":  {
+                                  "ATK_BONUS":  2000
+                              }
+                 }
+             ],
+    "sourceLength":  306,
+    "expectedLength":  306,
+    "validLength":  true
+}

@@ -1,0 +1,506 @@
+﻿{
+    "table":  "hero.HeroStarConfig",
+    "columnCount":  9,
+    "rowCount":  40,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "star",
+                       "token":  1102,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "quality",
+                       "token":  30,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "cost",
+                       "token":  553,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "costGold",
+                       "token":  "costGold",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "unlockSkillPos",
+                       "token":  "unlockSkillPos",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  7,
+                       "name":  "attrModifier",
+                       "token":  "attrModifier",
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  8,
+                       "name":  "normalRecruitWeightMod",
+                       "token":  "normalRecruitWeightMod",
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "type":  1,
+                     "star":  1,
+                     "quality":  2,
+                     "cost":  0,
+                     "costGold":  0,
+                     "unlockSkillPos":  1,
+                     "attrModifier":  0,
+                     "normalRecruitWeightMod":  10000
+                 },
+                 {
+                     "id":  2,
+                     "type":  1,
+                     "star":  2,
+                     "quality":  2,
+                     "cost":  2,
+                     "costGold":  200,
+                     "unlockSkillPos":  2,
+                     "attrModifier":  1000,
+                     "normalRecruitWeightMod":  8000
+                 },
+                 {
+                     "id":  3,
+                     "type":  1,
+                     "star":  3,
+                     "quality":  3,
+                     "cost":  5,
+                     "costGold":  500,
+                     "unlockSkillPos":  3,
+                     "attrModifier":  2100,
+                     "normalRecruitWeightMod":  6000
+                 },
+                 {
+                     "id":  4,
+                     "type":  1,
+                     "star":  4,
+                     "quality":  3,
+                     "cost":  10,
+                     "costGold":  1000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  3300,
+                     "normalRecruitWeightMod":  4000
+                 },
+                 {
+                     "id":  5,
+                     "type":  1,
+                     "star":  5,
+                     "quality":  4,
+                     "cost":  20,
+                     "costGold":  1500,
+                     "unlockSkillPos":  4,
+                     "attrModifier":  4600,
+                     "normalRecruitWeightMod":  2000
+                 },
+                 {
+                     "id":  6,
+                     "type":  1,
+                     "star":  6,
+                     "quality":  4,
+                     "cost":  30,
+                     "costGold":  2000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  6100,
+                     "normalRecruitWeightMod":  1000
+                 },
+                 {
+                     "id":  7,
+                     "type":  1,
+                     "star":  7,
+                     "quality":  4,
+                     "cost":  50,
+                     "costGold":  3000,
+                     "unlockSkillPos":  5,
+                     "attrModifier":  7700,
+                     "normalRecruitWeightMod":  800
+                 },
+                 {
+                     "id":  8,
+                     "type":  1,
+                     "star":  8,
+                     "quality":  5,
+                     "cost":  70,
+                     "costGold":  4000,
+                     "unlockSkillPos":  6,
+                     "attrModifier":  9400,
+                     "normalRecruitWeightMod":  600
+                 },
+                 {
+                     "id":  9,
+                     "type":  1,
+                     "star":  9,
+                     "quality":  5,
+                     "cost":  100,
+                     "costGold":  6000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  11400,
+                     "normalRecruitWeightMod":  400
+                 },
+                 {
+                     "id":  10,
+                     "type":  1,
+                     "star":  10,
+                     "quality":  5,
+                     "cost":  150,
+                     "costGold":  8000,
+                     "unlockSkillPos":  7,
+                     "attrModifier":  13500,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  11,
+                     "type":  1,
+                     "star":  11,
+                     "quality":  5,
+                     "cost":  200,
+                     "costGold":  10000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  15900,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  12,
+                     "type":  1,
+                     "star":  12,
+                     "quality":  5,
+                     "cost":  300,
+                     "costGold":  15000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  18500,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  13,
+                     "type":  1,
+                     "star":  13,
+                     "quality":  5,
+                     "cost":  500,
+                     "costGold":  20000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  21300,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  14,
+                     "type":  1,
+                     "star":  14,
+                     "quality":  5,
+                     "cost":  700,
+                     "costGold":  30000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  24500,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  15,
+                     "type":  1,
+                     "star":  15,
+                     "quality":  5,
+                     "cost":  1000,
+                     "costGold":  40000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  27900,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  16,
+                     "type":  1,
+                     "star":  16,
+                     "quality":  5,
+                     "cost":  1500,
+                     "costGold":  60000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  31700,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  17,
+                     "type":  1,
+                     "star":  17,
+                     "quality":  5,
+                     "cost":  2000,
+                     "costGold":  80000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  35900,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  18,
+                     "type":  1,
+                     "star":  18,
+                     "quality":  5,
+                     "cost":  3000,
+                     "costGold":  100000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  40500,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  19,
+                     "type":  1,
+                     "star":  19,
+                     "quality":  5,
+                     "cost":  5000,
+                     "costGold":  150000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  45500,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  20,
+                     "type":  1,
+                     "star":  20,
+                     "quality":  5,
+                     "cost":  7000,
+                     "costGold":  200000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  51100,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  21,
+                     "type":  2,
+                     "star":  1,
+                     "quality":  2,
+                     "cost":  0,
+                     "costGold":  0,
+                     "unlockSkillPos":  1,
+                     "attrModifier":  0,
+                     "normalRecruitWeightMod":  10000
+                 },
+                 {
+                     "id":  22,
+                     "type":  2,
+                     "star":  2,
+                     "quality":  2,
+                     "cost":  2,
+                     "costGold":  200,
+                     "unlockSkillPos":  2,
+                     "attrModifier":  1000,
+                     "normalRecruitWeightMod":  8000
+                 },
+                 {
+                     "id":  23,
+                     "type":  2,
+                     "star":  3,
+                     "quality":  3,
+                     "cost":  5,
+                     "costGold":  500,
+                     "unlockSkillPos":  3,
+                     "attrModifier":  2100,
+                     "normalRecruitWeightMod":  6000
+                 },
+                 {
+                     "id":  24,
+                     "type":  2,
+                     "star":  4,
+                     "quality":  3,
+                     "cost":  10,
+                     "costGold":  1000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  3300,
+                     "normalRecruitWeightMod":  4000
+                 },
+                 {
+                     "id":  25,
+                     "type":  2,
+                     "star":  5,
+                     "quality":  4,
+                     "cost":  20,
+                     "costGold":  1500,
+                     "unlockSkillPos":  4,
+                     "attrModifier":  4600,
+                     "normalRecruitWeightMod":  2000
+                 },
+                 {
+                     "id":  26,
+                     "type":  2,
+                     "star":  6,
+                     "quality":  4,
+                     "cost":  30,
+                     "costGold":  2000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  6100,
+                     "normalRecruitWeightMod":  1000
+                 },
+                 {
+                     "id":  27,
+                     "type":  2,
+                     "star":  7,
+                     "quality":  4,
+                     "cost":  50,
+                     "costGold":  3000,
+                     "unlockSkillPos":  5,
+                     "attrModifier":  7700,
+                     "normalRecruitWeightMod":  800
+                 },
+                 {
+                     "id":  28,
+                     "type":  2,
+                     "star":  8,
+                     "quality":  5,
+                     "cost":  70,
+                     "costGold":  4000,
+                     "unlockSkillPos":  6,
+                     "attrModifier":  9400,
+                     "normalRecruitWeightMod":  600
+                 },
+                 {
+                     "id":  29,
+                     "type":  2,
+                     "star":  9,
+                     "quality":  5,
+                     "cost":  100,
+                     "costGold":  6000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  11400,
+                     "normalRecruitWeightMod":  400
+                 },
+                 {
+                     "id":  30,
+                     "type":  2,
+                     "star":  10,
+                     "quality":  5,
+                     "cost":  150,
+                     "costGold":  8000,
+                     "unlockSkillPos":  7,
+                     "attrModifier":  13500,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  31,
+                     "type":  2,
+                     "star":  11,
+                     "quality":  5,
+                     "cost":  200,
+                     "costGold":  10000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  15900,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  32,
+                     "type":  2,
+                     "star":  12,
+                     "quality":  5,
+                     "cost":  300,
+                     "costGold":  15000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  18500,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  33,
+                     "type":  2,
+                     "star":  13,
+                     "quality":  5,
+                     "cost":  500,
+                     "costGold":  20000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  21300,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  34,
+                     "type":  2,
+                     "star":  14,
+                     "quality":  5,
+                     "cost":  700,
+                     "costGold":  30000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  24500,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  35,
+                     "type":  2,
+                     "star":  15,
+                     "quality":  5,
+                     "cost":  1000,
+                     "costGold":  40000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  27900,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  36,
+                     "type":  2,
+                     "star":  16,
+                     "quality":  5,
+                     "cost":  1500,
+                     "costGold":  60000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  31700,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  37,
+                     "type":  2,
+                     "star":  17,
+                     "quality":  5,
+                     "cost":  2000,
+                     "costGold":  80000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  35900,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  38,
+                     "type":  2,
+                     "star":  18,
+                     "quality":  5,
+                     "cost":  3000,
+                     "costGold":  100000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  40500,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  39,
+                     "type":  2,
+                     "star":  19,
+                     "quality":  5,
+                     "cost":  5000,
+                     "costGold":  150000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  45500,
+                     "normalRecruitWeightMod":  200
+                 },
+                 {
+                     "id":  40,
+                     "type":  2,
+                     "star":  20,
+                     "quality":  5,
+                     "cost":  7000,
+                     "costGold":  200000,
+                     "unlockSkillPos":  0,
+                     "attrModifier":  51100,
+                     "normalRecruitWeightMod":  200
+                 }
+             ],
+    "sourceLength":  380,
+    "expectedLength":  380,
+    "validLength":  true
+}

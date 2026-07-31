@@ -1,0 +1,204 @@
+﻿{
+    "table":  "quality.QualityConfig",
+    "columnCount":  15,
+    "rowCount":  6,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "desc",
+                       "token":  34,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  2,
+                       "name":  "fontColorType",
+                       "token":  "fontColorType",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "fontColor",
+                       "token":  "fontColor",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "fontColor2",
+                       "token":  "fontColor2",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "fontColor3",
+                       "token":  "fontColor3",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  6,
+                       "name":  "itemBgPath",
+                       "token":  "itemBgPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "heroBgPath",
+                       "token":  "heroBgPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  8,
+                       "name":  "heroLvBgPath",
+                       "token":  "heroLvBgPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  9,
+                       "name":  "heroShapeBgPath",
+                       "token":  "heroShapeBgPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  10,
+                       "name":  "skillBgPath",
+                       "token":  "skillBgPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  11,
+                       "name":  "buffBgPath",
+                       "token":  "buffBgPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  12,
+                       "name":  "bloodBgPath",
+                       "token":  "bloodBgPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  13,
+                       "name":  "monsterBgPath",
+                       "token":  "monsterBgPath",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  14,
+                       "name":  "fruitBuffBgPath",
+                       "token":  "fruitBuffBgPath",
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1,
+                     "desc":  "i18n:QualityConfig.desc.1",
+                     "fontColorType":  "SINGLE",
+                     "fontColor":  "#FFFFFF",
+                     "fontColor2":  "",
+                     "fontColor3":  "",
+                     "itemBgPath":  "image/quality/gray_frame",
+                     "heroBgPath":  "image/quality/gray_hero_frame",
+                     "heroLvBgPath":  "image/quality/green_hero_lv",
+                     "heroShapeBgPath":  "image/quality/gray_hero_shape",
+                     "skillBgPath":  "image/quality/green_skill",
+                     "buffBgPath":  "image/quality/jn_green",
+                     "bloodBgPath":  "image/quality/green_blood",
+                     "monsterBgPath":  "image/quality/blue_monster_frame",
+                     "fruitBuffBgPath":  "image/quality/fruit_buff_green"
+                 },
+                 {
+                     "id":  2,
+                     "desc":  "i18n:QualityConfig.desc.2",
+                     "fontColorType":  "SINGLE",
+                     "fontColor":  "#33FF00",
+                     "fontColor2":  "",
+                     "fontColor3":  "",
+                     "itemBgPath":  "image/quality/green_frame",
+                     "heroBgPath":  "image/quality/green_hero_frame",
+                     "heroLvBgPath":  "image/quality/green_hero_lv",
+                     "heroShapeBgPath":  "image/quality/green_hero_shape",
+                     "skillBgPath":  "image/quality/green_skill",
+                     "buffBgPath":  "image/quality/jn_green",
+                     "bloodBgPath":  "image/quality/green_blood",
+                     "monsterBgPath":  "image/quality/blue_monster_frame",
+                     "fruitBuffBgPath":  "image/quality/fruit_buff_green"
+                 },
+                 {
+                     "id":  3,
+                     "desc":  "i18n:QualityConfig.desc.3",
+                     "fontColorType":  "SINGLE",
+                     "fontColor":  "#31B4FF",
+                     "fontColor2":  "",
+                     "fontColor3":  "",
+                     "itemBgPath":  "image/quality/blue_frame",
+                     "heroBgPath":  "image/quality/blue_hero_frame",
+                     "heroLvBgPath":  "image/quality/blue_hero_lv",
+                     "heroShapeBgPath":  "image/quality/blue_hero_shape",
+                     "skillBgPath":  "image/quality/blue_skill",
+                     "buffBgPath":  "image/quality/jn_blue",
+                     "bloodBgPath":  "image/quality/blue_blood",
+                     "monsterBgPath":  "image/quality/blue_monster_frame",
+                     "fruitBuffBgPath":  "image/quality/fruit_buff_blue"
+                 },
+                 {
+                     "id":  4,
+                     "desc":  "i18n:QualityConfig.desc.4",
+                     "fontColorType":  "SINGLE",
+                     "fontColor":  "#D667FF",
+                     "fontColor2":  "",
+                     "fontColor3":  "",
+                     "itemBgPath":  "image/quality/purple_frame",
+                     "heroBgPath":  "image/quality/purple_hero_frame",
+                     "heroLvBgPath":  "image/quality/purple_hero_lv",
+                     "heroShapeBgPath":  "image/quality/purple_hero_shape",
+                     "skillBgPath":  "image/quality/purple_skill",
+                     "buffBgPath":  "image/quality/jn_purple",
+                     "bloodBgPath":  "image/quality/purple_blood",
+                     "monsterBgPath":  "image/quality/purple_monster_frame",
+                     "fruitBuffBgPath":  "image/quality/fruit_buff_purple"
+                 },
+                 {
+                     "id":  5,
+                     "desc":  "i18n:QualityConfig.desc.5",
+                     "fontColorType":  "SINGLE",
+                     "fontColor":  "#FFCD54",
+                     "fontColor2":  "",
+                     "fontColor3":  "",
+                     "itemBgPath":  "image/quality/orange_frame",
+                     "heroBgPath":  "image/quality/orange_hero_frame",
+                     "heroLvBgPath":  "image/quality/orange_hero_lv",
+                     "heroShapeBgPath":  "image/quality/orange_hero_shape",
+                     "skillBgPath":  "image/quality/red_skill",
+                     "buffBgPath":  "image/quality/jn_red",
+                     "bloodBgPath":  "image/quality/yellow_blood",
+                     "monsterBgPath":  "image/quality/red_monster_frame",
+                     "fruitBuffBgPath":  "image/quality/fruit_buff_orange"
+                 },
+                 {
+                     "id":  6,
+                     "desc":  "i18n:QualityConfig.desc.6",
+                     "fontColorType":  "",
+                     "fontColor":  "",
+                     "fontColor2":  "",
+                     "fontColor3":  "",
+                     "itemBgPath":  "image/quality/red_frame",
+                     "heroBgPath":  "image/quality/red_hero_frame",
+                     "heroLvBgPath":  "image/quality/orange_hero_lv",
+                     "heroShapeBgPath":  "image/quality/red_hero_shape",
+                     "skillBgPath":  "image/quality/red_skill",
+                     "buffBgPath":  "image/quality/jn_red",
+                     "bloodBgPath":  "image/quality/red_blood",
+                     "monsterBgPath":  "image/quality/red_monster_frame",
+                     "fruitBuffBgPath":  "image/quality/fruit_buff_orange"
+                 }
+             ],
+    "sourceLength":  122,
+    "expectedLength":  122,
+    "validLength":  true
+}

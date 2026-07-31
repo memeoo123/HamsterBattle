@@ -1,0 +1,288 @@
+﻿{
+    "table":  "dailyInstance.DailyInstanceConfig",
+    "columnCount":  6,
+    "rowCount":  10,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "roundIds",
+                       "token":  523,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  2,
+                       "name":  "name",
+                       "token":  33,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  3,
+                       "name":  "logoSpine",
+                       "token":  524,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  4,
+                       "name":  "fightscene",
+                       "token":  525,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  5,
+                       "name":  "initRewards",
+                       "token":  526,
+                       "typeCode":  4
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  2001,
+                     "roundIds":  [
+                                      200001,
+                                      200002,
+                                      200003,
+                                      200004,
+                                      200005,
+                                      200006,
+                                      200007,
+                                      200008,
+                                      200009,
+                                      200010
+                                  ],
+                     "name":  "宁静森林",
+                     "logoSpine":  "spine/ui/cj_senlin/cj_senlin",
+                     "fightscene":  "image/unpack/fightscene/fightscene_01",
+                     "initRewards":  [
+                                         {
+                                             "k":  5,
+                                             "v":  30
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  2002,
+                     "roundIds":  [
+                                      200101,
+                                      200102,
+                                      200103,
+                                      200104,
+                                      200105,
+                                      200106,
+                                      200107,
+                                      200108,
+                                      200109,
+                                      200110
+                                  ],
+                     "name":  "密林深处",
+                     "logoSpine":  "spine/ui/cj_senlin/cj_senlin",
+                     "fightscene":  "image/unpack/fightscene/fightscene_01",
+                     "initRewards":  [
+                                         {
+                                             "k":  5,
+                                             "v":  30
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  2003,
+                     "roundIds":  [
+                                      200001,
+                                      200002,
+                                      200003,
+                                      200004,
+                                      200005,
+                                      200006,
+                                      200007,
+                                      200008,
+                                      200009,
+                                      200010
+                                  ],
+                     "name":  "荒漠边缘",
+                     "logoSpine":  "spine/ui/cj_shamo/cj_shamo",
+                     "fightscene":  "image/unpack/fightscene/fightscene_03",
+                     "initRewards":  [
+                                         {
+                                             "k":  5,
+                                             "v":  30
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  2004,
+                     "roundIds":  [
+                                      200001,
+                                      200002,
+                                      200003,
+                                      200004,
+                                      200005,
+                                      200006,
+                                      200007,
+                                      200008,
+                                      200009,
+                                      200010
+                                  ],
+                     "name":  "荒漠沙地",
+                     "logoSpine":  "spine/ui/cj_shamo/cj_shamo",
+                     "fightscene":  "image/unpack/fightscene/fightscene_03",
+                     "initRewards":  [
+                                         {
+                                             "k":  5,
+                                             "v":  30
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  2005,
+                     "roundIds":  [
+                                      200101,
+                                      200102,
+                                      200103,
+                                      200104,
+                                      200105,
+                                      200106,
+                                      200107,
+                                      200108,
+                                      200109,
+                                      200110
+                                  ],
+                     "name":  "雪山脚下",
+                     "logoSpine":  "spine/ui/cj_xuedi/cj_xuedi",
+                     "fightscene":  "image/unpack/fightscene/fightscene_02",
+                     "initRewards":  [
+                                         {
+                                             "k":  5,
+                                             "v":  30
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  2006,
+                     "roundIds":  [
+                                      200101,
+                                      200102,
+                                      200103,
+                                      200104,
+                                      200105,
+                                      200106,
+                                      200107,
+                                      200108,
+                                      200109,
+                                      200110
+                                  ],
+                     "name":  "无尽雪山",
+                     "logoSpine":  "spine/ui/cj_xuedi/cj_xuedi",
+                     "fightscene":  "image/unpack/fightscene/fightscene_02",
+                     "initRewards":  [
+                                         {
+                                             "k":  5,
+                                             "v":  30
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  2007,
+                     "roundIds":  [
+                                      200101,
+                                      200102,
+                                      200103,
+                                      200104,
+                                      200105,
+                                      200106,
+                                      200107,
+                                      200108,
+                                      200109,
+                                      200110
+                                  ],
+                     "name":  "青绿草原",
+                     "logoSpine":  "spine/ui/cj_senlin/cj_senlin",
+                     "fightscene":  "image/unpack/fightscene/fightscene_01",
+                     "initRewards":  [
+                                         {
+                                             "k":  5,
+                                             "v":  30
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  2008,
+                     "roundIds":  [
+                                      200101,
+                                      200102,
+                                      200103,
+                                      200104,
+                                      200105,
+                                      200106,
+                                      200107,
+                                      200108,
+                                      200109,
+                                      200110
+                                  ],
+                     "name":  "草原咆哮",
+                     "logoSpine":  "spine/ui/cj_senlin/cj_senlin",
+                     "fightscene":  "image/unpack/fightscene/fightscene_01",
+                     "initRewards":  [
+                                         {
+                                             "k":  5,
+                                             "v":  30
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  2009,
+                     "roundIds":  [
+                                      200001,
+                                      200002,
+                                      200003,
+                                      200004,
+                                      200005,
+                                      200006,
+                                      200007,
+                                      200008,
+                                      200009,
+                                      200010
+                                  ],
+                     "name":  "初见火山",
+                     "logoSpine":  "spine/ui/cj_huoshan/cj_huoshan",
+                     "fightscene":  "image/unpack/fightscene/fightscene_04",
+                     "initRewards":  [
+                                         {
+                                             "k":  5,
+                                             "v":  30
+                                         }
+                                     ]
+                 },
+                 {
+                     "id":  2010,
+                     "roundIds":  [
+                                      200001,
+                                      200002,
+                                      200003,
+                                      200004,
+                                      200005,
+                                      200006,
+                                      200007,
+                                      200008,
+                                      200009,
+                                      200010
+                                  ],
+                     "name":  "火山熔岩",
+                     "logoSpine":  "spine/ui/cj_huoshan/cj_huoshan",
+                     "fightscene":  "image/unpack/fightscene/fightscene_04",
+                     "initRewards":  [
+                                         {
+                                             "k":  5,
+                                             "v":  30
+                                         }
+                                     ]
+                 }
+             ],
+    "sourceLength":  74,
+    "expectedLength":  74,
+    "validLength":  true
+}

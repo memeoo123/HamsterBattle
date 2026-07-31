@@ -1,0 +1,240 @@
+﻿{
+    "table":  "guide.TrunkTaskGuideConfig",
+    "columnCount":  22,
+    "rowCount":  3,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  1,
+                       "name":  "nextId",
+                       "token":  345,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  2,
+                       "name":  "group",
+                       "token":  236,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  3,
+                       "name":  "partId",
+                       "token":  964,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  4,
+                       "name":  "savePoint",
+                       "token":  965,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  5,
+                       "name":  "passEnd",
+                       "token":  966,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  6,
+                       "name":  "type",
+                       "token":  19,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  7,
+                       "name":  "typeParam",
+                       "token":  967,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  8,
+                       "name":  "plot",
+                       "token":  968,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  9,
+                       "name":  "isForce",
+                       "token":  969,
+                       "typeCode":  5
+                   },
+                   {
+                       "index":  10,
+                       "name":  "battle",
+                       "token":  "battle",
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  11,
+                       "name":  "time",
+                       "token":  990,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  12,
+                       "name":  "triggerCondition",
+                       "token":  970,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  13,
+                       "name":  "finishCondition",
+                       "token":  971,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  14,
+                       "name":  "maskAlpha",
+                       "token":  972,
+                       "typeCode":  1
+                   },
+                   {
+                       "index":  15,
+                       "name":  "UI",
+                       "token":  973,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  16,
+                       "name":  "item",
+                       "token":  974,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  17,
+                       "name":  "fingerPos",
+                       "token":  "fingerPos",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  18,
+                       "name":  "maskInverted",
+                       "token":  "maskInverted",
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  19,
+                       "name":  "script",
+                       "token":  975,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  20,
+                       "name":  "scriptParam",
+                       "token":  976,
+                       "typeCode":  4
+                   },
+                   {
+                       "index":  21,
+                       "name":  "canJump",
+                       "token":  977,
+                       "typeCode":  1
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  1001,
+                     "nextId":  1002,
+                     "group":  1010,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  null,
+                     "isForce":  false,
+                     "battle":  "",
+                     "time":  "",
+                     "triggerCondition":  [
+                                              "TASK",
+                                              2,
+                                              56
+                                          ],
+                     "finishCondition":  null,
+                     "maskAlpha":  0,
+                     "UI":  "MAIN_PAGE",
+                     "item":  "footer.pageList.2",
+                     "fingerPos":  [
+                                       0,
+                                       0,
+                                       1
+                                   ],
+                     "maskInverted":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  1002,
+                     "nextId":  1003,
+                     "group":  1010,
+                     "partId":  10,
+                     "savePoint":  0,
+                     "passEnd":  0,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  null,
+                     "isForce":  false,
+                     "battle":  "",
+                     "time":  "",
+                     "triggerCondition":  [
+                                              "VIEW",
+                                              1,
+                                              "GameModeMainView"
+                                          ],
+                     "finishCondition":  null,
+                     "maskAlpha":  0,
+                     "UI":  "GameModeMainView",
+                     "item":  "itemList.0",
+                     "fingerPos":  [
+                                       0,
+                                       0,
+                                       1
+                                   ],
+                     "maskInverted":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 },
+                 {
+                     "id":  1003,
+                     "nextId":  0,
+                     "group":  1010,
+                     "partId":  10,
+                     "savePoint":  1,
+                     "passEnd":  1,
+                     "type":  "TOUCH",
+                     "typeParam":  null,
+                     "plot":  null,
+                     "isForce":  false,
+                     "battle":  "",
+                     "time":  "",
+                     "triggerCondition":  [
+                                              "VIEW",
+                                              1,
+                                              "PVPMainView"
+                                          ],
+                     "finishCondition":  null,
+                     "maskAlpha":  0,
+                     "UI":  "PVPMainView",
+                     "item":  "btnChallenge",
+                     "fingerPos":  [
+                                       0,
+                                       0,
+                                       1
+                                   ],
+                     "maskInverted":  null,
+                     "script":  "",
+                     "scriptParam":  null,
+                     "canJump":  0
+                 }
+             ],
+    "sourceLength":  112,
+    "expectedLength":  112,
+    "validLength":  true
+}

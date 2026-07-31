@@ -1,0 +1,40 @@
+﻿{
+    "table":  "battleFruit.FruitConstantConfig",
+    "columnCount":  2,
+    "rowCount":  4,
+    "schema":  [
+                   {
+                       "index":  0,
+                       "name":  "id",
+                       "token":  0,
+                       "typeCode":  3
+                   },
+                   {
+                       "index":  1,
+                       "name":  "content",
+                       "token":  335,
+                       "typeCode":  3
+                   }
+               ],
+    "rows":  [
+                 {
+                     "id":  "FRUIT:INIT_HEROS",
+                     "content":  "H01;"
+                 },
+                 {
+                     "id":  "FRUIT:INIT_MONSTER",
+                     "content":  "1001"
+                 },
+                 {
+                     "id":  "FRUIT:BUFF_DROP_SPEED",
+                     "content":  "300"
+                 },
+                 {
+                     "id":  "FRUIT:BG",
+                     "content":  "image/unpack/fruit/bg_fruit"
+                 }
+             ],
+    "sourceLength":  14,
+    "expectedLength":  14,
+    "validLength":  true
+}

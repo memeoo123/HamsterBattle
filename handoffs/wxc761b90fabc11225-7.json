@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "2.0",
+  "generatedAtUtc": "2026-07-31T10:00:09.0455171Z",
+  "platform": "windows",
+  "source": {
+    "kind": "migration",
+    "legacyDiff": "E:\\Projects\\weichatAnalysis\\cangshu\\.wechat-minigame-locator\\diff.json",
+    "legacySchemaVersion": "1.0"
+  },
+  "handoffCandidates": [
+    {
+      "appId": "wxc761b90fabc11225",
+      "version": "7",
+      "mainPackage": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\input\\wxc761b90fabc11225\\7\\__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
+      "relatedPackages": [
+        "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\input\\wxe5a48f1ed5f544b7\\335\\__PLUGINCODE__.wxapkg",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\input\\wxaed5ace05d92b218\\63\\__PLUGINCODE__.wxapkg"
+      ],
+      "confidence": "high",
+      "evidence": "before-after-filesystem-metadata-diff-and-package-config-cross-check",
+      "classification": "unity-webgl-target-with-plugin-dependencies",
+      "contentRead": true
+    }
+  ]
+}
