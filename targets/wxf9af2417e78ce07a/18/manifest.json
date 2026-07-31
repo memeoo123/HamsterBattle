@@ -57,6 +57,18 @@
     {
       "kind": "cocosProject",
       "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject"
+    },
+    {
+      "kind": "fairyGuiLayoutEvidence",
+      "path": "evidence/fairygui/bagLike.layout.json"
+    },
+    {
+      "kind": "runtimeVictoryEvidence",
+      "path": "evidence/runtime"
+    },
+    {
+      "kind": "refreshPlacementEvidence",
+      "path": "evidence/runtime/baglike-refresh-placement.md"
     }
   ],
   "commands": [
@@ -75,6 +87,14 @@
     {
       "tool": "runtime module extraction",
       "result": "level/round/defeat multipliers and regular damage order recovered"
+    },
+    {
+      "tool": "compact FairyGUI layout parser",
+      "result": "750x1334 page, battle scene, camps, 7x5 grid, HUD and preparation controls recovered"
+    },
+    {
+      "tool": "cocos-minigame-restorer validators",
+      "result": "ready gate valid, 22/22 golden cases including refresh economy, manual placement and phase transitions, 22 assets with 0 missing meta, TypeScript exit code 0"
     }
   ],
   "engineEvidence": [
@@ -91,11 +111,10 @@
       "finding": "System.register Cocos business modules"
     }
   ],
-  "currentStage": "produce-restoration-handoff",
+  "currentStage": "cocos-reconstruction-validation",
   "blockers": [
-    "exact original scene anchors and UI geometry require a matched original level capture",
-    "the existing reconstruction uses 750x1000 while the original settings confirm 750x1334",
-    "RESTORE_SPEC remains implementationReady=false until blocking visual/anchor unknowns are resolved"
+    "post-change interactive Creator preview smoke test has not yet been completed",
+    "pixel-perfect validation still requires a matched original level capture"
   ],
   "handoff": {
     "source": "E:\\Projects\\weichatAnalysis\\cangshu\\handoffs\\wxf9af2417e78ce07a-18.json",

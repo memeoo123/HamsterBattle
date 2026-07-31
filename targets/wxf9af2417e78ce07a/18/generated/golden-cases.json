@@ -40,6 +40,7 @@
   "waves": [
     {
       "name": "level 1001 round 1",
+      "implementationRound": 1,
       "times": [5000],
       "entities": ["M02"],
       "expected": [[5000, "M02"]],
@@ -47,6 +48,7 @@
     },
     {
       "name": "level 1001 round 2",
+      "implementationRound": 2,
       "times": [1000, 4000, 6000, 8000, 11000, 13000, 15000],
       "entities": ["M02", "M02", "M02", "M03", "M02", "M02", "M02"],
       "expected": [[1000, "M02"], [4000, "M02"], [6000, "M02"], [8000, "M03"], [11000, "M02"], [13000, "M02"], [15000, "M02"]],
@@ -54,6 +56,7 @@
     },
     {
       "name": "level 1001 round 3",
+      "implementationRound": 3,
       "times": [1000, 4000, 6000, 9500, 10000, 11000, 11500, 12500, 13000, 13500, 14000, 14500, 15000],
       "entities": ["M02", "M02", "M02", "M03", "M02", "M02", "M02", "M02", "M03", "M02", "M02", "M02", "M03"],
       "expected": [[1000, "M02"], [4000, "M02"], [6000, "M02"], [9500, "M03"], [10000, "M02"], [11000, "M02"], [11500, "M02"], [12500, "M02"], [13000, "M03"], [13500, "M02"], [14000, "M02"], [14500, "M02"], [15000, "M03"]],
@@ -61,6 +64,7 @@
     },
     {
       "name": "level 1001 round 4",
+      "implementationRound": 4,
       "times": [1000, 4000, 6000, 9500, 10000, 11000, 11500, 12000, 12500, 13000, 13500, 14000, 14500, 15000],
       "entities": ["M02", "M02", "M02", "M03", "M02", "M02", "M02", "M02", "M02", "M03", "M02", "M02", "M02", "M03"],
       "expected": [[1000, "M02"], [4000, "M02"], [6000, "M02"], [9500, "M03"], [10000, "M02"], [11000, "M02"], [11500, "M02"], [12000, "M02"], [12500, "M02"], [13000, "M03"], [13500, "M02"], [14000, "M02"], [14500, "M02"], [15000, "M03"]],
@@ -68,6 +72,7 @@
     },
     {
       "name": "level 1001 round 5",
+      "implementationRound": 5,
       "times": [1000, 3500, 5500, 8500, 9000, 10000, 10500, 11000, 11500, 12000],
       "entities": ["M02", "M02", "M02", "M02", "M03", "M02", "M02", "M03", "M02", "Boss03"],
       "expected": [[1000, "M02"], [3500, "M02"], [5500, "M02"], [8500, "M02"], [9000, "M03"], [10000, "M02"], [10500, "M02"], [11000, "M03"], [11500, "M02"], [12000, "Boss03"]],
@@ -86,13 +91,6 @@
       "name": "player defeat clamps base HP to zero",
       "start": 500,
       "damage": [200, 300],
-      "expected": 0,
-      "evidence": ["K-C004", "K-C007"]
-    },
-    {
-      "name": "enemy defeat clamps base HP to zero",
-      "start": 4000,
-      "damage": [1500, 2500],
       "expected": 0,
       "evidence": ["K-C004", "K-C007"]
     }
@@ -115,20 +113,119 @@
       "evidence": ["K-C008"]
     }
   ],
+  "refreshEconomy": [
+    {
+      "name": "first normal refresh is free",
+      "normalRefreshTimes": 0,
+      "gold": 0,
+      "refreshCost": 15,
+      "expected": {"allowed": true, "cost": 0, "gold": 0, "normalRefreshTimes": 1},
+      "evidence": ["K-C016", "K-C017"]
+    },
+    {
+      "name": "later normal refresh is blocked below 15 coins",
+      "normalRefreshTimes": 1,
+      "gold": 14,
+      "refreshCost": 15,
+      "expected": {"allowed": false, "cost": 0, "gold": 14, "normalRefreshTimes": 1},
+      "evidence": ["K-C016", "K-C017"]
+    },
+    {
+      "name": "later normal refresh spends 15 coins",
+      "normalRefreshTimes": 1,
+      "gold": 20,
+      "refreshCost": 15,
+      "expected": {"allowed": true, "cost": 15, "gold": 5, "normalRefreshTimes": 2},
+      "evidence": ["K-C016", "K-C017"]
+    }
+  ],
+  "placements": [
+    {
+      "name": "single-cell H0101 can be placed in an open empty cell",
+      "rows": 5,
+      "columns": 7,
+      "powerIndex": 17,
+      "unlocked": [9, 10, 11, 16, 17, 18, 23, 24, 25],
+      "occupied": [17],
+      "shape": [[0, 0]],
+      "target": [1, 2],
+      "expectedAllowed": true,
+      "evidence": ["K-C016", "K-C017"]
+    },
+    {
+      "name": "two-cell H0201 cannot overlap the power core",
+      "rows": 5,
+      "columns": 7,
+      "powerIndex": 17,
+      "unlocked": [9, 10, 11, 16, 17, 18, 23, 24, 25],
+      "occupied": [17],
+      "shape": [[0, 0], [0, 1]],
+      "target": [2, 2],
+      "expectedAllowed": false,
+      "evidence": ["K-C016", "K-C017"]
+    },
+    {
+      "name": "G02 unlock item requires two locked horizontal cells",
+      "rows": 5,
+      "columns": 7,
+      "powerIndex": 17,
+      "unlocked": [9, 10, 11, 16, 17, 18, 23, 24, 25],
+      "occupied": [17],
+      "shape": [[0, 0], [0, 1]],
+      "target": [0, 0],
+      "gridUnlock": true,
+      "expectedAllowed": true,
+      "evidence": ["K-C016", "K-C017"]
+    }
+  ],
   "conditions": [
     {
       "name": "victory",
-      "when": "enemy base HP reaches zero after all damage is applied",
+      "when": "the fifth round schedule is exhausted and no enemy units remain alive",
+      "selfHp": 120,
+      "scheduleComplete": true,
+      "enemiesAlive": 0,
+      "roundIndex": 4,
+      "roundCount": 5,
       "expectedPhase": "won",
-      "coveredBy": "enemy defeat clamps base HP to zero",
-      "evidence": ["K-C007"]
+      "coveredBy": "level 1001 round 5",
+      "evidence": ["K-C005", "K-C013"]
     },
     {
       "name": "defeat",
       "when": "player base HP reaches zero after all damage is applied",
+      "selfHp": 0,
+      "scheduleComplete": false,
+      "enemiesAlive": 3,
+      "roundIndex": 2,
+      "roundCount": 5,
       "expectedPhase": "lost",
       "coveredBy": "player defeat clamps base HP to zero",
       "evidence": ["K-C007"]
+    },
+    {
+      "name": "non-final round clear",
+      "when": "a non-final round schedule is exhausted and no enemy units remain alive",
+      "selfHp": 453,
+      "scheduleComplete": true,
+      "enemiesAlive": 0,
+      "roundIndex": 1,
+      "roundCount": 5,
+      "expectedPhase": "roundClear",
+      "coveredBy": "level 1001 round 2",
+      "evidence": ["K-C005", "K-C013"]
+    },
+    {
+      "name": "battle continues while enemies remain",
+      "when": "the schedule is exhausted but at least one enemy is alive",
+      "selfHp": 453,
+      "scheduleComplete": true,
+      "enemiesAlive": 1,
+      "roundIndex": 1,
+      "roundCount": 5,
+      "expectedPhase": "battle",
+      "coveredBy": "level 1001 round 2",
+      "evidence": ["K-C005", "K-C013"]
     }
   ]
 }

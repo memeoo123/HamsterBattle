@@ -1,0 +1,2408 @@
+﻿{
+  "sourceBytes": 1433862,
+  "registrationCount": 636,
+  "namedRegistrationCount": 636,
+  "methods": [
+    "register"
+  ],
+  "selectedRegistrationCount": 84,
+  "selectedRegistrations": [
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/AdManager.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BaseSingleton.ts",
+        "./G.ts",
+        "./AdAPI.ts",
+        "./DebugUtils.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./I18nKey.ts",
+        "./UIBagLikeConfig.ts",
+        "./BattleInstanceController.ts",
+        "./ItemID.ts",
+        "./ADEnums.ts",
+        "./ReportSdk.ts",
+        "./ReportEnums.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeADBubble.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./fairygui.mjs",
+        "./UIScriptManager.ts",
+        "./BagLilkeManager.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeADIcon.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./UIScriptManager.ts",
+        "./FGUINotificationComponent.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./ItemID.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeBattlePage.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./AudioEnums.ts",
+        "./G.ts",
+        "./UIPage.ts",
+        "./UIScriptManager.ts",
+        "./BattleManager.ts",
+        "./GBattleIns.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./BattleInstanceController.ts",
+        "./ItemID.ts",
+        "./BagLilkeManager.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeBossView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./AudioEnums.ts",
+        "./UIView.ts",
+        "./UIScriptManager.ts",
+        "./GIns.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeBuffItem.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./fairygui.mjs",
+        "./UIScriptManager.ts",
+        "./QualityUtils.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeBuffManager.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BaseSingleton.ts",
+        "./G.ts",
+        "./TableManager.ts",
+        "./WeightUtils.ts",
+        "./BattleEnum.ts",
+        "./FeatureType.ts",
+        "./GBattleIns.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./BagLikeItemDatas.ts",
+        "./HeroEnums.ts",
+        "./UIBagLikeBuffConfig.ts",
+        "./BattleManager.ts",
+        "./FacadeManager.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeBuffModel.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./AudioEnums.ts",
+        "./TableManager.ts",
+        "./FguiUtils.ts",
+        "./BaseModel.ts",
+        "./GBattleIns.ts",
+        "./MathUtils2.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./ItemID.ts",
+        "./UIRewardConfig.ts",
+        "./UIBagLikeBuffConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeBuffWin.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./fairygui.mjs",
+        "./G.ts",
+        "./UIScriptManager.ts",
+        "./UICommWin.ts",
+        "./ColorUtils.ts",
+        "./MathUtils2.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./I18nKey.ts",
+        "./ADEnums.ts",
+        "./BattleInstanceController.ts",
+        "./QualityEnums.ts",
+        "./BagLikeBuffManager.ts",
+        "./UIBagLikeBuffConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeCoinWeightDatas.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BaseTabeManager.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeDragContainer.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UIScriptManager.ts",
+        "./FGUINotificationComponent.ts",
+        "./BattleTimer.ts",
+        "./FguiUtils.ts",
+        "./fairygui.mjs",
+        "./NotificationKey.ts",
+        "./ModelNode.ts",
+        "./BaglikeDragLineCtrl.ts",
+        "./BaglikeMergeLineCtrl.ts",
+        "./BrickBaseCom.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeDragCtrl.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./fairygui.mjs"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BaglikeDragLineCtrl.ts",
+      "dependencies": [
+        "cc",
+        "./fairygui.mjs",
+        "./G.ts",
+        "./FguiUtils.ts",
+        "./GIns.ts",
+        "./BagLikeMergeDatas.ts",
+        "./ModelNode.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeDragListCtrl.ts",
+      "dependencies": [
+        "cc",
+        "./G.ts",
+        "./fairygui.mjs",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./GuideEnum.ts",
+        "./BagLilkeManager.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeEffectContainer.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./AudioEnums.ts",
+        "./G.ts",
+        "./UIScriptManager.ts",
+        "./FGUINotificationComponent.ts",
+        "./BattleTimer.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./ModelNode.ts",
+        "./UIBagLikeConfig.ts",
+        "./BagLikeEffectIcon.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeEffectIcon.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./UIScriptManager.ts",
+        "./TweenUtils.ts",
+        "./fairygui.mjs"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeEnums.ts",
+      "dependencies": [
+        "cc"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeGuideGearContainer.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./UIScriptManager.ts",
+        "./FGUINotificationComponent.ts",
+        "./fairygui.mjs",
+        "./NotificationKey.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeHandbook.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UIScriptManager.ts",
+        "./FGUINotificationComponent.ts",
+        "./fairygui.mjs",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./I18nKey.ts",
+        "./BagLikeMergeDatas.ts",
+        "./UIHandbookConfig.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeHeroBuffItem.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UIScriptManager.ts",
+        "./fairygui.mjs",
+        "./GIns.ts",
+        "./UITipConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeHeroInfoView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UICommWin.ts",
+        "./UIScriptManager.ts",
+        "./GIns.ts",
+        "./GBattleIns.ts",
+        "./AttrEnum.ts",
+        "./NotificationKey.ts",
+        "./I18nKey.ts",
+        "./UIBagLikeBuffConfig.ts",
+        "./BagLilkePowerUtils.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeHpShieldBar.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./fairygui.mjs",
+        "./UIScriptManager.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeItemCell.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./UIScriptManager.ts",
+        "./FGUINotificationComponent.ts",
+        "./ColorUtils.ts",
+        "./NotificationKey.ts",
+        "./BagLilkeManager.ts",
+        "./BagLilkePowerUtils.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeItemDatas.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./TableManager.ts",
+        "./BaseTabeManager.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeItemDataVo.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./TableManager.ts",
+        "./BagLikeItemDatas.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeLocalVo.ts",
+      "dependencies": [
+        "cc"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeMergeDatas.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BaseTabeManager.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeMergeLine.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./UIScriptManager.ts",
+        "./fairygui.mjs"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BaglikeMergeLineCtrl.ts",
+      "dependencies": [
+        "cc",
+        "./fairygui.mjs",
+        "./G.ts",
+        "./FguiUtils.ts",
+        "./GIns.ts",
+        "./BagLikeMergeDatas.ts",
+        "./BagLikeMergeLine.ts",
+        "./BrickCom.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeMergeTipView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UICommWin.ts",
+        "./UIScriptManager.ts",
+        "./GIns.ts",
+        "./QualityUtils.ts",
+        "./QualityEnums.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeModel.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BaseModel.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./BagLilkePowerUtils.ts",
+        "./BagLikeLocalVo.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeRecordItem.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UIScriptManager.ts",
+        "./StringUtils.ts",
+        "./fairygui.mjs",
+        "./GIns.ts",
+        "./QualityEnums.ts",
+        "./QualityUtils.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeRecordMgr.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BaseSingleton.ts",
+        "./G.ts",
+        "./BattleConstantConfig.ts",
+        "./NotificationKey.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeRecordView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./UIView.ts",
+        "./UIScriptManager.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeRoleSkillBtn.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UIScriptManager.ts",
+        "./FGUINotificationGButton.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./I18nKey.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeShapeDatas.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BaseTabeManager.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeSpeedView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UICommWin.ts",
+        "./UIScriptManager.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./I18nKey.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeStartView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UIScriptManager.ts",
+        "./UIBagLikeConfig.ts",
+        "./BagLikeBossView.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeTakeOnADTipView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UICommWin.ts",
+        "./UIScriptManager.ts",
+        "./I18nKey.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeTopItem.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./FGUINotificationComponent.ts",
+        "./UIManager.ts",
+        "./TableManager.ts",
+        "./BattleTimer.ts",
+        "./UIScriptManager.ts",
+        "./FightType.ts",
+        "./TimeUtils.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./I18nKey.ts",
+        "./UIBagLikeBuffConfig.ts",
+        "./UIBattleConfig.ts",
+        "./BattleInstanceController.ts",
+        "./SystemType.ts",
+        "./ItemID.ts",
+        "./SpecialLevelMgr.ts",
+        "./BagLilkePowerUtils.ts",
+        "./BagLikeEnums.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeUpGearByADView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UICommWin.ts",
+        "./UIScriptManager.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./I18nKey.ts",
+        "./ADEnums.ts",
+        "./UIBagLikeConfig.ts",
+        "./BagLikeItemDataVo.ts",
+        "./AudioEnums.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeUsedHeroMap.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BagLikeItemDatas.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLikeView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./AudioEnums.ts",
+        "./G.ts",
+        "./LayerManager.ts",
+        "./UIView.ts",
+        "./SdkFunctions.ts",
+        "./BattleTimer.ts",
+        "./UIScriptManager.ts",
+        "./BattleEnum.ts",
+        "./FightType.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./I18nKey.ts",
+        "./ADEnums.ts",
+        "./BattleInstanceController.ts",
+        "./SystemType.ts",
+        "./GuideEnum.ts",
+        "./UIRewardConfig.ts",
+        "./SpecialLevelMgr.ts",
+        "./BagLikeDragListCtrl.ts",
+        "./BagLilkeManager.ts",
+        "./BagLilkePowerUtils.ts",
+        "./BagLikeEnums.ts",
+        "./UIBagLikeConfig.ts",
+        "./BagLikeItemDataVo.ts",
+        "./ReportSdk.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLilkeManager.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BaseSingleton.ts",
+        "./AudioEnums.ts",
+        "./G.ts",
+        "./FacadeManager.ts",
+        "./UploadEventManager.ts",
+        "./TableManager.ts",
+        "./BattleTimer.ts",
+        "./ArrayUtils.ts",
+        "./RandomUtils.ts",
+        "./StringUtils.ts",
+        "./AttrEnum.ts",
+        "./FightType.ts",
+        "./GBattleIns.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./BagLikeCoinWeightDatas.ts",
+        "./BagLikeItemDatas.ts",
+        "./BagLikeMergeDatas.ts",
+        "./BagLikeShapeDatas.ts",
+        "./ADEnums.ts",
+        "./UIBagLikeBuffConfig.ts",
+        "./BattleInstanceController.ts",
+        "./HeroEnums.ts",
+        "./ItemID.ts",
+        "./UIMainConfig.ts",
+        "./RewardEnums.ts",
+        "./RewardMgr.ts",
+        "./SpecialLevelMgr.ts",
+        "./BagLikeUsedHeroMap.ts",
+        "./BagLilkePowerUtils.ts",
+        "./BagLikeEnums.ts",
+        "./UIBagLikeConfig.ts",
+        "./PowerSkillConst.ts",
+        "./BagLikeItemDataVo.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BagLilkePowerSkillManager.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BaseModel.ts",
+        "./TableManager.ts",
+        "./BattleTimer.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./BagLikeItemDatas.ts",
+        "./PowerAbilityDatas.ts",
+        "./UIBagLikeConfig.ts",
+        "./PowerSkillConst.ts",
+        "./PowerSkillVo.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BattleFailView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./AudioEnums.ts",
+        "./UIScriptManager.ts",
+        "./GIns.ts",
+        "./UIBattleConfig.ts",
+        "./BattleWinView.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BattleFruitMainView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./AudioEnums.ts",
+        "./G.ts",
+        "./UIPage.ts",
+        "./UIScriptManager.ts",
+        "./FightType.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./UIBattleConfig.ts",
+        "./UIBattleFruitConfig.ts",
+        "./FruitMgr.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BattleFruitTipView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./UIScriptManager.ts",
+        "./NotificationKey.ts",
+        "./TipConfirmView.ts",
+        "./UIBattleFruitConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BattleFruitWorldView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./LayerManager.ts",
+        "./UIScriptManager.ts",
+        "./UIView.ts",
+        "./PoolManager.ts",
+        "./fairygui.mjs",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./FruitEnums.ts",
+        "./FruitUnitCreateData.ts",
+        "./FruitLabelMgr.ts",
+        "./FruitWorld.ts",
+        "./FruitGlobalHeroComp.ts",
+        "./FruitSkillComp.ts",
+        "./UIBattleFruitConfig.ts",
+        "./FruitBuffPoolMgr.ts",
+        "./FruitMgr.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BattleGetCoinView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./UICommWin.ts",
+        "./UIScriptManager.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./ADEnums.ts",
+        "./ItemID.ts",
+        "./UIRewardConfig.ts",
+        "./UIBagLikeConfig.ts",
+        "./AudioEnums.ts",
+        "./G.ts",
+        "./I18nKey.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BattleInstanceController.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./AudioEnums.ts",
+        "./G.ts",
+        "./BaseController.ts",
+        "./TableManager.ts",
+        "./BattleTimer.ts",
+        "./GameTimer.ts",
+        "./ObjectUtils.ts",
+        "./AttrEnum.ts",
+        "./BattleInstance.ts",
+        "./BattleEnum.ts",
+        "./FightType.ts",
+        "./GBattleIns.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./BagLilkeManager.ts",
+        "./UIBagLikeConfig.ts",
+        "./UIBagLikeBuffConfig.ts",
+        "./BattleDailyChapterVo.ts",
+        "./BattleEndlessChapterVo.ts",
+        "./BattleTrunkChapterVo.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BattlePauseView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./ViewBlackBgComp.ts",
+        "./UIView.ts",
+        "./UIScriptManager.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./I18nKey.ts",
+        "./UISettingConfig.ts",
+        "./SpecialLevelMgr.ts",
+        "./UIBattleConfig.ts",
+        "./ReportSdk.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BattleReviveView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./ViewBlackBgComp.ts",
+        "./UIView.ts",
+        "./UIScriptManager.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./ADEnums.ts",
+        "./UIBattleConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BattleTrunkChapterVo.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./FightType.ts",
+        "./GIns.ts",
+        "./UIBagLikeBuffConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BattleWinView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./AudioEnums.ts",
+        "./G.ts",
+        "./SaveManager.ts",
+        "./UIWin.ts",
+        "./ViewBlackBgComp.ts",
+        "./SdkFunctions.ts",
+        "./UIScriptManager.ts",
+        "./GIns.ts",
+        "./FightType.ts",
+        "./TimeUtils.ts",
+        "./NotificationKey.ts",
+        "./BattleInstanceController.ts",
+        "./ItemListEffectCtrl.ts",
+        "./ShareEnums.ts",
+        "./UIBattleConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BrickBaseCom.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./FGUINotificationComponent.ts",
+        "./fairygui.mjs",
+        "./UIScriptManager.ts",
+        "./BagLilkeManager.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BrickCom.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./fairygui.mjs",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./ADEnums.ts",
+        "./GuideEnum.ts",
+        "./BagLikeDragCtrl.ts",
+        "./UIBagLikeConfig.ts",
+        "./BrickBaseCom.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BrickShowBaseCom.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./FGUINotificationComponent.ts",
+        "./FacadeManager.ts",
+        "./TableManager.ts",
+        "./BattleTimer.ts",
+        "./ColorUtils.ts",
+        "./fairygui.mjs",
+        "./UIScriptManager.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./BagLilkeManager.ts",
+        "./BagLilkePowerUtils.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/BrickShowCom.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./fairygui.mjs",
+        "./NotificationKey.ts",
+        "./BagLilkeManager.ts",
+        "./BagLilkePowerUtils.ts",
+        "./UIBagLikeConfig.ts",
+        "./BrickShowBaseCom.ts",
+        "./GIns.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/ChooseCom.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./AudioEnums.ts",
+        "./G.ts",
+        "./FGUINotificationComponent.ts",
+        "./UIScriptManager.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./BagLikeMergeDatas.ts",
+        "./ADEnums.ts",
+        "./UIBagLikeConfig.ts",
+        "./BrickCom.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/DailyInstanceBattleView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./UIView.ts",
+        "./UIScriptManager.ts",
+        "./GIns.ts",
+        "./UIDailyInstanceConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/DailyInstanceEnterTask.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./TaskManager.ts",
+        "./UIBagLikeConfig.ts",
+        "./UIDailyInstanceConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/EndlessModeEnterTask.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./TaskManager.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/game",
+      "dependencies": [
+        "./EnterGameController.ts",
+        "./GIns.ts",
+        "./ModulesController.ts",
+        "./BattleController.ts",
+        "./BattleExAttrManager.ts",
+        "./BattleExSkillManager.ts",
+        "./BattleInstance.ts",
+        "./BattleLayerManager.ts",
+        "./BattleManager.ts",
+        "./BattleUtils.ts",
+        "./BuffManager.ts",
+        "./DamageVo.ts",
+        "./FightFormula.ts",
+        "./FightTimeCheck.ts",
+        "./FightTimeLoop.ts",
+        "./GBattleIns.ts",
+        "./AStar.ts",
+        "./BinaryHeap.ts",
+        "./Path.ts",
+        "./PathLineUtils.ts",
+        "./PathPoint.ts",
+        "./AbnormalStatus.ts",
+        "./AttrEnum.ts",
+        "./BattleAttr.ts",
+        "./IBuff.ts",
+        "./ArenaAutoFight.ts",
+        "./BaseAutoFight.ts",
+        "./TrunkInstanceAutoHandler.ts",
+        "./AbnormalHurtBuff.ts",
+        "./HealMaxHpBuff.ts",
+        "./HurtBuff.ts",
+        "./HurtCutHpBuff.ts",
+        "./KillBuff.ts",
+        "./PullBuff.ts",
+        "./RealHurtBuff.ts",
+        "./ShieldAtkBuff.ts",
+        "./ShieldMaxHpBuff.ts",
+        "./UnitCollisionsManager.ts",
+        "./UnitSearchUtils.ts",
+        "./BattleConstantConfig.ts",
+        "./BattleSetting.ts",
+        "./BattleEnum.ts",
+        "./FeatureType.ts",
+        "./FightType.ts",
+        "./BattleShowFactory.ts",
+        "./BuffFactory.ts",
+        "./HeroFactory.ts",
+        "./MonsterFactory.ts",
+        "./UnitFactory.ts",
+        "./BattleInterface.ts",
+        "./ActorUnitNode.ts",
+        "./BattleUnitNode.ts",
+        "./BossUnitNode.ts",
+        "./HeroUnitNode.ts",
+        "./MonsterUnitNode.ts",
+        "./BattleProcessor.ts",
+        "./StateMemory.ts",
+        "./UnitProcessor.ts",
+        "./BaseSkillData.ts",
+        "./BehaviorUtils.ts",
+        "./FightSkillInfo.ts",
+        "./ICaster.ts",
+        "./ITarget.ts",
+        "./LeaderSkillData.ts",
+        "./PassivitySkillData.ts",
+        "./PassivitySkillUtils.ts",
+        "./PointTarget.ts",
+        "./SkillBehavior.ts",
+        "./SkillBuff.ts",
+        "./SkillBuffGroup.ts",
+        "./SkillData.ts",
+        "./SkillEnum.ts",
+        "./SkillFactory.ts",
+        "./SkillUtils.ts",
+        "./TowerSkillData.ts",
+        "./TowerSkillUtils.ts",
+        "./SkillConfigManager.ts",
+        "./HpBar.ts",
+        "./IHpOwner.ts",
+        "./BattleDmgResNum.ts",
+        "./BattleNum.ts",
+        "./CirtBattleNum2.ts",
+        "./HurtBattleNum2.ts",
+        "./ActorUnit.ts",
+        "./AreaUnit.ts",
+        "./BaseUnit.ts",
+        "./MoveVec.ts",
+        "./TeamUnit.ts",
+        "./BattleUnit.ts",
+        "./BossUnit.ts",
+        "./HeroUnit.ts",
+        "./HomeUnit.ts",
+        "./MonsterUnit.ts",
+        "./ActionController.ts",
+        "./BombUnit.ts",
+        "./BounceBullet.ts",
+        "./BulletUnit.ts",
+        "./DartUnit.ts",
+        "./PhysicalBulletUnit.ts",
+        "./RayUnit.ts",
+        "./RectangleBulletUnit.ts",
+        "./RocketBulletUnit.ts",
+        "./StretchBounceBullet.ts",
+        "./StretchBullet.ts",
+        "./ThrowBulletUnit.ts",
+        "./BaseLeaderSkillUnit.ts",
+        "./LocalData.ts",
+        "./LocalMemoryData.ts",
+        "./LocalStorage.ts",
+        "./LocalStorageKeys.ts",
+        "./NetCacheMgr.ts",
+        "./IMapObject.ts",
+        "./IObject1.ts",
+        "./Bezier2Tween.ts",
+        "./CollisionUtils.ts",
+        "./ICollision.ts",
+        "./MathUtils2.ts",
+        "./NumberRange.ts",
+        "./RectQuadtree.ts",
+        "./SortUtils.ts",
+        "./V2Quadtree.ts",
+        "./AudioAppManager.ts",
+        "./PreLoadMgr.ts",
+        "./TouchEffectMgr.ts",
+        "./ReportEnums.ts",
+        "./ReportSdk.ts",
+        "./CdUtils.ts",
+        "./DiffTime.ts",
+        "./ShakeUtils.ts",
+        "./TableConstUtils.ts",
+        "./TimeUtils.ts",
+        "./TweenUtils.ts",
+        "./FruitBuffPoolMgr.ts",
+        "./FruitMgr.ts",
+        "./FruitBuffPoolDatas.ts",
+        "./FruitLabelMgr.ts",
+        "./FruitWorld.ts",
+        "./FruitEnums.ts",
+        "./FruitAttrMap.ts",
+        "./FruitSkillAttrMap.ts",
+        "./FruitSkillData.ts",
+        "./FruitUnitCreateData.ts",
+        "./IFruitAnimOrder.ts",
+        "./IFruitComp.ts",
+        "./IFruitUnit.ts",
+        "./IFruitUnitCreateData.ts",
+        "./IFruitWorld.ts",
+        "./BezierPath.ts",
+        "./BezierPathMgr.ts",
+        "./BezierPathPos.ts",
+        "./FruitBaseComp.ts",
+        "./FruitGlobalBuffComp.ts",
+        "./FruitGlobalHeroComp.ts",
+        "./FruitMoveComp.ts",
+        "./FruitSkillComp.ts",
+        "./FruitAnimRoleUnit.ts",
+        "./FruitAnimUnit.ts",
+        "./FruitBulletUnit.ts",
+        "./FruitFguiUnit.ts",
+        "./FruitGlobalUnit.ts",
+        "./FruitHeroUnit.ts",
+        "./FruitMonsterBodyUnit.ts",
+        "./FruitMonsterPartUnit.ts",
+        "./FruitMonsterUnit.ts",
+        "./FruitNodeUnit.ts",
+        "./FruitSkillRayUnit.ts",
+        "./FruitSkillUnit.ts",
+        "./FruitSpriteUnit.ts",
+        "./FruitUnit.ts",
+        "./FruitUnitGroup.ts",
+        "./UIBattleFruitConfig.ts",
+        "./BattleFruitMainView.ts",
+        "./BattleFruitTipView.ts",
+        "./BattleFruitWorldView.ts",
+        "./BattleFruitBox.ts",
+        "./BattleFruitDropContainer.ts",
+        "./FruitHurtNum.ts",
+        "./BattleFruitDropItem.ts",
+        "./NotificationKey.ts",
+        "./I18nKey.ts",
+        "./ActivityShortCutMgr.ts",
+        "./ActivityShortCutContext.ts",
+        "./ActivityFeedController.ts",
+        "./ActivityFeedMgr.ts",
+        "./UIActivityFeedConfig.ts",
+        "./ActivityFeedContext.ts",
+        "./ActivityFeedConstCfg.ts",
+        "./ActivityFeedLocalVo.ts",
+        "./ActivityFeedMainView.ts",
+        "./ActivityKaxixiMgr.ts",
+        "./UIActivityKaxixiConfig.ts",
+        "./ActivityKaxixiContenxt.ts",
+        "./ActivityKaxixiBaseView.ts",
+        "./ActivityKaxixiView1.ts",
+        "./ActivityKaxixiView2.ts",
+        "./ActivityKaxixiView3.ts",
+        "./ActivityKaxixiItem1.ts",
+        "./ActivityKaxixiItem2.ts",
+        "./ActivitySdkRedDotController.ts",
+        "./UIActivitySdkConfig.ts",
+        "./ActivitySdkModel.ts",
+        "./ActivitySdkLocalVo.ts",
+        "./ActivitySidebarView.ts",
+        "./MoreGameView.ts",
+        "./ActivityGroupMgr.ts",
+        "./ActivityRedDotController.ts",
+        "./ActivityEnums.ts",
+        "./UIActivityConfig.ts",
+        "./ActivityModel.ts",
+        "./ActivityBaseContext.ts",
+        "./ActivityGroupBaseContext.ts",
+        "./ActivityGroupLocalVo.ts",
+        "./ActivityUnlockView.ts",
+        "./AdController.ts",
+        "./AdManager.ts",
+        "./ADEnums.ts",
+        "./UIADConfig.ts",
+        "./AdModel.ts",
+        "./IAdPlayVo.ts",
+        "./AttrConfigEffect.ts",
+        "./AutoPopController.ts",
+        "./AutoPopActivityOpenContext.ts",
+        "./AutoPopBaseContext.ts",
+        "./AutoPopHeroUnlockContext.ts",
+        "./AutoPopKaxixiContext.ts",
+        "./AutoPopModuleOpenContext.ts",
+        "./BagLikeBuffManager.ts",
+        "./UIBagLikeBuffConfig.ts",
+        "./BagLikeBuffItem.ts",
+        "./BagLikeBuffModel.ts",
+        "./BagLikeBuffWin.ts",
+        "./BuffAttrVo.ts",
+        "./BagLikeDragCtrl.ts",
+        "./BagLikeDragListCtrl.ts",
+        "./BagLikeRecordMgr.ts",
+        "./BagLikeUsedHeroMap.ts",
+        "./BagLilkeManager.ts",
+        "./BagLilkePowerSkillManager.ts",
+        "./BagLilkePowerUtils.ts",
+        "./BaglikeDragLineCtrl.ts",
+        "./BaglikeMergeLineCtrl.ts",
+        "./BagLikeADBubble.ts",
+        "./BagLikeADIcon.ts",
+        "./BagLikeDragContainer.ts",
+        "./BagLikeEffectContainer.ts",
+        "./BagLikeEffectIcon.ts",
+        "./BagLikeGuideGearContainer.ts",
+        "./BagLikeHandbook.ts",
+        "./BagLikeHpShieldBar.ts",
+        "./BagLikeMergeLine.ts",
+        "./BagLikeRoleSkillBtn.ts",
+        "./BattleSceneCom.ts",
+        "./BrickBaseCom.ts",
+        "./BrickCom.ts",
+        "./BrickMergeLight.ts",
+        "./BrickShowBaseCom.ts",
+        "./BrickShowCom.ts",
+        "./ChooseCom.ts",
+        "./ShowNodeCom.ts",
+        "./WorkerBar.ts",
+        "./BagLikeEnums.ts",
+        "./UIBagLikeConfig.ts",
+        "./IDragData.ts",
+        "./IGrid.ts",
+        "./BagLikeHeroBuffItem.ts",
+        "./BagLikeItemCell.ts",
+        "./BagLikeRecordItem.ts",
+        "./BagLikeTopItem.ts",
+        "./BagLikeModel.ts",
+        "./BagLikeLocalVo.ts",
+        "./PowerSkillConst.ts",
+        "./PowerSkillVo.ts",
+        "./BagLikeBattlePage.ts",
+        "./BagLikeBossView.ts",
+        "./BagLikeHeroInfoView.ts",
+        "./BagLikeMergeTipView.ts",
+        "./BagLikeRecordView.ts",
+        "./BagLikeSpeedView.ts",
+        "./BagLikeStartView.ts",
+        "./BagLikeTakeOnADTipView.ts",
+        "./BagLikeUpGearByADView.ts",
+        "./BagLikeView.ts",
+        "./BattleGetCoinView.ts",
+        "./BagLikeItemDataVo.ts",
+        "./IBagLikeDragVo.ts",
+        "./IBagLikeRecordVo.ts",
+        "./IBagLikeRewardCfg.ts",
+        "./BattleInstanceController.ts",
+        "./BattleDailyChapterVo.ts",
+        "./BattleEndlessChapterVo.ts",
+        "./BattleTrunkChapterVo.ts",
+        "./IBattleChapterData.ts",
+        "./IBattleChapterVo.ts",
+        "./IBattleCreateHeroVo.ts",
+        "./IBattleEnterData.ts",
+        "./IBattleMonsterDie.ts",
+        "./IBattleUnitData.ts",
+        "./UIBattleConfig.ts",
+        "./BattleFailView.ts",
+        "./BattlePauseView.ts",
+        "./BattleReviveView.ts",
+        "./BattleWinView.ts",
+        "./BattleBuffItem.ts",
+        "./BtnWithCost.ts",
+        "./GearShapeItem.ts",
+        "./HeaderItem.ts",
+        "./InstanceLogo.ts",
+        "./ItemFrame.ts",
+        "./LoadingWheel.ts",
+        "./RewardBoxIcon.ts",
+        "./StarList.ts",
+        "./SystemType.ts",
+        "./UICommonConfig.ts",
+        "./AnimType.ts",
+        "./EnumProgressSide.ts",
+        "./ModelNode.ts",
+        "./StreakNode.ts",
+        "./TweenListContainer.ts",
+        "./QualityUtils.ts",
+        "./QualityEnums.ts",
+        "./LoadingView.ts",
+        "./TouchMaskWin.ts",
+        "./ConditionFactory.ts",
+        "./ConditionManager.ts",
+        "./ConditionUtils.ts",
+        "./ICondition.ts",
+        "./EnumConditionType.ts",
+        "./ConditionActivityHasAward.ts",
+        "./ConditionActivityIsOpen.ts",
+        "./ConditionBaseHp.ts",
+        "./ConditionCreateDayGe.ts",
+        "./ConditionCreateHourGe.ts",
+        "./ConditionGameVersionUpdate.ts",
+        "./ConditionHeroStarGe.ts",
+        "./ConditionPassTrunkInstance.ts",
+        "./ConditionSdkFunctions.ts",
+        "./ConditionWaveTimes.ts",
+        "./DailyInstanceEnterTask.ts",
+        "./DailyInstanceMgr.ts",
+        "./DailyInstanceRedDotController.ts",
+        "./UIDailyInstanceConfig.ts",
+        "./DailyInstanceModel.ts",
+        "./DailyInstanceConstCfg.ts",
+        "./DailyInstanceLocalVo.ts",
+        "./DailyInstanceBattleView.ts",
+        "./DailyInstanceView.ts",
+        "./DailyInstanceBuffItem.ts",
+        "./DailyInstanceRewardItem.ts",
+        "./DailyTaskController.ts",
+        "./DailyTaskMgr.ts",
+        "./DailyTaskRedDotController.ts",
+        "./DailyTaskEnums.ts",
+        "./UIDailyTaskConfig.ts",
+        "./DailyTaskModel.ts",
+        "./DailyTaskBoxVo.ts",
+        "./DailyTaskLocalVo.ts",
+        "./DailyTaskVo.ts",
+        "./DailyTaskMainView.ts",
+        "./DailyTaskView.ts",
+        "./DailyTaskBoxItem.ts",
+        "./DailyTaskItem.ts",
+        "./EndlessModeEnterTask.ts",
+        "./EndlessModeMgr.ts",
+        "./EndlessModeRedDotController.ts",
+        "./UIEndlessModeConfig.ts",
+        "./EndlessModeModel.ts",
+        "./EndlessModeConstCfg.ts",
+        "./EndlessModeLocalVo.ts",
+        "./EndlessModeView.ts",
+        "./ErrorCatchController.ts",
+        "./FloatingTextController.ts",
+        "./FloatingTextManager.ts",
+        "./UIFloatingTextConfig.ts",
+        "./AttrTextItem.ts",
+        "./TipsTextItem.ts",
+        "./FloatingTextView.ts",
+        "./GameplayMgr.ts",
+        "./UIGameplayConfig.ts",
+        "./GameplayView.ts",
+        "./GameplayItem.ts",
+        "./GuideConditions.ts",
+        "./GuideController.ts",
+        "./GuideGroupManager.ts",
+        "./GuideManager.ts",
+        "./GuideScriptController.ts",
+        "./GuideUtils.ts",
+        "./GuideTalkerCom.ts",
+        "./GuideEnum.ts",
+        "./IGuideVerifyArgs.ts",
+        "./UIGuideConfig.ts",
+        "./GuideDialogItem.ts",
+        "./GuideMaskItem.ts",
+        "./GuideModel.ts",
+        "./GuideGroupEnder.ts",
+        "./GuideGroupStarter.ts",
+        "./GuideRunner.ts",
+        "./GuideDialogView.ts",
+        "./GuideHeroUnlockView.ts",
+        "./GuideMainView.ts",
+        "./GuideTeachView.ts",
+        "./GuideWeakTouchView.ts",
+        "./UIHandbookConfig.ts",
+        "./HandbookMixView.ts",
+        "./HandbookMixHeroItem.ts",
+        "./HandbookMixItem.ts",
+        "./HeroSkinMgr.ts",
+        "./HeroSkinRedDotController.ts",
+        "./UIHeroSkinConfig.ts",
+        "./HeroSkinModel.ts",
+        "./HeroSkinAttrVo.ts",
+        "./HeroSkinConstCfg.ts",
+        "./HeroSkinLocalVo.ts",
+        "./HeroSkinVo.ts",
+        "./HeroSkinBoxOpenView.ts",
+        "./HeroSkinInfoView.ts",
+        "./HeroSkinMainView.ts",
+        "./HeroSkinPreview.ts",
+        "./HeroSkinUnlockView.ts",
+        "./HeroSkinBoxBuyBtn.ts",
+        "./HeroSkinAttrItem.ts",
+        "./HeroSkinBoxItem.ts",
+        "./HeroSkinItem.ts",
+        "./HeroSkinListItem.ts",
+        "./HeroSkinPreviewItem.ts",
+        "./HeroSkinTitleItem.ts",
+        "./HeroController.ts",
+        "./HeroMgr.ts",
+        "./HeroRedDotController.ts",
+        "./HeroEnums.ts",
+        "./UIHeroConfig.ts",
+        "./HeroModel.ts",
+        "./HeroLocalVo.ts",
+        "./HeroStarCfgVo.ts",
+        "./HeroVo.ts",
+        "./IHeroAttrVo.ts",
+        "./HeroInfoView.ts",
+        "./HeroMainView.ts",
+        "./HeroResetView.ts",
+        "./HeroUnlockView.ts",
+        "./HeroInfoItem.ts",
+        "./HeroItem.ts",
+        "./HeroResetItem.ts",
+        "./HeroSkillItem.ts",
+        "./InviteGiftMgr.ts",
+        "./UIInviteGiftConfig.ts",
+        "./InviteGiftContext.ts",
+        "./InviteGiftLocalVo.ts",
+        "./InviteGiftView.ts",
+        "./ItemListEffectCtrl.ts",
+        "./ItemMgr.ts",
+        "./ItemEnums.ts",
+        "./ItemModel.ts",
+        "./ItemPowerModel.ts",
+        "./ItemID.ts",
+        "./ItemLocalVo.ts",
+        "./ItemPowerLocalVo.ts",
+        "./ItemVo.ts",
+        "./JumpController.ts",
+        "./JumpManager.ts",
+        "./EnumJumpByCodeKeyName.ts",
+        "./EnumJumpType.ts",
+        "./MainMgr.ts",
+        "./MainEnums.ts",
+        "./UIMainConfig.ts",
+        "./MainModel.ts",
+        "./MainNoneView.ts",
+        "./MainPage.ts",
+        "./MainView.ts",
+        "./MainMenuLayout.ts",
+        "./MainMenuList.ts",
+        "./MainUnlockPreview.ts",
+        "./MainBottomBtn.ts",
+        "./MainLogo.ts",
+        "./MainMenuBtn.ts",
+        "./MainRewardItem.ts",
+        "./ModuleOpenManager.ts",
+        "./ModuleOpenI18nKeys.ts",
+        "./UIModuleOpenConfig.ts",
+        "./ModuleOpenModel.ts",
+        "./ModuleOpenView.ts",
+        "./UIMoreGameConfig.ts",
+        "./OnlineRewardMgr.ts",
+        "./OnlineRewardRedDotController.ts",
+        "./UIOnlineRewardConfig.ts",
+        "./OnlineRewardModel.ts",
+        "./OnlineRewardLocalVo.ts",
+        "./OnlineRewardView.ts",
+        "./OnlineRewardItem.ts",
+        "./UIOtherGamesConfig.ts",
+        "./OtherGamesView.ts",
+        "./OtherGamesItem.ts",
+        "./RedDotBaseController.ts",
+        "./RedDotMgr.ts",
+        "./RedDotEnums.ts",
+        "./RedDotVo.ts",
+        "./RedDot.ts",
+        "./RewardController.ts",
+        "./RewardMgr.ts",
+        "./RewardEnums.ts",
+        "./UIRewardConfig.ts",
+        "./RewardGetAniInBattleView.ts",
+        "./RewardGetAniView.ts",
+        "./RewardGetView.ts",
+        "./RewardPreviewTip.ts",
+        "./RewardPreviewNode.ts",
+        "./RoleMgr.ts",
+        "./RoleRedDotController.ts",
+        "./RoleEnums.ts",
+        "./UIRoleConfig.ts",
+        "./RoleModel.ts",
+        "./RoleAttrVo.ts",
+        "./RoleConstCfg.ts",
+        "./RoleLocalVo.ts",
+        "./RoleVo.ts",
+        "./RoleMainView.ts",
+        "./RoleUnlockView.ts",
+        "./RoleAttrItem.ts",
+        "./RoleLvAttrItem.ts",
+        "./RoleStarAttrItem.ts",
+        "./RuleMgr.ts",
+        "./RuleEnums.ts",
+        "./UIRuleConfig.ts",
+        "./RuleModel.ts",
+        "./RuleView.ts",
+        "./RuleItem.ts",
+        "./SettingMgr.ts",
+        "./UISettingConfig.ts",
+        "./SettingModel.ts",
+        "./SettingLocalVo.ts",
+        "./SettingCodeView.ts",
+        "./SettingMainView.ts",
+        "./SevenDayMgr.ts",
+        "./SevenDayEnums.ts",
+        "./UISevenDayConfig.ts",
+        "./SevenDayContext.ts",
+        "./SevenDayLocalVo.ts",
+        "./SevenDayView.ts",
+        "./SevenDayBigItem.ts",
+        "./SevenDayItem.ts",
+        "./ShareController.ts",
+        "./ShareManager.ts",
+        "./ShareEnums.ts",
+        "./IShareVo.ts",
+        "./ShopController.ts",
+        "./ShopMgr.ts",
+        "./ShopRedDotController.ts",
+        "./ShopEnums.ts",
+        "./UIShopConfig.ts",
+        "./ShopBoxModel.ts",
+        "./ShopModel.ts",
+        "./ShopBoxConstCfg.ts",
+        "./ShopBoxLocalVo.ts",
+        "./ShopCostVo.ts",
+        "./ShopGoodsVo.ts",
+        "./ShopLocalVo.ts",
+        "./ShopBoxInfoView.ts",
+        "./ShopBoxOpenView.ts",
+        "./ShopBoxRewardView.ts",
+        "./ShopBoxUpView.ts",
+        "./ShopInfoView.ts",
+        "./ShopMainView.ts",
+        "./ShopPowerBuyView.ts",
+        "./ShopBoxBuyBtn.ts",
+        "./ShopBoxPage.ts",
+        "./ShopBuyBtn.ts",
+        "./ShopDailyBuyBtn.ts",
+        "./ShopDailyPage.ts",
+        "./ShopGoldBuyBtn.ts",
+        "./ShopGoldPage.ts",
+        "./ShopPageBase.ts",
+        "./ShopDailyItem.ts",
+        "./ShopGoldItem.ts",
+        "./ShopPowerItem.ts",
+        "./SpecialLevelLocalVo.ts",
+        "./SpecialLevelMgr.ts",
+        "./UISpecialLevelConfig.ts",
+        "./SpecialItem.ts",
+        "./SpecialLevelsView.ts",
+        "./ThreeDayMgr.ts",
+        "./UIThreeDayConfig.ts",
+        "./ThreeDayContext.ts",
+        "./ThreeDayLocalVo.ts",
+        "./ThreeDayView.ts",
+        "./ThreeDayItem.ts",
+        "./TipController.ts",
+        "./TipMgr.ts",
+        "./UITipConfig.ts",
+        "./TipConfirmView.ts",
+        "./TipConfirmWarnView.ts",
+        "./TipDescView.ts",
+        "./TipDescView2.ts",
+        "./TipDescNode.ts",
+        "./TipDescNode2.ts",
+        "./TotalRewardMgr.ts",
+        "./TotalRewardRedDotController.ts",
+        "./UITotalRewardConfig.ts",
+        "./TotalRewardModel.ts",
+        "./TotalRewardLocalVo.ts",
+        "./TotalRewardView.ts",
+        "./TotalRewardItem.ts",
+        "./TrunkInstanceController.ts",
+        "./TrunkInstanceEnterTask.ts",
+        "./TrunkInstanceMgr.ts",
+        "./TrunkInstanceRecordController.ts",
+        "./TrunkInstanceRedDotController.ts",
+        "./TrunkInstanceEnum.ts",
+        "./UITrunkInstanceConfig.ts",
+        "./TrunkInstanceModel.ts",
+        "./TrunkInstanceRecordModel.ts",
+        "./ITrunkInstanceChapterPreviewVo.ts",
+        "./TrunkInstanceConstCfg.ts",
+        "./TrunkInstanceLocalVo.ts",
+        "./TrunkInstanceRecordLocalVo.ts",
+        "./TrunkInstanceBattleView.ts",
+        "./TrunkInstanceDetailView.ts",
+        "./TrunkInstanceMonsterInfoView.ts",
+        "./TrunkInstanceHeroContent.ts",
+        "./TrunkInstanceMonsterContent.ts",
+        "./TrunkInstanceNewMonsterContainer.ts",
+        "./TrunkInstanceRewardContent.ts",
+        "./TrunkInstanceHeroItem.ts",
+        "./TrunkInstanceMonsterItem.ts",
+        "./TrunkInstanceNewMonsterItem.ts",
+        "./BaseTabeManager.ts",
+        "./ActivityGroupDatas.ts",
+        "./BagLikeCoinWeightDatas.ts",
+        "./BagLikeItemDatas.ts",
+        "./BagLikeMergeDatas.ts",
+        "./BagLikeShapeDatas.ts",
+        "./SkillConfigDatas.ts",
+        "./GuideConfigDatas.ts",
+        "./GuideDialogConfigDatas.ts",
+        "./GuideTeachConfigDatas.ts",
+        "./PowerAbilityDatas.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/GuideScriptController.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./BaseController.ts",
+        "./GIns.ts",
+        "./NotificationKey.ts",
+        "./BagLikeItemDataVo.ts",
+        "./UIGuideConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/HandbookMixHeroItem.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UIScriptManager.ts",
+        "./fairygui.mjs",
+        "./GIns.ts",
+        "./UIBagLikeConfig.ts",
+        "./QualityEnums.ts",
+        "./QualityUtils.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/HandbookMixView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./UICommWin.ts",
+        "./UIScriptManager.ts",
+        "./GIns.ts",
+        "./BagLikeItemDatas.ts",
+        "./UIHandbookConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/HeroSkinPreviewItem.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./UIScriptManager.ts",
+        "./fairygui.mjs",
+        "./UIBagLikeConfig.ts",
+        "./QualityUtils.ts",
+        "./GIns.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/HomeUnit.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./FacadeManager.ts",
+        "./NotificationKey.ts",
+        "./BattleAttr.ts",
+        "./BattleEnum.ts",
+        "./BattleUnit.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/IBagLikeDragVo.ts",
+      "dependencies": [
+        "cc"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/IBagLikeRecordVo.ts",
+      "dependencies": [
+        "cc"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/IBagLikeRewardCfg.ts",
+      "dependencies": [
+        "cc"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/ModulesController.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BaseController.ts",
+        "./SdkBase.ts",
+        "./SdkManager.ts",
+        "./LoginNotificationKey.ts",
+        "./LocalStorage.ts",
+        "./FloatingTextManager.ts",
+        "./GuideManager.ts",
+        "./JumpManager.ts",
+        "./G.ts",
+        "./SaveManager.ts",
+        "./TimeModel.ts",
+        "./LoginModel.ts",
+        "./AudioAppManager.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./ActivityModel.ts",
+        "./ActivityKaxixiMgr.ts",
+        "./ActivitySdkModel.ts",
+        "./AdManager.ts",
+        "./AdModel.ts",
+        "./BagLikeRecordMgr.ts",
+        "./BagLilkeManager.ts",
+        "./BagLilkePowerSkillManager.ts",
+        "./BagLikeModel.ts",
+        "./BagLikeBuffManager.ts",
+        "./BagLikeBuffModel.ts",
+        "./ConditionManager.ts",
+        "./DailyInstanceMgr.ts",
+        "./DailyInstanceModel.ts",
+        "./DailyTaskMgr.ts",
+        "./DailyTaskModel.ts",
+        "./EndlessModeMgr.ts",
+        "./EndlessModeModel.ts",
+        "./GuideModel.ts",
+        "./HeroMgr.ts",
+        "./HeroModel.ts",
+        "./HeroSkinMgr.ts",
+        "./HeroSkinModel.ts",
+        "./InviteGiftMgr.ts",
+        "./ItemMgr.ts",
+        "./ItemModel.ts",
+        "./ItemPowerModel.ts",
+        "./MainMgr.ts",
+        "./MainModel.ts",
+        "./ModuleOpenModel.ts",
+        "./ModuleOpenManager.ts",
+        "./OnlineRewardModel.ts",
+        "./OnlineRewardMgr.ts",
+        "./RedDotMgr.ts",
+        "./RewardMgr.ts",
+        "./RoleModel.ts",
+        "./RoleMgr.ts",
+        "./RuleModel.ts",
+        "./RuleMgr.ts",
+        "./SettingModel.ts",
+        "./SettingMgr.ts",
+        "./SevenDayMgr.ts",
+        "./ShareManager.ts",
+        "./ShopBoxModel.ts",
+        "./ShopModel.ts",
+        "./ShopMgr.ts",
+        "./SpecialLevelMgr.ts",
+        "./ThreeDayMgr.ts",
+        "./TipMgr.ts",
+        "./TotalRewardModel.ts",
+        "./TotalRewardMgr.ts",
+        "./TrunkInstanceModel.ts",
+        "./TrunkInstanceRecordModel.ts",
+        "./TrunkInstanceMgr.ts",
+        "./NetSaveManager.ts",
+        "./ActivityShortCutMgr.ts",
+        "./ActivityFeedMgr.ts",
+        "./ReportSdk.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/RewardGetAniInBattleView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./LayerManager.ts",
+        "./UIScriptManager.ts",
+        "./NotificationKey.ts",
+        "./UIRewardConfig.ts",
+        "./RewardGetAniView.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/ShareManager.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BaseSingleton.ts",
+        "./G.ts",
+        "./SdkManager.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./I18nKey.ts",
+        "./UIBagLikeConfig.ts",
+        "./BattleInstanceController.ts",
+        "./ShareEnums.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/ShowNodeCom.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./FGUINotificationComponent.ts",
+        "./UIScriptManager.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./UIBagLikeConfig.ts",
+        "./BrickShowCom.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/SpecialItem.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./UIScriptManager.ts",
+        "./FGUINotificationComponent.ts",
+        "./TableManager.ts",
+        "./GIns.ts",
+        "./UIBagLikeConfig.ts",
+        "./QualityUtils.ts",
+        "./SpecialLevelMgr.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/SpecialLevelMgr.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./BaseSingleton.ts",
+        "./G.ts",
+        "./SaveManager.ts",
+        "./TableManager.ts",
+        "./DebugUtils.ts",
+        "./FightType.ts",
+        "./NotificationKey.ts",
+        "./BagLikeItemDatas.ts",
+        "./UIBagLikeConfig.ts",
+        "./BattleInstanceController.ts",
+        "./UICommonConfig.ts",
+        "./HeroEnums.ts",
+        "./ItemModel.ts",
+        "./ItemID.ts",
+        "./TrunkInstanceEnterTask.ts",
+        "./SpecialLevelLocalVo.ts",
+        "./UISpecialLevelConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/TrunkInstanceBattleView.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./UIView.ts",
+        "./UIScriptManager.ts",
+        "./UITrunkInstanceConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/TrunkInstanceEnterTask.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./G.ts",
+        "./TaskManager.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./UIBagLikeConfig.ts",
+        "./UITrunkInstanceConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/UIBagLikeBuffConfig.ts",
+      "dependencies": [
+        "cc"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/UIBagLikeConfig.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/UnitFactory.ts",
+      "dependencies": [
+        "cc",
+        "./PoolManager.ts",
+        "./MathUtils2.ts",
+        "./BattleEnum.ts",
+        "./BattleLayerManager.ts",
+        "./SpriteFrameUnitNode.ts",
+        "./ActorUnitNode.ts",
+        "./BulletUnit.ts",
+        "./AreaUnit.ts",
+        "./TeamUnit.ts",
+        "./MonsterFactory.ts",
+        "./TableManager.ts",
+        "./BattleConstantConfig.ts",
+        "./BattleTimer.ts",
+        "./GIns.ts",
+        "./BagLilkePowerSkillManager.ts",
+        "./UIBagLikeBuffConfig.ts",
+        "./PreLoadMgr.ts",
+        "./HomeUnit.ts",
+        "./BombUnit.ts",
+        "./BounceBullet.ts",
+        "./DartUnit.ts",
+        "./PhysicalBulletUnit.ts",
+        "./RayUnit.ts",
+        "./RocketBulletUnit.ts",
+        "./StretchBounceBullet.ts",
+        "./ThrowBulletUnit.ts",
+        "./HeroFactory.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    },
+    {
+      "method": "register",
+      "name": "chunks:///_virtual/WorkerBar.ts",
+      "dependencies": [
+        "./rollupPluginModLoBabelHelpers.js",
+        "cc",
+        "./AudioEnums.ts",
+        "./UIScriptManager.ts",
+        "./FGUINotificationComponent.ts",
+        "./FacadeManager.ts",
+        "./ColorUtils.ts",
+        "./NotificationKey.ts",
+        "./GIns.ts",
+        "./UIBagLikeBuffConfig.ts",
+        "./BattleInstanceController.ts",
+        "./HeroEnums.ts",
+        "./ItemID.ts",
+        "./UIRewardConfig.ts",
+        "./BagLilkePowerUtils.ts",
+        "./UIBagLikeConfig.ts"
+      ],
+      "argumentTypes": [
+        "string",
+        "array",
+        "function"
+      ]
+    }
+  ]
+}

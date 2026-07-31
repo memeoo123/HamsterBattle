@@ -1,60 +1,58 @@
 # Cocos Restore Progress
 
-> 编排迁移说明（2026-07-31）：本文件继续记录实现过程；严格验收结果改由 `VALIDATION_REPORT.md` 维护，总阶段以项目根目录的 `ORCHESTRATION_STATE.json` 为准。原始设置确认设计分辨率为 `750 × 1334`，当前实现中的 `750 × 1000` 已登记为待修正差异。
+> 总阶段以项目根目录 `ORCHESTRATION_STATE.json` 为准；本文件记录 `cocosProject` 的实现状态。
 
-## Target
+## 当前基线
 
-- Source AppID/version: `wxf9af2417e78ce07a/18`
-- Original engine: Cocos Creator `3.8.2`
-- Reconstruction editor: Cocos Creator `3.8.8`
-- Current fidelity baseline: main level `1001` / `宁静森林`
+- 目标：`wxf9af2417e78ce07a/18`
+- 代表关卡：`1001 / 宁静森林`
+- 原引擎：Cocos Creator `3.8.2`
+- 还原工程：Cocos Creator `3.8.8`
+- 设计分辨率：`750 × 1334` 竖屏
 
-## Implemented
+## 本轮已完成
 
-- Replaced the earlier five-tower path-defense prototype with the original battle structure:
-  - upper battlefield with player/enemy mushroom camps;
-  - lower `7 × 5` backpack grid;
-  - original centered `3 × 3` unlocked area and power core at index `17`;
-  - draggable hero/coin gears and staged grid expansion;
-  - preparation, battle, round-clear, victory and defeat phases.
-- Imported reachable original assets:
-  - `fightscene_01` forest scene;
-  - red and blue mushroom camps from the original FairyGUI atlas;
-  - original Spine 3.8.99 models for `H0101`, `H0201`, `M02` and `M03`;
-  - retained original UI/head/shape atlases for subsequent detailed UI matching.
-- Restored level `1001` battle data:
-  - player camp HP `500`;
-  - enemy camp HP `4000`;
-  - five original round schedules and monster timestamps;
-  - level and round ATK/HP multipliers;
-  - `H01`/`H02`, `M02`/`M03`, and `Boss03` base attributes;
-  - hero spawn intervals (`H01` 10 seconds, `H02` 8 seconds);
-  - coin gear output and enemy gold rewards.
-- Restored the core regular-damage path:
-  - actor ATK × effect ratio × hit × critical × damage-increase/resistance;
-  - integer floor with minimum damage `1`;
-  - no invented traditional defense stat;
-  - common attack has `100%` ATK, `1s` cooldown and `0.3s` hit delay;
-  - attack-speed adjustment and hero/tower/boss modifiers are represented.
-- Restored automatic spawning, movement, target acquisition, melee/ranged distances,
-  camp attacks, death cleanup and round transitions.
+- 从本机授权微信缓存恢复并解析原版 `bagLike.bin`：
+  - `BagLikeBattlePage` 为 `750 × 1334`；
+  - 战场中心为 Cocos `(0, 110)`、尺寸 `750 × 300`；
+  - 双方兵营横向锚点约为 `-345 / 345`；
+  - 背包为 `7 × 5`、格子 `100 × 100`、容器 `730 × 529`；
+  - 刷新、开战、顶部 HUD、倍速按钮的原始组件坐标已进入 `RESTORE_SPEC.json`。
+- 从原运行时确认普通主线真实胜负规则：
+  - `BattleTrunkChapterVo.enemyHomeHp` 固定返回 `-1`；
+  - 敌方兵营是出怪锚点，不是 `4000 HP` 的攻击目标；
+  - 每波在排期结束且无存活敌人时胜利；第五波清完后整关胜利；
+  - 我方 `500 HP` 兵营归零时失败。
+- Cocos 实现已纠正为：
+  - `750 × 1334` 场景和运行时设计分辨率；
+  - 原版战场、兵营、100 像素棋盘与底部操作区锚点；
+  - 布阵时显示背包，开战后隐藏布阵层，波次结束后返回布阵；
+  - 五波原始排期、Boss03、H01/H02 出兵间隔、暂停/倍速、胜败面板；
+  - 英雄不再攻击虚构的敌方基地 HP，敌人仍会攻击我方兵营。
+  - 刷新只替换 `ChooseCom` 候选栏，不再自动把齿轮塞入网格；候选必须手动拖入背包。
+  - 本局第一次普通刷新免费，之后每次消耗 `15` 局内金币；每个准备回合保留一次广告刷新。
+  - 关卡 1001 前八批静态候选及单格、横二格、纵二格、纵三格占位已接入；`G02/G03` 需拖到未解锁区域才能扩格。
 
-## Verification
+## 自动校验
 
-- TypeScript project check with the Cocos Creator 3.8.8 declarations: passed.
-- Spine headers: all four imported skeletons report Spine `3.8.99`, compatible with
-  the original game's 3.8 runtime.
-- Animation names found in the source skeletons and used by the runtime:
-  `idle`, `move`, `attack`, `die`.
-- A Cocos headless build attempt was stopped after its editor process stalled before
-  asset metadata generation; no existing interactive editor process was terminated.
+- Restore spec ready gate：通过，`implementationReady=true`。
+- Golden cases：`22/22` 通过；五波用例直接读取 `CangshuGame.ts` 的 ROUNDS，并覆盖刷新经济、多格落位、扩展格和 4 个战斗状态转换。
+- Cocos 静态检查：`22` 个资源文件，`0` 个缺失 `.meta`。
+- TypeScript：使用 Creator `3.8.8` 工程声明检查，退出码 `0`。
+- 当前工程已由现有 Cocos 主进程打开：PID `42220`；未启动或终止额外编辑器进程。
 
-## Remaining fidelity work
+## 仍需现场确认
 
-- Open the project in Creator once so the newly copied images and Spine files receive
-  editor-generated `.meta` records, then run the scene preview.
-- Compare the preview against a fresh capture of the original level to tune exact
-  FairyGUI spacing, layer order, camp scale, unit scale and UI skins.
-- Restore the remaining level-specific gears, hero active skills, status effects,
-  sound effects and later fight scenes after level `1001` is accepted as the visual
-  and numerical baseline.
+- 在当前 Creator 窗口预览 `Main.scene`，实际完成一次“布阵 → 5 波战斗 → 胜利面板”的点击冒烟测试。
+- 尚无同关卡、同阶段、同时间点的原游戏截图/录像，所以纹理裁切、字体、单位比例和层级仍不能标记为像素级一致。
+- 关卡 1001 通过现场冒烟测试后，再继续补齐技能、状态效果、声音及更多齿轮。
+- 八批静态候选之后的原版权重掉落，以及 H12 雷云齿轮的完整技能/合成链，仍是非阻塞的后续还原项。
+
+## 冒烟测试路径
+
+1. 预览 `assets/scenes/Main.scene`。
+2. 确认初始 H01 只出现在候选栏；把它手动拖入一个已解锁空格，不能覆盖中央能量核心。
+3. 点击普通刷新：本局第一次应为免费；再次刷新在金币不足 15 时应被阻止。广告刷新每个准备回合只能使用一次。
+4. 点击“开始第 1 波”，确认未摆放候选被清空、背包隐藏、怪物按排期生成、我方兵营会扣血。
+5. 每波清怪后确认返回布阵并出现新候选；继续至第 5 波。
+6. Boss03 被击败后应出现“关卡胜利”，点击“重新挑战”应回到第 1 波、`500 HP` 和 `0` 金币。

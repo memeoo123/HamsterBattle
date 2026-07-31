@@ -82,7 +82,7 @@
       "engineEvidence": "ace-protect.json + app-config.json + UnityPlugin 1.3.7 loader"
     },
     "wxf9af2417e78ce07a/18": {
-      "phase": "restore-specification",
+      "phase": "validation",
       "status": "in_progress",
       "platform": "windows",
       "engine": "cocos",
@@ -136,23 +136,33 @@
       "checks": {
         "goldenCases": {
           "result": "pass",
-          "evidence": "run_golden_cases.py: 13/13 passed",
-          "atUtc": "2026-07-31T10:06:46.355409+00:00"
+          "evidence": "22/22 passed; includes CangshuGame.ts waves, first-free/later-15 refresh economy, manual multi-cell placement, grid unlock and battle phase transitions",
+          "atUtc": "2026-07-31T11:07:17.440005+00:00"
         },
         "assetImport": {
           "result": "pass",
           "evidence": "check_cocos_project.py: valid, 22 asset files, 0 missing meta",
-          "atUtc": "2026-07-31T10:06:46.444772+00:00"
+          "atUtc": "2026-07-31T10:49:17.194336+00:00"
         },
         "typescript": {
           "result": "pass",
-          "evidence": "cocosProject/RESTORE_PROGRESS.md historical Cocos declaration check passed",
-          "atUtc": "2026-07-31T10:06:46.534568+00:00"
+          "evidence": "check_cocos_project.py: TypeScript ran, exitCode 0",
+          "atUtc": "2026-07-31T10:49:18.036775+00:00"
         },
         "visualBaseline": {
           "result": "pending",
           "evidence": "No matched original level 1001 capture is available",
           "atUtc": "2026-07-31T10:06:46.630159+00:00"
+        },
+        "gameplaySmoke": {
+          "result": "pending",
+          "evidence": "Existing Creator PID 42220 has project open; full five-round interactive smoke test pending",
+          "atUtc": "2026-07-31T10:49:16.475366+00:00"
+        },
+        "restoreSpecReady": {
+          "result": "pass",
+          "evidence": "validate_restore_spec.py --require-ready: valid=true, implementationReady=true",
+          "atUtc": "2026-07-31T10:49:16.910660+00:00"
         }
       },
       "history": [
@@ -242,11 +252,69 @@
           "name": "visualBaseline",
           "result": "pending",
           "atUtc": "2026-07-31T10:06:46.630167+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-07-31T10:49:13.769812+00:00"
+        },
+        {
+          "event": "check",
+          "name": "gameplaySmoke",
+          "result": "pending",
+          "atUtc": "2026-07-31T10:49:16.475374+00:00"
+        },
+        {
+          "event": "check",
+          "name": "restoreSpecReady",
+          "result": "pass",
+          "atUtc": "2026-07-31T10:49:16.910668+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-07-31T10:49:17.194344+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-07-31T10:49:18.036784+00:00"
+        },
+        {
+          "from": "restore-specification",
+          "to": "implementation",
+          "atUtc": "2026-07-31T10:49:25.675839+00:00"
+        },
+        {
+          "from": "implementation",
+          "to": "validation",
+          "atUtc": "2026-07-31T10:49:25.675871+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-07-31T10:52:12.086044+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-07-31T10:54:25.934195+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-07-31T11:07:17.440012+00:00"
         }
       ],
       "engineEvidence": "settings.37a11.json CocosEngine 3.8.2 + System.register business bundle"
     }
   },
   "createdAtUtc": "2026-07-31T10:06:44.358414+00:00",
-  "updatedAtUtc": "2026-07-31T10:08:57.778756+00:00"
+  "updatedAtUtc": "2026-07-31T11:07:17.440014+00:00"
 }

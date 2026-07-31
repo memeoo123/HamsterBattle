@@ -23,8 +23,9 @@ const { ccclass } = _decorator;
 
 type Team = 'self' | 'enemy';
 type Phase = 'deploy' | 'battle' | 'roundClear' | 'won' | 'lost';
-type ModelId = 'H0101' | 'H0201' | 'M02' | 'M03';
-type GearId = 'P01' | 'H0101' | 'H0201' | 'C01';
+type ModelId = 'H0101' | 'H0201' | 'H0401' | 'M02' | 'M03' | 'Boss03';
+type GearId = 'P01' | 'H0101' | 'H0201' | 'H0202' | 'H0203' | 'H0401' | 'H1201' | 'H1202' | 'C01' | 'G02' | 'G03';
+type GearLocation = 'grid' | 'candidate';
 
 type Attributes = {
     hit: number;
@@ -70,6 +71,9 @@ type GearConfig = {
     tint: Color;
     spawnEvery?: number;
     unit?: ModelId;
+    unitMultiple?: number;
+    shape: ReadonlyArray<readonly [number, number]>;
+    gridUnlock?: boolean;
 };
 
 type Gear = {
@@ -79,6 +83,8 @@ type Gear = {
     col: number;
     node: Node;
     nextSpawn: number;
+    location: GearLocation;
+    candidateIndex: number;
 };
 
 type BattleUnit = {
@@ -123,13 +129,13 @@ type FloatingText = {
 };
 
 const DESIGN_WIDTH = 750;
-const DESIGN_HEIGHT = 1000;
-const BATTLE_Y = 185;
-const HOME_X = 300;
-const UNIT_Y_LIMIT = 150;
-const GRID_CELL = 72;
-const GRID_TOP = -100;
-const GRID_LEFT = -216;
+const DESIGN_HEIGHT = 1334;
+const BATTLE_Y = 110;
+const HOME_X = 345;
+const UNIT_Y_LIMIT = 110;
+const GRID_CELL = 100;
+const GRID_TOP = 252;
+const GRID_LEFT = -300;
 const GRID_ROWS = 5;
 const GRID_COLS = 7;
 const POWER_INDEX = 17;
@@ -190,6 +196,19 @@ const UNITS: Record<ModelId, UnitConfig> = {
         color: new Color(237, 121, 65, 255),
         attrs: { attackSpeed: 1500 },
     },
+    H0401: {
+        id: 'H0401',
+        name: '仓鼠骑士',
+        atk: 51,
+        hp: 179,
+        range: 50,
+        searchRange: 400,
+        moveSpeed: 95,
+        attackInterval: 1,
+        spinePath: 'spine/H0401/js_qishi_1',
+        spineScale: 0.8,
+        color: new Color(107, 183, 106, 255),
+    },
     M02: {
         id: 'M02',
         name: '云云猪',
@@ -219,13 +238,36 @@ const UNITS: Record<ModelId, UnitConfig> = {
         attrs: { towerResistance: -5000 },
         gold: 5,
     },
+    Boss03: {
+        id: 'Boss03',
+        name: '精英僵僵猫',
+        atk: 24,
+        hp: 296,
+        range: 250,
+        searchRange: 400,
+        moveSpeed: 58,
+        attackInterval: 1,
+        spinePath: 'spine/M03/gw_03',
+        spineScale: 0.9,
+        color: new Color(63, 139, 126, 255),
+        attrs: { towerResistance: -5000 },
+        boss: true,
+        gold: 20,
+    },
 };
 
 const GEARS: Record<GearId, GearConfig> = {
-    P01: { id: 'P01', name: '能量核心', tint: new Color(255, 193, 52, 255) },
-    H0101: { id: 'H0101', name: '战士齿轮', tint: new Color(225, 84, 64, 255), spawnEvery: 10, unit: 'H0101' },
-    H0201: { id: 'H0201', name: '射手齿轮', tint: new Color(74, 157, 229, 255), spawnEvery: 8, unit: 'H0201' },
-    C01: { id: 'C01', name: '金币齿轮', tint: new Color(255, 190, 43, 255) },
+    P01: { id: 'P01', name: '能量核心', tint: new Color(255, 193, 52, 255), shape: [[0, 0]] },
+    H0101: { id: 'H0101', name: '仓鼠战士', tint: new Color(225, 84, 64, 255), spawnEvery: 10, unit: 'H0101', shape: [[0, 0]] },
+    H0201: { id: 'H0201', name: '仓鼠射手', tint: new Color(74, 157, 229, 255), spawnEvery: 8, unit: 'H0201', shape: [[0, 0], [0, 1]] },
+    H0202: { id: 'H0202', name: '仓鼠射手 II', tint: new Color(69, 137, 226, 255), spawnEvery: 8, unit: 'H0201', unitMultiple: 1.5, shape: [[0, 0], [0, 1]] },
+    H0203: { id: 'H0203', name: '仓鼠射手 III', tint: new Color(107, 99, 225, 255), spawnEvery: 8, unit: 'H0201', unitMultiple: 2.25, shape: [[0, 0], [0, 1]] },
+    H0401: { id: 'H0401', name: '仓鼠骑士', tint: new Color(70, 167, 99, 255), spawnEvery: 6, unit: 'H0401', shape: [[0, 0], [1, 0], [2, 0]] },
+    H1201: { id: 'H1201', name: '雷云齿轮', tint: new Color(125, 104, 231, 255), shape: [[0, 0], [0, 1]] },
+    H1202: { id: 'H1202', name: '雷云齿轮 II', tint: new Color(101, 83, 210, 255), shape: [[0, 0], [0, 1]] },
+    C01: { id: 'C01', name: '银币齿轮', tint: new Color(255, 190, 43, 255), shape: [[0, 0]] },
+    G02: { id: 'G02', name: '横向两格', tint: new Color(84, 205, 180, 255), shape: [[0, 0], [0, 1]], gridUnlock: true },
+    G03: { id: 'G03', name: '纵向两格', tint: new Color(84, 205, 180, 255), shape: [[0, 0], [1, 0]], gridUnlock: true },
 };
 
 const ROUNDS: RoundConfig[] = [
@@ -250,7 +292,7 @@ const ROUNDS: RoundConfig[] = [
     },
     {
         times: [1000, 3500, 5500, 8500, 9000, 10000, 10500, 11000, 11500, 12000],
-        monsters: ['M02', 'M02', 'M02', 'M02', 'M03', 'M02', 'M02', 'M03', 'M02', 'M03'],
+        monsters: ['M02', 'M02', 'M02', 'M02', 'M03', 'M02', 'M02', 'M03', 'M02', 'Boss03'],
         atkMultiple: 34013,
         hpMultiple: 42342,
     },
@@ -259,10 +301,17 @@ const ROUNDS: RoundConfig[] = [
 const STATIC_BATCHES: GearId[][] = [
     ['H0101'],
     ['H0201', 'C01'],
-    [],
-    ['H0101', 'H0201'],
-    ['H0101'],
+    ['G02'],
+    ['H0401', 'H0101', 'H0201'],
+    ['H0101', 'H0401', 'H1201'],
+    ['H1201', 'H0201', 'G02'],
+    ['H0401', 'H0202', 'H0203'],
+    ['H1202', 'H0203', 'H0201', 'G03'],
 ];
+
+const ROUND_COIN_REWARDS = [0, 0, 15, 15, 15];
+const REFRESH_COST = 15;
+const CANDIDATE_Y = -390;
 
 @ccclass('CangshuGame')
 export class CangshuGame extends Component {
@@ -273,36 +322,45 @@ export class CangshuGame extends Component {
     private clearTimer = 0;
     private serial = 0;
     private gears: Gear[] = [];
+    private candidates: Gear[] = [];
     private units: BattleUnit[] = [];
     private pendingHits: PendingHit[] = [];
     private traces: Trace[] = [];
     private floatingTexts: FloatingText[] = [];
     private unlocked = new Set<number>();
     private selfHp = 500;
-    private enemyHp = 4000;
-    private gold = 60;
+    private gold = 0;
     private refreshIndex = 0;
+    private normalRefreshTimes = 0;
+    private freeRefreshUsed = false;
     private coinClock = 0;
     private speed: 1 | 2 = 1;
+    private paused = false;
 
     private battleLayer!: Node;
     private unitLayer!: Node;
+    private prepareLayer!: Node;
+    private candidateLayer!: Node;
+    private resultLayer!: Node;
     private gridLayer!: Node;
     private effectGraphics!: Graphics;
     private gridGraphics!: Graphics;
     private selfHomeGraphics!: Graphics;
-    private enemyHomeGraphics!: Graphics;
     private phaseLabel!: Label;
     private roundLabel!: Label;
     private goldLabel!: Label;
     private selfHpLabel!: Label;
-    private enemyHpLabel!: Label;
+    private objectiveLabel!: Label;
     private actionLabel!: Label;
     private refreshLabel!: Label;
+    private adRefreshLabel!: Label;
     private speedLabel!: Label;
+    private pauseLabel!: Label;
+    private resultTitleLabel!: Label;
+    private resultBodyLabel!: Label;
     private tipLabel!: Label;
     private dragGear: Gear | null = null;
-    private dragOrigin = { row: 0, col: 0 };
+    private dragOrigin = { row: 0, col: 0, x: 0, y: 0, location: 'grid' as GearLocation };
 
     onLoad(): void {
         view.setDesignResolutionSize(DESIGN_WIDTH, DESIGN_HEIGHT, ResolutionPolicy.SHOW_ALL);
@@ -310,14 +368,14 @@ export class CangshuGame extends Component {
         transform.setContentSize(DESIGN_WIDTH, DESIGN_HEIGHT);
         this.buildScene();
         this.initGrid();
-        this.addGear('P01', 2, 3);
-        this.claimNextBatch(true);
+        this.addPlacedGear('P01', 2, 3);
+        this.dealPreparationBatch();
         this.refreshUi();
     }
 
     update(dt: number): void {
         const scaled = Math.min(dt, 0.05) * this.speed;
-        if (this.phase === 'battle') this.stepBattle(scaled);
+        if (this.phase === 'battle' && !this.paused) this.stepBattle(scaled);
         this.stepEffects(scaled);
         this.drawEffects();
         this.drawHomes();
@@ -332,18 +390,12 @@ export class CangshuGame extends Component {
             if (!error && background.isValid) backgroundSprite.spriteFrame = frame;
         });
 
-        const shade = this.makeNode('LowerShade', this.node, 0, -285, 750, 430);
-        const shadeGraphics = shade.addComponent(Graphics);
-        shadeGraphics.fillColor = new Color(25, 42, 40, 164);
-        shadeGraphics.roundRect(-370, -210, 740, 420, 26);
-        shadeGraphics.fill();
-
-        this.battleLayer = this.makeNode('BattleLayer', this.node, 0, BATTLE_Y, 750, 440);
-        this.unitLayer = this.makeNode('Units', this.battleLayer, 0, 0, 750, 440);
-        const effectNode = this.makeNode('BattleEffects', this.battleLayer, 0, 0, 750, 440);
+        this.battleLayer = this.makeNode('BattleLayer', this.node, 0, BATTLE_Y, 750, 300);
+        this.unitLayer = this.makeNode('Units', this.battleLayer, 0, 0, 750, 300);
+        const effectNode = this.makeNode('BattleEffects', this.battleLayer, 0, 0, 750, 300);
         this.effectGraphics = effectNode.addComponent(Graphics);
 
-        const selfHome = this.makeNode('SelfCamp', this.battleLayer, -HOME_X, -18, 145, 150);
+        const selfHome = this.makeNode('SelfCamp', this.battleLayer, -HOME_X, 0, 120, 236);
         const selfSprite = selfHome.addComponent(Sprite);
         selfSprite.sizeMode = Sprite.SizeMode.CUSTOM;
         resources.load('original/blue_base/spriteFrame', SpriteFrame, (error, frame) => {
@@ -351,54 +403,86 @@ export class CangshuGame extends Component {
         });
         this.selfHomeGraphics = selfHome.addComponent(Graphics);
 
-        const enemyHome = this.makeNode('EnemyCamp', this.battleLayer, HOME_X, -18, 145, 150);
+        const enemyHome = this.makeNode('EnemyCamp', this.battleLayer, HOME_X, 0, 120, 236);
         const enemySprite = enemyHome.addComponent(Sprite);
         enemySprite.sizeMode = Sprite.SizeMode.CUSTOM;
         enemyHome.setScale(-1, 1, 1);
         resources.load('original/red_base/spriteFrame', SpriteFrame, (error, frame) => {
             if (!error && enemyHome.isValid) enemySprite.spriteFrame = frame;
         });
-        this.enemyHomeGraphics = enemyHome.addComponent(Graphics);
 
-        const topPanel = this.makeNode('TopHud', this.node, 0, 458, 726, 66);
+        const topPanel = this.makeNode('TopHud', this.node, 0, 560, 726, 92);
         const topGraphics = topPanel.addComponent(Graphics);
         topGraphics.fillColor = PANEL;
-        topGraphics.roundRect(-363, -33, 726, 66, 20);
+        topGraphics.roundRect(-363, -46, 726, 92, 20);
         topGraphics.fill();
-        this.selfHpLabel = this.makeLabel('SelfHp', topPanel, -250, 8, 210, 30, '我方兵营 500 / 500', 18, CREAM);
-        this.enemyHpLabel = this.makeLabel('EnemyHp', topPanel, 250, 8, 210, 30, '敌方兵营 4000 / 4000', 18, CREAM);
-        this.roundLabel = this.makeLabel('Round', topPanel, 0, 9, 130, 30, '第 1 / 5 波', 19, GOLD);
-        this.phaseLabel = this.makeLabel('Phase', topPanel, 0, -18, 160, 24, '布阵阶段', 15, WHITE);
+        this.selfHpLabel = this.makeLabel('SelfHp', topPanel, -242, 13, 220, 32, '我方兵营 500 / 500', 18, CREAM);
+        this.objectiveLabel = this.makeLabel('Objective', topPanel, 242, 13, 220, 32, '目标：清除全部敌人', 17, CREAM);
+        this.roundLabel = this.makeLabel('Round', topPanel, 0, 14, 130, 30, '第 1 / 5 波', 19, GOLD);
+        this.phaseLabel = this.makeLabel('Phase', topPanel, 0, -20, 180, 24, '布阵阶段', 15, WHITE);
 
-        this.gridLayer = this.makeNode('BackpackGrid', this.node, 0, 0, 750, 1000);
+        this.prepareLayer = this.makeNode('PreparationLayer', this.node, 0, 0, 750, DESIGN_HEIGHT);
+        this.gridLayer = this.makeNode('BackpackGrid', this.prepareLayer, 0, 0, 750, DESIGN_HEIGHT);
         this.gridGraphics = this.gridLayer.addComponent(Graphics);
+
+        this.candidateLayer = this.makeNode('CandidateShop', this.prepareLayer, 0, CANDIDATE_Y, 730, 180);
+        const candidateGraphics = this.candidateLayer.addComponent(Graphics);
+        candidateGraphics.fillColor = new Color(30, 47, 50, 232);
+        candidateGraphics.roundRect(-365, -90, 730, 180, 24);
+        candidateGraphics.fill();
+        candidateGraphics.strokeColor = new Color(255, 225, 145, 190);
+        candidateGraphics.lineWidth = 3;
+        candidateGraphics.roundRect(-362, -87, 724, 174, 21);
+        candidateGraphics.stroke();
+        this.makeLabel('CandidateTitle', this.candidateLayer, 0, 65, 420, 28, '候选齿轮 · 拖入背包手动摆放', 17, GOLD);
 
         this.tipLabel = this.makeLabel(
             'Tip',
-            this.node,
-            0,
-            -70,
-            650,
+            this.prepareLayer,
+            105,
+            -515,
+            470,
             34,
-            '拖动齿轮调整位置；开始后英雄会从左侧兵营自动出战',
+            '先把候选齿轮拖入背包；刷新会替换尚未摆放的候选',
             15,
             CREAM,
         );
 
-        this.refreshLabel = this.makeButton('Refresh', this.node, -255, -468, 170, 54, '刷新 15', () => this.claimNextBatch(false));
-        this.actionLabel = this.makeButton('Action', this.node, 0, -468, 210, 58, '开始第 1 波', () => this.onAction());
-        this.speedLabel = this.makeButton('Speed', this.node, 255, -468, 150, 54, '1× 速度', () => {
+        this.adRefreshLabel = this.makeButton('AdRefresh', this.prepareLayer, -235.5, -598.5, 215, 70, '广告刷新 1/1', () => this.claimFreeBatch());
+        this.refreshLabel = this.makeButton('Refresh', this.prepareLayer, -3, -598, 214, 70, '免费刷新', () => this.claimNextBatch(false));
+        this.actionLabel = this.makeButton('Action', this.prepareLayer, 230.5, -598.5, 215, 72, '开始第 1 波', () => this.onAction());
+        this.speedLabel = this.makeButton('Speed', this.node, -256.5, 476.5, 150, 54, '1× 速度', () => {
             this.speed = this.speed === 1 ? 2 : 1;
             this.speedLabel.string = `${this.speed}× 速度`;
         });
-        this.goldLabel = this.makeLabel('Gold', this.node, -262, -80, 180, 32, '金币 60', 18, GOLD);
+        this.pauseLabel = this.makeButton('Pause', this.node, -306, 622, 86, 48, '暂停', () => {
+            if (this.phase !== 'battle') return;
+            this.paused = !this.paused;
+            this.pauseLabel.string = this.paused ? '继续' : '暂停';
+        });
+        this.goldLabel = this.makeLabel('Gold', this.prepareLayer, -270, -515, 180, 32, '金币 0', 18, GOLD);
 
-        const title = this.makeLabel('LevelTitle', this.node, 0, 405, 360, 36, '1001 · 宁静森林', 23, CREAM);
+        const title = this.makeLabel('LevelTitle', this.node, 0, 625, 360, 36, '1001 · 宁静森林', 23, CREAM);
         const outline = title.node.addComponent(Graphics);
         outline.strokeColor = new Color(33, 60, 49, 140);
+
+        this.resultLayer = this.makeNode('ResultOverlay', this.node, 0, 0, 620, 330);
+        const resultGraphics = this.resultLayer.addComponent(Graphics);
+        resultGraphics.fillColor = new Color(22, 38, 40, 242);
+        resultGraphics.roundRect(-310, -165, 620, 330, 28);
+        resultGraphics.fill();
+        resultGraphics.strokeColor = new Color(239, 210, 119, 255);
+        resultGraphics.lineWidth = 5;
+        resultGraphics.roundRect(-307, -162, 614, 324, 25);
+        resultGraphics.stroke();
+        this.resultTitleLabel = this.makeLabel('ResultTitle', this.resultLayer, 0, 92, 480, 64, '关卡胜利', 38, GOLD);
+        this.resultBodyLabel = this.makeLabel('ResultBody', this.resultLayer, 0, 20, 520, 70, '', 20, CREAM);
+        this.makeButton('Retry', this.resultLayer, 0, -95, 230, 64, '重新挑战', () => this.restartLevel());
+        this.resultLayer.active = false;
     }
 
     private initGrid(): void {
+        this.unlocked.clear();
         for (let row = 1; row <= 3; row += 1) {
             for (let col = 2; col <= 4; col += 1) this.unlocked.add(row * GRID_COLS + col);
         }
@@ -408,6 +492,9 @@ export class CangshuGame extends Component {
     private drawGrid(): void {
         const g = this.gridGraphics;
         g.clear();
+        g.fillColor = new Color(25, 42, 40, 205);
+        g.roundRect(-365, 51.5 - 264.5, 730, 529, 26);
+        g.fill();
         for (let row = 0; row < GRID_ROWS; row += 1) {
             for (let col = 0; col < GRID_COLS; col += 1) {
                 const index = row * GRID_COLS + col;
@@ -442,10 +529,13 @@ export class CangshuGame extends Component {
 
     private startRound(): void {
         if (!this.gears.some((gear) => GEARS[gear.id].unit)) {
-            this.tipLabel.string = '至少需要一个英雄齿轮才能开战';
+            this.tipLabel.string = '先从候选栏拖入至少一个仓鼠英雄齿轮';
             return;
         }
         this.phase = 'battle';
+        this.paused = false;
+        this.clearCandidates();
+        this.prepareLayer.active = false;
         this.roundClock = 0;
         this.spawnIndex = 0;
         this.clearTimer = 0;
@@ -463,95 +553,128 @@ export class CangshuGame extends Component {
     private restartLevel(): void {
         this.clearUnits();
         for (const gear of [...this.gears]) gear.node.destroy();
+        for (const gear of [...this.candidates]) gear.node.destroy();
         this.gears = [];
+        this.candidates = [];
         this.phase = 'deploy';
         this.roundIndex = 0;
         this.selfHp = 500;
-        this.enemyHp = 4000;
-        this.gold = 60;
+        this.gold = 0;
         this.refreshIndex = 0;
-        this.addGear('P01', 2, 3);
-        this.claimNextBatch(true);
-        this.tipLabel.string = '拖动齿轮调整位置；开始后英雄会从左侧兵营自动出战';
+        this.normalRefreshTimes = 0;
+        this.freeRefreshUsed = false;
+        this.initGrid();
+        this.addPlacedGear('P01', 2, 3);
+        this.dealPreparationBatch();
+        this.tipLabel.string = '把候选仓鼠战士拖入背包后，再开始第 1 波';
+        this.prepareLayer.active = true;
+        this.resultLayer.active = false;
     }
 
-    private claimNextBatch(free: boolean): void {
+    private claimNextBatch(_free: boolean): void {
         if (this.phase !== 'deploy') return;
-        if (!free && this.gold < 15) {
-            this.tipLabel.string = '金币不足，刷新需要 15';
+        const cost = this.normalRefreshTimes > 0 ? REFRESH_COST : 0;
+        if (this.gold < cost) {
+            this.tipLabel.string = `金币不足：本次刷新需要 ${cost}`;
             return;
         }
-        const batch = STATIC_BATCHES[this.refreshIndex] || [];
-        if (!free) this.gold -= 15;
-        if (batch.length === 0) {
-            this.unlockNextCell();
-            this.tipLabel.string = '获得扩展齿轮：已解锁一个背包格';
-        } else {
-            for (const id of batch) {
-                const cell = this.firstFreeCell();
-                if (cell) this.addGear(id, cell.row, cell.col);
-            }
-            this.tipLabel.string = `获得：${batch.map((id) => GEARS[id].name).join('、')}`;
+        this.gold -= cost;
+        this.normalRefreshTimes += 1;
+        this.replaceCandidates(this.nextCandidateBatch());
+        this.tipLabel.string = cost === 0 ? '本局首次普通刷新免费；请手动拖动候选齿轮' : `已消耗 ${cost} 金币刷新；请手动摆放`;
+    }
+
+    private claimFreeBatch(): void {
+        if (this.phase !== 'deploy') return;
+        if (this.freeRefreshUsed) {
+            this.tipLabel.string = '本准备回合的广告刷新已经使用';
+            return;
         }
-        this.refreshIndex = Math.min(this.refreshIndex + 1, STATIC_BATCHES.length);
+        this.freeRefreshUsed = true;
+        this.replaceCandidates(this.nextCandidateBatch());
+        this.tipLabel.string = '广告刷新完成；候选齿轮仍需手动拖入背包';
     }
 
-    private unlockNextCell(): void {
-        const preferred = [10, 11, 12, 9, 13, 3, 24, 2, 4, 23, 25];
-        const index = preferred.find((value) => !this.unlocked.has(value));
-        if (index === undefined) return;
-        this.unlocked.add(index);
-        this.drawGrid();
+    private dealPreparationBatch(): void {
+        this.replaceCandidates(this.nextCandidateBatch());
     }
 
-    private firstFreeCell(): { row: number; col: number } | null {
-        for (const index of this.unlocked) {
-            if (index === POWER_INDEX) continue;
-            const row = Math.floor(index / GRID_COLS);
-            const col = index % GRID_COLS;
-            if (!this.gears.some((gear) => gear.row === row && gear.col === col)) return { row, col };
+    private nextCandidateBatch(): GearId[] {
+        const batch = STATIC_BATCHES[this.refreshIndex] || ['H0101', 'H0201', 'C01'];
+        this.refreshIndex += 1;
+        return [...batch];
+    }
+
+    private replaceCandidates(batch: GearId[]): void {
+        for (const gear of this.candidates) {
+            if (gear.node.isValid) gear.node.destroy();
         }
-        return null;
+        this.candidates = batch.map((id, index) => this.createGear(id, -1, -1, 'candidate', index));
+        this.relayoutCandidates();
     }
 
-    private addGear(id: GearId, row: number, col: number): void {
+    private clearCandidates(): void {
+        for (const gear of this.candidates) {
+            if (gear.node.isValid) gear.node.destroy();
+        }
+        this.candidates = [];
+    }
+
+    private relayoutCandidates(): void {
+        const spacing = this.candidates.length >= 4 ? 145 : 175;
+        this.candidates.forEach((gear, index) => {
+            gear.candidateIndex = index;
+            const x = (index - (this.candidates.length - 1) / 2) * spacing;
+            gear.node.setPosition(x, CANDIDATE_Y - 12);
+        });
+    }
+
+    private addPlacedGear(id: GearId, row: number, col: number): Gear {
+        const gear = this.createGear(id, row, col, 'grid', -1);
+        this.gears.push(gear);
+        return gear;
+    }
+
+    private createGear(id: GearId, row: number, col: number, location: GearLocation, candidateIndex: number): Gear {
         const config = GEARS[id];
-        const pos = this.gridPosition(row, col);
-        const node = this.makeNode(`Gear_${id}_${this.serial}`, this.node, pos.x, pos.y, 62, 62);
+        const pos = location === 'grid' ? this.gridPosition(row, col) : { x: 0, y: CANDIDATE_Y };
+        const node = this.makeNode(`Gear_${id}_${this.serial}`, this.prepareLayer, pos.x, pos.y, 82, 82);
         const g = node.addComponent(Graphics);
-        g.fillColor = new Color(config.tint.r, config.tint.g, config.tint.b, 245);
-        g.circle(0, 0, 28);
-        g.fill();
-        g.strokeColor = CREAM;
-        g.lineWidth = 4;
-        for (let i = 0; i < 8; i += 1) {
-            const angle = (Math.PI * 2 * i) / 8;
-            g.moveTo(Math.cos(angle) * 25, Math.sin(angle) * 25);
-            g.lineTo(Math.cos(angle) * 31, Math.sin(angle) * 31);
+        const maxRow = Math.max(...config.shape.map((cell) => cell[0]));
+        const maxCol = Math.max(...config.shape.map((cell) => cell[1]));
+        for (const [shapeRow, shapeCol] of config.shape) {
+            const dotX = (shapeCol - maxCol / 2) * 24;
+            const dotY = (maxRow / 2 - shapeRow) * 24;
+            g.fillColor = new Color(config.tint.r, config.tint.g, config.tint.b, 245);
+            g.circle(dotX, dotY, config.shape.length === 1 ? 28 : 18);
+            g.fill();
+            g.strokeColor = CREAM;
+            g.lineWidth = 3;
+            g.circle(dotX, dotY, config.shape.length === 1 ? 28 : 18);
+            g.stroke();
         }
-        g.stroke();
         if (id === 'P01') {
             g.fillColor = WHITE;
             g.circle(0, 0, 10);
             g.fill();
         }
-        const shortName = id === 'H0101' ? '战' : id === 'H0201' ? '射' : id === 'C01' ? '金' : '★';
+        const shortName = id.startsWith('H01') ? '战' : id.startsWith('H02') ? '射' : id.startsWith('H04') ? '骑' : id.startsWith('H12') ? '雷' : id === 'C01' ? '币' : id.startsWith('G') ? '格' : '★';
         this.makeLabel('GearName', node, 0, 0, 40, 34, shortName, 21, id === 'P01' ? GOLD : WHITE);
-        const gear: Gear = { uid: ++this.serial, id, row, col, node, nextSpawn: 0 };
-        this.gears.push(gear);
+        const gear: Gear = { uid: ++this.serial, id, row, col, node, nextSpawn: 0, location, candidateIndex };
         if (id !== 'P01') {
             node.on(Node.EventType.TOUCH_START, (event: EventTouch) => this.beginGearDrag(gear, event), this);
             node.on(Node.EventType.TOUCH_MOVE, (event: EventTouch) => this.moveGearDrag(gear, event), this);
             node.on(Node.EventType.TOUCH_END, (event: EventTouch) => this.endGearDrag(gear, event), this);
             node.on(Node.EventType.TOUCH_CANCEL, () => this.cancelGearDrag(gear), this);
         }
+        return gear;
     }
 
     private beginGearDrag(gear: Gear, _event: EventTouch): void {
         if (this.phase !== 'deploy') return;
         this.dragGear = gear;
-        this.dragOrigin = { row: gear.row, col: gear.col };
-        gear.node.setSiblingIndex(this.node.children.length - 1);
+        this.dragOrigin = { row: gear.row, col: gear.col, x: gear.node.position.x, y: gear.node.position.y, location: gear.location };
+        gear.node.setSiblingIndex(this.prepareLayer.children.length - 1);
         gear.node.setScale(1.16, 1.16, 1);
     }
 
@@ -567,32 +690,70 @@ export class CangshuGame extends Component {
         const p = event.getUILocation();
         const local = this.node.getComponent(UITransform)!.convertToNodeSpaceAR(new Vec3(p.x, p.y, 0));
         const cell = this.positionToGrid(local.x, local.y);
-        if (
-            cell &&
-            this.unlocked.has(cell.row * GRID_COLS + cell.col) &&
-            cell.row * GRID_COLS + cell.col !== POWER_INDEX &&
-            !this.gears.some((item) => item !== gear && item.row === cell.row && item.col === cell.col)
-        ) {
+        const config = GEARS[gear.id];
+        if (cell && config.gridUnlock && gear.location === 'candidate' && this.canUnlockShape(gear.id, cell.row, cell.col)) {
+            for (const [row, col] of this.gearCellsAt(gear.id, cell.row, cell.col)) this.unlocked.add(row * GRID_COLS + col);
+            this.candidates = this.candidates.filter((item) => item !== gear);
+            gear.node.destroy();
+            this.drawGrid();
+            this.relayoutCandidates();
+            this.tipLabel.string = `${config.name}已生效：新格子已解锁`;
+            this.dragGear = null;
+            return;
+        }
+        if (cell && !config.gridUnlock && this.canPlaceGear(gear.id, cell.row, cell.col, gear.location === 'grid' ? gear : null)) {
             gear.row = cell.row;
             gear.col = cell.col;
-        } else {
+            if (gear.location === 'candidate') {
+                this.candidates = this.candidates.filter((item) => item !== gear);
+                this.gears.push(gear);
+                gear.location = 'grid';
+                gear.candidateIndex = -1;
+                this.relayoutCandidates();
+                this.tipLabel.string = `${config.name}已手动摆入背包`;
+            }
+            const target = this.gridPosition(gear.row, gear.col);
+            gear.node.setPosition(target.x, target.y);
+        } else if (gear.location === 'grid') {
             gear.row = this.dragOrigin.row;
             gear.col = this.dragOrigin.col;
+            const target = this.gridPosition(gear.row, gear.col);
+            gear.node.setPosition(target.x, target.y);
+        } else {
+            gear.node.setPosition(this.dragOrigin.x, this.dragOrigin.y);
+            this.tipLabel.string = config.gridUnlock ? '扩展格必须完整落在未解锁区域' : '该形状无法放入此处，请换一个空位';
         }
-        const target = this.gridPosition(gear.row, gear.col);
-        gear.node.setPosition(target.x, target.y);
         gear.node.setScale(1, 1, 1);
         this.dragGear = null;
     }
 
     private cancelGearDrag(gear: Gear): void {
         if (this.dragGear !== gear) return;
-        const target = this.gridPosition(this.dragOrigin.row, this.dragOrigin.col);
         gear.row = this.dragOrigin.row;
         gear.col = this.dragOrigin.col;
-        gear.node.setPosition(target.x, target.y);
+        gear.node.setPosition(this.dragOrigin.x, this.dragOrigin.y);
         gear.node.setScale(1, 1, 1);
         this.dragGear = null;
+    }
+
+    private gearCellsAt(id: GearId, row: number, col: number): Array<[number, number]> {
+        return GEARS[id].shape.map(([rowOffset, colOffset]) => [row + rowOffset, col + colOffset]);
+    }
+
+    private canPlaceGear(id: GearId, row: number, col: number, ignore: Gear | null): boolean {
+        return this.gearCellsAt(id, row, col).every(([cellRow, cellCol]) => {
+            if (cellRow < 0 || cellRow >= GRID_ROWS || cellCol < 0 || cellCol >= GRID_COLS) return false;
+            const index = cellRow * GRID_COLS + cellCol;
+            if (!this.unlocked.has(index) || index === POWER_INDEX) return false;
+            return !this.gears.some((gear) => gear !== ignore && this.gearCellsAt(gear.id, gear.row, gear.col).some(([usedRow, usedCol]) => usedRow === cellRow && usedCol === cellCol));
+        });
+    }
+
+    private canUnlockShape(id: GearId, row: number, col: number): boolean {
+        return this.gearCellsAt(id, row, col).every(([cellRow, cellCol]) => {
+            if (cellRow < 0 || cellRow >= GRID_ROWS || cellCol < 0 || cellCol >= GRID_COLS) return false;
+            return !this.unlocked.has(cellRow * GRID_COLS + cellCol);
+        });
     }
 
     private stepBattle(dt: number): void {
@@ -630,12 +791,6 @@ export class CangshuGame extends Component {
             this.finish(false);
             return;
         }
-        if (this.enemyHp <= 0) {
-            this.enemyHp = 0;
-            this.finish(true);
-            return;
-        }
-
         const enemiesAlive = this.units.some((unit) => !unit.dead && unit.team === 'enemy');
         if (this.spawnIndex >= round.times.length && !enemiesAlive) {
             this.clearTimer += dt;
@@ -659,11 +814,16 @@ export class CangshuGame extends Component {
         }
 
         const direction = unit.team === 'self' ? 1 : -1;
-        const targetHome: Team = unit.team === 'self' ? 'enemy' : 'self';
-        const homeDistance = Math.abs((targetHome === 'enemy' ? HOME_X : -HOME_X) - unit.x) - 48;
+        const targetHome: Team | null = target ? null : unit.team === 'enemy' ? 'self' : null;
+        if (!target && unit.team === 'self' && unit.x >= 70) {
+            this.playAnimation(unit, 'idle', true);
+            return;
+        }
+        const homeDistance = targetHome ? Math.abs(-HOME_X - unit.x) - 48 : Math.max(0, 70 - unit.x);
         const attackDistance = target ? targetDistance : homeDistance;
         if (attackDistance <= unit.cfg.range) {
-            if (unit.cooldown <= 0) this.beginAttack(unit, target, target ? null : targetHome);
+            if (targetHome && unit.cooldown <= 0) this.beginAttack(unit, null, targetHome);
+            else if (target && unit.cooldown <= 0) this.beginAttack(unit, target, null);
             this.playAnimation(unit, 'idle', true);
             return;
         }
@@ -706,9 +866,8 @@ export class CangshuGame extends Component {
                 this.addTrace(hit.attacker, hit.target.x, hit.target.y);
             } else if (hit.targetHome) {
                 const damage = Math.max(1, Math.floor(hit.attacker.atk));
-                if (hit.targetHome === 'self') this.selfHp -= damage;
-                else this.enemyHp -= damage;
-                const x = hit.targetHome === 'self' ? -HOME_X + 20 : HOME_X - 20;
+                this.selfHp -= damage;
+                const x = -HOME_X + 20;
                 this.addDamageText(damage, x, -15);
                 this.addTrace(hit.attacker, x, -10);
             }
@@ -753,7 +912,8 @@ export class CangshuGame extends Component {
 
     private spawnHero(model: ModelId, gear: Gear): void {
         const rowOffset = (gear.row - 2) * 58 + (gear.col - 3) * 12;
-        this.createUnit('self', UNITS[model], -HOME_X + 55, Math.max(-UNIT_Y_LIMIT, Math.min(UNIT_Y_LIMIT, rowOffset)), 1, 1);
+        const multiple = GEARS[gear.id].unitMultiple || 1;
+        this.createUnit('self', UNITS[model], -HOME_X + 55, Math.max(-UNIT_Y_LIMIT, Math.min(UNIT_Y_LIMIT, rowOffset)), multiple, multiple);
     }
 
     private spawnMonster(model: ModelId, round: RoundConfig): void {
@@ -849,6 +1009,7 @@ export class CangshuGame extends Component {
     private completeRound(): void {
         this.phase = 'roundClear';
         this.clearUnits();
+        this.gold += ROUND_COIN_REWARDS[this.roundIndex] || 0;
         this.scheduleOnce(() => {
             if (this.roundIndex >= ROUNDS.length - 1) {
                 this.finish(true);
@@ -856,16 +1017,22 @@ export class CangshuGame extends Component {
             }
             this.roundIndex += 1;
             this.phase = 'deploy';
-            this.gold += 15;
-            this.tipLabel.string = `第 ${this.roundIndex} 波完成，整理背包后继续`;
-            this.claimNextBatch(true);
+            this.freeRefreshUsed = false;
+            this.dealPreparationBatch();
+            this.tipLabel.string = `进入第 ${this.roundIndex + 1} 波准备：新候选需手动摆放`;
+            this.prepareLayer.active = true;
         }, 0.7);
     }
 
     private finish(won: boolean): void {
         this.phase = won ? 'won' : 'lost';
+        this.paused = false;
         this.clearUnits();
-        this.tipLabel.string = won ? '宁静森林已通关：敌方兵营被摧毁' : '我方兵营被摧毁，调整齿轮后重试';
+        this.prepareLayer.active = false;
+        this.resultLayer.active = true;
+        this.resultTitleLabel.string = won ? '关卡胜利' : '关卡失败';
+        this.resultBodyLabel.string = won ? '五波敌人已经全部清除\n宁静森林恢复了平静' : '我方兵营已被摧毁\n调整齿轮后重新挑战';
+        this.tipLabel.string = won ? '宁静森林已通关：五波敌人全部清除' : '我方兵营被摧毁，调整齿轮后重试';
     }
 
     private clearUnits(): void {
@@ -933,7 +1100,6 @@ export class CangshuGame extends Component {
 
     private drawHomes(): void {
         this.drawHomeBar(this.selfHomeGraphics, this.selfHp / 500, BLUE);
-        this.drawHomeBar(this.enemyHomeGraphics, this.enemyHp / 4000, RED);
     }
 
     private drawHomeBar(g: Graphics, ratio: number, color: Color): void {
@@ -958,14 +1124,18 @@ export class CangshuGame extends Component {
         this.roundLabel.string = `第 ${Math.min(this.roundIndex + 1, 5)} / 5 波`;
         this.goldLabel.string = `金币 ${this.gold}`;
         this.selfHpLabel.string = `我方兵营 ${Math.ceil(this.selfHp)} / 500`;
-        this.enemyHpLabel.string = `敌方兵营 ${Math.ceil(this.enemyHp)} / 4000`;
+        this.objectiveLabel.string = this.phase === 'battle' ? `剩余敌人 ${this.units.filter((unit) => unit.team === 'enemy' && !unit.dead).length}` : '目标：清除全部敌人';
         this.actionLabel.string =
             this.phase === 'deploy'
                 ? `开始第 ${this.roundIndex + 1} 波`
                 : this.phase === 'won' || this.phase === 'lost'
                   ? '重新挑战'
                   : '战斗进行中';
+        this.refreshLabel.string = this.normalRefreshTimes === 0 ? '免费刷新' : `刷新 ${REFRESH_COST}`;
         this.refreshLabel.color = this.phase === 'deploy' ? CREAM : new Color(170, 170, 170, 255);
+        this.adRefreshLabel.string = this.freeRefreshUsed ? '广告刷新 0/1' : '广告刷新 1/1';
+        this.adRefreshLabel.color = this.phase === 'deploy' && !this.freeRefreshUsed ? CREAM : new Color(170, 170, 170, 255);
+        this.pauseLabel.string = this.paused ? '继续' : '暂停';
     }
 
     private gridPosition(row: number, col: number): { x: number; y: number } {

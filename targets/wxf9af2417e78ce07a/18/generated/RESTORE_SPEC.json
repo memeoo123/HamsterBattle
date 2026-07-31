@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "implementationReady": false,
+  "implementationReady": true,
   "target": {
     "appId": "wxf9af2417e78ce07a",
     "version": "18",
@@ -23,10 +23,10 @@
       "status": "confirmed",
       "evidence": ["K-C001", "K-C002"]
     },
-    "currentImplementationMismatch": {
-      "value": "CangshuGame.ts currently calls view.setDesignResolutionSize(750, 1000)",
+    "coordinateSystem": {
+      "value": "FairyGUI top-left coordinates measured in the 750x1334 BagLikeBattlePage, converted to Cocos centered coordinates with xCocos=x+width/2-375 and yCocos=667-(y+height/2)",
       "status": "confirmed",
-      "evidence": ["K-C012"]
+      "evidence": ["K-C014"]
     }
   },
   "representativeLevel": {
@@ -41,9 +41,9 @@
       "evidence": ["K-C004"]
     },
     "objective": {
-      "value": "deploy hero/coin gears, survive five automatic rounds, and reduce the enemy mushroom camp from 4000 HP to zero before the player camp reaches zero",
+      "value": "deploy powered hero gears, protect the 500 HP player camp, and clear all scheduled enemies in five automatic rounds",
       "status": "confirmed",
-      "evidence": ["K-C004", "K-C007"]
+      "evidence": ["K-C004", "K-C007", "K-C013"]
     },
     "phases": {
       "value": ["deploy", "battle", "roundClear", "won", "lost"],
@@ -55,10 +55,16 @@
       "status": "confirmed",
       "evidence": ["K-C004"]
     },
-    "enemyBaseHp": {
+    "configuredEnemyBaseHp": {
       "value": 4000,
       "status": "confirmed",
       "evidence": ["K-C004"]
+    },
+    "runtimeEnemyBaseHp": {
+      "value": -1,
+      "status": "confirmed",
+      "evidence": ["K-C013"],
+      "note": "BattleTrunkChapterVo overrides the generic configuration. Mainline rounds therefore end when scheduling is complete and no enemy units remain; the enemy camp is not a damage objective."
     },
     "levelAtkMultiple": {
       "value": 4000,
@@ -74,41 +80,98 @@
   "scene": {
     "anchors": [
       {
-        "id": "playerCamp",
-        "currentImplementation": {"x": -300, "yWithinBattleLayer": -18, "battleLayerY": 185},
-        "status": "inferred",
-        "evidence": ["K-C012"],
-        "note": "Implementation anchor only; not accepted as original pixel geometry."
+        "id": "battleScene",
+        "fairyGui": {"parent": "BagLikeBattleContent", "x": 375, "y": 1201, "width": 750, "height": 300, "pageContentY": -644},
+        "cocos": {"centerX": 0, "centerY": 110, "width": 750, "height": 300},
+        "status": "confirmed",
+        "evidence": ["K-C014"]
       },
       {
-        "id": "enemyCamp",
-        "currentImplementation": {"x": 300, "yWithinBattleLayer": -18, "battleLayerY": 185},
-        "status": "inferred",
-        "evidence": ["K-C012"],
-        "note": "Implementation anchor only; not accepted as original pixel geometry."
+        "id": "camps",
+        "fairyGui": {"playerAnchor": {"x": 28, "y": 104}, "enemyAnchor": {"x": 722, "y": 104}, "playerFortress": {"x": 30, "y": 149, "width": 60, "height": 236}, "enemyFortress": {"x": 720, "y": 150, "width": 60, "height": 236}},
+        "cocos": {"playerX": -345, "enemyX": 345, "battleCenterY": 110},
+        "status": "confirmed",
+        "evidence": ["K-C014"]
       },
       {
         "id": "backpackGrid",
-        "currentImplementation": {"left": -216, "top": -100, "cell": 72, "columns": 7, "rows": 5, "powerIndex": 17},
-        "status": "inferred",
-        "evidence": ["K-C011", "K-C012"],
-        "note": "The 7x5 structure and center unlock semantics are supported; exact original spacing still needs a matched capture."
+        "fairyGui": {"operCompY": 274, "containerX": 10, "containerY": 77, "containerWidth": 730, "containerHeight": 529, "cellWidth": 100, "cellHeight": 100},
+        "cocos": {"centerX": 0, "centerY": 51.5, "cell": 100, "columns": 7, "rows": 5, "powerIndex": 17},
+        "status": "confirmed",
+        "evidence": ["K-C014"]
+      },
+      {
+        "id": "candidateShop",
+        "fairyGui": {"operCompY": 274, "chooseComX": 0, "chooseComY": 682, "width": 750, "height": 200},
+        "cocos": {"centerX": 0, "centerY": -389, "width": 750, "height": 200},
+        "status": "confirmed",
+        "evidence": ["K-C014", "K-C016"]
+      },
+      {
+        "id": "preparationActions",
+        "fairyGui": {"adRefreshBtn": {"x": 32, "y": 940, "width": 215, "height": 103}, "refreshBtn": {"x": 265, "y": 940, "width": 214, "height": 102}, "battleBtn": {"x": 498, "y": 940, "width": 215, "height": 103}, "operCompY": 274},
+        "cocos": {"adRefreshCenter": {"x": -235.5, "y": -598.5}, "refreshCenter": {"x": -3, "y": -598}, "battleCenter": {"x": 230.5, "y": -598.5}},
+        "status": "confirmed",
+        "evidence": ["K-C014"]
+      },
+      {
+        "id": "topHud",
+        "fairyGui": {"topItem": {"x": 0, "y": 0, "width": 750, "height": 320}, "speedBtn": {"x": 29, "y": 157, "width": 179, "height": 67}},
+        "cocos": {"centerX": 0, "centerY": 507, "speedCenter": {"x": -256.5, "y": 476.5}},
+        "status": "confirmed",
+        "evidence": ["K-C014"]
       }
     ],
     "layers": [
       {
         "value": ["background", "battlefield", "units", "bases", "backpack", "HUD", "result overlay"],
-        "status": "inferred",
-        "evidence": ["K-C011", "K-C012"]
+        "status": "confirmed",
+        "evidence": ["K-C014", "K-C015"]
       }
     ],
     "uiHierarchy": [
       {
-        "value": "upper battlefield over lower 7x5 backpack grid with a centered 3x3 unlocked region",
-        "status": "inferred",
-        "evidence": ["K-C011"]
+        "value": "persistent top HUD and battlefield, with BagLikeOperComp preparation controls sliding out during battle and returning after a round",
+        "status": "confirmed",
+        "evidence": ["K-C014", "K-C015"]
       }
     ]
+  },
+  "preparationInteraction": {
+    "refresh": {
+      "automaticPrepareDeal": true,
+      "firstNormalRefreshCost": 0,
+      "laterNormalRefreshCost": {"itemId": 5, "amount": 15},
+      "normalRefreshHardCountLimit": null,
+      "normalRefreshRequirement": "enough in-battle coin after the first normal refresh",
+      "adRefreshPerPrepareRound": 1,
+      "unusedCandidatesAreReplaced": true,
+      "status": "confirmed",
+      "evidence": ["K-C016", "K-C017"]
+    },
+    "placement": {
+      "mode": "manual drag from ChooseCom candidate container into the 7x5 backpack grid",
+      "candidateOnValidDrop": "remove from ChooseCom and TAKE_ON_BRICK / setBrick or setGrid",
+      "candidateOnInvalidDrop": "TAKE_OFF_BRICK and return to ChooseCom",
+      "candidateAtBattleStart": "unplaced candidates are cleared",
+      "shapes": {"1": [[1]], "2": [[1, 1]], "3": [[1], [1]], "5": [[1], [1], [1]]},
+      "status": "confirmed",
+      "evidence": ["K-C016", "K-C017"]
+    },
+    "level1001StaticCandidateBatches": {
+      "value": [
+        ["H0101"],
+        ["H0201", "C01"],
+        ["G02"],
+        ["H0401", "H0101", "H0201"],
+        ["H0101", "H0401", "H1201"],
+        ["H1201", "H0201", "G02"],
+        ["H0401", "H0202", "H0203"],
+        ["H1202", "H0203", "H0201", "G03"]
+      ],
+      "status": "confirmed",
+      "evidence": ["K-C016", "K-C017"]
+    }
   },
   "assets": [
     {
@@ -164,6 +227,22 @@
       "kind": "spine-3.8.99",
       "source": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\spine\\M03",
       "target": "assets/resources/spine/M03",
+      "status": "confirmed",
+      "evidence": ["K-C010"]
+    },
+    {
+      "id": "bagLikeUiAtlas",
+      "kind": "sprite-atlas-source",
+      "source": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\original\\bagLike_0.png",
+      "target": "assets/resources/original/bagLike_0.png",
+      "status": "confirmed",
+      "evidence": ["K-C014"]
+    },
+    {
+      "id": "battleUiAtlas",
+      "kind": "sprite-atlas-source",
+      "source": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\original\\battle_0.png",
+      "target": "assets/resources/original/battle_0.png",
       "status": "confirmed",
       "evidence": ["K-C010"]
     }
@@ -313,14 +392,11 @@
     }
   ],
   "goldenCases": "golden-cases.json",
-  "unknowns": [
+  "unknowns": [],
+  "knownNonBlockingGaps": [
     {
-      "field": "scene.anchors.exactOriginalPositions",
-      "verification": "Capture level 1001 at the same 750x1334 viewport during deployment and battle, then measure base, grid, and HUD anchors."
-    },
-    {
-      "field": "scene.uiHierarchy.pixelGeometry",
-      "verification": "Compare a Creator preview with a matched original capture and record component rectangles, spacing, scale, and sorting."
+      "field": "scene.backpackGrid.internalListPaddingAndTextureCrops",
+      "verification": "Parse the remaining GList setup tail or compare a Creator preview with a matched original capture; the outer 730x529 container and 100x100 cell size are already confirmed."
     },
     {
       "field": "validation.originalReference",
@@ -380,8 +456,27 @@
     },
     "K-C012": {
       "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\scripts\\CangshuGame.ts",
-      "lines": "125-137, 341-373",
-      "finding": "current implementation uses 750x1000 and provisional base/grid anchors"
+      "finding": "reconstruction implements the confirmed 750x1334 design, battle scene/camp anchors, 100x100 7x5 grid, preparation controls, and five-round state flow"
+    },
+    "K-C013": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/BattleTrunkChapterVo.ts.deobfuscated.js",
+      "finding": "mainline BattleTrunkChapterVo returns enemyHomeHp=-1; paired BattleInstanceController evidence shows a round wins only after the monster schedule is complete and no enemy units remain"
+    },
+    "K-C014": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/fairygui/bagLike.layout.json",
+      "finding": "compact FairyGUI package geometry for BagLikeBattlePage, BattleSceneCom, BagLikeView, BagLikeOperComp, BagLikeTopItem, the 750x1334 page, 7x5 grid container, camps, HUD, and preparation buttons"
+    },
+    "K-C015": {
+      "path": "targets/wxf9af2417e78ce07a/18/work/ui-module-analysis/modules/BagLikeView.ts.deobfuscated.js",
+      "finding": "prepare -> battle -> round-end flow, preparation panel movement, self-home HP display, and final BAGLIKE_BATTLE_END notification"
+    },
+    "K-C016": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-refresh-placement.md",
+      "finding": "confirmed refresh economy, one ad refresh per prepare round, candidate replacement, manual drag placement, shape occupancy, and level 1001 static candidate batches"
+    },
+    "K-C017": {
+      "path": "reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/baglike.BagLikeConstantConfig.json",
+      "finding": "NORMAL_REFRESH_COST is item 5 x15; decoded BagLike item/shape and TrunkInstance 1001 tables provide exact shapes and the first eight static candidate batches"
     }
   }
 }
