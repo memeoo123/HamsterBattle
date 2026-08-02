@@ -1,0 +1,115 @@
+// Module: chunks:///_virtual/PassivitySkillUtils.ts
+// Dependencies: cc, ./RandomUtils.ts, ./GBattleIns.ts, ./BulletUnit.ts, ./SkillEnum.ts
+(function(t) {
+    var n, i, r, o, s, e, h;
+    return 0, function() {
+        var c;
+        return 0, (c = HVn(HVn({}, C, 0), T, 0))[C] = [ function(t) {
+            n = t[M];
+        }, function(t) {
+            i = t[w];
+        }, function(t) {
+            r = t[w];
+        }, function(t) {
+            o = t["BulletUnit"];
+        }, function(t) {
+            s = t["SkillTargetType"], e = t["PassivitySkillType"], h = t["PassivitySkillStatusType"];
+        } ], c[T] = function() {
+            0, n[E][R]({}, acn, aJ, void 0), t(aJ, function() {
+                var t;
+                return 0, (t = function() {})["checkPassSkillCon"] = function(t, n, i) {
+                    var r;
+                    if (r = arguments, !(n = n instanceof o ? n[x] : n) || !n["attr"] || n["attr"]["isDeath"]()) return !1;
+                    for (var h = !1, c = n["attr"]["passSkills"], a = r["length"], f = new Array(u < a ? a - u : 0), v = u; v < a; v++) f[v - u] = r[v];
+                    for (var l = 0; l < c["length"]; l++) {
+                        var d, m;
+                        if (t == (d = c[l])["condition"] && d[G]()) if (m = this["checkPassivitySkill"][H](this, [ n, i, d ]["concat"](f))) {
+                            d["refreshCD"]();
+                            h = !0;
+                            for (var k = 0; k < m; k++) {
+                                var _, S;
+                                if (S = !1, _ = d["actionSkill"]()) {
+                                    for (var g = 0; g < _["length"]; g++) {
+                                        var y, p;
+                                        (y = _[g])["setCaster"](n), (i = (null == (p = y["cfg"]) ? void 0 : p["targetType"]) == s["SELF"] ? n : i) && (y["skillTargetUid"] = i["uid"], 
+                                        y["skillTarget"] = i), y["actionEffect"](), S = !0;
+                                    }
+                                    if (d["cfg"]["skills"]) for (var I = 0; I < d["cfg"]["skills"]["length"]; I++) {
+                                        var C;
+                                        C = d["cfg"]["skills"][I], n["usePassActiveSkillSkill"](C), S = !0;
+                                    }
+                                }
+                            }
+                            S && (t == e["ConType_1"] && (d["onceTrigger"] = !0), this["checkPassSkillCon"](e["ConType_7"], n, i, d));
+                        }
+                    }
+                    return h;
+                }, t["checkPassivitySkill"] = function(t, n, r) {
+                    var o, s, c;
+                    if (o = arguments, s = 0, c = 0, r["cfg"]["statusGroup"] && (s = r["cfg"]["statusGroup"][0], 
+                    c = r["cfg"]["statusGroup"][1]), s == h["StatusType_1"]) {
+                        if (!(t["attr"]["hp"] / t["attr"]["maxHp"] * V_ <= c)) return 0;
+                    } else if (n && s == h["StatusType_2"]) {
+                        if (!(n["attr"]["hp"] / n["attr"]["maxHp"] * V_ <= c)) return 0;
+                    } else if (n && s == h["StatusType_3"] && !i["isRandTrue"](c)) return 0;
+                    switch (r["condition"]) {
+                      case e["ConType_2"]:
+                        return r["cfg"]["conditionValue"] && -1 == r["cfg"]["conditionValue"]["indexOf"]((o["length"] <= u ? void 0 : o[u])["skillIndex"]) ? 0 : 1;
+
+                      case e["ConType_3"]:
+                        return 1;
+
+                      case e["ConType_4"]:
+                        var a = o["length"] <= u ? void 0 : o[u];
+                        return !r["cfg"]["conditionValue"] || a && -1 != r["cfg"]["conditionValue"]["indexOf"](a["skillIndex"]) ? 1 : 0;
+
+                      case e["ConType_17"]:
+                        var f = o["length"] <= u ? void 0 : o[u];
+                        return !r["cfg"]["conditionValue"] || f && -1 != r["cfg"]["conditionValue"]["indexOf"](f["skillIndex"]) ? 1 : 0;
+
+                      case e["ConType_7"]:
+                        return r["cfg"]["conditionValue"] && -1 != r["cfg"]["conditionValue"]["indexOf"]((o["length"] <= u ? void 0 : o[u])["cfg"]["group"]) ? 1 : 0;
+
+                      case e["ConType_8"]:
+                        return r["cfg"]["conditionValue"] && -1 != r["cfg"]["conditionValue"]["indexOf"](o["length"] <= u ? void 0 : o[u]) ? 1 : 0;
+
+                      case e["ConType_12"]:
+                        return r["executeMoveTime"](+r["cfg"]["conditionValue"][0], +r["cfg"]["conditionValue"][1] || 0) ? 1 : 0;
+
+                      case e["ConType_21"]:
+                        return r["executeMoveDistance"](+r["cfg"]["conditionValue"][0]) ? 1 : 0;
+
+                      case e["ConType_13"]:
+                        return r["cfg"]["conditionValue"] && -1 != r["cfg"]["conditionValue"]["indexOf"](o["length"] <= u ? void 0 : o[u]) ? 1 : 0;
+
+                      case e["ConType_16"]:
+                        return r["executeMissileNum"](+r["cfg"]["conditionValue"][0]) ? 1 : 0;
+
+                      case e["ConType_19"]:
+                        return r["executeTotalHurt"](+r["cfg"]["conditionValue"][0]) ? 1 : 0;
+
+                      case e["ConType_20"]:
+                        return r["cfg"]["conditionValue"] && -1 == r["cfg"]["conditionValue"]["indexOf"]((o["length"] <= u ? void 0 : o[u])["skillIndex"]) ? 0 : 1;
+
+                      case e["ConType_23"]:
+                        return (o["length"] <= u ? void 0 : o[u])["skillIndex"] == +r["cfg"]["conditionValue"][0] && r["executeSkillCompleteNum"](+r["cfg"]["conditionValue"][1]) ? 1 : 0;
+
+                      case e["ConType_38"]:
+                      case e["ConType_14"]:
+                        return 1;
+                    }
+                    return 1;
+                }, t["checkDiePassSkill"] = function(t) {
+                    for (var n = (n = r[X]["mainScene"]["getHeroes"]()["concat"]())["concat"](r[X]["mainScene"]["getMonsters"]()), i = 0; i < n["length"]; i++) n[i][G] && (n[i]["teamId"] == t["teamId"] ? this["checkPassSkillCon"](e["ConType_11"], n[i], t) : this["checkPassSkillCon"](e["ConType_15"], n[i], t));
+                }, t["checkBuffAbnormalTypePassSkill"] = function(t, n) {
+                    if (n) for (var i = (i = r[X]["mainScene"]["getHeroes"]()["concat"]())["concat"](r[X]["mainScene"]["getMonsters"]()), u = 0; u < i["length"]; u++) i[u][G] && i[u]["teamId"] == t["teamId"] && this["checkPassSkillCon"](e["ConType_13"], i[u], t, n);
+                }, t["updatePassSkillFunction"] = function(t, n, i) {
+                    var r;
+                    r = arguments;
+                    for (var o = t["attr"]["passSkills"], s = r["length"], e = new Array(u < s ? s - u : 0), h = u; h < s; h++) e[h - u] = r[h];
+                    for (var c, a = 0; a < o["length"]; a++) o[a]["cfg"]["condition"] == n && (c = o[a][i])["call"][H](c, [ o[a] ]["concat"](e));
+                }, t;
+            }()), n[E][z]();
+        }, c;
+    }[Q](this)[H]();
+});

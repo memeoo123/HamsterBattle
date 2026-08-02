@@ -35,6 +35,56 @@
       "damageCoefficient": 7500,
       "expected": 15,
       "evidence": ["K-C006"]
+    },
+    {
+      "name": "dodge status deals half damage instead of zero",
+      "attack": 20,
+      "effectRatio": 10000,
+      "hitFactor": 5000,
+      "critFactor": 10000,
+      "damageCoefficient": 10000,
+      "expected": 10,
+      "evidence": ["K-C019"]
+    },
+    {
+      "name": "HAMSTER attack ignores M03 tower-only vulnerability",
+      "attack": 20,
+      "effectRatio": 10000,
+      "hitFactor": 10000,
+      "critFactor": 10000,
+      "damageCoefficient": 10000,
+      "expected": 20,
+      "evidence": ["K-C019"]
+    },
+    {
+      "name": "H12 WHEEL half-ratio attack uses M03 tower vulnerability",
+      "attack": 49,
+      "effectRatio": 5000,
+      "hitFactor": 10000,
+      "critFactor": 10000,
+      "damageCoefficient": 15000,
+      "expected": 36,
+      "evidence": ["K-C019"]
+    },
+    {
+      "name": "M03 projectile deals half attack",
+      "attack": 16,
+      "effectRatio": 5000,
+      "hitFactor": 10000,
+      "critFactor": 10000,
+      "damageCoefficient": 10000,
+      "expected": 8,
+      "evidence": ["K-C019"]
+    },
+    {
+      "name": "boss damage increase is added against BossUnit",
+      "attack": 20,
+      "effectRatio": 10000,
+      "hitFactor": 10000,
+      "critFactor": 10000,
+      "damageCoefficient": 12500,
+      "expected": 25,
+      "evidence": ["K-C019"]
     }
   ],
   "waves": [
@@ -95,22 +145,46 @@
       "evidence": ["K-C004", "K-C007"]
     }
   ],
-  "intervals": [
+  "workerProduction": [
     {
-      "name": "H01 immediate spawn plus 10 second interval through 30 seconds",
-      "interval": 10,
-      "duration": 30,
-      "spawnAtZero": true,
-      "expectedCount": 4,
-      "evidence": ["K-C008"]
+      "name": "H01 one-contact component completes after ten laps",
+      "itemId": "H0101",
+      "powerPerTrigger": 10,
+      "coreContacts": 1,
+      "laps": 10,
+      "expected": {"completed": 1, "remainder": 0},
+      "outputKind": "hamster",
+      "evidence": ["K-C020"]
     },
     {
-      "name": "H02 immediate spawn plus 8 second interval through 24 seconds",
-      "interval": 8,
-      "duration": 24,
-      "spawnAtZero": true,
-      "expectedCount": 4,
-      "evidence": ["K-C008"]
+      "name": "H02 retains modulo progress after thirteen one-contact laps",
+      "itemId": "H0201",
+      "powerPerTrigger": 8,
+      "coreContacts": 1,
+      "laps": 13,
+      "expected": {"completed": 1, "remainder": 4},
+      "outputKind": "hamster",
+      "evidence": ["K-C020"]
+    },
+    {
+      "name": "H04 connected to two core sides receives two triggers per lap",
+      "itemId": "H0401",
+      "powerPerTrigger": 6,
+      "coreContacts": 2,
+      "laps": 9,
+      "expected": {"completed": 1, "remainder": 8},
+      "outputKind": "hamster",
+      "evidence": ["K-C020"]
+    },
+    {
+      "name": "H12 completion emits a one-shot tower skill after five one-contact laps",
+      "itemId": "H1201",
+      "powerPerTrigger": 20,
+      "coreContacts": 1,
+      "laps": 5,
+      "expected": {"completed": 1, "remainder": 0},
+      "outputKind": "oneShotTowerSkill",
+      "evidence": ["K-C020"]
     }
   ],
   "refreshEconomy": [
@@ -153,6 +227,18 @@
       "evidence": ["K-C016", "K-C017"]
     },
     {
+      "name": "occupied non-core cells accept replacement and evict the old gear",
+      "rows": 5,
+      "columns": 7,
+      "powerIndex": 17,
+      "unlocked": [9, 10, 11, 16, 17, 18, 23, 24, 25],
+      "occupied": [9],
+      "shape": [[0, 0]],
+      "target": [1, 2],
+      "expectedAllowed": true,
+      "evidence": ["K-C025"]
+    },
+    {
       "name": "two-cell H0201 cannot overlap the power core",
       "rows": 5,
       "columns": 7,
@@ -177,6 +263,90 @@
       "expectedAllowed": true,
       "evidence": ["K-C016", "K-C017"]
     }
+  ],
+  "merges": [
+    {
+      "name": "two level-1 warriors merge to level 2",
+      "dragged": "H0101",
+      "target": "H0101",
+      "configuredResult": "H0102",
+      "expectedResult": "H0102",
+      "evidence": ["K-C018"]
+    },
+    {
+      "name": "two level-2 archers merge to level 3",
+      "dragged": "H0202",
+      "target": "H0202",
+      "configuredResult": "H0203",
+      "expectedResult": "H0203",
+      "evidence": ["K-C018"]
+    },
+    {
+      "name": "two level-3 knights merge to level 4",
+      "dragged": "H0403",
+      "target": "H0403",
+      "configuredResult": "H0404",
+      "expectedResult": "H0404",
+      "evidence": ["K-C018"]
+    },
+    {
+      "name": "different gears do not merge",
+      "dragged": "H0101",
+      "target": "H0201",
+      "configuredResult": null,
+      "expectedResult": null,
+      "evidence": ["K-C018"]
+    },
+    {
+      "name": "level-4 coin gear has no same-item upgrade",
+      "dragged": "C04",
+      "target": "C04",
+      "configuredResult": null,
+      "expectedResult": null,
+      "evidence": ["K-C018"]
+    }
+  ],
+  "footprints": [
+    {
+      "name": "single-cell warrior occupies 100 by 100",
+      "itemId": "H0101",
+      "shape": [[0, 0]],
+      "expected": {"shape": [[0, 0]], "width": 100, "height": 100},
+      "evidence": ["K-C018"]
+    },
+    {
+      "name": "archer horizontal footprint occupies two grid cells",
+      "itemId": "H0201",
+      "shape": [[0, 0], [0, 1]],
+      "expected": {"shape": [[0, 0], [0, 1]], "width": 200, "height": 100},
+      "evidence": ["K-C018"]
+    },
+    {
+      "name": "knight vertical footprint occupies three grid cells",
+      "itemId": "H0401",
+      "shape": [[0, 0], [1, 0], [2, 0]],
+      "expected": {"shape": [[0, 0], [1, 0], [2, 0]], "width": 100, "height": 300},
+      "evidence": ["K-C018"]
+    },
+    {
+      "name": "vertical grid unlock occupies two grid cells",
+      "itemId": "G03",
+      "shape": [[0, 0], [1, 0]],
+      "expected": {"shape": [[0, 0], [1, 0]], "width": 100, "height": 200},
+      "evidence": ["K-C018"]
+    }
+  ],
+  "coinProduction": [
+    {"name": "coin level 1 output", "itemId": "C01", "configuredAmount": 2, "expectedAmount": 2, "evidence": ["K-C018"]},
+    {"name": "coin level 2 output", "itemId": "C02", "configuredAmount": 4, "expectedAmount": 4, "evidence": ["K-C018"]},
+    {"name": "coin level 3 output", "itemId": "C03", "configuredAmount": 8, "expectedAmount": 8, "evidence": ["K-C018"]},
+    {"name": "coin level 4 output", "itemId": "C04", "configuredAmount": 16, "expectedAmount": 16, "evidence": ["K-C018"]}
+  ],
+  "defeatCompensation": [
+    {"name": "initial attempt uses full enemy attributes", "failedAttempts": 0, "expectedMultiple": 1, "evidence": ["K-C019"]},
+    {"name": "first retry reduces enemy attributes to 95 percent", "failedAttempts": 1, "expectedMultiple": 0.95, "evidence": ["K-C019"]},
+    {"name": "second retry reduces enemy attributes to 90.25 percent", "failedAttempts": 2, "expectedMultiple": 0.9025, "evidence": ["K-C019"]},
+    {"name": "defeat compensation clamps at row 15", "failedAttempts": 99, "expectedMultiple": 0.4633, "evidence": ["K-C019"]}
   ],
   "conditions": [
     {

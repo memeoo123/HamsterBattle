@@ -1,0 +1,3 @@
+// Module: chunks:///_virtual/TowerSkillData.ts
+// Dependencies: ./rollupPluginModLoBabelHelpers.js, cc, ./BaseSkillData.ts
+(function(t){var n,i,r;return 0,function(){var u;return(u=HVn(HVn({},C,0),T,0))[C]=[function(t){n=t[A]},function(t){i=t[M]},function(t){r=t["BaseSkillData"]}],u[T]=function(){i[E][R]({},YLn,JLn,void 0),t(JLn,function(t){var i;return i=function(){for(var n,i,r=(n=arguments)["length"],u=new Array(r),o=0;o<r;o++)u[o]=n[o];return(i=t["call"][H](t,[this]["concat"](u))||this)["teamId"]=void 0,i},n(i,t),i[U]["init"]=function(n,i){t[U]["init"]["call"](this,n,i)},i}(r)),i[E][z]()},u}[Q](this)[H]()});

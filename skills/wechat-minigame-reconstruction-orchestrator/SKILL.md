@@ -41,6 +41,9 @@ Route, do not duplicate:
   engine/logic/schema recovery, `RESTORE_SPEC.json`, and golden cases.
 - Use `$cocos-minigame-restorer` only after the restore-spec gate passes, for Cocos
   implementation and validation.
+- Use `$wechat-minigame-battlefield-restorer` as the cross-phase subsystem coordinator
+  when preparation or combat fidelity is incomplete. It routes evidence work back to the
+  reverse expert and Cocos changes to the restorer; it does not bypass either gate.
 
 Read [references/routing.md](references/routing.md) for phase-to-skill mapping and artifact
 contracts.

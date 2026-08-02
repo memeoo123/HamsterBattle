@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run deterministic combat, wave, interval, and base-HP golden cases."""
+"""Run deterministic combat, wave, preparation, and base-HP golden cases."""
 
 from __future__ import annotations
 
@@ -31,6 +31,19 @@ def battle_phase(case: dict) -> str:
     return "battle"
 
 
+DEFEAT_MULTIPLIERS = [
+    0.95, 0.9025, 0.8574, 0.8145, 0.7738,
+    0.7351, 0.6983, 0.6634, 0.6302, 0.5987,
+    0.5688, 0.5404, 0.5133, 0.4877, 0.4633,
+]
+
+
+def defeat_compensation(failed_attempts: int) -> float:
+    if failed_attempts <= 0:
+        return 1
+    return DEFEAT_MULTIPLIERS[min(failed_attempts, len(DEFEAT_MULTIPLIERS)) - 1]
+
+
 def refresh_transition(case: dict) -> dict:
     normal_times = int(case["normalRefreshTimes"])
     gold = int(case["gold"])
@@ -58,9 +71,10 @@ def placement_allowed(case: dict) -> bool:
     unlocked = {int(value) for value in case.get("unlocked", [])}
     if bool(case.get("gridUnlock", False)):
         return all(index not in unlocked for index in indexes)
-    occupied = {int(value) for value in case.get("occupied", [])}
     power_index = int(case["powerIndex"])
-    return all(index in unlocked and index != power_index and index not in occupied for index in indexes)
+    # Original BagLike placement permits ordinary occupied cells: setBrick places
+    # the dragged gear and returns every displaced whole gear to ChooseCom.
+    return all(index in unlocked and index != power_index for index in indexes)
 
 
 def read_typescript_rounds(source: Path) -> list[dict]:
@@ -93,6 +107,41 @@ def read_typescript_rounds(source: Path) -> list[dict]:
     return rounds
 
 
+def read_typescript_gears(source: Path) -> tuple[dict[str, dict], int]:
+    """Read the literal GEARS table and grid size from the reconstruction."""
+    text = source.read_text(encoding="utf-8")
+    table = re.search(
+        r"const\s+GEARS\s*:\s*Record<GearId,\s*GearConfig>\s*=\s*\{(.*?)\n\s*\};",
+        text,
+        re.DOTALL,
+    )
+    if not table:
+        raise ValueError("literal GEARS table was not found")
+    gears = {}
+    for match in re.finditer(r"^\s*([A-Z][A-Z0-9]+):\s*\{([^\n]+)\},?\s*$", table.group(1), re.MULTILINE):
+        item_id, body = match.groups()
+        next_match = re.search(r"nextId:\s*['\"]([^'\"]+)['\"]", body)
+        coin_match = re.search(r"coinAmount:\s*([0-9.]+)", body)
+        power_match = re.search(r"powerPerTrigger:\s*([0-9.]+)", body)
+        shape_match = re.search(r"shape:\s*(\[\[.*?\]\])(?:,\s*gridUnlock|\s*$)", body)
+        shape = []
+        if shape_match:
+            shape = [
+                [int(row), int(col)]
+                for row, col in re.findall(r"\[\s*(-?\d+)\s*,\s*(-?\d+)\s*\]", shape_match.group(1))
+            ]
+        gears[item_id] = {
+            "nextId": next_match.group(1) if next_match else None,
+            "coinAmount": float(coin_match.group(1)) if coin_match else 0,
+            "powerPerTrigger": float(power_match.group(1)) if power_match else 0,
+            "shape": shape,
+        }
+    grid_match = re.search(r"const\s+GRID_CELL\s*=\s*(\d+)", text)
+    if not gears or not grid_match:
+        raise ValueError("literal gear entries or GRID_CELL were not found")
+    return gears, int(grid_match.group(1))
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("cases", type=Path)
@@ -105,10 +154,13 @@ def main() -> int:
     data = json.loads(args.cases.read_text(encoding="utf-8"))
     results = []
     implementation_rounds = None
+    implementation_gears = None
+    implementation_grid_size = None
     implementation_error = None
     if args.implementation_source:
         try:
             implementation_rounds = read_typescript_rounds(args.implementation_source)
+            implementation_gears, implementation_grid_size = read_typescript_gears(args.implementation_source)
         except (OSError, ValueError) as error:
             implementation_error = str(error)
 
@@ -149,17 +201,29 @@ def main() -> int:
             "actual": actual,
             "passed": actual == case["expected"],
         })
-    for case in data.get("intervals", []):
-        interval = float(case["interval"])
-        duration = float(case["duration"])
-        initial = bool(case.get("spawnAtZero", True))
-        actual = math.floor(duration / interval) + (1 if initial else 0)
+    for case in data.get("workerProduction", []):
+        configured_power = float(case["powerPerTrigger"])
+        if implementation_error:
+            actual = implementation_error
+        elif implementation_gears is not None:
+            configured_power = implementation_gears.get(case["itemId"], {}).get("powerPerTrigger", 0)
+            total_power = configured_power * int(case["coreContacts"]) * int(case["laps"])
+            actual = {
+                "completed": math.floor(total_power / 100),
+                "remainder": total_power % 100,
+            }
+        else:
+            total_power = configured_power * int(case["coreContacts"]) * int(case["laps"])
+            actual = {
+                "completed": math.floor(total_power / 100),
+                "remainder": total_power % 100,
+            }
         results.append({
-            "kind": "interval",
+            "kind": "workerProduction",
             "name": case.get("name", "unnamed"),
-            "expected": case["expectedCount"],
+            "expected": case["expected"],
             "actual": actual,
-            "passed": actual == case["expectedCount"],
+            "passed": actual == case["expected"],
         })
     for case in data.get("refreshEconomy", []):
         actual = refresh_transition(case)
@@ -176,6 +240,75 @@ def main() -> int:
         expected = bool(case["expectedAllowed"])
         results.append({
             "kind": "placement",
+            "name": case.get("name", "unnamed"),
+            "expected": expected,
+            "actual": actual,
+            "passed": actual == expected,
+        })
+    for case in data.get("merges", []):
+        if implementation_error:
+            actual = implementation_error
+        elif implementation_gears is not None:
+            left = case["dragged"]
+            right = case["target"]
+            actual = implementation_gears.get(left, {}).get("nextId") if left == right else None
+        else:
+            actual = case.get("configuredResult") if case["dragged"] == case["target"] else None
+        expected = case.get("expectedResult")
+        results.append({
+            "kind": "merge",
+            "name": case.get("name", "unnamed"),
+            "expected": expected,
+            "actual": actual,
+            "passed": actual == expected,
+        })
+    for case in data.get("footprints", []):
+        if implementation_error:
+            actual = implementation_error
+        elif implementation_gears is not None and implementation_grid_size is not None:
+            shape = implementation_gears.get(case["itemId"], {}).get("shape", [])
+            rows = max((cell[0] for cell in shape), default=-1) + 1
+            columns = max((cell[1] for cell in shape), default=-1) + 1
+            actual = {
+                "shape": shape,
+                "width": columns * implementation_grid_size,
+                "height": rows * implementation_grid_size,
+            }
+        else:
+            shape = case.get("shape", [])
+            rows = max((cell[0] for cell in shape), default=-1) + 1
+            columns = max((cell[1] for cell in shape), default=-1) + 1
+            actual = {"shape": shape, "width": columns * 100, "height": rows * 100}
+        expected = case["expected"]
+        results.append({
+            "kind": "footprint",
+            "name": case.get("name", "unnamed"),
+            "expected": expected,
+            "actual": actual,
+            "passed": actual == expected,
+        })
+    for case in data.get("coinProduction", []):
+        if implementation_error:
+            actual = implementation_error
+        elif implementation_gears is not None:
+            actual = implementation_gears.get(case["itemId"], {}).get("coinAmount")
+            if isinstance(actual, float) and actual.is_integer():
+                actual = int(actual)
+        else:
+            actual = case.get("configuredAmount")
+        expected = case["expectedAmount"]
+        results.append({
+            "kind": "coinProduction",
+            "name": case.get("name", "unnamed"),
+            "expected": expected,
+            "actual": actual,
+            "passed": actual == expected,
+        })
+    for case in data.get("defeatCompensation", []):
+        actual = defeat_compensation(int(case["failedAttempts"]))
+        expected = case["expectedMultiple"]
+        results.append({
+            "kind": "defeatCompensation",
             "name": case.get("name", "unnamed"),
             "expected": expected,
             "actual": actual,

@@ -1,0 +1,43 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "level": 1004,
+  "resolution": "750x1334",
+  "capturedAt": "2026-08-02",
+  "classification": "reconstruction-only explicit validation fixture; not a matched competitor account state",
+  "activation": "?fusionValidation=tray|placed|battle",
+  "defaultRuntimeAffected": false,
+  "accepted": [
+    {
+      "file": "tray.png",
+      "bytes": 237920,
+      "sha256": "47b87562c54ecbf7d805ecf66c2cf3eee141a93304dbed72f0301dc30d84f0ab",
+      "finding": "H0705, H0805 and H0905 render at full candidate scale with distinct recovered level-5 footprints, red gear bodies and original heads"
+    },
+    {
+      "file": "placed.png",
+      "bytes": 244152,
+      "sha256": "9db135ba253617d0e826c49d735154cc76c434e59ff31a057b7b23e1c9bd691d",
+      "finding": "all three level-5 footprints coexist around the power core without overlap and retain individual production-rate labels"
+    },
+    {
+      "file": "battle-production-separated.png",
+      "bytes": 430758,
+      "sha256": "d99026492181abef950ae2473fd6cca711cfe05211986e579695bd467372054a",
+      "finding": "the real production queue spawns R1001, R1002 and R1003; all three Spine resources load and render on separate fixture trajectories"
+    },
+    {
+      "file": "h0905-effects.png",
+      "bytes": 359815,
+      "sha256": "0a205c2528494c7f5879715863faa9d0d2dbf2254038e70b1052320ddb9a610d",
+      "finding": "post-effect Web build smoke: R1003/H0905 and the recovered projectile path render during live wave-1 combat with no project console error"
+    }
+  ],
+  "runtimeLog": [
+    "queued H0705/H0805/H0905",
+    "spawning H0705 as R1001, H0805 as R1002, H0905 as R1003",
+    "Spine ready spine/H0705/js_gangtiexia",
+    "Spine ready spine/H0805/js_aoteman",
+    "Spine ready spine/H0905/js_zhanche"
+  ],
+  "boundary": "These captures verify reconstruction rendering and linkage only. They do not prove the unknown target-account star values and cannot pass visualBaseline without a matched original state."
+}

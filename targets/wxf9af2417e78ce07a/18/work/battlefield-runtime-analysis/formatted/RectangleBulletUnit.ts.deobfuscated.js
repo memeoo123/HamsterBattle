@@ -1,0 +1,45 @@
+// Module: chunks:///_virtual/RectangleBulletUnit.ts
+// Dependencies: ./rollupPluginModLoBabelHelpers.js, cc, ./MathUtils2.ts, ./BattleUtils.ts, ./BulletUnit.ts
+(function(t) {
+    var n, i, r, o, s;
+    return Ejn && bVn && (evn += e1t), Ejn && LVn && (evn += "5bf02sPVbJH"), Ejn && LVn && (evn += "vrGuTFZ/"), 
+    Ejn && LVn && (evn += "KHQT"), Ejn = 0, function() {
+        var e;
+        return (e = HVn(HVn({}, C, 0), T, 0))[C] = [ function(t) {
+            n = t[A];
+        }, function(t) {
+            i = t[M];
+        }, function(t) {
+            r = t["MathUtils"];
+        }, function(t) {
+            o = t["BattleUtils"];
+        }, function(t) {
+            s = t["BulletUnit"];
+        } ], e[T] = function() {
+            i[E][R]({}, evn, hvn, void 0), t(hvn, function(t) {
+                var i, s;
+                return s = function() {
+                    for (var n, i, r = (n = arguments)["length"], u = new Array(r), o = 0; o < r; o++) u[o] = n[o];
+                    return (i = t["call"][H](t, [ this ]["concat"](u)) || this)["isHurt"] = !1, i;
+                }, n(s, t), (i = s[U])["initParam"] = function(t, n, i) {
+                    var o, s, e, h, c;
+                    o = arguments, this["_isActive"] = !0, this["atk"] = t, this["pos"]["set"](i["x"], i["y"]), 
+                    this["_spineNode"]["setPosition"](i["x"], i["y"]), e = o["length"] <= u ? void 0 : o[u], 
+                    s = o["length"] <= a ? void 0 : o[a], this["attrHeroId"] = e["attrHeroId"], h = r["getRadians"](e["pos"]["x"], e["pos"]["y"], s["pos"]["x"], s["pos"]["y"]), 
+                    c = r["radians2Angle"](h), this["_spineNode"]["angle"] = c + Dw, this["_maxTime"] = this["_cfg"]["timeLimit"] || Cd;
+                }, i["checkTrigger"] = function() {
+                    this["action"](), this["_runTime"] >= this["_maxTime"] && (this["_isActive"] = !1);
+                }, i["action"] = function() {
+                    this["isHurt"] || (this["isHurt"] = !0, this["actionBehavior"]());
+                }, i["update"] = function() {
+                    var t;
+                    t = o["frameDeltaMs"], this["_runTime"] += t, this["checkTrigger"]();
+                }, i["onRecovery"] = function() {}, i["dispose"] = function() {
+                    var n;
+                    null != (n = this["_spineNode"]) && n["isValid"] && this["_spineNode"]["delayDestroy"](0), 
+                    this["isHurt"] = !1, t[U]["dispose"]["call"](this);
+                }, s;
+            }(s)), i[E][z]();
+        }, e;
+    }[Q](this)[H]();
+});

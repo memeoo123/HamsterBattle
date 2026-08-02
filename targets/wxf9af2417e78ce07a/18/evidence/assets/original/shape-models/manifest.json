@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "target": "wxf9af2417e78ce07a/18",
+  "sourceConfig": "resources3/config.cce0e.json",
+  "models": [
+    {
+      "modelId": "UI10020",
+      "modelPath": "spine/ui/chilun_hongse/chilun_hongse_2",
+      "shapeIds": [2, 3],
+      "files": [
+        { "kind": "spine-3.8-binary", "uuid": "4265772a-d47d-4219-8ebd-51741a8dc884", "nativeVersion": "af093", "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/42/4265772a-d47d-4219-8ebd-51741a8dc884.af093.bin", "file": "UI10020/chilun_hongse_2.skel", "sha256": "d533e7dac44c64d30d9676f7ccb646bfac0089e3bb3d748314e9d120d9a71b84" },
+        { "kind": "atlas", "uuid": "5d466ca2-11aa-4841-9b32-e872f708565d", "nativeVersion": "36631", "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/5d/5d466ca2-11aa-4841-9b32-e872f708565d.36631.atlas", "file": "UI10020/chilun_hongse_2.atlas", "sha256": "932d4add04dcfc7cefee6a9975813099c8b33af8568d6135702656984ef38e95" },
+        { "kind": "texture", "uuid": "de48e9d0-4bda-48dd-9e54-fd51161411b2", "nativeVersion": "e601f", "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/de/de48e9d0-4bda-48dd-9e54-fd51161411b2.e601f.png", "file": "UI10020/chilun_hongse_2.png", "sha256": "c33a847dbdf45cc541d1382e5d06ad72c22aeb2be65cb5cb40b700314bd135eb" }
+      ]
+    },
+    {
+      "modelId": "UI10021",
+      "modelPath": "spine/ui/chilun_hongse/chilun_hongse_3",
+      "shapeIds": [6, 7, 8, 9],
+      "files": [
+        { "kind": "spine-3.8-binary", "uuid": "228e2a05-1705-4086-a10b-6cfaed737155", "nativeVersion": "f2b04", "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/22/228e2a05-1705-4086-a10b-6cfaed737155.f2b04.bin", "file": "UI10021/chilun_hongse_3.skel", "sha256": "f58cc3bcf79f5b1c4b0d97e36ccf4f9ef8b28666c7ee3f4ce326579184e247d9" },
+        { "kind": "atlas", "uuid": "dfa1bf8b-3f2d-47bf-8489-184b40c2d17b", "nativeVersion": "a3002", "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/df/dfa1bf8b-3f2d-47bf-8489-184b40c2d17b.a3002.atlas", "file": "UI10021/chilun_hongse_3.atlas", "sha256": "0136d272653ab90fb6ccddc68b5531bcbb2299082bfeb91ad6548a221198b3c6" },
+        { "kind": "texture", "uuid": "8569e657-23c8-4b1c-8c10-bb97f385fdd9", "nativeVersion": "742d0", "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/85/8569e657-23c8-4b1c-8c10-bb97f385fdd9.742d0.png", "file": "UI10021/chilun_hongse_3.png", "sha256": "a69f32d92269ec107a8444ae3881fba8cb2994591392438992b854781372f198" }
+      ]
+    },
+    {
+      "modelId": "UI10022",
+      "modelPath": "spine/ui/chilun_hongse/chilun_hongse_4",
+      "shapeIds": [10],
+      "files": [
+        { "kind": "spine-3.8-binary", "uuid": "e91d8c75-4952-49f9-a6fa-fd54cbfe0ae5", "nativeVersion": "57716", "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/e9/e91d8c75-4952-49f9-a6fa-fd54cbfe0ae5.57716.bin", "file": "UI10022/chilun_hongse_4.skel", "sha256": "f6bed9717601d80afbd26b3107a3de71913476c97be3ddb137f4c7c43721dbbf" },
+        { "kind": "atlas", "uuid": "9e6a8da2-4fba-46b7-aec4-46b3965029f8", "nativeVersion": "99558", "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/9e/9e6a8da2-4fba-46b7-aec4-46b3965029f8.99558.atlas", "file": "UI10022/chilun_hongse_4.atlas", "sha256": "cec57b5d7070d56b4da93b800172cb26f6755ba4a21f2d5db3112ebb4a79d5c6" },
+        { "kind": "texture", "uuid": "ba180812-0ca2-4c8d-b9e0-72f8e486003e", "nativeVersion": "b88da", "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/ba/ba180812-0ca2-4c8d-b9e0-72f8e486003e.b88da.png", "file": "UI10022/chilun_hongse_4.png", "sha256": "10e01f010d98f13d4c5de1a06352c31c999cc75c9deb849b874c6cd993c15b55" }
+      ]
+    }
+  ],
+  "inspection": "All three skeletons are Spine 3.8.99 and expose the idle animation. Cocos Creator 3.8.8 imported all three as spine-data with atlas bindings and included their paths in a release Web build."
+}

@@ -1,0 +1,141 @@
+// Module: chunks:///_virtual/MonsterUnit.ts
+// Dependencies: ./rollupPluginModLoBabelHelpers.js, cc, ./FGUI.ts, ./FacadeManager.ts, ./NotificationKey.ts, ./BattleAttr.ts, ./BattleUtils.ts, ./BattleConstantConfig.ts, ./BattleEnum.ts, ./GBattleIns.ts, ./BattleUnit.ts, ./fairygui.mjs
+(function(t) {
+    var n, i, r, u, o, s, e, h, c, a, f, v, l, d;
+    return QQn && EVn && (ysn += $Tt, psn += $kn), QQn && LVn && (ysn += "r", psn += "isB"), 
+    QQn = 0, function() {
+        var m;
+        return $Qn && EVn && (ysn += szt), $Qn && RVn && (ysn += "op", psn += "o"), $Qn = 0, 
+        (m = HVn(HVn({}, C, 0), T, 0))[C] = [ function(t) {
+            n = t[A], i = t["createClass"];
+        }, function(t) {
+            r = t[M], u = t["v2"];
+        }, null, function(t) {
+            o = t[w];
+        }, function(t) {
+            s = t[w];
+        }, function(t) {
+            e = t["BattleAttr"];
+        }, function(t) {
+            h = t["BattleUtils"];
+        }, function(t) {
+            c = t[w];
+        }, function(t) {
+            a = t["MonsterType"], f = t["UnitType"];
+        }, function(t) {
+            v = t[w];
+        }, function(t) {
+            l = t["BattleUnit"];
+        }, function(t) {
+            d = t;
+        } ], m[T] = function() {
+            jQn && EVn && (psn += $0), jQn && LVn && (psn += "ss"), jQn = 0, r[E][R]({}, csn, uut, void 0), 
+            t(uut, function(t) {
+                var r, l;
+                return l = function() {
+                    for (var n, i, r = (n = arguments)["length"], o = new Array(r), s = 0; s < r; s++) o[s] = n[s];
+                    return (i = t["call"][H](t, [ this ]["concat"](o)) || this)["_type"] = f["Monster"], 
+                    i["_cfg"] = void 0, i["_originPos"] = u(), i["resourceId"] = void 0, i["resourceIdx"] = void 0, 
+                    i["firstKill"] = !1, i["dropRewards"] = void 0, i["randomMoveIndex"] = -1, i["debugGraphics2"] = void 0, 
+                    i;
+                }, n(l, t), (r = l[U])["init"] = function(t, n) {
+                    this["initRandomMoveTime"](), this["_cfg"] = t, this["_attr"] || (this["_attr"] = e["create"](this)), 
+                    this["_attr"]["initByMonster"](t, n), this["_originPos"]["set"](this["_pos"]), this["disposeDelayTime"] = qi, 
+                    this["createShadow"](), this["_cfg"]["monsterType"] == a["Boss"] && this["initShowHpBar"](), 
+                    this["_cfg"]["monsterType"] != a["Elite"] && this["_cfg"]["monsterType"] != a["Boss"] || this["_spineNode"]["colorYoYo"]();
+                }, r["checkPathMove"] = function() {
+                    t[U]["checkPathMove"]["call"](this);
+                }, r["initShadowImg"] = function() {
+                    var t;
+                    this["shadow"] || (t = Kf, this["_cfg"]["monsterType"] == a["Boss"] && (t = gsn), 
+                    this["shadow"] = d["UIPackage"]["createObject"](xf, t));
+                }, r["setAbnormalStatus"] = function(n, i) {
+                    t[U]["setAbnormalStatus"]["call"](this, n, i);
+                }, r["initRandomMoveTime"] = function() {
+                    this["randomMoveIndex"] = h["getFrameByTime"](v[X]["randomInt"](c["monsterRandomMoveMinTime"], c["monsterRandomMoveMaxTime"]));
+                }, r["enterFight"] = function() {
+                    this["isBeginToFight"] || t[U]["enterFight"]["call"](this, !1);
+                }, r["canBeHurt"] = function() {
+                    return t[U]["canBeHurt"]["call"](this);
+                }, r["checkEnterFight"] = function() {
+                    t[U]["checkEnterFight"]["call"](this);
+                }, r["onBeforUpdatePos"] = function() {
+                    this["_moveVec"]["isMoving"] || this["isBeginToFight"] || this["clearMainTarget"]();
+                }, r[q] = function(n, i) {
+                    t[U][q]["call"](this, n, i);
+                }, r["onDie"] = function(n) {
+                    t[U]["onDie"]["call"](this, n), null != n && n[x] && (h = n[x]["attrHeroId"] || (null == (e = v["StateMemory"]["getBatteUintByUid"](n[x]["casterUid"])) || null == (u = e["attr"]) ? void 0 : u["getHeroConfigId"]()));
+                    var i, r, u, e, h, c = function() {
+                        var t = function() {
+                            var t = HVn(HVn(HVn(HVn(HVn({}, lp, 0), IA, 0), Ea, 0), ST, 0), c4, 0);
+                            return t["exp"] = 0, t["killerId"] = 0, t["pos"] = 0, t["skillID"] = 0, t["gold"] = 0, 
+                            t;
+                        }[H]();
+                        return t["exp"] = this["_attr"]["getMonsterCfg"]()["exp"], t["killerId"] = h, t["pos"] = this["pos"], 
+                        t["skillID"] = (null == n || null == (i = n["skillInfo"]) ? void 0 : i["skillId"]) || (null == (r = n[x]) || null == (r = r["skill"]) ? void 0 : r["skillId"]), 
+                        t["gold"] = this["_attr"]["getMonsterCfg"]()["gold"], t;
+                    }[Q](this)[H]();
+                    o["ins"]()["emit"](s["BATTLE_MONSTER_DIE"], c);
+                }, r["onDieActionComplete"] = function() {
+                    this["needDispose"]();
+                }, r["d"] = function() {
+                    this["summon"];
+                }, r["updateAI"] = function() {
+                    t[U]["updateAI"]["call"](this);
+                }, r["dispose"] = function() {
+                    var n;
+                    null != (n = this["_spineNode"]) && n["isValid"] && this["_spineNode"]["delayDestroy"](this["disposeDelayTime"]), 
+                    t[U]["dispose"]["call"](this);
+                }, i(l, [ function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = iv, t["get"] = function() {
+                        return this["_attr"]["moveSpeed"] * h["frameDeltaMs"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = zt, t["get"] = function() {
+                        return this["_cfg"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = psn, t["get"] = function() {
+                        return this["_cfg"]["monsterType"] == a["Boss"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = kyt, t["get"] = function() {
+                        return this["_cfg"]["monsterType"] != a["Boss"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = xT, t["get"] = function() {
+                        return this["_cfg"]["monsterType"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = lZ, t["get"] = function() {
+                        return this["_cfg"]["searchRange"];
+                    }, t;
+                }[Q](this)[H]() ]), l;
+            }(l)), r[E][z]();
+        }, m;
+    }[Q](this)[H]();
+});

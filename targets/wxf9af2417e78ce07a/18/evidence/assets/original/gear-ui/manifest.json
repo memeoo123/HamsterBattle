@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0",
+  "target": "wxf9af2417e78ce07a/18",
+  "sourceConfigs": [
+    "resources2/config.f7a66.json",
+    "resources3/config.cce0e.json"
+  ],
+  "files": [
+    {
+      "kind": "fairygui-atlas",
+      "logicalPath": "ui/bagLike_0",
+      "uuid": "0d8cf031-8792-4f9c-85a7-f24a2a7826f9",
+      "nativeVersion": "c1037",
+      "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources2/native/0d/0d8cf031-8792-4f9c-85a7-f24a2a7826f9.c1037.png",
+      "file": "bagLike_0.png",
+      "sha256": "62c12323018acd465931c0cf7efcf5fea8fc864f2dc0802a1d4e13e33d72638e",
+      "inspection": "1161x512; contains the original green/blue/purple/red/yellow/white gear silhouettes and connector panels"
+    },
+    {
+      "kind": "sprite-atlas-texture",
+      "logicalPath": "image/heroSmallHead",
+      "uuid": "83efde02-27a4-4b4c-8555-77080aa6c2e8",
+      "nativeVersion": "72847",
+      "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/83/83efde02-27a4-4b4c-8555-77080aa6c2e8.72847.png",
+      "file": "heroSmallHead.png",
+      "sha256": "8cf5106b24bf50e86fd548ac2b56f6193540ffe7076f64cae861922c75a63175",
+      "inspection": "252x1726; original 90x90 gear portraits, including H0101-H0404, H1201, H1301, P01, and coin"
+    }
+  ],
+  "runtimeEvidence": "baglike.BagLikeItemConfig.headPath maps each gear item to image/heroSmallHead/<id>; BrickShowBaseCom and WorkerBar load that small-head path onto the gear icon."
+}

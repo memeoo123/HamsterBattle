@@ -1,0 +1,93 @@
+// Module: chunks:///_virtual/DartUnit.ts
+// Dependencies: ./rollupPluginModLoBabelHelpers.js, cc, ./PoolManager.ts, ./BulletUnit.ts, ./MathUtils2.ts, ./BattleEnum.ts, ./BattleUtils.ts
+(function(t) {
+    var n, i, r, u, o, s, e, h;
+    return tZn && bVn && (n_t += Ew, h_t += Lrt), tZn && EVn && (i_t += xv), tZn && RVn && (r_t = "_a"), 
+    tZn && bVn && (r_t += aQt), tZn && RVn && (n_t += "_ro", h_t += "c"), tZn && LVn && (i_t += "_ac"), 
+    tZn = 0, function() {
+        var c;
+        return iZn && bVn && (n_t += YV, i_t += Kc), iZn && RVn && (r_t += "mountEf"), iZn && RVn && (n_t += "tatio", 
+        i_t += "t"), iZn && LVn && (h_t += "tNu"), iZn = 0, (c = HVn(HVn({}, C, 0), T, 0))[C] = [ function(t) {
+            n = t[A];
+        }, function(t) {
+            i = t[M], r = t["view"];
+        }, function(t) {
+            u = t["PoolManager"];
+        }, function(t) {
+            o = t["BulletUnit"];
+        }, function(t) {
+            s = t["MathUtils"];
+        }, function(t) {
+            e = t["screnPath"];
+        }, function(t) {
+            h = t["BattleUtils"];
+        } ], c[T] = function() {
+            nZn && bVn && (r_t += fmt), nZn && EVn && (h_t += Bk), nZn && LVn && (r_t += "f"), 
+            nZn && LVn && (n_t += "n", h_t += "m"), nZn && RVn && (i_t += "Num"), nZn = 0, i[E][R]({}, zkt, Qkt, void 0), 
+            t(Qkt, function(t) {
+                var i, o;
+                return o = function() {
+                    for (var n, i, r = (n = arguments)["length"], u = new Array(r), o = 0; o < r; o++) u[o] = n[o];
+                    return (i = t["call"][H](t, [ this ]["concat"](u)) || this)["_startAngle"] = void 0, 
+                    i["_startoffAngle"] = void 0, i["_allAngle"] = void 0, i[""] = 0, i[""] = void 0, 
+                    i[0] = void 0, i["_hurtStop"] = void 0, i["_amountEffMap"] = void 0, i;
+                }, n(o, t), (i = o[U])["initParam"] = function(t, n, i, u, o) {
+                    var h, c, a, f;
+                    this["atk"] = t, this["_filter"] = !0, this["filterUnitMap"] = new Map, this["_amountEffMap"] = new Map, 
+                    f = this["_cfg"]["parameter"], c = null == f ? void 0 : f["offY"], this[""] = (null == f ? void 0 : f["angleSpeed"]) || 0, 
+                    this[""] = f["a"], this[0] = f["amount_Dec"], a = r["getDesignResolutionSize"](), 
+                    (null == f ? void 0 : f["path"]) == e["RL"] && (i = function() {
+                        var t;
+                        return (t = function() {
+                            var t;
+                            return (t = HVn(HVn({}, Ra, 0), La, 0))["x"] = 0, t["y"] = 0, t;
+                        }[H]())["x"] = 0 - a["width"] / d - cf, t["y"] = c, t;
+                    }[H](), n = function() {
+                        var t;
+                        return (t = function() {
+                            var t;
+                            return (t = HVn(HVn({}, Ra, 0), La, 0))["x"] = 0, t["y"] = 0, t;
+                        }[H]())["x"] = 0 + a["width"] / d + cf, t["y"] = c, t;
+                    }[H](), this["pos"]["set"](i["x"], i["y"]), this["_spineNode"]["setPosition"](i["x"], i["y"])), 
+                    this["_spineNode"]["angle"] = 0, h = s["getRadians"](i["x"], i["y"], n["x"], n["y"]), 
+                    this["_moveVec"]["set"](this["moveSpeed"] * Math["cos"](h), this["moveSpeed"] * Math["sin"](h)), 
+                    this["_maxTime"] = (a["width"] + MB) / this["moveSpeed"] || Cd;
+                }, i["checkTrigger"] = function() {
+                    this["_hurtStop"] || this["action"]();
+                }, i["action"] = function() {
+                    for (var t = 0; t < this["_behaviors"]["length"]; t++) {
+                        var n;
+                        (n = this["_behaviors"][t]) && (n["index"] = 0, n["skillTarget"] = this[F], n["skillTargetUid"] = this["targetUid"], 
+                        n["setCaster"](this), this["skill"]["fightSkillInfo"]["beginBehaviorEffect"](n, this), 
+                        q == n["cfg"]["effectType"]) && this["playHitSound"]();
+                    }
+                }, i["update"] = function() {
+                    var t, n, i, r, u;
+                    this["checkTrigger"](), null != (t = this["_spineNode"]) && t["isValid"] && (this[""] && (Bot == this["_spineNode"]["angle"] && (this["_spineNode"]["angle"] = 0), 
+                    this["_spineNode"]["angle"] = this["_spineNode"]["angle"] + this[""]), i = h["frameDeltaMs"], 
+                    this["_runTime"] += i, r = this["_moveVec"]["x"] * i, u = this["_moveVec"]["y"] * i, 
+                    this["pos"]["add2f"](r, u), this["_spineNode"]["setPosition"](this["pos"]["x"], this["pos"]["y"])), 
+                    !this["_hurtStop"] && this["_amountEffMap"] && this[""] <= this["filterUnitMap"]["size"] && (null != (n = this["_spineNode"]) && n["isValid"] && this["_spineNode"]["fadeOut"](Ck), 
+                    this["_hurtStop"] = !0), this["_maxTime"] <= this["_runTime"] && (this["_isActive"] = !1);
+                }, i["filterUnits"] = function(t) {
+                    if (this["_filter"]) {
+                        if (t && t["length"]) for (var n = t["length"] - 1; 0 <= n; --n) {
+                            var i;
+                            i = t[n], this["filterUnitMap"]["get"](i["uid"]) || this[""] <= this["filterUnitMap"]["size"] ? t["splice"](n, 1) : (this["_amountEffMap"]["set"](i["uid"], -this["filterUnitMap"]["size"] * this[0] / sC), 
+                            this["filterUnitMap"]["set"](i["uid"], !0));
+                        }
+                        return t;
+                    }
+                }, i["getAmountEff"] = function(t) {
+                    return this["_amountEffMap"]["get"](t) || 0;
+                }, i["onRecovery"] = function() {
+                    this["_hurtStop"] = !1;
+                }, i["dispose"] = function() {
+                    var t;
+                    null != (t = this["_spineNode"]) && t["isValid"] && this["_spineNode"]["destroy"](), 
+                    u["recovery"](this);
+                }, o;
+            }(o)), i[E][z]();
+        }, c;
+    }[Q](this)[H]();
+});

@@ -1,0 +1,4587 @@
+{
+  "source": "/private/tmp/hamster-comm.bin",
+  "compression": "zlib",
+  "packedBytes": 4288,
+  "rawBytes": 17108,
+  "packageId": "38fa8c75",
+  "packageName": "comm",
+  "declaredItemCount": 121,
+  "parsedComponentCount": 44,
+  "parsedImageCount": 77,
+  "limitation": "Parses compact package component headers, image atlas records, and setup_beforeAdd child geometry. Controller, relation, gear, and transition tails remain unparsed.",
+  "images": [
+    {
+      "index": 44,
+      "start": 10546,
+      "type": 0,
+      "id": "mapsvvv1bp",
+      "name": "bg_mask.png",
+      "width": 69,
+      "height": 61,
+      "scale9Grid": {
+        "x": 24,
+        "y": 24,
+        "width": 21,
+        "height": 13,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1265,
+        "y": 377,
+        "width": 69,
+        "height": 61
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 69,
+        "sourceHeight": 61
+      }
+    },
+    {
+      "index": 45,
+      "start": 10639,
+      "type": 0,
+      "id": "jsbqvvv1cc",
+      "name": "biaoti2_frame.png",
+      "width": 64,
+      "height": 52,
+      "scale9Grid": {
+        "x": 20,
+        "y": 20,
+        "width": 24,
+        "height": 12,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1441,
+        "y": 1,
+        "width": 64,
+        "height": 52
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 64,
+        "sourceHeight": 52
+      }
+    },
+    {
+      "index": 46,
+      "start": 10738,
+      "type": 0,
+      "id": "jsbqvvv1cd",
+      "name": "biaoti3_frame.png",
+      "width": 64,
+      "height": 52,
+      "scale9Grid": {
+        "x": 20,
+        "y": 20,
+        "width": 24,
+        "height": 12,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1441,
+        "y": 55,
+        "width": 64,
+        "height": 52
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 64,
+        "sourceHeight": 52
+      }
+    },
+    {
+      "index": 47,
+      "start": 10837,
+      "type": 0,
+      "id": "xp8qvvv1bt",
+      "name": "biaoti_frame.png",
+      "width": 80,
+      "height": 52,
+      "scale9Grid": {
+        "x": 30,
+        "y": 20,
+        "width": 20,
+        "height": 12,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 929,
+        "y": 433,
+        "width": 80,
+        "height": 52
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 80,
+        "sourceHeight": 52
+      }
+    },
+    {
+      "index": 48,
+      "start": 10935,
+      "type": 0,
+      "id": "okr4vvv1c1",
+      "name": "bq.png",
+      "width": 106,
+      "height": 110,
+      "scale9Grid": {
+        "x": 30,
+        "y": 30,
+        "width": 46,
+        "height": 50,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1188,
+        "y": 103,
+        "width": 106,
+        "height": 110
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 106,
+        "sourceHeight": 110
+      }
+    },
+    {
+      "index": 49,
+      "start": 11023,
+      "type": 0,
+      "id": "t642vvv19a",
+      "name": "cl_frame.png",
+      "width": 106,
+      "height": 106,
+      "scale9Grid": {
+        "x": 30,
+        "y": 30,
+        "width": 46,
+        "height": 46,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1296,
+        "y": 119,
+        "width": 106,
+        "height": 106
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 106,
+        "sourceHeight": 106
+      }
+    },
+    {
+      "index": 50,
+      "start": 11117,
+      "type": 0,
+      "id": "okr4vvv1c2",
+      "name": "dilan_frame.png",
+      "width": 86,
+      "height": 110,
+      "scale9Grid": {
+        "x": 20,
+        "y": 60,
+        "width": 16,
+        "height": 20,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1045,
+        "y": 213,
+        "width": 86,
+        "height": 110
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 86,
+        "sourceHeight": 110
+      }
+    },
+    {
+      "index": 51,
+      "start": 11214,
+      "type": 0,
+      "id": "t642vvv19b",
+      "name": "dlxz_frame.png",
+      "width": 160,
+      "height": 130,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 170,
+        "y": 320,
+        "width": 160,
+        "height": 130
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 160,
+        "sourceHeight": 130
+      }
+    },
+    {
+      "index": 52,
+      "start": 11290,
+      "type": 0,
+      "id": "t642vvv197",
+      "name": "hbl_frame.png",
+      "width": 40,
+      "height": 40,
+      "scale9Grid": {
+        "x": 10,
+        "y": 10,
+        "width": 20,
+        "height": 20,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 170,
+        "y": 452,
+        "width": 40,
+        "height": 40
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 40,
+        "sourceHeight": 40
+      }
+    },
+    {
+      "index": 53,
+      "start": 11385,
+      "type": 0,
+      "id": "np6evvv1cg",
+      "name": "hqp_frame.png",
+      "width": 140,
+      "height": 116,
+      "scale9Grid": {
+        "x": 30,
+        "y": 40,
+        "width": 10,
+        "height": 36,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1299,
+        "y": 1,
+        "width": 140,
+        "height": 116
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 140,
+        "sourceHeight": 116
+      }
+    },
+    {
+      "index": 54,
+      "start": 11480,
+      "type": 0,
+      "id": "jsbqvvv1ca",
+      "name": "huangsepiaodai.png",
+      "width": 524,
+      "height": 83,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 416,
+        "y": 1,
+        "width": 524,
+        "height": 83
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 524,
+        "sourceHeight": 83
+      }
+    },
+    {
+      "index": 55,
+      "start": 11560,
+      "type": 0,
+      "id": "sgdfvvv1a9",
+      "name": "jdt_frame.png",
+      "width": 18,
+      "height": 18,
+      "scale9Grid": {
+        "x": 8,
+        "y": 8,
+        "width": 2,
+        "height": 2,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1404,
+        "y": 201,
+        "width": 18,
+        "height": 18
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 18,
+        "sourceHeight": 18
+      }
+    },
+    {
+      "index": 56,
+      "start": 11655,
+      "type": 0,
+      "id": "0c988",
+      "name": "jnk_frame.png",
+      "width": 90,
+      "height": 90,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1033,
+        "y": 325,
+        "width": 90,
+        "height": 90
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 90,
+        "sourceHeight": 90
+      }
+    },
+    {
+      "index": 57,
+      "start": 11725,
+      "type": 0,
+      "id": "b2ocvvv1ci",
+      "name": "jsyl_frame.png",
+      "width": 118,
+      "height": 92,
+      "scale9Grid": {
+        "x": 30,
+        "y": 30,
+        "width": 58,
+        "height": 32,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 438,
+        "y": 400,
+        "width": 118,
+        "height": 92
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 118,
+        "sourceHeight": 92
+      }
+    },
+    {
+      "index": 58,
+      "start": 11821,
+      "type": 0,
+      "id": "sgdfvvv1av",
+      "name": "jt_tag.png",
+      "width": 61,
+      "height": 80,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1404,
+        "y": 119,
+        "width": 61,
+        "height": 80
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 61,
+        "sourceHeight": 80
+      }
+    },
+    {
+      "index": 59,
+      "start": 11893,
+      "type": 0,
+      "id": "mapsvvv1br",
+      "name": "klq_frame.png",
+      "width": 78,
+      "height": 78,
+      "scale9Grid": {
+        "x": 30,
+        "y": 30,
+        "width": 18,
+        "height": 18,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 694,
+        "y": 398,
+        "width": 78,
+        "height": 78
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 78,
+        "sourceHeight": 78
+      }
+    },
+    {
+      "index": 60,
+      "start": 11988,
+      "type": 0,
+      "id": "xp8qvvv1bs",
+      "name": "lb2_frame.png",
+      "width": 108,
+      "height": 108,
+      "scale9Grid": {
+        "x": 30,
+        "y": 30,
+        "width": 48,
+        "height": 48,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1078,
+        "y": 103,
+        "width": 108,
+        "height": 108
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 108,
+        "sourceHeight": 108
+      }
+    },
+    {
+      "index": 61,
+      "start": 12083,
+      "type": 0,
+      "id": "sgdfvvv1ab",
+      "name": "lb_frame.png",
+      "width": 80,
+      "height": 80,
+      "scale9Grid": {
+        "x": 20,
+        "y": 20,
+        "width": 40,
+        "height": 40,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 874,
+        "y": 86,
+        "width": 80,
+        "height": 80
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 80,
+        "sourceHeight": 80
+      }
+    },
+    {
+      "index": 62,
+      "start": 12177,
+      "type": 0,
+      "id": "sgdfvvv1aa",
+      "name": "lbh_frame.png",
+      "width": 80,
+      "height": 80,
+      "scale9Grid": {
+        "x": 20,
+        "y": 20,
+        "width": 40,
+        "height": 40,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1186,
+        "y": 215,
+        "width": 80,
+        "height": 80
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 80,
+        "sourceHeight": 80
+      }
+    },
+    {
+      "index": 63,
+      "start": 12272,
+      "type": 0,
+      "id": "mzievvv1bg",
+      "name": "loading_mask.png",
+      "width": 413,
+      "height": 317,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1,
+        "y": 1,
+        "width": 413,
+        "height": 317
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 413,
+        "sourceHeight": 317
+      }
+    },
+    {
+      "index": 64,
+      "start": 12350,
+      "type": 0,
+      "id": "ige4vvv1bn",
+      "name": "lunzi.png",
+      "width": 167,
+      "height": 167,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1,
+        "y": 320,
+        "width": 167,
+        "height": 167
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 167,
+        "sourceHeight": 167
+      }
+    },
+    {
+      "index": 65,
+      "start": 12421,
+      "type": 0,
+      "id": "okr4vvv1c0",
+      "name": "qp2_frame.png",
+      "width": 160,
+      "height": 100,
+      "scale9Grid": {
+        "x": 110,
+        "y": 30,
+        "width": 20,
+        "height": 20,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1137,
+        "y": 1,
+        "width": 160,
+        "height": 100
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 160,
+        "sourceHeight": 100
+      }
+    },
+    {
+      "index": 66,
+      "start": 12516,
+      "type": 0,
+      "id": "t642vvv18y",
+      "name": "qp_frame.png",
+      "width": 232,
+      "height": 87,
+      "scale9Grid": {
+        "x": 130,
+        "y": 20,
+        "width": 72,
+        "height": 17,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 640,
+        "y": 86,
+        "width": 232,
+        "height": 87
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 232,
+        "sourceHeight": 87
+      }
+    },
+    {
+      "index": 67,
+      "start": 12610,
+      "type": 0,
+      "id": "tyngvvv1ci",
+      "name": "rkjl_frame.png",
+      "width": 101,
+      "height": 100,
+      "scale9Grid": {
+        "x": 38,
+        "y": 32,
+        "width": 29,
+        "height": 34,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 700,
+        "y": 296,
+        "width": 101,
+        "height": 100
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 101,
+        "sourceHeight": 100
+      }
+    },
+    {
+      "index": 68,
+      "start": 12706,
+      "type": 0,
+      "id": "sgdfvvv1ac",
+      "name": "sx_frame.png",
+      "width": 36,
+      "height": 36,
+      "scale9Grid": {
+        "x": 16,
+        "y": 16,
+        "width": 4,
+        "height": 4,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 368,
+        "y": 452,
+        "width": 36,
+        "height": 36
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 36,
+        "sourceHeight": 36
+      }
+    },
+    {
+      "index": 69,
+      "start": 12800,
+      "type": 0,
+      "id": "jncgvvv19i",
+      "name": "ts1_frame.png",
+      "width": 222,
+      "height": 182,
+      "scale9Grid": {
+        "x": 134,
+        "y": 118,
+        "width": 30,
+        "height": 17,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 416,
+        "y": 86,
+        "width": 222,
+        "height": 182
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 222,
+        "sourceHeight": 182
+      }
+    },
+    {
+      "index": 70,
+      "start": 12895,
+      "type": 0,
+      "id": "jncgvvv19j",
+      "name": "ts2_frame.png",
+      "width": 60,
+      "height": 60,
+      "scale9Grid": {
+        "x": 20,
+        "y": 20,
+        "width": 20,
+        "height": 20,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1336,
+        "y": 383,
+        "width": 60,
+        "height": 60
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 60,
+        "sourceHeight": 60
+      }
+    },
+    {
+      "index": 71,
+      "start": 12990,
+      "type": 0,
+      "id": "9mcfvvv1ck",
+      "name": "xbt_frame.png",
+      "width": 86,
+      "height": 56,
+      "scale9Grid": {
+        "x": 29,
+        "y": 0,
+        "width": 28,
+        "height": 56,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 774,
+        "y": 435,
+        "width": 86,
+        "height": 56
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 86,
+        "sourceHeight": 56
+      }
+    },
+    {
+      "index": 72,
+      "start": 13085,
+      "type": 0,
+      "id": "lt3tvvv1aw",
+      "name": "xinxi_frame.png",
+      "width": 106,
+      "height": 113,
+      "scale9Grid": {
+        "x": 26,
+        "y": 28,
+        "width": 52,
+        "height": 56,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 925,
+        "y": 318,
+        "width": 106,
+        "height": 113
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 106,
+        "sourceHeight": 113
+      }
+    },
+    {
+      "index": 73,
+      "start": 13182,
+      "type": 0,
+      "id": "sgdfvvv1ad",
+      "name": "xt_frame.png",
+      "width": 8,
+      "height": 8,
+      "scale9Grid": {
+        "x": 3,
+        "y": 3,
+        "width": 2,
+        "height": 2,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1176,
+        "y": 345,
+        "width": 8,
+        "height": 8
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 8,
+        "sourceHeight": 8
+      }
+    },
+    {
+      "index": 74,
+      "start": 13276,
+      "type": 0,
+      "id": "lt3tvvv1ax",
+      "name": "yq1_frame.png",
+      "width": 74,
+      "height": 80,
+      "scale9Grid": {
+        "x": 20,
+        "y": 40,
+        "width": 34,
+        "height": 20,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1348,
+        "y": 227,
+        "width": 74,
+        "height": 80
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 74,
+        "sourceHeight": 80
+      }
+    },
+    {
+      "index": 75,
+      "start": 13371,
+      "type": 0,
+      "id": "lt3tvvv1ay",
+      "name": "yq2_frame.png",
+      "width": 74,
+      "height": 80,
+      "scale9Grid": {
+        "x": 20,
+        "y": 40,
+        "width": 34,
+        "height": 20,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1424,
+        "y": 201,
+        "width": 74,
+        "height": 77
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 74,
+        "sourceHeight": 80
+      }
+    },
+    {
+      "index": 76,
+      "start": 13466,
+      "type": 0,
+      "id": "xp8qvvv1bu",
+      "name": "yqhl_frame.png",
+      "width": 86,
+      "height": 92,
+      "scale9Grid": {
+        "x": 30,
+        "y": 30,
+        "width": 26,
+        "height": 32,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 558,
+        "y": 400,
+        "width": 86,
+        "height": 92
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 86,
+        "sourceHeight": 92
+      }
+    },
+    {
+      "index": 77,
+      "start": 13562,
+      "type": 0,
+      "id": "sgdfvvv1ae",
+      "name": "zd1_frame.png",
+      "width": 51,
+      "height": 76,
+      "scale9Grid": {
+        "x": 20,
+        "y": 20,
+        "width": 11,
+        "height": 36,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1133,
+        "y": 213,
+        "width": 51,
+        "height": 76
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 51,
+        "sourceHeight": 76
+      }
+    },
+    {
+      "index": 78,
+      "start": 13657,
+      "type": 0,
+      "id": "sgdfvvv1ag",
+      "name": "zd_frame.png",
+      "width": 114,
+      "height": 114,
+      "scale9Grid": {
+        "x": 30,
+        "y": 30,
+        "width": 54,
+        "height": 54,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 929,
+        "y": 202,
+        "width": 114,
+        "height": 114
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 114,
+        "sourceHeight": 114
+      }
+    },
+    {
+      "index": 79,
+      "start": 13751,
+      "type": 0,
+      "id": "sgdfvvv1af",
+      "name": "zdts_frame.png",
+      "width": 46,
+      "height": 46,
+      "scale9Grid": {
+        "x": 20,
+        "y": 20,
+        "width": 6,
+        "height": 6,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1203,
+        "y": 439,
+        "width": 46,
+        "height": 46
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 46,
+        "sourceHeight": 46
+      }
+    },
+    {
+      "index": 80,
+      "start": 13847,
+      "type": 0,
+      "id": "ige4vvv1bm",
+      "name": "zhijia.png",
+      "width": 165,
+      "height": 119,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 640,
+        "y": 175,
+        "width": 165,
+        "height": 119
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 165,
+        "sourceHeight": 119
+      }
+    },
+    {
+      "index": 81,
+      "start": 13919,
+      "type": 0,
+      "id": "jncgvvv19k",
+      "name": "zsx_line.png",
+      "width": 66,
+      "height": 28,
+      "scale9Grid": {
+        "x": 16,
+        "y": 7,
+        "width": 12,
+        "height": 14,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 251,
+        "y": 452,
+        "width": 66,
+        "height": 28
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 66,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 82,
+      "start": 14013,
+      "type": 0,
+      "id": "xp8qvvv1bv",
+      "name": "zxjl1_btn.png",
+      "width": 78,
+      "height": 74,
+      "scale9Grid": {
+        "x": 30,
+        "y": 30,
+        "width": 18,
+        "height": 14,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1268,
+        "y": 227,
+        "width": 78,
+        "height": 74
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 78,
+        "sourceHeight": 74
+      }
+    },
+    {
+      "index": 83,
+      "start": 14108,
+      "type": 0,
+      "id": "xp8qvvv1bw",
+      "name": "zxjl_btn.png",
+      "width": 78,
+      "height": 74,
+      "scale9Grid": {
+        "x": 30,
+        "y": 30,
+        "width": 18,
+        "height": 14,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1424,
+        "y": 280,
+        "width": 78,
+        "height": 74
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 78,
+        "sourceHeight": 74
+      }
+    },
+    {
+      "index": 84,
+      "start": 14202,
+      "type": 0,
+      "id": "okr4vvv1c3",
+      "name": "back_btn.png",
+      "width": 72,
+      "height": 72,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1265,
+        "y": 303,
+        "width": 72,
+        "height": 72
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 72,
+        "sourceHeight": 72
+      }
+    },
+    {
+      "index": 85,
+      "start": 14276,
+      "type": 0,
+      "id": "jncgvvv19l",
+      "name": "blue_btn.png",
+      "width": 138,
+      "height": 128,
+      "scale9Grid": {
+        "x": 69,
+        "y": 40,
+        "width": 18,
+        "height": 18,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 438,
+        "y": 270,
+        "width": 138,
+        "height": 128
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 138,
+        "sourceHeight": 128
+      }
+    },
+    {
+      "index": 86,
+      "start": 14370,
+      "type": 0,
+      "id": "t642vvv191",
+      "name": "fy_btn.png",
+      "width": 46,
+      "height": 80,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 646,
+        "y": 396,
+        "width": 46,
+        "height": 80
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 46,
+        "sourceHeight": 80
+      }
+    },
+    {
+      "index": 87,
+      "start": 14442,
+      "type": 0,
+      "id": "jncgvvv19m",
+      "name": "gb_btn.png",
+      "width": 68,
+      "height": 68,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1133,
+        "y": 394,
+        "width": 68,
+        "height": 68
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 68,
+        "sourceHeight": 68
+      }
+    },
+    {
+      "index": 88,
+      "start": 14514,
+      "type": 0,
+      "id": "t642vvv192",
+      "name": "green_btn.png",
+      "width": 120,
+      "height": 128,
+      "scale9Grid": {
+        "x": 56,
+        "y": 43,
+        "width": 26,
+        "height": 43,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 807,
+        "y": 175,
+        "width": 120,
+        "height": 128
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 120,
+        "sourceHeight": 128
+      }
+    },
+    {
+      "index": 89,
+      "start": 14609,
+      "type": 0,
+      "id": "ufuivvv1c7",
+      "name": "gth_btn.png",
+      "width": 52,
+      "height": 52,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1133,
+        "y": 291,
+        "width": 51,
+        "height": 52
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 52,
+        "sourceHeight": 52
+      }
+    },
+    {
+      "index": 90,
+      "start": 14682,
+      "type": 0,
+      "id": "t642vvv19d",
+      "name": "jh_btn.png",
+      "width": 32,
+      "height": 32,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1467,
+        "y": 146,
+        "width": 32,
+        "height": 32
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 32,
+        "sourceHeight": 32
+      }
+    },
+    {
+      "index": 91,
+      "start": 14754,
+      "type": 0,
+      "id": "sgdfvvv1ah",
+      "name": "jt_btn.png",
+      "width": 40,
+      "height": 46,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1382,
+        "y": 445,
+        "width": 40,
+        "height": 46
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 40,
+        "sourceHeight": 46
+      }
+    },
+    {
+      "index": 92,
+      "start": 14826,
+      "type": 0,
+      "id": "qozbvvv1bx",
+      "name": "purple_btn.png",
+      "width": 120,
+      "height": 128,
+      "scale9Grid": {
+        "x": 56,
+        "y": 43,
+        "width": 26,
+        "height": 43,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 803,
+        "y": 305,
+        "width": 120,
+        "height": 128
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 120,
+        "sourceHeight": 128
+      }
+    },
+    {
+      "index": 93,
+      "start": 14922,
+      "type": 0,
+      "id": "t642vvv193",
+      "name": "yellow_btn.png",
+      "width": 120,
+      "height": 128,
+      "scale9Grid": {
+        "x": 63,
+        "y": 41,
+        "width": 17,
+        "height": 10,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 956,
+        "y": 72,
+        "width": 120,
+        "height": 128
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 120,
+        "sourceHeight": 128
+      }
+    },
+    {
+      "index": 94,
+      "start": 15018,
+      "type": 0,
+      "id": "whn7q",
+      "name": "zt_btn.png",
+      "width": 72,
+      "height": 72,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1339,
+        "y": 309,
+        "width": 72,
+        "height": 72
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 72,
+        "sourceHeight": 72
+      }
+    },
+    {
+      "index": 95,
+      "start": 15085,
+      "type": 0,
+      "id": "iatdvvv1b6",
+      "name": "boss.png",
+      "width": 42,
+      "height": 42,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1439,
+        "y": 356,
+        "width": 41,
+        "height": 42
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 42,
+        "sourceHeight": 42
+      }
+    },
+    {
+      "index": 96,
+      "start": 15155,
+      "type": 0,
+      "id": "iatdvvv1b5",
+      "name": "bossxtdi_frame.png",
+      "width": 22,
+      "height": 26,
+      "scale9Grid": {
+        "x": 5,
+        "y": 7,
+        "width": 10,
+        "height": 8,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 774,
+        "y": 398,
+        "width": 22,
+        "height": 26
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 22,
+        "sourceHeight": 26
+      }
+    },
+    {
+      "index": 97,
+      "start": 15255,
+      "type": 0,
+      "id": "p2wdvvv1a7",
+      "name": "xgxt__frame.png",
+      "width": 4,
+      "height": 2,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 578,
+        "y": 396,
+        "width": 4,
+        "height": 2
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 4,
+        "sourceHeight": 2
+      }
+    },
+    {
+      "index": 98,
+      "start": 15332,
+      "type": 0,
+      "id": "p2wdvvv1a8",
+      "name": "xtdi_frame.png",
+      "width": 10,
+      "height": 8,
+      "scale9Grid": {
+        "x": 3,
+        "y": 1,
+        "width": 2,
+        "height": 3,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1441,
+        "y": 109,
+        "width": 10,
+        "height": 8
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 10,
+        "sourceHeight": 8
+      }
+    },
+    {
+      "index": 99,
+      "start": 15428,
+      "type": 0,
+      "id": "p2wdvvv1a9",
+      "name": "yxxt_frame.png",
+      "width": 4,
+      "height": 2,
+      "scale9Grid": {
+        "x": 0,
+        "y": 0,
+        "width": 4,
+        "height": 2,
+        "tileGridIndice": 0
+      },
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 584,
+        "y": 396,
+        "width": 4,
+        "height": 2
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 4,
+        "sourceHeight": 2
+      }
+    },
+    {
+      "index": 100,
+      "start": 15524,
+      "type": 0,
+      "id": "n7gxvvv1bc",
+      "name": "ad_icon.png",
+      "width": 72,
+      "height": 72,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 862,
+        "y": 435,
+        "width": 65,
+        "height": 55
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 3,
+        "offsetY": 10,
+        "sourceWidth": 72,
+        "sourceHeight": 72
+      }
+    },
+    {
+      "index": 101,
+      "start": 15597,
+      "type": 0,
+      "id": "jncgvvv19n",
+      "name": "bofang_icon.png",
+      "width": 50,
+      "height": 50,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1336,
+        "y": 445,
+        "width": 44,
+        "height": 45
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 3,
+        "offsetY": 3,
+        "sourceWidth": 50,
+        "sourceHeight": 50
+      }
+    },
+    {
+      "index": 102,
+      "start": 15674,
+      "type": 0,
+      "id": "fyiuvvv1cl",
+      "name": "clpf_icon.png",
+      "width": 98,
+      "height": 75,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1033,
+        "y": 417,
+        "width": 98,
+        "height": 75
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 98,
+        "sourceHeight": 75
+      }
+    },
+    {
+      "index": 103,
+      "start": 15749,
+      "type": 0,
+      "id": "mieqvvv1cm",
+      "name": "clsp_icon.png",
+      "width": 52,
+      "height": 52,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1251,
+        "y": 440,
+        "width": 46,
+        "height": 46
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 3,
+        "offsetY": 3,
+        "sourceWidth": 52,
+        "sourceHeight": 52
+      }
+    },
+    {
+      "index": 104,
+      "start": 15824,
+      "type": 0,
+      "id": "mapsvvv1bq",
+      "name": "drew_icon.png",
+      "width": 120,
+      "height": 98,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 578,
+        "y": 296,
+        "width": 120,
+        "height": 98
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 120,
+        "sourceHeight": 98
+      }
+    },
+    {
+      "index": 105,
+      "start": 15899,
+      "type": 0,
+      "id": "jncgvvv19o",
+      "name": "fengxiang_icon.png",
+      "width": 50,
+      "height": 50,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1125,
+        "y": 345,
+        "width": 49,
+        "height": 47
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 2,
+        "sourceWidth": 50,
+        "sourceHeight": 50
+      }
+    },
+    {
+      "index": 106,
+      "start": 15979,
+      "type": 0,
+      "id": "v08evvv1a7",
+      "name": "fragment_icon.png",
+      "width": 37,
+      "height": 40,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 212,
+        "y": 452,
+        "width": 37,
+        "height": 40
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 37,
+        "sourceHeight": 40
+      }
+    },
+    {
+      "index": 107,
+      "start": 16058,
+      "type": 0,
+      "id": "sgdf8e",
+      "name": "gj_icon.png",
+      "width": 39,
+      "height": 48,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1398,
+        "y": 383,
+        "width": 39,
+        "height": 48
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 39,
+        "sourceHeight": 48
+      }
+    },
+    {
+      "index": 108,
+      "start": 16127,
+      "type": 0,
+      "id": "a59010",
+      "name": "guaiwutubiao.png",
+      "width": 47,
+      "height": 37,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 319,
+        "y": 452,
+        "width": 47,
+        "height": 37
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 47,
+        "sourceHeight": 37
+      }
+    },
+    {
+      "index": 109,
+      "start": 16201,
+      "type": 0,
+      "id": "np6evvv1ch",
+      "name": "ongji_icon.png",
+      "width": 80,
+      "height": 80,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1203,
+        "y": 372,
+        "width": 60,
+        "height": 65
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 10,
+        "offsetY": 8,
+        "sourceWidth": 80,
+        "sourceHeight": 80
+      }
+    },
+    {
+      "index": 110,
+      "start": 16277,
+      "type": 0,
+      "id": "lt3tvvv1az",
+      "name": "suo2_tag.png",
+      "width": 28,
+      "height": 36,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 406,
+        "y": 452,
+        "width": 28,
+        "height": 36
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 28,
+        "sourceHeight": 36
+      }
+    },
+    {
+      "index": 111,
+      "start": 16351,
+      "type": 0,
+      "id": "t642vvv19e",
+      "name": "suo_icon.png",
+      "width": 130,
+      "height": 130,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 332,
+        "y": 320,
+        "width": 104,
+        "height": 130
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 13,
+        "offsetY": 0,
+        "sourceWidth": 130,
+        "sourceHeight": 130
+      }
+    },
+    {
+      "index": 112,
+      "start": 16425,
+      "type": 0,
+      "id": "t642vvv19f",
+      "name": "th_icon.png",
+      "width": 32,
+      "height": 32,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1439,
+        "y": 400,
+        "width": 32,
+        "height": 32
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 32,
+        "sourceHeight": 32
+      }
+    },
+    {
+      "index": 113,
+      "start": 16498,
+      "type": 0,
+      "id": "lt3tvvv1b0",
+      "name": "x1_icon.png",
+      "width": 31,
+      "height": 32,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1473,
+        "y": 400,
+        "width": 31,
+        "height": 32
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 31,
+        "sourceHeight": 32
+      }
+    },
+    {
+      "index": 114,
+      "start": 16571,
+      "type": 0,
+      "id": "lt3tvvv1b1",
+      "name": "x2_icon.png",
+      "width": 31,
+      "height": 32,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1424,
+        "y": 434,
+        "width": 31,
+        "height": 32
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 31,
+        "sourceHeight": 32
+      }
+    },
+    {
+      "index": 115,
+      "start": 16644,
+      "type": 0,
+      "id": "sgdfvvv1aj",
+      "name": "xl_icon.png",
+      "width": 32,
+      "height": 27,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1133,
+        "y": 464,
+        "width": 32,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 32,
+        "sourceHeight": 27
+      }
+    },
+    {
+      "index": 116,
+      "start": 16717,
+      "type": 0,
+      "id": "sgdf8f",
+      "name": "xlv_icon.png",
+      "width": 35,
+      "height": 35,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1299,
+        "y": 440,
+        "width": 35,
+        "height": 35
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 35,
+        "sourceHeight": 35
+      }
+    },
+    {
+      "index": 117,
+      "start": 16787,
+      "type": 0,
+      "id": "sgdf8g",
+      "name": "yx_con.png",
+      "width": 33,
+      "height": 35,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1467,
+        "y": 109,
+        "width": 33,
+        "height": 35
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 33,
+        "sourceHeight": 35
+      }
+    },
+    {
+      "index": 118,
+      "start": 16855,
+      "type": 0,
+      "id": "jsbqvvv1ce",
+      "name": "zjtj_icon.png",
+      "width": 80,
+      "height": 80,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1186,
+        "y": 297,
+        "width": 77,
+        "height": 73
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 2,
+        "offsetY": 4,
+        "sourceWidth": 80,
+        "sourceHeight": 80
+      }
+    },
+    {
+      "index": 119,
+      "start": 16930,
+      "type": 0,
+      "id": "q8xpvvv1b7",
+      "name": "battleImage_shadow_big.png",
+      "width": 193,
+      "height": 69,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 942,
+        "y": 1,
+        "width": 193,
+        "height": 69
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 193,
+        "sourceHeight": 69
+      }
+    },
+    {
+      "index": 120,
+      "start": 17018,
+      "type": 0,
+      "id": "q8xpvvv1b8",
+      "name": "battleImage_shadow_small.png",
+      "width": 57,
+      "height": 21,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "comm_0.png",
+      "rect": {
+        "x": 1078,
+        "y": 72,
+        "width": 57,
+        "height": 21
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 57,
+        "sourceHeight": 21
+      }
+    }
+  ],
+  "components": [
+    {
+      "index": 0,
+      "start": 18,
+      "type": 3,
+      "id": "jmeivvv18o",
+      "name": "ViewContainer",
+      "width": 750,
+      "height": 1334,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 61,
+      "rawLength": 13,
+      "layout": {
+        "header": {
+          "value0": 0,
+          "value1": 0,
+          "value2": 0,
+          "childCount": 0
+        },
+        "children": [],
+        "parsedBytes": 8,
+        "rawBytes": 13,
+        "trailingBytes": 5
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 1,
+      "start": 74,
+      "type": 3,
+      "id": "8bpgvvv18q",
+      "name": "EmptyBtn",
+      "width": 200,
+      "height": 200,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 112,
+      "rawLength": 13,
+      "layout": {
+        "header": {
+          "value0": 0,
+          "value1": 0,
+          "value2": 0,
+          "childCount": 0
+        },
+        "children": [],
+        "parsedBytes": 8,
+        "rawBytes": 13,
+        "trailingBytes": 5
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 2,
+      "start": 125,
+      "type": 3,
+      "id": "t1rpvvv18r",
+      "name": "Node",
+      "width": 1,
+      "height": 1,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 159,
+      "rawLength": 13,
+      "layout": {
+        "header": {
+          "value0": 0,
+          "value1": 0,
+          "value2": 0,
+          "childCount": 0
+        },
+        "children": [],
+        "parsedBytes": 8,
+        "rawBytes": 13,
+        "trailingBytes": 5
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 3,
+      "start": 172,
+      "type": 3,
+      "id": "i661vvv18s",
+      "name": "AnimNode",
+      "width": 1,
+      "height": 1,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 210,
+      "rawLength": 100,
+      "layout": {
+        "parseError": "out of bounds at 230 + 256"
+      },
+      "scannedChildren": [
+        {
+          "start": 228,
+          "end": 285,
+          "objectType": 1,
+          "sourceId": "n1_y4j7",
+          "sourcePackageId": "anim",
+          "sourceName": null,
+          "constructed": false,
+          "instanceId": "",
+          "name": "",
+          "x": 1,
+          "y": 1,
+          "width": null,
+          "height": null,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": {
+            "x": 0,
+            "y": 1
+          },
+          "pivot": null,
+          "alpha": 1.401298464324817e-45,
+          "rotation": 2.350988701644575e-38,
+          "visible": false,
+          "touchable": false,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "start": 310,
+      "type": 3,
+      "id": "i661vvv18t",
+      "name": "ModelNode",
+      "width": 1,
+      "height": 1,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 349,
+      "rawLength": 22,
+      "layout": {
+        "parseError": "out of bounds at 369 + 4"
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 5,
+      "start": 371,
+      "type": 3,
+      "id": "i661vvv18u",
+      "name": "VideoNode",
+      "width": 1,
+      "height": 1,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 410,
+      "rawLength": 22,
+      "layout": {
+        "parseError": "out of bounds at 430 + 4"
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 6,
+      "start": 432,
+      "type": 3,
+      "id": "t642vvv18z",
+      "name": "ItemFrame",
+      "width": 144,
+      "height": 144,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 471,
+      "rawLength": 549,
+      "layout": {
+        "parseError": "out of bounds at 773 + 28009"
+      },
+      "scannedChildren": [
+        {
+          "start": 670,
+          "end": 746,
+          "objectType": 0,
+          "sourceId": "v08evvv1a7",
+          "sourcePackageId": "",
+          "sourceName": "fragment_icon.png",
+          "constructed": true,
+          "instanceId": "n3_v08e",
+          "name": "iconFragment",
+          "x": 125,
+          "y": 20,
+          "width": 37,
+          "height": 40,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5,
+            "asAnchor": true
+          },
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 750,
+          "end": 835,
+          "objectType": 0,
+          "sourceId": "mieqvvv1cm",
+          "sourcePackageId": "",
+          "sourceName": "clsp_icon.png",
+          "constructed": true,
+          "instanceId": "n4_mieq",
+          "name": "iconFragment2",
+          "x": 125,
+          "y": 20,
+          "width": 46,
+          "height": 46,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5,
+            "asAnchor": true
+          },
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "start": 1020,
+      "type": 3,
+      "id": "t642vvv194",
+      "name": "BtnArrow",
+      "width": 46,
+      "height": 80,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 1058,
+      "rawLength": 99,
+      "layout": {
+        "parseError": "out of bounds at 1119 + 16256"
+      },
+      "scannedChildren": [
+        {
+          "start": 1075,
+          "end": 1132,
+          "objectType": 0,
+          "sourceId": "t642vvv191",
+          "sourcePackageId": "",
+          "sourceName": "fy_btn.png",
+          "constructed": false,
+          "instanceId": "n0_t642",
+          "name": "n1",
+          "x": 0,
+          "y": 0,
+          "width": 46,
+          "height": 80,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "start": 1157,
+      "type": 3,
+      "id": "t642vvv195",
+      "name": "BtnWithCost",
+      "width": 200,
+      "height": 128,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 1198,
+      "rawLength": 655,
+      "layout": {
+        "parseError": "out of bounds at 1796 + 255"
+      },
+      "scannedChildren": [
+        {
+          "start": 1240,
+          "end": 1310,
+          "objectType": 0,
+          "sourceId": "t642vvv192",
+          "sourcePackageId": "",
+          "sourceName": "green_btn.png",
+          "constructed": true,
+          "instanceId": "n1_t642",
+          "name": "bgGreen",
+          "x": 0,
+          "y": 0,
+          "width": 200,
+          "height": 128,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 1314,
+          "end": 1385,
+          "objectType": 0,
+          "sourceId": "t642vvv193",
+          "sourcePackageId": "",
+          "sourceName": "yellow_btn.png",
+          "constructed": true,
+          "instanceId": "n2_t642",
+          "name": "bgYellow",
+          "x": 0,
+          "y": 0,
+          "width": 200,
+          "height": 128,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "start": 1853,
+      "type": 3,
+      "id": "t642vvv199",
+      "name": "HeaderItem",
+      "width": 150,
+      "height": 40,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 1893,
+      "rawLength": 360,
+      "layout": {
+        "parseError": "out of bounds at 1911 + 1024"
+      },
+      "scannedChildren": [
+        {
+          "start": 1910,
+          "end": 1975,
+          "objectType": 0,
+          "sourceId": "t642vvv197",
+          "sourcePackageId": "",
+          "sourceName": "hbl_frame.png",
+          "constructed": true,
+          "instanceId": "n0_t642",
+          "name": "bg",
+          "x": 10,
+          "y": 0,
+          "width": 140,
+          "height": 40,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 2061,
+          "end": 2123,
+          "objectType": 0,
+          "sourceId": "t642vvv19d",
+          "sourcePackageId": "",
+          "sourceName": "jh_btn.png",
+          "constructed": true,
+          "instanceId": "n2_t642",
+          "name": "iconAdd",
+          "x": 10,
+          "y": 18,
+          "width": 32,
+          "height": 32,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "start": 2253,
+      "type": 3,
+      "id": "t642vvv19g",
+      "name": "RedDot",
+      "width": 32,
+      "height": 32,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 2289,
+      "rawLength": 157,
+      "layout": {
+        "parseError": "out of bounds at 2300 + 31088"
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 11,
+      "start": 2446,
+      "type": 3,
+      "id": "t642vvv19h",
+      "name": "BtnEnter",
+      "width": 106,
+      "height": 106,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 2484,
+      "rawLength": 276,
+      "layout": {
+        "parseError": "out of bounds at 2502 + 768"
+      },
+      "scannedChildren": [
+        {
+          "start": 2501,
+          "end": 2558,
+          "objectType": 0,
+          "sourceId": "t642vvv19a",
+          "sourcePackageId": "",
+          "sourceName": "cl_frame.png",
+          "constructed": true,
+          "instanceId": "n5_de55",
+          "name": "bg",
+          "x": 0,
+          "y": 0,
+          "width": 106,
+          "height": 106,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "start": 2760,
+      "type": 3,
+      "id": "jncgvvv19p",
+      "name": "BtnGreen",
+      "width": 318,
+      "height": 128,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 2798,
+      "rawLength": 252,
+      "layout": {
+        "parseError": "out of bounds at 2816 + 512"
+      },
+      "scannedChildren": [
+        {
+          "start": 2815,
+          "end": 2880,
+          "objectType": 0,
+          "sourceId": "t642vvv192",
+          "sourcePackageId": "",
+          "sourceName": "green_btn.png",
+          "constructed": true,
+          "instanceId": "n6_c627",
+          "name": "bg",
+          "x": 0,
+          "y": 0,
+          "width": 318,
+          "height": 128,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "start": 3050,
+      "type": 3,
+      "id": "jncgvvv19q",
+      "name": "BtnBule",
+      "width": 318,
+      "height": 128,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 3087,
+      "rawLength": 251,
+      "layout": {
+        "parseError": "out of bounds at 3105 + 512"
+      },
+      "scannedChildren": [
+        {
+          "start": 3104,
+          "end": 3169,
+          "objectType": 0,
+          "sourceId": "jncgvvv19l",
+          "sourcePackageId": "",
+          "sourceName": "blue_btn.png",
+          "constructed": true,
+          "instanceId": "n6_c627",
+          "name": "bg",
+          "x": 0,
+          "y": 0,
+          "width": 318,
+          "height": 128,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "start": 3338,
+      "type": 3,
+      "id": "jncgvvv19r",
+      "name": "BtnYellow",
+      "width": 318,
+      "height": 128,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 3377,
+      "rawLength": 253,
+      "layout": {
+        "parseError": "out of bounds at 3395 + 512"
+      },
+      "scannedChildren": [
+        {
+          "start": 3394,
+          "end": 3459,
+          "objectType": 0,
+          "sourceId": "t642vvv193",
+          "sourcePackageId": "",
+          "sourceName": "yellow_btn.png",
+          "constructed": true,
+          "instanceId": "n6_c627",
+          "name": "bg",
+          "x": 0,
+          "y": 0,
+          "width": 318,
+          "height": 128,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "start": 3630,
+      "type": 3,
+      "id": "jncgvvv19s",
+      "name": "BtnBuleOnlyIcon",
+      "width": 138,
+      "height": 128,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 3675,
+      "rawLength": 201,
+      "layout": {
+        "parseError": "out of bounds at 3693 + 512"
+      },
+      "scannedChildren": [
+        {
+          "start": 3692,
+          "end": 3757,
+          "objectType": 0,
+          "sourceId": "jncgvvv19l",
+          "sourcePackageId": "",
+          "sourceName": "blue_btn.png",
+          "constructed": true,
+          "instanceId": "n6_c627",
+          "name": "bg",
+          "x": 0,
+          "y": 0,
+          "width": 138,
+          "height": 128,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "start": 3876,
+      "type": 3,
+      "id": "jncgvvv1a4",
+      "name": "BtnBuleWithIcon",
+      "width": 318,
+      "height": 128,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 3921,
+      "rawLength": 413,
+      "layout": {
+        "parseError": "out of bounds at 3939 + 1024"
+      },
+      "scannedChildren": [
+        {
+          "start": 3938,
+          "end": 4003,
+          "objectType": 0,
+          "sourceId": "jncgvvv19l",
+          "sourcePackageId": "",
+          "sourceName": "blue_btn.png",
+          "constructed": true,
+          "instanceId": "n6_c627",
+          "name": "bg",
+          "x": 0,
+          "y": 0,
+          "width": 318,
+          "height": 128,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "start": 4334,
+      "type": 3,
+      "id": "jncgvvv1a5",
+      "name": "BtnGreenWithIcon",
+      "width": 318,
+      "height": 128,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 4380,
+      "rawLength": 416,
+      "layout": {
+        "parseError": "out of bounds at 4398 + 1024"
+      },
+      "scannedChildren": [
+        {
+          "start": 4397,
+          "end": 4462,
+          "objectType": 0,
+          "sourceId": "t642vvv192",
+          "sourcePackageId": "",
+          "sourceName": "green_btn.png",
+          "constructed": true,
+          "instanceId": "n6_c627",
+          "name": "bg",
+          "x": 0,
+          "y": 0,
+          "width": 318,
+          "height": 128,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "start": 4796,
+      "type": 3,
+      "id": "jncgvvv1a6",
+      "name": "BtnClose",
+      "width": 68,
+      "height": 68,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 4834,
+      "rawLength": 101,
+      "layout": {
+        "parseError": "out of bounds at 4852 + 256"
+      },
+      "scannedChildren": [
+        {
+          "start": 4851,
+          "end": 4910,
+          "objectType": 0,
+          "sourceId": "jncgvvv19m",
+          "sourcePackageId": "",
+          "sourceName": "gb_btn.png",
+          "constructed": false,
+          "instanceId": "n8_jncg",
+          "name": "icon",
+          "x": 0,
+          "y": 0,
+          "width": 68,
+          "height": 68,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "start": 4935,
+      "type": 3,
+      "id": "p2wdvvv1aa",
+      "name": "AttackerHpBar",
+      "width": 1,
+      "height": 1,
+      "extension": 14,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 4978,
+      "rawLength": 168,
+      "layout": {
+        "parseError": "out of bounds at 5059 + 2672"
+      },
+      "scannedChildren": [
+        {
+          "start": 4986,
+          "end": 5051,
+          "objectType": 0,
+          "sourceId": "p2wdvvv1a8",
+          "sourcePackageId": "",
+          "sourceName": "xtdi_frame.png",
+          "constructed": false,
+          "instanceId": "n0_lz8y",
+          "name": "n0",
+          "x": -25,
+          "y": -3,
+          "width": 52,
+          "height": 8,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 5055,
+          "end": 5121,
+          "objectType": 0,
+          "sourceId": "p2wdvvv1a9",
+          "sourcePackageId": "",
+          "sourceName": "yxxt_frame.png",
+          "constructed": true,
+          "instanceId": "n1_lz8y",
+          "name": "bar",
+          "x": -23,
+          "y": -1,
+          "width": 48,
+          "height": 4,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "start": 5146,
+      "type": 3,
+      "id": "p2wdvvv1ab",
+      "name": "DefenderHpBar",
+      "width": 1,
+      "height": 1,
+      "extension": 14,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 5189,
+      "rawLength": 168,
+      "layout": {
+        "parseError": "out of bounds at 5270 + 2672"
+      },
+      "scannedChildren": [
+        {
+          "start": 5197,
+          "end": 5262,
+          "objectType": 0,
+          "sourceId": "p2wdvvv1a8",
+          "sourcePackageId": "",
+          "sourceName": "xtdi_frame.png",
+          "constructed": false,
+          "instanceId": "n0_lz8y",
+          "name": "n0",
+          "x": -25,
+          "y": -3,
+          "width": 52,
+          "height": 8,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 5266,
+          "end": 5332,
+          "objectType": 0,
+          "sourceId": "p2wdvvv1a7",
+          "sourcePackageId": "",
+          "sourceName": "xgxt__frame.png",
+          "constructed": true,
+          "instanceId": "n1_lz8y",
+          "name": "bar",
+          "x": -23,
+          "y": -1,
+          "width": 48,
+          "height": 4,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "start": 5357,
+      "type": 3,
+      "id": "y6f8vvv1ac",
+      "name": "BtnIconSize",
+      "width": 72,
+      "height": 72,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 5398,
+      "rawLength": 234,
+      "layout": {
+        "parseError": "out of bounds at 5416 + 516"
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 22,
+      "start": 5632,
+      "type": 3,
+      "id": "sgdfvvv1au",
+      "name": "BtnYellowOnlyIcon",
+      "width": 138,
+      "height": 128,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 5679,
+      "rawLength": 201,
+      "layout": {
+        "parseError": "out of bounds at 5697 + 512"
+      },
+      "scannedChildren": [
+        {
+          "start": 5696,
+          "end": 5761,
+          "objectType": 0,
+          "sourceId": "t642vvv193",
+          "sourcePackageId": "",
+          "sourceName": "yellow_btn.png",
+          "constructed": true,
+          "instanceId": "n6_c627",
+          "name": "bg",
+          "x": 0,
+          "y": 0,
+          "width": 138,
+          "height": 128,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "start": 5880,
+      "type": 3,
+      "id": "lt3tvvv1b2",
+      "name": "StarList",
+      "width": 248,
+      "height": 32,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 5918,
+      "rawLength": 143,
+      "layout": {
+        "parseError": "out of bounds at 5929 + 256"
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 24,
+      "start": 6061,
+      "type": 3,
+      "id": "lt3tvvv1b3",
+      "name": "StarItem",
+      "width": 31,
+      "height": 32,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 6099,
+      "rawLength": 184,
+      "layout": {
+        "parseError": "out of bounds at 6110 + 29817"
+      },
+      "scannedChildren": [
+        {
+          "start": 6132,
+          "end": 6189,
+          "objectType": 0,
+          "sourceId": "lt3tvvv1b1",
+          "sourcePackageId": "",
+          "sourceName": "x2_icon.png",
+          "constructed": false,
+          "instanceId": "n0_lt3t",
+          "name": "n0",
+          "x": 0,
+          "y": 0,
+          "width": 31,
+          "height": 32,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 6193,
+          "end": 6250,
+          "objectType": 0,
+          "sourceId": "lt3tvvv1b0",
+          "sourcePackageId": "",
+          "sourceName": "x1_icon.png",
+          "constructed": false,
+          "instanceId": "n1_lt3t",
+          "name": "n1",
+          "x": 0,
+          "y": 0,
+          "width": 31,
+          "height": 32,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "start": 6283,
+      "type": 3,
+      "id": "iatdvvv1b4",
+      "name": "BossHpBar",
+      "width": 1,
+      "height": 1,
+      "extension": 14,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 6322,
+      "rawLength": 233,
+      "layout": {
+        "parseError": "out of bounds at 6403 + 2672"
+      },
+      "scannedChildren": [
+        {
+          "start": 6330,
+          "end": 6395,
+          "objectType": 0,
+          "sourceId": "iatdvvv1b5",
+          "sourcePackageId": "",
+          "sourceName": "bossxtdi_frame.png",
+          "constructed": false,
+          "instanceId": "n0_lz8y",
+          "name": "n0",
+          "x": -34,
+          "y": -10,
+          "width": 77,
+          "height": 22,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 6399,
+          "end": 6465,
+          "objectType": 0,
+          "sourceId": "p2wdvvv1a7",
+          "sourcePackageId": "",
+          "sourceName": "xgxt__frame.png",
+          "constructed": true,
+          "instanceId": "n1_lz8y",
+          "name": "bar",
+          "x": -29,
+          "y": -5,
+          "width": 67,
+          "height": 12,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 6475,
+          "end": 6532,
+          "objectType": 0,
+          "sourceId": "iatdvvv1b6",
+          "sourcePackageId": "",
+          "sourceName": "boss.png",
+          "constructed": false,
+          "instanceId": "n3_iatd",
+          "name": "n3",
+          "x": -63,
+          "y": -25,
+          "width": 42,
+          "height": 42,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "start": 6555,
+      "type": 3,
+      "id": "q8xpvvv1b9",
+      "name": "BattleShadowBigComp",
+      "width": 0,
+      "height": 0,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 6604,
+      "rawLength": 79,
+      "layout": {
+        "header": {
+          "value0": 0,
+          "value1": 0,
+          "value2": 0,
+          "childCount": 1
+        },
+        "children": [
+          {
+            "start": 6612,
+            "end": 6670,
+            "objectType": 0,
+            "sourceId": "q8xpvvv1b7",
+            "sourcePackageId": "",
+            "sourceName": "battleImage_shadow_big.png",
+            "constructed": true,
+            "instanceId": "n0_jy2z",
+            "name": "img",
+            "x": -97,
+            "y": -34,
+            "width": 193,
+            "height": 69,
+            "explicitSize": false,
+            "minMax": null,
+            "scale": null,
+            "skew": null,
+            "pivot": null,
+            "alpha": 1,
+            "rotation": 0,
+            "visible": true,
+            "touchable": true,
+            "grayed": false,
+            "blendMode": 0,
+            "filter": 0,
+            "data": ""
+          }
+        ],
+        "parsedBytes": 66,
+        "rawBytes": 79,
+        "trailingBytes": 13
+      },
+      "scannedChildren": [
+        {
+          "start": 6612,
+          "end": 6670,
+          "objectType": 0,
+          "sourceId": "q8xpvvv1b7",
+          "sourcePackageId": "",
+          "sourceName": "battleImage_shadow_big.png",
+          "constructed": true,
+          "instanceId": "n0_jy2z",
+          "name": "img",
+          "x": -97,
+          "y": -34,
+          "width": 193,
+          "height": 69,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "start": 6683,
+      "type": 3,
+      "id": "q8xpvvv1ba",
+      "name": "BattleShadowSmallComp",
+      "width": 0,
+      "height": 0,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 6734,
+      "rawLength": 79,
+      "layout": {
+        "header": {
+          "value0": 0,
+          "value1": 0,
+          "value2": 0,
+          "childCount": 1
+        },
+        "children": [
+          {
+            "start": 6742,
+            "end": 6800,
+            "objectType": 0,
+            "sourceId": "q8xpvvv1b8",
+            "sourcePackageId": "",
+            "sourceName": "battleImage_shadow_small.png",
+            "constructed": true,
+            "instanceId": "n0_jy2z",
+            "name": "img",
+            "x": -29,
+            "y": -11,
+            "width": 57,
+            "height": 21,
+            "explicitSize": false,
+            "minMax": null,
+            "scale": null,
+            "skew": null,
+            "pivot": null,
+            "alpha": 1,
+            "rotation": 0,
+            "visible": true,
+            "touchable": true,
+            "grayed": false,
+            "blendMode": 0,
+            "filter": 0,
+            "data": ""
+          }
+        ],
+        "parsedBytes": 66,
+        "rawBytes": 79,
+        "trailingBytes": 13
+      },
+      "scannedChildren": [
+        {
+          "start": 6742,
+          "end": 6800,
+          "objectType": 0,
+          "sourceId": "q8xpvvv1b8",
+          "sourcePackageId": "",
+          "sourceName": "battleImage_shadow_small.png",
+          "constructed": true,
+          "instanceId": "n0_jy2z",
+          "name": "img",
+          "x": -29,
+          "y": -11,
+          "width": 57,
+          "height": 21,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "start": 6813,
+      "type": 3,
+      "id": "mzievvv1bh",
+      "name": "LoadingView",
+      "width": 750,
+      "height": 1334,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 6854,
+      "rawLength": 183,
+      "layout": {
+        "header": {
+          "value0": 0,
+          "value1": 0,
+          "value2": 0,
+          "childCount": 2
+        },
+        "children": [
+          {
+            "start": 6862,
+            "end": 6925,
+            "objectType": 9,
+            "sourceId": "mzievvv1bi",
+            "sourcePackageId": "",
+            "sourceName": "LoadingMask",
+            "constructed": true,
+            "instanceId": "n0_mzie",
+            "name": "maskComp",
+            "x": 0,
+            "y": 0,
+            "width": 750,
+            "height": 1334,
+            "explicitSize": false,
+            "minMax": null,
+            "scale": null,
+            "skew": null,
+            "pivot": null,
+            "alpha": 1,
+            "rotation": 0,
+            "visible": true,
+            "touchable": true,
+            "grayed": false,
+            "blendMode": 0,
+            "filter": 0,
+            "data": ""
+          },
+          {
+            "start": 6925,
+            "end": 7002,
+            "objectType": 9,
+            "sourceId": "ige4vvv1bl",
+            "sourcePackageId": "",
+            "sourceName": "LoadingWheel",
+            "constructed": true,
+            "instanceId": "n2_ige4",
+            "name": "wheel",
+            "x": 374,
+            "y": 667,
+            "width": 167,
+            "height": 190,
+            "explicitSize": false,
+            "minMax": null,
+            "scale": {
+              "x": 1.5,
+              "y": 1.5
+            },
+            "skew": null,
+            "pivot": {
+              "x": 0.5,
+              "y": 0.5,
+              "asAnchor": true
+            },
+            "alpha": 1,
+            "rotation": 0,
+            "visible": true,
+            "touchable": true,
+            "grayed": false,
+            "blendMode": 0,
+            "filter": 0,
+            "data": ""
+          }
+        ],
+        "parsedBytes": 148,
+        "rawBytes": 183,
+        "trailingBytes": 35
+      },
+      "scannedChildren": [
+        {
+          "start": 6862,
+          "end": 6925,
+          "objectType": 9,
+          "sourceId": "mzievvv1bi",
+          "sourcePackageId": "",
+          "sourceName": "LoadingMask",
+          "constructed": true,
+          "instanceId": "n0_mzie",
+          "name": "maskComp",
+          "x": 0,
+          "y": 0,
+          "width": 750,
+          "height": 1334,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 6925,
+          "end": 7002,
+          "objectType": 9,
+          "sourceId": "ige4vvv1bl",
+          "sourcePackageId": "",
+          "sourceName": "LoadingWheel",
+          "constructed": true,
+          "instanceId": "n2_ige4",
+          "name": "wheel",
+          "x": 374,
+          "y": 667,
+          "width": 167,
+          "height": 190,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": {
+            "x": 1.5,
+            "y": 1.5
+          },
+          "skew": null,
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5,
+            "asAnchor": true
+          },
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "start": 7037,
+      "type": 3,
+      "id": "mzievvv1bi",
+      "name": "LoadingMask",
+      "width": 750,
+      "height": 1334,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 7078,
+      "rawLength": 184,
+      "layout": {
+        "parseError": "out of bounds at 7089 + 256"
+      },
+      "scannedChildren": [
+        {
+          "start": 7151,
+          "end": 7230,
+          "objectType": 0,
+          "sourceId": "mzievvv1bg",
+          "sourcePackageId": "",
+          "sourceName": "loading_mask.png",
+          "constructed": true,
+          "instanceId": "n0_mzie",
+          "name": "btnMask",
+          "x": 375,
+          "y": 667,
+          "width": 4000,
+          "height": 3070,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5,
+            "asAnchor": true
+          },
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "start": 7262,
+      "type": 3,
+      "id": "cmb3vvv1bj",
+      "name": "StreakNode",
+      "width": 1,
+      "height": 1,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 7302,
+      "rawLength": 13,
+      "layout": {
+        "header": {
+          "value0": 0,
+          "value1": 0,
+          "value2": 0,
+          "childCount": 0
+        },
+        "children": [],
+        "parsedBytes": 8,
+        "rawBytes": 13,
+        "trailingBytes": 5
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 31,
+      "start": 7315,
+      "type": 3,
+      "id": "hqj0vvv1bk",
+      "name": "TweenListContainer",
+      "width": 1,
+      "height": 1,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 7363,
+      "rawLength": 13,
+      "layout": {
+        "header": {
+          "value0": 0,
+          "value1": 0,
+          "value2": 0,
+          "childCount": 0
+        },
+        "children": [],
+        "parsedBytes": 8,
+        "rawBytes": 13,
+        "trailingBytes": 5
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 32,
+      "start": 7376,
+      "type": 3,
+      "id": "ige4vvv1bl",
+      "name": "LoadingWheel",
+      "width": 167,
+      "height": 190,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 7418,
+      "rawLength": 243,
+      "layout": {
+        "parseError": "out of bounds at 7491 + 2665"
+      },
+      "scannedChildren": [
+        {
+          "start": 7426,
+          "end": 7483,
+          "objectType": 0,
+          "sourceId": "ige4vvv1bm",
+          "sourcePackageId": "",
+          "sourceName": "zhijia.png",
+          "constructed": true,
+          "instanceId": "n3_a4d0",
+          "name": "bg",
+          "x": 2,
+          "y": 71,
+          "width": 165,
+          "height": 119,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 7487,
+          "end": 7556,
+          "objectType": 0,
+          "sourceId": "ige4vvv1bn",
+          "sourcePackageId": "",
+          "sourceName": "lunzi.png",
+          "constructed": true,
+          "instanceId": "n4_a4d0",
+          "name": "wheel",
+          "x": 83,
+          "y": 83,
+          "width": 167,
+          "height": 167,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5,
+            "asAnchor": true
+          },
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 7560,
+          "end": 7640,
+          "objectType": 9,
+          "sourceId": "i661vvv18t",
+          "sourcePackageId": "",
+          "sourceName": "ModelNode",
+          "constructed": true,
+          "instanceId": "n6_ige4",
+          "name": "modelNode",
+          "x": 83,
+          "y": 134,
+          "width": 1,
+          "height": 1,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": {
+            "x": 0.4000000059604645,
+            "y": 0.4000000059604645
+          },
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "start": 7661,
+      "type": 3,
+      "id": "mapsvvv1bo",
+      "name": "BtnYellowWithIcon",
+      "width": 318,
+      "height": 128,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 7708,
+      "rawLength": 417,
+      "layout": {
+        "parseError": "out of bounds at 7726 + 1024"
+      },
+      "scannedChildren": [
+        {
+          "start": 7725,
+          "end": 7790,
+          "objectType": 0,
+          "sourceId": "t642vvv193",
+          "sourcePackageId": "",
+          "sourceName": "yellow_btn.png",
+          "constructed": true,
+          "instanceId": "n6_c627",
+          "name": "bg",
+          "x": 0,
+          "y": 0,
+          "width": 318,
+          "height": 128,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "start": 8125,
+      "type": 3,
+      "id": "qozbvvv1by",
+      "name": "BtnPurple",
+      "width": 318,
+      "height": 128,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 8164,
+      "rawLength": 253,
+      "layout": {
+        "parseError": "out of bounds at 8182 + 512"
+      },
+      "scannedChildren": [
+        {
+          "start": 8181,
+          "end": 8246,
+          "objectType": 0,
+          "sourceId": "qozbvvv1bx",
+          "sourcePackageId": "",
+          "sourceName": "purple_btn.png",
+          "constructed": true,
+          "instanceId": "n6_c627",
+          "name": "bg",
+          "x": 0,
+          "y": 0,
+          "width": 318,
+          "height": 128,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "start": 8417,
+      "type": 3,
+      "id": "qozbvvv1bz",
+      "name": "BtnPurpleWithIcon",
+      "width": 318,
+      "height": 128,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 8464,
+      "rawLength": 417,
+      "layout": {
+        "parseError": "out of bounds at 8482 + 1024"
+      },
+      "scannedChildren": [
+        {
+          "start": 8481,
+          "end": 8546,
+          "objectType": 0,
+          "sourceId": "qozbvvv1bx",
+          "sourcePackageId": "",
+          "sourceName": "purple_btn.png",
+          "constructed": true,
+          "instanceId": "n6_c627",
+          "name": "bg",
+          "x": 0,
+          "y": 0,
+          "width": 318,
+          "height": 128,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "start": 8881,
+      "type": 3,
+      "id": "okr4vvv1c4",
+      "name": "BtnBack",
+      "width": 72,
+      "height": 72,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 8918,
+      "rawLength": 99,
+      "layout": {
+        "parseError": "out of bounds at 8979 + 16256"
+      },
+      "scannedChildren": [
+        {
+          "start": 8935,
+          "end": 8992,
+          "objectType": 0,
+          "sourceId": "okr4vvv1c3",
+          "sourcePackageId": "",
+          "sourceName": "back_btn.png",
+          "constructed": false,
+          "instanceId": "n1_okr4",
+          "name": "n1",
+          "x": 0,
+          "y": 0,
+          "width": 72,
+          "height": 72,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "start": 9017,
+      "type": 3,
+      "id": "okr4vvv1c5",
+      "name": "InstanceLogo",
+      "width": 750,
+      "height": 550,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 9059,
+      "rawLength": 151,
+      "layout": {
+        "header": {
+          "value0": 0,
+          "value1": 0,
+          "value2": 0,
+          "childCount": 2
+        },
+        "children": [
+          {
+            "start": 9067,
+            "end": 9128,
+            "objectType": 9,
+            "sourceId": "i661vvv18t",
+            "sourcePackageId": "",
+            "sourceName": "ModelNode",
+            "constructed": true,
+            "instanceId": "n58_h28q",
+            "name": "spine",
+            "x": 374,
+            "y": 469,
+            "width": 1,
+            "height": 1,
+            "explicitSize": false,
+            "minMax": null,
+            "scale": null,
+            "skew": null,
+            "pivot": null,
+            "alpha": 1,
+            "rotation": 0,
+            "visible": true,
+            "touchable": true,
+            "grayed": false,
+            "blendMode": 0,
+            "filter": 0,
+            "data": ""
+          },
+          {
+            "start": 9128,
+            "end": 9189,
+            "objectType": 9,
+            "sourceId": "ige4vvv1bl",
+            "sourcePackageId": "",
+            "sourceName": "LoadingWheel",
+            "constructed": true,
+            "instanceId": "n59_ige4",
+            "name": "wheel",
+            "x": 291,
+            "y": 200,
+            "width": 167,
+            "height": 190,
+            "explicitSize": false,
+            "minMax": null,
+            "scale": null,
+            "skew": null,
+            "pivot": null,
+            "alpha": 1,
+            "rotation": 0,
+            "visible": true,
+            "touchable": true,
+            "grayed": false,
+            "blendMode": 0,
+            "filter": 0,
+            "data": ""
+          }
+        ],
+        "parsedBytes": 130,
+        "rawBytes": 151,
+        "trailingBytes": 21
+      },
+      "scannedChildren": [
+        {
+          "start": 9067,
+          "end": 9128,
+          "objectType": 9,
+          "sourceId": "i661vvv18t",
+          "sourcePackageId": "",
+          "sourceName": "ModelNode",
+          "constructed": true,
+          "instanceId": "n58_h28q",
+          "name": "spine",
+          "x": 374,
+          "y": 469,
+          "width": 1,
+          "height": 1,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 9128,
+          "end": 9189,
+          "objectType": 9,
+          "sourceId": "ige4vvv1bl",
+          "sourcePackageId": "",
+          "sourceName": "LoadingWheel",
+          "constructed": true,
+          "instanceId": "n59_ige4",
+          "name": "wheel",
+          "x": 291,
+          "y": 200,
+          "width": 167,
+          "height": 190,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "start": 9210,
+      "type": 3,
+      "id": "okr4vvv1c6",
+      "name": "RewardBoxIcon",
+      "width": 120,
+      "height": 120,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 9253,
+      "rawLength": 179,
+      "layout": {
+        "parseError": "out of bounds at 9264 + 256"
+      },
+      "scannedChildren": [
+        {
+          "start": 9344,
+          "end": 9406,
+          "objectType": 9,
+          "sourceId": "t642vvv19g",
+          "sourcePackageId": "",
+          "sourceName": "RedDot",
+          "constructed": true,
+          "instanceId": "n23_djj9",
+          "name": "redDot",
+          "x": 85,
+          "y": 18,
+          "width": 32,
+          "height": 32,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "start": 9432,
+      "type": 3,
+      "id": "ufuivvv1c8",
+      "name": "BtnRule",
+      "width": 60,
+      "height": 60,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 9469,
+      "rawLength": 108,
+      "layout": {
+        "parseError": "out of bounds at 9530 + 16128"
+      },
+      "scannedChildren": [
+        {
+          "start": 9486,
+          "end": 9552,
+          "objectType": 0,
+          "sourceId": "ufuivvv1c7",
+          "sourcePackageId": "",
+          "sourceName": "gth_btn.png",
+          "constructed": false,
+          "instanceId": "n1_ufui",
+          "name": "n1",
+          "x": 30,
+          "y": 30,
+          "width": 52,
+          "height": 52,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": {
+            "x": 0.5,
+            "y": 0.5,
+            "asAnchor": true
+          },
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "start": 9577,
+      "type": 3,
+      "id": "jsbqvvv1c9",
+      "name": "UnlockTitle",
+      "width": 524,
+      "height": 83,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 9618,
+      "rawLength": 177,
+      "layout": {
+        "parseError": "out of bounds at 9697 + 14691"
+      },
+      "scannedChildren": [
+        {
+          "start": 9626,
+          "end": 9683,
+          "objectType": 0,
+          "sourceId": "jsbqvvv1ca",
+          "sourcePackageId": "",
+          "sourceName": "huangsepiaodai.png",
+          "constructed": false,
+          "instanceId": "n2_79c4",
+          "name": "n2",
+          "x": 0,
+          "y": 0,
+          "width": 524,
+          "height": 83,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "start": 9795,
+      "type": 3,
+      "id": "jsbqvvv1cb",
+      "name": "GearShapeItem",
+      "width": 58,
+      "height": 58,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 9838,
+      "rawLength": 176,
+      "layout": {
+        "parseError": "out of bounds at 9849 + 256"
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 42,
+      "start": 10014,
+      "type": 3,
+      "id": "np6evvv1cf",
+      "name": "BtnMenu",
+      "width": 80,
+      "height": 80,
+      "extension": 12,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 10051,
+      "rawLength": 280,
+      "layout": {
+        "parseError": "out of bounds at 10073 + 1902"
+      },
+      "scannedChildren": [
+        {
+          "start": 10235,
+          "end": 10296,
+          "objectType": 9,
+          "sourceId": "t642vvv19g",
+          "sourcePackageId": "",
+          "sourceName": "RedDot",
+          "constructed": true,
+          "instanceId": "n2_ecom",
+          "name": "redDot",
+          "x": 48,
+          "y": 0,
+          "width": 32,
+          "height": 32,
+          "explicitSize": false,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "start": 10331,
+      "type": 3,
+      "id": "uozbvvv1cj",
+      "name": "DefenderHomeHpBar",
+      "width": 1,
+      "height": 1,
+      "extension": 14,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 10378,
+      "rawLength": 168,
+      "layout": {
+        "parseError": "out of bounds at 10459 + 2672"
+      },
+      "scannedChildren": [
+        {
+          "start": 10386,
+          "end": 10451,
+          "objectType": 0,
+          "sourceId": "iatdvvv1b5",
+          "sourcePackageId": "",
+          "sourceName": "bossxtdi_frame.png",
+          "constructed": false,
+          "instanceId": "n0_lz8y",
+          "name": "n0",
+          "x": -34,
+          "y": -10,
+          "width": 77,
+          "height": 22,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        },
+        {
+          "start": 10455,
+          "end": 10521,
+          "objectType": 0,
+          "sourceId": "p2wdvvv1a7",
+          "sourcePackageId": "",
+          "sourceName": "xgxt__frame.png",
+          "constructed": true,
+          "instanceId": "n1_lz8y",
+          "name": "bar",
+          "x": -29,
+          "y": -5,
+          "width": 67,
+          "height": 12,
+          "explicitSize": true,
+          "minMax": null,
+          "scale": null,
+          "skew": null,
+          "pivot": null,
+          "alpha": 1,
+          "rotation": 0,
+          "visible": true,
+          "touchable": true,
+          "grayed": false,
+          "blendMode": 0,
+          "filter": 0,
+          "data": ""
+        }
+      ]
+    }
+  ]
+}

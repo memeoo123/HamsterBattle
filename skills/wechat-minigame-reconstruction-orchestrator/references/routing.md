@@ -10,6 +10,11 @@
 | `implementation` for Cocos | `$cocos-minigame-restorer` | `cocosProject` |
 | `validation` for Cocos | `$cocos-minigame-restorer` | `validationReport`, required checks |
 
+For a battle-heavy reconstruction, invoke `$wechat-minigame-battlefield-restorer` inside
+`restore-specification`, `implementation`, or `validation` to maintain subsystem evidence,
+implementation, deterministic-test, and matched-replay gates. The orchestration phase and
+primary artifact owner remain unchanged.
+
 ## Routing rules
 
 - If the user supplies an exact authorized package path and AppID/version, register the

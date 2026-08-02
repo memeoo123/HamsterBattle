@@ -1,0 +1,3 @@
+// Module: chunks:///_virtual/AttrEnum.ts
+// Dependencies: cc
+(function(t){var n;return 0,function(){var i;return 0,(i=HVn(HVn({},C,0),T,0))[C]=[function(t){n=t[M]}],i[T]=function(){n[E][R]({},j_,$_,void 0),t($_,function(t){return t["ATK"]=tS,t["HP"]=nS,t["ATK_BONUS"]=iS,t["HP_BONUS"]=rS,t["DOD_RATE"]=uS,t["HIT_RATE"]=oS,t["DOD_RES"]=sS,t["CRI_RATE"]=eS,t["CRI_DMG"]=hS,t["DMG_INC"]=cS,t["DMG_RES"]=aS,t["MOVE_SPD"]=fS,t["ATK_SPD"]=vS,t["ATK_INC"]=lS,t["HP_INC"]=dS,t["ATK_DEC"]=mS,t["HP_DEC"]=kS,t["LIFE_STEAL"]=_S,t["REFLECT_DMG"]=SS,t["HL_INC"]=gS,t["BOSS_DMG_INS"]=yS,t["HERO_DMG_RES"]=pS,t["TOWER_DMG_RES"]=IS,t["CDR"]=CS,t}({})),n[E][z]()},i}[H]()});

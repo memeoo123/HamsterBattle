@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "appId": "wxf9af2417e78ce07a",
+  "packageVersion": "18",
+  "fairyGuiPackage": {
+    "id": "38fa8c75",
+    "name": "comm",
+    "descriptorUuid": "01b05831-67f7-4b82-bce5-5af11e03d125",
+    "atlasUuid": "f30ddb08-81d9-43c6-94ff-79df1bb8eef3"
+  },
+  "files": [
+    {
+      "file": "comm.4d596.bin",
+      "sha256": "a2ff3633368c15d218ab50a76e880851cceae0632747379dd494aaaf327af03c"
+    },
+    {
+      "file": "comm_0.png",
+      "sha256": "96aaa6bc78a0992fada85ac1bd0c06f5f99befae1701603547719f392eba2d50"
+    },
+    {
+      "file": "comm.layout.json",
+      "sha256": "f2f7d0c58d456c3075d06ab81b3f1d66a28dfc39d918e36f2bf5b12bcfdb3e32"
+    }
+  ],
+  "parsedInventory": {
+    "declared": 121,
+    "components": 44,
+    "images": 77
+  },
+  "usage": [
+    "pause button",
+    "battle statistics icon",
+    "handbook icon",
+    "HeaderItem counter background",
+    "blue, green and yellow bottom buttons"
+  ],
+  "provenance": "Recovered from the authorized version-18 remote resources bundle using its Cocos config UUID and native-hash mappings; source files are preserved without modification."
+}

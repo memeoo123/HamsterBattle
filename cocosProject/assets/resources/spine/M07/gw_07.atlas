@@ -1,0 +1,90 @@
+
+gw_07.png
+size: 473,430
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+js_0
+  rotate: false
+  xy: 325, 291
+  size: 51, 40
+  orig: 51, 40
+  offset: 0, 0
+  index: -1
+js_1
+  rotate: false
+  xy: 364, 3
+  size: 92, 83
+  orig: 95, 93
+  offset: 0, 10
+  index: -1
+js_2
+  rotate: false
+  xy: 2, 60
+  size: 67, 23
+  orig: 67, 23
+  offset: 0, 0
+  index: -1
+js_22
+  rotate: false
+  xy: 325, 268
+  size: 53, 21
+  orig: 53, 21
+  offset: 0, 0
+  index: -1
+q1
+  rotate: false
+  xy: 245, 188
+  size: 98, 52
+  orig: 98, 60
+  offset: 0, 8
+  index: -1
+q11
+  rotate: false
+  xy: 245, 87
+  size: 226, 84
+  orig: 237, 84
+  offset: 11, 0
+  index: -1
+q13
+  rotate: false
+  xy: 2, 158
+  size: 241, 82
+  orig: 242, 82
+  offset: 1, 0
+  index: -1
+q16
+  rotate: false
+  xy: 2, 85
+  size: 198, 71
+  orig: 222, 72
+  offset: 24, 0
+  index: -1
+q3
+  rotate: false
+  xy: 202, 23
+  size: 160, 62
+  orig: 162, 68
+  offset: 2, 6
+  index: -1
+q5
+  rotate: true
+  xy: 395, 173
+  size: 255, 75
+  orig: 266, 82
+  offset: 11, 7
+  index: -1
+q7
+  rotate: false
+  xy: 2, 242
+  size: 321, 89
+  orig: 328, 92
+  offset: 7, 3
+  index: -1
+q9
+  rotate: false
+  xy: 2, 333
+  size: 391, 95
+  orig: 394, 96
+  offset: 3, 1
+  index: -1

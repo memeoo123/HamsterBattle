@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "1.0",
+  "capturedAt": "2026-08-02",
+  "source": "Cocos Creator 3.8.8 release web build captured through an isolated headless Chromium session",
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "packageVersion": "18",
+    "levelId": 1004,
+    "levelName": "荒漠沙地",
+    "designResolution": "750x1334"
+  },
+  "originalReference": "../../original/2026-08-01/manifest.json",
+  "matchedBaselineStatus": "partial",
+  "matchedBaselineReason": "Initial preparation anchors and phase geometry now align after normalizing the original screenshot to its 750x1334 game area. Exact cl1..cl5 cogs, shape panels for all static multi-cell footprints, operation background, backpack panel, open-grid frames, pause/statistics/handbook icons, currency/ticket icons, header counter backgrounds and three bottom buttons are recovered from original assets. The original TsangerYunHei W08 font and the decoded HUD/wave/button outline treatments are also active in the release capture. Original level-5 shape Spine assets and rotation rules are implemented, but the normal reconstruction flow cannot yet create a cross-family level-5 result for a matched capture. Battle was reached through real drag/start interaction and keeps the HUD/backpack visible, but the reference battle uses a developed 863-HP save while this capture starts from 500 HP with one random producer. A same-state trait-selection reconstruction has not yet been captured.",
+  "images": [
+    {
+      "file": "preparation-initial-original-font-outline.png",
+      "phase": "preparation",
+      "state": "initial-deal",
+      "resolution": "750x1334",
+      "sha256": "c26a22306351ccccf5a53d7463cc41b5f086542b92c07479f044f44330b6cc25",
+      "baselineUse": "partial-match",
+      "notes": "Fresh release-build capture with the byte-identical resources3 TsangerYunHei W08 default.ttf and decoded FairyGUI outline treatments: HUD counters #060500/2, wave text #0c0c0c/2 and bottom button titles #000000/3. This validates the visible preparation categories, not every unvisited popup text field. Random candidates remain an uncontrolled weighted draw."
+    },
+    {
+      "file": "preparation-initial-original-connectors.png",
+      "phase": "preparation",
+      "state": "initial-deal",
+      "resolution": "750x1334",
+      "sha256": "b304254ba755f5276d64e7b2c8d42932e1b29f0fbcc8acaf9ce85137d3302af3",
+      "baselineUse": "partial-match",
+      "notes": "Fresh release-build capture with two random L-shaped candidates directly validating the original panel2 atlas frame, level tint, centre and layer below the cl1 cogs. BagLikeShapeConfig also maps panel1/panel3/panel4 and all required rotations for the remaining static footprints."
+    },
+    {
+      "file": "preparation-initial-original-item-icons.png",
+      "phase": "preparation",
+      "state": "initial-deal",
+      "resolution": "750x1334",
+      "sha256": "e1d038473cb38e056a0b94329b6bf7a29e67e2917c2dba5ba0e1fdd8c0b43436",
+      "baselineUse": "partial-match",
+      "notes": "Fresh release-build capture with ItemConfig 5/4 runtime bindings restored as the exact dj0002_icon silver coin and dj0005_icon ad ticket SpriteFrames from resources3. The previous gray circle and text glyph substitutes are removed."
+    },
+    {
+      "file": "preparation-initial-original-common-ui.png",
+      "phase": "preparation",
+      "state": "initial-deal",
+      "resolution": "750x1334",
+      "sha256": "e5d5bd15ddc5f3814d0da30540d6d63beac813d96d55a3d7e659d15aea7b1579",
+      "baselineUse": "partial-match",
+      "notes": "Fresh release-build capture with the original comm atlas pause button, battle-statistics and handbook icons, HeaderItem 9-slice counter backgrounds, and blue/green/yellow bottom actions. Currency/ticket foreground icons remain temporary substitutes; random candidates are a valid uncontrolled weighted draw."
+    },
+    {
+      "file": "preparation-initial-original-panel-grid.png",
+      "phase": "preparation",
+      "state": "initial-deal",
+      "resolution": "750x1334",
+      "sha256": "7bc31ae60899b14891a3b2273b3f378a9705d5d83d897dfb824fc72d94798ea2",
+      "baselineUse": "partial-match",
+      "notes": "Fresh release-build capture using exact bagLike_0 operationBackground, backpackPanel and gezi2 9-slice records in addition to exact cl1 cogs. The asynchronous SpriteFrame size reset was corrected and the recovered 730x529 panel centre was validated. Candidate identities remain a valid uncontrolled weighted draw."
+    },
+    {
+      "file": "preparation-initial-original-gears.png",
+      "phase": "preparation",
+      "state": "initial-deal",
+      "resolution": "750x1334",
+      "sha256": "040f50267f0c1a09586f69b1b5259a9dccaafac65dc73a7ed5e966b2dcd6b45d",
+      "baselineUse": "partial-match",
+      "notes": "Valid release capture with exact recovered cl1 gear cogs. Backpack begins at design y=300, matching the cropped/scaled original. Candidate identities are intentionally random for challengeTimes=2 and are not a controlled match to the reference draw."
+    },
+    {
+      "file": "battle-wave-1-original-gears.png",
+      "phase": "battle",
+      "state": "wave-1-active-from-initial-run",
+      "resolution": "750x1334",
+      "sha256": "0a46ba333e7b384312c99e23430acce5b008a8efc94701e68b03c734d34a2082",
+      "baselineUse": "structural-only",
+      "notes": "Reached by dragging a candidate into the unlocked 3x3 area and tapping start. Confirms persistent top HUD/backpack, exact cl1 cog art, production progress and spawned units. It is not the same developed save as the original 863-HP battle reference."
+    }
+  ],
+  "excludedDiagnostics": [
+    {
+      "file": "trait-selection-hud-aligned.png",
+      "reason": "The initial 500-HP run reached defeat before the first trait threshold; this file is a failed capture attempt and is not trait-selection evidence."
+    },
+    {
+      "files": [
+        "preparation-initial.png",
+        "preparation-initial-hud.png",
+        "preparation-initial-hud-build.png",
+        "preparation-initial-hud-release.png",
+        "preparation-initial-hud-aligned.png",
+        "preparation-initial-hud-aligned-fresh.png",
+        "battle-wave-1-hud-aligned.png"
+      ],
+      "reason": "Earlier stale-preview, profiler-overlay, pre-offset, or invalid-browser-state diagnostics; retained for audit history but not used as the current baseline."
+    }
+  ],
+  "comparison": "visual-comparison.md"
+}

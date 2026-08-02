@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0",
+  "target": "wxf9af2417e78ce07a/18",
+  "level": {
+    "id": 1004,
+    "name": "荒漠沙地"
+  },
+  "remoteBundle": {
+    "name": "resources3",
+    "version": "cce0e",
+    "configUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/config.cce0e.json"
+  },
+  "assets": [
+    {
+      "logicalPath": "image/unpack/fightscene/fightscene_03",
+      "uuid": "d937c2a7-713a-4cb6-bc30-46995c595ae7",
+      "nativeVersion": "e7029",
+      "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/d9/d937c2a7-713a-4cb6-bc30-46995c595ae7.e7029.jpg",
+      "preservedFile": "fightscene_03.jpg",
+      "implementationFile": "../../../../../../../cocosProject/assets/resources/original/fightscene_03.jpg",
+      "sha256": "3d2d5d23b40d2fcffead0fce0a74697d68aa894a7fa0076e95075f785ab3650c"
+    },
+    {
+      "logicalPath": "spine/moster/gw_07/gw_07",
+      "kind": "spine-3.8-binary",
+      "files": [
+        {
+          "uuid": "af5ae1ba-2c75-4eae-a675-df53765d076f",
+          "nativeVersion": "1d3a5",
+          "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/af/af5ae1ba-2c75-4eae-a675-df53765d076f.1d3a5.bin",
+          "preservedFile": "gw_07.skel",
+          "sha256": "979e8f4ac48e404e6aec8ee86c0b1d7d69ec99961c04db8a446e607f4485ea4b"
+        },
+        {
+          "uuid": "b4a7fa09-3bf4-4210-b7c2-b43e99c5daa1",
+          "nativeVersion": "ee676",
+          "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/b4/b4a7fa09-3bf4-4210-b7c2-b43e99c5daa1.ee676.png",
+          "preservedFile": "gw_07.png",
+          "sha256": "64b701c7e575255dcb4335fe56db7704c57e0d793474450631135e0a7ed742c1"
+        },
+        {
+          "uuid": "cd38fbd7-1805-4e23-9893-bbc245f827d4",
+          "nativeVersion": "47feb",
+          "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/cd/cd38fbd7-1805-4e23-9893-bbc245f827d4.47feb.atlas",
+          "preservedFile": "gw_07.atlas",
+          "sha256": "8b74c057586f0b6ce27d90b3712c5df478f8058555de49d8198985e658aa67e9"
+        }
+      ],
+      "implementationDirectory": "../../../../../../../cocosProject/assets/resources/spine/M07",
+      "inspection": "Spine binary 3.8.99; runtime 3.8 compatible; animations attack/die/idle/move; atlas texture gw_07.png"
+    }
+  ]
+}

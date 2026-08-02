@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0",
+  "capturedAt": "2026-08-01",
+  "source": "user-supplied screenshots from repository capture/ directory",
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "packageVersion": "18",
+    "packageVersionAssociation": "supported-by-content-but-not-runtime-metadata-proven",
+    "levelId": 1004,
+    "levelName": "荒漠沙地",
+    "levelIdentificationConfidence": "high",
+    "identificationEvidence": [
+      "The screenshots show the desert battlefield used by fightscene_03.",
+      "The HUD shows 15 waves; level 1004 is the desert fightscene_03 chapter with 15 configured rounds.",
+      "The initial home HP is 500, matching TrunkInstanceConfig[1004].homeHp."
+    ]
+  },
+  "matchedBaselineStatus": "reference-only",
+  "matchedBaselineReason": "The reconstruction currently targets representative level 1001 at 750x1334, while these screenshots are original level 1004 at 808x1522 or 820x1542. They are valid original behavior references but are not a matched replay pair yet.",
+  "images": [
+    {
+      "file": "preparation-initial.png",
+      "sourceFile": "capture/8383ab15-3bef-4a82-b306-e1e7edf1e162.png",
+      "phase": "preparation",
+      "state": "initial-deal",
+      "resolution": "808x1522",
+      "sha256": "6102aaefd2d4c69900f47bb5f7fe849a3dd9c93ce3a30337d3639fa7ca7338a9"
+    },
+    {
+      "file": "preparation-developed.png",
+      "sourceFile": "capture/0a83dac0-7dbe-4970-b7a9-ea2fe431000e.png",
+      "phase": "preparation",
+      "state": "placed-gears-and-grid-reward",
+      "resolution": "820x1542",
+      "sha256": "4938d0a49301bb359ebfb1e40763a5835c295b29ab79c4eae2db93288731360b"
+    },
+    {
+      "file": "battle-wave-1.png",
+      "sourceFile": "capture/d296b32a-6b24-45ee-9568-ec12026783cd.png",
+      "phase": "battle",
+      "state": "wave-1-active",
+      "resolution": "820x1542",
+      "sha256": "3f4cd9f5e314c52c7090a363c9fc41e8641fd1448efdc281d1a6cf93a62a97d0"
+    },
+    {
+      "file": "trait-selection.png",
+      "sourceFile": "capture/dae230c1-d4d6-4203-b0eb-53dddb685632.png",
+      "phase": "trait-selection",
+      "state": "three-card-choice-overlay",
+      "resolution": "820x1542",
+      "sha256": "645b7e9f7a59e1003f7921a67231b9a3fded4709f060287f06e885bea3b9463a"
+    }
+  ]
+}

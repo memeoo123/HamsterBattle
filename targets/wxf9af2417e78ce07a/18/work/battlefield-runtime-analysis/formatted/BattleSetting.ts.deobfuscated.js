@@ -1,0 +1,31 @@
+// Module: chunks:///_virtual/BattleSetting.ts
+// Dependencies: cc, ./TableManager.ts, ./FightType.ts
+(function(t) {
+    var n, i, r;
+    return qWn && EVn && (c8 += Ohn, f8 += Gcn, d8 += r_n), qWn && bVn && (v8 += Eb), 
+    qWn && RVn && (v8 += "OT"), qWn && LVn && (d8 += "a"), qWn && LVn && (c8 += "g"), 
+    qWn = 0, function() {
+        var u;
+        return zWn && EVn && (f8 += BAn), zWn && bVn && (v8 += X0t, d8 += qI), zWn && LVn && (f8 += "NOT"), 
+        zWn && LVn && (f8 += "_", d8 += "ndleMa"), zWn && RVn && (v8 += "AL"), zWn && LVn && (f8 += "SHOW"), 
+        zWn = 0, (u = HVn(HVn({}, C, 0), T, 0))[C] = [ function(t) {
+            n = t[M];
+        }, function(t) {
+            i = t["TableManager"];
+        }, function(t) {
+            r = t["FightType"];
+        } ], u[T] = function() {
+            var u;
+            QWn && RVn && (d8 += "p"), QWn = 0, n[E][R]({}, h8, c8, void 0), t(a8, function(t) {
+                return t[t[""] = 0] = f8, t[t["T"] = 1] = v8, t[t["BOSS"] = d] = zC, t;
+            }({})), (u = t(w, function() {
+                var t;
+                return (t = function() {})["initByFightType"] = function(t) {
+                    this["playingMethod"] = t, this["_h"] = {}, this["_resultTriggerMap"] = {}, this["cfg"] = i["getDataById"](table["battle"]["BattleSettingConfig"], r[t]), 
+                    this["cfg"] || (this["cfg"] = i["getDataById"](table["battle"]["BattleSettingConfig"], WO));
+                }, t;
+            }()))["cfg"] = void 0, u["playingMethod"] = void 0, u["_h"] = void 0, u["_resultTriggerMap"] = void 0, 
+            n[E][z]();
+        }, u;
+    }[Q](this)[H]();
+});

@@ -1,0 +1,71 @@
+// Module: chunks:///_virtual/FruitBulletUnit.ts
+// Dependencies: ./rollupPluginModLoBabelHelpers.js, cc, ./PoolManager.ts, ./FruitEnums.ts, ./FruitUnitCreateData.ts, ./FruitMoveComp.ts, ./FruitSpriteUnit.ts
+(function(t) {
+    var n, i, r, u, o, s, e, h;
+    return VZn && EVn && (dCt += Yun), VZn && LVn && (ICt = "y"), VZn && LVn && (dCt += "i"), 
+    VZn = 0, function() {
+        var c;
+        return xZn && EVn && (dCt += T_n, ICt += mt), xZn && LVn && (ICt += "M"), xZn && LVn && (dCt += "sB"), 
+        xZn = 0, (c = HVn(HVn({}, C, 0), T, 0))[C] = [ function(t) {
+            n = t[A];
+        }, function(t) {
+            i = t[M], r = t["Vec2"];
+        }, function(t) {
+            u = t["PoolManager"];
+        }, function(t) {
+            o = t["FruitUnitType"];
+        }, function(t) {
+            s = t["FruitBulletCreateData"];
+        }, function(t) {
+            e = t["FruitMoveComp"];
+        }, function(t) {
+            h = t["FruitSpriteUnit"];
+        } ], c[T] = function() {
+            OZn && RVn && (ICt += "ax"), OZn && LVn && (dCt += "ack"), OZn = 0, i[E][R]({}, aCt, fCt, void 0), 
+            t(fCt, function(t) {
+                var i, h;
+                return h = function() {
+                    for (var n, i, r = (n = arguments)["length"], u = new Array(r), o = 0; o < r; o++) u[o] = n[o];
+                    return (i = t["call"][H](t, [ this ]["concat"](u)) || this)["_splitAngle"] = ga, 
+                    i["curTargetId"] = 0, i["_"] = !1, i;
+                }, n(h, t), (i = h[U])["initData"] = function(t) {
+                    var n;
+                    this["curTargetId"] = 0, this["_"] = !1, (n = this["addComp"](e))["setDirection"](t["vectorX"], t["vectorY"]), 
+                    n["speed"] = t["speed"];
+                }, i["onPositionChange"] = function() {
+                    t[U]["onPositionChange"]["call"](this);
+                }, i["onVectorChange"] = function() {
+                    var n;
+                    t[U]["onVectorChange"]["call"](this), (n = this["getComp"](e)) && n["setDirection"](this["vectorX"], this["vectorY"]);
+                }, i["onRemove"] = function() {
+                    t[U]["onRemove"]["call"](this);
+                }, i["onUpdate"] = function(n) {
+                    t[U]["onUpdate"]["call"](this, n), 0 == this["back"]() && (this["_rect"]["xMin"] > this["_world"]["width"] || this["_rect"]["xMax"] < 0 || this["_rect"]["yMin"] > this["_world"]["height"] || this["_rect"][1] < 0 ? 0 == this["_"] && this["remove"]() : this["_"] = !1);
+                }, i["back"] = function() {
+                    var t;
+                    return 0 < (t = this["_data"])["backTimes"] && (this["_rect"]["x"] <= 0 && this["_vectorX"] < 0 || this["_rect"]["x"] >= this["_world"]["width"] && 0 < this["_vectorX"] ? (t["backTimes"]--, 
+                    this["_"] = !0, this["setVector"](-this["_vectorX"], this["_vectorY"])) : (this["_rect"]["y"] >= this["_world"]["height"] && 0 < this["_vectorY"] || this["_rect"]["y"] <= 0 && this["_vectorY"] < 0) && (t["backTimes"]--, 
+                    this["_"] = !0, this["setVector"](this["_vectorX"], -this["_vectorY"])), !0);
+                }, i["getAngleByVector"] = function(t, n) {
+                    return this["_tempVec"]["set"](t, n), Dw * -this["_tempVec"]["signAngle"](r["UNIT_Y"]) / Math["PI"];
+                }, i["rotateVector"] = function(t, n, i) {
+                    var r, u, o, s, e;
+                    r = n * Math["PI"] / Dw, o = Math["cos"](r), u = Math["sin"](r), e = t["x"] * o - t["y"] * u, 
+                    s = t["x"] * u + t["y"] * o, i["set"](e, s);
+                }, i["onHit"] = function() {
+                    var t;
+                    if (0 < (t = this["_data"])["splitTimes"] && 0 < t["splitCnt"]) {
+                        t["splitTimes"]--;
+                        for (var n = this["getComp"](e), i = (t["splitCnt"] - 1) * this["_splitAngle"] / d, h = 0; h < t["splitCnt"]; h++) this["rotateVector"](n["velocity"], i, this["_tempVec"]), 
+                        this["_tempVec"]["normalize"](), u["getItem"](s)["copyFrom"](t), t["vectorX"] = this["_tempVec"]["x"], 
+                        t["vectorY"] = this["_tempVec"]["y"], r["scaleAndAdd"](this["_tempVec"], this["_tempVec"], this["_tempVec"], t["height"]), 
+                        t["x"] = this["_tempVec"]["x"] + this["x"], t["y"] = this["_tempVec"]["y"] + this["y"], 
+                        this["_world"]["addUnit"](o["Bullet"], t)["curTargetId"] = this["curTargetId"], 
+                        i -= this["_splitAngle"];
+                        this["remove"]();
+                    } else 0 < t["passTimes"] ? t["passTimes"]-- : this["remove"]();
+                }, h;
+            }(h)), i[E][z]();
+        }, c;
+    }[Q](this)[H]();
+});

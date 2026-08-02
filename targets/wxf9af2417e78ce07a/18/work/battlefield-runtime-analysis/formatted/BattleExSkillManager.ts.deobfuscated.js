@@ -1,0 +1,52 @@
+(function(t) {
+    var n, i, r, u, o;
+    return 0, function() {
+        var s;
+        return 0, (s = HVn(HVn({}, C, 0), T, 0))[C] = [ function(t) {
+            n = t[A];
+        }, function(t) {
+            i = t[M];
+        }, function(t) {
+            r = t[w];
+        }, function(t) {
+            u = t["TableManager"];
+        }, function(t) {
+            o = t["MonsterType"];
+        } ], s[T] = function() {
+            0, i[E][R]({}, g$, iQ, void 0), t(iQ, function(t) {
+                var i, r;
+                return r = function() {
+                    for (var n, i, r = (n = arguments)["length"], u = new Array(r), o = 0; o < r; o++) u[o] = n[o];
+                    return (i = t["call"][H](t, [ this ]["concat"](u)) || this)["_exchangeSkill"] = void 0, 
+                    i["_addSkill"] = void 0, i["_addMonsterSkill"] = void 0, i;
+                }, n(r, t), (i = r[U])["init"] = function() {
+                    this["_exchangeSkill"] = {}, this["_addSkill"] = {}, this["_addMonsterSkill"] = {};
+                }, i["exChangeSkill"] = function(t) {
+                    for (var n = 0; n < t["length"]; n++) {
+                        var i;
+                        i = u["getDataById"](table["battle"]["SkillConfig"], t[n]), this["_exchangeSkill"][i["group"]] && (t[n] = this["_exchangeSkill"][i["group"]]);
+                    }
+                }, i["getSkills"] = function(t, n) {
+                    var i, r;
+                    return r = u["getDataById"](table["baglike"]["BagLikeItemConfig"], n), i = []["concat"](r["skill0"]), 
+                    this["_addSkill"][t] && i[R][H](i, this["_addSkill"][t]), this["exChangeSkill"](i), 
+                    i;
+                }, i["addSkill"] = function(t, n) {
+                    this["_addSkill"][t] || (this["_addSkill"][t] = []), this["_addSkill"][t][R](n);
+                }, i["setExchangeSkill"] = function(t) {
+                    var n;
+                    n = u["getDataById"](table["battle"]["SkillConfig"], t), this["_exchangeSkill"][n["group"]] = t;
+                }, i["addMonsterSkill"] = function(t, n) {
+                    this["_addMonsterSkill"][t] || (this["_addMonsterSkill"][t] = []), this["_addMonsterSkill"][t][R](n);
+                }, i["getMonsterSkills"] = function(t) {
+                    var n, i;
+                    return i = [], (n = u["getDataById"](table["monster"]["MonsterAttributeConfig"], t)) && (i[R][H](i, n["skillIds"]), 
+                    this["_addMonsterSkill"][o["Monster"]] && i[R][H](i, this["_addMonsterSkill"][o["Monster"]]), 
+                    n["monsterType"] == o["Elite"] && this["_addMonsterSkill"][o["Elite"]] && i[R][H](i, this["_addMonsterSkill"][o["Elite"]]), 
+                    n["monsterType"] == o["Boss"]) && this["_addMonsterSkill"][o["Boss"]] && i[R][H](i, this["_addMonsterSkill"][o["Boss"]]), 
+                    i;
+                }, r;
+            }(r)), i[E][z]();
+        }, s;
+    }[Q](this)[H]();
+});

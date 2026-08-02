@@ -1,0 +1,242 @@
+// Module: chunks:///_virtual/BuffManager.ts
+// Dependencies: ./rollupPluginModLoBabelHelpers.js, cc, ./BaseSingleton.ts, ./G.ts, ./PoolManager.ts, ./TableManager.ts, ./DamageVo.ts, ./GBattleIns.ts, ./BattleConstantConfig.ts, ./BattleEnum.ts, ./PassivitySkillUtils.ts, ./SkillBuffGroup.ts, ./SkillData.ts, ./SkillEnum.ts, ./SkillUtils.ts, ./BulletUnit.ts, ./BattleUnit.ts
+(function(t) {
+    var n, i, r, u, o, s, e, h, c, f, v, l, d, m, k, _, S, g;
+    return XYn && EVn && (iet += APt, Det += x$t), XYn && LVn && (Pst += "ffGro"), XYn && RVn && (Det += "tBuffGroupBy"), 
+    XYn = 0, function() {
+        var y;
+        return zYn && bVn && (Pst += EB), zYn && EVn && (Det += KSn), zYn && RVn && (Pst += "upUidInde"), 
+        zYn && LVn && (Det += "Flag"), zYn = 0, (y = HVn(HVn({}, C, 0), T, 0))[C] = [ function(t) {
+            n = t[A];
+        }, function(t) {
+            i = t[M];
+        }, function(t) {
+            r = t[w];
+        }, function(t) {
+            u = t[w];
+        }, function(t) {
+            o = t["PoolManager"];
+        }, function(t) {
+            s = t["TableManager"];
+        }, function(t) {
+            e = t["DamageVo"];
+        }, function(t) {
+            h = t[w];
+        }, function(t) {
+            c = t[w];
+        }, function(t) {
+            f = t["HurtNumType"];
+        }, function(t) {
+            v = t["PassivitySkillUtils"];
+        }, function(t) {
+            l = t["SkillBuffGroup"];
+        }, function(t) {
+            d = t["SkillData"];
+        }, function(t) {
+            m = t["BuffType"], k = t["PassivitySkillType"];
+        }, function(t) {
+            _ = t["SkillUtils"];
+        }, function(t) {
+            S = t["BulletUnit"];
+        }, function(t) {
+            g = t["BattleUnit"];
+        } ], y[T] = function() {
+            qYn && EVn && (iet += lvt), qYn && LVn && (iet += "("), qYn && LVn && (Pst += "x"), 
+            qYn = 0, i[E][R]({}, Hst, rQ, void 0), t(rQ, function(t) {
+                var i, r;
+                return 0, r = function() {
+                    for (var n, i, r = (n = arguments)["length"], u = new Array(r), o = 0; o < r; o++) u[o] = n[o];
+                    return (i = t["call"][H](t, [ this ]["concat"](u)) || this)["buffs"] = [], i["buffGroupMap"] = {}, 
+                    i["cacheAttrBuffMap"] = {}, i["bu"] = 0, i;
+                }, n(r, t), (i = r[U])["onInit"] = function() {}, i["clear"] = function() {
+                    for (var t = 0; t < this["buffs"]["length"]; t++) this["buffs"][t]["isReadyToRemove"] = !0;
+                    this["buffs"]["length"] = 0, this["buffGroupMap"] = {};
+                }, i["addBuff"] = function(t, n, i, r, o) {
+                    var e;
+                    if ((0, n && n[G] && n["canBeHurt"]()) && (e = s["getDataById"](table["battle"]["BuffConfig"], t))) {
+                        var c, a, f, l, d;
+                        if (!this["checkBuffCondition"](n, e)) return null;
+                        if (f = 0, 0 == e[W] && e["group"]) for (var k = n["attr"]["getGroupBuff"](e["group"]), _ = 0; _ < k["length"]; _++) n["attr"]["removeBuffById"](k[_]["id"]);
+                        if (d = 0, l = null, (a = n["attr"]["getBuffById"](t)) && (f = a["timeLoop"], a["id"] == t && a["cfg"][W] && (d = a[W]), 
+                        a["buffGroupUid"]) && a["buffGroupUid"] != r["uid"] && (n["attr"]["removeBuffById"](a["id"]), 
+                        l = a["getCloneData"](), a = null), a || (a = h["BuffFactory"]["createBuff"](e, r["cfg"]["timeLimit"]), 
+                        l && a["setCloneData"](l), this["buffs"][R](a), 1 < e[W] && d == e[W] && (a["isLastMax"] = !0), 
+                        n["addBuff"](a), v["checkBuffAbnormalTypePassSkill"](n, a["cfg"]["abnormalType"])), 
+                        c = this["getChangeBuff"](i, a)) if (c[P]["notReplace"]) {
+                            var S, g, y;
+                            for (g in S = {}, a[P]) S[g] = a[P][g];
+                            for (y in c["effectParm2"]) S[y] = c["effectParm2"][y];
+                            a[P] = S;
+                        } else a[P] = c["effectParm2"];
+                        return a["resData"](), 0 < e[W] ? a[W] = Math["min"](d + 1, e[W]) : a[W] = 1, a["timeLoop"] = f, 
+                        a[O] = o, a["buffGroupUid"] = r["uid"], a["casterUid"] = i["casterUid"], a["casterAtk"] = i["atk"], 
+                        a["setTarget"](i, n), this["checkAddBuff"](i, a), a["isReadyToRemove"] ? null : (n["updateBuff"](a), 
+                        u["Logger"]["fight"](Q1 + n["attr"]["name"] + net + a["cfg"]["name"] + iet + a["cfg"]["id"] + ret), 
+                        a["effectType"] == m["Attr"] && this["clearCacheAttrBuff"](n), a["onAddBuff"](), 
+                        a);
+                    }
+                    return null;
+                }, i["checkBuffCondition"] = function(t, n) {
+                    return n["effectType"] != m["Kill"] || !t["attr"]["buffStatueByType"](m["Kill"]);
+                }, i["clearCacheAttrBuff"] = function(t) {
+                    delete this.cacheAttrBuffMap[t.uid];
+                }, i["getBuffAttrMap"] = function(t, n) {
+                    var i;
+                    if (void 0 === n && (n = !1), 0 == (i = t["attr"]["buffs"])["length"]) return {};
+                    if (this["cacheAttrBuffMap"][t["uid"]]) {
+                        for (var r = this["cacheAttrBuffMap"][t["uid"]], o = i["length"] - 1; 0 <= o; o--) (s = i[o])["effectType"] == m["Attr"] && n && s["active"]();
+                        return r;
+                    }
+                    var s, e = this["cacheAttrBuffMap"][t["uid"]] = {}, h = !0;
+                    for (o = i["length"] - 1; 0 <= o; o--) if (!(s = i[o])["isReadyToRemove"] && s["effectType"] == m["Attr"]) {
+                        for (var c in h = !1, s[P]) {
+                            var a, f, v, l;
+                            (v = u["TableManager"]["getDataById"](table["battle"]["AttributeConfig"], c)) && (e[v["id"]] || (e[v["id"]] = function() {
+                                var t;
+                                return (t = function() {
+                                    var t;
+                                    return (t = HVn(HVn({}, b_, 0), LZ, 0))["per"] = 0, t;
+                                }[H]())["per"] = 0, t;
+                            }[H]()), l = e[v["id"]], f = e[v["id"]]["value"], a = e[v["id"]]["per"], f += +s[P][c] * s[W], 
+                            l["value"] = f, l["per"] = a);
+                        }
+                        n && s["active"]();
+                    }
+                    return h && t && this["clearCacheAttrBuff"](t), e;
+                }, i["checkCounterAttack"] = function(t, n, i) {
+                    var r;
+                    if ((r = this["getBuffListByEffect"](n, m["CounterAttack"])) && 0 < r["length"] && null != t && t[G]) for (var u = r["length"] - 1; 0 <= u; u--) {
+                        var s, a, f, v;
+                        v = (f = r[u])[P], 0 < (s = Math["floor"](i * (v[K] / c["getRandBase"]))) && ((a = o["getItem"](e))["status"] = c["CounterAttack"], 
+                        a["value"] = s, a[x] = n, a[F] = t, a[Z] = f, a["skillInfo"] = f[O]["skill"], h[X][q](a));
+                    }
+                }, i["getSkillAttr"] = function(t, n) {
+                    var i;
+                    if (n["skill"] instanceof d && ((i = this["getBuffListByEffect"](t, m["SkillAttr"])) && 0 < i["length"])) {
+                        for (var r = {}, o = i["length"] - 1; 0 <= o; o--) {
+                            var s;
+                            if ((s = i[o])[P]["skillIndex"] == n["skill"]["skillIndex"]) for (var e in s[P]) {
+                                var h, c, a, f;
+                                (h = u["TableManager"]["getDataById"](table["battle"]["AttributeConfig"], e)) && (r[h["id"]] || (r[h["id"]] = function() {
+                                    var t;
+                                    return (t = function() {
+                                        var t;
+                                        return (t = HVn(HVn({}, b_, 0), LZ, 0))["per"] = 0, t;
+                                    }[H]())["per"] = 0, t;
+                                }[H]()), c = r[h["id"]], a = r[h["id"]]["value"], f = r[h["id"]]["per"], a += s[P][e] * s[W], 
+                                c["value"] = a, c["per"] = f);
+                            }
+                            s["active"]();
+                        }
+                        return r;
+                    }
+                    return null;
+                }, i["getChangeBuff"] = function(t, n) {
+                    var i;
+                    if ((i = this["getBuffListByEffect"](t, m["ChangeBuff"])) && 0 < i["length"]) for (var r = n["cfg"]["group"] || n["id"], u = i["length"] - 1; 0 <= u; u--) {
+                        var o;
+                        if ((o = i[u])[P]["oldBuff"] == r) return o;
+                    }
+                    return null;
+                }, i["checkAddBuff"] = function(t, n) {
+                    var i, r;
+                    if (r = n["cfg"]["group"] || n["id"], (i = this["getBuffListByEffect"](t, m["AddBuff"])) && 0 < i["length"]) for (var u = i["length"] - 1; 0 <= u; u--) {
+                        var o, s;
+                        (s = (o = i[u])[P])["oldBuff"] == r && (o["nestedTimes"]++, this["buffControlByTarget"](o, t, s["buff"], n[F], n[O]));
+                    }
+                }, i["hasCirtBuffBySkillIndex"] = function(t, n) {
+                    var i;
+                    if ((i = this["getBuffListByEffect"](t, m["CritSkill"])) && 0 < i["length"]) for (var r = i["length"] - 1; 0 <= r; r--) if (i[r][P]["skillIndex"] == n) return !0;
+                    return !1;
+                }, i["getAddHurtByType"] = function(t, n) {
+                    var i, r;
+                    if (r = 0, (i = this["getBuffListByEffect"](t, m["AddHurtByType"])) && 0 < i["length"]) for (var u = i["length"] - 1; 0 <= u; u--) {
+                        var o, s;
+                        0 != (s = (o = i[u])[P])["type"] && s["type"] != n || (r += s[K] * o[W]);
+                    }
+                    return r / c["getRandBase"];
+                }, i["getDoubleMissile"] = function(t, n) {
+                    var i, r;
+                    if ((i = this["getBuffListByEffect"](t, m["DoubleMissile"])) && 0 < i["length"]) for (var u = i["length"] - 1; 0 <= u; u--) {
+                        var o, s;
+                        o = i[u], (s = o[P])["skillIndex"] && s["skillIndex"] != n || (o["active"](), h[X]["isRandTrue"](s["rand"]) && (r = r || [])[R](function() {
+                            var t;
+                            return (t = function() {
+                                var t;
+                                return (t = HVn(HVn({}, wT, 0), pet, 0))["num"] = 0, t["interval"] = 0, t;
+                            }[H]())["num"] = s["num"], t["interval"] = s["interval"] || 0, t;
+                        }[H]()));
+                    }
+                    return r;
+                }, i["isHaveShield"] = function(t) {
+                    return t["attr"]["buffStatueByType"](m["ShieldAtk"]) || t["attr"]["buffStatueByType"](m["ShieldMaxHp"]);
+                }, i["updateShieldHp"] = function(t, n) {
+                    var i, r;
+                    if (!this["isHaveShield"](t)) return n;
+                    if (i = 0, r = this["getBuffListByEffects"](t, [ m["ShieldAtk"], m["ShieldMaxHp"] ])) {
+                        for (var u = r["length"] - 1; 0 <= u; u--) {
+                            var o, s, e;
+                            if (0 < (o = r[u])["hp"]) if (s = n, n -= o["hp"], e = o["hp"], o["hp"] -= s, i += Math["min"](e, s), 
+                            o["hp"] <= 0 && (o["hp"] = 0, t) && t["attr"]["removeBuffById"](o["id"]), n <= 0) {
+                                n = 0;
+                                break;
+                            }
+                        }
+                        return 0 < i && h["BattleShowFactory"]["createNum"](f["ShieldNum"], -i, t["pos"], t["modelHeight"]), 
+                        n;
+                    }
+                }, i["getBuffListByEffect"] = function(t, n) {
+                    if (void 0 === n && (n = ""), (t = t instanceof S ? t[x] : t) instanceof g) {
+                        var i, r;
+                        if ("" == n || !t["attr"]["buffStatueByType"](n)) return null;
+                        if (r = [], 0 < (i = t["attr"]["buffs"])["length"]) for (var u = i["length"] - 1; 0 <= u; u--) i[u]["isReadyToRemove"] || "" != n && i[u]["effectType"] != n || r[R](i[u]);
+                        return r;
+                    }
+                    return null;
+                }, i["getBuffListByEffects"] = function(t, n) {
+                    for (var i, r, u = !1, o = 0; o < n["length"]; o++) if (t["attr"]["buffStatueByType"](n[o])) {
+                        u = !0;
+                        break;
+                    }
+                    if (!u) return null;
+                    if (r = [], 0 < (i = t["attr"]["buffs"])["length"]) for (var s = i["length"] - 1; 0 <= s; s--) i[s]["isReadyToRemove"] || -1 == n["indexOf"](i[s]["effectType"]) || r[R](i[s]);
+                    return r;
+                }, i["update"] = function() {
+                    var t, n;
+                    if ((t = this["buffs"])["length"]) for (var i = 0; i < t["length"]; i++) {
+                        var r;
+                        (r = t[i])["isReadyToRemove"] ? (this["buffs"]["splice"](i, 1), i--) : r["nextFrame"]();
+                    }
+                    for (n in this["buffGroupMap"]) this["buffGroupMap"][n]["checkBreak"]();
+                }, i["buffControlByGroup"] = function(t, n, i, r, u) {
+                    var o;
+                    if (i[G] && ((o = s["getDataById"](table["battle"]["BuffGroupConfig"], t)) && o["buff"] && 0 < o["buff"]["length"])) {
+                        var e;
+                        (e = new l(o))["uid"] = ++this["bu"], e[F] = i, e["from"] = n, e["behavior"] = r, 
+                        this["buffGroupMap"][e["uid"]] = e;
+                        for (var h = 0; h < o["buff"]["length"]; h++) {
+                            var c;
+                            c = o["buff"][h], this["buffControlByBuffId"](e, c, n, i, r);
+                        }
+                        return e["hasBuff"] && (a != e["cfg"]["animPosType"] && i["addBuffEff"](e, u), e["active"](), 
+                        v["checkPassSkillCon"](k["ConType_8"], n, n, t)), e;
+                    }
+                }, i["buffControlByBuffId"] = function(t, n, i, r, u) {
+                    var o, e;
+                    (e = s["getDataById"](table["battle"]["BuffConfig"], n)) && (o = this["addBuff"](e["id"], r, i, t, u)) && o["isAlive"]() && this["buffGroupMap"][t["uid"]]["addBuff"](o);
+                }, i["buffControlByTarget"] = function(t, n, i, r, u) {
+                    var o, s;
+                    if (s = t["cfg"]["targetType"], (o = _["skillTarget"](s, t["cfg"]["targetFaction"], n, r, t["cfg"]["range"] || MB, t["cfg"]["num"] || ait, t["cfg"]["targetParam"])) && 0 < o["length"]) for (var e = 0; e < o["length"]; e++) t["cfg"]["notSelf"] && n["casterUid"] == o[e]["uid"] || this["buffControlByGroup"](i, n, o[e], u);
+                }, i["removeUpdateBuffGroup"] = function(t) {
+                    var n;
+                    (n = this["buffGroupMap"][t["buffGroupUid"]]) && n["removeBuffById"](t["id"]) && 0 == n["buffIds"]["length"] && delete this.buffGroupMap[t.buffGroupUid];
+                }, i["getBuffGroupByGroupUid"] = function(t) {
+                    return this["buffGroupMap"][t];
+                }, i["ge"] = function(t, n) {
+                    for (var i in this["buffGroupMap"]) if (this["buffGroupMap"][i]["cfg"]["flag"] == t && this["buffGroupMap"][i][F] == n) return this["buffGroupMap"][i];
+                    return null;
+                }, r;
+            }(r)), i[E][z]();
+        }, y;
+    }[Q](this)[H]();
+});

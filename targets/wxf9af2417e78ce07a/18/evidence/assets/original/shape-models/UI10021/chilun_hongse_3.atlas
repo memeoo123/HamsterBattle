@@ -1,0 +1,20 @@
+
+chilun_hongse_3.png
+size: 313,179
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dian
+  rotate: false
+  xy: 179, 9
+  size: 133, 169
+  orig: 153, 177
+  offset: 2, 8
+  index: -1
+mohu2
+  rotate: false
+  xy: 2, 2
+  size: 175, 175
+  orig: 179, 179
+  offset: 2, 2
+  index: -1

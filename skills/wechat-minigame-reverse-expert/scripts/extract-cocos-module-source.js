@@ -172,7 +172,7 @@ for (const registration of registrations) {
     `// Dependencies: ${registration.dependencies.join(", ")}`,
     "",
   ].join("\n");
-  fs.writeFileSync(outputPath, `${header}${deobfuscated}\n`, "utf8");
+  fs.writeFileSync(outputPath, `${header}(${deobfuscated});\n`, "utf8");
   manifest.push({
     name: registration.name,
     dependencies: registration.dependencies,

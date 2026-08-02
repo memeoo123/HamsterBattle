@@ -1,0 +1,44 @@
+// Module: chunks:///_virtual/BombUnit.ts
+// Dependencies: ./rollupPluginModLoBabelHelpers.js, cc, ./PoolManager.ts, ./BulletUnit.ts, ./SkillEnum.ts, ./BattleEnum.ts
+(function(t) {
+    var n, i, r, u, o, s;
+    return MYn && LVn && (Xrt = "608e1VW"), MYn && EVn && (Xrt += UVt), MYn && LVn && (Xrt += "kkJM"), 
+    MYn && RVn && (Xrt += "UqNBvrHBcIi9"), MYn = 0, function() {
+        var e;
+        return (e = HVn(HVn({}, C, 0), T, 0))[C] = [ function(t) {
+            n = t[A];
+        }, function(t) {
+            i = t[M];
+        }, function(t) {
+            r = t["PoolManager"];
+        }, function(t) {
+            u = t["BulletUnit"];
+        }, function(t) {
+            o = t["SkillSubType"];
+        }, function(t) {
+            s = t["screnPath"];
+        } ], e[T] = function() {
+            i[E][R]({}, Xrt, qrt, void 0), t(qrt, function(t) {
+                var i, u;
+                return u = function() {
+                    var n;
+                    return n = arguments, t[H](this, n) || this;
+                }, n(u, t), (i = u[U])["initParam"] = function(t, n, i, r) {
+                    var u;
+                    this["_isActive"] = !0, this["atk"] = t, this["attrHeroId"] = r["attrHeroId"], (null == (u = this["_cfg"]["parameter"]) ? void 0 : u["path"]) == s["M"] ? (this["pos"]["set"](0, -JD), 
+                    this["_spineNode"]["setPosition"](0, -JD)) : null != r && r["isSubType"] && null != r && r["isSubType"](o["KillSelf"]) ? (this["pos"]["set"](i["x"], i["y"]), 
+                    this["_spineNode"]["setPosition"](i["x"], i["y"])) : (this["pos"]["set"](n["x"], n["y"]), 
+                    this["_spineNode"]["setPosition"](n["x"], n["y"]));
+                }, i["checkTrigger"] = function() {
+                    this["action"]();
+                }, i["update"] = function() {
+                    this["checkTrigger"]();
+                }, i["onRecovery"] = function() {}, i["dispose"] = function() {
+                    var t;
+                    null != (t = this["_spineNode"]) && t["isValid"] && this["_spineNode"]["delayDestroy"](Cd), 
+                    r["recovery"](this);
+                }, u;
+            }(u)), i[E][z]();
+        }, e;
+    }[Q](this)[H]();
+});

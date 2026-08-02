@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0",
+  "target": "wxf9af2417e78ce07a/18",
+  "logicalPath": "spine/hero/js_qishi_1/js_qishi_1",
+  "modelId": "H0401",
+  "sourceConfig": "resources3/config.cce0e.json",
+  "files": [
+    {
+      "kind": "atlas",
+      "uuid": "0921aa32-3121-4515-b561-13dfe0fcf6fc",
+      "nativeVersion": "3b9c3",
+      "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/09/0921aa32-3121-4515-b561-13dfe0fcf6fc.3b9c3.atlas",
+      "file": "js_qishi_1.atlas",
+      "sha256": "068d82fc6994610a3433a805a47a79b734d9467218831637d1bf7f531dd3adbf"
+    },
+    {
+      "kind": "texture",
+      "uuid": "34cf5aa3-6146-4e55-aaae-30bf355cd420",
+      "nativeVersion": "26e9e",
+      "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/34/34cf5aa3-6146-4e55-aaae-30bf355cd420.26e9e.png",
+      "file": "js_qishi_1.png",
+      "sha256": "766951baacca0bb0cedef43034e2d299071f8d829c07c3189d249252895cb613"
+    },
+    {
+      "kind": "spine-3.8-binary",
+      "uuid": "8f40901c-fc92-4878-8d8e-94e5742d2d3e",
+      "nativeVersion": "3618f",
+      "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/8f/8f40901c-fc92-4878-8d8e-94e5742d2d3e.3618f.bin",
+      "file": "js_qishi_1.skel",
+      "sha256": "ea686d3a1ffb68d672b9fd654d44ab0bedcd85f2a7a6df4479879dc7d39e21da"
+    }
+  ],
+  "inspection": "Spine 3.8.99; animations attack/die/idle/move; texture 500x467; model scale 0.8"
+}

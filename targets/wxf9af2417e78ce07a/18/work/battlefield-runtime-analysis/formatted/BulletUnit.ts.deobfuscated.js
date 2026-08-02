@@ -1,0 +1,146 @@
+// Module: chunks:///_virtual/BulletUnit.ts
+// Dependencies: ./rollupPluginModLoBabelHelpers.js, cc, ./BaseUnit.ts, ./PoolManager.ts, ./SkillBehavior.ts, ./GameTimer.ts, ./SkillEnum.ts, ./MathUtils2.ts, ./GBattleIns.ts, ./GIns.ts, ./BattleTimer.ts, ./BattleUtils.ts
+(function(t) {
+    var n, i, r, u, o, s, e, h, c, a, f, v, d, m;
+    return QYn && EVn && (Wet += hwt), QYn && LVn && (Pet = "eb689sQ03"), QYn && EVn && (Pet += xH), 
+    QYn && LVn && (Pet += "BD"), QYn && RVn && (Wet += "yS", uht += "etFilterUni", sht += "hoo"), 
+    QYn && LVn && (Pet += "D5hqwL60zF8k"), QYn = 0, function() {
+        var k;
+        return $Yn && bVn && (Wet += b7, uht += hbn), $Yn && RVn && (Wet += "hootSoun", 
+        sht += "tS"), $Yn && LVn && (uht += "t"), $Yn = 0, (k = HVn(HVn({}, C, 0), T, 0))[C] = [ function(t) {
+            n = t[A], i = t["createClass"];
+        }, function(t) {
+            r = t[M], u = t["v2"];
+        }, function(t) {
+            o = t["BaseUnit"];
+        }, function(t) {
+            s = t["PoolManager"];
+        }, function(t) {
+            e = t["SkillBehavior"];
+        }, function(t) {
+            h = t["GameTimer"];
+        }, function(t) {
+            c = t["EffectLayer"];
+        }, function(t) {
+            a = t["MathUtils"];
+        }, function(t) {
+            f = t[w];
+        }, function(t) {
+            v = t[w];
+        }, function(t) {
+            d = t[w];
+        }, function(t) {
+            m = t["BattleUtils"];
+        } ], k[T] = function() {
+            jYn && bVn && (sht += Dkt), jYn && RVn && (Wet += "d", sht += "ound"), jYn = 0, 
+            r[E][R]({}, Pet, Zrt, void 0), t(Zrt, function(t) {
+                var r, o;
+                return o = function() {
+                    for (var n, i, r = (n = arguments)["length"], o = new Array(r), s = 0; s < r; s++) o[s] = n[s];
+                    return (i = t["call"][H](t, [ this ]["concat"](o)) || this)["_cfg"] = void 0, i[q] = void 0, 
+                    i["atk"] = void 0, i["teamId"] = void 0, i["targetTeamId"] = void 0, i["casterUid"] = void 0, 
+                    i["targetUid"] = void 0, i["skill"] = void 0, i["_bulletType"] = void 0, i["_spineNode"] = void 0, 
+                    i["_moveVec"] = u(), i["_startVec"] = u(), i["_runTime"] = 0, i["_maxTime"] = 0, 
+                    i["_isActive"] = void 0, i[F] = void 0, i["_behaviors"] = void 0, i["attrHeroId"] = void 0, 
+                    i["offAngle"] = 0, i["realH"] = void 0, i["filterUnitMap"] = void 0, i["_filter"] = !1, 
+                    i;
+                }, n(o, t), (r = o[U])["init"] = function(t) {
+                    this["_cfg"] = t, this["_isActive"] = !0, this["_runTime"] = 0, this["_filter"] = !1, 
+                    this["filterUnitMap"] = null, this["createBehavior"](), this["pla"]();
+                }, r["createBehavior"] = function() {
+                    this["_behaviors"] = [];
+                    for (var t = this["_cfg"]["behaviors"], n = this["_cfg"]["delays"], i = 0; i < t["length"]; i++) {
+                        var r, u;
+                        u = t[i], (r = e["createBehavior"](u, (null == n ? void 0 : n[i]) || 0, this["skill"])) && this["_behaviors"][R](r);
+                    }
+                }, r["initParam"] = function(t, n, i, r, u) {
+                    var o, s, e;
+                    this["atk"] = t, this[F] = u, this["attrHeroId"] = r["attrHeroId"], this["_startVec"]["set"](i["x"], i["y"]), 
+                    this["pos"]["set"](i["x"], i["y"]), this["_spineNode"]["setPosition"](i["x"], i["y"]), 
+                    s = a["getRadians"](this["_pos"]["x"], this["_pos"]["y"], n["x"], n["y"]), e = a["radians2Angle"](s), 
+                    this["_spineNode"]["angle"] = e + Dw, this["_moveVec"]["set"](this["moveSpeed"] * Math["cos"](s), this["moveSpeed"] * Math["sin"](s)), 
+                    o = a["getDistance"](this["pos"]["x"], this["pos"]["y"], n["x"], n["y"]) - l, this["_maxTime"] = o / this["moveSpeed"];
+                }, r["setSpineNode"] = function(t) {
+                    var n, i;
+                    n = this, this["_spineNode"] = t, i = this, this["_spineNode"]["setLoadCompleteListener"]((function() {
+                        i["onSpineLoaded"]();
+                    })), h["ins"]()["once"](ga, this, (function() {
+                        n["_spineNode"] && (n["_spineNode"]["active"] = !0);
+                    }));
+                }, r["onSpineLoaded"] = function() {}, r["checkTrigger"] = function() {
+                    var t;
+                    (t = f["StateMemory"]["getBatteUintByUid"](this["targetUid"])) && a[Y](this["pos"], t["hurtPoint"]) <= t["attr"]["size"] ? (this["action"](), 
+                    this["showBulletEffect"](t)) : this["_runTime"] >= this["_maxTime"] && this["action"]();
+                }, r["update"] = function() {
+                    var t;
+                    t = m["frameDeltaMs"], this["_runTime"] + t > this["_maxTime"] && (t = this["_maxTime"] - this["_runTime"]), 
+                    this["_runTime"] += t, this["pos"]["add2f"](this["_moveVec"]["x"] * t, this["_moveVec"]["y"] * t), 
+                    this["_spineNode"]["setPosition"](this["pos"]["x"], this["pos"]["y"]), this["checkTrigger"]();
+                }, r["action"] = function() {
+                    this["actionBehavior"]() && (this["_isActive"] = !1);
+                }, r["actionBehavior"] = function(t) {
+                    void 0 === t && (t = !1);
+                    for (var n = 0; n < this["_behaviors"]["length"]; ) {
+                        var i;
+                        (i = this["_behaviors"][n]) && (i["isOnTime"] || t) ? (i["index"] = 0, i["skillTarget"] = this[F], 
+                        i["skillTargetUid"] = this["targetUid"], i["offAngle"] = this["offAngle"], i["setCaster"](this), 
+                        this["skill"]["fightSkillInfo"]["beginBehaviorEffect"](i, this), this["_behaviors"]["splice"](n, 1), 
+                        q == i["cfg"]["effectType"] && this["playHitSound"]()) : (i["time"] += d["speed"], 
+                        n++);
+                    }
+                    return !this["_behaviors"]["length"];
+                }, r["showBulletEffect"] = function(t) {
+                    if (this["_cfg"]["effectModelId"]) {
+                        var n, i;
+                        if (i = this["_cfg"]["effectModelId"]["up"]) for (var r = 0; r < i["length"]; r++) t ? t["createFightEffect"](i[r]["toString"](), this["_cfg"]["animPosType"], t, c["RoleLayer"], !1, this["_spineNode"]["getScale"]()["x"]) : f["BattleShowFactory"]["showEffectModel"](i[r]["toString"](), this["pos"], this["_spineNode"]["getScale"]()["x"], !1, !1);
+                        if (n = this["_cfg"]["effectModelId"]["low"]) for (var u = 0; u < n["length"]; u++) t ? t["createFightEffect"](n[u]["toString"](), this["_cfg"]["animPosType"], t, c["BgLayer"], !1, this["_spineNode"]["getScale"]()["x"]) : f["BattleShowFactory"]["showEffectModel"](n[u]["toString"](), this["pos"], this["_spineNode"]["getScale"]()["x"], !0, !1);
+                    }
+                }, r["filterUnits"] = function(t) {}, r["s"] = function(t) {}, r["getAmountEff"] = function(t) {
+                    return 0;
+                }, r["pla"] = function() {
+                    var t, n;
+                    null != (t = this["_cfg"]) && t["s"] && v["audioMgr"]["playSound"](eht + (null == (n = this["_cfg"]) ? void 0 : n["s"]));
+                }, r["playHitSound"] = function() {
+                    var t, n;
+                    null != (t = this["_cfg"]) && t["hitSound"] && v["audioMgr"]["playSound"](eht + (null == (n = this["_cfg"]) ? void 0 : n["hitSound"]));
+                }, r["dispose"] = function() {
+                    var t;
+                    null != (t = this["_spineNode"]) && t["isValid"] && this["_spineNode"]["destroy"](), 
+                    s["recovery"](this);
+                }, r["onRecovery"] = function() {}, i(o, [ function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = G, t["get"] = function() {
+                        return this["_isActive"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = qv, t["get"] = function() {
+                        return this["_pos"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = x, t["get"] = function() {
+                        return f["StateMemory"]["getUnitByUid"](this["casterUid"]);
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = $X, t["get"] = function() {
+                        return this["_cfg"]["speed"] / qi;
+                    }, t;
+                }[Q](this)[H]() ]), o;
+            }(o)), r[E][z]();
+        }, k;
+    }[Q](this)[H]();
+});

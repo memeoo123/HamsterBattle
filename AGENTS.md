@@ -14,6 +14,7 @@ Use the specialized repository skills routed by the orchestrator:
 - `skills/wechat-minigame-package-inventory/`
 - `skills/wechat-minigame-reverse-expert/`
 - `skills/cocos-minigame-restorer/`
+- `skills/wechat-minigame-battlefield-restorer/`
 
 Resolve every bundled script and reference relative to its owning `SKILL.md`. Do not use
 machine-specific absolute paths. Keep findings isolated by AppID and version, preserve

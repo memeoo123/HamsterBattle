@@ -1,0 +1,3 @@
+// Module: chunks:///_virtual/FruitHeroUnit.ts
+// Dependencies: ./rollupPluginModLoBabelHelpers.js, cc, ./FruitSkillComp.ts, ./FruitAnimRoleUnit.ts
+(function(t){var n,i,r,u;return 0,function(){var o;return(o=HVn(HVn({},C,0),T,0))[C]=[function(t){n=t[A]},function(t){i=t[M]},function(t){r=t["FruitSkillComp"]},function(t){u=t["FruitAnimRoleUnit"]}],o[T]=function(){i[E][R]({},$Tt,tAt,void 0),t(tAt,function(t){var i;return i=function(){var n;return n=arguments,t[H](this,n)||this},n(i,t),i[U]["initData"]=function(t){this["addComp"](r)["addSkill"](t["cfg"]["skillId"])},i}(u)),i[E][z]()},o}[Q](this)[H]()});

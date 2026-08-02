@@ -158,6 +158,40 @@ function parseComponentLayout(raw, item, itemsById) {
   };
 }
 
+function parseComponentItem(reader, index, start, type, id, name) {
+  const width = reader.i32();
+  const height = reader.i32();
+  const extension = reader.u8();
+  const branchCount = reader.u8();
+  const branches = [];
+  for (let i = 0; i < branchCount; i++) branches.push(reader.string());
+  const highResolutionCount = reader.u8();
+  const highResolution = [];
+  for (let i = 0; i < highResolutionCount; i++) highResolution.push(reader.string());
+  const rawLength = reader.u32();
+  const rawStart = reader.pos;
+  reader.skip(rawLength);
+  return { index, start, type, id, name, width, height, extension, branches, highResolution, rawStart, rawLength };
+}
+
+function parseImageItem(reader, index, start, type, id, name) {
+  const hasScale9Grid = reader.u8() === 1;
+  const scale9Grid = hasScale9Grid ? {
+    x: reader.i32(), y: reader.i32(), width: reader.i32(), height: reader.i32(), tileGridIndice: reader.i32(),
+  } : null;
+  const atlasReferenceCount = reader.u8();
+  const atlas = reader.string();
+  const rect = { x: reader.i32(), y: reader.i32(), width: reader.i32(), height: reader.i32() };
+  const rotated = reader.u8() === 1;
+  const trim = {
+    offsetX: reader.i32(), offsetY: reader.i32(), sourceWidth: reader.i32(), sourceHeight: reader.i32(),
+  };
+  return {
+    index, start, type, id, name, width: trim.sourceWidth, height: trim.sourceHeight,
+    scale9Grid, atlasReferenceCount, atlas, rect, rotated, trim,
+  };
+}
+
 function main() {
   const source = process.argv[2];
   const output = process.argv[3];
@@ -174,23 +208,12 @@ function main() {
     const type = reader.u8();
     const id = reader.string();
     const name = reader.string();
-    if (type !== 3) break;
-    const width = reader.i32();
-    const height = reader.i32();
-    const extension = reader.u8();
-    const branchCount = reader.u8();
-    const branches = [];
-    for (let i = 0; i < branchCount; i++) branches.push(reader.string());
-    const highResolutionCount = reader.u8();
-    const highResolution = [];
-    for (let i = 0; i < highResolutionCount; i++) highResolution.push(reader.string());
-    const rawLength = reader.u32();
-    const rawStart = reader.pos;
-    reader.skip(rawLength);
-    items.push({ index, start, type, id, name, width, height, extension, branches, highResolution, rawStart, rawLength });
+    if (type === 3) items.push(parseComponentItem(reader, index, start, type, id, name));
+    else if (type === 0) items.push(parseImageItem(reader, index, start, type, id, name));
+    else throw new Error(`unsupported package item type ${type} at index ${index}, offset ${start}`);
   }
   const itemsById = new Map(items.map((item) => [item.id, item]));
-  const components = items.map((item) => ({
+  const components = items.filter((item) => item.type === 3).map((item) => ({
     ...item,
     layout: (() => {
       try {
@@ -210,11 +233,16 @@ function main() {
     packageName,
     declaredItemCount: itemCount,
     parsedComponentCount: components.length,
-    limitation: 'Parses the compact package component header and setup_beforeAdd child geometry. Controller, relation, gear, and transition tails remain unparsed.',
+    parsedImageCount: items.filter((item) => item.type === 0).length,
+    limitation: 'Parses compact package component headers, image atlas records, and setup_beforeAdd child geometry. Controller, relation, gear, and transition tails remain unparsed.',
+    images: items.filter((item) => item.type === 0),
     components,
   };
   fs.writeFileSync(output, `${JSON.stringify(result, null, 2)}\n`);
-  console.log(JSON.stringify({ output, packageId, packageName, itemCount, components: components.length }, null, 2));
+  console.log(JSON.stringify({
+    output, packageId, packageName, itemCount, components: components.length,
+    images: result.parsedImageCount,
+  }, null, 2));
 }
 
 main();

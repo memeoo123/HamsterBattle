@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "target": {
+    "appId": "wx...",
+    "version": "...",
+    "representativeLevel": "..."
+  },
+  "status": "in_progress",
+  "completionClaim": "incomplete",
+  "sourceArtifacts": {
+    "restoreSpec": "generated/RESTORE_SPEC.json",
+    "goldenCases": "generated/golden-cases.json",
+    "implementation": "../../../../cocosProject",
+    "originalReferences": []
+  },
+  "subsystems": {
+    "phase-flow": {},
+    "preparation": {},
+    "deployment-and-production": {},
+    "entities-and-attributes": {},
+    "targeting-and-movement": {},
+    "attack-and-damage": {},
+    "skills-buffs-status": {},
+    "waves-and-scaling": {},
+    "outcomes-and-persistence": {},
+    "presentation-and-feedback": {}
+  },
+  "gates": {
+    "evidence": {"status": "pending", "evidence": []},
+    "deterministic": {"status": "pending", "evidence": []},
+    "integration": {"status": "pending", "evidence": []},
+    "matchedReplay": {"status": "blocked", "evidence": []}
+  },
+  "blockers": [],
+  "nextActions": []
+}

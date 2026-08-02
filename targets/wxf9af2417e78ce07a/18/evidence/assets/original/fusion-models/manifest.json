@@ -1,0 +1,16 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "capturedAt": "2026-08-02",
+  "spineVersion": "3.8.99",
+  "assets": [
+    { "gearId": "H0705", "file": "H0705/js_gangtiexia.atlas", "bytes": 12305, "sha256": "0eb34acc57fb66430ed6dd8df4fe486267e3375d00b039a59c9d2c834a076f43", "uuid": "1d402336-569d-4741-aabd-c13928685dab", "native": "520c4/.atlas" },
+    { "gearId": "H0705", "file": "H0705/js_gangtiexia.png", "bytes": 255027, "sha256": "fca36e6d77b119873f4b3edd4b1aa684fc734c571e0a61e4fa038eb32f13eeb3", "uuid": "c6a09cde-4ae0-4188-b262-7067b52e81bc", "native": "99b80/.png" },
+    { "gearId": "H0705", "file": "H0705/js_gangtiexia.skel", "bytes": 144239, "sha256": "90de4a2cf0bf8504ee299fcef7dc8ea8c62a1accd2fcd80dd02e6744a7dc6d6a", "uuid": "cb1de953-44c6-4d85-a94c-da5fd60d2fd1", "native": "1b811/.bin" },
+    { "gearId": "H0805", "file": "H0805/js_aoteman.atlas", "bytes": 3349, "sha256": "1dca51ae87646774f70b7d785e4241e604484752d790f75e5432557dcd6efdae", "uuid": "e391fc2b-acfc-4430-a385-bfd36b10c571", "native": "27deb/.atlas" },
+    { "gearId": "H0805", "file": "H0805/js_aoteman.png", "bytes": 48522, "sha256": "450c9334e2042e59de340829b5f522a997747569d294d4d0bc4e0a678e1f4c4d", "uuid": "fd75e2e4-2171-4f53-bba1-6f2c8087c529", "native": "3a85b/.png" },
+    { "gearId": "H0805", "file": "H0805/js_aoteman.skel", "bytes": 69689, "sha256": "8a4386cebbcc6e735b5245ec2df6d176a82bc8c4ac6a2de76d9ffa45d9d56392", "uuid": "a948845c-d32a-493c-b8f4-4deccab77e9b", "native": "f0e47" },
+    { "gearId": "H0905", "file": "H0905/js_zhanche.atlas", "bytes": 6343, "sha256": "9c2d8b521490877a8b8903372db6addd8a68fbc402ad4c6cd1144c540b73a6d1", "uuid": "56bafbed-27e3-4c85-a505-1aefdeb6df4c", "native": "5c5a5/.atlas" },
+    { "gearId": "H0905", "file": "H0905/js_zhanche.png", "bytes": 471082, "sha256": "ce6bec57ee8c2d65e078d9e0601db93cb7f62b3e434f3b9544bfc158a73e97ba", "uuid": "9985b0e6-4ad5-4797-8c9e-8eb0d20fed3c", "native": "64e4a/.png" },
+    { "gearId": "H0905", "file": "H0905/js_zhanche.skel", "bytes": 63924, "sha256": "15a7e421cb6371820157e8c751ce0fb77bd07b57ad433aec2820e581ed2fe7be", "uuid": "2d6e718c-3625-4988-87fb-397469a01487", "native": "51760" }
+  ]
+}

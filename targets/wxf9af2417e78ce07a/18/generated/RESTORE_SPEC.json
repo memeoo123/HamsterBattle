@@ -146,6 +146,16 @@
       "normalRefreshRequirement": "enough in-battle coin after the first normal refresh",
       "adRefreshPerPrepareRound": 1,
       "unusedCandidatesAreReplaced": true,
+      "weightedDrops": {
+        "staticCondition": "static batches only while challengeTimes <= 1, except forever-static chapters 1001/1002/1006/1007",
+        "firstNonAdDrawIds": [3000, 3000, 3000],
+        "normalWithLockedGridDrawIds": [3001, 3002, 3003],
+        "normalWithoutLockedGridDrawIds": [3002, 3002, 3002],
+        "adDrawIds": [3002, 3003, 3004],
+        "slotSampling": "independent weighted RewardMgr.getRewards call per draw id; repeats are allowed",
+        "status": "confirmed",
+        "evidence": ["K-C024"]
+      },
       "status": "confirmed",
       "evidence": ["K-C016", "K-C017"]
     },
@@ -153,10 +163,28 @@
       "mode": "manual drag from ChooseCom candidate container into the 7x5 backpack grid",
       "candidateOnValidDrop": "remove from ChooseCom and TAKE_ON_BRICK / setBrick or setGrid",
       "candidateOnInvalidDrop": "TAKE_OFF_BRICK and return to ChooseCom",
+      "occupiedDrop": "merge first; otherwise place the dragged gear and return every fully displaced overlapping gear to ChooseCom without destroying it",
+      "placedGearInvalidDrop": "clear the old footprint and return the placed gear to ChooseCom",
       "candidateAtBattleStart": "unplaced candidates are cleared",
       "shapes": {"1": [[1]], "2": [[1, 1]], "3": [[1], [1]], "5": [[1], [1], [1]]},
       "status": "confirmed",
-      "evidence": ["K-C016", "K-C017"]
+      "evidence": ["K-C016", "K-C017", "K-C025"]
+    },
+    "merge": {
+      "mode": "drag one recipe partner over another in either ChooseCom or the occupied backpack grid",
+      "resultBehavior": "consume the dragged item and update the target item in place to the configured result id",
+      "reachableSameItemChains": {
+        "H01": ["H0101", "H0102", "H0103", "H0104"],
+        "H02": ["H0201", "H0202", "H0203", "H0204"],
+        "H04": ["H0401", "H0402", "H0403", "H0404"],
+        "H12": ["H1201", "H1202", "H1203", "H1204"],
+        "coin": ["C01", "C02", "C03", "C04"]
+      },
+      "levelMultipliers": [10000, 15000, 22500, 33750],
+      "coinProductionPerCompletion": [2, 4, 8, 16],
+      "footprintRendering": "piece view width and height equal shape columns and rows multiplied by the 100-pixel grid size; every truthy shape cell is rendered",
+      "status": "confirmed",
+      "evidence": ["K-C018"]
     },
     "level1001StaticCandidateBatches": {
       "value": [
@@ -215,6 +243,17 @@
       "evidence": ["K-C010"]
     },
     {
+      "id": "H0401",
+      "kind": "spine-3.8.99",
+      "source": "targets/wxf9af2417e78ce07a/18/evidence/assets/original/H0401",
+      "target": "assets/resources/spine/H0401",
+      "logicalPath": "spine/hero/js_qishi_1/js_qishi_1",
+      "animations": ["attack", "die", "idle", "move"],
+      "scale": 0.8,
+      "status": "confirmed",
+      "evidence": ["K-C022"]
+    },
+    {
       "id": "M02",
       "kind": "spine-3.8.99",
       "source": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\resources\\spine\\M02",
@@ -253,16 +292,50 @@
       "name": "仓鼠战士",
       "atk": 20,
       "hp": 70,
+      "type": "HAMSTER",
+      "searchRange": 400,
+      "moveSpeed": 60,
+      "skill": {"id": "1001", "range": 50, "effectRatio": 10000, "behaviorDelayMs": 300},
       "status": "confirmed",
-      "evidence": ["K-C005"]
+      "evidence": ["K-C005", "K-C019"]
     },
     {
       "id": "H02",
       "name": "仓鼠射手",
       "atk": 27,
       "hp": 51,
+      "type": "HAMSTER",
+      "searchRange": 400,
+      "moveSpeed": 60,
+      "baseSecondAttrs": {"ATK_SPD": 1500},
+      "skill": {"id": "2001", "range": 250, "effectRatio": 10000, "behaviorDelayMs": 300, "projectileSpeed": 700},
       "status": "confirmed",
-      "evidence": ["K-C005"]
+      "evidence": ["K-C005", "K-C019"]
+    },
+    {
+      "id": "H04",
+      "name": "仓鼠骑士",
+      "atk": 51,
+      "hp": 179,
+      "type": "HAMSTER",
+      "searchRange": 400,
+      "moveSpeed": 90,
+      "baseSecondAttrs": {"MOVE_SPD": 5000},
+      "skill": {"id": "4001", "range": 75, "effectRatio": 10000, "behaviorDelayMs": 300},
+      "status": "confirmed",
+      "evidence": ["K-C019"]
+    },
+    {
+      "id": "H12",
+      "name": "雷云齿轮",
+      "atk": 49,
+      "hp": 200,
+      "type": "WHEEL",
+      "searchRange": 400,
+      "moveSpeed": 60,
+      "skill": {"id": "LY_1201", "range": 9999, "target": "random enemy", "effectRatio": 5000, "behaviorDelayMs": 500, "radius": 50, "maxTargets": 5},
+      "status": "confirmed",
+      "evidence": ["K-C019"]
     },
     {
       "id": "M02",
@@ -270,8 +343,11 @@
       "atk": 20,
       "hp": 70,
       "gold": 5,
+      "searchRange": 1200,
+      "moveSpeed": 60,
+      "skill": {"id": "melee_attack", "range": 50, "effectRatio": 10000, "behaviorDelayMs": 300},
       "status": "confirmed",
-      "evidence": ["K-C005"]
+      "evidence": ["K-C005", "K-C019"]
     },
     {
       "id": "M03",
@@ -279,8 +355,12 @@
       "atk": 16,
       "hp": 30,
       "gold": 5,
+      "searchRange": 1200,
+      "moveSpeed": 60,
+      "baseSecondAttrs": {"TOWER_DMG_RES": -5000},
+      "skill": {"id": "YGT_5002", "range": 250, "effectRatio": 5000, "behaviorDelayMs": 300, "projectileSpeed": 800},
       "status": "confirmed",
-      "evidence": ["K-C005"]
+      "evidence": ["K-C005", "K-C019"]
     },
     {
       "id": "Boss03",
@@ -288,26 +368,68 @@
       "atk": 24,
       "hp": 296,
       "gold": 20,
+      "searchRange": 1200,
+      "moveSpeed": 60,
+      "baseSecondAttrs": {"ATK_SPD": 5000},
+      "skills": [
+        {"id": "YGT_5002", "range": 250, "effectRatio": 5000, "behaviorDelayMs": 300, "projectileSpeed": 800},
+        {"id": "BT_001", "effect": "control immunity"}
+      ],
       "status": "confirmed",
-      "evidence": ["K-C005"]
+      "evidence": ["K-C005", "K-C019"]
     }
   ],
   "spawners": [
     {
       "id": "H01Gear",
       "entity": "H01",
-      "spawnAtBattleStart": true,
-      "intervalSeconds": 10,
+      "spawnAtBattleStart": false,
+      "powerPerTrigger": 10,
+      "outputKind": "hamster",
+      "completionDelaySeconds": 0.75,
       "status": "confirmed",
-      "evidence": ["K-C008"]
+      "evidence": ["K-C020"]
     },
     {
       "id": "H02Gear",
       "entity": "H02",
-      "spawnAtBattleStart": true,
-      "intervalSeconds": 8,
+      "spawnAtBattleStart": false,
+      "powerPerTrigger": 8,
+      "outputKind": "hamster",
+      "completionDelaySeconds": 0.75,
       "status": "confirmed",
-      "evidence": ["K-C008"]
+      "evidence": ["K-C020"]
+    },
+    {
+      "id": "H04Gear",
+      "entity": "H04",
+      "spawnAtBattleStart": false,
+      "powerPerTrigger": 6,
+      "outputKind": "hamster",
+      "completionDelaySeconds": 0.75,
+      "status": "confirmed",
+      "evidence": ["K-C020"]
+    },
+    {
+      "id": "H12Gear",
+      "entity": "H12",
+      "spawnAtBattleStart": false,
+      "powerPerTrigger": 20,
+      "outputKind": "oneShotTowerSkill",
+      "completionDelaySeconds": 0.25,
+      "status": "confirmed",
+      "evidence": ["K-C020"]
+    },
+    {
+      "id": "powerCore",
+      "workerPowerMax": 100,
+      "lapSeconds": 1,
+      "occupiedSideDelaySeconds": 0.2,
+      "triggerRule": "Each occupied core side triggers its entire orthogonally connected component; a component touching N sides receives N triggers per lap.",
+      "displayedRateFormula": "powerPerTrigger * coreContactCount / ((lapSeconds + occupiedSideDelaySeconds * coreContactCount) / productivity) / workerPowerMax",
+      "battleSpeedMultiple": 1.5,
+      "status": "confirmed",
+      "evidence": ["K-C020"]
     },
     {
       "id": "enemyRoundSpawner",
@@ -323,20 +445,28 @@
       "defaultEffectRatio": 10000,
       "defaultCritFactor": 15000,
       "minimumDamage": 1,
+      "dodgeSource": "target DOD_RATE",
+      "dodgeResultFactor": 5000,
+      "resistanceRouting": {"HAMSTER": "DMG_RES + HERO_DMG_RES", "WHEEL": "DMG_RES + TOWER_DMG_RES", "other": "DMG_RES"},
+      "bossModifier": "source BOSS_DMG_INS is added only when target is BossUnit",
       "status": "confirmed",
-      "evidence": ["K-C006"]
+      "evidence": ["K-C006", "K-C019"]
     },
     "enemyScaling": {
       "attack": "baseAtk * levelAtkMultiple/10000 * roundAtkMultiple/10000 * defeatCompensation/10000",
       "hp": "baseHp * levelHpMultiple/10000 * roundHpMultiple/10000 * defeatCompensation/10000",
+      "defeatCompensation": [10000, 9500, 9025, 8574, 8145, 7738, 7351, 6983, 6634, 6302, 5987, 5688, 5404, 5133, 4877, 4633],
       "status": "confirmed",
-      "evidence": ["K-C009"]
+      "evidence": ["K-C009", "K-C019"]
     },
     "timing": {
       "commonAttackCooldownSeconds": 1,
-      "hitDelaySeconds": 0.3,
+      "baseBehaviorDelaySeconds": 0.3,
+      "normalAttackDelayFormula": "ceil(baseBehaviorDelayMs / (1 + ATK_SPD/10000)) milliseconds",
+      "normalAttackCooldownFormula": "baseCooldownSeconds / (1 + ATK_SPD/10000)",
+      "projectile": "Copies attack/source identity at launch, travels along its initial direction, and survives caster death; a dead single target causes no hit while an area projectile can still resolve at its fixed impact point.",
       "status": "confirmed",
-      "evidence": ["K-C006"]
+      "evidence": ["K-C006", "K-C021"]
     }
   },
   "rounds": [
@@ -438,9 +568,8 @@
       "finding": "implemented deploy/battle/roundClear/won/lost phases and base HP transitions"
     },
     "K-C008": {
-      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\assets\\scripts\\CangshuGame.ts",
-      "lines": "224-228, 443-459, 610-620",
-      "finding": "immediate hero creation and H01/H02 10/8 second intervals"
+      "path": "cocosProject/assets/scripts/CangshuGame.ts",
+      "finding": "superseded reconstruction implementation evidence; production semantics are now grounded by K-C020"
     },
     "K-C009": {
       "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\cocos-runtime-and-special-rounds-analysis.md",
@@ -477,6 +606,38 @@
     "K-C017": {
       "path": "reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/baglike.BagLikeConstantConfig.json",
       "finding": "NORMAL_REFRESH_COST is item 5 x15; decoded BagLike item/shape and TrunkInstance 1001 tables provide exact shapes and the first eight static candidate batches"
+    },
+    "K-C018": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-merge-shape.md",
+      "finding": "confirmed candidate/grid drag-to-merge, reachable level 1-4 recipes, per-level multipliers and coin output, and grid-size footprint rendering"
+    },
+    "K-C019": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/battlefield-combat-runtime.md",
+      "finding": "exact level 1001 damage branching, typed resistance, attack/movement attributes, skill chains, projectile behavior, control immunity, and defeat compensation"
+    },
+    "K-C020": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/battlefield-production-runtime.md",
+      "finding": "power-core connected-component triggers, 100-point worker progress, per-trigger producer values, output delays, spawn offsets, H12 one-shot tower behavior, and 1.5x battle speed"
+    },
+    "K-C021": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/battlefield-combat-runtime.md",
+      "finding": "attack-speed-scaled basic behavior delay and fixed-direction projectile lifetime after caster death"
+    },
+    "K-C022": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/assets/original/H0401/manifest.json",
+      "finding": "H0401 resolves to the original js_qishi_1 Spine 3.8.99 model with attack/die/idle/move animations and scale 0.8"
+    },
+    "K-C023": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-exp-trait-selection.md",
+      "finding": "three choices use weighted drawing after times, formation, condition, and verification filters; the initial level-up draw has no minimum-quality guarantee, while an ad reroll enforces minimum quality 4 (purple) by replacing one slot when needed"
+    },
+    "K-C024": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-refresh-placement.md",
+      "finding": "static candidate eligibility, 3000/3001/3002/3003/3004 draw-id routing, recursive reward weights, and independent per-slot sampling"
+    },
+    "K-C025": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-refresh-placement.md",
+      "finding": "occupied normal drops merge first or evict every overlapping whole gear back to ChooseCom; invalid placed-gear drops also return the gear to ChooseCom"
     }
   }
 }

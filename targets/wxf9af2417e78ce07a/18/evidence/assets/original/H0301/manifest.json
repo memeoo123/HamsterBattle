@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0",
+  "target": "wxf9af2417e78ce07a/18",
+  "logicalPath": "spine/hero/js_fashi_1/js_fashi_1",
+  "modelId": "H0301",
+  "sourceConfig": "resources3/config.cce0e.json",
+  "files": [
+    {
+      "kind": "atlas",
+      "uuid": "c501b06f-46d8-434a-90fa-23771f846c0f",
+      "nativeVersion": "e5be9",
+      "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/c5/c501b06f-46d8-434a-90fa-23771f846c0f.e5be9.atlas",
+      "file": "js_fashi_1.atlas",
+      "sha256": "ea4dc034ce17e083fb208acc2f6625875d268fa6e5c36b9fb04ab38e19a7ab63"
+    },
+    {
+      "kind": "texture",
+      "uuid": "a0ad9a19-4f27-4370-a1b0-0f81f60a57ea",
+      "nativeVersion": "aa966",
+      "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/a0/a0ad9a19-4f27-4370-a1b0-0f81f60a57ea.aa966.png",
+      "file": "js_fashi_1.png",
+      "sha256": "cd7d6c642115fece7a6f433ed97217a36771ff2062318fb5464726eb6a4b648c"
+    },
+    {
+      "kind": "spine-3.8-binary",
+      "uuid": "f0dab828-17a2-4f14-870d-cb61f3c10dd0",
+      "nativeVersion": "fdf65",
+      "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/f0/f0dab828-17a2-4f14-870d-cb61f3c10dd0.fdf65.bin",
+      "file": "js_fashi_1.skel",
+      "sha256": "d04e84f5d6a97b5d6098f1cda1a61ab55cae1281b68b0c55d7fc879b7a8c3958"
+    }
+  ],
+  "inspection": "Spine 3.8.99; animations attack/die/idle/move/skill01/skill01_2_upper; texture 410x390; model scale 0.8"
+}

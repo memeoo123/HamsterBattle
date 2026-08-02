@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "appId": "wxf9af2417e78ce07a",
+  "packageVersion": "18",
+  "bundle": "resources3",
+  "source": {
+    "config": "resources3.config.cce0e.json",
+    "packedImport": "resources3.import.0de4fdaf8.fe248.json",
+    "atlasUuid": "9e840c1c-50ca-4fa4-92d3-e9f9765c8321",
+    "nativeVersion": "98d90",
+    "remotePath": "remote/resources3/native/9e/9e840c1c-50ca-4fa4-92d3-e9f9765c8321.98d90.png"
+  },
+  "tableBindings": [
+    {
+      "itemId": 5,
+      "enum": "COIN",
+      "iconPath": "image/item/dj0002_icon",
+      "spriteFrameUuid": "e5I/GeY8pOBpsQANi/WobN@19cfd",
+      "rect": { "x": 257, "y": 233, "width": 96, "height": 94 },
+      "originalSize": { "width": 132, "height": 132 },
+      "offset": { "x": 0, "y": 1 }
+    },
+    {
+      "itemId": 4,
+      "enum": "AD_TICKET",
+      "iconPath": "image/item/dj0005_icon",
+      "spriteFrameUuid": "e5I/GeY8pOBpsQANi/WobN@14a15",
+      "rect": { "x": 147, "y": 233, "width": 108, "height": 88 },
+      "originalSize": { "width": 132, "height": 132 },
+      "offset": { "x": 0, "y": 0 }
+    }
+  ],
+  "files": [
+    {
+      "file": "item.png",
+      "sha256": "82fff80e5713f4cfe0551b2447d5d2fe804cc94af51246b78c4ffb11b19dbbcd"
+    },
+    {
+      "file": "resources3.config.cce0e.json",
+      "sha256": "651fddcb412ca3b07c78a9cdd7db15f3dc1deb602513f11c4458f8384937cb34"
+    },
+    {
+      "file": "resources3.import.0de4fdaf8.fe248.json",
+      "sha256": "0c6672dfd8277cf72e031c4d56394999f1362ebabd48d132a9a24b9b2e6fc100"
+    }
+  ],
+  "provenance": "HeaderItem.setItemId, ItemID and item.ItemConfig establish the runtime binding. The authorized resources3 config and packed import establish the atlas UUID, native hash and exact SpriteFrame geometry."
+}

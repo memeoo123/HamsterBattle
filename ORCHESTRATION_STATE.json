@@ -93,71 +93,76 @@
       },
       "artifacts": {
         "handoff": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\handoffs\\wxf9af2417e78ce07a-18.json",
+          "path": "/Users/mt/Documents/HamsterBattle/handoffs/wxf9af2417e78ce07a-18.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-07-31T10:06:45.264544+00:00"
+          "recordedAtUtc": "2026-08-01T07:28:15.310956+00:00"
         },
         "mainPackage": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\input\\wxf9af2417e78ce07a\\18\\__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
+          "path": "/Users/mt/Documents/HamsterBattle/reverse-work/input/wxf9af2417e78ce07a/18/__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
           "status": "confirmed",
-          "recordedAtUtc": "2026-07-31T10:06:45.356034+00:00"
+          "recordedAtUtc": "2026-08-01T07:28:15.416062+00:00"
         },
         "extractedRoot": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\unpacked\\wxf9af2417e78ce07a\\18",
+          "path": "/Users/mt/Documents/HamsterBattle/reverse-work/unpacked/wxf9af2417e78ce07a/18",
           "status": "confirmed",
-          "recordedAtUtc": "2026-07-31T10:06:45.448701+00:00"
+          "recordedAtUtc": "2026-08-01T07:28:15.512025+00:00"
         },
         "reverseManifest": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\manifest.json",
+          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/manifest.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-07-31T10:06:45.725930+00:00"
+          "recordedAtUtc": "2026-08-01T07:28:15.606294+00:00"
         },
         "restoreSpec": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\generated\\RESTORE_SPEC.json",
+          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/generated/RESTORE_SPEC.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-07-31T10:06:45.998970+00:00"
+          "recordedAtUtc": "2026-08-01T14:18:59.201905+00:00"
         },
         "goldenCases": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\generated\\golden-cases.json",
+          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/generated/golden-cases.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-07-31T10:06:46.088185+00:00"
+          "recordedAtUtc": "2026-08-01T14:20:25.801486+00:00"
         },
         "cocosProject": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject",
+          "path": "/Users/mt/Documents/HamsterBattle/cocosProject",
           "status": "confirmed",
-          "recordedAtUtc": "2026-07-31T10:06:46.177489+00:00"
+          "recordedAtUtc": "2026-08-01T07:28:15.891128+00:00"
         },
         "validationReport": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\VALIDATION_REPORT.md",
+          "path": "/Users/mt/Documents/HamsterBattle/cocosProject/VALIDATION_REPORT.md",
           "status": "confirmed",
-          "recordedAtUtc": "2026-07-31T10:06:46.263750+00:00"
+          "recordedAtUtc": "2026-08-01T15:42:24.077345+00:00"
+        },
+        "originalReference": {
+          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/evidence/visual/original/2026-08-01/manifest.json",
+          "status": "confirmed",
+          "recordedAtUtc": "2026-08-01T08:59:45.495705+00:00"
         }
       },
       "checks": {
         "goldenCases": {
           "result": "pass",
-          "evidence": "22/22 passed; includes CangshuGame.ts waves, first-free/later-15 refresh economy, manual multi-cell placement, grid unlock and battle phase transitions",
-          "atUtc": "2026-07-31T11:07:17.440005+00:00"
+          "evidence": "47/47 golden cases plus 502/502 rule and recovered-asset assertions",
+          "atUtc": "2026-08-02T14:39:12.682955+00:00"
         },
         "assetImport": {
           "result": "pass",
-          "evidence": "check_cocos_project.py: valid, 22 asset files, 0 missing meta",
-          "atUtc": "2026-07-31T10:49:17.194336+00:00"
+          "evidence": "Cocos project check: 99 assets, missing meta 0; web-mobile artifact contains H0905 projectile PNG, impact PNG and bullet_zhanche MP3",
+          "atUtc": "2026-08-02T14:39:12.479875+00:00"
         },
         "typescript": {
           "result": "pass",
-          "evidence": "check_cocos_project.py: TypeScript ran, exitCode 0",
-          "atUtc": "2026-07-31T10:49:18.036775+00:00"
+          "evidence": "Creator 3.8.8 bundled TypeScript --noEmit --skipLibCheck true exit 0 after H0905 effects integration",
+          "atUtc": "2026-08-02T14:39:12.585118+00:00"
         },
         "visualBaseline": {
           "result": "pending",
-          "evidence": "No matched original level 1001 capture is available",
-          "atUtc": "2026-07-31T10:06:46.630159+00:00"
+          "evidence": "H0905 recovered effect Web smoke captured at 750x1334 without project console errors; same-state competitor battle/trait pair and exact H0905 frame timing/audio level remain pending",
+          "atUtc": "2026-08-02T14:39:12.778183+00:00"
         },
         "gameplaySmoke": {
-          "result": "pending",
-          "evidence": "Existing Creator PID 42220 has project open; full five-round interactive smoke test pending",
-          "atUtc": "2026-07-31T10:49:16.475366+00:00"
+          "result": "pass",
+          "evidence": "User confirmed in Creator preview that candidate/grid sizing, overlap, and preparation-region separation are resolved; numeric placement 15/15 and scenario layout 27/27 also pass",
+          "atUtc": "2026-08-01T15:42:24.172635+00:00"
         },
         "restoreSpecReady": {
           "result": "pass",
@@ -310,11 +315,525 @@
           "name": "goldenCases",
           "result": "pass",
           "atUtc": "2026-07-31T11:07:17.440012+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "handoff",
+          "atUtc": "2026-08-01T07:28:15.311280+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "mainPackage",
+          "atUtc": "2026-08-01T07:28:15.416221+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "extractedRoot",
+          "atUtc": "2026-08-01T07:28:15.512164+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "reverseManifest",
+          "atUtc": "2026-08-01T07:28:15.606421+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "restoreSpec",
+          "atUtc": "2026-08-01T07:28:15.700809+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "goldenCases",
+          "atUtc": "2026-08-01T07:28:15.794938+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "cocosProject",
+          "atUtc": "2026-08-01T07:28:15.891241+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationReport",
+          "atUtc": "2026-08-01T07:28:15.984259+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-01T07:28:27.996958+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-01T07:28:28.101584+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-01T07:28:28.195942+00:00"
+        },
+        {
+          "event": "check",
+          "name": "gameplaySmoke",
+          "result": "pending",
+          "atUtc": "2026-08-01T07:28:28.289284+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-01T07:28:28.384624+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "originalReference",
+          "atUtc": "2026-08-01T08:59:45.495988+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-01T09:31:02.379348+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-01T09:31:02.484551+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-01T09:31:02.580298+00:00"
+        },
+        {
+          "event": "check",
+          "name": "gameplaySmoke",
+          "result": "pending",
+          "atUtc": "2026-08-01T09:31:02.676469+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-01T09:31:02.772858+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-01T11:39:51.384168+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-01T11:39:51.491335+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-01T11:39:51.588308+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-01T13:36:52.429745+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-01T13:37:08.079225+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-01T13:37:08.122863+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "restoreSpec",
+          "atUtc": "2026-08-01T14:18:59.202278+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "goldenCases",
+          "atUtc": "2026-08-01T14:20:25.801614+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationReport",
+          "atUtc": "2026-08-01T14:20:25.896453+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-01T14:20:39.854823+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-01T14:20:39.955506+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-01T14:20:40.051186+00:00"
+        },
+        {
+          "event": "check",
+          "name": "gameplaySmoke",
+          "result": "pending",
+          "atUtc": "2026-08-01T14:20:40.147197+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-01T14:20:40.241189+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-01T14:58:19.568040+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-01T14:58:19.666330+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-01T14:58:19.763139+00:00"
+        },
+        {
+          "event": "check",
+          "name": "gameplaySmoke",
+          "result": "pending",
+          "atUtc": "2026-08-01T14:58:19.860866+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-01T14:58:19.954213+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationReport",
+          "atUtc": "2026-08-01T15:16:00.112967+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-01T15:16:00.213358+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-01T15:16:00.310599+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-01T15:16:00.410940+00:00"
+        },
+        {
+          "event": "check",
+          "name": "gameplaySmoke",
+          "result": "pending",
+          "atUtc": "2026-08-01T15:16:00.509593+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-01T15:16:00.605494+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationReport",
+          "atUtc": "2026-08-01T15:42:24.077494+00:00"
+        },
+        {
+          "event": "check",
+          "name": "gameplaySmoke",
+          "result": "pass",
+          "atUtc": "2026-08-01T15:42:24.172751+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-01T15:42:24.265205+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-02T07:41:58.736021+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-02T07:41:58.850167+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T07:41:58.945454+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-02T08:12:37.871755+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T08:12:37.973465+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-02T08:50:13.989194+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T08:50:14.093272+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-02T08:57:37.254505+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T08:57:37.359432+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-02T09:07:21.698558+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T09:07:21.745586+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-02T09:15:45.451295+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-02T09:15:45.500058+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T09:15:45.545370+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-02T09:41:16.514620+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-02T09:41:16.569111+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T09:41:16.617599+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-02T09:58:13.938338+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-02T09:58:13.988502+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T09:58:14.034915+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-02T10:13:10.514836+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-02T10:13:10.560709+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T10:13:10.605926+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-02T10:36:13.738761+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-02T10:36:13.839062+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T10:36:13.935173+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "fail",
+          "atUtc": "2026-08-02T11:08:58.387625+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "fail",
+          "atUtc": "2026-08-02T11:21:43.448608+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "fail",
+          "atUtc": "2026-08-02T11:41:21.760889+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "fail",
+          "atUtc": "2026-08-02T11:57:23.635810+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "fail",
+          "atUtc": "2026-08-02T12:20:21.120400+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "fail",
+          "atUtc": "2026-08-02T12:45:28.564194+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "fail",
+          "atUtc": "2026-08-02T12:53:13.341870+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-02T13:17:43.308282+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T13:17:43.360929+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-02T13:39:25.277010+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T13:39:25.334017+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-02T14:39:12.480042+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-02T14:39:12.585283+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-02T14:39:12.683085+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-02T14:39:12.778303+00:00"
         }
       ],
       "engineEvidence": "settings.37a11.json CocosEngine 3.8.2 + System.register business bundle"
     }
   },
   "createdAtUtc": "2026-07-31T10:06:44.358414+00:00",
-  "updatedAtUtc": "2026-07-31T11:07:17.440014+00:00"
+  "updatedAtUtc": "2026-08-02T14:39:21.292121+00:00"
 }

@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "1.0",
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "version": "18",
+    "representativeLevel": 1004
+  },
+  "status": "in_progress",
+  "completionClaim": "incomplete",
+  "sourceArtifacts": {
+    "restoreSpec": "generated/RESTORE_SPEC.json",
+    "goldenCases": "generated/golden-cases.json",
+    "implementation": "../../../cocosProject",
+    "originalReferences": [
+      "evidence/visual/original/2026-08-01/manifest.json",
+      "evidence/visual/original/2026-08-01/visual-difference-audit.md",
+      "evidence/runtime/baglike-exp-trait-selection.md",
+      "evidence/runtime/baglike-round-start-home-heal.md",
+      "evidence/runtime/baglike-warrior-combo-critical.md"
+    ],
+    "mechanicsDataHandoff": "MECHANICS_DATA_HANDOFF.md"
+  },
+  "subsystems": {
+    "phase-flow": {
+      "scope": "required",
+      "evidenceStatus": "partial",
+      "implementationStatus": "implemented",
+      "validationStatus": "numeric-pass",
+      "evidence": ["K-C007", "K-C013", "evidence/visual/original/2026-08-01/trait-selection.png"],
+      "unknowns": [
+        "Confirm whether any other modal phases can interrupt or bracket an active wave."
+      ],
+      "tests": ["golden-cases conditions: 4/4", "battlefield-scenario: EXP and trait layout assertions"],
+      "notes": "deploy/battle/trait/roundClear/won/lost are implemented. Level-up pauses over the expanded battlefield and resumes after a single or take-all selection."
+    },
+    "preparation": {
+      "scope": "required",
+      "evidenceStatus": "partial",
+      "implementationStatus": "partial",
+      "validationStatus": "untested",
+      "evidence": ["K-C014", "K-C016", "K-C017", "K-C018", "K-C025", "evidence/visual/original/2026-08-01/preparation-initial.png", "evidence/visual/original/2026-08-01/preparation-developed.png", "capture/039a4bd5-73b4-4599-b6ea-207dc3f531fa.png", "evidence/runtime/baglike-gear-level-color.md"],
+      "unknowns": [
+        "Obtain the target account's exact unlocked-hero set; the filtering input is connected but the account value is absent from package artifacts.",
+        "Restore H11 healing gear production, target selection, unit/home healing values, and timing before enabling its confirmed account-lock-filter exception.",
+        "Run matched interaction checks for occupied replacement, placed-gear return, invalid candidate drops, merge positioning, and per-round refresh counters.",
+        "Restore the remaining multi-cell connector composition around the recovered cl1-cl5 cogs, plus exact unlocked-cell treatment and persistent backpack presentation visible in the level-1004 references."
+      ],
+      "tests": ["golden-cases 47/47 including occupied replacement", "baglike-candidate-drops: 38 assertions including account-family filtering, coin-count weights, five-family cap/fill, seventh-refresh forced grid, Prepare-only exact-ID modifiers, and shipped REWARD/3012 no-op", "baglike-preparation: 24 assertions including exact level-color mapping and family-tint override", "User Creator-preview acceptance: candidate/grid sizing, overlap, and preparation-region separation resolved"],
+      "notes": "Static eligibility and the original 3000-3004 per-slot weighted draw routing are implemented; the last static batch is never replayed as a fallback. The dynamic path now filters by a configurable account-unlocked family set, counts placed coin gears as 1/2/4/8 for the recovered 3034 weight table, caps tracked hero diversity at five and fills missing unlocked families from duplicate candidates, and forces reward 3030 into slot three every seventh non-ad refresh when locked cells remain and no grid was drawn. H11 stays disabled until its healing consumer is restored. Occupied normal drops merge first or return every displaced whole gear to the tray. Candidate and grid pieces share the same scale and level atlas. RG_ALL_abl11_eff01 remains the confirmed shipped REWARD/3012 no-op."
+    },
+    "deployment-and-production": {
+      "scope": "required",
+      "evidenceStatus": "partial",
+      "implementationStatus": "implemented",
+      "validationStatus": "numeric-pass",
+      "evidence": ["K-C018", "K-C020", "evidence/runtime/baglike-unit-level-production.md", "evidence/runtime/baglike-power-near-attack.md", "evidence/runtime/baglike-power-near-worker.md"],
+      "unknowns": [
+        "Validate the first power-core contact phase and exact same-frame event order against a matched original trace."
+      ],
+      "tests": ["golden-cases workerProduction: H01/H02/H04/H12", "golden-cases coinProduction", "battlefield-production: 24 assertions including direct-neighbor versus connected-only POWER_NEAR scope, fractional worker remainder and displayed rate", "baglike-unit-progression: 227 assertions"],
+      "notes": "Production follows the recovered 100-point worker-power chain. Core-side contacts trigger connected components; HAMSTER output waits 0.75 seconds, H12 is a one-shot WHEEL skill after 0.25 seconds, coin gears pay on completion, and battle speed is 1.5x. Producing H01/H02/H03/H04 gears pass exact level profiles into spawned units; H12/H13 retain one-shot WHEEL semantics. RG_ALL_abl12_eff01 multiplies only the attack of future HAMSTER/WHEEL outputs from direct core-neighbor gears. RG_ALL_abl16_eff01 multiplies each later worker-progress trigger and the displayed rate by 1.2 for the same direct-neighbor scope, preserving fractional modulo progress; candidates, connected-only gears, core speed and output attributes are unchanged. There is no immediate start spawn or recovered maximum-alive gate."
+    },
+    "entities-and-attributes": {
+      "scope": "required",
+      "evidenceStatus": "partial",
+      "implementationStatus": "partial",
+      "validationStatus": "untested",
+      "evidence": ["K-C005", "K-C019", "evidence/runtime/baglike-unit-level-production.md", "evidence/runtime/baglike-enemy-attack-decrease.md", "evidence/runtime/baglike-power-near-attack.md", "evidence/runtime/baglike-warrior-combo-critical.md"],
+      "unknowns": [
+        "Join the remaining optional BagLike ability types to entity attributes."
+      ],
+      "tests": ["battlefield-kernel damage/attack-speed/projectile snapshot/forced-critical subset within 31 total assertions", "baglike-traits: 82 assertions including enemy ATK_DEC, POWER_NEAR_ATK_UP, POWER_NEAR_WORKER_UP, conditional home healing, and H01 star-gated combo critical", "battlefield-production: 24 assertions including attack-only producer scaling and worker-progress scaling", "baglike-unit-progression: 227 assertions across all producer levels and imported assets"],
+      "notes": "Level-1004 entities, M07 and three boss variants are joined. The captured spell attack, H02 split-shot and H03 freeze traits mutate production combat. RG_ALL_abl08_eff01 lowers live enemy attack. RG_ALL_abl12_eff01 snapshots a 1.2 attack-only multiplier into future outputs from directly adjacent producers, without changing HP or existing units. H01/H02/H03/H04 level-1 through level-4 units use recovered attribute multiples and distinct level models; H0204 carries skill identity 2002. RG_H01_abl02 snapshots the selected star-specific combo passive into future H01 units only. Remaining optional BagLike effects keep this subsystem partial."
+    },
+    "targeting-and-movement": {
+      "scope": "required",
+      "evidenceStatus": "confirmed",
+      "implementationStatus": "implemented",
+      "validationStatus": "numeric-pass",
+      "evidence": ["K-C006", "evidence/runtime/battlefield-targeting-movement.md"],
+      "unknowns": [],
+      "tests": ["battlefield-kernel: 31 assertions including strict range boundaries, selectable/tree filtering, quadtree ties, normalized movement, home approach, hero separation, projectile live/snapshot attack resolution, forced critical and dodge priority", "Cocos Creator 3.8.8 bundled TypeScript compiler: pass with noEmit and skipLibCheck", "Cocos project structure check: valid, no missing meta or warnings"],
+      "notes": "Production combat now reproduces the recovered per-frame nearest-target search, original quadtree equal-distance order, strict search/casting boundaries, normalized full-speed pursuit, hero-only 60x60 separation, logical homes at +/-300, far-horizontal/near-diagonal home approach, 40-pixel horizontal stop, trunk-mode home attack permissions, and reverse hero-then-monster update order. H12/H13 random targeting and the previously recovered projectile/area lifetime branches remain separately routed. Matched runtime traces remain part of the global matchedReplay gate rather than an unknown targeting rule."
+    },
+    "attack-and-damage": {
+      "scope": "required",
+      "evidenceStatus": "partial",
+      "implementationStatus": "implemented",
+      "validationStatus": "numeric-pass",
+      "evidence": ["K-C006", "K-C009", "K-C019", "K-C021", "evidence/runtime/baglike-enemy-attack-decrease.md", "evidence/runtime/baglike-warrior-combo-critical.md", "evidence/runtime/baglike-h0905-bounce-projectile.md", "evidence/assets/original/H0905-effects/manifest.json"],
+      "unknowns": [
+        "Verify the remaining BagLike ability modifiers and full same-frame RNG/event ordering with a matched original trace."
+      ],
+      "tests": ["golden-cases damage: 8 cases", "battlefield-kernel damage/attack-speed/retry/projectile/bounce/forced-critical subset within 34 total assertions", "baglike-traits: enemy ATK_DEC and H01 combo-critical behavior within 82 total assertions", "H0905 recovered effects: 15 asset/linkage assertions"],
+      "notes": "Production combat uses the isolated kernel for dodge half damage, critical, forced critical, additive critical damage, effect ratio, typed resistance, boss increase, home damage, floor, minimum damage, attack-speed-scaled basic behavior delay, and the original live-caster versus dead-projectile attack snapshot boundary. H0905 follows the recovered BounceBullet route: the initial 35% projectile can make at most two further speed-400 bounces to the nearest unvisited enemy strictly inside 300 pixels, sharing one visited-target map. Each segment now renders the recovered H24_S1 projectile and creates the recovered three-frame H24_S1_LOWER impact plus bullet_zhanche audio; frame geometry is confirmed, while the current 30 FPS playback remains inferred pending matched video. RG_ALL_abl08_eff01 reads through the shared monster attribute layer for ordinary, elite and boss units. RG_H01_abl02 counts completed basic attacks, preserves an armed critical across dodge, consumes it only on an actual critical, and applies the star-10 heal at the recovered trigger point."
+    },
+    "skills-buffs-status": {
+      "scope": "required",
+      "evidenceStatus": "partial",
+      "implementationStatus": "partial",
+      "validationStatus": "untested",
+      "evidence": ["K-C019", "K-C023", "evidence/visual/original/2026-08-01/trait-selection.png", "evidence/runtime/baglike-random-gear-upgrade.md", "evidence/runtime/baglike-level2-prepare-weight.md", "evidence/runtime/baglike-exp-gain-ability.md", "evidence/runtime/baglike-enemy-attack-decrease.md", "evidence/runtime/baglike-power-near-attack.md", "evidence/runtime/baglike-power-near-worker.md", "evidence/runtime/baglike-immediate-home-heal.md", "evidence/runtime/baglike-round-start-home-heal.md", "evidence/runtime/baglike-warrior-combo-critical.md", "evidence/runtime/baglike-h0905-bounce-projectile.md"],
+      "unknowns": [
+        "Restore the complete weighted BagLike ability pool and all effect types.",
+        "Obtain the target competitor account's saved H01 star value; package code proves the local-save source but the account value is absent from packages and current captures.",
+        "Restore remaining player-account hero-star values, condition handlers, and ad playback for reroll/take-all.",
+        "Validate Boss03 control immunity against an actual control-producing optional ability."
+      ],
+      "tests": ["battlefield-kernel base-skill, projectile and forced-critical attack-resolution assertions within 31 total", "battlefield-production: 24 assertions including POWER_NEAR placement, attack-only output scaling, worker-progress scaling and displayed rate", "battlefield-scenario: 28 assertions including EXP thresholds and 1.5x fractional remainder", "baglike-traits: 82 weighted draw/filter/effect assertions including initial-draw no-guarantee, reroll quality-4 guarantee, random gear upgrade, shipped 3012 no-op, EXP_GAIN/5000, MONSTER ATK_DEC/500, POWER_NEAR_ATK_UP/2000, POWER_NEAR_WORKER_UP/2000, two BASE_HP-gated heals, and all four H01 combo-critical star variants"],
+      "notes": "Every level-up and reroll performs an original-style weighted draw without replacement, filtering by times, used-hero range, account hero star, recovered wave conditions, and current base HP. The initial level-up draw has no minimum-quality guarantee; only reroll enforces minimum quality 4 (purple). Twenty-eight original effect rows participate as twenty-five mutually exclusive ability groups: twenty-four active groups plus the evidence-confirmed v18 REWARD/3012 no-op. RG_ALL_abl10_eff01 upgrades one random placed non-power gear. RG_ALL_abl07_eff01 multiplies later EXP notifications by 1.5. RG_ALL_abl08_eff01 applies live enemy ATK_DEC. RG_ALL_abl12_eff01 gives future HAMSTER/WHEEL outputs from directly adjacent core gears a 1.2 attack multiplier. RG_ALL_abl16_eff01 gives the same direct-neighbor scope 1.2 worker progress and displayed rate. RG_ALL_abl17_eff01 is a noRestore immediate consumable available at 0%-50% base HP; it heals floor(max HP * 0.5), clamps to max, and does not persist in the trait stack. RG_ALL_abl18_eff01 is a one-time persistent ability available at 0%-75% base HP; it does not heal on selection and restores floor(max HP * 0.1), capped to max, on every later BAGLIKE_BATTLE_ROUND_START. RG_H01_abl02 selects only the highest H01-star-qualified row at 3/5/8/10 stars and grants future H01 units the recovered 3/3/2/2-completion forced-critical passive; the target account star remains externally unknown, so the reconstruction baseline conservatively defaults h01HeroStar to 1. Unsupported effect handlers remain excluded rather than producing unverified inert cards."
+    },
+    "waves-and-scaling": {
+      "scope": "required",
+      "evidenceStatus": "confirmed",
+      "implementationStatus": "implemented",
+      "validationStatus": "numeric-pass",
+      "evidence": ["K-C004", "K-C005", "K-C009", "K-C019"],
+      "unknowns": [],
+      "tests": ["battlefield-scenario: level 1004 rounds 1-15 and boss order", "golden-cases defeatCompensation: 4 cases"],
+      "notes": "Level-1004 wave schedules, level/round multipliers, and the 15-row consecutive-defeat compensation table are implemented."
+    },
+    "outcomes-and-persistence": {
+      "scope": "required",
+      "evidenceStatus": "partial",
+      "implementationStatus": "implemented",
+      "validationStatus": "numeric-pass",
+      "evidence": ["K-C007", "K-C013", "K-C019", "evidence/runtime/baglike-immediate-home-heal.md", "evidence/runtime/baglike-round-start-home-heal.md"],
+      "unknowns": [
+        "Confirm simultaneous death, pending-hit, and reward ordering against a matched original trace.",
+        "Confirm whether defeat count survives a process restart rather than only an in-session retry."
+      ],
+      "tests": ["golden-cases baseHp and conditions", "golden-cases defeatCompensation", "battlefield-kernel retry scaling assertions", "baglike-traits BASE_HP inclusive boundaries, noRestore immediate healing, persistent round-start healing and max-HP clamp assertions"],
+      "notes": "Victory, defeat, retry, in-session defeat count, post-loss enemy scaling, the conditional immediate base-heal consumable, and persistent per-round-start base healing are implemented and numerically covered."
+    },
+    "presentation-and-feedback": {
+      "scope": "required",
+      "evidenceStatus": "partial",
+      "implementationStatus": "partial",
+      "validationStatus": "untested",
+      "evidence": ["K-C010", "K-C014", "K-C022", "evidence/visual/original/2026-08-01/manifest.json", "evidence/visual/reconstruction/2026-08-02/manifest.json", "evidence/visual/reconstruction/2026-08-02/visual-comparison.md", "evidence/visual/reconstruction/2026-08-02/fusion-validation/h0905-effects.png", "evidence/runtime/baglike-unit-level-production.md", "evidence/runtime/baglike-h0905-bounce-projectile.md", "evidence/assets/original/hero-level-models/README.md", "evidence/assets/original/H0905-effects/manifest.json"],
+      "unknowns": [
+        "Reproduce the original developed level-1004 save state (863 HP, placed gears, wave/time and RNG trace) and capture same-state wave-1 and trait-selection frames.",
+        "Restore exact unit sorting, remaining non-H01-H04 model mappings, animation timing, remaining level-specific projectiles, hit/skill/status effects, damage text, audio, and result feedback; match H0905 impact frame timing and volume to competitor video."
+      ],
+      "tests": ["Creator imported 12 recovered level-2/3/4 Spine 3.8.99 sets with atlas bindings and no missing meta", "baglike-unit-progression asset existence and path assertions", "H0905 recovered effects: 15 asset/linkage assertions and 750x1334 Web-build smoke capture", "750x1334 Creator release captures for initial preparation and a real drag/start wave-1 transition"],
+      "notes": "Four original level-1004 screenshots establish preparation, battle, and trait-overlay behavior. The reconstruction now has valid 750x1334 preparation and interactive wave-1 captures. Cropped/scaled preparation anchors match the y=300 backpack split, the top HUD follows recovered BagLikeTopItem anchors and stays above the active battlefield, and cl1-cl5 use exact recovered atlas cogs; common HUD/button art, fonts and multi-cell connector composition remain approximate. The original battle/trait references are from a developed 863-HP save, while the reconstruction capture starts at 500 HP, so battle is structural-only and trait remains uncaptured. H01/H02/H03/H04 map all four producer levels to their original Spine model families at recovered scales 0.8/0.88. H0905 now uses its recovered H24_S1 projectile, three exact H24_S1_LOWER frames and bullet_zhanche clip for every initial/bounce impact; the packed frames are confirmed but 30 FPS timing remains inferred. H0204 carries skill 2002, whose distinct H29_S2 projectile presentation remains pending."
+    }
+  },
+  "gates": {
+    "evidence": {
+      "status": "pending",
+      "evidence": ["Damage, projectile lifetime, production consumers, and targeting/movement are recovered; remaining optional skill handlers are still incomplete."]
+    },
+    "deterministic": {
+      "status": "pending",
+      "evidence": ["47 golden cases and 519 rule/asset assertions pass, including 38 dynamic preparation-drop checks and 15 H0905 recovered-effect checks; matched interaction and first-contact/same-frame event ordering are still pending."]
+    },
+    "integration": {
+      "status": "pending",
+      "evidence": ["Creator import and TypeScript pass; the Web build includes all three H0905 effect assets and its 750x1334 fusion fixture loads without project console errors. A full preparation-to-result interaction run is still required."]
+    },
+    "matchedReplay": {
+      "status": "pending",
+      "evidence": ["Original and reconstruction now both target level 1004 at a normalized 750x1334 game viewport. The 2026-08-02 preparation capture closes the earliest top-HUD/backpack split and overlap divergence, and a real drag/start capture proves the wave-1 phase layout. The battle reference is a developed 863-HP state while reconstruction starts at 500 HP, and no same-state trait reconstruction exists, so matched replay remains pending."]
+    }
+  },
+  "blockers": [
+    "The developed level-1004 battle/trait save state has not been reproduced; same-state wave-1 and trait-selection pairs are missing, and original common HUD/button/font plus multi-cell gear connector composition remain approximate."
+  ],
+  "nextActions": [
+    "Restore H11 healing gear as a complete data-to-runtime vertical slice, then enable its confirmed account-lock-filter exception in candidate draws.",
+    "Connect the remaining level-1004 BagLike ability effects to their recovered runtime consumers and deterministic tests.",
+    "Recover and validate first-core-contact, same-frame event ordering, and RNG call order with a matched trace.",
+    "Run a full preparation-to-wave-15 victory and defeat/retry integration flow without manual state edits.",
+    "Capture the competitor hero page or saved profile value that proves the target account's H01 star, then set h01HeroStar to reproduce its exact combo-card eligibility.",
+    "After mechanics and data gates pass, reproduce the supplied developed level-1004 state and finish matched visual/audio replay."
+  ]
+}

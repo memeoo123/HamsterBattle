@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0",
+  "target": "wxf9af2417e78ce07a/18",
+  "capturedAt": "2026-08-02",
+  "bundle": "resources3",
+  "bindings": {
+    "missileConfig": "M_ZC_9001",
+    "projectileModel": "H24_S1",
+    "impactModel": "H24_S1_LOWER",
+    "hitSound": "bullet_zhanche"
+  },
+  "assets": [
+    {
+      "file": "js_zhanche_dandao.png",
+      "logicalPath": "spriteFrame/skill/js_zhanche_dandao",
+      "uuid": "f5345a8e-d1cf-4820-9a49-3db9adb316f1",
+      "nativeVersion": "e3318",
+      "remotePath": "remote/resources3/native/f5/f5345a8e-d1cf-4820-9a49-3db9adb316f1.e3318.png",
+      "bytes": 558,
+      "sha256": "f8c31ba4f5ac55df9c5f184a5f9546a8a86e9c9b53429b853324ad18fc655f29"
+    },
+    {
+      "file": "js_zhanche_hill.png",
+      "logicalPath": "spriteFrame/skill/js_zhanche_hill",
+      "uuid": "ed2b9415-2090-44fc-9ebe-dc5647b21c08",
+      "nativeVersion": "99a20",
+      "remotePath": "remote/resources3/native/ed/ed2b9415-2090-44fc-9ebe-dc5647b21c08.99a20.png",
+      "bytes": 5405,
+      "sha256": "bbd883f28f6545012c1215fc62ad053c8bcdb0705ce7590fbf9d9ff05d57f534"
+    },
+    {
+      "file": "bullet_zhanche.mp3",
+      "logicalPath": "audio/sound/bullet/bullet_zhanche",
+      "uuid": "cb9b07d1-d7a7-4f8d-8520-9b3b18b02bf4",
+      "nativeVersion": "3049c",
+      "remotePath": "remote/resources3/native/cb/cb9b07d1-d7a7-4f8d-8520-9b3b18b02bf4.3049c.mp3",
+      "bytes": 26982,
+      "durationSeconds": 0.709583,
+      "sha256": "daecb612e72bcaf0914832d0a1220aa8f1e67a8e0f2c301eff4fb9f09227e631"
+    }
+  ],
+  "frameGeometry": {
+    "H24_S1": {
+      "frame": "js_zhanche_dandao-idle_0",
+      "rect": { "x": 1, "y": 1, "width": 109, "height": 20 },
+      "originalSize": { "width": 109, "height": 20 },
+      "offset": { "x": 0, "y": 0 },
+      "anchor": { "x": 0.5, "y": 0.2 },
+      "scale": { "x": 0.7, "y": 0.7 }
+    },
+    "H24_S1_LOWER": {
+      "frames": [
+        { "name": "js_zhanche_hill-idle_0", "rect": { "x": 1, "y": 1, "width": 106, "height": 76 }, "offset": { "x": -11, "y": -41 } },
+        { "name": "js_zhanche_hill-idle_1", "rect": { "x": 1, "y": 195, "width": 92, "height": 110 }, "offset": { "x": 7, "y": -25 } },
+        { "name": "js_zhanche_hill-idle_2", "rect": { "x": 1, "y": 79, "width": 92, "height": 114 }, "offset": { "x": -10, "y": -26 } }
+      ],
+      "originalSize": { "width": 200, "height": 200 },
+      "anchor": { "x": 0.4, "y": 0.3 },
+      "frameDurationStatus": "inferred-30fps"
+    }
+  },
+  "provenance": "MissileConfig and ModelConfig establish model/sound bindings. The authorized resources3 config, packed import and native map establish UUIDs, native versions, exact frames and source files."
+}

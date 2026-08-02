@@ -1,0 +1,279 @@
+// Module: chunks:///_virtual/BattleTrunkChapterVo.ts
+// Dependencies: ./rollupPluginModLoBabelHelpers.js, cc, ./G.ts, ./FightType.ts, ./GIns.ts, ./UIBagLikeBuffConfig.ts
+(function(t) {
+    var n, i, r, u, o, s;
+    return nYn && EVn && (H8 += Iat), nYn && RVn && (H8 += "H+7L"), nYn && LVn && (P8 += "extraR"), 
+    nYn && RVn && (H8 += "/hgQuA545"), nYn = 0, function() {
+        var e;
+        return rYn && bVn && (P8 += SVn), rYn && RVn && (P8 += "oundConfi"), rYn = 0, (e = HVn(HVn({}, C, 0), T, 0))[C] = [ function(t) {
+            n = t["createClass"];
+        }, function(t) {
+            i = t[M];
+        }, function(t) {
+            r = t[w];
+        }, function(t) {
+            u = t["FightType"];
+        }, function(t) {
+            o = t[w];
+        }, function(t) {
+            s = t["BagLikeBuffSpecialWordType"];
+        } ], e[T] = function() {
+            iYn && LVn && (P8 += "g"), iYn = 0, i[E][R]({}, H8, mQ, void 0), t(mQ, function() {
+                var t, i;
+                return 0, (t = (i = function() {
+                    this["curChapterId"] = void 0, this["curRound"] = void 0, this["_fightType"] = void 0, 
+                    this["fightTime"] = 0, this["curConfig"] = void 0, this["curRoundConifg"] = void 0, 
+                    this[""] = void 0, this["monsterScheduleIndex"] = 0, this["extraMonsterScheduleIndex"] = 0, 
+                    this["_dropGold"] = 0, this["_killMonsterCnt"] = 0, this["_failAtkMultiple"] = 1, 
+                    this["_failHpMultiple"] = 1, this["_setting"] = void 0;
+                })[U])["init"] = function(t) {
+                    this["curChapterId"] = t, this["resetVo"](), this["initConfig"](), this["updateFailMultiple"]();
+                }, t["resetVo"] = function() {
+                    this["curRound"] = 0, this["fightTime"] = 0, this["_dropGold"] = 0, this["_killMonsterCnt"] = 0;
+                }, t["initConfig"] = function() {
+                    this["curConfig"] = r["TableManager"]["getDataById"](table["trunkinstance"]["TrunkInstanceConfig"], this["curChapterId"]);
+                }, t["getReportTypeName"] = function() {
+                    return J8;
+                }, t["updateFailMultiple"] = function() {
+                    var t;
+                    if (this["fightType"] == u["TRUNK_INSTANCE"] && (t = o["trunkInstanceModel"]["getFailMultipleCfg"](this["curChapterId"]))) return this["_failAtkMultiple"] = this["getAttrMultiple"](t["atkMultiple"]), 
+                    void (this["_failHpMultiple"] = this["getAttrMultiple"](t["hpMultiple"]));
+                    this["_failAtkMultiple"] = 1, this["_failHpMultiple"] = 1;
+                }, t["startRound"] = function() {
+                    var t, n, i, u;
+                    n = this["roundId"], this["monsterScheduleIndex"] = 0, this["extraMonsterScheduleIndex"] = 0, 
+                    this["curRoundConifg"] = r["TableManager"]["getDataById"](table["trunkinstance"]["TrunkInstanceRoundConfig"], n), 
+                    (t = o["bagLikeBuffMgr"]["specialWordActiveMap"][s["ADD_EXTRA_MONSTER"]]) ? (u = Math["min"](this["curRound"], t["roundIds"]["length"] - 1), 
+                    i = t["roundIds"][u], this[""] = r["TableManager"]["getDataById"](table["trunkinstance"]["TrunkInstanceRoundConfig"], i)) : this[""] = null;
+                }, t["roundEnd"] = function() {
+                    this["curRound"]++;
+                }, t["isChapterEnd"] = function() {
+                    return this["curRound"] >= this["curConfig"]["roundIds"]["length"];
+                }, t["roundMax"] = function() {
+                    return this["curConfig"]["roundIds"]["length"];
+                }, t["checkMonsterRoundEnd"] = function() {
+                    return this["monsterScheduleIndex"] >= this["curRoundConifg"]["monsterTimes"]["length"];
+                }, t["checkMonsterSchedule"] = function(t) {
+                    for (var n = []; this["monsterScheduleIndex"] < this["curRoundConifg"]["monsterTimes"]["length"] && this["curRoundConifg"]["monsterTimes"][this["monsterScheduleIndex"]] <= t; ) this["curRoundConifg"]["monsterIds"][this["monsterScheduleIndex"]] && n[R](this["curRoundConifg"]["monsterIds"][this["monsterScheduleIndex"]]), 
+                    this["monsterScheduleIndex"]++;
+                    return n;
+                }, t["checkExtraMonsterSchedule"] = function(t) {
+                    if (this[""]) {
+                        for (var n = []; this["extraMonsterScheduleIndex"] < this[""]["monsterTimes"]["length"] && this[""]["monsterTimes"][this["extraMonsterScheduleIndex"]] <= t; ) this[""]["monsterIds"][this["extraMonsterScheduleIndex"]] && n[R](this[""]["monsterIds"][this["extraMonsterScheduleIndex"]]), 
+                        this["extraMonsterScheduleIndex"]++;
+                        return this["extraMonsterScheduleIndex"] < this[""]["monsterTimes"]["length"] && this["checkMonsterRoundEnd"]() && (this["extraMonsterScheduleIndex"] = this[""]["monsterTimes"]["length"]), 
+                        n;
+                    }
+                    return null;
+                }, t["onMonsterDie"] = function(t) {
+                    this["_killMonsterCnt"]++, this["setting"]["hasDropGold"] && 0 < t["gold"] && this["addGold"](t["gold"]);
+                }, t["addGold"] = function(t, n) {
+                    this["_dropGold"] += (n = void 0 === n || n) ? Math["floor"](t * this["dropMultiple"]) : Math["floor"](t);
+                }, t["getUnCreateMonsterDropGolds"] = function() {
+                    var t;
+                    if (t = 0, this["curRoundConifg"]) for (var n = this["monsterScheduleIndex"]; n < this["curRoundConifg"]["monsterIds"]["length"]; n++) {
+                        var i;
+                        (i = r["TableManager"]["getDataById"](table["monster"]["MonsterAttributeConfig"], this["curRoundConifg"]["monsterIds"][n])) && i["gold"] && (t += i["gold"]);
+                    }
+                    if (this[""]) for (var u = this["extraMonsterScheduleIndex"]; u < this[""]["monsterIds"]["length"]; u++) {
+                        var o;
+                        (o = r["TableManager"]["getDataById"](table["monster"]["MonsterAttributeConfig"], this[""]["monsterIds"][u])) && o["gold"] && (t += o["gold"]);
+                    }
+                    return t;
+                }, t["getAttrMultiple"] = function(t) {
+                    return t ? t / sC : 1;
+                }, n(i, [ function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn(HVn({}, hn, 0), Ut, 0), di, 0))["key"] = 0, t["get"] = 0, t["set"] = 0, 
+                        t;
+                    }[H]())["key"] = Gp, t["get"] = function() {
+                        return this["_fightType"];
+                    }, t["set"] = function(t) {
+                        this["_fightType"] != t && (this["_fightType"] = t, this["_setting"] = r["TableManager"]["getDataById"](table["battle"]["BattleSettingConfig"], t));
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = xN, t["get"] = function() {
+                        return this["_setting"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = zF, t["get"] = function() {
+                        return this["curRound"] || (this["curRound"] = 0), this["curConfig"]["roundIds"][this["curRound"]] || null;
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = jF, t["get"] = function() {
+                        var t;
+                        return null == (t = this["curConfig"]) ? void 0 : t["initRewards"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = $F, t["get"] = function() {
+                        var t;
+                        return null == (t = this["curRoundConifg"]) ? void 0 : t["coinRewards"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = rR, t["get"] = function() {
+                        var t, n, i, u, o, s;
+                        return i = this["roundId"], s = r["TableManager"]["getDataById"](table["trunkinstance"]["TrunkInstanceRoundConfig"], i), 
+                        u = this["getAttrMultiple"](this["curConfig"]["atkMultiple"]), n = this["getAttrMultiple"](this["curConfig"]["hpMultiple"]), 
+                        o = this["getAttrMultiple"](s["atkMultiple"]), t = this["getAttrMultiple"](s["hpMultiple"]), 
+                        function() {
+                            var i;
+                            return (i = function() {
+                                var t;
+                                return (t = function() {
+                                    var t;
+                                    return (t = HVn(HVn({}, x3, 0), K3, 0))["atkMultiple"] = 0, t["hpMultiple"] = 0, 
+                                    t;
+                                }[H]())["atkMultiple"] = 0, t["hpMultiple"] = 0, t;
+                            }[H]())["atkMultiple"] = u * o * this["_failAtkMultiple"], i["hpMultiple"] = n * t * this["_failHpMultiple"], 
+                            i;
+                        }[Q](this)[H]();
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = q8, t["get"] = function() {
+                        return this["getAttrMultiple"](this["curConfig"]["goldMultiple"]);
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = Cx, t["get"] = function() {
+                        var t;
+                        return null == (t = this["curConfig"]) ? void 0 : t["staticBricks"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = gM, t["get"] = function() {
+                        var t;
+                        return null == (t = this["curConfig"]) ? void 0 : t["staticBuffs"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = mp, t["get"] = function() {
+                        var t;
+                        return null == (t = this["curConfig"]) ? void 0 : t["fightscene"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = w2, t["get"] = function() {
+                        var t;
+                        return null == (t = this["curConfig"]) ? void 0 : t["homeHp"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = JQ, t["get"] = function() {
+                        return -1;
+                    }, t;
+                }[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = ZQ, t["get"] = function() {
+                        return 0;
+                    }, t;
+                }[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = d4, t["get"] = function() {
+                        return function() {
+                            var t;
+                            return (t = function() {
+                                var t;
+                                return (t = function() {
+                                    var t;
+                                    return (t = HVn(HVn(HVn(HVn(HVn(HVn({}, Gp, 0), lM, 0), _4, 0), zN, 0), Q8, 0), j8, 0))["fightType"] = 0, 
+                                    t["chapterId"] = 0, t["roundIdx"] = 0, t["fightTime"] = 0, t["killMonsterCnt"] = 0, 
+                                    t["dropGold"] = 0, t;
+                                }[H]())["fightType"] = 0, t["chapterId"] = 0, t["roundIdx"] = 0, t["fightTime"] = 0, 
+                                t["killMonsterCnt"] = 0, t["dropGold"] = 0, t;
+                            }[H]())["fightType"] = this["fightType"], t["chapterId"] = this["curChapterId"], 
+                            t["roundIdx"] = this["curRound"] - 1, t["fightTime"] = this["fightTime"], t["killMonsterCnt"] = this["_killMonsterCnt"], 
+                            t["dropGold"] = this["_dropGold"], t;
+                        }[Q](this)[H]();
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = JN, t["get"] = function() {
+                        return this["setting"] ? this["setting"]["totalTime"] : 0;
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = $8, t["get"] = function() {
+                        return !0;
+                    }, t;
+                }[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = WN, t["get"] = function() {
+                        return !0;
+                    }, t;
+                }[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = j8, t["get"] = function() {
+                        return this["_dropGold"];
+                    }, t;
+                }[Q](this)[H](), function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = Q8, t["get"] = function() {
+                        return this["_killMonsterCnt"];
+                    }, t;
+                }[Q](this)[H]() ]), i;
+            }()), i[E][z]();
+        }, e;
+    }[Q](this)[H]();
+});

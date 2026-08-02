@@ -1,0 +1,3 @@
+// Module: chunks:///_virtual/BaseAutoFight.ts
+// Dependencies: cc
+(function(t){var n;return YKn&&LVn&&(vW="n"),YKn=0,function(){var i;return ZKn&&bVn&&(vW+=IG),ZKn&&LVn&&(vW+="owI"),ZKn=0,(i=HVn(HVn({},C,0),T,0))[C]=[function(t){n=t[M]}],i[T]=function(){JKn&&LVn&&(vW+="ndex"),JKn=0,n[E][R]({},fW,_k,void 0),t(_k,function(){var t,n;return(t=(n=function(){this[6]=0,this["paths"]=[]})[U])["setData"]=function(){this["initPaths"]()},t["initPaths"]=function(){},t["autoHandler"]=function(){},t["isEnd"]=function(){return this[6]==this["paths"]["length"]-1},t["next"]=function(){this[6]<this["paths"]["length"]-1&&this[6]++},t["checkStopAuto"]=function(){return!0},t["stop"]=function(){},t["close"]=function(){},n}()),n[E][z]()},i}[Q](this)[H]()});

@@ -1,0 +1,293 @@
+
+js_sheshou_3.png
+size: 490,262
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+js_1
+  rotate: true
+  xy: 265, 91
+  size: 169, 61
+  orig: 169, 61
+  offset: 0, 0
+  index: -1
+js_10
+  rotate: false
+  xy: 89, 38
+  size: 54, 50
+  orig: 54, 61
+  offset: 0, 11
+  index: -1
+js_11
+  rotate: false
+  xy: 370, 17
+  size: 22, 14
+  orig: 22, 14
+  offset: 0, 0
+  index: -1
+js_12
+  rotate: false
+  xy: 236, 57
+  size: 21, 23
+  orig: 21, 23
+  offset: 0, 0
+  index: -1
+js_13
+  rotate: false
+  xy: 404, 16
+  size: 38, 12
+  orig: 38, 12
+  offset: 0, 0
+  index: -1
+js_14
+  rotate: false
+  xy: 151, 253
+  size: 13, 8
+  orig: 13, 8
+  offset: 0, 0
+  index: -1
+js_15
+  rotate: false
+  xy: 328, 253
+  size: 18, 8
+  orig: 18, 8
+  offset: 0, 0
+  index: -1
+js_16
+  rotate: false
+  xy: 2, 245
+  size: 17, 16
+  orig: 17, 16
+  offset: 0, 0
+  index: -1
+js_17
+  rotate: false
+  xy: 166, 243
+  size: 14, 17
+  orig: 14, 17
+  offset: 0, 0
+  index: -1
+js_18
+  rotate: false
+  xy: 327, 35
+  size: 54, 47
+  orig: 54, 47
+  offset: 0, 0
+  index: -1
+js_19
+  rotate: false
+  xy: 109, 94
+  size: 32, 33
+  orig: 32, 33
+  offset: 0, 0
+  index: -1
+js_2
+  rotate: true
+  xy: 185, 81
+  size: 179, 78
+  orig: 179, 78
+  offset: 0, 0
+  index: -1
+js_20
+  rotate: false
+  xy: 2, 129
+  size: 182, 132
+  orig: 182, 132
+  offset: 0, 0
+  index: -1
+js_21
+  rotate: true
+  xy: 328, 137
+  size: 124, 98
+  orig: 127, 98
+  offset: 3, 0
+  index: -1
+js_22
+  rotate: false
+  xy: 88, 5
+  size: 44, 31
+  orig: 44, 31
+  offset: 0, 0
+  index: -1
+js_23
+  rotate: false
+  xy: 88, 5
+  size: 44, 31
+  orig: 44, 31
+  offset: 0, 0
+  index: -1
+js_24
+  rotate: false
+  xy: 440, 25
+  size: 47, 41
+  orig: 47, 42
+  offset: 0, 1
+  index: -1
+js_5
+  rotate: true
+  xy: 223, 5
+  size: 37, 43
+  orig: 37, 43
+  offset: 0, 0
+  index: -1
+js_6
+  rotate: false
+  xy: 2, 131
+  size: 23, 32
+  orig: 23, 32
+  offset: 0, 0
+  index: -1
+js_9
+  rotate: false
+  xy: 382, 29
+  size: 64, 54
+  orig: 64, 57
+  offset: 0, 0
+  index: -1
+shou2
+  rotate: true
+  xy: 179, 4
+  size: 35, 36
+  orig: 35, 36
+  offset: 0, 0
+  index: -1
+texiao/skill01_qiangkou_00000
+  rotate: true
+  xy: 145, 22
+  size: 39, 32
+  orig: 60, 50
+  offset: 14, 9
+  index: -1
+texiao/skill01_qiangkou_00001
+  rotate: false
+  xy: 340, 3
+  size: 28, 30
+  orig: 60, 50
+  offset: 28, 12
+  index: -1
+texiao/skill01_qiangkou_00002
+  rotate: false
+  xy: 267, 4
+  size: 36, 33
+  orig: 60, 50
+  offset: 20, 10
+  index: -1
+texiao/skill01_qiangkou_00003
+  rotate: true
+  xy: 52, 28
+  size: 46, 35
+  orig: 60, 50
+  offset: 10, 9
+  index: -1
+texiao/skill01_qiangkou_00004
+  rotate: false
+  xy: 185, 40
+  size: 49, 41
+  orig: 60, 50
+  offset: 7, 6
+  index: -1
+texiao/skill01_qiangkou_00005
+  rotate: false
+  xy: 265, 39
+  size: 60, 50
+  orig: 60, 50
+  offset: 0, 0
+  index: -1
+texiao/skill01_qiangkou_00006
+  rotate: false
+  xy: 2, 34
+  size: 48, 40
+  orig: 60, 50
+  offset: 6, 6
+  index: -1
+texiao/skill01_qiangkou_00008
+  rotate: false
+  xy: 305, 3
+  size: 33, 30
+  orig: 60, 50
+  offset: 20, 11
+  index: -1
+yan1
+  rotate: false
+  xy: 2, 18
+  size: 44, 14
+  orig: 44, 14
+  offset: 0, 0
+  index: -1
+yanwu1
+  rotate: true
+  xy: 144, 63
+  size: 78, 39
+  orig: 78, 39
+  offset: 0, 0
+  index: -1
+yanwu2
+  rotate: true
+  xy: 427, 162
+  size: 98, 49
+  orig: 112, 53
+  offset: 1, 0
+  index: -1
+yanwu10
+  rotate: true
+  xy: 427, 162
+  size: 98, 49
+  orig: 112, 53
+  offset: 1, 0
+  index: -1
+yanwu6
+  rotate: true
+  xy: 427, 162
+  size: 98, 49
+  orig: 112, 53
+  offset: 1, 0
+  index: -1
+yanwu3
+  rotate: false
+  xy: 2, 76
+  size: 105, 52
+  orig: 112, 53
+  offset: 1, 1
+  index: -1
+yanwu7
+  rotate: false
+  xy: 2, 76
+  size: 105, 52
+  orig: 112, 53
+  offset: 1, 1
+  index: -1
+yanwu4
+  rotate: false
+  xy: 328, 84
+  size: 110, 51
+  orig: 112, 53
+  offset: 2, 0
+  index: -1
+yanwu8
+  rotate: false
+  xy: 328, 84
+  size: 110, 51
+  orig: 112, 53
+  offset: 2, 0
+  index: -1
+yanwu5
+  rotate: true
+  xy: 440, 67
+  size: 93, 47
+  orig: 112, 53
+  offset: 2, 0
+  index: -1
+yanwu9
+  rotate: true
+  xy: 440, 67
+  size: 93, 47
+  orig: 112, 53
+  offset: 2, 0
+  index: -1
+zui2
+  rotate: true
+  xy: 154, 146
+  size: 19, 29
+  orig: 19, 29
+  offset: 0, 0
+  index: -1

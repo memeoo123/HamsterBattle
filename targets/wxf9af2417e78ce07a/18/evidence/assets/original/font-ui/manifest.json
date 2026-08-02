@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "target": "wxf9af2417e78ce07a/18",
+  "sourceConfig": {
+    "bundle": "resources3",
+    "file": "config.cce0e.json",
+    "url": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/config.cce0e.json"
+  },
+  "font": {
+    "logicalPath": "font/default",
+    "pathIndex": 283,
+    "type": "cc.TTFFont",
+    "compressedUuid": "a62EheLq5CzLlYhlVVUGr0",
+    "uuid": "a6d8485e-2eae-42cc-b958-865555506af4",
+    "nativeVersion": "be5b6",
+    "nativeFile": "default.ttf",
+    "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/a6/a6d8485e-2eae-42cc-b958-865555506af4.be5b6/default.ttf",
+    "file": "default.ttf",
+    "sha256": "072c8fe3f6d86fad4cf3be45f0613485930d2c2169e4239a1661ef7452b8273a",
+    "fontFamily": "TsangerYunHei W08",
+    "postScriptName": "TsangerYunHei-W08",
+    "style": "Regular"
+  },
+  "implementation": {
+    "projectAsset": "cocosProject/assets/resources/original/default.ttf",
+    "creatorImporter": "ttf-font",
+    "releaseBuildSha256": "072c8fe3f6d86fad4cf3be45f0613485930d2c2169e4239a1661ef7452b8273a"
+  }
+}

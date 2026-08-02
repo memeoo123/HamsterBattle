@@ -1,0 +1,114 @@
+// Module: chunks:///_virtual/BattleInstance.ts
+// Dependencies: ./rollupPluginModLoBabelHelpers.js, cc, ./DamageVo.ts, ./BattleEnum.ts, ./FightType.ts, ./GBattleIns.ts, ./BattleProcessor.ts, ./StateMemory.ts, ./UnitProcessor.ts, ./TowerSkillUtils.ts
+(function(t) {
+    var n, i, r, u, o, s, e, h, c, a;
+    return BWn && bVn && (_2 += pS), BWn && RVn && (g2 = "_i"), BWn && LVn && (_2 += "_batt"), 
+    BWn = 0, function() {
+        var f;
+        return bWn && EVn && (_2 += Wq), bWn && LVn && (g2 += "sE"), bWn && LVn && (_2 += "lePro"), 
+        bWn = 0, (f = HVn(HVn({}, C, 0), T, 0))[C] = [ function(t) {
+            n = t["createClass"];
+        }, function(t) {
+            i = t[M];
+        }, function(t) {
+            r = t["DamageVo"];
+        }, function(t) {
+            u = t["WorldUnitTeam"];
+        }, function(t) {
+            o = t["FightType"];
+        }, function(t) {
+            s = t[w];
+        }, function(t) {
+            e = t[w];
+        }, function(t) {
+            h = t["StateMemory"];
+        }, function(t) {
+            c = t[w];
+        }, function(t) {
+            a = t["TowerSkillUtils"];
+        } ], f[T] = function() {
+            wWn && bVn && (g2 += Lk), wWn && LVn && (g2 += "nd"), wWn && RVn && (_2 += "cessor"), 
+            wWn = 0, i[E][R]({}, d2, m2, void 0), t(w, function() {
+                var t, i;
+                return (t = (i = function() {
+                    this["_playingMethod"] = o["TRUNK_INSTANCE"], this[""] = void 0, this["_unitProcessor"] = void 0, 
+                    this[8] = !1, this["isReadyEnter"] = !1, this["_args"] = null;
+                })[U])["enterWorld"] = function(t) {
+                    this["_args"] = t, this["_playingMethod"] = t["fightType"], h["initPlayingMethod"](this["_playingMethod"]), 
+                    this[8] = !1, this["isReadyEnter"] = !0, this["_unitProcessor"] || (this["_unitProcessor"] = new c), 
+                    this[""] || (this[""] = new e(this["_unitProcessor"])), h["curUnitProcessor"] = this["_unitProcessor"], 
+                    this["onInitUnits"](), this["initMapScale"](), s[X]["mainScene"] = this;
+                }, t["startRound"] = function() {
+                    h["enterBattleState"]();
+                }, t["onInitUnits"] = function() {
+                    this["_unitProcessor"]["createHome"](this["_args"]["homeHp"] || qi, this["_args"]["enemyHomeHp"] || -1);
+                }, t["battleReadyHandler"] = function() {}, t["initLeaderSkill"] = function() {}, 
+                t["initMapScale"] = function() {}, t["onUpdate"] = function() {
+                    this[""]["onUpdate"](), s[X]["updateAutoHandler"]();
+                }, t["onCheckEnemyEnd"] = function() {
+                    var t;
+                    return !(null != (t = this["_unitProcessor"]["getUnitsByTeamId"](u["Enemy"])) && t["length"]);
+                }, t["onCheckEnd"] = function() {}, t["isSelfHomeDeath"] = function() {
+                    var t;
+                    return null == (t = this["_unitProcessor"]["getHomeUnitByTeamId"](u["Self"])) ? void 0 : t["isDeath"];
+                }, t["isEnemyHomeDeath"] = function() {
+                    var t;
+                    return null == (t = this["_unitProcessor"]["getHomeUnitByTeamId"](u["Enemy"])) ? void 0 : t["isDeath"];
+                }, t["onReviveHome"] = function() {
+                    var t, n;
+                    n = this["_unitProcessor"]["getHomeUnitByTeamId"](u["Self"]), (t = new r)["value"] = n["attr"]["maxHp"], 
+                    n["heal"](t);
+                }, t["getHomeUnit"] = function(t) {
+                    return void 0 === t && (t = u["Self"]), this["_unitProcessor"]["getHomeUnitByTeamId"](t);
+                }, t["stop"] = function() {
+                    s[X]["clear"]();
+                }, t["pause"] = function() {}, t["resume"] = function() {}, t["createHeroUnits"] = function(t) {
+                    this["_unitProcessor"] && this["_unitProcessor"]["createHeroes"](t);
+                }, t["createMonsterUnits"] = function(t) {
+                    this["_unitProcessor"] && this["_unitProcessor"]["createMonsterUnits"](t);
+                }, t["createEnemyUnits"] = function(t) {
+                    this["_unitProcessor"] && this["_unitProcessor"]["createEnemyUnitsByBattleData"](t);
+                }, t["createLeaderUnits"] = function(t) {
+                    this["_unitProcessor"] && this["_unitProcessor"]["createLeaderUnits"](t);
+                }, t["getUnitByTeam"] = function(t) {
+                    var n, i;
+                    return n = this["getHeroes"](), i = this["getMonsters"](), t == u["Enemy"] ? i : n;
+                }, t["getHeroes"] = function() {
+                    return this["_unitProcessor"] ? this["_unitProcessor"]["heroes"] : [];
+                }, t["getMonsters"] = function() {
+                    return this["_unitProcessor"] ? this["_unitProcessor"]["monsters"] : [];
+                }, t["getHeroTeam"] = function() {
+                    return this["_unitProcessor"]["myTeam"];
+                }, t["setHeroScale"] = function(t, n) {
+                    this["_unitProcessor"] && this["_unitProcessor"]["setHeroScale"](t, n);
+                }, t["getBattleProcessor"] = function() {
+                    return this[""];
+                }, t["removeAllUnit"] = function() {
+                    this["removeAllHeros"](), this["removeAllMonsters"](), this["removeAllBullets"](), 
+                    this["_unitProcessor"]["doDisposeUnits"](!0);
+                }, t["removeAllHeros"] = function() {
+                    for (var t = this["getHeroes"](), n = 0; n < t["length"]; n++) t[n]["removeUnit"]();
+                }, t["removeAllMonsters"] = function() {
+                    for (var t = this["getMonsters"](), n = 0; n < t["length"]; n++) t[n]["removeUnit"]();
+                }, t["removeAllBullets"] = function() {
+                    for (var t = this["_unitProcessor"]["bullets"], n = 0; n < t["length"]; n++) t[n]["dispose"]();
+                    t["length"] = 0;
+                }, t["victorAnim"] = function() {
+                    for (var t = this["getHeroes"](), n = 0; n < t["length"]; n++) t[n]["victor"]();
+                }, t["towerSkillAction"] = function(t) {
+                    a["actionSkill"](t);
+                }, t["dispose"] = function() {
+                    this[""] = null, this["_unitProcessor"] = null, h["curUnitProcessor"] = null, s["unitCollisionsMgr"]["reset"]();
+                }, n(i, [ function() {
+                    var t;
+                    return (t = function() {
+                        var t;
+                        return (t = HVn(HVn({}, hn, 0), Ut, 0))["key"] = 0, t["get"] = 0, t;
+                    }[H]())["key"] = h3, t["get"] = function() {
+                        return this["_playingMethod"];
+                    }, t;
+                }[Q](this)[H]() ]), i;
+            }()), i[E][z]();
+        }, f;
+    }[Q](this)[H]();
+});
