@@ -14,6 +14,10 @@ Without a matched reference, label layout claims approximate.
 
 ## Comparison passes
 
+Begin these passes after the representative level's `mechanicsData` check passes. Before
+then, use captures only to diagnose state, timing, or numeric divergence; defer cosmetic
+matching.
+
 1. Silhouette: camera crop, battlefield/UI split, bases, large panels.
 2. Geometry: anchors, dimensions, spacing, scale, sorting.
 3. Motion: spawn timestamps, move speed, attack anticipation, hit delay, death duration.

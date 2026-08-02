@@ -37,7 +37,10 @@ ARTIFACT_KINDS = {
     "originalReference",
     "validationReport",
 }
-REQUIRED_CHECKS = {"goldenCases", "assetImport", "typescript", "visualBaseline"}
+MECHANICS_CHECK = "mechanicsData"
+TECHNICAL_CHECKS = {"goldenCases", "assetImport", "typescript"}
+PRESENTATION_CHECKS = {"visualBaseline"}
+REQUIRED_CHECKS = {MECHANICS_CHECK, *TECHNICAL_CHECKS, *PRESENTATION_CHECKS}
 
 
 def now() -> str:
@@ -224,9 +227,27 @@ def next_skill(target: dict[str, Any]) -> str | None:
         return "wechat-minigame-file-locator" if target.get("platform") == "windows" else "wechat-minigame-package-inventory"
     if phase in {"reverse-analysis", "restore-specification"}:
         return "wechat-minigame-reverse-expert"
+    if (
+        phase in {"implementation", "validation"}
+        and target.get("checks", {}).get(MECHANICS_CHECK, {}).get("result") != "pass"
+    ):
+        return "wechat-minigame-battlefield-restorer"
     if phase in {"implementation", "validation"} and target.get("engine") == "cocos":
         return "cocos-minigame-restorer"
     return None
+
+
+def validation_stage(target: dict[str, Any]) -> str | None:
+    if target["phase"] not in {"implementation", "validation", "complete"}:
+        return None
+    checks = target.get("checks", {})
+    if checks.get(MECHANICS_CHECK, {}).get("result") != "pass":
+        return "mechanics-data"
+    if any(checks.get(name, {}).get("result") != "pass" for name in TECHNICAL_CHECKS):
+        return "technical-integration"
+    if any(checks.get(name, {}).get("result") != "pass" for name in PRESENTATION_CHECKS):
+        return "presentation-polish"
+    return "complete"
 
 
 def status(data: dict[str, Any], requested: str | None) -> dict[str, Any]:
@@ -246,6 +267,17 @@ def status(data: dict[str, Any], requested: str | None) -> dict[str, Any]:
         kind for kind, item in target.get("artifacts", {}).items()
         if not Path(item.get("path", "")).exists()
     ]
+    stage = validation_stage(target)
+    skill = next_skill(target)
+    if stage == "mechanics-data":
+        action = (
+            "Use $wechat-minigame-battlefield-restorer to complete and validate "
+            "mechanics/data before effects, audio, or presentation polish"
+        )
+    elif skill:
+        action = f"Use ${skill} to complete {target['phase']} ({stage or 'phase gate'})"
+    else:
+        action = "Resolve blockers or the target is complete"
     return {
         "schemaVersion": "1.0",
         "activeTarget": key,
@@ -254,13 +286,11 @@ def status(data: dict[str, Any], requested: str | None) -> dict[str, Any]:
         "platform": target.get("platform"),
         "engine": target.get("engine"),
         "authorization": target.get("authorization"),
+        "validationStage": stage,
         "blockers": blockers(target),
         "missingArtifactPaths": missing_paths,
-        "nextSkill": next_skill(target),
-        "nextAction": (
-            f"Use ${next_skill(target)} to complete {target['phase']}"
-            if next_skill(target) else "Resolve blockers or the target is complete"
-        ),
+        "nextSkill": skill,
+        "nextAction": action,
     }
 
 

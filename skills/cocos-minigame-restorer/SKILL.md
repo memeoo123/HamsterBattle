@@ -38,16 +38,25 @@ repairing the contract.
 
 ## Restore in this order
 
-1. Establish portrait/landscape design resolution and scene anchors.
-2. Import the representative scene background and critical UI atlases.
-3. Import bases/objectives and exact animation assets.
-4. Rebuild the preparation/deployment UI and interaction model.
-5. Implement unit creation, target selection, movement, attack timing, and death cleanup.
-6. Implement the confirmed damage path without adding unsupported attributes.
-7. Load the exact representative-level rounds and scaling.
-8. Run golden numeric tests before previewing.
-9. Import in Creator, run TypeScript validation, then preview.
-10. Compare against original references and record remaining differences.
+1. Establish design resolution, scene anchors, and a minimal observable/debuggable scene.
+2. Rebuild the preparation/deployment state and interaction model.
+3. Implement deterministic unit creation, targeting, movement, attack timing, and cleanup.
+4. Implement confirmed combat, skill/status, economy, reward, and outcome rules without
+   adding unsupported attributes.
+5. Load the exact representative-level unit, round, scaling, and progression data.
+6. Run golden and integration tests through production simulation code; compare event and
+   numeric traces, and pass the orchestrator's `mechanicsData` check only when all required
+   non-presentation behavior agrees with evidence.
+7. Import and bind the recovered backgrounds, UI, bases/objectives, models, and animations
+   needed for the faithful scene. Run Creator import and TypeScript validation.
+8. Restore fine animation timing, particles, hit/skill effects, camera feedback, damage
+   text, audio, fonts, and touch polish.
+9. Compare matched captures and replay traces, record remaining differences, and complete
+   `visualBaseline` last.
+
+Steps 1–6 are the default priority. A recovered asset may be imported earlier when it is
+required to operate or inspect a mechanism, but do not turn that dependency into a general
+presentation-polish pass.
 
 Keep simulation logic separable from Cocos nodes so formulas and schedules can be tested
 without launching the editor.

@@ -70,6 +70,21 @@ Work as vertical slices, but do not implement a slice until its connected eviden
 confirmed. Keep simulation logic independent from Cocos nodes and randomness injectable
 so deterministic tests can run without the editor.
 
+### Keep presentation from preempting mechanics
+
+Use only enough scene, UI, animation state, and debug feedback to operate and observe the
+current mechanism. While any required preparation, economy, simulation, numeric combat,
+content behavior, wave, reward, persistence, or outcome subsystem is incomplete, do not
+schedule fine animation matching, particles, hit/skill effects, camera polish, audio,
+font polish, or decorative feedback as the next task. Record those differences, but leave
+them in the presentation backlog.
+
+Set the orchestrator's `mechanicsData` check to pass only after the representative level
+clears the evidence, deterministic, and integration gates for all required non-presentation
+subsystems. This milestone means the game rules and data are acceptance-ready; it does not
+claim visual or audio fidelity. After it passes, presentation and matched visual/audio
+replay become the active tier.
+
 ## Enforce four gates
 
 1. **Evidence gate:** every required subsystem for the selected slice is confirmed, its

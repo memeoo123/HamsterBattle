@@ -168,6 +168,11 @@
           "result": "pass",
           "evidence": "validate_restore_spec.py --require-ready: valid=true, implementationReady=true",
           "atUtc": "2026-07-31T10:49:16.910660+00:00"
+        },
+        "mechanicsData": {
+          "result": "pending",
+          "evidence": "MECHANICS_DATA_HANDOFF.md: level 1004 mechanics/data estimated 70-75%; H11, remaining ability consumers, account-derived data, exact event/RNG order, persistence edges, and full integration remain open",
+          "atUtc": "2026-08-02T15:12:08.901399+00:00"
         }
       },
       "history": [
@@ -829,11 +834,17 @@
           "name": "visualBaseline",
           "result": "pending",
           "atUtc": "2026-08-02T14:39:12.778303+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pending",
+          "atUtc": "2026-08-02T15:12:08.902924+00:00"
         }
       ],
       "engineEvidence": "settings.37a11.json CocosEngine 3.8.2 + System.register business bundle"
     }
   },
   "createdAtUtc": "2026-07-31T10:06:44.358414+00:00",
-  "updatedAtUtc": "2026-08-02T14:39:21.292121+00:00"
+  "updatedAtUtc": "2026-08-02T15:12:08.902930+00:00"
 }

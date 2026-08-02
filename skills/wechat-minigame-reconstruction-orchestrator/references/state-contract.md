@@ -27,6 +27,10 @@
 - Keep one record per AppID/version key.
 - Store artifact paths as absolute paths and verify existence on every status call.
 - Preserve transition history; do not delete failed checks.
+- Require the ordered validation checks: `mechanicsData` first, technical integration
+  (`goldenCases`, `assetImport`, `typescript`) next, and `visualBaseline` last. Historical
+  targets already marked complete remain historical; active targets must satisfy the
+  current checks before advancing.
 - Set engine from confirmed reverse evidence, not package filename.
 - Require `reverseAnalysisComplete: true` in the recorded reverse manifest before leaving
   `reverse-analysis`; manifest existence alone only proves that progress was recorded.

@@ -15,6 +15,12 @@ For a battle-heavy reconstruction, invoke `$wechat-minigame-battlefield-restorer
 implementation, deterministic-test, and matched-replay gates. The orchestration phase and
 primary artifact owner remain unchanged.
 
+Within `implementation` and `validation`, route by acceptance tier rather than visual
+salience: unfinished `mechanicsData` always routes to the battlefield restorer first;
+technical integration follows; presentation polish and `visualBaseline` are last. A
+missing sound, particle, animation, font, or camera effect must not preempt a mechanism,
+formula, schedule, reward, or state-transition difference.
+
 ## Routing rules
 
 - If the user supplies an exact authorized package path and AppID/version, register the
@@ -26,6 +32,9 @@ primary artifact owner remain unchanged.
 - If `RESTORE_SPEC.json` has `implementationReady: false`, route back to reverse-expert.
 - If visual reference is absent, validation cannot pass `visualBaseline`; record the
   external action needed instead of declaring completion.
+- If `mechanicsData` has not passed, do not start presentation-polish work merely because
+  screenshots make those differences easier to notice. Minimal UI/assets required to
+  observe and exercise gameplay remain in scope.
 
 ## Artifact meanings
 

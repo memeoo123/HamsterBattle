@@ -14,14 +14,14 @@ machine-readable project state.
 Locate `ORCHESTRATION_STATE.json` in the project root. If missing, initialize:
 
 ```shell
-python "<skill-dir>/scripts/orchestrate.py" init \
+python3 "<skill-dir>/scripts/orchestrate.py" init \
   --project-root "<project-root>" --project-name "<name>"
 ```
 
 Then run:
 
 ```shell
-python "<skill-dir>/scripts/orchestrate.py" status \
+python3 "<skill-dir>/scripts/orchestrate.py" status \
   --project-root "<project-root>"
 ```
 
@@ -53,7 +53,7 @@ contracts.
 After AppID/version is known:
 
 ```shell
-python "<skill-dir>/scripts/orchestrate.py" register-target \
+python3 "<skill-dir>/scripts/orchestrate.py" register-target \
   --project-root "<project-root>" --app-id "wx..." --version "<version>" \
   --platform windows --activate
 ```
@@ -65,7 +65,7 @@ Unity and Cocos findings because they are in the same folder.
 Record authorization once:
 
 ```shell
-python "<skill-dir>/scripts/orchestrate.py" authorize \
+python3 "<skill-dir>/scripts/orchestrate.py" authorize \
   --project-root "<project-root>" --target "wx.../<version>" \
   --scope "user-approved local package analysis and reconstruction"
 ```
@@ -75,7 +75,7 @@ python "<skill-dir>/scripts/orchestrate.py" authorize \
 After a sub-skill produces an artifact:
 
 ```shell
-python "<skill-dir>/scripts/orchestrate.py" record-artifact \
+python3 "<skill-dir>/scripts/orchestrate.py" record-artifact \
   --project-root "<project-root>" --target "wx.../<version>" \
   --kind handoff --path "<absolute path>"
 ```
@@ -92,7 +92,7 @@ and restore-spec schema where applicable.
 Run:
 
 ```shell
-python "<skill-dir>/scripts/orchestrate.py" advance \
+python3 "<skill-dir>/scripts/orchestrate.py" advance \
   --project-root "<project-root>" --target "wx.../<version>" --all-ready
 ```
 
@@ -120,13 +120,30 @@ confirmation, or required runtime/schema recovery remains open.
 Use:
 
 ```shell
-python "<skill-dir>/scripts/orchestrate.py" set-check \
+python3 "<skill-dir>/scripts/orchestrate.py" set-check \
   --project-root "<project-root>" --target "wx.../<version>" \
   --name goldenCases --result pass --evidence "<report or command>"
 ```
 
-Required completion checks are `goldenCases`, `assetImport`, `typescript`, and
-`visualBaseline`. A successful compile is not a visual or gameplay acceptance test.
+Required completion checks are `mechanicsData`, `goldenCases`, `assetImport`,
+`typescript`, and `visualBaseline`. A successful compile is not a visual or gameplay
+acceptance test.
+
+Use two ordered acceptance tiers during implementation and validation:
+
+1. **Mechanics and data first.** Set `mechanicsData` to pass only after the representative
+   level's preparation lifecycle, state transitions, economy, deterministic randomness,
+   unit production, targeting, combat formulas, skills/statuses, waves/scaling, rewards,
+   and victory/defeat/retry agree with evidence and run through production simulation
+   code. Use minimal observable presentation to debug this tier.
+2. **Presentation last.** Only after `mechanicsData` passes, spend restoration time on
+   fine animation matching, particles, hit/skill effects, camera feedback, audio, fonts,
+   and other polish; then complete `visualBaseline` against matched captures.
+
+When `mechanicsData` is not passing, route to `$wechat-minigame-battlefield-restorer`
+even if the orchestration phase is already `implementation` or `validation`. Do not let a
+visual-only blocker hide unfinished rules or numeric content. Asset import or layout work
+needed to make mechanics observable is allowed, but it is not presentation acceptance.
 
 ## Continue autonomously
 
@@ -140,7 +157,7 @@ For “继续”“看进度”“做完它” or similar requests:
 6. Render the human summary:
 
 ```shell
-python "<skill-dir>/scripts/orchestrate.py" render-status \
+python3 "<skill-dir>/scripts/orchestrate.py" render-status \
   --project-root "<project-root>"
 ```
 
