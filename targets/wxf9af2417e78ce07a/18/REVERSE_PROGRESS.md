@@ -213,3 +213,13 @@
 - 自动基线为 golden `47/47`、12 个规则/资源脚本记录 `604/604`、动态发牌 `40/40`、
   H11 治疗 `19/19`、H12 替换/状态 `15/15`、战斗内核 `38/38` 和 Creator TypeScript 通过。
 - 完整已完成项、剩余顺序、准确恢复入口与验证命令见 `MECHANICS_DATA_HANDOFF.md`。
+
+## 本轮交接快照（2026-08-06）
+
+- 已完成 H11 基础治疗齿轮，以及 H12 高压电击、十万伏特、百万伏特、感电效应的表驱动消费者；
+  Unity 项目明确不在当前工作范围内。
+- 特性池当前为 33 条效果行、29 个互斥能力组；约 17 条当前英雄族相关效果仍待恢复。
+- 自动验证保持 golden `47/47`、规则/资源测试 `604/604`、Creator 3.8.8 TypeScript 通过，
+  Cocos 工程检查为 101 个资源、0 missing meta、0 warning。
+- 总编排仍为 `validation / mechanics-data / in_progress`；`mechanicsData` 和
+  `visualBaseline` 尚未关闭，下一步继续恢复会改变模拟结果的 BagLike 技能/Buff 消费者。
