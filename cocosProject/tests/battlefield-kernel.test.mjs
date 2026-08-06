@@ -9,6 +9,7 @@ import {
     movementVectorToward,
     resolveTargetingIntent,
     resolveBattleDamage,
+    resolveBattleDamageWithRandom,
     resolveAttackAtImpact,
     selectBounceBattlefieldTarget,
     selectNearestBattlefieldTarget,
@@ -43,6 +44,74 @@ assert.equal(
     damage({ forcedCritical: true, target: attrs({ dodgeRate: 10000 }), rolls: { dodge: 0, critical: 10000 } }).status,
     'miss',
     'the original miss branch runs before a forced critical and therefore does not consume it',
+);
+let dodgeRandomCalls = 0;
+resolveBattleDamageWithRandom({
+    attack: 20,
+    effectRatio: 10000,
+    sourceType: 'WHEEL',
+    source: attrs({ critRate: 10000 }),
+    target: attrs({ dodgeRate: 10000 }),
+    targetIsBoss: false,
+}, () => {
+    dodgeRandomCalls += 1;
+    return 0;
+});
+assert.equal(dodgeRandomCalls, 1, 'a successful dodge skips the critical RNG read');
+let forcedRandomCalls = 0;
+const forcedLazy = resolveBattleDamageWithRandom({
+    attack: 20,
+    effectRatio: 10000,
+    sourceType: 'HAMSTER',
+    source: attrs(),
+    target: attrs(),
+    targetIsBoss: false,
+    forcedCritical: true,
+}, () => {
+    forcedRandomCalls += 1;
+    return 0.5;
+});
+assert.deepEqual(
+    { calls: forcedRandomCalls, status: forcedLazy.status },
+    { calls: 1, status: 'critical' },
+    'a one-use forced critical consumes the dodge roll but short-circuits the critical roll',
+);
+let attributeRandomCalls = 0;
+const attributeCritical = resolveBattleDamageWithRandom({
+    attack: 49,
+    effectRatio: 5000,
+    sourceType: 'WHEEL',
+    source: attrs({ critRate: 10000 }),
+    target: attrs(),
+    targetIsBoss: false,
+}, () => {
+    attributeRandomCalls += 1;
+    return 0.5;
+});
+assert.deepEqual(
+    { calls: attributeRandomCalls, status: attributeCritical.status, value: attributeCritical.value },
+    { calls: 2, status: 'critical', value: 36 },
+    'H12 CRI_RATE 10000 still consumes its critical roll after a non-dodge and applies the base 15000 critical factor',
+);
+assert.deepEqual(
+    {
+        status: damage({
+            attack: 49,
+            effectRatio: 5000,
+            sourceType: 'WHEEL',
+            source: attrs({ critRate: 10000, critDamage: 5000 }),
+            rolls: { dodge: 10000, critical: 10000 },
+        }).status,
+        value: damage({
+            attack: 49,
+            effectRatio: 5000,
+            sourceType: 'WHEEL',
+            source: attrs({ critRate: 10000, critDamage: 5000 }),
+            rolls: { dodge: 10000, critical: 10000 },
+        }).value,
+    },
+    { status: 'critical', value: 49 },
+    'H12 CRI_DMG 5000 raises the base 15000 critical factor to 20000 after the 5000 effect ratio',
 );
 assert.equal(
     damage({ target: attrs({ towerResistance: -5000 }) }).value,
@@ -142,4 +211,4 @@ assert.deepEqual(
     'only heroes inside the original 60 by 60 neighborhood add a two-pixel separation vector',
 );
 
-console.log('battlefield kernel: 34 assertions passed');
+console.log('battlefield kernel: 38 assertions passed');

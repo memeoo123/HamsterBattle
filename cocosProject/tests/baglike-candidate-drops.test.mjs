@@ -14,7 +14,7 @@ import {
     weightedCandidatePick,
 } from '../assets/scripts/BagLikeCandidateDrops.ts';
 
-const heroes = new Set(['H01', 'H02', 'H03', 'H04', 'H12', 'H13']);
+const heroes = new Set(['H01', 'H02', 'H03', 'H04', 'H11', 'H12', 'H13']);
 const context = { unlockedHeroFamilies: heroes, hasLockedGrid: true };
 
 assert.equal(weightedCandidatePick([{ value: 'a', weight: 1 }, { value: 'b', weight: 3 }], () => 0), 'a');
@@ -31,12 +31,10 @@ assert.equal(shouldUseStaticCandidateBatch(1004, 1, 3, 3), false);
 assert.equal(shouldUseStaticCandidateBatch(1001, 20, 0, 8), true);
 
 const onlyH04 = { unlockedHeroFamilies: new Set(['H04']), hasLockedGrid: true };
-assert.equal(drawCandidateReward(3014, onlyH04, () => 0), 'H0401');
-assert.equal(drawCandidateReward(3015, onlyH04, () => 0), 'H0402');
-assert.equal(drawCandidateReward(3016, onlyH04, () => 0), 'H0403');
-const noUnlockedHeroes = { unlockedHeroFamilies: new Set(), hasLockedGrid: true };
-assert.equal(drawCandidateReward(3014, noUnlockedHeroes, () => 0), 'H1101', 'H11 bypasses account-lock exclusion in the original candidate pool');
-assert.equal(drawCandidateReward(3015, noUnlockedHeroes, () => 0), 'H1102', 'the H11 account-lock exception preserves the requested gear level');
+assert.equal(drawCandidateReward(3014, onlyH04, () => 0.5), 'H0401');
+assert.equal(drawCandidateReward(3015, onlyH04, () => 0.5), 'H0402');
+assert.equal(drawCandidateReward(3016, onlyH04, () => 0.5), 'H0403');
+assert.equal(drawCandidateReward(3014, { unlockedHeroFamilies: new Set(['H11']), hasLockedGrid: true }, () => 0.5), 'H1101');
 
 let seed = 123456789;
 const random = () => {
@@ -54,15 +52,15 @@ const shippedLevel2Modifier = [{ rewardType: 'REWARD', rewardId: 3012, multiplie
 assert.deepEqual(candidateRewardModifiersForRefresh('prepare', shippedLevel2Modifier), shippedLevel2Modifier, 'automatic Prepare refresh receives SPECIAL_WORD reward modifiers');
 assert.deepEqual(candidateRewardModifiersForRefresh('normal', shippedLevel2Modifier), [], 'a first-cost-free Normal refresh is not the Prepare enum and receives no modifier');
 assert.deepEqual(candidateRewardModifiersForRefresh('ad', shippedLevel2Modifier), [], 'an Ad refresh receives no Prepare modifier');
-assert.equal(drawCandidateReward(3001, onlyH04, () => 0.59), 'H1101', 'the unmodified boundary selects the level-1 reward branch and preserves the H11 lock exception');
+assert.equal(drawCandidateReward(3001, onlyH04, () => 0.59), 'H0401', 'the unmodified boundary selects the level-1 reward branch');
 assert.equal(
     drawCandidateReward(3001, onlyH04, () => 0.59, shippedLevel2Modifier),
-    'H1101',
+    'H0401',
     'the shipped REWARD/3012 modifier is a no-op because branch 3001 contains 3014, 3015, 3016 and 3030',
 );
 assert.equal(
     drawCandidateReward(3001, onlyH04, () => 0.59, [{ rewardType: 'REWARD', rewardId: 3015, multiplier: 20000 }]),
-    'H1102',
+    'H0402',
     'the generic exact-id multiplier path changes the boundary when it targets the real level-2 pool, proving 3012 was not silently aliased',
 );
 
@@ -104,6 +102,18 @@ const cappedFamilies = drawDynamicCandidateBatch(
     () => 0.999,
 );
 assert.ok(cappedFamilies.every((id) => candidateHeroFamily(id) !== 'H13'), 'a sixth tracked hero family is excluded after the cap is reached');
+
+const untrackedH11 = drawDynamicCandidateBatch(
+    [3014],
+    {
+        unlockedHeroFamilies: new Set(['H01', 'H02', 'H03', 'H04', 'H11', 'H12']),
+        hasLockedGrid: false,
+        placedGearIds: ['H0101', 'H0201', 'H0301', 'H0401', 'H1201'],
+        nonAdRefreshTimes: 2,
+    },
+    () => 0.7,
+);
+assert.deepEqual(untrackedH11, ['H1101'], 'H11 remains eligible outside the five tracked-family cap');
 
 const fillMissingFamily = drawDynamicCandidateBatch(
     [3014, 3014, 3014],

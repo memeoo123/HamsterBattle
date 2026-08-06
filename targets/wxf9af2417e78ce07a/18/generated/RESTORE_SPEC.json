@@ -177,6 +177,7 @@
         "H01": ["H0101", "H0102", "H0103", "H0104"],
         "H02": ["H0201", "H0202", "H0203", "H0204"],
         "H04": ["H0401", "H0402", "H0403", "H0404"],
+        "H11": ["H1101", "H1102", "H1103", "H1104"],
         "H12": ["H1201", "H1202", "H1203", "H1204"],
         "coin": ["C01", "C02", "C03", "C04"]
       },
@@ -326,6 +327,17 @@
       "evidence": ["K-C019"]
     },
     {
+      "id": "H11",
+      "name": "治疗齿轮",
+      "atk": 63,
+      "hp": 220,
+      "type": "WHEEL",
+      "searchRange": 400,
+      "skill": {"id": "ZL_1101", "range": 9999, "target": "lowest allied HP percentage", "unitHealRatio": 10000, "homeHealRatio": 5000, "radius": 200, "maxTargets": 1},
+      "status": "confirmed",
+      "evidence": ["K-C026"]
+    },
+    {
       "id": "H12",
       "name": "雷云齿轮",
       "atk": 49,
@@ -333,9 +345,9 @@
       "type": "WHEEL",
       "searchRange": 400,
       "moveSpeed": 60,
-      "skill": {"id": "LY_1201", "range": 9999, "target": "random enemy", "effectRatio": 5000, "behaviorDelayMs": 500, "radius": 50, "maxTargets": 5},
+      "skill": {"id": "LY_1201", "range": 9999, "target": "random enemy", "effectRatio": 5000, "behaviorDelayMs": 500, "radius": 50, "maxTargets": 5, "starReplacements": [{"abilityId": "RG_H12_abl01_eff01", "minH12Star": 1, "skillId": "LY_1202", "abnormal": "dizziness", "durationMs": 1000}, {"abilityId": "RG_H12_abl01_eff02", "minH12Star": 3, "skillId": "LY_1203", "abnormal": "dizziness", "durationMs": 2000}, {"abilityId": "RG_H12_abl04_eff01", "minH12Star": 10, "skillId": "LY_1204", "buff": {"attribute": "DMG_RES", "amount": -1000, "timeLimitMs": 0, "maxLayer": 1, "clamp": [0, 7000]}, "representativeTargetNumericEffect": 0}], "replacementPolicy": "last selected replacement in SkillConfig.group LY_1201 wins", "starAttributes": [{"abilityId": "RG_H12_abl02_eff01", "minH12Star": 2, "attribute": "CRI_RATE", "amount": 10000, "scope": ["H12", "H08"]}, {"abilityId": "RG_H12_abl03_eff01", "minH12Star": 7, "attribute": "CRI_DMG", "amount": 5000, "scope": ["H12", "H08"]}], "replacementTarget": "primary random enemy", "controlImmuneApplies": true, "damageOrder": "dodge before critical; dodge and forced-critical short-circuit critical RNG"},
       "status": "confirmed",
-      "evidence": ["K-C019"]
+      "evidence": ["K-C019", "K-C027", "K-C028", "K-C029", "K-C030"]
     },
     {
       "id": "M02",
@@ -409,6 +421,16 @@
       "completionDelaySeconds": 0.75,
       "status": "confirmed",
       "evidence": ["K-C020"]
+    },
+    {
+      "id": "H11Gear",
+      "entity": "H11",
+      "spawnAtBattleStart": false,
+      "powerPerTrigger": 9,
+      "outputKind": "oneShotHealingSkill",
+      "completionDelaySeconds": 0.25,
+      "status": "confirmed",
+      "evidence": ["K-C020", "K-C026"]
     },
     {
       "id": "H12Gear",
@@ -638,6 +660,26 @@
     "K-C025": {
       "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-refresh-placement.md",
       "finding": "occupied normal drops merge first or evict every overlapping whole gear back to ChooseCom; invalid placed-gear drops also return the gear to ChooseCom"
+    },
+    "K-C026": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h11-healing-gear.md",
+      "finding": "H11 worker progress, one-shot WHEEL timing, lowest allied HP-percentage target, 200-radius unit heal, paired home repair, level multipliers and attack-scaled floor formula"
+    },
+    "K-C027": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h12-paralysis.md",
+      "finding": "H12 star-1/star-3 skill replacement, one/two-second dizziness, control immunity, primary-target scope, and unchanged 500-ms delayed radius-50 five-target damage"
+    },
+    "K-C028": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h12-guaranteed-critical.md",
+      "finding": "H12 star-2 ATTR/CRI_RATE 10000 guaranteed critical, H12/H08 scope, dodge precedence, and lazy critical-RNG ordering"
+    },
+    "K-C029": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h12-critical-damage.md",
+      "finding": "H12 star-7 ATTR/CRI_DMG 5000, H12/H08 scope, 25000 clamp, and base critical multiplier increase from 15000 to 20000"
+    },
+    "K-C030": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h12-electrified.md",
+      "finding": "H12 star-10 LY_1204 replacement, persistent layer-1 DMG_RES -1000 buff, zero clamp on restored representative targets, and last-selected LY_1201-group replacement ordering"
     }
   }
 }

@@ -35,9 +35,14 @@ export type TraitId =
     | 'RG_H02_abl02_eff01'
     | 'RG_H03_abl01_eff01'
     | 'RG_H03_abl02_eff01'
-    | 'RG_H04_abl01_eff01';
+    | 'RG_H04_abl01_eff01'
+    | 'RG_H12_abl01_eff01'
+    | 'RG_H12_abl01_eff02'
+    | 'RG_H12_abl02_eff01'
+    | 'RG_H12_abl03_eff01'
+    | 'RG_H12_abl04_eff01';
 
-export type TraitEffectKind = 'attackIncrease' | 'attackSpeed' | 'bossVulnerability' | 'enemyAttackDecrease' | 'expGain' | 'gearUpgrade' | 'immediateHomeHeal' | 'powerNearAttack' | 'powerNearWorker' | 'prepareRewardWeight' | 'roundStartHomeHeal' | 'splitShot' | 'freeze' | 'hpIncrease' | 'warriorComboCritical';
+export type TraitEffectKind = 'attackIncrease' | 'attackSpeed' | 'bossVulnerability' | 'criticalDamage' | 'criticalRate' | 'enemyAttackDecrease' | 'expGain' | 'gearUpgrade' | 'immediateHomeHeal' | 'paralysis' | 'powerNearAttack' | 'powerNearWorker' | 'prepareRewardWeight' | 'roundStartHomeHeal' | 'skillReplacement' | 'splitShot' | 'freeze' | 'hpIncrease' | 'warriorComboCritical';
 
 export type HeroStarRequirement = {
     heroId: string;
@@ -357,6 +362,63 @@ export const IMPLEMENTED_TRAIT_POOL: readonly TraitDefinition[] = [
         maxTimes: 1,
         range: ['H04'],
         effect: { kind: 'hpIncrease', amount: 1000 },
+    },
+    {
+        id: 'RG_H12_abl01_eff01',
+        name: '高压电击·1',
+        description: '雷云造成伤害时会造成麻痹效果，持续1秒',
+        quality: 2,
+        weight: 200,
+        maxTimes: 1,
+        range: ['H12', 'H08'],
+        group: 'RG_H12_abl01',
+        minHeroStar: { heroId: 'H12', star: 1 },
+        effect: { kind: 'paralysis', amount: 1000 },
+    },
+    {
+        id: 'RG_H12_abl01_eff02',
+        name: '高压电击·2',
+        description: '雷云造成伤害时会造成麻痹效果，持续2秒',
+        quality: 2,
+        weight: 200,
+        maxTimes: 1,
+        range: ['H12', 'H08'],
+        group: 'RG_H12_abl01',
+        minHeroStar: { heroId: 'H12', star: 3 },
+        effect: { kind: 'paralysis', amount: 2000 },
+    },
+    {
+        id: 'RG_H12_abl02_eff01',
+        name: '十万伏特',
+        description: '雷云造成的伤害必定暴击',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H12', 'H08'],
+        minHeroStar: { heroId: 'H12', star: 2 },
+        effect: { kind: 'criticalRate', amount: 10000 },
+    },
+    {
+        id: 'RG_H12_abl03_eff01',
+        name: '百万伏特',
+        description: '雷云造成的暴击伤害增加50%',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H12', 'H08'],
+        minHeroStar: { heroId: 'H12', star: 7 },
+        effect: { kind: 'criticalDamage', amount: 5000 },
+    },
+    {
+        id: 'RG_H12_abl04_eff01',
+        name: '感电效应',
+        description: '目标后续受到的伤害增加10%',
+        quality: 4,
+        weight: 50,
+        maxTimes: 1,
+        range: ['H12', 'H08'],
+        minHeroStar: { heroId: 'H12', star: 10 },
+        effect: { kind: 'skillReplacement', amount: 0 },
     },
 ] as const;
 

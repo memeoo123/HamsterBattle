@@ -354,4 +354,156 @@ assert.deepEqual(completeWarriorComboAttack(comboAfterThree, warriorComboProfile
 const healingComboProfile = traitWarriorComboProfile(IMPLEMENTED_TRAIT_POOL, new Map([['RG_H01_abl02_eff04', 1]]), 'H01');
 assert.equal(resolveHomeHeal(10, 70, healingComboProfile.healMaxHpBasisPoints), 70, 'the star-10 hpRate 20000 trigger heals a damaged warrior to its max-HP clamp');
 
-console.log('baglike traits: 82 assertions passed');
+const h12ParalysisVariants = IMPLEMENTED_TRAIT_POOL.filter((trait) => trait.group === 'RG_H12_abl01');
+assert.deepEqual(
+    h12ParalysisVariants.map((trait) => ({
+        id: trait.id,
+        star: trait.minHeroStar.star,
+        quality: trait.quality,
+        weight: trait.weight,
+        maxTimes: trait.maxTimes,
+        range: trait.range,
+        effect: trait.effect,
+    })),
+    [
+        { id: 'RG_H12_abl01_eff01', star: 1, quality: 2, weight: 200, maxTimes: 1, range: ['H12', 'H08'], effect: { kind: 'paralysis', amount: 1000 } },
+        { id: 'RG_H12_abl01_eff02', star: 3, quality: 2, weight: 200, maxTimes: 1, range: ['H12', 'H08'], effect: { kind: 'paralysis', amount: 2000 } },
+    ],
+    'H12 paralysis variants preserve both decoded star gates, draw values, ranges and BuffGroup durations',
+);
+const drawH12Paralysis = (star, times = emptyTimes) => drawWeightedTraits(
+    h12ParalysisVariants,
+    new Set(['H12']),
+    times,
+    2,
+    0,
+    () => 0,
+    1,
+    100,
+    new Map([['H12', star]]),
+);
+assert.equal(drawH12Paralysis(0).length, 0, 'an unavailable H12 cannot draw the paralysis group');
+assert.equal(drawH12Paralysis(1)[0].id, 'RG_H12_abl01_eff01', 'the default star-1 account draws the one-second replacement');
+assert.equal(drawH12Paralysis(2)[0].id, 'RG_H12_abl01_eff01', 'star 2 keeps the one-second replacement');
+assert.equal(drawH12Paralysis(3)[0].id, 'RG_H12_abl01_eff02', 'star 3 replaces the lower group row with the two-second version');
+assert.equal(drawH12Paralysis(3).length, 1, 'only the highest verified H12 row enters the weighted pool');
+assert.equal(traitEffectAmount(IMPLEMENTED_TRAIT_POOL, new Map([['RG_H12_abl01_eff01', 1]]), 'paralysis', 'H12'), 1000, 'selected version 1 exposes its one-second skill replacement');
+assert.equal(traitEffectAmount(IMPLEMENTED_TRAIT_POOL, new Map([['RG_H12_abl01_eff02', 1]]), 'paralysis', 'H12'), 2000, 'selected version 2 exposes its two-second skill replacement');
+assert.equal(traitEffectAmount(IMPLEMENTED_TRAIT_POOL, new Map([['RG_H12_abl01_eff01', 1]]), 'paralysis', 'H01'), 0, 'the H12/H08 ability does not affect unrelated heroes');
+assert.equal(drawH12Paralysis(1, new Map([['RG_H12_abl01_eff01', 1]])).length, 0, 'the selected star-1 row leaves the pool at its one-time cap');
+
+const h12GuaranteedCritical = IMPLEMENTED_TRAIT_POOL.find((trait) => trait.id === 'RG_H12_abl02_eff01');
+assert.deepEqual(
+    {
+        quality: h12GuaranteedCritical.quality,
+        weight: h12GuaranteedCritical.weight,
+        maxTimes: h12GuaranteedCritical.maxTimes,
+        range: h12GuaranteedCritical.range,
+        minHeroStar: h12GuaranteedCritical.minHeroStar,
+        effect: h12GuaranteedCritical.effect,
+    },
+    {
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H12', 'H08'],
+        minHeroStar: { heroId: 'H12', star: 2 },
+        effect: { kind: 'criticalRate', amount: 10000 },
+    },
+    'H12 guaranteed critical preserves the decoded draw row and ATTR/CRI_RATE 10000 consumer',
+);
+const drawH12GuaranteedCritical = (star, times = emptyTimes) => drawWeightedTraits(
+    [h12GuaranteedCritical],
+    new Set(['H12']),
+    times,
+    1,
+    0,
+    () => 0,
+    1,
+    100,
+    new Map([['H12', star]]),
+);
+assert.equal(drawH12GuaranteedCritical(1).length, 0, 'the safe star-1 H12 baseline cannot draw the star-2 guaranteed critical');
+assert.equal(drawH12GuaranteedCritical(2)[0].id, h12GuaranteedCritical.id, 'H12 star 2 unlocks guaranteed critical');
+const guaranteedCriticalTaken = new Map([['RG_H12_abl02_eff01', 1]]);
+assert.equal(traitEffectAmount(IMPLEMENTED_TRAIT_POOL, guaranteedCriticalTaken, 'criticalRate', 'H12'), 10000, 'the selected card contributes full H12 critical rate');
+assert.equal(traitEffectAmount(IMPLEMENTED_TRAIT_POOL, guaranteedCriticalTaken, 'criticalRate', 'H08'), 10000, 'the decoded H08 companion range receives the same hero attribute');
+assert.equal(traitEffectAmount(IMPLEMENTED_TRAIT_POOL, guaranteedCriticalTaken, 'criticalRate', 'H01'), 0, 'the critical-rate attribute does not leak to unrelated heroes');
+assert.equal(drawH12GuaranteedCritical(2, guaranteedCriticalTaken).length, 0, 'the one-time guaranteed-critical card leaves the pool after selection');
+
+const h12CriticalDamage = IMPLEMENTED_TRAIT_POOL.find((trait) => trait.id === 'RG_H12_abl03_eff01');
+assert.deepEqual(
+    {
+        quality: h12CriticalDamage.quality,
+        weight: h12CriticalDamage.weight,
+        maxTimes: h12CriticalDamage.maxTimes,
+        range: h12CriticalDamage.range,
+        minHeroStar: h12CriticalDamage.minHeroStar,
+        effect: h12CriticalDamage.effect,
+    },
+    {
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H12', 'H08'],
+        minHeroStar: { heroId: 'H12', star: 7 },
+        effect: { kind: 'criticalDamage', amount: 5000 },
+    },
+    'H12 critical damage preserves the decoded draw row and ATTR/CRI_DMG 5000 consumer',
+);
+const drawH12CriticalDamage = (star, times = emptyTimes) => drawWeightedTraits(
+    [h12CriticalDamage],
+    new Set(['H12']),
+    times,
+    1,
+    0,
+    () => 0,
+    1,
+    100,
+    new Map([['H12', star]]),
+);
+assert.equal(drawH12CriticalDamage(6).length, 0, 'H12 below star 7 cannot draw the critical-damage card');
+assert.equal(drawH12CriticalDamage(7)[0].id, h12CriticalDamage.id, 'H12 star 7 unlocks the critical-damage card');
+const criticalDamageTaken = new Map([['RG_H12_abl03_eff01', 1]]);
+assert.equal(traitEffectAmount(IMPLEMENTED_TRAIT_POOL, criticalDamageTaken, 'criticalDamage', 'H12'), 5000, 'the selected card contributes 5000 H12 critical damage');
+assert.equal(traitEffectAmount(IMPLEMENTED_TRAIT_POOL, criticalDamageTaken, 'criticalDamage', 'H08'), 5000, 'the decoded H08 companion range receives the same critical damage');
+assert.equal(traitEffectAmount(IMPLEMENTED_TRAIT_POOL, criticalDamageTaken, 'criticalDamage', 'H01'), 0, 'critical damage does not leak to unrelated heroes');
+assert.equal(drawH12CriticalDamage(7, criticalDamageTaken).length, 0, 'the one-time critical-damage card leaves the pool after selection');
+
+const h12Electrified = IMPLEMENTED_TRAIT_POOL.find((trait) => trait.id === 'RG_H12_abl04_eff01');
+assert.deepEqual(
+    {
+        quality: h12Electrified.quality,
+        weight: h12Electrified.weight,
+        maxTimes: h12Electrified.maxTimes,
+        range: h12Electrified.range,
+        minHeroStar: h12Electrified.minHeroStar,
+        effect: h12Electrified.effect,
+    },
+    {
+        quality: 4,
+        weight: 50,
+        maxTimes: 1,
+        range: ['H12', 'H08'],
+        minHeroStar: { heroId: 'H12', star: 10 },
+        effect: { kind: 'skillReplacement', amount: 0 },
+    },
+    'H12 electrified preserves the decoded star gate, draw row and same-group skill replacement',
+);
+const drawH12Electrified = (star, times = emptyTimes) => drawWeightedTraits(
+    [h12Electrified],
+    new Set(['H12']),
+    times,
+    1,
+    0,
+    () => 0,
+    1,
+    100,
+    new Map([['H12', star]]),
+);
+assert.equal(drawH12Electrified(9).length, 0, 'H12 below star 10 cannot draw electrified');
+assert.equal(drawH12Electrified(10)[0].id, h12Electrified.id, 'H12 star 10 unlocks electrified');
+assert.equal(traitEffectAmount(IMPLEMENTED_TRAIT_POOL, new Map([[h12Electrified.id, 1]]), 'skillReplacement', 'H12'), 0, 'LY_1204 changes skill identity instead of adding an attribute amount');
+assert.equal(drawH12Electrified(10, new Map([[h12Electrified.id, 1]])).length, 0, 'the one-time electrified card leaves the pool after selection');
+
+console.log('baglike traits: 110 assertions passed');

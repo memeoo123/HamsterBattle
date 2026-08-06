@@ -57,7 +57,6 @@ type WeightedEntry<T> = {
 };
 
 const HERO_FAMILIES = ['H01', 'H02', 'H03', 'H04', 'H11', 'H12', 'H13'] as const;
-export const BAGLIKE_ACCOUNT_LOCK_EXEMPT_HERO_FAMILIES: ReadonlySet<string> = new Set(['H11']);
 const COIN_REWARD_WEIGHT_MULTIPLIERS = [
     10000, 8000, 5000, 3000, 2500, 2000, 1500, 1000,
     850, 700, 500, 300, 250, 200, 150, 100,
@@ -256,7 +255,7 @@ function rewardBranchWithModifiers(
 function heroRewardPool(level: number, context: CandidateDrawContext): Array<WeightedEntry<CandidateGearId>> {
     const suffix = level < 10 ? `0${level}` : String(level);
     return HERO_FAMILIES
-        .filter((family) => context.unlockedHeroFamilies.has(family) || BAGLIKE_ACCOUNT_LOCK_EXEMPT_HERO_FAMILIES.has(family))
+        .filter((family) => context.unlockedHeroFamilies.has(family))
         .map((family) => ({ value: `${family}${suffix}` as CandidateGearId, weight: 100 }));
 }
 

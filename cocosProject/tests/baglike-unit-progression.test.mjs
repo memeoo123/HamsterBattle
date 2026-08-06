@@ -64,7 +64,7 @@ for (const [gearId, [heroId, modelId, modelName, modelScale, primarySkillId]] of
     }
 }
 
-for (const family of ['H12', 'H13']) {
+for (const family of ['H11', 'H12', 'H13']) {
     for (let level = 1; level <= 4; level += 1) {
         const gearId = `${family}0${level}`;
         const profile = bagLikeProducerProfile(gearId);
@@ -74,6 +74,8 @@ for (const family of ['H12', 'H13']) {
         check(profile?.headId, `${family}01`, `${gearId} keeps the original shared wheel head`);
     }
 }
+
+check(bagLikeProducerProfile('H1101')?.primarySkillId, 'ZL_1101', 'H11 uses the recovered healing skill identity');
 
 check(bagLikeProducerProfile('C0101'), null, 'coin gears do not create hero profiles');
 check(bagLikeProducerProfile('H0105'), null, 'same-family level 5 does not invent a profile');

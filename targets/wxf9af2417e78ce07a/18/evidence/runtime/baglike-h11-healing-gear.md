@@ -1,71 +1,52 @@
-# BagLike H11 healing gear — v18
+# H11 healing gear runtime evidence
 
-Target: `wxf9af2417e78ce07a/18`.
+Updated: 2026-08-06
 
-## Confirmed data chain
+## Conclusion
 
-- [已确认] `H11` is a `WHEEL` hero with base attack `63`, search range `400`,
-  shape `3`, and base skill group `ZL_1101`. Its account unlock condition is
-  completion of level `1004`. Evidence:
-  `reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/hero.HeroConfig.json:423-450`.
-- [已确认] `H1101` through `H1104` all use `ZL_1101`, add `9` worker points
-  per power trigger, and apply attack/HP multiples `10000`, `15000`, `22500`,
-  and `33750`. Their shape is the vertical two-cell shape `3`. Evidence:
-  `reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/baglike.BagLikeItemConfig.json:1093-1198`
-  and
-  `reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/baglike.BagLikeShapeConfig.json` row `3`.
-- [已确认] `ZL_1101` has zero cast time, `1000` cooldown, casting range
-  `9999`, friendly faction `2`, and lowest-HP search type `4`. It executes
-  `B_ZL_1101` followed by `B_ZL_1102`. Evidence:
-  `reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/battle.SkillConfig.json:1214-1241`.
-- [已确认] `B_ZL_1101` searches a target-centered circle of radius `200`,
-  selects one friendly lowest-HP-percentage unit, and heals it at attack ratio
-  `10000`. `B_ZL_1102` targets the friendly home and heals it at attack ratio
-  `5000`. Evidence:
-  `reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/battle.BehaviorConfig.json:550-595`.
-- [已确认] Runtime target type `4` is lowest HP and faction `2` is the
-  caster's side. Behavior target type `4` sorts by HP percentage; behavior
-  range type `16` returns the caster's home. Evidence:
-  `work/battlefield-runtime-analysis/formatted/SkillEnum.ts.deobfuscated.js:49-68`
-  and `work/battlefield-runtime-analysis/formatted/SkillUtils.ts.deobfuscated.js:41-67,94-152`.
-- [已确认] Healing is `floor(max(0, casterAttack * ratio * healIncrease))`;
-  the target HP is clamped to max HP. Evidence:
-  `work/battlefield-runtime-analysis/formatted/FightFormula.ts.deobfuscated.js:107-115`
-  and `work/battlefield-runtime-analysis/formatted/BattleAttr.ts.deobfuscated.js:194-199`.
-- [已确认] H11 follows the common WHEEL producer path: worker progress is
-  reset at round start, one completion preserves modulo remainder, the worker
-  completion animation lasts `0.25` seconds, and completion emits one
-  `CREATE_TOWER_SKILL` action from the placed gear. There is no persistent H11
-  battlefield unit. Evidence:
-  `evidence/runtime/battlefield-production-runtime.md:20-39` and
-  `work/production-runtime-analysis/WorkerBar.ts.deobfuscated.js:3`.
-- [已确认] The package constant `BAGLIKE:NOT_EXCLUDE_HEROS=H11` exempts H11
-  from account-lock exclusion and from the five-family tracked count. Evidence:
-  `evidence/runtime/baglike-preparation-dynamic-rewards.md:5-18` and
-  `work/battlefield-runtime-analysis/formatted/BagLilkeManager.ts.deobfuscated.js:375-448`.
+H11 is a one-shot `WHEEL` producer, not a persistent battlefield unit. Each power-core
+contact adds `9` worker points. At `100`, `WorkerBar.make` emits `CREATE_TOWER_SKILL`;
+the shared WHEEL completion path waits the recovered `0.25 s` worker-complete animation.
 
-## Deterministic baseline
+`ZL_1101` searches the whole battlefield for an allied unit with the lowest HP
+percentage. Its two behaviors execute in the same successful cast:
 
-At the evidence-default account star `1`, the H11 one-shot uses `ZL_1101`.
-Before other attack/heal traits, levels 1–4 therefore produce these values:
+- `B_ZL_1101`: `TARGET_CIRCLE`, radius `200`, allied `LOWEST_HP`, one target, `heal`,
+  amount `10000` (100% of caster attack).
+- `B_ZL_1102`: `SELF_HOME`, allied base, `healHome`, amount `5000` (50% of caster
+  attack). A full/dead base is skipped by the runtime.
 
-| Gear | Scaled attack | Friendly-unit heal | Home heal |
-|---|---:|---:|---:|
-| H1101 | 63 | 63 | 31 |
-| H1102 | 94.5 | 94 | 47 |
-| H1103 | 141.75 | 141 | 70 |
-| H1104 | 212.625 | 212 | 106 |
+The healing formula is
+`floor(max(0, casterAtk * amount/10000 * (1 + HL_INC/10000)))`. The gear levels pass
+attribute multipliers `1 / 1.5 / 2.25 / 3.375` before this floor. H11's base attack is
+`63`, so a level-1 cast produces raw unit/home heals `63 / 31`.
 
-The action requires a live friendly unit selected by the skill search; the unit
-heal is resolved first and the home heal second, matching behavior order.
+The cast requires a living friendly unit target. A full-health friendly unit remains a
+valid cast target, so the paired base repair can still execute. Equal-HP-percentage ties
+are randomized because the runtime shuffles the candidate list before sorting.
 
-## Explicitly unresolved extensions
+## Evidence map
 
-- [待确认] The target account's saved H11 star is absent. Star 5 can replace
-  the home behavior with `ZL_1103` (100% attack), star 2 can convert overheal
-  to shield, and star 7 can add healing targets. Keep these optional consumers
-  disabled until their account eligibility and complete runtime paths are
-  restored.
-- [待确认] Exact same-frame ordering relative to other simultaneous tower
-  skills still requires a matched original event trace. Preserve the confirmed
-  production-completion-before-one-shot order and cover it deterministically.
+- `baglike.BagLikeItemConfig.json`: H1101-H1104 shape `3`, `perPowerPoint=9`, skill
+  `ZL_1101`, multipliers `10000/15000/22500/33750`; `BagLikeShapeConfig` resolves shape
+  `3` to the vertical two-cell array `[[1],[1]]`.
+- `hero.HeroConfig.json`: H11 `type=WHEEL`, attack `63`, HP `220`, search range `400`.
+- `battle.SkillConfig.json`: `ZL_1101`, allied lowest-HP target, range `9999`, behaviors
+  `B_ZL_1101` and `B_ZL_1102`.
+- `battle.BehaviorConfig.json`: the two target modes, radius, counts, effect kinds and
+  `10000/5000` amounts above.
+- `work/production-runtime-analysis/WorkerBar.ts.deobfuscated.js`: WHEEL completion emits
+  `CREATE_TOWER_SKILL`; HAMSTER uses the separate persistent-unit event.
+- `work/production-runtime-analysis/FightSkillInfo.ts.deobfuscated.js`: `heal` and
+  `healHome` both route through the attack-scaled heal formula.
+- `work/production-runtime-analysis/FightFormula.ts.deobfuscated.js`: attack source,
+  `HL_INC`, final floor and non-negative clamp.
+- `work/production-runtime-analysis/SkillUtils.ts.deobfuscated.js`: `LOWEST_HP` means HP
+  percentage and uses shuffle-before-sort; range types resolve to target circle/home.
+
+## Deliberate boundary
+
+The baseline implements star-1 `ZL_1101`. Star-gated H11 upgrades (`HEAL_TO_SHIELD`,
+`REPLACE_SKILL/ZL_1103`, `HEAL_MORE_TARGER`, and additional `HL_INC`) remain excluded
+until the target account's H11 star is evidenced and their complete consumers are joined.
+This prevents unevidenced account power from leaking into the representative baseline.

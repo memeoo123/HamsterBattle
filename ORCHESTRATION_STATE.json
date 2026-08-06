@@ -93,47 +93,47 @@
       },
       "artifacts": {
         "handoff": {
-          "path": "/Users/mt/Documents/HamsterBattle/handoffs/wxf9af2417e78ce07a-18.json",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\handoffs\\wxf9af2417e78ce07a-18.json",
           "status": "confirmed",
           "recordedAtUtc": "2026-08-01T07:28:15.310956+00:00"
         },
         "mainPackage": {
-          "path": "/Users/mt/Documents/HamsterBattle/reverse-work/input/wxf9af2417e78ce07a/18/__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\input\\wxf9af2417e78ce07a\\18\\__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
           "status": "confirmed",
           "recordedAtUtc": "2026-08-01T07:28:15.416062+00:00"
         },
         "extractedRoot": {
-          "path": "/Users/mt/Documents/HamsterBattle/reverse-work/unpacked/wxf9af2417e78ce07a/18",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\unpacked\\wxf9af2417e78ce07a\\18",
           "status": "confirmed",
           "recordedAtUtc": "2026-08-01T07:28:15.512025+00:00"
         },
         "reverseManifest": {
-          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/manifest.json",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\manifest.json",
           "status": "confirmed",
           "recordedAtUtc": "2026-08-01T07:28:15.606294+00:00"
         },
         "restoreSpec": {
-          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/generated/RESTORE_SPEC.json",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\generated\\RESTORE_SPEC.json",
           "status": "confirmed",
           "recordedAtUtc": "2026-08-01T14:18:59.201905+00:00"
         },
         "goldenCases": {
-          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/generated/golden-cases.json",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\generated\\golden-cases.json",
           "status": "confirmed",
           "recordedAtUtc": "2026-08-01T14:20:25.801486+00:00"
         },
         "cocosProject": {
-          "path": "/Users/mt/Documents/HamsterBattle/cocosProject",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject",
           "status": "confirmed",
           "recordedAtUtc": "2026-08-01T07:28:15.891128+00:00"
         },
         "validationReport": {
-          "path": "/Users/mt/Documents/HamsterBattle/cocosProject/VALIDATION_REPORT.md",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\VALIDATION_REPORT.md",
           "status": "confirmed",
           "recordedAtUtc": "2026-08-01T15:42:24.077345+00:00"
         },
         "originalReference": {
-          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/evidence/visual/original/2026-08-01/manifest.json",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\visual\\original\\2026-08-01\\manifest.json",
           "status": "confirmed",
           "recordedAtUtc": "2026-08-01T08:59:45.495705+00:00"
         }
@@ -141,18 +141,18 @@
       "checks": {
         "goldenCases": {
           "result": "pass",
-          "evidence": "47/47 golden cases plus 502/502 rule and recovered-asset assertions",
-          "atUtc": "2026-08-02T14:39:12.682955+00:00"
+          "evidence": "47/47 golden cases; 12 rule/resource scripts pass 604/604 assertions including trait pool 110/110, combat kernel 38/38, H12 replacement/status 15/15 and H11 healing 19/19",
+          "atUtc": "2026-08-06T12:13:38.471797+00:00"
         },
         "assetImport": {
           "result": "pass",
-          "evidence": "Cocos project check: 99 assets, missing meta 0; web-mobile artifact contains H0905 projectile PNG, impact PNG and bullet_zhanche MP3",
-          "atUtc": "2026-08-02T14:39:12.479875+00:00"
+          "evidence": "Cocos project check after H12 electrified integration: valid=true, 101 assets, missing meta 0, warnings 0",
+          "atUtc": "2026-08-06T12:13:49.809037+00:00"
         },
         "typescript": {
           "result": "pass",
-          "evidence": "Creator 3.8.8 bundled TypeScript --noEmit --skipLibCheck true exit 0 after H0905 effects integration",
-          "atUtc": "2026-08-02T14:39:12.585118+00:00"
+          "evidence": "Creator 3.8.8 bundled TypeScript --noEmit --skipLibCheck exit 0 after H12 electrified same-group replacement integration",
+          "atUtc": "2026-08-06T12:13:58.990098+00:00"
         },
         "visualBaseline": {
           "result": "pending",
@@ -171,8 +171,8 @@
         },
         "mechanicsData": {
           "result": "pending",
-          "evidence": "H11 healing vertical slice completed: H1101-H1104 production, targeting, unit/home healing, account-lock exception, 43 focused assertions; full suite 564/564, Creator TypeScript and 100-asset metadata check pass. Remaining BagLike ability consumers, same-frame/RNG ordering, and full wave-15 integration keep this check pending.",
-          "atUtc": "2026-08-06T15:29:44.326035+00:00"
+          "evidence": "MECHANICS_DATA_HANDOFF.md: level 1004 mechanics/data estimated 75-80%; H12 paralysis, guaranteed-critical, critical-damage, electrified last-selected replacement ordering and DMG_RES clamp are complete, while about 17 relevant ability rows, account data, other event/RNG order, persistence edges and full integration remain open",
+          "atUtc": "2026-08-06T12:14:08.715494+00:00"
         }
       },
       "history": [
@@ -843,14 +843,104 @@
         },
         {
           "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-06T11:08:43.129375+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-06T11:08:43.219591+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-06T11:08:43.306702+00:00"
+        },
+        {
+          "event": "check",
           "name": "mechanicsData",
           "result": "pending",
-          "atUtc": "2026-08-06T15:29:44.326613+00:00"
+          "atUtc": "2026-08-06T11:08:43.393638+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-06T11:50:24.866083+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-06T11:50:24.954398+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-06T11:50:25.038333+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pending",
+          "atUtc": "2026-08-06T11:50:25.125137+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-06T11:58:18.925151+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-06T11:58:19.072980+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-06T11:58:19.180562+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pending",
+          "atUtc": "2026-08-06T11:58:19.272719+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-06T12:13:38.471805+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-06T12:13:49.809046+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-06T12:13:58.990107+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pending",
+          "atUtc": "2026-08-06T12:14:08.715502+00:00"
         }
       ],
       "engineEvidence": "settings.37a11.json CocosEngine 3.8.2 + System.register business bundle"
     }
   },
   "createdAtUtc": "2026-07-31T10:06:44.358414+00:00",
-  "updatedAtUtc": "2026-08-06T15:29:44.326615+00:00"
+  "updatedAtUtc": "2026-08-06T12:14:16.944321+00:00"
 }

@@ -39,7 +39,7 @@ import {
     randomBattleRoll,
     resolveAttackAtImpact,
     resolveTargetingIntent,
-    resolveBattleDamage,
+    resolveBattleDamageWithRandom,
     selectBounceBattlefieldTarget,
 } from './BattlefieldKernel';
 import {
@@ -56,6 +56,27 @@ import {
     resolveWorkerPowerPerTrigger,
     WORKER_COMPLETE_ANIMATION_SECONDS,
 } from './BattlefieldProduction';
+import {
+    H11_BASE_ATTACK,
+    H11_GEAR_SHAPE,
+    H11_HOME_HEAL_RATIO,
+    H11_POWER_PER_TRIGGER,
+    H11_TARGET_RADIUS,
+    H11_UNIT_HEAL_RATIO,
+    resolveH11Healing,
+} from './BattlefieldHealing';
+import {
+    applyH12Paralysis,
+    H12_BASE_SKILL_ID,
+    H12_EFFECT_RATIO,
+    H12_IMPACT_DELAY_SECONDS,
+    H12_MAX_TARGETS,
+    H12_TARGET_RADIUS,
+    H12ReplacementTraitId,
+    H12SkillId,
+    replaceH12Skill,
+    resolveH12CastProfileForSkill,
+} from './BattlefieldParalysis';
 import {
     battlefieldLayoutForPhase,
     DEPLOY_CANDIDATE_Y,
@@ -104,7 +125,6 @@ import {
 } from './BagLikeCandidateDrops';
 import { bagLikeProducerProfile, BagLikePrimarySkillId } from './BagLikeUnitProgression';
 import { bagLikeFusionRecipe, bagLikeFusionRequirementsMet } from './BagLikeFusion';
-import { resolveH11HealingAction } from './BagLikeHealing';
 
 const { ccclass, property } = _decorator;
 
@@ -168,7 +188,6 @@ const HERO_SMALL_HEAD_FRAMES: Record<string, HeadFrame> = {
     H0402: { x: 85, y: 177, width: 90, height: 82, offsetX: 0, offsetY: 0 },
     H0403: { x: 1, y: 89, width: 90, height: 86, offsetX: 0, offsetY: 0 },
     H0404: { x: 93, y: 1, width: 86, height: 88, offsetX: 0, offsetY: -1 },
-    H1101: { x: 165, y: 1571, width: 72, height: 70, offsetX: 0, offsetY: 1 },
     H1201: { x: 85, y: 725, width: 78, height: 56, offsetX: -1, offsetY: 0 },
     H1301: { x: 183, y: 81, width: 68, height: 68, offsetX: 0, offsetY: 0 },
     H0705: { x: 165, y: 1499, width: 78, height: 70, offsetX: 0, offsetY: 1 },
@@ -552,18 +571,21 @@ const UNITS: Record<ModelId, UnitConfig> = {
     H1101: {
         id: 'H1101',
         name: '治疗齿轮',
-        atk: 63,
+        atk: H11_BASE_ATTACK,
         hp: 220,
         range: 9999,
-        searchRange: 400,
+        searchRange: 9999,
         moveSpeed: 0,
         attackInterval: 1,
         attackType: 'WHEEL',
-        effectRatio: 10000,
+        effectRatio: H11_UNIT_HEAL_RATIO,
         attackDelay: 0,
+        areaRadius: H11_TARGET_RADIUS,
+        maxTargets: 1,
+        randomTarget: true,
         spinePath: '',
         spineScale: 0.8,
-        color: new Color(72, 190, 139, 255),
+        color: new Color(55, 189, 126, 255),
     },
     H1201: {
         id: 'H1201',
@@ -575,10 +597,10 @@ const UNITS: Record<ModelId, UnitConfig> = {
         moveSpeed: 60,
         attackInterval: 1,
         attackType: 'WHEEL',
-        effectRatio: 5000,
-        attackDelay: 0.5,
-        areaRadius: 50,
-        maxTargets: 5,
+        effectRatio: H12_EFFECT_RATIO,
+        attackDelay: H12_IMPACT_DELAY_SECONDS,
+        areaRadius: H12_TARGET_RADIUS,
+        maxTargets: H12_MAX_TARGETS,
         randomTarget: true,
         spinePath: '',
         spineScale: 0.8,
@@ -792,10 +814,10 @@ const GEARS: Record<GearId, GearConfig> = {
     H0402: { id: 'H0402', name: '仓鼠骑士', level: 2, nextId: 'H0403', tint: new Color(59, 153, 111, 255), powerPerTrigger: 6, unit: 'H0401', shape: [[0, 0], [1, 0], [2, 0]] },
     H0403: { id: 'H0403', name: '仓鼠骑士', level: 3, nextId: 'H0404', tint: new Color(73, 132, 151, 255), powerPerTrigger: 6, unit: 'H0401', shape: [[0, 0], [1, 0], [2, 0]] },
     H0404: { id: 'H0404', name: '仓鼠骑士', level: 4, tint: new Color(112, 101, 181, 255), powerPerTrigger: 6, unit: 'H0401', shape: [[0, 0], [1, 0], [2, 0]] },
-    H1101: { id: 'H1101', name: '治疗齿轮', level: 1, nextId: 'H1102', tint: new Color(63, 166, 130, 255), powerPerTrigger: 9, unit: 'H1101', shape: [[0, 0], [1, 0]] },
-    H1102: { id: 'H1102', name: '治疗齿轮', level: 2, nextId: 'H1103', tint: new Color(55, 150, 143, 255), powerPerTrigger: 9, unit: 'H1101', shape: [[0, 0], [1, 0]] },
-    H1103: { id: 'H1103', name: '治疗齿轮', level: 3, nextId: 'H1104', tint: new Color(78, 121, 179, 255), powerPerTrigger: 9, unit: 'H1101', shape: [[0, 0], [1, 0]] },
-    H1104: { id: 'H1104', name: '治疗齿轮', level: 4, tint: new Color(114, 91, 185, 255), powerPerTrigger: 9, unit: 'H1101', shape: [[0, 0], [1, 0]] },
+    H1101: { id: 'H1101', name: '治疗齿轮', level: 1, nextId: 'H1102', tint: new Color(55, 189, 126, 255), powerPerTrigger: H11_POWER_PER_TRIGGER, unit: 'H1101', shape: H11_GEAR_SHAPE },
+    H1102: { id: 'H1102', name: '治疗齿轮', level: 2, nextId: 'H1103', tint: new Color(48, 167, 117, 255), powerPerTrigger: H11_POWER_PER_TRIGGER, unit: 'H1101', shape: H11_GEAR_SHAPE },
+    H1103: { id: 'H1103', name: '治疗齿轮', level: 3, nextId: 'H1104', tint: new Color(63, 151, 147, 255), powerPerTrigger: H11_POWER_PER_TRIGGER, unit: 'H1101', shape: H11_GEAR_SHAPE },
+    H1104: { id: 'H1104', name: '治疗齿轮', level: 4, tint: new Color(89, 129, 164, 255), powerPerTrigger: H11_POWER_PER_TRIGGER, unit: 'H1101', shape: H11_GEAR_SHAPE },
     H1201: { id: 'H1201', name: '雷云齿轮', level: 1, nextId: 'H1202', tint: new Color(125, 104, 231, 255), powerPerTrigger: 20, unit: 'H1201', shape: [[0, 0], [0, 1]] },
     H1202: { id: 'H1202', name: '雷云齿轮', level: 2, nextId: 'H1203', tint: new Color(101, 83, 210, 255), powerPerTrigger: 20, unit: 'H1201', shape: [[0, 0], [0, 1]] },
     H1203: { id: 'H1203', name: '雷云齿轮', level: 3, nextId: 'H1204', tint: new Color(118, 76, 196, 255), powerPerTrigger: 20, unit: 'H1201', shape: [[0, 0], [0, 1]] },
@@ -861,7 +883,7 @@ export class CangshuGame extends Component {
     challengeTimes = 2;
 
     @property({ tooltip: 'Semicolon-separated account-unlocked hero families currently supported by the reconstruction candidate/production chain' })
-    unlockedHeroFamilies = 'H01;H02;H03;H04;H12;H13';
+    unlockedHeroFamilies = 'H01;H02;H03;H04;H11;H12;H13';
 
     @property({ min: 0, max: 10, step: 1, tooltip: 'Saved H01 hero star used by HERO_STAR_GE; keep 1 until the target account star is evidenced' })
     h01HeroStar = 1;
@@ -874,6 +896,9 @@ export class CangshuGame extends Component {
 
     @property({ min: 0, max: 10, step: 1, tooltip: 'Saved H04 hero star used by recovered level-5 fusion verification' })
     h04HeroStar = 1;
+
+    @property({ min: 0, max: 10, step: 1, tooltip: 'Saved H11 hero star; baseline 1 keeps unevidenced account upgrades disabled' })
+    h11HeroStar = 1;
 
     @property({ min: 0, max: 10, step: 1, tooltip: 'Saved H12 hero star used by recovered level-5 fusion verification' })
     h12HeroStar = 1;
@@ -930,6 +955,7 @@ export class CangshuGame extends Component {
     private currentTraitChoices: TraitDefinition[] = [];
     private pendingTraitReturnPhase: 'battle' | 'roundClear' = 'battle';
     private traitStacks = new Map<TraitId, number>();
+    private h12SkillId: H12SkillId = H12_BASE_SKILL_ID;
 
     private battleLayer!: Node;
     private unitLayer!: Node;
@@ -1388,6 +1414,7 @@ export class CangshuGame extends Component {
         this.traitTakeAllUsed = 0;
         this.currentTraitChoices = [];
         this.traitStacks.clear();
+        this.h12SkillId = H12_BASE_SKILL_ID;
         this.initGrid();
         this.addPlacedGear('P01', 2, 3);
         this.dealPreparationBatch();
@@ -1438,7 +1465,7 @@ export class CangshuGame extends Component {
         this.refreshIndex += 1;
         if (staticBatch) return [...staticBatch];
 
-        const supportedFamilies = new Set(['H01', 'H02', 'H03', 'H04', 'H12', 'H13']);
+        const supportedFamilies = new Set(['H01', 'H02', 'H03', 'H04', 'H11', 'H12', 'H13']);
         const unlockedHeroFamilies = new Set(
             this.unlockedHeroFamilies
                 .split(';')
@@ -1580,7 +1607,7 @@ export class CangshuGame extends Component {
 
     private gearHeadKey(id: GearId): string | null {
         if (id.startsWith('C')) return 'coin';
-        if (id.startsWith('H11')) return 'H1101';
+        if (id.startsWith('H11')) return null;
         if (id.startsWith('H12')) return 'H1201';
         if (id.startsWith('H13')) return 'H1301';
         return HERO_SMALL_HEAD_FRAMES[id] ? id : null;
@@ -2373,14 +2400,13 @@ export class CangshuGame extends Component {
         source.bossIncrease += this.traitEffectAmount('bossVulnerability', attacker.cfg);
         source.critDamage += bonusCritDamage;
         const target = targetConfig ? this.attrsFor(targetConfig) : DEFAULT_ATTRS;
-        return resolveBattleDamage({
+        return resolveBattleDamageWithRandom({
             attack,
             effectRatio,
             sourceType: attacker.cfg.attackType,
             source,
             target,
             targetIsBoss: targetConfig?.boss || false,
-            rolls: { dodge: randomBattleRoll(), critical: randomBattleRoll() },
             forcedCritical,
         });
     }
@@ -2416,6 +2442,8 @@ export class CangshuGame extends Component {
     private attrsFor(config: UnitConfig): Attributes {
         const result = { ...DEFAULT_ATTRS, ...(config.attrs || {}) };
         result.attackSpeed += this.traitEffectAmount('attackSpeed', config);
+        result.critDamage = Math.min(25000, Math.max(0, result.critDamage + this.traitEffectAmount('criticalDamage', config)));
+        result.critRate = Math.min(10000, Math.max(0, result.critRate + this.traitEffectAmount('criticalRate', config)));
         return result;
     }
 
@@ -2493,14 +2521,18 @@ export class CangshuGame extends Component {
             attackIncrease: '攻',
             attackSpeed: '速',
             bossVulnerability: '破',
+            criticalDamage: '爆',
+            criticalRate: '暴',
             enemyAttackDecrease: '弱',
             expGain: '经',
             gearUpgrade: '升',
             immediateHomeHeal: '疗',
+            paralysis: '麻',
             powerNearAttack: '核',
             powerNearWorker: '效',
             prepareRewardWeight: '刷',
             roundStartHomeHeal: '愈',
+            skillReplacement: '电',
             splitShot: '射',
             freeze: '冰',
             hpIncrease: '血',
@@ -2565,6 +2597,7 @@ export class CangshuGame extends Component {
             H02: this.h02HeroStar,
             H03: this.h03HeroStar,
             H04: this.h04HeroStar,
+            H11: this.h11HeroStar,
             H12: this.h12HeroStar,
             H13: this.h13HeroStar,
         };
@@ -2574,6 +2607,13 @@ export class CangshuGame extends Component {
         const current = this.traitCount(trait.id);
         if (!trait.noRestore && current >= trait.maxTimes) return;
         if (!trait.noRestore) this.traitStacks.set(trait.id, Math.min(trait.maxTimes, current + 1));
+        if (
+            trait.id === 'RG_H12_abl01_eff01'
+            || trait.id === 'RG_H12_abl01_eff02'
+            || trait.id === 'RG_H12_abl04_eff01'
+        ) {
+            this.h12SkillId = replaceH12Skill(this.h12SkillId, trait.id as H12ReplacementTraitId);
+        }
         if (trait.effect.kind === 'immediateHomeHeal') {
             const previousHp = this.selfHp;
             this.selfHp = resolveHomeHeal(this.selfHp, this.levelHomeHp, trait.effect.amount);
@@ -2660,33 +2700,14 @@ export class CangshuGame extends Component {
         const profile = bagLikeProducerProfile(gear.id);
         if (!profile || profile.kind !== 'wheel') return;
         const scales = this.producerAttributeScales(gear, profile.attributeMultiple);
-        const position = this.gridPosition(gear.row, gear.col);
         if (model === 'H1101') {
-            const friendlyUnits = this.units.filter((unit) => !unit.dead && unit.team === 'self');
-            const result = resolveH11HealingAction({
-                casterX: position.x,
-                casterY: position.y,
-                casterAttack: cfg.atk * scales.attack,
-                friendlyUnits,
-                homeHp: this.selfHp,
-                homeMaxHp: this.levelHomeHp,
-                random: Math.random,
-            });
-            if (!result.cast || result.targetUid === null || result.unitHpAfter === null) return;
-            const target = friendlyUnits.find((unit) => unit.uid === result.targetUid);
-            if (!target) return;
-            const previousTargetHp = target.hp;
-            target.hp = result.unitHpAfter;
-            this.drawUnitHp(target);
-            if (target.hp > previousTargetHp) this.addHealText(target.hp - previousTargetHp, target.x, target.y + 48);
-            const previousHomeHp = this.selfHp;
-            this.selfHp = result.homeHpAfter;
-            if (this.selfHp > previousHomeHp) this.addHealText(this.selfHp - previousHomeHp, -HOME_X + 20, -15);
+            this.castH11Healing(cfg.atk * scales.attack);
             return;
         }
         const targets = this.units.filter((unit) => !unit.dead && unit.team === 'enemy');
         if (targets.length === 0) return;
         const target = targets[Math.floor(Math.random() * targets.length)];
+        const position = this.gridPosition(gear.row, gear.col);
         const graphics = gear.node.getComponent(Graphics)!;
         const caster: BattleUnit = {
             uid: ++this.serial,
@@ -2712,6 +2733,16 @@ export class CangshuGame extends Component {
             this.beginAttack(caster, target, null);
             return;
         }
+        if (model === 'H1201') {
+            const castProfile = resolveH12CastProfileForSkill(this.h12SkillId);
+            target.frozen = applyH12Paralysis(
+                target.frozen,
+                castProfile.paralysisSeconds,
+                Boolean(target.cfg.controlImmune),
+            );
+            this.beginAttack(caster, target, null);
+            return;
+        }
         const affected = this.units
             .filter((unit) => !unit.dead && unit.team === 'enemy')
             .map((unit) => ({ unit, distance: Math.hypot(unit.x - target.x, unit.y - target.y) }))
@@ -2721,6 +2752,41 @@ export class CangshuGame extends Component {
             .map((entry) => entry.unit);
         for (const unit of affected) this.damageUnit(unit, this.calculateDamage(caster, unit.cfg, cfg.effectRatio));
         this.addTrace(caster, target.x, target.y);
+    }
+
+    private castH11Healing(attack: number): void {
+        const allies = this.units.filter((unit) => !unit.dead && unit.team === 'self');
+        const plan = resolveH11Healing({
+            attack,
+            allies: allies.map((unit) => ({
+                id: unit.uid,
+                hp: unit.hp,
+                maxHp: unit.maxHp,
+                x: unit.x,
+                y: unit.y,
+            })),
+            homeHp: this.selfHp,
+            homeMaxHp: this.levelHomeHp,
+            unitHealRatio: H11_UNIT_HEAL_RATIO,
+            homeHealRatio: H11_HOME_HEAL_RATIO,
+            radius: H11_TARGET_RADIUS,
+            maxUnitTargets: 1,
+            random: Math.random,
+        });
+        if (!plan) return;
+
+        for (const heal of plan.unitHeals) {
+            const unit = allies.find((candidate) => candidate.uid === heal.id);
+            if (!unit || heal.appliedAmount <= 0) continue;
+            unit.hp += heal.appliedAmount;
+            this.addHealText(heal.appliedAmount, unit.x, unit.y + 48);
+            this.drawUnitHp(unit);
+        }
+        if (plan.homeAppliedAmount > 0) {
+            this.selfHp += plan.homeAppliedAmount;
+            this.addHealText(plan.homeAppliedAmount, -HOME_X + 20, -15);
+            this.drawHomes();
+        }
     }
 
     private producerAttributeScales(gear: Gear, attributeMultiple: number): { attack: number; hp: number } {

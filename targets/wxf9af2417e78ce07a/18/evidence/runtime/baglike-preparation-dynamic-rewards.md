@@ -32,8 +32,8 @@
 The candidate engine and production call site now implement account-family filtering,
 coin-count weights, the five-family cap/fill behavior, and the seventh-refresh forced-grid
 rule with injectable RNG. The target account's exact unlocked set is not present in the
-package, so the scene property defaults to the six families already supported and observed
-in the representative reconstruction. `H11` is intentionally not enabled yet: its package
-exception is confirmed, but exposing it before its healing production/targeting behavior is
-implemented would create a non-functional candidate.
+package, so the scene property defaults to the seven families currently supported by the
+representative reconstruction. `H11` is enabled after its base healing consumer was joined:
+it participates in the reward pool but remains excluded from the five-family tracked count,
+matching `BAGLIKE:NOT_EXCLUDE_HEROS=H11`.
 

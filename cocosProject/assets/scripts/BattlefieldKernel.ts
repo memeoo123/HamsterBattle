@@ -307,3 +307,18 @@ export function resolveBattleDamage(input: DamageInput): DamageResult {
         coefficient,
     };
 }
+
+// FightFormula evaluates dodge first. A successful dodge skips checkCrit, and
+// its one-use forced-critical buff short-circuits checkCrit before the critical
+// random roll. Keeping those reads lazy preserves the original RNG call order.
+export function resolveBattleDamageWithRandom(
+    input: Omit<DamageInput, 'rolls'>,
+    random: () => number = Math.random,
+): DamageResult {
+    const dodge = randomBattleRoll(random);
+    const missed = dodge <= input.target.dodgeRate;
+    const critical = missed || input.forcedCritical
+        ? BATTLE_RAND_BASE
+        : randomBattleRoll(random);
+    return resolveBattleDamage({ ...input, rolls: { dodge, critical } });
+}
