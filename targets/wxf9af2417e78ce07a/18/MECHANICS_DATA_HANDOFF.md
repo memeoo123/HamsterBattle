@@ -1,6 +1,6 @@
 # Mechanics and data handoff
 
-Updated: 2026-08-02
+Updated: 2026-08-06
 
 ## Authority and scope
 
@@ -29,7 +29,8 @@ Updated: 2026-08-02
   star gates.
 - Dynamic preparation rewards: account-family input filtering, coin-gear count
   (`1/2/4/8`) and reward-3034 weight decay, five tracked hero-family cap/fill, and forced
-  reward-3030 grid candidate on every seventh non-ad refresh when applicable.
+  reward-3030 grid candidate on every seventh non-ad refresh when applicable. H11 is the
+  confirmed account-lock-filter exception and is enabled in the official candidate pool.
 - Production: power-core contact graph, 100-point worker progress, fractional remainder,
   0.75-second HAMSTER output, H12/H13 WHEEL routing, coin payout, 1.5× battle speed, and
   direct-core-neighbor attack/worker modifiers.
@@ -41,12 +42,16 @@ Updated: 2026-08-02
 - Restored trait consumers include random gear upgrade, EXP gain, enemy attack decrease,
   power-neighbor attack/worker increases, immediate/round-start home healing, and H01
   star-gated combo critical.
+- H11 healing vertical slice: H1101–H1104 power/multipliers, 0.25-second WHEEL completion,
+  lowest-HP-percentage live-friendly targeting, attack-derived unit/home healing, floor and
+  max-HP clamps. Unproven account-star extensions remain disabled.
 
 ## Automated baseline
 
 - Golden cases: `47/47`.
-- Production rule/resource assertions: `519/519`.
-- Dynamic preparation assertions: `38/38`.
+- Production rule/resource assertions: `564/564`.
+- Dynamic preparation assertions: `40/40`.
+- H11 healing assertions: `43/43`.
 - Creator 3.8.8 TypeScript (`--noEmit --skipLibCheck true`): pass.
 - Battlefield state schema validation: pass.
 - The successful numbers do not close evidence, deterministic, integration, or matched-
@@ -55,56 +60,50 @@ Updated: 2026-08-02
 
 ## Remaining mechanics/data work, in order
 
-1. **H11 healing gear vertical slice**
-   - Recover `ZL_1101` production trigger and timing.
-   - Recover target filters/priorities for friendly units and home.
-   - Join level multipliers, heal formulas, caps, and event order.
-   - Add deterministic tests and only then add H11 to the official candidate pool as the
-     confirmed account-lock-filter exception.
-2. **Remaining BagLike ability consumers**
-   - The source table contains 78 effect rows; about 50 can affect the currently represented
-     H01/H02/H03/H04/H12/H13 families. About 23 are modeled, leaving at least about 27
+1. **Remaining BagLike ability consumers**
+   - The source table contains 78 effect rows; about 53 can affect the currently represented
+     H01/H02/H03/H04/H11/H12/H13 families. About 23 are modeled, leaving at least about 30
      relevant rows/groups to route and implement.
    - Prioritize behaviors that change simulation: add/replace skills, passives, multi-target,
      periodic effects, control, stacking, refresh, immunity and condition handlers.
-3. **Account-derived mechanics data**
+2. **Account-derived mechanics data**
    - Obtain the competitor account's exact unlocked hero set and hero-star values.
    - Apply those values to trait eligibility and level-5 fusion gates.
    - Recover any remaining verify/condition branches and the actual ad completion boundary
      for reroll/take-all.
-4. **Exact event/RNG order**
+3. **Exact event/RNG order**
    - Recover first power-core contact phase.
    - Lock same-frame spawn, movement, target, cast, impact, death, reward, EXP, wave-clear
      and phase-transition order.
    - Lock RNG call order for hit, critical, equal-distance target paths and spawn offsets.
-5. **Persistence and edge cases**
+4. **Persistence and edge cases**
    - Simultaneous deaths, pending hits after attacker/target removal, process-restart defeat
      count, and any modal phase that can interrupt a wave.
-6. **Integration gate**
+5. **Integration gate**
    - Run deploy → waves 1–15 → victory and defeat → retry → compensation without manual
      state edits; capture event traces before returning to visual work.
 
 ## Broader full-system work after level 1004
 
-- Restore remaining base/fusion families, including H05, H06, H10, H11 and H14–H18.
+- Restore remaining base/fusion families, including H05, H06, H10 and H14–H18.
 - Restore the remaining monster/Boss special behaviors and special-mode consumers.
 - Apply the already decoded schedules/configuration across the roughly 200 parsed levels;
   decoded rows alone do not prove their runtime behavior.
 
 ## Exact resume point
 
-Start with H11, not presentation:
+Start with the remaining simulation-changing BagLike ability consumers, not presentation:
 
 1. Run the reconstruction orchestrator `status`.
-2. Read `BATTLEFIELD_RESTORE_STATE.json`, this handoff, and
-   `evidence/runtime/baglike-preparation-dynamic-rewards.md`.
-3. Route H11 runtime/schema recovery through `wechat-minigame-reverse-expert`.
-4. Record an H11 runtime evidence note before implementation.
-5. Route the Cocos implementation through `cocos-minigame-restorer`; keep logic in a pure
+2. Read `BATTLEFIELD_RESTORE_STATE.json`, this handoff, and the existing runtime evidence
+   notes for the next selected effect family.
+3. Route runtime/schema recovery through `wechat-minigame-reverse-expert` and record an
+   evidence note before implementation.
+4. Route the Cocos implementation through `cocos-minigame-restorer`; keep logic in a pure
    TypeScript module with injectable clock/RNG where applicable.
-6. Add focused deterministic tests, run the entire `tests/*.test.mjs` suite, Creator 3.8.8
+5. Add focused deterministic tests, run the entire `tests/*.test.mjs` suite, Creator 3.8.8
    TypeScript, and the battlefield-state validator.
-7. Update `REVERSE_PROGRESS.md`, `cocosProject/RESTORE_PROGRESS.md`,
+6. Update `REVERSE_PROGRESS.md`, `cocosProject/RESTORE_PROGRESS.md`,
    `cocosProject/VALIDATION_REPORT.md`, and `BATTLEFIELD_RESTORE_STATE.json` together.
 
 ## Validation commands

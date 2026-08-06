@@ -171,8 +171,8 @@
         },
         "mechanicsData": {
           "result": "pending",
-          "evidence": "MECHANICS_DATA_HANDOFF.md: level 1004 mechanics/data estimated 70-75%; H11, remaining ability consumers, account-derived data, exact event/RNG order, persistence edges, and full integration remain open",
-          "atUtc": "2026-08-02T15:12:08.901399+00:00"
+          "evidence": "H11 healing vertical slice completed: H1101-H1104 production, targeting, unit/home healing, account-lock exception, 43 focused assertions; full suite 564/564, Creator TypeScript and 100-asset metadata check pass. Remaining BagLike ability consumers, same-frame/RNG ordering, and full wave-15 integration keep this check pending.",
+          "atUtc": "2026-08-06T15:29:44.326035+00:00"
         }
       },
       "history": [
@@ -840,11 +840,17 @@
           "name": "mechanicsData",
           "result": "pending",
           "atUtc": "2026-08-02T15:12:08.902924+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pending",
+          "atUtc": "2026-08-06T15:29:44.326613+00:00"
         }
       ],
       "engineEvidence": "settings.37a11.json CocosEngine 3.8.2 + System.register business bundle"
     }
   },
   "createdAtUtc": "2026-07-31T10:06:44.358414+00:00",
-  "updatedAtUtc": "2026-08-02T15:12:08.902930+00:00"
+  "updatedAtUtc": "2026-08-06T15:29:44.326615+00:00"
 }

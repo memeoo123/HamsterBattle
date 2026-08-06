@@ -104,6 +104,7 @@ import {
 } from './BagLikeCandidateDrops';
 import { bagLikeProducerProfile, BagLikePrimarySkillId } from './BagLikeUnitProgression';
 import { bagLikeFusionRecipe, bagLikeFusionRequirementsMet } from './BagLikeFusion';
+import { resolveH11HealingAction } from './BagLikeHealing';
 
 const { ccclass, property } = _decorator;
 
@@ -114,6 +115,7 @@ type ModelId =
     | 'H0201'
     | 'H0301'
     | 'H0401'
+    | 'H1101'
     | 'H1201'
     | 'H1301'
     | 'H07'
@@ -131,6 +133,7 @@ type GearId = CandidateGearId
     | 'H0204'
     | 'H0304'
     | 'H0404'
+    | 'H1104'
     | 'H1204'
     | 'H1304'
     | 'H0705'
@@ -165,6 +168,7 @@ const HERO_SMALL_HEAD_FRAMES: Record<string, HeadFrame> = {
     H0402: { x: 85, y: 177, width: 90, height: 82, offsetX: 0, offsetY: 0 },
     H0403: { x: 1, y: 89, width: 90, height: 86, offsetX: 0, offsetY: 0 },
     H0404: { x: 93, y: 1, width: 86, height: 88, offsetX: 0, offsetY: -1 },
+    H1101: { x: 165, y: 1571, width: 72, height: 70, offsetX: 0, offsetY: 1 },
     H1201: { x: 85, y: 725, width: 78, height: 56, offsetX: -1, offsetY: 0 },
     H1301: { x: 183, y: 81, width: 68, height: 68, offsetX: 0, offsetY: 0 },
     H0705: { x: 165, y: 1499, width: 78, height: 70, offsetX: 0, offsetY: 1 },
@@ -545,6 +549,22 @@ const UNITS: Record<ModelId, UnitConfig> = {
         spineScale: 0.8,
         color: new Color(107, 183, 106, 255),
     },
+    H1101: {
+        id: 'H1101',
+        name: '治疗齿轮',
+        atk: 63,
+        hp: 220,
+        range: 9999,
+        searchRange: 400,
+        moveSpeed: 0,
+        attackInterval: 1,
+        attackType: 'WHEEL',
+        effectRatio: 10000,
+        attackDelay: 0,
+        spinePath: '',
+        spineScale: 0.8,
+        color: new Color(72, 190, 139, 255),
+    },
     H1201: {
         id: 'H1201',
         name: '雷云齿轮',
@@ -772,6 +792,10 @@ const GEARS: Record<GearId, GearConfig> = {
     H0402: { id: 'H0402', name: '仓鼠骑士', level: 2, nextId: 'H0403', tint: new Color(59, 153, 111, 255), powerPerTrigger: 6, unit: 'H0401', shape: [[0, 0], [1, 0], [2, 0]] },
     H0403: { id: 'H0403', name: '仓鼠骑士', level: 3, nextId: 'H0404', tint: new Color(73, 132, 151, 255), powerPerTrigger: 6, unit: 'H0401', shape: [[0, 0], [1, 0], [2, 0]] },
     H0404: { id: 'H0404', name: '仓鼠骑士', level: 4, tint: new Color(112, 101, 181, 255), powerPerTrigger: 6, unit: 'H0401', shape: [[0, 0], [1, 0], [2, 0]] },
+    H1101: { id: 'H1101', name: '治疗齿轮', level: 1, nextId: 'H1102', tint: new Color(63, 166, 130, 255), powerPerTrigger: 9, unit: 'H1101', shape: [[0, 0], [1, 0]] },
+    H1102: { id: 'H1102', name: '治疗齿轮', level: 2, nextId: 'H1103', tint: new Color(55, 150, 143, 255), powerPerTrigger: 9, unit: 'H1101', shape: [[0, 0], [1, 0]] },
+    H1103: { id: 'H1103', name: '治疗齿轮', level: 3, nextId: 'H1104', tint: new Color(78, 121, 179, 255), powerPerTrigger: 9, unit: 'H1101', shape: [[0, 0], [1, 0]] },
+    H1104: { id: 'H1104', name: '治疗齿轮', level: 4, tint: new Color(114, 91, 185, 255), powerPerTrigger: 9, unit: 'H1101', shape: [[0, 0], [1, 0]] },
     H1201: { id: 'H1201', name: '雷云齿轮', level: 1, nextId: 'H1202', tint: new Color(125, 104, 231, 255), powerPerTrigger: 20, unit: 'H1201', shape: [[0, 0], [0, 1]] },
     H1202: { id: 'H1202', name: '雷云齿轮', level: 2, nextId: 'H1203', tint: new Color(101, 83, 210, 255), powerPerTrigger: 20, unit: 'H1201', shape: [[0, 0], [0, 1]] },
     H1203: { id: 'H1203', name: '雷云齿轮', level: 3, nextId: 'H1204', tint: new Color(118, 76, 196, 255), powerPerTrigger: 20, unit: 'H1201', shape: [[0, 0], [0, 1]] },
@@ -1556,6 +1580,7 @@ export class CangshuGame extends Component {
 
     private gearHeadKey(id: GearId): string | null {
         if (id.startsWith('C')) return 'coin';
+        if (id.startsWith('H11')) return 'H1101';
         if (id.startsWith('H12')) return 'H1201';
         if (id.startsWith('H13')) return 'H1301';
         return HERO_SMALL_HEAD_FRAMES[id] ? id : null;
@@ -2632,13 +2657,36 @@ export class CangshuGame extends Component {
 
     private castTowerSkill(model: ModelId, gear: Gear): void {
         const cfg = UNITS[model];
-        const targets = this.units.filter((unit) => !unit.dead && unit.team === 'enemy');
-        if (targets.length === 0) return;
-        const target = targets[Math.floor(Math.random() * targets.length)];
         const profile = bagLikeProducerProfile(gear.id);
         if (!profile || profile.kind !== 'wheel') return;
         const scales = this.producerAttributeScales(gear, profile.attributeMultiple);
         const position = this.gridPosition(gear.row, gear.col);
+        if (model === 'H1101') {
+            const friendlyUnits = this.units.filter((unit) => !unit.dead && unit.team === 'self');
+            const result = resolveH11HealingAction({
+                casterX: position.x,
+                casterY: position.y,
+                casterAttack: cfg.atk * scales.attack,
+                friendlyUnits,
+                homeHp: this.selfHp,
+                homeMaxHp: this.levelHomeHp,
+                random: Math.random,
+            });
+            if (!result.cast || result.targetUid === null || result.unitHpAfter === null) return;
+            const target = friendlyUnits.find((unit) => unit.uid === result.targetUid);
+            if (!target) return;
+            const previousTargetHp = target.hp;
+            target.hp = result.unitHpAfter;
+            this.drawUnitHp(target);
+            if (target.hp > previousTargetHp) this.addHealText(target.hp - previousTargetHp, target.x, target.y + 48);
+            const previousHomeHp = this.selfHp;
+            this.selfHp = result.homeHpAfter;
+            if (this.selfHp > previousHomeHp) this.addHealText(this.selfHp - previousHomeHp, -HOME_X + 20, -15);
+            return;
+        }
+        const targets = this.units.filter((unit) => !unit.dead && unit.team === 'enemy');
+        if (targets.length === 0) return;
+        const target = targets[Math.floor(Math.random() * targets.length)];
         const graphics = gear.node.getComponent(Graphics)!;
         const caster: BattleUnit = {
             uid: ++this.serial,

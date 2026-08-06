@@ -1,4 +1,4 @@
-export type BagLikeHeroFamilyId = 'H01' | 'H02' | 'H03' | 'H04' | 'H07' | 'H08' | 'H09' | 'H12' | 'H13';
+export type BagLikeHeroFamilyId = 'H01' | 'H02' | 'H03' | 'H04' | 'H07' | 'H08' | 'H09' | 'H11' | 'H12' | 'H13';
 export type BagLikeProducerKind = 'hamster' | 'wheel';
 export type BagLikePrimarySkillId = number | string;
 
@@ -33,6 +33,7 @@ const PRIMARY_SKILLS: Readonly<Record<BagLikeHeroFamilyId, BagLikePrimarySkillId
     H07: 8001,
     H08: 7001,
     H09: 9001,
+    H11: 'ZL_1101',
     H12: 'LY_1201',
     H13: 'TZ_1301',
 };
@@ -57,7 +58,7 @@ export function bagLikeProducerProfile(gearId: string): BagLikeProducerProfile |
     };
     if (fusionProfiles[gearId]) return fusionProfiles[gearId];
 
-    const match = /^(H01|H02|H03|H04|H12|H13)0([1-4])$/.exec(gearId);
+    const match = /^(H01|H02|H03|H04|H11|H12|H13)0([1-4])$/.exec(gearId);
     if (!match) return null;
 
     const heroId = match[1] as BagLikeHeroFamilyId;
