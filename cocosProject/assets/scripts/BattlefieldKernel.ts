@@ -1,6 +1,13 @@
 export const BATTLE_RAND_BASE = 10000;
 export const BASE_MISS_FACTOR = 5000;
 export const BASE_CRIT_FACTOR = 15000;
+export const SPLIT_SHOT_RADIUS = 250;
+export const SPLIT_SHOT_PROJECTILE_SPEED = 700;
+export const SPLIT_SHOT_EFFECT_RATIO = 10000;
+export const ATTACK_KILL_FLY_DAMAGE = 999999;
+export const H04_SHIELD_WALL_INTERVAL_SECONDS = 5;
+export const H04_SHIELD_WALL_DURATION_SECONDS = 2;
+export const H04_SHIELD_WALL_DAMAGE_RESISTANCE = 3000;
 export const DEFEAT_MULTIPLIERS = [
     0.95, 0.9025, 0.8574, 0.8145, 0.7738,
     0.7351, 0.6983, 0.6634, 0.6302, 0.5987,
@@ -45,6 +52,35 @@ export type DamageResult = {
     hitFactor: number;
     critFactor: number;
     coefficient: number;
+};
+
+export type H04ShieldWallState = {
+    cooldown: number;
+    remaining: number;
+};
+
+export type H03TransformEffect = {
+    durationSeconds: number;
+    disablesTarget: boolean;
+    outgoingDamageIncrease: number;
+};
+
+export type H03TransformState = {
+    remaining: number;
+    frozen: number;
+    outgoingDamageIncrease: number;
+};
+
+export type H03LaserCastState = {
+    elapsed: number;
+    complete: boolean;
+    behaviorTriggered: boolean;
+};
+
+export type H02BarrageCastState = {
+    elapsed: number;
+    complete: boolean;
+    shotIndices: number[];
 };
 
 export type BattlefieldPoint = {
@@ -93,6 +129,179 @@ export const EMPTY_COMBAT_ATTRIBUTES: CombatAttributes = {
 
 export function randomBattleRoll(random: () => number = Math.random): number {
     return Math.floor(random() * (BATTLE_RAND_BASE + 1));
+}
+
+export function splitShotRollSucceeds(
+    probability: number,
+    random: () => number = Math.random,
+): boolean {
+    return randomBattleRoll(random) <= Math.min(BATTLE_RAND_BASE, Math.max(0, probability));
+}
+
+// FightFormula.checkIsKillFly runs before dodge, critical and regular damage.
+// Only ATTACK skills against MonsterUnit targets whose canKillFly getter is true
+// consume this probability roll; BossUnit overrides that getter to false.
+export function attackKillFlyRollSucceeds(
+    probability: number,
+    targetCanKillFly: boolean,
+    basicAttack: boolean,
+    random: () => number = Math.random,
+): boolean {
+    if (!targetCanKillFly || !basicAttack || probability <= 0) return false;
+    return randomBattleRoll(random) <= Math.min(BATTLE_RAND_BASE, probability);
+}
+
+// Both 3001_bf3 and 3001_bf4 use a two-second changed-model buff group. The
+// first carries abnormal type 3 (dizziness); the replacement carries only
+// DMG_INC=3000, which FightFormula reads from that target when it later attacks.
+export function applyH03TransformHit(
+    current: H03TransformState,
+    effect: H03TransformEffect,
+    controlImmune: boolean,
+): H03TransformState {
+    return {
+        remaining: Math.max(current.remaining, effect.durationSeconds),
+        frozen: effect.disablesTarget && !controlImmune
+            ? Math.max(current.frozen, effect.durationSeconds)
+            : current.frozen,
+        outgoingDamageIncrease: effect.outgoingDamageIncrease,
+    };
+}
+
+export function advanceH03Transform(
+    state: Pick<H03TransformState, 'remaining' | 'outgoingDamageIncrease'>,
+    elapsed: number,
+): Pick<H03TransformState, 'remaining' | 'outgoingDamageIncrease'> {
+    const remaining = Math.max(0, state.remaining - Math.max(0, elapsed));
+    return {
+        remaining,
+        outgoingDamageIncrease: remaining > 0 ? state.outgoingDamageIncrease : 0,
+    };
+}
+
+// 3001_5 has one behavior at 300 ms inside a one-second cast. The generic
+// SkillBehavior path starts its four-second cooldown when that behavior fires;
+// cast completion removes any behavior that is still waiting.
+export function advanceH03LaserCast(
+    previousElapsed: number,
+    elapsed: number,
+    behaviorDelaySeconds: number,
+    castTimeSeconds: number,
+): H03LaserCastState {
+    const castTime = Math.max(0, castTimeSeconds);
+    const delay = Math.max(0, behaviorDelaySeconds);
+    const start = Math.min(castTime, Math.max(0, previousElapsed));
+    const end = Math.min(castTime, start + Math.max(0, elapsed));
+    return {
+        elapsed: end,
+        complete: end >= castTime,
+        behaviorTriggered: delay > start && delay <= end && delay <= castTime,
+    };
+}
+
+// UnitCollisionsManager.getRectUnits builds an inclusive rectangle whose rear
+// edge is centered on the caster and whose long axis points at the locked
+// target. It tests unit centers rather than collision radii.
+export function isPointInForwardRectangle(
+    origin: BattlefieldPoint,
+    aim: BattlefieldPoint,
+    point: BattlefieldPoint,
+    width: number,
+    height: number,
+): boolean {
+    const dx = aim.x - origin.x;
+    const dy = aim.y - origin.y;
+    const distance = Math.hypot(dx, dy);
+    const forwardX = distance > 0 ? dx / distance : 1;
+    const forwardY = distance > 0 ? dy / distance : 0;
+    const relativeX = point.x - origin.x;
+    const relativeY = point.y - origin.y;
+    const forward = relativeX * forwardX + relativeY * forwardY;
+    const sideways = relativeX * -forwardY + relativeY * forwardX;
+    return forward >= 0
+        && forward <= Math.max(0, height)
+        && Math.abs(sideways) <= Math.max(0, width) / 2;
+}
+
+export function selectH03LaserTargets<T extends BattlefieldTarget>(
+    origin: BattlefieldPoint,
+    aim: BattlefieldPoint,
+    targets: readonly T[],
+    width: number,
+    height: number,
+    maxTargets: number,
+): T[] {
+    return targets
+        .filter((target) => target.selectable !== false && isPointInForwardRectangle(origin, aim, target, width, height))
+        .slice(0, Math.max(0, Math.floor(maxTargets)));
+}
+
+// SkillData removes all still-waiting behaviors when castTime expires. This is
+// observable for 2001_6: its configured 3500-ms seventh shot is later than the
+// 3000-ms cast and therefore never launches in version 18.
+export function h02BarrageEffectiveShotDelays(
+    configuredShotDelays: readonly number[],
+    castTimeSeconds: number,
+): number[] {
+    const castTime = Math.max(0, castTimeSeconds);
+    return configuredShotDelays.filter((delay) => delay >= 0 && delay <= castTime);
+}
+
+export function advanceH02BarrageCast(
+    previousElapsed: number,
+    elapsed: number,
+    configuredShotDelays: readonly number[],
+    castTimeSeconds: number,
+): H02BarrageCastState {
+    const castTime = Math.max(0, castTimeSeconds);
+    const start = Math.min(castTime, Math.max(0, previousElapsed));
+    const end = Math.min(castTime, start + Math.max(0, elapsed));
+    const shotIndices: number[] = [];
+    for (let index = 0; index < configuredShotDelays.length; index += 1) {
+        const delay = configuredShotDelays[index];
+        if (delay > start && delay <= end && delay <= castTime) shotIndices.push(index);
+    }
+    return { elapsed: end, complete: end >= castTime, shotIndices };
+}
+
+// PassivitySkillData counts down 4001_p3/4001_p4 every five seconds. Each
+// trigger adds a two-second buff group; large elapsed steps may cross several
+// activation/expiry boundaries, so advance them in event order.
+export function advanceH04ShieldWall(
+    state: H04ShieldWallState,
+    elapsed: number,
+): H04ShieldWallState {
+    let cooldown = Math.max(0, state.cooldown);
+    let remaining = Math.max(0, state.remaining);
+    let time = Math.max(0, elapsed);
+    while (time > 0) {
+        if (cooldown <= 0) {
+            cooldown = H04_SHIELD_WALL_INTERVAL_SECONDS;
+            remaining = H04_SHIELD_WALL_DURATION_SECONDS;
+        }
+        const untilExpiry = remaining > 0 ? remaining : Number.POSITIVE_INFINITY;
+        const step = Math.min(time, cooldown, untilExpiry);
+        cooldown -= step;
+        remaining = Math.max(0, remaining - step);
+        time -= step;
+    }
+    if (cooldown <= 0) {
+        cooldown = H04_SHIELD_WALL_INTERVAL_SECONDS;
+        remaining = H04_SHIELD_WALL_DURATION_SECONDS;
+    }
+    return { cooldown, remaining };
+}
+
+// BuffManager.checkCounterAttack uses DamageVo.notDefValue, which is the
+// resistance-adjusted floating damage before the minimum/floor and before
+// shield absorption. Zero stays zero instead of receiving the normal minimum.
+export function h04ShieldWallCounterattackDamage(
+    resolvedRawDamage: number,
+    counterattackRatio: number,
+    active: boolean,
+): number {
+    if (!active || counterattackRatio <= 0 || resolvedRawDamage <= 0) return 0;
+    return Math.max(0, Math.floor(resolvedRawDamage * counterattackRatio / BATTLE_RAND_BASE));
 }
 
 export function attackIntervalSeconds(baseSeconds: number, attackSpeed: number): number {
@@ -183,6 +392,73 @@ export function selectNearestBattlefieldTarget<T extends BattlefieldTarget>(
 // unit already present in the chain's shared hitUnitMap. MissileConfig.times is
 // the number of follow-up bounces, so times=2 permits the initial hit plus two
 // further distinct targets.
+export function resolveBounceMaxTimes(baseBounces: number, bonusBounces: number): number {
+    return Math.max(0, baseBounces + bonusBounces);
+}
+
+// The passive behavior uses SELF_CIRCLE plus SkillTargetType.Random. The
+// original random-array helper therefore chooses uniformly from every enemy in
+// the caster-centered circle; the current main target remains a valid choice.
+export function selectSplitShotTarget<T extends BattlefieldTarget>(
+    caster: BattlefieldPoint,
+    candidates: ReadonlyArray<T>,
+    random: () => number = Math.random,
+    radius: number = SPLIT_SHOT_RADIUS,
+): T | null {
+    const eligible = candidates.filter((candidate) =>
+        candidate.selectable !== false
+        && isInsideTargetTree(candidate)
+        && battlefieldDistance(caster, candidate) <= radius,
+    );
+    if (eligible.length === 0) return null;
+    if (eligible.length === 1) return eligible[0];
+    const roll = Math.min(0.999999999999, Math.max(0, random()));
+    return eligible[Math.floor(roll * eligible.length)];
+}
+
+export const H13_BASE_SKILL_ID = 'TZ_1301' as const;
+export type H13SkillId = 'TZ_1301' | 'TZ_1302' | 'TZ_1303';
+export type H13ReplacementTraitId = 'RG_H13_abl02_eff01' | 'RG_H13_abl02_eff02';
+
+export type H13BounceProfile = {
+    skillId: H13SkillId;
+    attackIncreasePerBounce: number;
+    lastMissileConfigured: boolean;
+};
+
+export function replaceH13Skill(_current: H13SkillId, traitId: H13ReplacementTraitId): H13SkillId {
+    return traitId === 'RG_H13_abl02_eff02' ? 'TZ_1303' : 'TZ_1302';
+}
+
+export function resolveH13BounceProfileForSkill(skillId: H13SkillId): H13BounceProfile {
+    return {
+        skillId,
+        attackIncreasePerBounce: skillId === H13_BASE_SKILL_ID ? 0 : 1000,
+        lastMissileConfigured: skillId === 'TZ_1303',
+    };
+}
+
+// BounceBullet multiplies each child missile's attack after it is initialized,
+// so the 1000-basis-point atk_ins compounds once for every follow-up segment.
+export function resolveBounceAttack(
+    baseAttack: number,
+    completedBounces: number,
+    attackIncreasePerBounce: number,
+): number {
+    let attack = baseAttack;
+    const multiplier = 1 + attackIncreasePerBounce / 10000;
+    for (let bounce = 0; bounce < Math.max(0, completedBounces); bounce += 1) attack *= multiplier;
+    return attack;
+}
+
+// Version 18 resets a child BounceBullet's bouncelTimes to zero, evaluates
+// last_missile, and only afterwards copies the parent's counter. H13 always has
+// at least two follow-up bounces, so TZ_1303's configured explosion is unreachable.
+export function runtimeSelectsConfiguredLastBounceMissile(bounceMaxTimes: number): boolean {
+    const resetChildBounceTimes = 0;
+    return resetChildBounceTimes === bounceMaxTimes - 1;
+}
+
 export function selectBounceBattlefieldTarget<T extends BounceBattlefieldTarget>(
     origin: BattlefieldPoint,
     candidates: ReadonlyArray<T>,

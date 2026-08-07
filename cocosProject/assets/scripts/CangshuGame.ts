@@ -26,8 +26,15 @@ import {
     sp,
 } from 'cc';
 import {
+    advanceH02BarrageCast,
+    advanceH03LaserCast,
+    advanceH03Transform,
+    advanceH04ShieldWall,
+    applyH03TransformHit,
     attackBehaviorDelaySeconds,
+    attackKillFlyRollSucceeds,
     attackIntervalSeconds,
+    ATTACK_KILL_FLY_DAMAGE,
     BATTLEFIELD_HOME_X,
     battlefieldDistance,
     CombatAttributes,
@@ -35,12 +42,27 @@ import {
     defeatCompensation,
     EMPTY_COMBAT_ATTRIBUTES,
     heroSeparationVector,
+    H04_SHIELD_WALL_INTERVAL_SECONDS,
+    h04ShieldWallCounterattackDamage,
+    H13_BASE_SKILL_ID,
+    H13ReplacementTraitId,
+    H13SkillId,
     HeroAttackType,
     randomBattleRoll,
     resolveAttackAtImpact,
+    resolveBounceAttack,
+    resolveBounceMaxTimes,
+    resolveH13BounceProfileForSkill,
     resolveTargetingIntent,
     resolveBattleDamageWithRandom,
+    replaceH13Skill,
+    selectH03LaserTargets,
     selectBounceBattlefieldTarget,
+    selectNearestBattlefieldTarget,
+    selectSplitShotTarget,
+    splitShotRollSucceeds,
+    SPLIT_SHOT_EFFECT_RATIO,
+    SPLIT_SHOT_PROJECTILE_SPEED,
 } from './BattlefieldKernel';
 import {
     applyWorkerPower,
@@ -57,12 +79,19 @@ import {
     WORKER_COMPLETE_ANIMATION_SECONDS,
 } from './BattlefieldProduction';
 import {
+    advancePeriodicAttackHeal,
+    H04_PERIODIC_HEAL_INTERVAL_SECONDS,
     H11_BASE_ATTACK,
+    H11_BASE_SKILL_ID,
     H11_GEAR_SHAPE,
-    H11_HOME_HEAL_RATIO,
     H11_POWER_PER_TRIGGER,
     H11_TARGET_RADIUS,
     H11_UNIT_HEAL_RATIO,
+    H11ReplacementTraitId,
+    H11SkillId,
+    applyShieldedDamage,
+    replaceH11Skill,
+    resolveH11HealingProfileForSkill,
     resolveH11Healing,
 } from './BattlefieldHealing';
 import {
@@ -89,6 +118,7 @@ import {
     BagLikeGearUpgradeItem,
     chooseBagLikeGearUpgrade,
     completeWarriorComboAttack,
+    completeWarriorKillAttackStack,
     drawWeightedTraits,
     expTargetForLevel,
     IMPLEMENTED_TRAIT_POOL,
@@ -101,11 +131,21 @@ import {
     traitPowerNearWorkerMultiplier,
     traitPrepareRewardWeightModifiers,
     traitRoundStartHomeHealBasisPoints,
+    traitH02BarrageProfile,
+    traitH03LaserProfile,
+    traitH03TransformProfile,
+    traitH04ShieldWallProfile,
     traitWarriorComboProfile,
+    traitWarriorKillAttackProfile,
     TraitDefinition,
     TraitEffectKind,
     TraitId,
+    H02BarrageProfile,
+    H03LaserProfile,
+    H03TransformProfile,
+    H04ShieldWallProfile,
     WarriorComboProfile,
+    warriorKillAttackMultiplier,
     TRAIT_REROLL_MAX,
     TRAIT_REROLL_MIN_QUALITY,
     TRAIT_TAKE_ALL_MAX,
@@ -405,12 +445,34 @@ type BattleUnit = {
     skeleton: sp.Skeleton | null;
     hp: number;
     maxHp: number;
+    shield: number;
     atk: number;
     x: number;
     y: number;
     cooldown: number;
     dead: boolean;
     frozen: number;
+    barrage: H02BarrageProfile | null;
+    barrageCooldown: number;
+    barrageCasting: boolean;
+    barrageCooldownStarted: boolean;
+    barrageElapsed: number;
+    barrageTarget: BattleUnit | null;
+    barrageLaunchAttack: number;
+    laser: H03LaserProfile | null;
+    laserCooldown: number;
+    laserCasting: boolean;
+    laserCooldownStarted: boolean;
+    laserElapsed: number;
+    laserTarget: BattleUnit | null;
+    transform: H03TransformProfile | null;
+    transformRemaining: number;
+    transformDamageIncrease: number;
+    periodicHealRatio: number;
+    periodicHealTimer: number;
+    shieldWall: H04ShieldWallProfile | null;
+    shieldWallCooldown: number;
+    shieldWallRemaining: number;
     warriorCombo: WarriorComboProfile | null;
     warriorComboCompletedAttacks: number;
     warriorComboCriticalReady: boolean;
@@ -433,7 +495,9 @@ type PendingHit = {
     bounceTimes: number;
     bounceMaxTimes: number;
     bounceRange: number;
+    bounceAttackIncrease: number;
     bounceHitUids: Set<number>;
+    countsAsWarriorAttack: boolean;
 };
 
 type ProductionJob = {
@@ -619,6 +683,8 @@ const UNITS: Record<ModelId, UnitConfig> = {
         effectRatio: 3500,
         attackDelay: 0,
         projectileSpeed: 1000,
+        bounceTimes: 2,
+        bounceRange: 300,
         randomTarget: true,
         spinePath: '',
         spineScale: 0.8,
@@ -955,7 +1021,10 @@ export class CangshuGame extends Component {
     private currentTraitChoices: TraitDefinition[] = [];
     private pendingTraitReturnPhase: 'battle' | 'roundClear' = 'battle';
     private traitStacks = new Map<TraitId, number>();
+    private warriorKillAttackStacks = 0;
+    private h11SkillId: H11SkillId = H11_BASE_SKILL_ID;
     private h12SkillId: H12SkillId = H12_BASE_SKILL_ID;
+    private h13SkillId: H13SkillId = H13_BASE_SKILL_ID;
 
     private battleLayer!: Node;
     private unitLayer!: Node;
@@ -1414,7 +1483,10 @@ export class CangshuGame extends Component {
         this.traitTakeAllUsed = 0;
         this.currentTraitChoices = [];
         this.traitStacks.clear();
+        this.warriorKillAttackStacks = 0;
+        this.h11SkillId = H11_BASE_SKILL_ID;
         this.h12SkillId = H12_BASE_SKILL_ID;
+        this.h13SkillId = H13_BASE_SKILL_ID;
         this.initGrid();
         this.addPlacedGear('P01', 2, 3);
         this.dealPreparationBatch();
@@ -2183,13 +2255,97 @@ export class CangshuGame extends Component {
     }
 
     private stepUnit(unit: BattleUnit, dt: number, separation = { x: 0, y: 0 }): void {
+        if (unit.periodicHealRatio > 0) {
+            const periodicHeal = advancePeriodicAttackHeal({
+                hp: unit.hp,
+                maxHp: unit.maxHp,
+                attack: unit.atk,
+                ratio: unit.periodicHealRatio,
+                timer: unit.periodicHealTimer,
+                elapsed: dt,
+            });
+            unit.periodicHealTimer = periodicHeal.timer;
+            if (periodicHeal.appliedAmount > 0) {
+                unit.hp = periodicHeal.hp;
+                this.addHealText(periodicHeal.appliedAmount, unit.x, unit.y + 48);
+                this.drawUnitHp(unit);
+            }
+        }
+        if (unit.shieldWall) {
+            const shieldWall = advanceH04ShieldWall(
+                { cooldown: unit.shieldWallCooldown, remaining: unit.shieldWallRemaining },
+                dt,
+            );
+            unit.shieldWallCooldown = shieldWall.cooldown;
+            unit.shieldWallRemaining = shieldWall.remaining;
+        }
+        if (unit.transformRemaining > 0) {
+            const transform = advanceH03Transform({
+                remaining: unit.transformRemaining,
+                outgoingDamageIncrease: unit.transformDamageIncrease,
+            }, dt);
+            unit.transformRemaining = transform.remaining;
+            unit.transformDamageIncrease = transform.outgoingDamageIncrease;
+        }
+        if (unit.barrageCooldown > 0) unit.barrageCooldown = Math.max(0, unit.barrageCooldown - dt);
+        if (unit.laserCooldown > 0) unit.laserCooldown = Math.max(0, unit.laserCooldown - dt);
         if (unit.frozen > 0) {
+            if (unit.barrageCasting) {
+                unit.barrageCasting = false;
+                unit.barrageElapsed = 0;
+                unit.barrageTarget = null;
+            }
+            if (unit.laserCasting) {
+                unit.laserCasting = false;
+                unit.laserCooldownStarted = false;
+                unit.laserElapsed = 0;
+                unit.laserTarget = null;
+            }
             unit.frozen = Math.max(0, unit.frozen - dt);
             this.playAnimation(unit, 'idle', true);
             return;
         }
+        if (unit.barrageCasting) {
+            unit.cooldown -= dt;
+            this.stepH02BarrageCast(unit, dt);
+            return;
+        }
+        if (unit.laserCasting) {
+            unit.cooldown -= dt;
+            this.stepH03LaserCast(unit, dt);
+            return;
+        }
         unit.cooldown -= dt;
         const opponents = this.units.filter((candidate) => !candidate.dead && candidate.team !== unit.team);
+        if (unit.laser && unit.laserCooldown <= 0 && opponents.length > 0) {
+            const laserIntent = resolveTargetingIntent(
+                unit,
+                opponents,
+                unit.cfg.searchRange,
+                unit.laser.castingRange,
+                unit.cfg.moveSpeed * dt,
+                { x: unit.team === 'self' ? BATTLEFIELD_HOME_X : -BATTLEFIELD_HOME_X, y: 0 },
+                false,
+            );
+            if (laserIntent.attackTarget && laserIntent.target) {
+                this.beginH03LaserCast(unit, laserIntent.target);
+                return;
+            }
+            if (laserIntent.target) {
+                unit.x += laserIntent.moveX + separation.x;
+                unit.y += laserIntent.moveY + separation.y;
+                unit.node.setPosition(unit.x, unit.y);
+                this.playAnimation(unit, laserIntent.moveX || laserIntent.moveY ? 'run' : 'idle', true);
+                return;
+            }
+        }
+        if (unit.barrage && unit.barrageCooldown <= 0 && opponents.length > 0) {
+            const barrageTarget = selectNearestBattlefieldTarget(unit, opponents, 9999);
+            if (barrageTarget) {
+                this.beginH02BarrageCast(unit, barrageTarget);
+                return;
+            }
+        }
         if (unit.cfg.randomTarget && opponents.length > 0) {
             // Mobile units currently all use nearest search; keep the decoded
             // random-search branch valid for any future mobile skill config.
@@ -2228,6 +2384,148 @@ export class CangshuGame extends Component {
         this.playAnimation(unit, intent.moveX || intent.moveY ? 'run' : 'idle', true);
     }
 
+    private beginH02BarrageCast(unit: BattleUnit, target: BattleUnit): void {
+        if (!unit.barrage) return;
+        unit.barrageCasting = true;
+        unit.barrageCooldownStarted = false;
+        unit.barrageElapsed = 0;
+        unit.barrageTarget = target;
+        unit.barrageLaunchAttack = this.effectiveAttack(unit);
+        this.playAnimation(unit, 'attack', false);
+    }
+
+    private beginH03LaserCast(unit: BattleUnit, target: BattleUnit): void {
+        if (!unit.laser) return;
+        unit.laserCasting = true;
+        unit.laserCooldownStarted = false;
+        unit.laserElapsed = 0;
+        unit.laserTarget = target;
+        this.playAnimation(unit, 'laser', false);
+    }
+
+    private stepH03LaserCast(unit: BattleUnit, dt: number): void {
+        const profile = unit.laser;
+        if (!profile) return;
+        const advance = advanceH03LaserCast(
+            unit.laserElapsed,
+            dt,
+            profile.behaviorDelaySeconds,
+            profile.castTimeSeconds,
+        );
+        unit.laserElapsed = advance.elapsed;
+        if (advance.behaviorTriggered) {
+            if (!unit.laserCooldownStarted) {
+                unit.laserCooldown = Math.max(
+                    0,
+                    profile.cooldownSeconds - (advance.elapsed - profile.behaviorDelaySeconds),
+                );
+                unit.laserCooldownStarted = true;
+            }
+            const lockedTarget = unit.laserTarget;
+            if (lockedTarget) {
+                const targets = selectH03LaserTargets(
+                    unit,
+                    lockedTarget,
+                    this.units.filter((candidate) => !candidate.dead && candidate.team !== unit.team),
+                    profile.width,
+                    profile.height,
+                    profile.maxTargets,
+                );
+                const attack = this.effectiveAttack(unit);
+                for (const target of targets) {
+                    const damage = this.calculateDamageResult(
+                        unit,
+                        target.cfg,
+                        profile.effectRatio,
+                        attack,
+                        false,
+                        0,
+                        target.shieldWallRemaining > 0 ? target.shieldWall?.damageResistance || 0 : 0,
+                    );
+                    const counterattack = h04ShieldWallCounterattackDamage(
+                        damage.rawValue,
+                        target.shieldWall?.counterattackRatio || 0,
+                        target.shieldWallRemaining > 0 && !unit.dead,
+                    );
+                    if (counterattack > 0) this.damageUnit(unit, counterattack, target);
+                    this.damageUnit(target, damage.value, unit);
+                }
+                const aimX = lockedTarget.x - unit.x;
+                const aimY = lockedTarget.y - unit.y;
+                const aimDistance = Math.hypot(aimX, aimY);
+                const directionX = aimDistance > 0 ? aimX / aimDistance : 1;
+                const directionY = aimDistance > 0 ? aimY / aimDistance : 0;
+                this.addTrace(
+                    unit,
+                    unit.x + directionX * profile.height,
+                    unit.y + directionY * profile.height,
+                );
+            }
+        }
+        if (advance.complete) {
+            unit.laserCasting = false;
+            unit.laserCooldownStarted = false;
+            unit.laserElapsed = 0;
+            unit.laserTarget = null;
+            this.playAnimation(unit, 'idle', true);
+        }
+    }
+
+    private stepH02BarrageCast(unit: BattleUnit, dt: number): void {
+        const profile = unit.barrage;
+        if (!profile) return;
+        const previousElapsed = unit.barrageElapsed;
+        const advance = advanceH02BarrageCast(
+            previousElapsed,
+            dt,
+            profile.configuredShotDelays,
+            profile.castTimeSeconds,
+        );
+        unit.barrageElapsed = advance.elapsed;
+        if (advance.shotIndices.length > 0 && !unit.barrageCooldownStarted) {
+            const firstDelay = profile.configuredShotDelays[advance.shotIndices[0]];
+            unit.barrageCooldown = Math.max(0, profile.cooldownSeconds - (advance.elapsed - firstDelay));
+            unit.barrageCooldownStarted = true;
+        }
+        const target = unit.barrageTarget;
+        if (target && !target.dead) {
+            for (let remainingShots = advance.shotIndices.length; remainingShots > 0; remainingShots -= 1) {
+                const fromX = unit.x;
+                const fromY = unit.y;
+                const impactX = target.x;
+                const impactY = target.y;
+                this.pendingHits.push({
+                    timer: Math.hypot(impactX - fromX, impactY - fromY) / profile.projectileSpeed,
+                    attacker: unit,
+                    target,
+                    targetHome: null,
+                    fromX,
+                    fromY,
+                    effectRatio: profile.effectRatio,
+                    areaRadius: 0,
+                    maxTargets: 1,
+                    impactX,
+                    impactY,
+                    projectile: true,
+                    launchAttack: unit.barrageLaunchAttack,
+                    bounceTimes: 0,
+                    bounceMaxTimes: 0,
+                    bounceRange: 0,
+                    bounceAttackIncrease: 0,
+                    bounceHitUids: new Set<number>(),
+                    countsAsWarriorAttack: false,
+                });
+            }
+        }
+        if (advance.complete) {
+            unit.barrageCasting = false;
+            unit.barrageCooldownStarted = false;
+            unit.barrageElapsed = 0;
+            unit.barrageTarget = null;
+            this.playAnimation(unit, 'idle', true);
+        }
+    }
+
     private beginAttack(unit: BattleUnit, target: BattleUnit | null, targetHome: Team | null): void {
         const attrs = this.attrsFor(unit.cfg);
         unit.cooldown = attackIntervalSeconds(unit.cfg.attackInterval, attrs.attackSpeed);
@@ -2240,6 +2538,40 @@ export class CangshuGame extends Component {
         const travelTime = unit.cfg.projectileSpeed ? travelDistance / unit.cfg.projectileSpeed : 0;
         const impactX = target ? target.x : targetHome ? -BATTLEFIELD_HOME_X : unit.x;
         const impactY = target ? target.y : -10;
+        const h13BounceProfile = unit.cfg.id === 'H1301' || unit.cfg.id === 'H09'
+            ? resolveH13BounceProfileForSkill(this.h13SkillId)
+            : null;
+        const splitShotProbability = target ? this.traitEffectAmount('splitShot', unit.cfg) : 0;
+        if (target && splitShotProbability > 0 && splitShotRollSucceeds(splitShotProbability)) {
+            const splitTarget = selectSplitShotTarget(
+                unit,
+                this.units.filter((candidate) => !candidate.dead && candidate.team !== unit.team),
+            );
+            if (splitTarget) {
+                const splitTravelTime = battlefieldDistance(unit, splitTarget) / SPLIT_SHOT_PROJECTILE_SPEED;
+                this.pendingHits.push({
+                    timer: splitTravelTime,
+                    attacker: unit,
+                    target: splitTarget,
+                    targetHome: null,
+                    fromX: unit.x,
+                    fromY: unit.y,
+                    effectRatio: SPLIT_SHOT_EFFECT_RATIO,
+                    areaRadius: 0,
+                    maxTargets: 1,
+                    impactX: splitTarget.x,
+                    impactY: splitTarget.y,
+                    projectile: true,
+                    launchAttack: this.effectiveAttack(unit),
+                    bounceTimes: 0,
+                    bounceMaxTimes: 0,
+                    bounceRange: 0,
+                    bounceAttackIncrease: 0,
+                    bounceHitUids: new Set<number>(),
+                    countsAsWarriorAttack: false,
+                });
+            }
+        }
         this.pendingHits.push({
             timer: attackBehaviorDelaySeconds(unit.cfg.attackDelay, attrs.attackSpeed) + travelTime,
             attacker: unit,
@@ -2255,9 +2587,14 @@ export class CangshuGame extends Component {
             projectile: Boolean(unit.cfg.projectileSpeed),
             launchAttack: this.effectiveAttack(unit),
             bounceTimes: 0,
-            bounceMaxTimes: unit.cfg.bounceTimes || 0,
+            bounceMaxTimes: resolveBounceMaxTimes(
+                unit.cfg.bounceTimes || 0,
+                this.traitEffectAmount('bounceTimes', unit.cfg),
+            ),
             bounceRange: unit.cfg.bounceRange || 0,
+            bounceAttackIncrease: h13BounceProfile?.attackIncreasePerBounce || 0,
             bounceHitUids: new Set<number>(),
+            countsAsWarriorAttack: true,
         });
         if (unit.cfg.id === 'H09' && target && travelTime > 0) {
             this.addH0905Projectile(unit.x, unit.y, impactX, impactY, travelTime);
@@ -2282,28 +2619,25 @@ export class CangshuGame extends Component {
                           .slice(0, hit.maxTargets)
                           .map((entry) => entry.unit)
                     : hit.target.dead ? [] : [hit.target];
-                if (
-                    hit.attacker.cfg.id === 'H0201'
-                    && this.traitCount('RG_H02_abl02_eff01') > 0
-                    && randomBattleRoll() <= 3000
-                ) {
-                    const extraTarget = this.units
-                        .filter((unit) => !unit.dead && unit.team !== hit.attacker.team && targets.indexOf(unit) < 0)
-                        .map((unit) => ({ unit, distance: Math.hypot(unit.x - hit.target!.x, unit.y - hit.target!.y) }))
-                        .filter((entry) => entry.distance <= 250)
-                        .sort((left, right) => left.distance - right.distance)[0]?.unit;
-                    if (extraTarget) targets.push(extraTarget);
-                }
-                const attack = resolveAttackAtImpact(
-                    this.effectiveAttack(hit.attacker),
-                    hit.launchAttack,
-                    hit.projectile,
-                    !hit.attacker.dead,
+                const attack = resolveBounceAttack(
+                    resolveAttackAtImpact(
+                        this.effectiveAttack(hit.attacker),
+                        hit.launchAttack,
+                        hit.projectile,
+                        !hit.attacker.dead,
+                    ),
+                    hit.bounceTimes,
+                    hit.bounceAttackIncrease,
                 );
                 const warriorCombo = hit.attacker.warriorCombo;
                 const forcedWarriorCritical = Boolean(warriorCombo && hit.attacker.warriorComboCriticalReady);
                 let warriorCriticalConsumed = false;
                 for (const target of targets) {
+                    const killFlyProbability = this.traitEffectAmount('attackKillFly', hit.attacker.cfg);
+                    if (attackKillFlyRollSucceeds(killFlyProbability, !target.cfg.boss, true)) {
+                        this.damageUnit(target, ATTACK_KILL_FLY_DAMAGE, hit.attacker);
+                        continue;
+                    }
                     const damage = this.calculateDamageResult(
                         hit.attacker,
                         target.cfg,
@@ -2311,11 +2645,28 @@ export class CangshuGame extends Component {
                         attack,
                         forcedWarriorCritical,
                         forcedWarriorCritical ? warriorCombo?.bonusCritDamage || 0 : 0,
+                        target.shieldWallRemaining > 0 ? target.shieldWall?.damageResistance || 0 : 0,
                     );
-                    this.damageUnit(target, damage.value);
+                    const counterattack = h04ShieldWallCounterattackDamage(
+                        damage.rawValue,
+                        target.shieldWall?.counterattackRatio || 0,
+                        target.shieldWallRemaining > 0 && !hit.attacker.dead,
+                    );
+                    if (counterattack > 0) this.damageUnit(hit.attacker, counterattack, target);
+                    this.damageUnit(target, damage.value, hit.attacker);
                     warriorCriticalConsumed ||= forcedWarriorCritical && damage.status === 'critical';
+                    if (hit.attacker.transform) {
+                        const transform = applyH03TransformHit({
+                            remaining: target.transformRemaining,
+                            frozen: target.frozen,
+                            outgoingDamageIncrease: target.transformDamageIncrease,
+                        }, hit.attacker.transform, Boolean(target.cfg.controlImmune));
+                        target.transformRemaining = transform.remaining;
+                        target.frozen = transform.frozen;
+                        target.transformDamageIncrease = transform.outgoingDamageIncrease;
+                    }
                     if (
-                        hit.attacker.cfg.id === 'H0301'
+                        (hit.attacker.cfg.id === 'H0301' || hit.attacker.cfg.id === 'H08')
                         && this.traitCount('RG_H03_abl02_eff01') > 0
                         && !target.cfg.controlImmune
                         && randomBattleRoll() <= 3000
@@ -2323,7 +2674,9 @@ export class CangshuGame extends Component {
                 }
                 if (hit.attacker.cfg.id === 'H09') this.addH0905Impact(centerX, centerY);
                 if (hit.target && hit.bounceMaxTimes > 0) this.queueBounceHit(hit);
-                if (warriorCombo) this.completeWarriorAttack(hit.attacker, warriorCombo, warriorCriticalConsumed);
+                if (warriorCombo && (hit.countsAsWarriorAttack || warriorCriticalConsumed)) {
+                    this.completeWarriorAttack(hit.attacker, warriorCombo, warriorCriticalConsumed);
+                }
                 if (hit.attacker.cfg.id !== 'H09') {
                     this.addTrace(hit.attacker, centerX, centerY, hit.fromX, hit.fromY);
                 }
@@ -2372,7 +2725,7 @@ export class CangshuGame extends Component {
             impactY,
             bounceTimes: hit.bounceTimes + 1,
         });
-        if (projectileSpeed > 0) {
+        if (projectileSpeed > 0 && hit.attacker.cfg.id === 'H09') {
             this.addH0905Projectile(
                 fromX,
                 fromY,
@@ -2394,12 +2747,15 @@ export class CangshuGame extends Component {
         attack = this.effectiveAttack(attacker),
         forcedCritical = false,
         bonusCritDamage = 0,
+        targetDamageResistance = 0,
     ): DamageResult {
         const source = this.attrsFor(attacker.cfg);
         source.damageIncrease += this.traitEffectAmount('attackIncrease', attacker.cfg);
+        if (attacker.transformRemaining > 0) source.damageIncrease += attacker.transformDamageIncrease;
         source.bossIncrease += this.traitEffectAmount('bossVulnerability', attacker.cfg);
         source.critDamage += bonusCritDamage;
-        const target = targetConfig ? this.attrsFor(targetConfig) : DEFAULT_ATTRS;
+        const target = { ...(targetConfig ? this.attrsFor(targetConfig) : DEFAULT_ATTRS) };
+        target.damageResistance += targetDamageResistance;
         return resolveBattleDamageWithRandom({
             attack,
             effectRatio,
@@ -2435,8 +2791,14 @@ export class CangshuGame extends Component {
     }
 
     private effectiveAttack(unit: BattleUnit): number {
-        if (unit.team !== 'enemy') return unit.atk;
-        return unit.atk * traitMonsterAttackMultiplier(IMPLEMENTED_TRAIT_POOL, this.traitStacks);
+        if (unit.team === 'enemy') {
+            return unit.atk * traitMonsterAttackMultiplier(IMPLEMENTED_TRAIT_POOL, this.traitStacks);
+        }
+        return unit.atk * warriorKillAttackMultiplier(
+            traitWarriorKillAttackProfile(IMPLEMENTED_TRAIT_POOL, this.traitStacks),
+            this.warriorKillAttackStacks,
+            unit.cfg.id.slice(0, 3),
+        );
     }
 
     private attrsFor(config: UnitConfig): Attributes {
@@ -2447,10 +2809,27 @@ export class CangshuGame extends Component {
         return result;
     }
 
-    private damageUnit(target: BattleUnit, damage: number): void {
-        target.hp -= damage;
+    private damageUnit(target: BattleUnit, damage: number, attacker: BattleUnit | null = null): void {
+        if (target.dead) return;
+        const result = applyShieldedDamage(target.hp, target.shield, damage);
+        target.hp = result.hp;
+        target.shield = result.shield;
         this.addDamageText(damage, target.x, target.y + 48);
-        if (target.hp <= 0) this.killUnit(target);
+        if (target.hp <= 0) {
+            if (target.team === 'enemy' && attacker) this.completeWarriorKill(attacker);
+            this.killUnit(target);
+        }
+    }
+
+    private completeWarriorKill(attacker: BattleUnit): void {
+        const profile = traitWarriorKillAttackProfile(IMPLEMENTED_TRAIT_POOL, this.traitStacks);
+        if (!profile) return;
+        const result = completeWarriorKillAttackStack(
+            this.warriorKillAttackStacks,
+            profile,
+            attacker.cfg.id.slice(0, 3),
+        );
+        this.warriorKillAttackStacks = result.stacks;
     }
 
     private killUnit(unit: BattleUnit): void {
@@ -2519,24 +2898,34 @@ export class CangshuGame extends Component {
         graphics.stroke();
         const icons: Record<TraitEffectKind, string> = {
             attackIncrease: '攻',
+            attackKillFly: '飞',
             attackSpeed: '速',
+            barrage: '幕',
             bossVulnerability: '破',
+            bounceTimes: '弹',
             criticalDamage: '爆',
             criticalRate: '暴',
             enemyAttackDecrease: '弱',
             expGain: '经',
             gearUpgrade: '升',
+            healToShield: '盾',
             immediateHomeHeal: '疗',
             paralysis: '麻',
+            penetratingLaser: '光',
+            periodicSelfHeal: '愈',
             powerNearAttack: '核',
             powerNearWorker: '效',
             prepareRewardWeight: '刷',
             roundStartHomeHeal: '愈',
+            runtimeNoOp: '疗',
+            shieldWall: '壁',
             skillReplacement: '电',
             splitShot: '射',
             freeze: '冰',
+            transform: '变',
             hpIncrease: '血',
             warriorComboCritical: '暴',
+            warriorKillAttackIncrease: '叠',
         };
         const icon = icons[trait.effect.kind];
         this.makeLabel('TraitIcon', card, 0, 112, 90, 60, icon, 38, WHITE);
@@ -2613,6 +3002,12 @@ export class CangshuGame extends Component {
             || trait.id === 'RG_H12_abl04_eff01'
         ) {
             this.h12SkillId = replaceH12Skill(this.h12SkillId, trait.id as H12ReplacementTraitId);
+        }
+        if (trait.id === 'RG_H11_abl01_eff02') {
+            this.h11SkillId = replaceH11Skill(this.h11SkillId, trait.id as H11ReplacementTraitId);
+        }
+        if (trait.id === 'RG_H13_abl02_eff01' || trait.id === 'RG_H13_abl02_eff02') {
+            this.h13SkillId = replaceH13Skill(this.h13SkillId, trait.id as H13ReplacementTraitId);
         }
         if (trait.effect.kind === 'immediateHomeHeal') {
             const previousHp = this.selfHp;
@@ -2719,12 +3114,34 @@ export class CangshuGame extends Component {
             skeleton: null,
             hp: cfg.hp,
             maxHp: cfg.hp,
+            shield: 0,
             atk: cfg.atk * scales.attack,
             x: position.x,
             y: position.y,
             cooldown: 0,
             dead: false,
             frozen: 0,
+            barrage: null,
+            barrageCooldown: 0,
+            barrageCasting: false,
+            barrageCooldownStarted: false,
+            barrageElapsed: 0,
+            barrageTarget: null,
+            barrageLaunchAttack: 0,
+            laser: null,
+            laserCooldown: 0,
+            laserCasting: false,
+            laserCooldownStarted: false,
+            laserElapsed: 0,
+            laserTarget: null,
+            transform: null,
+            transformRemaining: 0,
+            transformDamageIncrease: 0,
+            periodicHealRatio: 0,
+            periodicHealTimer: H04_PERIODIC_HEAL_INTERVAL_SECONDS,
+            shieldWall: null,
+            shieldWallCooldown: 0,
+            shieldWallRemaining: 0,
             warriorCombo: null,
             warriorComboCompletedAttacks: 0,
             warriorComboCriticalReady: false,
@@ -2750,11 +3167,12 @@ export class CangshuGame extends Component {
             .sort((left, right) => left.distance - right.distance)
             .slice(0, cfg.maxTargets || 1)
             .map((entry) => entry.unit);
-        for (const unit of affected) this.damageUnit(unit, this.calculateDamage(caster, unit.cfg, cfg.effectRatio));
+        for (const unit of affected) this.damageUnit(unit, this.calculateDamage(caster, unit.cfg, cfg.effectRatio), caster);
         this.addTrace(caster, target.x, target.y);
     }
 
     private castH11Healing(attack: number): void {
+        const castProfile = resolveH11HealingProfileForSkill(this.h11SkillId);
         const allies = this.units.filter((unit) => !unit.dead && unit.team === 'self');
         const plan = resolveH11Healing({
             attack,
@@ -2767,19 +3185,21 @@ export class CangshuGame extends Component {
             })),
             homeHp: this.selfHp,
             homeMaxHp: this.levelHomeHp,
-            unitHealRatio: H11_UNIT_HEAL_RATIO,
-            homeHealRatio: H11_HOME_HEAL_RATIO,
+            unitHealRatio: castProfile.unitHealRatio,
+            homeHealRatio: castProfile.homeHealRatio,
             radius: H11_TARGET_RADIUS,
             maxUnitTargets: 1,
+            healToShield: this.traitEffectAmount('healToShield', UNITS.H1101) > 0,
             random: Math.random,
         });
         if (!plan) return;
 
         for (const heal of plan.unitHeals) {
             const unit = allies.find((candidate) => candidate.uid === heal.id);
-            if (!unit || heal.appliedAmount <= 0) continue;
+            if (!unit) continue;
             unit.hp += heal.appliedAmount;
-            this.addHealText(heal.appliedAmount, unit.x, unit.y + 48);
+            unit.shield += heal.shieldAmount;
+            if (heal.appliedAmount > 0) this.addHealText(heal.appliedAmount, unit.x, unit.y + 48);
             this.drawUnitHp(unit);
         }
         if (plan.homeAppliedAmount > 0) {
@@ -2841,6 +3261,21 @@ export class CangshuGame extends Component {
         const warriorCombo = team === 'self'
             ? traitWarriorComboProfile(IMPLEMENTED_TRAIT_POOL, this.traitStacks, cfg.id.slice(0, 3))
             : null;
+        const periodicHealRatio = team === 'self'
+            ? this.traitEffectAmount('periodicSelfHeal', cfg)
+            : 0;
+        const shieldWall = team === 'self'
+            ? traitH04ShieldWallProfile(IMPLEMENTED_TRAIT_POOL, this.traitStacks, cfg.id.slice(0, 3))
+            : null;
+        const transform = team === 'self'
+            ? traitH03TransformProfile(IMPLEMENTED_TRAIT_POOL, this.traitStacks, cfg.id.slice(0, 3))
+            : null;
+        const barrage = team === 'self'
+            ? traitH02BarrageProfile(IMPLEMENTED_TRAIT_POOL, this.traitStacks, cfg.id.slice(0, 3))
+            : null;
+        const laser = team === 'self'
+            ? traitH03LaserProfile(IMPLEMENTED_TRAIT_POOL, this.traitStacks, cfg.id.slice(0, 3))
+            : null;
         const unit: BattleUnit = {
             uid: ++this.serial,
             team,
@@ -2851,12 +3286,34 @@ export class CangshuGame extends Component {
             skeleton: null,
             hp: maxHp,
             maxHp,
+            shield: 0,
             atk: cfg.atk * atkScale,
             x,
             y,
             cooldown: 0.2 + Math.random() * 0.25,
             dead: false,
             frozen: 0,
+            barrage,
+            barrageCooldown: barrage?.initialCooldownSeconds || 0,
+            barrageCasting: false,
+            barrageCooldownStarted: false,
+            barrageElapsed: 0,
+            barrageTarget: null,
+            barrageLaunchAttack: 0,
+            laser,
+            laserCooldown: laser?.initialCooldownSeconds || 0,
+            laserCasting: false,
+            laserCooldownStarted: false,
+            laserElapsed: 0,
+            laserTarget: null,
+            transform,
+            transformRemaining: 0,
+            transformDamageIncrease: 0,
+            periodicHealRatio,
+            periodicHealTimer: H04_PERIODIC_HEAL_INTERVAL_SECONDS,
+            shieldWall,
+            shieldWallCooldown: shieldWall ? H04_SHIELD_WALL_INTERVAL_SECONDS : 0,
+            shieldWallRemaining: 0,
             warriorCombo,
             warriorComboCompletedAttacks: 0,
             warriorComboCriticalReady: false,
@@ -2885,13 +3342,14 @@ export class CangshuGame extends Component {
         });
     }
 
-    private playAnimation(unit: BattleUnit, requested: 'idle' | 'run' | 'attack' | 'die', loop: boolean): void {
+    private playAnimation(unit: BattleUnit, requested: 'idle' | 'run' | 'attack' | 'laser' | 'die', loop: boolean): void {
         const skeleton = unit.skeleton;
         if (!skeleton || !skeleton.isValid) return;
         const candidates: Record<string, string[]> = {
             idle: ['idle', 'daiji', 'animation'],
             run: ['move', 'run', 'walk', 'yidong', 'idle'],
             attack: ['attack', 'gongji', 'skill01', 'idle'],
+            laser: ['skill01', 'attack', 'idle'],
             die: ['die', 'death', 'siwang', 'idle'],
         };
         for (const name of candidates[requested]) {

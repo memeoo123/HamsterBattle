@@ -296,9 +296,9 @@
       "type": "HAMSTER",
       "searchRange": 400,
       "moveSpeed": 60,
-      "skill": {"id": "1001", "range": 50, "effectRatio": 10000, "behaviorDelayMs": 300},
+      "skill": {"id": "1001", "range": 50, "effectRatio": 10000, "behaviorDelayMs": 300, "starFeatures": [{"abilityId": "RG_H01_abl03_eff01", "minH01Star": 7, "specialWord": "DIE_ZHONG_DIE", "scope": ["H01", "H07"], "trigger": "final damage caster hero id matches scope", "attackIncreasePerStack": 200, "maxStacks": 30, "sharedAcrossScope": true, "liveAttributeLookup": true}], "runtimeDisconnect": "card copy says participating in a defeat, but BATTLE_MONSTER_DIE carries only one killerId and the consumer has no assist list"},
       "status": "confirmed",
-      "evidence": ["K-C005", "K-C019"]
+      "evidence": ["K-C005", "K-C019", "K-C038"]
     },
     {
       "id": "H02",
@@ -309,9 +309,21 @@
       "searchRange": 400,
       "moveSpeed": 60,
       "baseSecondAttrs": {"ATK_SPD": 1500},
-      "skill": {"id": "2001", "range": 250, "effectRatio": 10000, "behaviorDelayMs": 300, "projectileSpeed": 700},
+      "skill": {"id": "2001", "range": 250, "effectRatio": 10000, "behaviorDelayMs": 300, "projectileSpeed": 700, "starPassives": [{"abilityId": "RG_H02_abl02_eff01", "minH02Star": 3, "skillId": "2001_2", "scope": ["H02", "H07"], "probability": 3000, "extraTargetRadius": 250, "extraTargetCount": 1, "extraEffectRatio": 10000}, {"abilityId": "RG_H02_abl02_eff02", "minH02Star": 5, "skillId": "2001_3", "scope": ["H02", "H07"], "probability": 5000, "extraTargetRadius": 250, "extraTargetCount": 1, "extraEffectRatio": 10000}, {"abilityId": "RG_H02_abl02_eff03", "minH02Star": 10, "skillId": "2001_4", "scope": ["H02", "H07"], "probability": 10000, "extraTargetRadius": 250, "extraTargetCount": 1, "extraEffectRatio": 10000}], "starActiveSkills": [{"abilityId": "RG_H02_abl03_eff01", "minH02Star": 7, "skillId": "2001_5", "scope": ["H02", "H07"], "preCooldownMs": 6000, "cooldownMs": 6000, "castTimeMs": 2000, "configuredShotDelaysMs": [200, 400, 600, 600, 800, 1000, 1200, 1400, 1600], "effectiveShotCount": 9, "missileId": "M_SS_2005", "missileSpeed": 700, "missileEffectRatio": 5000}, {"abilityId": "RG_H02_abl03_eff02", "minH02Star": 8, "skillId": "2001_6", "scope": ["H02", "H07"], "preCooldownMs": 6000, "cooldownMs": 6000, "castTimeMs": 3000, "configuredShotDelaysMs": [500, 1000, 1500, 2000, 2500, 3000, 3500], "effectiveShotCount": 6, "missileId": "M_SS_2005", "missileSpeed": 700, "missileEffectRatio": 5000}], "selectionPolicy": "the highest H02-star-qualified row in each RG_H02_abl02 or RG_H02_abl03 group enters the pool and applies to later-created H02/H07 units", "runtimeDisconnect": "the barrage card and orphan Buff groups describe 3/4-second ATK_SPD +30000 states, but the reachable ADD_SKILL chain casts for 2/3 seconds; 2001_6 removes its configured 3500-ms seventh behavior at cast completion"},
       "status": "confirmed",
-      "evidence": ["K-C005", "K-C019"]
+      "evidence": ["K-C005", "K-C019", "K-C036", "K-C042"]
+    },
+    {
+      "id": "H03",
+      "name": "仓鼠法师",
+      "atk": 30,
+      "hp": 55,
+      "type": "HAMSTER",
+      "searchRange": 400,
+      "moveSpeed": 60,
+      "skill": {"id": "3001", "range": 250, "effectRatio": 10000, "behaviorDelayMs": 500, "projectileSpeed": 700, "starPassives": [{"abilityId": "RG_H03_abl03_eff01", "minH03Star": 7, "skillId": "3001_3", "scope": ["H03", "H08"], "trigger": "ordinary attack index 0 deals damage", "durationMs": 2000, "abnormal": "dizziness", "controlImmune": true, "outgoingDamageIncrease": 0}, {"abilityId": "RG_H03_abl03_eff02", "minH03Star": 8, "skillId": "3001_4", "scope": ["H03", "H08"], "trigger": "ordinary attack index 0 deals damage", "durationMs": 2000, "abnormal": null, "controlImmune": false, "outgoingDamageIncrease": 3000}], "starActiveSkills": [{"abilityId": "RG_H03_abl04_eff01", "minH03Star": 10, "skillId": "3001_5", "scope": ["H03", "H08"], "preCooldownMs": 0, "cooldownMs": 4000, "castTimeMs": 1000, "behaviorDelayMs": 300, "castingRange": 50, "rangeType": "SELF_RECTANGLE", "width": 100, "height": 300, "maxTargets": 999, "effectRatio": 5000, "projectile": false, "animation": "skill01", "sound": "skill_jiguang"}], "selectionPolicy": "star-qualified RG_H03 groups enter independently and selected ADD_PASSIVITY_SKILL/ADD_SKILL rows apply only to later-created H03/H08 units", "runtimeDisconnect": "the star-8 transform card says incoming vulnerability, but version-18 applies target-side outgoing DMG_INC=3000; the laser audio key skill_jiguang has no recovered asset and is not replaced with invented audio"},
+      "status": "confirmed",
+      "evidence": ["K-C005", "K-C019", "K-C041", "K-C043"]
     },
     {
       "id": "H04",
@@ -322,9 +334,9 @@
       "searchRange": 400,
       "moveSpeed": 90,
       "baseSecondAttrs": {"MOVE_SPD": 5000},
-      "skill": {"id": "4001", "range": 75, "effectRatio": 10000, "behaviorDelayMs": 300},
+      "skill": {"id": "4001", "range": 75, "effectRatio": 10000, "behaviorDelayMs": 300, "starPassives": [{"abilityId": "RG_H04_abl02_eff01", "minH04Star": 2, "skillId": "4001_1", "scope": ["H04", "H09"], "intervalMs": 1000, "healAttackRatio": 200}, {"abilityId": "RG_H04_abl02_eff02", "minH04Star": 3, "skillId": "4001_2", "scope": ["H04", "H09"], "intervalMs": 1000, "healAttackRatio": 500}, {"abilityId": "RG_H04_abl03_eff01", "minH04Star": 7, "skillId": "4001_3", "scope": ["H04", "H09"], "intervalMs": 5000, "durationMs": 2000, "damageResistance": 3000, "counterattackRatio": 0}, {"abilityId": "RG_H04_abl03_eff02", "minH04Star": 10, "skillId": "4001_4", "scope": ["H04", "H09"], "intervalMs": 5000, "durationMs": 2000, "damageResistance": 3000, "counterattackRatio": 3000, "counterattackBase": "resistance-adjusted floating damage before floor and shield", "counterattackOrder": "before original-hit shield and HP application; CounterAttack status cannot recurse"}], "starFeatures": [{"abilityId": "RG_H04_abl04_eff01", "minH04Star": 8, "feature": "ATTACK_KILL_FLY", "probability": 3000, "scope": ["H04", "H09"], "skillType": "ATTACK", "eligibleTargets": "non-Boss MonsterUnit with canKillFly=true", "successStatus": "Kill", "successDamage": 999999, "evaluationOrder": "before dodge, critical and regular damage"}], "passiveSelectionPolicy": "the highest H04-star-qualified row in each RG_H04_abl02 or RG_H04_abl03 group enters the pool and applies to later-created H04/H09 units", "runtimeDisconnect": "card copy says max-HP healing, but version-18 4001_bh1/4001_bh2 use generic attack-scaled heal and floor the result"},
       "status": "confirmed",
-      "evidence": ["K-C019"]
+      "evidence": ["K-C019", "K-C037", "K-C039", "K-C040"]
     },
     {
       "id": "H11",
@@ -333,9 +345,9 @@
       "hp": 220,
       "type": "WHEEL",
       "searchRange": 400,
-      "skill": {"id": "ZL_1101", "range": 9999, "target": "lowest allied HP percentage", "unitHealRatio": 10000, "homeHealRatio": 5000, "radius": 200, "maxTargets": 1},
+      "skill": {"id": "ZL_1101", "range": 9999, "target": "lowest allied HP percentage", "unitHealRatio": 10000, "homeHealRatio": 5000, "radius": 200, "maxTargets": 1, "starFeatures": [{"abilityId": "RG_H11_abl02_eff01", "minH11Star": 2, "feature": "HEAL_TO_SHIELD", "amount": 1, "unitOverflowToShield": true, "homeOverflowToShield": false, "shieldStacking": "additive without recovered cap", "damageOrder": "shield before HP"}, {"abilityId": "RG_H11_abl03_eff01", "minH11Star": 7, "feature": "HEAL_MORE_TARGER", "runtimeActive": false, "selectionBehavior": "selectable once and recorded in buff-times map", "reason": "version-18 addEffective has no handler and no external row-id/times consumer", "effectiveMaxTargets": 1}], "starReplacements": [{"abilityId": "RG_H11_abl01_eff02", "minH11Star": 5, "skillId": "ZL_1103", "unitHealRatio": 10000, "homeHealRatio": 10000}], "replacementPolicy": "selected replacement applies to later H11 casts through SkillConfig.group ZL_1101; a living friendly target is still required"},
       "status": "confirmed",
-      "evidence": ["K-C026"]
+      "evidence": ["K-C026", "K-C033", "K-C034", "K-C035"]
     },
     {
       "id": "H12",
@@ -348,6 +360,17 @@
       "skill": {"id": "LY_1201", "range": 9999, "target": "random enemy", "effectRatio": 5000, "behaviorDelayMs": 500, "radius": 50, "maxTargets": 5, "starReplacements": [{"abilityId": "RG_H12_abl01_eff01", "minH12Star": 1, "skillId": "LY_1202", "abnormal": "dizziness", "durationMs": 1000}, {"abilityId": "RG_H12_abl01_eff02", "minH12Star": 3, "skillId": "LY_1203", "abnormal": "dizziness", "durationMs": 2000}, {"abilityId": "RG_H12_abl04_eff01", "minH12Star": 10, "skillId": "LY_1204", "buff": {"attribute": "DMG_RES", "amount": -1000, "timeLimitMs": 0, "maxLayer": 1, "clamp": [0, 7000]}, "representativeTargetNumericEffect": 0}], "replacementPolicy": "last selected replacement in SkillConfig.group LY_1201 wins", "starAttributes": [{"abilityId": "RG_H12_abl02_eff01", "minH12Star": 2, "attribute": "CRI_RATE", "amount": 10000, "scope": ["H12", "H08"]}, {"abilityId": "RG_H12_abl03_eff01", "minH12Star": 7, "attribute": "CRI_DMG", "amount": 5000, "scope": ["H12", "H08"]}], "replacementTarget": "primary random enemy", "controlImmuneApplies": true, "damageOrder": "dodge before critical; dodge and forced-critical short-circuit critical RNG"},
       "status": "confirmed",
       "evidence": ["K-C019", "K-C027", "K-C028", "K-C029", "K-C030"]
+    },
+    {
+      "id": "H13",
+      "name": "火炮齿轮",
+      "atk": 66,
+      "hp": 300,
+      "type": "WHEEL",
+      "searchRange": 400,
+      "skill": {"id": "TZ_1301", "range": 9999, "target": "random enemy", "effectRatio": 3500, "projectileSpeed": 1000, "bounceRange": 300, "baseFollowUpBounces": 2, "starFeatures": [{"abilityId": "RG_H13_abl01_eff01", "minH13Star": 2, "feature": "BOUNCE_TIMES", "amount": 2, "totalFollowUpBounces": 4, "scope": ["H13", "H09"]}, {"abilityId": "RG_H13_abl01_eff02", "minH13Star": 3, "feature": "BOUNCE_TIMES", "amount": 4, "totalFollowUpBounces": 6, "scope": ["H13", "H09"]}], "starReplacements": [{"abilityId": "RG_H13_abl02_eff01", "minH13Star": 7, "skillId": "TZ_1302", "attackIncreasePerBounce": 1000, "scope": ["H13", "H09"]}, {"abilityId": "RG_H13_abl02_eff02", "minH13Star": 10, "skillId": "TZ_1303", "attackIncreasePerBounce": 1000, "scope": ["H13", "H09"], "configuredLastBounceExplosion": {"effectRatio": 3000, "radius": 50, "maxTargets": 5, "runtimeActive": false, "reason": "BounceBullet resets child bouncelTimes before last_missile selection and copies the parent counter afterwards"}}], "replacementPolicy": "highest account-star-qualified RG_H13_abl02 row enters the pool; the selected replacement applies to later H13/H09 launches", "hitPolicy": "initial hit plus nearest unvisited enemies strictly inside bounceRange; atk_ins 1000 compounds once per follow-up segment"},
+      "status": "confirmed",
+      "evidence": ["K-C019", "K-C031", "K-C032"]
     },
     {
       "id": "M02",
@@ -430,7 +453,7 @@
       "outputKind": "oneShotHealingSkill",
       "completionDelaySeconds": 0.25,
       "status": "confirmed",
-      "evidence": ["K-C020", "K-C026"]
+      "evidence": ["K-C020", "K-C026", "K-C033", "K-C034", "K-C035"]
     },
     {
       "id": "H12Gear",
@@ -680,6 +703,58 @@
     "K-C030": {
       "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h12-electrified.md",
       "finding": "H12 star-10 LY_1204 replacement, persistent layer-1 DMG_RES -1000 buff, zero clamp on restored representative targets, and last-selected LY_1201-group replacement ordering"
+    },
+    "K-C031": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h13-bounce-times.md",
+      "finding": "H13 TZ_1301 base two-bounce chain, H13-star-2/star-3 FEATURE/BOUNCE_TIMES additions to four/six follow-up bounces, H13/H09 scope, shared hit map and nearest-unvisited radius-300 routing"
+    },
+    "K-C032": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h13-popcorn-replacement.md",
+      "finding": "H13-star-7/star-10 TZ_1302/TZ_1303 replacements, compounded atk_ins 1000 per follow-up bounce, H13/H09 scope, and the version-18 reset-before-copy disconnect that leaves TZ_1303's configured last-bounce explosion unreachable"
+    },
+    "K-C033": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h11-base-repair.md",
+      "finding": "H11-star-5 ZL_1103 replacement preserves the radius-200 single-unit heal at 100% attack and raises paired home repair from 50% to 100% attack while retaining the living-friendly-target cast requirement"
+    },
+    "K-C034": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h11-heal-to-shield.md",
+      "finding": "H11-star-2 FEATURE/HEAL_TO_SHIELD converts full or overflow allied-unit healing into additive uncapped shield consumed before HP; HomeUnit's heal override keeps base repair as normal clamped healing"
+    },
+    "K-C035": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h11-multi-target-noop.md",
+      "finding": "H11-star-7 HEAL_MORE_TARGER is selectable and recorded once, but version 18 has no effect-dispatch branch or external row-id/times consumer, so B_ZL_1101 remains radius-200 single-target healing with num=1"
+    },
+    "K-C036": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h02-split-shot.md",
+      "finding": "H02 star-3/5/10 RG_H02_abl02 variants use 3000/5000/10000 pre-main-action passive probabilities for H02/H07 and launch an independent speed-700, 10000-ratio missile at one random enemy, including the main target, in the caster-centered radius-250 set"
+    },
+    "K-C037": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h04-periodic-heal.md",
+      "finding": "H04 star-2/star-3 RG_H04_abl02 variants add future H04/H09 units a one-second self-heal passive; version 18 routes configured amounts 200/500 through generic attack-scaled heal with floor and max-HP clamp despite max-HP wording in the card copy"
+    },
+    "K-C038": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h01-kill-stacking.md",
+      "finding": "H01-star-7 RG_H01_abl03 uses one final killerId rather than participation, adds shared live ATK_INC 200 to H01/H07 per qualifying monster kill, and caps the battle-persistent counter at 30"
+    },
+    "K-C039": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h04-attack-kill-fly.md",
+      "finding": "H04-star-8 RG_H04_abl04 adds H04/H09 ATTACK_KILL_FLY 3000; eligible non-Boss MonsterUnit hits roll before dodge/critical and succeed as Kill status with value 999999, while Boss and active-skill paths consume no feature roll"
+    },
+    "K-C040": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h04-shield-wall.md",
+      "finding": "H04-star-7/star-10 RG_H04_abl03 variants add future H04/H09 units a five-second periodic, two-second DMG_RES 3000 shield wall; star 10 additionally reflects floor(resistance-adjusted pre-floor damage * 3000/10000) before original-hit shield/HP application without recursive counterattack"
+    },
+    "K-C041": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h03-transform.md",
+      "finding": "H03-star-7/star-8 RG_H03_abl03 variants apply two-second changed-model buffs after ordinary-hit damage to H03/H08; star 7 adds control-immune-aware dizziness, while star 8 replaces it with target-side DMG_INC 3000 that increases the transformed target's own outgoing damage despite the card's incoming-vulnerability wording"
+    },
+    "K-C042": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h02-barrage-time.md",
+      "finding": "H02-star-7/star-8 RG_H02_abl03 adds future H02/H07 units active skills 2001_5/2001_6 after six seconds; the reachable skills launch nine/six speed-700 missiles at 5000 ratio, while the star-8 3500-ms behavior and both ATK_SPD Buff groups are disconnected by cast completion and absent inbound references"
+    },
+    "K-C043": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h03-penetrating-laser.md",
+      "finding": "H03-star-10 RG_H03_abl04 adds active skill 3001_5 to future H03/H08 units: it has zero pre-cooldown, approaches to the strict 50 fallback range, resolves one direct 5000-ratio hit at 300 ms against up to 999 enemy centers inside an inclusive forward 100-by-300 rectangle, starts a four-second cooldown on that behavior, and completes at one second"
     }
   }
 }

@@ -46,7 +46,10 @@ are randomized because the runtime shuffles the candidate list before sorting.
 
 ## Deliberate boundary
 
-The baseline implements star-1 `ZL_1101`. Star-gated H11 upgrades (`HEAL_TO_SHIELD`,
-`REPLACE_SKILL/ZL_1103`, `HEAL_MORE_TARGER`, and additional `HL_INC`) remain excluded
-until the target account's H11 star is evidenced and their complete consumers are joined.
-This prevents unevidenced account power from leaking into the representative baseline.
+The baseline implements star-1 `ZL_1101`. The star-2 `HEAL_TO_SHIELD` and star-5
+`REPLACE_SKILL/ZL_1103` consumers are now joined but remain gated by the conservative
+account-star default. The star-7 `HEAL_MORE_TARGER` row is also represented, but version
+18's complete effect dispatcher has no handler or external id/times consumer for it, so it
+is preserved as a selectable runtime no-op and the unit behavior keeps `num=1`. Additional
+`HL_INC` still requires its own evidence path. This prevents unevidenced account power from
+leaking into the representative baseline.

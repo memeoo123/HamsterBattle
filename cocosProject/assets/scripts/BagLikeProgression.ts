@@ -31,18 +31,38 @@ export type TraitId =
     | 'RG_H01_abl02_eff02'
     | 'RG_H01_abl02_eff03'
     | 'RG_H01_abl02_eff04'
+    | 'RG_H01_abl03_eff01'
     | 'RG_H02_abl01_eff01'
     | 'RG_H02_abl02_eff01'
+    | 'RG_H02_abl02_eff02'
+    | 'RG_H02_abl02_eff03'
+    | 'RG_H02_abl03_eff01'
+    | 'RG_H02_abl03_eff02'
     | 'RG_H03_abl01_eff01'
     | 'RG_H03_abl02_eff01'
+    | 'RG_H03_abl03_eff01'
+    | 'RG_H03_abl03_eff02'
+    | 'RG_H03_abl04_eff01'
     | 'RG_H04_abl01_eff01'
+    | 'RG_H04_abl02_eff01'
+    | 'RG_H04_abl02_eff02'
+    | 'RG_H04_abl03_eff01'
+    | 'RG_H04_abl03_eff02'
+    | 'RG_H04_abl04_eff01'
+    | 'RG_H11_abl02_eff01'
+    | 'RG_H11_abl01_eff02'
+    | 'RG_H11_abl03_eff01'
     | 'RG_H12_abl01_eff01'
     | 'RG_H12_abl01_eff02'
     | 'RG_H12_abl02_eff01'
     | 'RG_H12_abl03_eff01'
-    | 'RG_H12_abl04_eff01';
+    | 'RG_H12_abl04_eff01'
+    | 'RG_H13_abl01_eff01'
+    | 'RG_H13_abl01_eff02'
+    | 'RG_H13_abl02_eff01'
+    | 'RG_H13_abl02_eff02';
 
-export type TraitEffectKind = 'attackIncrease' | 'attackSpeed' | 'bossVulnerability' | 'criticalDamage' | 'criticalRate' | 'enemyAttackDecrease' | 'expGain' | 'gearUpgrade' | 'immediateHomeHeal' | 'paralysis' | 'powerNearAttack' | 'powerNearWorker' | 'prepareRewardWeight' | 'roundStartHomeHeal' | 'skillReplacement' | 'splitShot' | 'freeze' | 'hpIncrease' | 'warriorComboCritical';
+export type TraitEffectKind = 'attackIncrease' | 'attackKillFly' | 'attackSpeed' | 'barrage' | 'bossVulnerability' | 'bounceTimes' | 'criticalDamage' | 'criticalRate' | 'enemyAttackDecrease' | 'expGain' | 'gearUpgrade' | 'healToShield' | 'immediateHomeHeal' | 'paralysis' | 'penetratingLaser' | 'periodicSelfHeal' | 'powerNearAttack' | 'powerNearWorker' | 'prepareRewardWeight' | 'roundStartHomeHeal' | 'runtimeNoOp' | 'shieldWall' | 'skillReplacement' | 'splitShot' | 'freeze' | 'transform' | 'hpIncrease' | 'warriorComboCritical' | 'warriorKillAttackIncrease';
 
 export type HeroStarRequirement = {
     heroId: string;
@@ -65,6 +85,55 @@ export type WarriorComboCompletion = WarriorComboState & {
     triggered: boolean;
 };
 
+export type WarriorKillAttackProfile = {
+    range: readonly string[];
+    attackIncreasePerStack: number;
+    maxStacks: number;
+};
+
+export type WarriorKillAttackCompletion = {
+    stacks: number;
+    triggered: boolean;
+};
+
+export type H04ShieldWallProfile = {
+    traitId: 'RG_H04_abl03_eff01' | 'RG_H04_abl03_eff02';
+    damageResistance: number;
+    counterattackRatio: number;
+};
+
+export type H03TransformProfile = {
+    traitId: 'RG_H03_abl03_eff01' | 'RG_H03_abl03_eff02';
+    durationSeconds: number;
+    disablesTarget: boolean;
+    outgoingDamageIncrease: number;
+};
+
+export type H03LaserProfile = {
+    traitId: 'RG_H03_abl04_eff01';
+    skillId: '3001_5';
+    initialCooldownSeconds: number;
+    cooldownSeconds: number;
+    castTimeSeconds: number;
+    behaviorDelaySeconds: number;
+    castingRange: number;
+    width: number;
+    height: number;
+    maxTargets: number;
+    effectRatio: number;
+};
+
+export type H02BarrageProfile = {
+    traitId: 'RG_H02_abl03_eff01' | 'RG_H02_abl03_eff02';
+    skillId: '2001_5' | '2001_6';
+    initialCooldownSeconds: number;
+    cooldownSeconds: number;
+    castTimeSeconds: number;
+    configuredShotDelays: readonly number[];
+    effectRatio: number;
+    projectileSpeed: number;
+};
+
 export type TraitDefinition = {
     id: TraitId;
     name: string;
@@ -84,6 +153,7 @@ export type TraitDefinition = {
         rewardId?: number;
         attacksRequired?: number;
         healMaxHpBasisPoints?: number;
+        maxStacks?: number;
     };
 };
 
@@ -314,6 +384,18 @@ export const IMPLEMENTED_TRAIT_POOL: readonly TraitDefinition[] = [
         },
     },
     {
+        id: 'RG_H01_abl03_eff01',
+        group: 'RG_H01_abl03',
+        minHeroStar: { heroId: 'H01', star: 7 },
+        name: '叠中叠',
+        description: 'H01/H07 完成最后一击时，双方家族攻击增加 2%，最多 30 层',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H01', 'H07'],
+        effect: { kind: 'warriorKillAttackIncrease', amount: 200, maxStacks: 30 },
+    },
+    {
         id: 'RG_H02_abl01_eff01',
         name: '精英射手',
         description: '仓鼠射手攻速增加 30%',
@@ -325,33 +407,123 @@ export const IMPLEMENTED_TRAIT_POOL: readonly TraitDefinition[] = [
     },
     {
         id: 'RG_H02_abl02_eff01',
+        group: 'RG_H02_abl02',
+        minHeroStar: { heroId: 'H02', star: 3 },
         name: '分裂射击·1',
         description: '仓鼠射手有 30% 概率额外攻击 1 个敌人',
         quality: 3,
         weight: 100,
         maxTimes: 1,
-        range: ['H02'],
+        range: ['H02', 'H07'],
         effect: { kind: 'splitShot', amount: 3000 },
     },
     {
+        id: 'RG_H02_abl02_eff02',
+        group: 'RG_H02_abl02',
+        minHeroStar: { heroId: 'H02', star: 5 },
+        name: '分裂射击·2',
+        description: '仓鼠射手有 50% 概率额外攻击 1 个敌人',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H02', 'H07'],
+        effect: { kind: 'splitShot', amount: 5000 },
+    },
+    {
+        id: 'RG_H02_abl02_eff03',
+        group: 'RG_H02_abl02',
+        minHeroStar: { heroId: 'H02', star: 10 },
+        name: '分裂射击·3',
+        description: '仓鼠射手 100% 概率额外攻击 1 个敌人',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H02', 'H07'],
+        effect: { kind: 'splitShot', amount: 10000 },
+    },
+    {
+        id: 'RG_H02_abl03_eff01',
+        group: 'RG_H02_abl03',
+        minHeroStar: { heroId: 'H02', star: 7 },
+        name: '弹幕时间',
+        description: '6 秒后施放 2001_5：2 秒施法内按配置发射 9 枚 50% 攻击弹丸',
+        quality: 4,
+        weight: 50,
+        maxTimes: 1,
+        range: ['H02', 'H07'],
+        effect: { kind: 'barrage', amount: 5000 },
+    },
+    {
+        id: 'RG_H02_abl03_eff02',
+        group: 'RG_H02_abl03',
+        minHeroStar: { heroId: 'H02', star: 8 },
+        name: '弹幕时间·延长',
+        description: '6 秒后施放 2001_6：3 秒施法内实际发射 6 枚 50% 攻击弹丸',
+        quality: 4,
+        weight: 50,
+        maxTimes: 1,
+        range: ['H02', 'H07'],
+        effect: { kind: 'barrage', amount: 5000 },
+    },
+    {
         id: 'RG_H03_abl01_eff01',
+        group: 'RG_H03_abl01',
+        minHeroStar: { heroId: 'H03', star: 2 },
         name: '精英法师',
         description: '仓鼠法师攻击增加 20%',
         quality: 3,
         weight: 100,
         maxTimes: 1,
-        range: ['H03'],
+        range: ['H03', 'H08'],
         effect: { kind: 'attackIncrease', amount: 2000 },
     },
     {
         id: 'RG_H03_abl02_eff01',
+        group: 'RG_H03_abl02',
+        minHeroStar: { heroId: 'H03', star: 1 },
         name: '可乐加冰',
         description: '仓鼠法师攻击有 30% 概率将敌人冰冻',
         quality: 3,
         weight: 100,
         maxTimes: 1,
-        range: ['H03'],
+        range: ['H03', 'H08'],
         effect: { kind: 'freeze', amount: 3000 },
+    },
+    {
+        id: 'RG_H03_abl03_eff01',
+        group: 'RG_H03_abl03',
+        minHeroStar: { heroId: 'H03', star: 7 },
+        name: '花生变形术',
+        description: '仓鼠法师命中后将目标变形并眩晕 2 秒',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H03', 'H08'],
+        effect: { kind: 'transform', amount: 0 },
+    },
+    {
+        id: 'RG_H03_abl03_eff02',
+        group: 'RG_H03_abl03',
+        minHeroStar: { heroId: 'H03', star: 8 },
+        name: '花生变形术·2',
+        description: '版本 18 实际使变形目标自身造成伤害提高 30%，持续 2 秒',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H03', 'H08'],
+        effect: { kind: 'transform', amount: 3000 },
+    },
+    {
+        id: 'RG_H03_abl04_eff01',
+        group: 'RG_H03_abl04',
+        minHeroStar: { heroId: 'H03', star: 10 },
+        name: '鼠鼠激光',
+        description: '仓鼠法师施放 3001_5，以 50% 攻击伤害贯穿前方 100×300 区域',
+        quality: 4,
+        weight: 50,
+        maxTimes: 1,
+        range: ['H03', 'H08'],
+        effect: { kind: 'penetratingLaser', amount: 5000 },
     },
     {
         id: 'RG_H04_abl01_eff01',
@@ -362,6 +534,105 @@ export const IMPLEMENTED_TRAIT_POOL: readonly TraitDefinition[] = [
         maxTimes: 1,
         range: ['H04'],
         effect: { kind: 'hpIncrease', amount: 1000 },
+    },
+    {
+        id: 'RG_H04_abl02_eff01',
+        group: 'RG_H04_abl02',
+        minHeroStar: { heroId: 'H04', star: 2 },
+        name: '骑士活力·1',
+        description: '仓鼠骑士每秒恢复生命值（版本18实际按攻击力2%结算）',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H04', 'H09'],
+        effect: { kind: 'periodicSelfHeal', amount: 200 },
+    },
+    {
+        id: 'RG_H04_abl02_eff02',
+        group: 'RG_H04_abl02',
+        minHeroStar: { heroId: 'H04', star: 3 },
+        name: '骑士活力·2',
+        description: '仓鼠骑士每秒恢复生命值（版本18实际按攻击力5%结算）',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H04', 'H09'],
+        effect: { kind: 'periodicSelfHeal', amount: 500 },
+    },
+    {
+        id: 'RG_H04_abl03_eff01',
+        group: 'RG_H04_abl03',
+        minHeroStar: { heroId: 'H04', star: 7 },
+        name: '鼠鼠盾墙·1',
+        description: 'H04/H09 每 5 秒获得持续 2 秒的 30% 伤害减免',
+        quality: 4,
+        weight: 50,
+        maxTimes: 1,
+        range: ['H04', 'H09'],
+        effect: { kind: 'shieldWall', amount: 3000 },
+    },
+    {
+        id: 'RG_H04_abl03_eff02',
+        group: 'RG_H04_abl03',
+        minHeroStar: { heroId: 'H04', star: 10 },
+        name: '鼠鼠盾墙·2',
+        description: 'H04/H09 每 5 秒获得持续 2 秒的 30% 伤害减免，并反弹减伤后伤害的 30%',
+        quality: 4,
+        weight: 50,
+        maxTimes: 1,
+        range: ['H04', 'H09'],
+        effect: { kind: 'shieldWall', amount: 3000 },
+    },
+    {
+        id: 'RG_H04_abl04_eff01',
+        group: 'RG_H04_abl04',
+        minHeroStar: { heroId: 'H04', star: 8 },
+        name: '进击的鼠鼠',
+        description: 'H04/H09 的普通攻击有 30% 概率直接击飞非 Boss 怪物',
+        quality: 2,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H04', 'H09'],
+        effect: { kind: 'attackKillFly', amount: 3000 },
+    },
+    {
+        id: 'RG_H11_abl02_eff01',
+        group: 'RG_H11_abl02',
+        minHeroStar: { heroId: 'H11', star: 2 },
+        name: '护盾生成',
+        description: '治疗齿轮溢出的治疗量会转化为护盾值',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H11'],
+        effect: { kind: 'healToShield', amount: 1 },
+    },
+    {
+        id: 'RG_H11_abl01_eff02',
+        group: 'RG_H11_abl01',
+        minHeroStar: { heroId: 'H11', star: 5 },
+        name: '基地修复',
+        description: '治疗齿轮为基地恢复的生命值提升至攻击力100%',
+        quality: 2,
+        weight: 200,
+        maxTimes: 1,
+        range: ['H11'],
+        effect: { kind: 'skillReplacement', amount: 0 },
+    },
+    {
+        id: 'RG_H11_abl03_eff01',
+        group: 'RG_H11_abl03',
+        minHeroStar: { heroId: 'H11', star: 7 },
+        name: '群体治疗',
+        description: '治疗齿轮每次治疗会作用多个目标',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H11'],
+        // The shipped v18 addEffective switch has no HEAL_MORE_TARGER case,
+        // and no code path reads this effect id/times as a target-count flag.
+        // Keep the selectable one-time row without inventing a target count.
+        effect: { kind: 'runtimeNoOp', amount: 0 },
     },
     {
         id: 'RG_H12_abl01_eff01',
@@ -418,6 +689,54 @@ export const IMPLEMENTED_TRAIT_POOL: readonly TraitDefinition[] = [
         maxTimes: 1,
         range: ['H12', 'H08'],
         minHeroStar: { heroId: 'H12', star: 10 },
+        effect: { kind: 'skillReplacement', amount: 0 },
+    },
+    {
+        id: 'RG_H13_abl01_eff01',
+        name: '玉米弹射·1',
+        description: '火炮齿轮发射的玉米粒可以弹射增加至4次',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H13', 'H09'],
+        group: 'RG_H13_abl01',
+        minHeroStar: { heroId: 'H13', star: 2 },
+        effect: { kind: 'bounceTimes', amount: 2 },
+    },
+    {
+        id: 'RG_H13_abl01_eff02',
+        name: '玉米弹射·2',
+        description: '火炮齿轮发射的玉米粒可以弹射增加至6次',
+        quality: 3,
+        weight: 100,
+        maxTimes: 1,
+        range: ['H13', 'H09'],
+        group: 'RG_H13_abl01',
+        minHeroStar: { heroId: 'H13', star: 3 },
+        effect: { kind: 'bounceTimes', amount: 4 },
+    },
+    {
+        id: 'RG_H13_abl02_eff01',
+        name: '爆米花弹射·1',
+        description: '火炮齿轮发射的玉米粒会变成爆米花，每次弹射伤害增加10%',
+        quality: 4,
+        weight: 50,
+        maxTimes: 1,
+        range: ['H13', 'H09'],
+        group: 'RG_H13_abl02',
+        minHeroStar: { heroId: 'H13', star: 7 },
+        effect: { kind: 'skillReplacement', amount: 0 },
+    },
+    {
+        id: 'RG_H13_abl02_eff02',
+        name: '爆米花弹射·2',
+        description: '火炮齿轮发射的玉米粒会变成爆米花，每次弹射伤害增加10%，最后一次弹射会发生爆炸造成范围伤害',
+        quality: 4,
+        weight: 50,
+        maxTimes: 1,
+        range: ['H13', 'H09'],
+        group: 'RG_H13_abl02',
+        minHeroStar: { heroId: 'H13', star: 10 },
         effect: { kind: 'skillReplacement', amount: 0 },
     },
 ] as const;
@@ -535,6 +854,45 @@ export function completeWarriorComboAttack(
     return { completedAttacks: 0, criticalReady: true, triggered: true };
 }
 
+export function traitWarriorKillAttackProfile(
+    pool: readonly TraitDefinition[],
+    times: ReadonlyMap<TraitId, number>,
+): WarriorKillAttackProfile | null {
+    for (const trait of pool) {
+        if (trait.effect.kind !== 'warriorKillAttackIncrease' || (times.get(trait.id) || 0) <= 0) continue;
+        return {
+            range: trait.range || [],
+            attackIncreasePerStack: trait.effect.amount,
+            maxStacks: trait.effect.maxStacks || 0,
+        };
+    }
+    return null;
+}
+
+// Version 18 dispatches BATTLE_MONSTER_DIE with one killerId. Despite the card
+// saying "participated", only an H01/H07 final blow advances the shared stack.
+export function completeWarriorKillAttackStack(
+    stacks: number,
+    profile: WarriorKillAttackProfile,
+    killerHeroId: string,
+): WarriorKillAttackCompletion {
+    const current = Math.max(0, Math.min(profile.maxStacks, Math.floor(stacks)));
+    if (profile.range.indexOf(killerHeroId) < 0 || current >= profile.maxStacks) {
+        return { stacks: current, triggered: false };
+    }
+    return { stacks: current + 1, triggered: true };
+}
+
+export function warriorKillAttackMultiplier(
+    profile: WarriorKillAttackProfile | null,
+    stacks: number,
+    heroId: string,
+): number {
+    if (!profile || profile.range.indexOf(heroId) < 0) return 1;
+    const appliedStacks = Math.max(0, Math.min(profile.maxStacks, Math.floor(stacks)));
+    return 1 + appliedStacks * profile.attackIncreasePerStack / 10000;
+}
+
 // BagLikeView stores floor(10000 * current / max); ConditionBaseHp divides it
 // by 100 before applying its inclusive minimum/maximum comparison.
 export function bagLikeHomeHpPercent(currentHp: number, maxHp: number): number {
@@ -610,6 +968,101 @@ export function traitEffectAmount(
         if (trait.effect.kind !== kind || (trait.range && trait.range.indexOf(heroId) < 0)) return total;
         return total + trait.effect.amount * (times.get(trait.id) || 0);
     }, 0);
+}
+
+export function traitH04ShieldWallProfile(
+    pool: readonly TraitDefinition[],
+    times: ReadonlyMap<TraitId, number>,
+    heroId: string,
+): H04ShieldWallProfile | null {
+    const candidates: ReadonlyArray<H04ShieldWallProfile['traitId']> = [
+        'RG_H04_abl03_eff02',
+        'RG_H04_abl03_eff01',
+    ];
+    for (const traitId of candidates) {
+        const trait = pool.find((entry) => entry.id === traitId);
+        if (!trait || (times.get(traitId) || 0) <= 0 || !trait.range || trait.range.indexOf(heroId) < 0) continue;
+        return {
+            traitId,
+            damageResistance: trait.effect.amount,
+            counterattackRatio: traitId === 'RG_H04_abl03_eff02' ? 3000 : 0,
+        };
+    }
+    return null;
+}
+
+export function traitH03TransformProfile(
+    pool: readonly TraitDefinition[],
+    times: ReadonlyMap<TraitId, number>,
+    heroId: string,
+): H03TransformProfile | null {
+    const candidates: ReadonlyArray<H03TransformProfile['traitId']> = [
+        'RG_H03_abl03_eff02',
+        'RG_H03_abl03_eff01',
+    ];
+    for (const traitId of candidates) {
+        const trait = pool.find((entry) => entry.id === traitId);
+        if (!trait || (times.get(traitId) || 0) <= 0 || !trait.range || trait.range.indexOf(heroId) < 0) continue;
+        return {
+            traitId,
+            durationSeconds: 2,
+            disablesTarget: traitId === 'RG_H03_abl03_eff01',
+            outgoingDamageIncrease: trait.effect.amount,
+        };
+    }
+    return null;
+}
+
+export function traitH03LaserProfile(
+    pool: readonly TraitDefinition[],
+    times: ReadonlyMap<TraitId, number>,
+    heroId: string,
+): H03LaserProfile | null {
+    const traitId: H03LaserProfile['traitId'] = 'RG_H03_abl04_eff01';
+    const trait = pool.find((entry) => entry.id === traitId);
+    if (!trait || (times.get(traitId) || 0) <= 0 || !trait.range || trait.range.indexOf(heroId) < 0) return null;
+    return {
+        traitId,
+        skillId: '3001_5',
+        initialCooldownSeconds: 0,
+        cooldownSeconds: 4,
+        castTimeSeconds: 1,
+        behaviorDelaySeconds: 0.3,
+        castingRange: 50,
+        width: 100,
+        height: 300,
+        maxTargets: 999,
+        effectRatio: trait.effect.amount,
+    };
+}
+
+export function traitH02BarrageProfile(
+    pool: readonly TraitDefinition[],
+    times: ReadonlyMap<TraitId, number>,
+    heroId: string,
+): H02BarrageProfile | null {
+    const candidates: ReadonlyArray<H02BarrageProfile['traitId']> = [
+        'RG_H02_abl03_eff02',
+        'RG_H02_abl03_eff01',
+    ];
+    for (const traitId of candidates) {
+        const trait = pool.find((entry) => entry.id === traitId);
+        if (!trait || (times.get(traitId) || 0) <= 0 || !trait.range || trait.range.indexOf(heroId) < 0) continue;
+        const upgraded = traitId === 'RG_H02_abl03_eff02';
+        return {
+            traitId,
+            skillId: upgraded ? '2001_6' : '2001_5',
+            initialCooldownSeconds: 6,
+            cooldownSeconds: 6,
+            castTimeSeconds: upgraded ? 3 : 2,
+            configuredShotDelays: upgraded
+                ? [0.5, 1, 1.5, 2, 2.5, 3, 3.5]
+                : [0.2, 0.4, 0.6, 0.6, 0.8, 1, 1.2, 1.4, 1.6],
+            effectRatio: trait.effect.amount,
+            projectileSpeed: 700,
+        };
+    }
+    return null;
 }
 
 export function traitPrepareRewardWeightModifiers(
