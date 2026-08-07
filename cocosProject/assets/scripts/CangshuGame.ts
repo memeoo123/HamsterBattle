@@ -48,6 +48,7 @@ import {
     H13ReplacementTraitId,
     H13SkillId,
     HeroAttackType,
+    createBattleSeedRandom,
     randomBattleRoll,
     resolveAttackAtImpact,
     resolveBounceAttack,
@@ -65,12 +66,12 @@ import {
     SPLIT_SHOT_PROJECTILE_SPEED,
 } from './BattlefieldKernel';
 import {
+    advancePowerCoreClock,
     applyWorkerPower,
     BATTLE_SPEED_UP_MULTIPLE,
     connectedGearUidsAtCoreSide,
     HAMSTER_SPAWN_FLIGHT_SECONDS,
     isGearDirectlyAdjacentToCore,
-    POWER_CONTACT_DELAY_SECONDS,
     POWER_QUARTER_LAP_SECONDS,
     powerContactsByGear,
     productionRatePerSecond,
@@ -1008,8 +1009,9 @@ export class CangshuGame extends Component {
     private normalRefreshTimes = 0;
     private nonAdRefreshTimes = 0;
     private freeRefreshUsed = false;
-    private powerDirection: 0 | 1 | 2 | 3 = 0;
+    private powerDirection: 0 | 1 | 2 | 3 = 1;
     private powerTimer = POWER_QUARTER_LAP_SECONDS;
+    private battleRandom: () => number = createBattleSeedRandom();
     private productionJobs: ProductionJob[] = [];
     private speed: 1 | typeof BATTLE_SPEED_UP_MULTIPLE = 1;
     private paused = false;
@@ -1104,6 +1106,7 @@ export class CangshuGame extends Component {
                 }
                 this.refreshUi();
             } catch (levelError) {
+                console.error('[cangshu] initialization failed', levelError);
                 this.showLoadError(levelError instanceof Error ? levelError.message : String(levelError));
             }
         });
@@ -1112,6 +1115,9 @@ export class CangshuGame extends Component {
     update(dt: number): void {
         if (!this.initialized) return;
         const scaled = Math.min(dt, 0.05) * this.speed;
+        if (!this.paused && (this.phase === 'deploy' || this.phase === 'battle')) {
+            this.stepPowerProduction(scaled, this.phase === 'battle');
+        }
         if (this.phase === 'battle' && !this.paused) this.stepBattle(scaled);
         this.stepEffects(scaled);
         this.drawEffects();
@@ -1445,8 +1451,7 @@ export class CangshuGame extends Component {
         this.clearTimer = 0;
         this.pendingHits = [];
         this.productionJobs = [];
-        this.powerDirection = 0;
-        this.powerTimer = POWER_QUARTER_LAP_SECONDS;
+        this.battleRandom = createBattleSeedRandom();
         for (const gear of this.gears) {
             gear.workerPower = 0;
         }
@@ -2165,8 +2170,9 @@ export class CangshuGame extends Component {
     private stepBattle(dt: number): void {
         const round = this.rounds[this.roundIndex];
         this.roundClock += dt;
-        this.stepPowerProduction(dt);
 
+        // BattleInstanceController schedules every due monster before the
+        // BattleProcessor snapshot, so a newly spawned unit acts this frame.
         while (this.spawnIndex < round.times.length && round.times[this.spawnIndex] * 0.001 <= this.roundClock) {
             this.spawnMonster(round.monsters[this.spawnIndex], round);
             this.spawnIndex += 1;
@@ -2203,25 +2209,35 @@ export class CangshuGame extends Component {
         }
     }
 
-    private stepPowerProduction(dt: number): void {
+    private stepPowerProduction(dt: number, applyBattlePower: boolean): void {
         const core = this.gears.find((gear) => gear.id === 'P01');
         if (!core) return;
 
         // Jobs created by this frame's core contact start counting down on the
         // next frame, matching the original completion tween/event ordering.
-        for (const job of this.productionJobs) job.timer -= dt;
-        const ready = this.productionJobs.filter((job) => job.timer <= 0);
-        this.productionJobs = this.productionJobs.filter((job) => job.timer > 0);
-        for (const job of ready) {
-            const config = GEARS[job.gear.id];
-            if (job.kind === 'hamster' && config.unit) this.spawnHero(config.unit, job.gear);
-            else if (job.kind === 'tower' && config.unit) this.castTowerSkill(config.unit, job.gear);
-            else if (job.kind === 'coin') this.gold += config.coinAmount || 0;
+        if (applyBattlePower) {
+            for (const job of this.productionJobs) job.timer -= dt;
+            const ready = this.productionJobs.filter((job) => job.timer <= 0);
+            this.productionJobs = this.productionJobs.filter((job) => job.timer > 0);
+            for (const job of ready) {
+                const config = GEARS[job.gear.id];
+                if (job.kind === 'hamster' && config.unit) this.spawnHero(config.unit, job.gear);
+                else if (job.kind === 'tower' && config.unit) this.castTowerSkill(config.unit, job.gear);
+                else if (job.kind === 'coin') this.gold += config.coinAmount || 0;
+            }
         }
 
-        this.powerTimer -= dt;
-        while (this.powerTimer <= 0) {
-            const triggeredUids = connectedGearUidsAtCoreSide(this.productionSources(), core.uid, this.powerDirection);
+        const sources = this.productionSources();
+        const advanced = advancePowerCoreClock(
+            { nextDirection: this.powerDirection, remainingSeconds: this.powerTimer },
+            dt,
+            (direction) => connectedGearUidsAtCoreSide(sources, core.uid, direction).length > 0,
+        );
+        this.powerDirection = advanced.state.nextDirection;
+        this.powerTimer = advanced.state.remainingSeconds;
+        if (!applyBattlePower) return;
+        for (const contact of advanced.contacts) {
+            const triggeredUids = connectedGearUidsAtCoreSide(sources, core.uid, contact.direction);
             for (const uid of triggeredUids) {
                 const gear = this.gears.find((item) => item.uid === uid);
                 if (!gear) continue;
@@ -2232,9 +2248,6 @@ export class CangshuGame extends Component {
                 gear.workerPower = result.value;
                 if (result.completed) this.queueProduction(gear);
             }
-            this.powerDirection = ((this.powerDirection + 1) % 4) as 0 | 1 | 2 | 3;
-            this.powerTimer += POWER_QUARTER_LAP_SECONDS
-                + (triggeredUids.length > 0 ? POWER_CONTACT_DELAY_SECONDS : 0);
         }
     }
 
@@ -2351,7 +2364,7 @@ export class CangshuGame extends Component {
             // random-search branch valid for any future mobile skill config.
             const inRange = opponents.filter((candidate) => battlefieldDistance(unit, candidate) < unit.cfg.searchRange);
             if (inRange.length > 0) {
-                const target = inRange[Math.floor(Math.random() * inRange.length)];
+                const target = inRange[Math.floor(this.battleRandom() * inRange.length)];
                 if (battlefieldDistance(unit, target) < unit.cfg.range) {
                     if (unit.cooldown <= 0) this.beginAttack(unit, target, null);
                     this.playAnimation(unit, 'idle', true);
@@ -2542,7 +2555,7 @@ export class CangshuGame extends Component {
             ? resolveH13BounceProfileForSkill(this.h13SkillId)
             : null;
         const splitShotProbability = target ? this.traitEffectAmount('splitShot', unit.cfg) : 0;
-        if (target && splitShotProbability > 0 && splitShotRollSucceeds(splitShotProbability)) {
+        if (target && splitShotProbability > 0 && splitShotRollSucceeds(splitShotProbability, this.battleRandom)) {
             const splitTarget = selectSplitShotTarget(
                 unit,
                 this.units.filter((candidate) => !candidate.dead && candidate.team !== unit.team),
@@ -2634,7 +2647,7 @@ export class CangshuGame extends Component {
                 let warriorCriticalConsumed = false;
                 for (const target of targets) {
                     const killFlyProbability = this.traitEffectAmount('attackKillFly', hit.attacker.cfg);
-                    if (attackKillFlyRollSucceeds(killFlyProbability, !target.cfg.boss, true)) {
+                    if (attackKillFlyRollSucceeds(killFlyProbability, !target.cfg.boss, true, this.battleRandom)) {
                         this.damageUnit(target, ATTACK_KILL_FLY_DAMAGE, hit.attacker);
                         continue;
                     }
@@ -2669,7 +2682,7 @@ export class CangshuGame extends Component {
                         (hit.attacker.cfg.id === 'H0301' || hit.attacker.cfg.id === 'H08')
                         && this.traitCount('RG_H03_abl02_eff01') > 0
                         && !target.cfg.controlImmune
-                        && randomBattleRoll() <= 3000
+                        && randomBattleRoll(this.battleRandom) <= 3000
                     ) target.frozen = Math.max(target.frozen, 3);
                 }
                 if (hit.attacker.cfg.id === 'H09') this.addH0905Impact(centerX, centerY);
@@ -2764,7 +2777,7 @@ export class CangshuGame extends Component {
             target,
             targetIsBoss: targetConfig?.boss || false,
             forcedCritical,
-        });
+        }, this.battleRandom);
     }
 
     private completeWarriorAttack(
@@ -3101,7 +3114,7 @@ export class CangshuGame extends Component {
         }
         const targets = this.units.filter((unit) => !unit.dead && unit.team === 'enemy');
         if (targets.length === 0) return;
-        const target = targets[Math.floor(Math.random() * targets.length)];
+        const target = targets[Math.floor(this.battleRandom() * targets.length)];
         const position = this.gridPosition(gear.row, gear.col);
         const graphics = gear.node.getComponent(Graphics)!;
         const caster: BattleUnit = {
@@ -3241,7 +3254,9 @@ export class CangshuGame extends Component {
         const atkScale = (this.levelAtkMultiple / 10000) * (round.atkMultiple / 10000) * defeatScale;
         const hpScale = (this.levelHpMultiple / 10000) * (round.hpMultiple / 10000) * defeatScale;
         const y = Math.random() * UNIT_Y_LIMIT * 2 - UNIT_Y_LIMIT;
-        this.createUnit('enemy', config, HOME_X - 55, y, atkScale, hpScale);
+        const xJitter = 2 * (Math.random() - 0.5);
+        const yJitter = 2 * (Math.random() - 0.5);
+        this.createUnit('enemy', config, HOME_X - 55 + xJitter, y + yJitter, atkScale, hpScale);
     }
 
     private createUnit(team: Team, cfg: UnitConfig, x: number, y: number, atkScale: number, hpScale: number): void {
@@ -3290,7 +3305,7 @@ export class CangshuGame extends Component {
             atk: cfg.atk * atkScale,
             x,
             y,
-            cooldown: 0.2 + Math.random() * 0.25,
+            cooldown: team === 'enemy' ? 0.2 + this.battleRandom() * 0.25 : 0.2,
             dead: false,
             frozen: 0,
             barrage,

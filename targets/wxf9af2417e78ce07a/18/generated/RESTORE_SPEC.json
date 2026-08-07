@@ -470,11 +470,13 @@
       "workerPowerMax": 100,
       "lapSeconds": 1,
       "occupiedSideDelaySeconds": 0.2,
+      "initialCompletedQuarterDirection": 1,
+      "phaseLifetime": "The GameTimer quarter-lap tween continues through preparation and battle and is not reset by BAGLIKE_BATTLE_ROUND_START; preparation contacts keep occupied-side delay but ShowNodeCom suppresses worker progress outside BATTLE.",
       "triggerRule": "Each occupied core side triggers its entire orthogonally connected component; a component touching N sides receives N triggers per lap.",
       "displayedRateFormula": "powerPerTrigger * coreContactCount / ((lapSeconds + occupiedSideDelaySeconds * coreContactCount) / productivity) / workerPowerMax",
       "battleSpeedMultiple": 1.5,
       "status": "confirmed",
-      "evidence": ["K-C020"]
+      "evidence": ["K-C020", "K-C044"]
     },
     {
       "id": "enemyRoundSpawner",
@@ -512,6 +514,19 @@
       "projectile": "Copies attack/source identity at launch, travels along its initial direction, and survives caster death; a dead single target causes no hit while an area projectile can still resolve at its fixed impact point.",
       "status": "confirmed",
       "evidence": ["K-C006", "K-C021"]
+    },
+    "frameOrder": {
+      "stages": ["scheduleMonsters", "updateTeams", "snapshotCollisions", "calculateHeroSeparationReverse", "updateBuffs", "advanceBattleTimers", "updateHeroesReverse", "updateMonstersReverse", "updateLeaderSkillsReverse", "disposeQueuedUnits", "sortDepth", "updateBulletsReverse", "updateAutoHandler", "checkBattleEnd"],
+      "sameFrameConsequences": ["scheduled monsters participate in collision and action in their creation frame", "bullets created by hero/monster actions advance in the later bullet pass of that frame", "queued unit disposal precedes bullet updates", "loss is checked before victory"],
+      "status": "confirmed",
+      "evidence": ["K-C044"]
+    },
+    "randomDomains": {
+      "combatSeeded": {"defaultSeed": 5, "multiplier": 9301, "addend": 49297, "modulus": 233280, "formula": "(9301 * seed + 49297) % 233280"},
+      "nativePosition": "Math.random for schedule spawn Y followed by factory X and Y jitter",
+      "scheduledMonsterDrawOrder": ["nativeSpawnY", "nativePositionXJitter", "nativePositionYJitter", "seededRandomMoveTimer"],
+      "status": "confirmed",
+      "evidence": ["K-C044"]
     }
   },
   "rounds": [
@@ -580,6 +595,10 @@
     {
       "field": "audioAndEffects",
       "verification": "Recover and map the representative level's sound, hit, skill, and result effects after the visual baseline is accepted."
+    },
+    {
+      "field": "timing.powerCoreGameTimerVersusBattleTimer",
+      "verification": "Recover scheduler ordering or record a matched trace for a tick where a power-core contact and a combat-frame event are both due. The independent subsystem orders are confirmed; only their cross-scheduler tie remains unknown."
     }
   ],
   "evidenceIndex": {
@@ -755,6 +774,10 @@
     "K-C043": {
       "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/baglike-h03-penetrating-laser.md",
       "finding": "H03-star-10 RG_H03_abl04 adds active skill 3001_5 to future H03/H08 units: it has zero pre-cooldown, approaches to the strict 50 fallback range, resolves one direct 5000-ratio hit at 300 ms against up to 999 enemy centers inside an inclusive forward 100-by-300 rectangle, starts a four-second cooldown on that behavior, and completes at one second"
+    },
+    "K-C044": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/battlefield-frame-rng-order.md",
+      "finding": "confirmed battle-controller frame order and same-frame spawn/bullet/disposal consequences; recovered the continuous preparation-to-battle power-core phase; separated native position draws from the BattleManager LCG with default seed 5 and constants 9301/49297/233280. Only the GameTimer-versus-BattleTimer cross-scheduler tie remains unproven."
     }
   }
 }

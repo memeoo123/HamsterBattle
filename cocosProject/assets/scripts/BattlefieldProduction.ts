@@ -6,6 +6,37 @@ export const WORKER_COMPLETE_ANIMATION_SECONDS = 0.25;
 export const HAMSTER_SPAWN_FLIGHT_SECONDS = 0.5;
 export const BATTLE_SPEED_UP_MULTIPLE = 1.5;
 
+export type PowerCoreClockState = {
+    nextDirection: 0 | 1 | 2 | 3;
+    remainingSeconds: number;
+};
+
+export type PowerCoreContact = {
+    direction: 0 | 1 | 2 | 3;
+    occupied: boolean;
+};
+
+// BrickShowBaseCom starts at its zero-angle pose, then contacts the side at the
+// completed quarter-lap index. Its GameTimer tween continues across preparation
+// and battle; only ShowNodeCom suppresses worker progress outside BATTLE.
+export function advancePowerCoreClock(
+    state: PowerCoreClockState,
+    elapsedSeconds: number,
+    occupiedAtDirection: (direction: 0 | 1 | 2 | 3) => boolean,
+): { state: PowerCoreClockState; contacts: PowerCoreContact[] } {
+    let nextDirection = state.nextDirection;
+    let remainingSeconds = state.remainingSeconds - Math.max(0, elapsedSeconds);
+    const contacts: PowerCoreContact[] = [];
+    while (remainingSeconds <= 0) {
+        const occupied = occupiedAtDirection(nextDirection);
+        contacts.push({ direction: nextDirection, occupied });
+        nextDirection = ((nextDirection + 1) % 4) as 0 | 1 | 2 | 3;
+        remainingSeconds += POWER_QUARTER_LAP_SECONDS
+            + (occupied ? POWER_CONTACT_DELAY_SECONDS : 0);
+    }
+    return { state: { nextDirection, remainingSeconds }, contacts };
+}
+
 export type GearCellSource = {
     uid: number;
     row: number;

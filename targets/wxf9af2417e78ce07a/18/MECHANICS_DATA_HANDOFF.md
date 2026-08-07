@@ -134,13 +134,14 @@ Updated: 2026-08-07
 ## Automated baseline
 
 - Golden cases: `47/47` (current `golden-cases.json` case count).
-- Rule/resource assertions logged by the 13 test scripts: `871/871`.
+- Rule/resource assertions logged by the 13 test scripts: `882/882`.
 - Dynamic preparation assertions: `40/40`.
 - Healing/shield/H04-periodic assertions: `42/42`.
 - H12 replacement/status assertions: `15/15`; trait-pool assertions including H01 final-kill stacking, H02 split shot/barrage, H03 transform/laser, H04 kill-fly/shield-wall, H12 and H13
   star-gated consumers and all three H11 rows: `240/240`; combat kernel including H02 split-shot selection and barrage timing/disconnect, H03 transform duration/immunity/runtime attribute direction plus laser timing/rectangle selection, H04 kill-fly gating and shield-wall timing/order, lazy RNG, H12's 20000 critical
   factor, H13's 2/4/6 bounce limits, popcorn compounding and the last-missile disconnect:
-  `109/109`.
+  frame-stage order, native/seeded RNG separation and the recovered LCG: `116/116`;
+  production clock including preparation carry-over and occupied-contact delay: `28/28`.
 - Creator 3.8.8 TypeScript (`--noEmit --skipLibCheck true`): pass.
 - Battlefield state schema validation: pass.
 - The successful numbers do not close evidence, deterministic, integration, or matched-
@@ -153,18 +154,24 @@ Updated: 2026-08-07
    - The source table contains 78 effect rows; 53 can affect the currently represented
      H01/H02/H03/H04/H11/H12/H13 families. All 53 rows are modeled in 41 mutually
      exclusive groups, including two evidence-confirmed runtime no-ops.
-   - Next: continue through same-frame ordering, RNG order and remaining condition handlers;
-     no currently known represented-family effect row remains unrouted.
+   - Battle-controller same-frame ordering, scheduled-monster native/seeded RNG order and
+     the continuous preparation-to-battle core phase are now recovered and tested.
+   - Next: continue through remaining condition handlers; no currently known represented-
+     family effect row remains unrouted.
 2. **Account-derived mechanics data**
    - Obtain the competitor account's exact unlocked hero set and hero-star values.
    - Apply those values to trait eligibility and level-5 fusion gates.
    - Recover any remaining verify/condition branches and the actual ad completion boundary
      for reroll/take-all.
-3. **Exact event/RNG order**
-   - Recover first power-core contact phase.
-   - Lock same-frame spawn, movement, target, cast, impact, death, reward, EXP, wave-clear
-     and phase-transition order.
-   - Lock RNG call order for hit, critical, equal-distance target paths and spawn offsets.
+3. **Remaining exact event/RNG edges**
+   - The first completed core quarter targets direction 1, and the clock now continuously
+     carries preparation phase into battle; it is not reset at round start.
+   - The battle frame now locks schedule → snapshots → heroes(reverse) → monsters(reverse)
+     → disposal → bullets(reverse) → end check, including same-frame spawn/bullet behavior.
+   - Native spawn/jitter draws and the BattleManager `9301/49297/233280` seeded combat
+     stream are separated and tested.
+   - Still recover the cross-scheduler tie between a due core `GameTimer` callback and a
+     due combat `BattleTimer` callback, plus simultaneous death/reward/EXP transitions.
 4. **Persistence and edge cases**
    - Simultaneous deaths, pending hits after attacker/target removal, process-restart defeat
      count, and any modal phase that can interrupt a wave.

@@ -8,6 +8,37 @@ export const ATTACK_KILL_FLY_DAMAGE = 999999;
 export const H04_SHIELD_WALL_INTERVAL_SECONDS = 5;
 export const H04_SHIELD_WALL_DURATION_SECONDS = 2;
 export const H04_SHIELD_WALL_DAMAGE_RESISTANCE = 3000;
+export const BATTLE_SEED_MULTIPLIER = 9301;
+export const BATTLE_SEED_ADDEND = 49297;
+export const BATTLE_SEED_MODULUS = 233280;
+export const BATTLE_DEFAULT_SEED = 5;
+
+// BattleInstanceController.onUpdate and BattleProcessor.onUpdate establish this
+// order. Keeping it executable makes same-frame spawn/projectile behavior a
+// regression-tested contract instead of a prose-only reconstruction note.
+export const ORIGINAL_BATTLE_FRAME_STAGES = [
+    'scheduleMonsters',
+    'updateTeams',
+    'snapshotCollisions',
+    'calculateHeroSeparationReverse',
+    'updateBuffs',
+    'advanceBattleTimers',
+    'updateHeroesReverse',
+    'updateMonstersReverse',
+    'updateLeaderSkillsReverse',
+    'disposeQueuedUnits',
+    'sortDepth',
+    'updateBulletsReverse',
+    'updateAutoHandler',
+    'checkBattleEnd',
+] as const;
+
+export const ORIGINAL_SCHEDULED_MONSTER_RNG_ORDER = [
+    'nativeSpawnY',
+    'nativePositionXJitter',
+    'nativePositionYJitter',
+    'seededRandomMoveTimer',
+] as const;
 export const DEFEAT_MULTIPLIERS = [
     0.95, 0.9025, 0.8574, 0.8145, 0.7738,
     0.7351, 0.6983, 0.6634, 0.6302, 0.5987,
@@ -126,6 +157,19 @@ export const EMPTY_COMBAT_ATTRIBUTES: CombatAttributes = {
     bossIncrease: 0,
     attackSpeed: 0,
 };
+
+export function nextBattleSeed(seed: number): number {
+    const normalized = ((Math.trunc(seed) % BATTLE_SEED_MODULUS) + BATTLE_SEED_MODULUS) % BATTLE_SEED_MODULUS;
+    return (BATTLE_SEED_MULTIPLIER * normalized + BATTLE_SEED_ADDEND) % BATTLE_SEED_MODULUS;
+}
+
+export function createBattleSeedRandom(initialSeed = BATTLE_DEFAULT_SEED): () => number {
+    let seed = initialSeed;
+    return () => {
+        seed = nextBattleSeed(seed);
+        return seed / BATTLE_SEED_MODULUS;
+    };
+}
 
 export function randomBattleRoll(random: () => number = Math.random): number {
     return Math.floor(random() * (BATTLE_RAND_BASE + 1));

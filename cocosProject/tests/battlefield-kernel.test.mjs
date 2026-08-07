@@ -1,5 +1,10 @@
 import assert from 'node:assert/strict';
 import {
+    BATTLE_DEFAULT_SEED,
+    BATTLE_SEED_ADDEND,
+    BATTLE_SEED_MODULUS,
+    BATTLE_SEED_MULTIPLIER,
+    createBattleSeedRandom,
     advanceH02BarrageCast,
     advanceH03LaserCast,
     advanceH03Transform,
@@ -18,6 +23,9 @@ import {
     h04ShieldWallCounterattackDamage,
     isPointInForwardRectangle,
     movementVectorToward,
+    nextBattleSeed,
+    ORIGINAL_BATTLE_FRAME_STAGES,
+    ORIGINAL_SCHEDULED_MONSTER_RNG_ORDER,
     resolveTargetingIntent,
     resolveBattleDamage,
     resolveBattleDamageWithRandom,
@@ -404,4 +412,39 @@ assert.deepEqual(
     'only heroes inside the original 60 by 60 neighborhood add a two-pixel separation vector',
 );
 
-console.log('battlefield kernel: 109 assertions passed');
+assert.deepEqual(
+    [BATTLE_DEFAULT_SEED, BATTLE_SEED_MULTIPLIER, BATTLE_SEED_ADDEND, BATTLE_SEED_MODULUS],
+    [5, 9301, 49297, 233280],
+    'the deobfuscated BattleManager LCG constants include every enabled modulus fragment',
+);
+const expectedSeeds = [95802, 207379, 122336, 189873, 128470];
+const actualSeeds = [];
+for (let seed = BATTLE_DEFAULT_SEED, index = 0; index < expectedSeeds.length; index += 1) {
+    seed = nextBattleSeed(seed);
+    actualSeeds.push(seed);
+}
+assert.deepEqual(actualSeeds, expectedSeeds, 'the recovered seeded combat stream is deterministic');
+const seededRandom = createBattleSeedRandom();
+assert.ok(Math.abs(seededRandom() - expectedSeeds[0] / BATTLE_SEED_MODULUS) < 1e-12, 'the random adapter exposes the normalized LCG value');
+assert.deepEqual(
+    ORIGINAL_BATTLE_FRAME_STAGES.slice(0, 3),
+    ['scheduleMonsters', 'updateTeams', 'snapshotCollisions'],
+    'due monsters are created before the same-frame team and collision snapshots',
+);
+assert.ok(
+    ORIGINAL_BATTLE_FRAME_STAGES.indexOf('updateMonstersReverse')
+        < ORIGINAL_BATTLE_FRAME_STAGES.indexOf('updateBulletsReverse'),
+    'monster actions can create bullets before the same-frame reverse bullet pass',
+);
+assert.ok(
+    ORIGINAL_BATTLE_FRAME_STAGES.indexOf('disposeQueuedUnits')
+        < ORIGINAL_BATTLE_FRAME_STAGES.indexOf('updateBulletsReverse'),
+    'queued unit disposal happens before bullet updates',
+);
+assert.deepEqual(
+    ORIGINAL_SCHEDULED_MONSTER_RNG_ORDER,
+    ['nativeSpawnY', 'nativePositionXJitter', 'nativePositionYJitter', 'seededRandomMoveTimer'],
+    'monster creation preserves native-position draws before the independent combat-seed draw',
+);
+
+console.log('battlefield kernel: 116 assertions passed');

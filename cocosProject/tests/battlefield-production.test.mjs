@@ -1,10 +1,13 @@
 import assert from 'node:assert/strict';
 import {
+    advancePowerCoreClock,
     applyWorkerPower,
     BATTLE_SPEED_UP_MULTIPLE,
     connectedGearUidsAtCoreSide,
     HAMSTER_SPAWN_FLIGHT_SECONDS,
     isGearDirectlyAdjacentToCore,
+    POWER_CONTACT_DELAY_SECONDS,
+    POWER_QUARTER_LAP_SECONDS,
     powerContactsByGear,
     productionRatePerSecond,
     resolveProducerAttributeScales,
@@ -50,4 +53,22 @@ assert.equal(WORKER_COMPLETE_ANIMATION_SECONDS, 0.25, 'worker completion animati
 assert.equal(HAMSTER_SPAWN_FLIGHT_SECONDS, 0.5, 'HAMSTER output flight lasts 500 ms');
 assert.equal(BATTLE_SPEED_UP_MULTIPLE, 1.5, 'battle speed toggle uses the original 1.5x multiplier');
 
-console.log('battlefield production: 24 assertions passed');
+const firstQuarter = advancePowerCoreClock(
+    { nextDirection: 1, remainingSeconds: POWER_QUARTER_LAP_SECONDS },
+    POWER_QUARTER_LAP_SECONDS,
+    (direction) => direction === 1,
+);
+assert.deepEqual(firstQuarter.contacts, [{ direction: 1, occupied: true }], 'the first completed quarter-lap contacts direction 1, not the zero-angle pose');
+assert.equal(firstQuarter.state.nextDirection, 2, 'the core continues toward the next side instead of resetting at battle start');
+assert.ok(
+    Math.abs(firstQuarter.state.remainingSeconds - (POWER_QUARTER_LAP_SECONDS + POWER_CONTACT_DELAY_SECONDS)) < 1e-12,
+    'an occupied preparation-side contact still inserts the decoded 200 ms pause',
+);
+const continuedClock = advancePowerCoreClock(
+    firstQuarter.state,
+    POWER_QUARTER_LAP_SECONDS + POWER_CONTACT_DELAY_SECONDS,
+    () => false,
+);
+assert.deepEqual(continuedClock.contacts, [{ direction: 2, occupied: false }], 'the same clock state continues across a preparation-to-battle boundary');
+
+console.log('battlefield production: 28 assertions passed');
