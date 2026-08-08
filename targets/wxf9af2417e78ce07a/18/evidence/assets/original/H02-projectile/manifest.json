@@ -1,0 +1,21 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "sourceBundle": "resources3",
+  "missileId": "M_SS_2001",
+  "modelId": "H29_S1",
+  "framePath": "spriteFrame/skill/js_sheshou_zidan",
+  "compressedUuid": "bcm9T8h1BHR4MO81jJPDZI",
+  "uuid": "bc9bd4fc-8750-4747-830e-f358c93c3648",
+  "nativeVersion": "b8a9d",
+  "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/bc/bc9bd4fc-8750-4747-830e-f358c93c3648.b8a9d.png",
+  "file": "js_sheshou_zidan.png",
+  "sha256": "c6d99066f49548c87b38bc664753c994e45bcb36845ac95b3303343675541371",
+  "nativeSize": [74, 50],
+  "spriteRect": [1, 1, 72, 48],
+  "originalSize": [72, 48],
+  "anchor": [0.5, 0.2],
+  "scale": [-1, 1],
+  "speed": 700,
+  "shootSound": "",
+  "hitSound": ""
+}

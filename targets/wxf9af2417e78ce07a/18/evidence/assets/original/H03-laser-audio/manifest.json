@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "target": "wxf9af2417e78ce07a/18",
+  "capturedAt": "2026-08-08",
+  "bundle": "resources3",
+  "binding": {
+    "heroFamilies": ["H03", "H08"],
+    "skill": "3001_5",
+    "behavior": "bh3001_5",
+    "behaviorDelayMilliseconds": 300,
+    "skillSound": "skill_jiguang",
+    "soundDelayMilliseconds": 0,
+    "castTimeMilliseconds": 1000,
+    "cooldownMilliseconds": 4000
+  },
+  "asset": {
+    "file": "skill_jiguang.mp3",
+    "logicalPath": "audio/sound/skill/skill_jiguang",
+    "configIndex": 450,
+    "compressedUuid": "fdRKlD6Q1MnJ7HloEhu2qk",
+    "uuid": "fd44a943-e90d-4c9c-9ec7-968121bb6aa4",
+    "nativeVersion": "4d729",
+    "remotePath": "remote/resources3/native/fd/fd44a943-e90d-4c9c-9ec7-968121bb6aa4.4d729.mp3",
+    "bytes": 33494,
+    "durationSeconds": 0.70425,
+    "sha256": "6107b145df040a5c53cd4558f491183425a9246469362c06e8db6d6b91280d82"
+  },
+  "provenance": "SkillConfig establishes skill_jiguang at soundDelay zero, while bh3001_5 remains delayed 300 ms. The authorized resources3 config and native map establish the exact source file."
+}

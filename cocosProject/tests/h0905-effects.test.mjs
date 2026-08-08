@@ -35,10 +35,10 @@ check(/new Rect\(1, 1, 106, 76\)/.test(source), true, 'impact frame 0 matches pa
 check(/new Rect\(1, 195, 92, 110\)/.test(source), true, 'impact frame 1 matches packed import');
 check(/new Rect\(1, 79, 92, 114\)/.test(source), true, 'impact frame 2 matches packed import');
 check(/setAnchorPoint\(0\.4, 0\.3\)/.test(source), true, 'impact anchor matches ModelConfig');
-check(/this\.addH0905Projectile\(unit\.x, unit\.y, impactX, impactY, travelTime\)/.test(source), true, 'initial hit launches the recovered projectile');
+check(/this\.addH0905Projectile\(unit\.x, unit\.y, impactX, impactY, travelTime, behaviorDelay\)/.test(source), true, 'initial hit launches the recovered projectile at its behavior frame');
 check(/this\.addH0905Projectile\(\s*fromX,\s*fromY,\s*impactX,\s*impactY,/s.test(source), true, 'bounce hits launch a new recovered projectile segment');
 check(/this\.addH0905Impact\(centerX, centerY\)/.test(source), true, 'each H0905 impact creates its recovered effect');
 check(/playOneShot\(this\.h0905HitAudio, 1\)/.test(source), true, 'each impact plays bullet_zhanche');
-check(/if \(hit\.attacker\.cfg\.id !== 'H09'\)/.test(source), true, 'the placeholder line trace is disabled for H0905');
+check(/\['H09', 'H0201', 'H0301', 'H07', 'H08', 'H1201', 'H1301'\]\.indexOf\(hit\.attacker\.cfg\.id\) < 0/.test(source), true, 'the placeholder line trace is disabled for recovered effect families');
 
 console.log(`H0905 recovered effects: ${assertions} assertions passed`);

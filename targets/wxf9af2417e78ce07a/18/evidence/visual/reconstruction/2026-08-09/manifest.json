@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "capturedAt": "2026-08-09",
+  "source": "Fresh Cocos Creator 3.8.8 web-mobile build captured through an isolated Chrome DevTools session",
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "packageVersion": "18",
+    "levelId": 1004,
+    "designResolution": "750x1334"
+  },
+  "matchedBaselineStatus": "partial",
+  "matchedBaselineReason": "The developed fixture now matches the original account/layout semantics: H13 star 3, 863 max home HP, H13/H03/H02 gear identities and footprints, four-side connectivity, all four displayed rates, the coin candidate, trait level 2, and the exact three trait choices. Component geometry and several package-art details still differ, and the battle capture is not synchronized to the original event timestamp.",
+  "images": [
+    {
+      "file": "developed-preparation.png",
+      "phase": "preparation",
+      "state": "developed-reference-fixture",
+      "resolution": "750x1334",
+      "sha256": "3306d53bcef2382a955c1066e05ae7907eda9a84b2dc0e86893f21e9717c781b",
+      "baselineUse": "same-semantic-state-pair",
+      "notes": "Matches 863 HP, H13/H03/H02 placement, 0.33/0.16/0.18 rates, 0.03 coin candidate, wave 1/15, zero coins and three tickets."
+    },
+    {
+      "file": "developed-battle.png",
+      "phase": "battle-wave-1",
+      "state": "developed-reference-fixture-unsynchronized-time",
+      "resolution": "750x1334",
+      "sha256": "fcd5562be9c4f7489c2849868bac26a6a8aecab941966ea94beb3486287a349a",
+      "baselineUse": "same-layout-phase-evidence",
+      "notes": "Uses the same 863-HP board and real wave-1 simulation. Capture time and enemy RNG are not synchronized with the original frame."
+    },
+    {
+      "file": "developed-trait.png",
+      "phase": "trait-selection",
+      "state": "developed-reference-fixture",
+      "resolution": "750x1334",
+      "sha256": "05ab19b3501dcf30ca3ee7af0e7c872307da6efd48485081311dca7d53099225",
+      "baselineUse": "same-semantic-state-pair",
+      "notes": "Matches level badge 2 and the original spell +5%, H02 30% split-shot, and H03 30% freeze choices, including recommendation status."
+    }
+  ],
+  "remainingDifferences": [
+    "Preparation/backpack and trait component geometry still differs from the original package layout.",
+    "Exact original trait title ribbon, card shell, ability pictograms and button decorations are not yet bound.",
+    "The battle capture requires a matched elapsed-time/RNG event trace and correction of the missing top HUD in the battle-only capture before it is a pixel baseline."
+  ]
+}

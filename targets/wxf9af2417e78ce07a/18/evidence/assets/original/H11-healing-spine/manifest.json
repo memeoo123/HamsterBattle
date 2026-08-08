@@ -1,0 +1,39 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "sourceBundle": "resources3",
+  "skillId": "ZL_1101",
+  "behaviorId": "B_ZL_1101",
+  "modelId": "H11_S1",
+  "modelPath": "spine/skill/ziliao/skill01_hit_upper",
+  "action": "skill01_hit_upper",
+  "spineVersion": "3.8.99",
+  "files": [
+    {
+      "name": "skill01_hit_upper.png",
+      "compressedUuid": "34sGRD3khFFoxxHkTGB8Kk",
+      "uuid": "34b06443-de48-4516-8c71-1e44c607c2a4",
+      "nativeVersion": "7a0d9",
+      "bytes": 544075,
+      "sha256": "941e69fea0ec22c20564f031cf0752254c6484ae6413a78b8ff32e690a01dee4"
+    },
+    {
+      "name": "skill01_hit_upper.skel",
+      "compressedUuid": "80R37ZQFtIfbCOGysjct9H",
+      "uuid": "80477ed9-405b-487d-b08e-1b2b2372df47",
+      "nativeVersion": "96ea3",
+      "bytes": 2138,
+      "sha256": "dd9667ee402a66d15e08a35c5695e5eff41d097c0d327785c34c4cc13ae16933"
+    },
+    {
+      "name": "skill01_hit_upper.atlas",
+      "compressedUuid": "9aAylRz+RM+ZD3Wp2fh616",
+      "uuid": "9a032951-cfe4-4cf9-90f7-5a9d9f87ad7a",
+      "nativeVersion": "29c9c",
+      "bytes": 3322,
+      "sha256": "c124db32e7bc67ac0cae32bb4914d0b2a24b42c9e05fd9e9887f77dd5e6a0c72"
+    }
+  ],
+  "atlasTexture": "skill01_hit_upper.png",
+  "nativeSize": [988, 755],
+  "provenance": "SkillConfig ZL_1101 routes behavior B_ZL_1101 to H11_S1; ModelConfig binds the exact Spine path and action. The authorized resources3 index supplies UUID and native versions."
+}

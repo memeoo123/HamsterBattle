@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0",
+  "capturedAt": "2026-08-08",
+  "source": "Cocos Creator 3.8.8 preview captured through an isolated Chrome DevTools session",
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "packageVersion": "18",
+    "levelId": 1004,
+    "designResolution": "750x1334"
+  },
+  "matchedBaselineStatus": "partial",
+  "matchedBaselineReason": "A normal-flow three-producer run now reaches the first EXP trait choice, closing the previously missing reconstruction phase. It remains an initial 500-HP run rather than the original developed 863-HP save, so it is phase and UI evidence rather than a same-state matched pair.",
+  "images": [
+    {
+      "file": "trait-three-connected-producers.png",
+      "phase": "trait-selection",
+      "state": "normal-flow-first-exp-choice",
+      "resolution": "750x1334",
+      "sha256": "0eb223559be719115c21bc16f1a247498e5db0f8b21589917632a5efcc36d91b",
+      "baselineUse": "normal-flow-phase-evidence",
+      "notes": "Reached by planning three random candidate footprints, dragging all three into the unlocked 3x3 board, starting wave 1, and waiting 30 seconds. Confirms the production trait overlay pauses over the live battlefield and backpack."
+    },
+    {
+      "file": "trait-normal-flow-ui-polished.png",
+      "phase": "trait-selection",
+      "state": "normal-flow-first-exp-choice-after-trait-skin-pass",
+      "resolution": "750x1334",
+      "sha256": "5b26293957f55cadb1989e6780d12173dc61e206386a4b4db038bec56d5250e3",
+      "baselineUse": "normal-flow-ui-evidence",
+      "notes": "Uses recovered cl1 gear art as the quality icon base and distinct blue/magenta action colors. This capture exposed that Cocos did not wrap Chinese descriptions automatically; the later deterministic fixture capture verifies the correction."
+    },
+    {
+      "file": "trait-ui-fixture-wrapped.png",
+      "phase": "trait-selection",
+      "state": "browser-only-deterministic-presentation-fixture",
+      "resolution": "750x1334",
+      "sha256": "8283801fc6a78fbfe0b8091c724890f9c21dbb828d1e57e0ca663906dd8fc8a9",
+      "baselineUse": "trait-presentation-evidence",
+      "notes": "Fresh Creator 3.8.8 web-mobile build captured through isolated Chrome. The deterministic fixture places three recovered fusion producers, enters battle, and opens the production trait component. It verifies bounded centered wrapping, recovered cl1-cl5 quality cogs, blue/magenta actions, 750x1334 layout, and a clean project console. The fixture is browser-only and is not a same-state gameplay baseline."
+    }
+  ],
+  "excludedDiagnostics": [
+    {
+      "file": "trait-three-producer-attempt.png",
+      "sha256": "9f5714c54d3b83809ced2aa239bcd62312c29762370749c6260ff7da4b0463ee",
+      "reason": "Old scripted candidate coordinates missed later candidates and the run ended in defeat; retained to document the corrected capture tooling."
+    },
+    {
+      "file": "trait-ui-fixture-polished.png",
+      "sha256": "57db4cba75db228f1b66a05b519dbe9f6293efbfb6743bf82ba1ce141217e76c",
+      "reason": "The existing Creator preview server served stale script cache and remained in preparation; this is not trait evidence."
+    }
+  ],
+  "remainingDifferences": [
+    "The original battle and trait references use a developed 863-HP save; reconstruction evidence uses the evidence-default 500-HP initial state.",
+    "Exact original trait-card package art and ability pictograms are not yet mapped; confirmed recovered gear art is used while unknown pictograms remain text abbreviations."
+  ]
+}

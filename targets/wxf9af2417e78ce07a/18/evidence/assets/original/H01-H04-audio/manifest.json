@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0",
+  "target": "wxf9af2417e78ce07a/18",
+  "capturedAt": "2026-08-08",
+  "bundle": "resources3",
+  "bindings": [
+    {
+      "hero": "H0101",
+      "skill": 1001,
+      "behavior": "bh1001",
+      "behaviorDelayMilliseconds": 300,
+      "modelId": null,
+      "skillSound": "skill_jijian",
+      "soundDelayMilliseconds": 0
+    },
+    {
+      "hero": "H0401",
+      "skill": 4001,
+      "behavior": "bh4001",
+      "behaviorDelayMilliseconds": 300,
+      "modelId": null,
+      "skillSound": "skill_zhuangji",
+      "soundDelayMilliseconds": 0
+    }
+  ],
+  "assets": [
+    {
+      "file": "skill_jijian.mp3",
+      "logicalPath": "audio/sound/skill/skill_jijian",
+      "configIndex": 257,
+      "compressedUuid": "98Dk7Ii8lLSbSQ8rV87BQz",
+      "uuid": "980e4ec8-8bc9-4b49-b490-f2b57cec1433",
+      "nativeVersion": "a39cd",
+      "remotePath": "remote/resources3/native/98/980e4ec8-8bc9-4b49-b490-f2b57cec1433.a39cd.mp3",
+      "bytes": 52979,
+      "durationSeconds": 1.0955,
+      "sha256": "2d7f6a4b5c5f8ac88095b5a7ffa5c5f604b19d93e53dd83bcbe7cfc300d42cb0"
+    },
+    {
+      "file": "skill_zhuangji.mp3",
+      "logicalPath": "audio/sound/skill/skill_zhuangji",
+      "configIndex": 391,
+      "compressedUuid": "ddcKyJGjdIq7tJYKDxYdx4",
+      "uuid": "dd70ac89-1a37-48ab-bb49-60a0f161dc78",
+      "nativeVersion": "bc3b4",
+      "remotePath": "remote/resources3/native/dd/dd70ac89-1a37-48ab-bb49-60a0f161dc78.bc3b4.mp3",
+      "bytes": 37011,
+      "durationSeconds": 1.043333,
+      "sha256": "2d0ed4c50a1425561978baeed798a93947ad4e70cae33ecdc9e609af814728a0"
+    }
+  ],
+  "provenance": "SkillConfig and BehaviorConfig establish sound bindings, zero sound delay and the absence of a visual model. The authorized resources3 config and native map establish UUIDs, native versions and exact source files."
+}

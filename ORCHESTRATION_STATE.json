@@ -93,71 +93,71 @@
       },
       "artifacts": {
         "handoff": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\handoffs\\wxf9af2417e78ce07a-18.json",
+          "path": "/Users/mt/Documents/HamsterBattle/handoffs/wxf9af2417e78ce07a-18.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-01T07:28:15.310956+00:00"
+          "recordedAtUtc": "2026-08-07T15:05:17.261943+00:00"
         },
         "mainPackage": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\input\\wxf9af2417e78ce07a\\18\\__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
+          "path": "/Users/mt/Documents/HamsterBattle/reverse-work/input/wxf9af2417e78ce07a/18/__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-01T07:28:15.416062+00:00"
+          "recordedAtUtc": "2026-08-07T15:05:17.360162+00:00"
         },
         "extractedRoot": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\unpacked\\wxf9af2417e78ce07a\\18",
+          "path": "/Users/mt/Documents/HamsterBattle/reverse-work/unpacked/wxf9af2417e78ce07a/18",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-01T07:28:15.512025+00:00"
+          "recordedAtUtc": "2026-08-07T15:05:17.455961+00:00"
         },
         "reverseManifest": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\manifest.json",
+          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/manifest.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-01T07:28:15.606294+00:00"
+          "recordedAtUtc": "2026-08-07T15:05:17.551344+00:00"
         },
         "restoreSpec": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\generated\\RESTORE_SPEC.json",
+          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/generated/RESTORE_SPEC.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-01T14:18:59.201905+00:00"
+          "recordedAtUtc": "2026-08-07T15:05:17.647309+00:00"
         },
         "goldenCases": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\generated\\golden-cases.json",
+          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/generated/golden-cases.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-01T14:20:25.801486+00:00"
+          "recordedAtUtc": "2026-08-07T15:05:17.741474+00:00"
         },
         "cocosProject": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject",
+          "path": "/Users/mt/Documents/HamsterBattle/cocosProject",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-01T07:28:15.891128+00:00"
+          "recordedAtUtc": "2026-08-07T15:05:17.836240+00:00"
         },
         "validationReport": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\VALIDATION_REPORT.md",
+          "path": "/Users/mt/Documents/HamsterBattle/cocosProject/VALIDATION_REPORT.md",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-01T15:42:24.077345+00:00"
+          "recordedAtUtc": "2026-08-07T15:05:17.930137+00:00"
         },
         "originalReference": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\visual\\original\\2026-08-01\\manifest.json",
+          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/evidence/visual/original/2026-08-01/manifest.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-01T08:59:45.495705+00:00"
+          "recordedAtUtc": "2026-08-07T15:05:18.027149+00:00"
         }
       },
       "checks": {
         "goldenCases": {
           "result": "pass",
-          "evidence": "Current golden-cases.json 47/47; 871/871 assertions across 13 scripts; baglike-traits 240/240 and battlefield-kernel 109/109 include H03 star-10 laser selection, behavior/cast/cooldown timing, inclusive 100x300 rectangle, target cap/order, and interruption boundaries",
-          "atUtc": "2026-08-07T09:41:39.981157+00:00"
+          "evidence": "2026-08-09: skills/cocos-minigame-restorer/scripts/run_golden_cases.py passed 47/47",
+          "atUtc": "2026-08-08T16:30:00.279064+00:00"
         },
         "assetImport": {
           "result": "pass",
-          "evidence": "Cocos project check: Creator 3.8.8, 102 assets, 0 missing meta files, 0 warnings; H03/H08 skill01 Spine animation is available",
-          "atUtc": "2026-08-07T09:41:40.170471+00:00"
+          "evidence": "2026-08-08: Cocos project static check valid; 128 assets, missing meta 0, warnings 0",
+          "atUtc": "2026-08-08T14:26:10.150830+00:00"
         },
         "typescript": {
           "result": "pass",
-          "evidence": "Cocos Creator 3.8.8 TypeScript validation ran with exit code 0 and no warnings after H03 laser integration",
-          "atUtc": "2026-08-07T09:41:40.290384+00:00"
+          "evidence": "2026-08-09: Creator 3.8.8 bundled TypeScript, project tsconfig, --noEmit --skipLibCheck true exited 0",
+          "atUtc": "2026-08-08T16:30:09.143904+00:00"
         },
         "visualBaseline": {
           "result": "pending",
-          "evidence": "Same-state competitor battle/trait pair remains missing; H03/H08 laser uses recovered skill01 but configured skill_jiguang audio asset is absent; exact visual/audio matched replay remains pending",
-          "atUtc": "2026-08-07T09:41:40.562466+00:00"
+          "evidence": "targets/wxf9af2417e78ce07a/18/evidence/visual/reconstruction/2026-08-09/manifest.json: developed semantic state matched; package geometry/art and synchronized battle frame remain",
+          "atUtc": "2026-08-08T16:30:14.892870+00:00"
         },
         "gameplaySmoke": {
           "result": "pass",
@@ -171,8 +171,8 @@
         },
         "mechanicsData": {
           "result": "pass",
-          "evidence": "All 53 effect rows relevant to represented H01/H02/H03/H04/H11/H12/H13 families are modeled in 41 mutually exclusive groups (39 active plus 2 evidence-confirmed no-ops); H03 penetrating laser is integrated; golden 47/47, full suite 871/871, trait pool 240/240, combat kernel 109/109, RESTORE_SPEC and battlefield state validators pass",
-          "atUtc": "2026-08-07T09:41:40.416946+00:00"
+          "evidence": "2026-08-09: 25 production/resource tests 1017/1017; full 1-15 star WHEEL home HP restored; H13 star-3 yields developed 863 HP; cocosProject/RESTORE_PROGRESS.md",
+          "atUtc": "2026-08-08T16:32:05.241509+00:00"
         }
       },
       "history": [
@@ -1212,11 +1212,488 @@
           "name": "visualBaseline",
           "result": "pending",
           "atUtc": "2026-08-07T09:41:40.562477+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "handoff",
+          "atUtc": "2026-08-07T15:05:17.262642+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "mainPackage",
+          "atUtc": "2026-08-07T15:05:17.360287+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "extractedRoot",
+          "atUtc": "2026-08-07T15:05:17.456096+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "reverseManifest",
+          "atUtc": "2026-08-07T15:05:17.551458+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "restoreSpec",
+          "atUtc": "2026-08-07T15:05:17.647433+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "goldenCases",
+          "atUtc": "2026-08-07T15:05:17.741595+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "cocosProject",
+          "atUtc": "2026-08-07T15:05:17.836368+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationReport",
+          "atUtc": "2026-08-07T15:05:17.930259+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "originalReference",
+          "atUtc": "2026-08-07T15:05:18.027290+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-07T15:18:39.824482+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-07T15:18:39.921095+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-07T15:18:40.016162+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-07T15:18:40.114748+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-07T15:18:40.213270+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-07T15:28:17.299808+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-07T15:28:17.397029+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-07T15:28:17.499674+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-07T15:28:17.594305+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-07T15:28:17.690248+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-07T16:28:40.652694+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-07T16:28:40.748740+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-07T16:28:40.845809+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-07T16:28:40.938525+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-07T16:28:41.030590+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-08T11:19:57.797164+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-08T11:19:57.895087+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-08T11:19:57.990231+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-08T11:19:58.082698+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-08T11:19:58.179170+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-08T11:33:23.359315+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-08T11:33:23.455600+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-08T11:33:23.549946+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-08T11:33:23.643634+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-08T11:33:23.735583+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-08T11:40:08.483948+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-08T11:40:08.595182+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-08T11:40:08.689065+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-08T11:40:08.783062+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-08T11:40:08.878758+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-08T12:21:08.943657+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-08T12:21:09.042167+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-08T12:21:09.133840+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-08T12:21:09.226874+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-08T12:21:09.317998+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-08T12:47:14.782060+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-08T12:47:14.885582+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-08T12:47:14.978805+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-08T12:47:15.068684+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-08T12:47:15.158505+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-08T12:53:42.407595+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-08T12:53:42.505381+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-08T12:53:42.603001+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-08T12:53:42.695654+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-08T12:53:42.791339+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-08T13:50:03.726419+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-08T13:50:03.827563+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-08T13:50:03.921013+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-08T13:50:04.016038+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-08T13:50:04.112445+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-08T13:56:54.184614+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-08T13:56:54.280920+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-08T13:56:54.374829+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-08T13:56:54.471596+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-08T13:56:54.565412+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-08T14:06:28.154915+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-08T14:06:28.252338+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-08T14:06:28.345290+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-08T14:06:28.439529+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-08T14:06:28.539148+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-08T14:26:10.055485+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-08T14:26:10.104622+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-08T14:26:10.150952+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-08T14:26:10.200187+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-08T14:26:10.245712+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-08T15:08:24.570271+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-08T15:08:24.617381+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-08T16:29:55.747327+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-08T16:30:00.279289+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-08T16:30:09.144119+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-08T16:30:14.893065+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-08T16:32:05.241798+00:00"
         }
       ],
       "engineEvidence": "settings.37a11.json CocosEngine 3.8.2 + System.register business bundle"
     }
   },
   "createdAtUtc": "2026-07-31T10:06:44.358414+00:00",
-  "updatedAtUtc": "2026-08-07T09:41:40.562481+00:00"
+  "updatedAtUtc": "2026-08-08T16:32:05.241800+00:00"
 }

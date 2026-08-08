@@ -25,7 +25,7 @@ The original screenshots include the WeChat title bar. Their game viewport begin
 
 ## Earliest remaining visual divergences
 
-1. Static multi-cell connector plates and their rotations are original. Level-5 `modelId` Spine assets and rendering rules are now restored, but the missing cross-family level-5 recipes keep that visual path unreachable in the normal run and therefore not screenshot-validated.
+1. Static multi-cell connector plates and their rotations are original. Six cross-family level-5 recipes, the first three resulting models, and their shape overlays are restored and covered by explicit fixture screenshots. They remain unverified in a normal evidence-backed account flow because the target account's hero stars are unknown.
 2. The wave-1 reference is a developed save (`863 HP`, several placed gears), while the reconstruction evidence is an initial `500 HP` run with one random producer. It proves phase structure and gameplay linkage, but it is not a same-state pixel pair.
 3. The trait reference also comes from a developed run. The current initial run was defeated before reaching the first EXP choice, so the trait capture remains missing rather than being reported as passed.
 4. The recovered font and the confirmed preparation-state HUD/wave/button outlines now match their original binary records; typography in unvisited popups still requires per-component evidence before it can be called globally exact.
@@ -36,4 +36,4 @@ Level 1004 uses the recovered non-first-challenge weighted candidate path (`chal
 
 ## Next comparison event
 
-Restore the cross-family level-5 recipes and capture at least one resulting shape overlay. Then create a developed reconstruction state matching the original battle reference (same 863 HP, placed gears, wave/time and RNG trace) and capture wave 1 plus the resulting trait overlay. Only pass `visualBaseline` when all required pairs are comparable.
+Create a developed reconstruction state matching the original battle reference (same 863 HP, placed gears, wave/time and RNG trace) and capture wave 1 plus the resulting trait overlay. The level-5 fixture screenshots remain supporting evidence only. Pass `visualBaseline` only when all required normal-flow pairs are comparable.

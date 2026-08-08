@@ -6,6 +6,8 @@
 状态摘要。项目使用的完整 Codex skill 链已经保存在 `skills/`，换设备后的安装和维护
 方式见 `PROJECT_SKILLS.md`。
 
+当前开发摘要见 `CURRENT_PROGRESS.md`，后续工作与优先级见 `TODO.md`。
+
 快速安装项目 skill：
 
 ```powershell

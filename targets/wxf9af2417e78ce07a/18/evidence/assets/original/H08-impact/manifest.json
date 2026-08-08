@@ -1,0 +1,26 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "sourceBundle": "resources3",
+  "behaviorId": "7001_11",
+  "modelId": "H21_S1_LOWER",
+  "framePath": "spriteFrame/skill/js_aoteman_hill",
+  "compressedUuid": "f0+vw/lF5K4okS3qUKrl8g",
+  "uuid": "f0fafc3f-945e-4ae2-8912-dea50aae5f20",
+  "nativeVersion": "9faca",
+  "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/f0/f0fafc3f-945e-4ae2-8912-dea50aae5f20.9faca.png",
+  "file": "js_aoteman_hill.png",
+  "sha256": "64370d93aa4d70ec5785bf2051bc627bb54781951b4a53f897c63aa095b7e600",
+  "nativeSize": [1076, 195],
+  "originalSize": [202, 201],
+  "anchor": [0.5, 0.5],
+  "scale": [1.5, 1.5],
+  "frameRects": [
+    [967, 1, 108, 151],
+    [595, 1, 168, 175],
+    [765, 1, 200, 173],
+    [1, 1, 196, 193],
+    [199, 1, 196, 181],
+    [397, 1, 196, 175]
+  ],
+  "timingStatus": "inferred-30-fps-pending-matched-video"
+}

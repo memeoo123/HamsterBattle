@@ -1,0 +1,104 @@
+
+hit_lizi.png
+size: 749,864
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+it_baixing_06
+  rotate: false
+  xy: 621, 51
+  size: 80, 45
+  orig: 80, 45
+  offset: 0, 0
+  index: -1
+texiao/nizi
+  rotate: false
+  xy: 242, 426
+  size: 209, 209
+  orig: 209, 209
+  offset: 0, 0
+  index: -1
+texiao/skill02_hit_upper_1
+  rotate: false
+  xy: 621, 98
+  size: 126, 126
+  orig: 300, 300
+  offset: 97, 16
+  index: -1
+texiao/skill02_hit_upper_10
+  rotate: true
+  xy: 228, 2
+  size: 228, 193
+  orig: 300, 300
+  offset: 30, 53
+  index: -1
+texiao/skill02_hit_upper_11
+  rotate: false
+  xy: 2, 409
+  size: 238, 193
+  orig: 300, 300
+  offset: 29, 54
+  index: -1
+texiao/skill02_hit_upper_12
+  rotate: true
+  xy: 228, 637
+  size: 225, 195
+  orig: 300, 300
+  offset: 30, 54
+  index: -1
+texiao/skill02_hit_upper_2
+  rotate: true
+  xy: 453, 446
+  size: 208, 195
+  orig: 300, 300
+  offset: 49, 3
+  index: -1
+texiao/skill02_hit_upper_3
+  rotate: false
+  xy: 2, 201
+  size: 216, 206
+  orig: 300, 300
+  offset: 45, 3
+  index: -1
+texiao/skill02_hit_upper_4
+  rotate: false
+  xy: 2, 604
+  size: 224, 258
+  orig: 300, 300
+  offset: 33, 5
+  index: -1
+texiao/skill02_hit_upper_5
+  rotate: false
+  xy: 425, 656
+  size: 197, 206
+  orig: 300, 300
+  offset: 52, 51
+  index: -1
+texiao/skill02_hit_upper_6
+  rotate: true
+  xy: 464, 238
+  size: 206, 192
+  orig: 300, 300
+  offset: 40, 53
+  index: -1
+texiao/skill02_hit_upper_7
+  rotate: false
+  xy: 2, 2
+  size: 224, 197
+  orig: 300, 300
+  offset: 32, 54
+  index: -1
+texiao/skill02_hit_upper_8
+  rotate: false
+  xy: 242, 237
+  size: 220, 187
+  orig: 300, 300
+  offset: 36, 54
+  index: -1
+texiao/skill02_hit_upper_9
+  rotate: true
+  xy: 423, 2
+  size: 222, 196
+  orig: 300, 300
+  offset: 38, 53
+  index: -1

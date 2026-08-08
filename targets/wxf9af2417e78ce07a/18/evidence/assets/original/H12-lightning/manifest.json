@@ -1,0 +1,22 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "sourceBundle": "resources3",
+  "skillId": "LY_1201",
+  "behaviorId": "M_LY_1201",
+  "missileId": "M_LY_1201",
+  "missileType": 4,
+  "impactDelayMs": 500,
+  "modelId": "H12_S1",
+  "modelPath": "spine/skill/chilun_leiyun/chilun_leiyun",
+  "action": "attack",
+  "scale": [0.8, 0.8],
+  "spineVersion": "3.8.99",
+  "hitSound": "bullet_leiyun",
+  "files": [
+    {"name":"chilun_leiyun.atlas","compressedUuid":"031ePrWWVEIredPXZny7ul","uuid":"03d5e3eb-5965-4422-b79d-3d7667cbbba5","nativeVersion":"1689c","bytes":5246,"sha256":"1b6b82570f0084d9a7a6b80cc8483a16daaa6e82c0caaad6b22e77f16fd8e1b8"},
+    {"name":"chilun_leiyun.png","compressedUuid":"e1tDqA5zNHuaKTdk5u+uJZ","uuid":"e1b43a80-e733-47b9-a293-764e6efae259","nativeVersion":"03ebf","bytes":204747,"sha256":"b52c131e84a869f54b5dce6531519758a8425ca46a99a29346cc444261e3427e"},
+    {"name":"chilun_leiyun.skel","compressedUuid":"e2WmI5T9ZPQacYtI7cz0qn","uuid":"e25a6239-4fd6-4f41-a718-b48edccf4aa7","nativeVersion":"4dcf0","bytes":17480,"sha256":"77341de1dabdb28b4e7020015935a5a2230061ca11d302e2c2c10161f74e9ac2"},
+    {"name":"bullet_leiyun.mp3","compressedUuid":"8bnXB8y4JGDK2kf5FXrcf6","uuid":"8b9d707c-cb82-460c-ada4-7f9157adc7fa","nativeVersion":"4d975","bytes":39561,"durationSeconds":0.912917,"sha256":"477f5ea5d6bdec5afb1e238923f8bc320c1fc88b62b92367ef879fa65253da9a"}
+  ],
+  "atlasTexture": "chilun_leiyun.png"
+}

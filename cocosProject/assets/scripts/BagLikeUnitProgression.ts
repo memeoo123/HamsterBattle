@@ -18,6 +18,40 @@ export type BagLikeProducerProfile = {
 
 const LEVEL_ATTRIBUTE_MULTIPLES = [0, 1, 1.5, 2.25, 3.375] as const;
 
+// hero.HeroConfig + hero.HeroStarConfig. The original HeroModel floors the
+// star-adjusted base attribute before BagLilkeManager applies the gear-level
+// multiplier. Only WHEEL heroes contribute to the player's home max HP.
+const WHEEL_BASE_HP: Readonly<Record<'H11' | 'H12' | 'H13', number>> = {
+    H11: 220,
+    H12: 200,
+    H13: 300,
+};
+
+const HERO_STAR_ATTRIBUTE_MODIFIERS = [
+    0, 0, 1000, 2100, 3300, 4600, 6100, 7700, 9400, 11400, 13500,
+    15900, 18500, 21300, 24500, 27900,
+] as const;
+
+export function bagLikeHeroBaseHpAtStar(baseHp: number, star: number): number {
+    const normalizedStar = Math.max(1, Math.min(HERO_STAR_ATTRIBUTE_MODIFIERS.length - 1, Math.floor(star)));
+    return Math.floor(baseHp * (1 + HERO_STAR_ATTRIBUTE_MODIFIERS[normalizedStar] / 10000));
+}
+
+export function bagLikeWheelHomeHpContribution(
+    gearIds: ReadonlyArray<string>,
+    heroStars: Readonly<Partial<Record<BagLikeHeroFamilyId, number>>>,
+): number {
+    let total = 0;
+    for (const gearId of gearIds) {
+        const profile = bagLikeProducerProfile(gearId);
+        if (!profile || profile.kind !== 'wheel') continue;
+        const baseHp = WHEEL_BASE_HP[profile.heroId as keyof typeof WHEEL_BASE_HP];
+        if (!baseHp) continue;
+        total += bagLikeHeroBaseHpAtStar(baseHp, heroStars[profile.heroId] || 1) * profile.attributeMultiple;
+    }
+    return total;
+}
+
 const HAMSTER_MODEL_NAMES: Readonly<Record<'H01' | 'H02' | 'H03' | 'H04', string>> = {
     H01: 'js_zhanshi',
     H02: 'js_sheshou',

@@ -2,7 +2,11 @@ import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import { bagLikeProducerProfile } from '../assets/scripts/BagLikeUnitProgression.ts';
+import {
+    bagLikeHeroBaseHpAtStar,
+    bagLikeProducerProfile,
+    bagLikeWheelHomeHpContribution,
+} from '../assets/scripts/BagLikeUnitProgression.ts';
 
 let assertions = 0;
 const check = (actual, expected, message) => {
@@ -76,6 +80,20 @@ for (const family of ['H11', 'H12', 'H13']) {
 }
 
 check(bagLikeProducerProfile('H1101')?.primarySkillId, 'ZL_1101', 'H11 uses the recovered healing skill identity');
+
+check(bagLikeHeroBaseHpAtStar(300, 1), 300, 'one-star H13 keeps its HeroConfig base HP');
+check(bagLikeHeroBaseHpAtStar(300, 3), 363, 'three-star H13 applies the recovered 21% star modifier');
+check(bagLikeHeroBaseHpAtStar(300, 15), 1137, 'the full recovered 15-star table remains available to wheel HP');
+check(
+    bagLikeWheelHomeHpContribution(['P01', 'H1301', 'H0101'], { H13: 3 }),
+    363,
+    'only the placed WHEEL gear contributes its star-adjusted HP to the home',
+);
+check(
+    bagLikeWheelHomeHpContribution(['H1102', 'H1201', 'H1302'], { H11: 1, H12: 2, H13: 3 }),
+    330 + 220 + 544.5,
+    'all restored wheel families apply their gear-level attribute multiplier',
+);
 
 check(bagLikeProducerProfile('C0101'), null, 'coin gears do not create hero profiles');
 check(bagLikeProducerProfile('H0105'), null, 'same-family level 5 does not invent a profile');

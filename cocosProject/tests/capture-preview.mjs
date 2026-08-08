@@ -7,6 +7,10 @@ const [
     mode = 'initial',
     bootstrapWaitValue = '4000',
     sceneWaitValue = '6000',
+    dragFromXValue = '0',
+    dragFromYValue = '0',
+    dragToXValue = '0',
+    dragToYValue = '0',
 ] = process.argv.slice(2);
 const bootstrapWaitMs = Number(bootstrapWaitValue);
 const sceneWaitMs = Number(sceneWaitValue);
@@ -51,7 +55,12 @@ await call('Emulation.setDeviceMetricsOverride', {
     mobile: false,
 });
 await call('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 1 });
-const resumeExistingPage = mode === 'resume-battle' || mode === 'resume-trait';
+const resumeExistingPage = mode === 'resume-battle'
+    || mode === 'resume-trait'
+    || mode === 'resume-place'
+    || mode === 'resume-capture'
+    || mode === 'resume-start-battle'
+    || mode === 'resume-start-trait';
 if (!resumeExistingPage) {
     await call('Page.navigate', { url: targetUrl });
     await new Promise((resolve) => setTimeout(resolve, bootstrapWaitMs));
@@ -87,7 +96,17 @@ async function drag(fromX, fromY, toX, toY) {
     await new Promise((resolve) => setTimeout(resolve, 350));
 }
 
-if (mode === 'battle' || mode === 'trait' || resumeExistingPage) {
+if (mode === 'resume-capture') {
+    // Preserve the exact live state and only capture the current canvas.
+} else if (mode === 'resume-place') {
+    await drag(
+        Number(dragFromXValue),
+        Number(dragFromYValue),
+        Number(dragToXValue),
+        Number(dragToYValue),
+    );
+} else if (mode === 'battle' || mode === 'trait' || resumeExistingPage) {
+    const startOnly = mode === 'resume-start-battle' || mode === 'resume-start-trait';
     if (mode === 'resume-trait') {
         // Coordinates are supplied by the unchanged preparation capture on the
         // same page. This batch is H12 (2x1), H04 (1x3), H02 (2x1); after each
@@ -95,7 +114,7 @@ if (mode === 'battle' || mode === 'trait' || resumeExistingPage) {
         await drag(212, 1050, 275, 515);
         await drag(269, 952, 475, 515);
         await drag(325, 1050, 275, 715);
-    } else {
+    } else if (!startOnly) {
         // The first random tray candidate is centred around (212, 1050).
         // Dropping onto the left column keeps every recovered hero shape inside
         // the currently unlocked 3x3 preparation area.
@@ -103,7 +122,8 @@ if (mode === 'battle' || mode === 'trait' || resumeExistingPage) {
     }
     await new Promise((resolve) => setTimeout(resolve, 1000));
     await tap(600, 1265);
-    await new Promise((resolve) => setTimeout(resolve, mode === 'trait' || mode === 'resume-trait' ? 30000 : 4000));
+    await new Promise((resolve) => setTimeout(resolve,
+        mode === 'trait' || mode === 'resume-trait' || mode === 'resume-start-trait' ? 30000 : 4000));
 }
 const boundsResult = await call('Runtime.evaluate', {
     expression: `(() => {

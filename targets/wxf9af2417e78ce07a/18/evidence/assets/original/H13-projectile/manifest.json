@@ -1,0 +1,30 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "sourceBundle": "resources3",
+  "skillId": "TZ_1301",
+  "behaviorId": "B_TZ_1301_1",
+  "missileId": "M_TZ_1301_1",
+  "missileType": 8,
+  "speed": 1000,
+  "bounceTimes": 2,
+  "modelId": "H25_S1",
+  "framePath": "spriteFrame/skill/baomihuali",
+  "compressedImageUuid": "84FDppkBRBv7aDz4IlpaZ6",
+  "imageUuid": "84143a69-9014-41bf-b683-cf8225a5a67a",
+  "nativeVersion": "1a992",
+  "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/84/84143a69-9014-41bf-b683-cf8225a5a67a.1a992.png",
+  "file": "baomihuali.png",
+  "bytes": 742,
+  "sha256": "d07bed52be641cb51affadb75f67ed302598c1b8a3f62e9c6ce046622bc504ed",
+  "nativeSize": [26, 29],
+  "frame": {
+    "name": "baomihuali-idle_0",
+    "rect": [1, 1, 24, 27],
+    "originalSize": [24, 27],
+    "offset": [0, 0]
+  },
+  "anchor": [0.5, 0.5],
+  "scale": [1.5, 1.5],
+  "shootSound": "",
+  "hitSound": ""
+}

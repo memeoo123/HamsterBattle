@@ -1,0 +1,20 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "sourceBundle": "resources3",
+  "missileId": "M_SS_2002",
+  "modelId": "H29_S2",
+  "framePath": "spriteFrame/skill/js_sheshou_lanqiu",
+  "compressedUuid": "30mnhShiZO0JVLueGJJzLZ",
+  "uuid": "309a7852-8626-4ed0-954b-b9e1892732d9",
+  "nativeVersion": "b9661",
+  "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/30/309a7852-8626-4ed0-954b-b9e1892732d9.b9661.png",
+  "file": "js_sheshou_lanqiu.png",
+  "sha256": "7bacf2cbf4fef931996b604691015369d0677469ce3b82637bf48a358631d942",
+  "nativeSize": [43, 43],
+  "spriteRect": [1, 1, 41, 41],
+  "anchor": [0.5, 0.2],
+  "scale": null,
+  "speed": 700,
+  "shootSound": "",
+  "hitSound": ""
+}

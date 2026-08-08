@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0",
+  "target": "wxf9af2417e78ce07a/18",
+  "capturedAt": "2026-08-08",
+  "bundle": "resources3",
+  "bindings": {
+    "freezeSkill": { "id": "3001_2", "sound": "skill_bingfeng", "soundDelayMilliseconds": 0, "behavior": "3001_bh2", "behaviorModelId": null, "buff": "3001_bf2" },
+    "transformSkill": { "id": "3001_3", "sound": "skill_bianxing", "soundDelayMilliseconds": 0, "behavior": "3001_bh3", "buff": "3001_bf3" },
+    "transformReplacement": { "id": "3001_4", "sound": "", "behavior": "3001_bh4", "buff": "3001_bf4" },
+    "transformBuffModel": { "id": "H28_S2", "modelPath": "spine/skill/js_fashi_hit_lizi/hit_lizi", "action": "hit", "scale": 0.5, "width": 100, "height": 100, "durationMilliseconds": 2000 },
+    "freezeBuffModel": { "id": "H28_S1", "modelPath": "spine/skill/js_fashi_hill_binkuai/hit_binkuai", "action": "idle", "scale": 1, "width": 100, "height": 100, "durationMilliseconds": 3000 }
+  },
+  "assets": [
+    { "file": "hit_lizi.png", "logicalPath": "spine/skill/js_fashi_hit_lizi/hit_lizi", "configIndex": 357, "compressedUuid": "cbJ5p4wolPCr9buheh7guN", "uuid": "cb279a78-c289-4f0a-bf5b-ba17a1ee0b8d", "nativeVersion": "4f3b4", "remotePath": "remote/resources3/native/cb/cb279a78-c289-4f0a-bf5b-ba17a1ee0b8d.4f3b4.png", "bytes": 423298, "sha256": "f5598ef68f7e9922aa15d962b023297a852bb84e7ad1ea977aeae31d9bc130be" },
+    { "file": "hit_lizi.atlas", "logicalPath": "spine/skill/js_fashi_hit_lizi/hit_lizi", "configIndex": 367, "compressedUuid": "d0K9aVQJNKOqghdVaE/yMO", "uuid": "d02bd695-4093-4a3a-a821-755684ff230e", "nativeVersion": "808d5", "remotePath": "remote/resources3/native/d0/d02bd695-4093-4a3a-a821-755684ff230e.808d5.atlas", "bytes": 1717, "sha256": "236815476d2afef8f02527ebe72e79b218412084ca9a4aecc81d95b1df50b06d" },
+    { "file": "hit_lizi.skel", "logicalPath": "spine/skill/js_fashi_hit_lizi/hit_lizi", "configIndex": 441, "compressedUuid": "f8UP2nTKpCaaNOPPeX0sbc", "uuid": "f850fda7-4caa-4269-a34e-3cf797d2c6dc", "nativeVersion": "707dd", "remotePath": "remote/resources3/native/f8/f850fda7-4caa-4269-a34e-3cf797d2c6dc.707dd.bin", "bytes": 1982, "spineVersion": "3.8.99", "sha256": "57b74e276d3773955856e7257c57b8f6a5856bd049f3a3ff4423cd6a73dcdee1" },
+    { "file": "skill_bianxing.mp3", "logicalPath": "audio/sound/skill/skill_bianxing", "configIndex": 102, "compressedUuid": "39wrv/GSxEf7XnvWmuAATA", "uuid": "39c2bbff-192c-447f-b5e7-bd69ae0004c0", "nativeVersion": "0952b", "remotePath": "remote/resources3/native/39/39c2bbff-192c-447f-b5e7-bd69ae0004c0.0952b.mp3", "bytes": 35999, "durationSeconds": 1.01725, "sha256": "4c4e83e34c9c60107ea1ca1d7f325853ca7927f4e58b8efdf41fe370067c91df" },
+    { "file": "skill_bingfeng.mp3", "logicalPath": "audio/sound/skill/skill_bingfeng", "configIndex": 237, "compressedUuid": "8aUm6Jj9VJwYvQLJjpgDFL", "uuid": "8a526e89-8fd5-49c1-8bd0-2c98e980314b", "nativeVersion": "bbff6", "remotePath": "remote/resources3/native/8a/8a526e89-8fd5-49c1-8bd0-2c98e980314b.bbff6.mp3", "bytes": 26737, "durationSeconds": 0.678167, "sha256": "cb233dc405d26ae73cfecddc7f8a77d57d0aa9e80314a848c4fd89ea0f6823c9" },
+    { "file": "hit_binkuai.png", "logicalPath": "spine/skill/js_fashi_hill_binkuai/hit_binkuai", "configIndex": 5, "compressedUuid": "06JKJGquxBsI05aDYWUvhW", "uuid": "0624a246-aaec-41b0-8d39-68361652f856", "nativeVersion": "47981", "remotePath": "remote/resources3/native/06/0624a246-aaec-41b0-8d39-68361652f856.47981.png", "bytes": 132002, "sha256": "01ad82d67ae2351374044ece3875b109447b67fe3952e2958e4f96f2ff15d52a" },
+    { "file": "hit_binkuai.skel", "logicalPath": "spine/skill/js_fashi_hill_binkuai/hit_binkuai", "configIndex": 117, "compressedUuid": "41XxVFFnFCCJpS90R0m6Fg", "uuid": "415f1545-1671-4208-9a52-f744749ba160", "nativeVersion": "f4e8a", "remotePath": "remote/resources3/native/41/415f1545-1671-4208-9a52-f744749ba160.f4e8a.bin", "bytes": 1263, "spineVersion": "3.8.99", "sha256": "774e46faf91891ff6e878fe2d7be0ce488f77df9f210f2ab8a5f941b106f11f5" },
+    { "file": "hit_binkuai.atlas", "logicalPath": "spine/skill/js_fashi_hill_binkuai/hit_binkuai", "configIndex": 389, "compressedUuid": "dcy7zhp2ZPZLHtJfQKJ8gM", "uuid": "dccbbce1-a766-4f64-b1ed-25f40a27c80c", "nativeVersion": "ec877", "remotePath": "remote/resources3/native/dc/dccbbce1-a766-4f64-b1ed-25f40a27c80c.ec877.atlas", "bytes": 930, "sha256": "45eee94fcaaba790cbee2dd11d9f054e8a596d442ea71bfaf26cfe4aff5f5c86" }
+  ],
+  "provenance": "SkillConfig, PassivitySkillConfig, BehaviorConfig, BuffGroupConfig and ModelConfig establish the trigger-specific sounds, model bindings, actions, scales and two/three-second buff lifetimes. The authorized resources3 config and native map establish exact source files."
+}
