@@ -9,6 +9,7 @@ import {
     drawCandidateBatch,
     drawCandidateReward,
     drawDynamicCandidateBatch,
+    gearDropHitsTarget,
     placedCoinGearCount,
     shouldForceGridCandidate,
     shouldUseStaticCandidateBatch,
@@ -36,6 +37,7 @@ assert.equal(drawCandidateReward(3014, onlyH04, () => 0.5), 'H0401');
 assert.equal(drawCandidateReward(3015, onlyH04, () => 0.5), 'H0402');
 assert.equal(drawCandidateReward(3016, onlyH04, () => 0.5), 'H0403');
 assert.equal(drawCandidateReward(3014, { unlockedHeroFamilies: new Set(['H11']), hasLockedGrid: true }, () => 0.5), 'H1101');
+assert.equal(drawCandidateReward(3016, { unlockedHeroFamilies: new Set(['H17']), hasLockedGrid: true }, () => 0.5), 'H1703');
 
 let seed = 123456789;
 const random = () => {
@@ -79,6 +81,11 @@ assert.equal(shouldForceGridCandidate(6, true, ['H0101', 'H0201', 'H0301']), fal
 assert.equal(shouldForceGridCandidate(7, true, ['H0101', 'H0201', 'H0301']), true);
 assert.equal(shouldForceGridCandidate(7, false, ['H0101', 'H0201', 'H0301']), false);
 assert.equal(shouldForceGridCandidate(7, true, ['H0101', 'G01', 'H0301']), false);
+
+const sharkShape = [[0, 1], [1, 0], [1, 1]];
+assert.equal(gearDropHitsTarget(sharkShape, 0, 0, 1, 50, -50, 100), true, 'H1401 accepts a drop at its portrait centre');
+assert.equal(gearDropHitsTarget(sharkShape, 0, 0, 1, 25, -25, 100), true, 'H1401 portrait area tolerates an imprecise centred drop');
+assert.equal(gearDropHitsTarget(sharkShape, 0, 0, 1, -60, 40, 100), false, 'a drop outside the shark body and portrait remains rejected');
 
 const forcedGridBatch = drawDynamicCandidateBatch(
     [3014, 3014, 3014],
@@ -145,4 +152,4 @@ assert.match(candidateSource, /Array\.from\(unlockedHeroFamilies\)/, 'Creator bu
 assert.match(candidateSource, /Array\.from\(context\.unlockedHeroFamilies\)/, 'Creator build keeps Set iteration at the five-family cap');
 assert.doesNotMatch(candidateSource, /\.\.\.unlockedHeroFamilies/, 'loose Babel cannot lower Set spread into a one-element Set array');
 
-console.log('baglike candidate drops: 44 assertions passed');
+console.log('baglike candidate drops: 47 assertions passed');

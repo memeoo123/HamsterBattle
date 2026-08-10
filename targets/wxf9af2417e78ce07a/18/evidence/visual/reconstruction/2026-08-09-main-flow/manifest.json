@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-09T02:00:59.273Z",
+  "viewport": {
+    "x": 0,
+    "y": 0,
+    "width": 750,
+    "height": 1334
+  },
+  "contract": [
+    "normal launch renders main scene",
+    "main scene opens recovered level selection",
+    "level 1004 enters preparation",
+    "battle HUD returns to main scene",
+    "level 1001 enters preparation"
+  ],
+  "scope": "Functional reconstruction evidence; not an original-game visual baseline.",
+  "assertions": 9,
+  "captures": [
+    {
+      "bytes": 310798,
+      "sha256": "e4c217bd47974939864e16f55ed16a594bf42b537237e8186391e1380ab0e460",
+      "file": "01-main.png"
+    },
+    {
+      "bytes": 252594,
+      "sha256": "f48cc940ce71d1f6a86a1b92bfc0d953ca52f655fc298cb4b9a7a383e174fd4d",
+      "file": "02-level-selection.png"
+    },
+    {
+      "bytes": 154599,
+      "sha256": "076858bdc5b300ba5c653c92c7410712584f7076f9a18943373fe1e99ce9d795",
+      "file": "03-level-1004.png"
+    },
+    {
+      "bytes": 310798,
+      "sha256": "e4c217bd47974939864e16f55ed16a594bf42b537237e8186391e1380ab0e460",
+      "file": "04-returned-main.png"
+    },
+    {
+      "bytes": 184607,
+      "sha256": "141319e57d26816b546325fd572f87ea12406f624173fe481bda950874b0a9c5",
+      "file": "05-level-1001.png"
+    }
+  ],
+  "errors": []
+}

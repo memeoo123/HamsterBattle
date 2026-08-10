@@ -595,10 +595,6 @@
     {
       "field": "audioAndEffects",
       "verification": "Recover and map the representative level's sound, hit, skill, and result effects after the visual baseline is accepted."
-    },
-    {
-      "field": "timing.powerCoreGameTimerVersusBattleTimer",
-      "verification": "Recover scheduler ordering or record a matched trace for a tick where a power-core contact and a combat-frame event are both due. The independent subsystem orders are confirmed; only their cross-scheduler tie remains unknown."
     }
   ],
   "evidenceIndex": {
@@ -777,7 +773,11 @@
     },
     "K-C044": {
       "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/battlefield-frame-rng-order.md",
-      "finding": "confirmed battle-controller frame order and same-frame spawn/bullet/disposal consequences; recovered the continuous preparation-to-battle power-core phase; separated native position draws from the BattleManager LCG with default seed 5 and constants 9301/49297/233280. Only the GameTimer-versus-BattleTimer cross-scheduler tie remains unproven."
+      "finding": "confirmed battle-controller frame order and same-frame spawn/bullet/disposal consequences; recovered the continuous preparation-to-battle power-core phase; separated native position draws from the BattleManager LCG with default seed 5 and constants 9301/49297/233280."
+    },
+    "K-C045": {
+      "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/battlefield-cross-scheduler-boundary.md",
+      "finding": "Timer registers both GameTimer and BattleTimer at effective priority M; BaseLauncher creates GameTimer first, and the bundled Cocos scheduler preserves equal-priority insertion order, proving core production runs before combat on a shared engine tick."
     }
   }
 }

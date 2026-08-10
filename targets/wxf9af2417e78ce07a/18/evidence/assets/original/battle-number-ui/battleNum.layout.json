@@ -1,0 +1,1845 @@
+{
+  "source": "targets/wxf9af2417e78ce07a/18/evidence/assets/original/battle-number-ui/battleNum.330f1.bin",
+  "compression": "zlib",
+  "packedBytes": 1676,
+  "rawBytes": 8159,
+  "packageId": "rdjzh7h2",
+  "packageName": "battleNum",
+  "declaredItemCount": 78,
+  "parsedComponentCount": 4,
+  "parsedImageCount": 68,
+  "parsedFontCount": 6,
+  "limitation": "Parses compact package component headers, image atlas records, and setup_beforeAdd child geometry. Controller, relation, gear, and transition tails remain unparsed.",
+  "images": [
+    {
+      "index": 4,
+      "start": 1156,
+      "type": 0,
+      "id": "lqe4v1a8",
+      "name": "0.png",
+      "width": 44,
+      "height": 58,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 1,
+        "y": 58,
+        "width": 41,
+        "height": 54
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 2,
+        "sourceWidth": 44,
+        "sourceHeight": 58
+      }
+    },
+    {
+      "index": 5,
+      "start": 1226,
+      "type": 0,
+      "id": "lqe4v1a9",
+      "name": "1.png",
+      "width": 44,
+      "height": 58,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 87,
+        "y": 57,
+        "width": 30,
+        "height": 53
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 6,
+        "offsetY": 2,
+        "sourceWidth": 44,
+        "sourceHeight": 58
+      }
+    },
+    {
+      "index": 6,
+      "start": 1296,
+      "type": 0,
+      "id": "lqe4v1aa",
+      "name": "2.png",
+      "width": 44,
+      "height": 58,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 130,
+        "y": 1,
+        "width": 40,
+        "height": 53
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 2,
+        "offsetY": 2,
+        "sourceWidth": 44,
+        "sourceHeight": 58
+      }
+    },
+    {
+      "index": 7,
+      "start": 1366,
+      "type": 0,
+      "id": "lqe4v1ab",
+      "name": "3.png",
+      "width": 44,
+      "height": 58,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 1,
+        "y": 114,
+        "width": 40,
+        "height": 54
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 2,
+        "offsetY": 2,
+        "sourceWidth": 44,
+        "sourceHeight": 58
+      }
+    },
+    {
+      "index": 8,
+      "start": 1436,
+      "type": 0,
+      "id": "lqe4v1ac",
+      "name": "4.png",
+      "width": 44,
+      "height": 58,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 44,
+        "y": 1,
+        "width": 42,
+        "height": 53
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 2,
+        "sourceWidth": 44,
+        "sourceHeight": 58
+      }
+    },
+    {
+      "index": 9,
+      "start": 1506,
+      "type": 0,
+      "id": "lqe4v1ad",
+      "name": "5.png",
+      "width": 44,
+      "height": 58,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 44,
+        "y": 56,
+        "width": 41,
+        "height": 54
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 2,
+        "sourceWidth": 44,
+        "sourceHeight": 58
+      }
+    },
+    {
+      "index": 10,
+      "start": 1576,
+      "type": 0,
+      "id": "lqe4v1ae",
+      "name": "6.png",
+      "width": 44,
+      "height": 58,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 1,
+        "y": 170,
+        "width": 40,
+        "height": 54
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 2,
+        "offsetY": 2,
+        "sourceWidth": 44,
+        "sourceHeight": 58
+      }
+    },
+    {
+      "index": 11,
+      "start": 1646,
+      "type": 0,
+      "id": "lqe4v1af",
+      "name": "7.png",
+      "width": 44,
+      "height": 58,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 172,
+        "y": 1,
+        "width": 40,
+        "height": 53
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 2,
+        "offsetY": 2,
+        "sourceWidth": 44,
+        "sourceHeight": 58
+      }
+    },
+    {
+      "index": 12,
+      "start": 1716,
+      "type": 0,
+      "id": "lqe4v1ag",
+      "name": "8.png",
+      "width": 44,
+      "height": 58,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 1,
+        "y": 1,
+        "width": 41,
+        "height": 55
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 2,
+        "offsetY": 1,
+        "sourceWidth": 44,
+        "sourceHeight": 58
+      }
+    },
+    {
+      "index": 13,
+      "start": 1786,
+      "type": 0,
+      "id": "lqe4v1ah",
+      "name": "9.png",
+      "width": 44,
+      "height": 58,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 88,
+        "y": 1,
+        "width": 40,
+        "height": 54
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 2,
+        "offsetY": 2,
+        "sourceWidth": 44,
+        "sourceHeight": 58
+      }
+    },
+    {
+      "index": 14,
+      "start": 1856,
+      "type": 0,
+      "id": "egjbv19v",
+      "name": "gray_-.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 66,
+        "y": 202,
+        "width": 21,
+        "height": 11
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 9,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 15,
+      "start": 1931,
+      "type": 0,
+      "id": "egjbv19w",
+      "name": "gray_0.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 95,
+        "y": 228,
+        "width": 20,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 16,
+      "start": 2006,
+      "type": 0,
+      "id": "egjbv19x",
+      "name": "gray_1.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 223,
+        "y": 146,
+        "width": 16,
+        "height": 25
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 4,
+        "offsetY": 2,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 17,
+      "start": 2081,
+      "type": 0,
+      "id": "egjbv19y",
+      "name": "gray_2.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 190,
+        "y": 115,
+        "width": 21,
+        "height": 25
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 2,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 18,
+      "start": 2156,
+      "type": 0,
+      "id": "egjbv19z",
+      "name": "gray_3.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 43,
+        "y": 173,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 19,
+      "start": 2231,
+      "type": 0,
+      "id": "egjbv1a0",
+      "name": "gray_4.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 177,
+        "y": 169,
+        "width": 20,
+        "height": 25
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 2,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 20,
+      "start": 2306,
+      "type": 0,
+      "id": "egjbv1a1",
+      "name": "gray_5.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 166,
+        "y": 115,
+        "width": 22,
+        "height": 25
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 2,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 21,
+      "start": 2381,
+      "type": 0,
+      "id": "egjbv1a2",
+      "name": "gray_6.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 117,
+        "y": 228,
+        "width": 20,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 22,
+      "start": 2456,
+      "type": 0,
+      "id": "egjbv1a3",
+      "name": "gray_7.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 218,
+        "y": 173,
+        "width": 19,
+        "height": 25
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 3,
+        "offsetY": 2,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 23,
+      "start": 2531,
+      "type": 0,
+      "id": "egjbv1a4",
+      "name": "gray_8.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 66,
+        "y": 112,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 24,
+      "start": 2606,
+      "type": 0,
+      "id": "egjbv1a5",
+      "name": "gray_9.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 162,
+        "y": 197,
+        "width": 19,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 2,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 25,
+      "start": 2681,
+      "type": 0,
+      "id": "nlg9v195",
+      "name": "green_0.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 89,
+        "y": 112,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 26,
+      "start": 2757,
+      "type": 0,
+      "id": "nlg9v196",
+      "name": "green_1.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 183,
+        "y": 196,
+        "width": 17,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 3,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 27,
+      "start": 2833,
+      "type": 0,
+      "id": "nlg9v197",
+      "name": "green_2.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 190,
+        "y": 56,
+        "width": 22,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 28,
+      "start": 2909,
+      "type": 0,
+      "id": "nlg9v198",
+      "name": "green_3.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 119,
+        "y": 87,
+        "width": 22,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 29,
+      "start": 2985,
+      "type": 0,
+      "id": "nlg9v199",
+      "name": "green_4.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 166,
+        "y": 86,
+        "width": 22,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 30,
+      "start": 3061,
+      "type": 0,
+      "id": "nlg9v19a",
+      "name": "green_5.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 67,
+        "y": 141,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 31,
+      "start": 3137,
+      "type": 0,
+      "id": "nlg9v19b",
+      "name": "green_6.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 118,
+        "y": 199,
+        "width": 20,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 32,
+      "start": 3213,
+      "type": 0,
+      "id": "nlg9v19c",
+      "name": "green_7.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 139,
+        "y": 228,
+        "width": 20,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 2,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 33,
+      "start": 3289,
+      "type": 0,
+      "id": "nlg9v19d",
+      "name": "green_8.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 214,
+        "y": 61,
+        "width": 22,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 34,
+      "start": 3365,
+      "type": 0,
+      "id": "nlg9v19e",
+      "name": "green_9.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 90,
+        "y": 141,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 35,
+      "start": 3441,
+      "type": 0,
+      "id": "nlg9v19f",
+      "name": "green_j.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 202,
+        "y": 227,
+        "width": 17,
+        "height": 11
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 3,
+        "offsetY": 11,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 36,
+      "start": 3517,
+      "type": 0,
+      "id": "nlg9v19g",
+      "name": "green_jia.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 43,
+        "y": 202,
+        "width": 21,
+        "height": 21
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 4,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 37,
+      "start": 3595,
+      "type": 0,
+      "id": "s8ulv18i",
+      "name": "red_0.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 1,
+        "y": 226,
+        "width": 22,
+        "height": 28
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 38,
+      "start": 3669,
+      "type": 0,
+      "id": "s8ulv18j",
+      "name": "red_1.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 66,
+        "y": 173,
+        "width": 18,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 2,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 39,
+      "start": 3743,
+      "type": 0,
+      "id": "s8ulv18k",
+      "name": "red_2.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 214,
+        "y": 1,
+        "width": 22,
+        "height": 28
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 40,
+      "start": 3817,
+      "type": 0,
+      "id": "s8ulv18a",
+      "name": "red_3.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 167,
+        "y": 56,
+        "width": 21,
+        "height": 28
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 0,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 41,
+      "start": 3891,
+      "type": 0,
+      "id": "s8ulv18b",
+      "name": "red_4.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 213,
+        "y": 90,
+        "width": 22,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 42,
+      "start": 3965,
+      "type": 0,
+      "id": "s8ulv18c",
+      "name": "red_5.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 49,
+        "y": 225,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 43,
+      "start": 4039,
+      "type": 0,
+      "id": "s8ulv18d",
+      "name": "red_6.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 113,
+        "y": 139,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 44,
+      "start": 4113,
+      "type": 0,
+      "id": "s8ulv18e",
+      "name": "red_7.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 136,
+        "y": 139,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 45,
+      "start": 4187,
+      "type": 0,
+      "id": "s8ulv18f",
+      "name": "red_8.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 214,
+        "y": 31,
+        "width": 22,
+        "height": 28
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 46,
+      "start": 4261,
+      "type": 0,
+      "id": "s8ulv18g",
+      "name": "red_9.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 143,
+        "y": 86,
+        "width": 21,
+        "height": 28
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 47,
+      "start": 4335,
+      "type": 0,
+      "id": "nlg9v192",
+      "name": "red_j.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 159,
+        "y": 142,
+        "width": 17,
+        "height": 12
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 3,
+        "offsetY": 8,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 48,
+      "start": 4409,
+      "type": 0,
+      "id": "nlg9v193",
+      "name": "red_jia.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 112,
+        "y": 116,
+        "width": 21,
+        "height": 21
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 4,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 49,
+      "start": 4485,
+      "type": 0,
+      "id": "nlg9v18o",
+      "name": "white_0.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 25,
+        "y": 226,
+        "width": 22,
+        "height": 28
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 50,
+      "start": 4561,
+      "type": 0,
+      "id": "nlg9v18p",
+      "name": "white_1.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 182,
+        "y": 226,
+        "width": 18,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 2,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 51,
+      "start": 4637,
+      "type": 0,
+      "id": "nlg9v18q",
+      "name": "white_2.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 119,
+        "y": 57,
+        "width": 22,
+        "height": 28
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 52,
+      "start": 4713,
+      "type": 0,
+      "id": "nlg9v18r",
+      "name": "white_3.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 190,
+        "y": 85,
+        "width": 21,
+        "height": 28
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 0,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 53,
+      "start": 4789,
+      "type": 0,
+      "id": "nlg9v18s",
+      "name": "white_4.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 43,
+        "y": 144,
+        "width": 22,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 54,
+      "start": 4865,
+      "type": 0,
+      "id": "nlg9v18t",
+      "name": "white_5.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 86,
+        "y": 170,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 55,
+      "start": 4941,
+      "type": 0,
+      "id": "nlg9v18u",
+      "name": "white_6.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 72,
+        "y": 215,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 56,
+      "start": 5017,
+      "type": 0,
+      "id": "nlg9v18v",
+      "name": "white_7.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 109,
+        "y": 170,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 57,
+      "start": 5093,
+      "type": 0,
+      "id": "nlg9v18w",
+      "name": "white_8.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 143,
+        "y": 56,
+        "width": 22,
+        "height": 28
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 58,
+      "start": 5169,
+      "type": 0,
+      "id": "nlg9v18x",
+      "name": "white_9.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 43,
+        "y": 114,
+        "width": 21,
+        "height": 28
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 59,
+      "start": 5245,
+      "type": 0,
+      "id": "nlg9v18y",
+      "name": "white_j.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 199,
+        "y": 173,
+        "width": 17,
+        "height": 12
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 3,
+        "offsetY": 8,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 60,
+      "start": 5321,
+      "type": 0,
+      "id": "nlg9v18z",
+      "name": "white_jia.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 135,
+        "y": 116,
+        "width": 21,
+        "height": 21
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 4,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 61,
+      "start": 5399,
+      "type": 0,
+      "id": "egjbv19j",
+      "name": "yellow_-.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 72,
+        "y": 244,
+        "width": 21,
+        "height": 11
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 9,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 62,
+      "start": 5476,
+      "type": 0,
+      "id": "egjbv19k",
+      "name": "yellow_0.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 140,
+        "y": 197,
+        "width": 20,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 63,
+      "start": 5553,
+      "type": 0,
+      "id": "egjbv19l",
+      "name": "yellow_1.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 223,
+        "y": 200,
+        "width": 16,
+        "height": 25
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 4,
+        "offsetY": 2,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 64,
+      "start": 5630,
+      "type": 0,
+      "id": "egjbv19m",
+      "name": "yellow_2.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 178,
+        "y": 142,
+        "width": 21,
+        "height": 25
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 2,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 65,
+      "start": 5707,
+      "type": 0,
+      "id": "egjbv19n",
+      "name": "yellow_3.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 132,
+        "y": 168,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 66,
+      "start": 5784,
+      "type": 0,
+      "id": "egjbv19o",
+      "name": "yellow_4.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 201,
+        "y": 146,
+        "width": 20,
+        "height": 25
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 2,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 67,
+      "start": 5861,
+      "type": 0,
+      "id": "egjbv19p",
+      "name": "yellow_5.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 213,
+        "y": 119,
+        "width": 22,
+        "height": 25
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 0,
+        "offsetY": 2,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 68,
+      "start": 5938,
+      "type": 0,
+      "id": "egjbv19q",
+      "name": "yellow_6.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 155,
+        "y": 168,
+        "width": 20,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 69,
+      "start": 6015,
+      "type": 0,
+      "id": "egjbv19r",
+      "name": "yellow_7.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 202,
+        "y": 200,
+        "width": 19,
+        "height": 25
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 3,
+        "offsetY": 2,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 70,
+      "start": 6092,
+      "type": 0,
+      "id": "egjbv19s",
+      "name": "yellow_8.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 95,
+        "y": 199,
+        "width": 21,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 1,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    },
+    {
+      "index": 71,
+      "start": 6169,
+      "type": 0,
+      "id": "egjbv19t",
+      "name": "yellow_9.png",
+      "width": 22,
+      "height": 28,
+      "scale9Grid": null,
+      "atlasReferenceCount": 1,
+      "atlas": "battleNum_0.png",
+      "rect": {
+        "x": 161,
+        "y": 226,
+        "width": 19,
+        "height": 27
+      },
+      "rotated": false,
+      "trim": {
+        "offsetX": 2,
+        "offsetY": 1,
+        "sourceWidth": 22,
+        "sourceHeight": 28
+      }
+    }
+  ],
+  "fonts": [
+    {
+      "index": 72,
+      "start": 6246,
+      "type": 5,
+      "id": "s8ulv18l",
+      "name": "Font_zl_red",
+      "rawStart": 6274,
+      "rawLength": 306
+    },
+    {
+      "index": 73,
+      "start": 6580,
+      "type": 5,
+      "id": "nlg9v191",
+      "name": "Font_white2",
+      "rawStart": 6608,
+      "rawLength": 306
+    },
+    {
+      "index": 74,
+      "start": 6914,
+      "type": 5,
+      "id": "nlg9v194",
+      "name": "Font_green2",
+      "rawStart": 6942,
+      "rawLength": 306
+    },
+    {
+      "index": 75,
+      "start": 7248,
+      "type": 5,
+      "id": "egjbv19u",
+      "name": "Font_yellow2",
+      "rawStart": 7277,
+      "rawLength": 282
+    },
+    {
+      "index": 76,
+      "start": 7559,
+      "type": 5,
+      "id": "egjbv1a6",
+      "name": "Font_gray2",
+      "rawStart": 7586,
+      "rawLength": 282
+    },
+    {
+      "index": 77,
+      "start": 7868,
+      "type": 5,
+      "id": "lqe4v1a7",
+      "name": "fruit/FruitHpNum",
+      "rawStart": 7901,
+      "rawLength": 258
+    }
+  ],
+  "components": [
+    {
+      "index": 0,
+      "start": 23,
+      "type": 3,
+      "id": "nlg9v18m",
+      "name": "HurtNum2",
+      "width": 100,
+      "height": 30,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 59,
+      "rawLength": 237,
+      "layout": {
+        "parseError": "out of bounds at 79 + 256"
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 1,
+      "start": 296,
+      "type": 3,
+      "id": "nlg9v18n",
+      "name": "CritNum2",
+      "width": 100,
+      "height": 30,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 332,
+      "rawLength": 258,
+      "layout": {
+        "parseError": "out of bounds at 352 + 256"
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 2,
+      "start": 590,
+      "type": 3,
+      "id": "nlg9v19h",
+      "name": "HealNum2",
+      "width": 100,
+      "height": 30,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 626,
+      "rawLength": 258,
+      "layout": {
+        "parseError": "out of bounds at 646 + 256"
+      },
+      "scannedChildren": []
+    },
+    {
+      "index": 3,
+      "start": 884,
+      "type": 3,
+      "id": "egjbv19i",
+      "name": "DesNum2",
+      "width": 100,
+      "height": 30,
+      "extension": 0,
+      "branches": [],
+      "highResolution": [],
+      "rawStart": 919,
+      "rawLength": 237,
+      "layout": {
+        "parseError": "out of bounds at 939 + 256"
+      },
+      "scannedChildren": []
+    }
+  ]
+}

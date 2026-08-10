@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import {
     applyH12Paralysis,
     H12_BASE_SKILL_ID,
@@ -52,4 +53,18 @@ assert.equal(applyH12Paralysis(1.5, 1), 1.5, 'reapplication never shortens a lon
 assert.equal(applyH12Paralysis(0, 1, true), 0, 'control-immune targets reject paralysis');
 assert.equal(applyH12Paralysis(-1, 0), 0, 'non-positive input is clamped to a valid status duration');
 
-console.log('battlefield paralysis: 15 assertions passed');
+const gameSource = fs.readFileSync(new URL('../assets/scripts/CangshuGame.ts', import.meta.url), 'utf8');
+const boss03Config = gameSource.slice(gameSource.indexOf('Boss03: {'), gameSource.indexOf('Boss07: {'));
+assert.match(boss03Config, /controlImmune:\s*true/, 'Boss03 maps recovered BT_001 into the live control-immunity flag');
+assert.match(
+    gameSource,
+    /target\.frozen = applyH12Paralysis\([\s\S]*?Boolean\(target\.cfg\.controlImmune\),[\s\S]*?\);/,
+    'the live H12 optional paralysis replacement checks Boss03 control immunity',
+);
+assert.match(
+    gameSource,
+    /applyH03TransformHit\([\s\S]*?hit\.attacker\.transform, Boolean\(target\.cfg\.controlImmune\)\)/,
+    'the live H03 star-7 dizziness replacement checks the same Boss03 immunity',
+);
+
+console.log('battlefield paralysis: 18 assertions passed');

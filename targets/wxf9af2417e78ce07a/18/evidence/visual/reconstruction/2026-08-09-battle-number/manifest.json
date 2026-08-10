@@ -1,0 +1,36 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "capturedAt": "2026-08-09",
+  "viewport": "750x1334",
+  "url": "http://127.0.0.1:18100/?levelId=1004&developedValidation=battle",
+  "reference": "../../../original/2026-08-01/battle-wave-1.png",
+  "reconstruction": "developed-battle-number-canvas.png",
+  "sha256": "63d3abdbb1a6df8885916081b258c8a8ca4494ef90901d3e3739bb6e1237e7bc",
+  "runtime": {
+    "levelId": 1004,
+    "phase": "battle",
+    "round": 1,
+    "roundClock": 4.01,
+    "selfHp": 863,
+    "maxHp": 863,
+    "enemyUnits": 4,
+    "selfUnits": 0
+  },
+  "presentation": {
+    "sourcePackage": "resources2/ui/battleNum",
+    "component": "HurtNum2",
+    "font": "Font_white2",
+    "initialScale": 1.3,
+    "movement": "46 px upward over 0.6666667 s with QuadOut easing",
+    "fade": "alpha 1 to 0 from t=0.3 s through t=1.0 s with QuadOut easing",
+    "format": "direct positive damage value; no reconstruction-added minus sign"
+  },
+  "validation": {
+    "battleVisualAssertions": "25/25",
+    "testFiles": "37/37",
+    "assetImport": "134 assets / 0 missing meta / 0 warnings",
+    "typescript": "Creator 3.8.8 bundled TypeScript exited 0 with skipLibCheck",
+    "browserConsoleErrors": []
+  },
+  "boundary": "The fixture's displayed value is 23 because account-derived attack growth remains outside the matched package-only visual state; the original reference displays 27. Glyph art, formatting, scale, movement and alpha timing are source-exact. Hit effects and battle gear glow/layer/animation comparison remain pending."
+}

@@ -1,0 +1,39 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "capturedAt": "2026-08-10",
+  "viewport": "750x1334",
+  "url": "http://127.0.0.1:18100/?levelId=1004&developedValidation=battle",
+  "reference": "../../../original/2026-08-01/battle-wave-1.png",
+  "reconstruction": "developed-h13-impact-canvas.png",
+  "sha256": "5918adf28038fc93ce9c5d18a1b1a9573abedd5e7094724c905366c3da7b81cf",
+  "runtime": {
+    "levelId": 1004,
+    "phase": "battle",
+    "round": 1,
+    "roundClock": 4.01,
+    "selfHp": 863,
+    "maxHp": 863,
+    "enemyUnits": 4,
+    "selfUnits": 0
+  },
+  "presentation": {
+    "skillId": "TZ_1301",
+    "missileId": "M_TZ_1301_1",
+    "impactBehaviorId": "B_TZ_1301_2",
+    "modelId": "H13_S1_LOWER",
+    "modelPath": "spine/skill/touzhi/baomihua_hill",
+    "action": "pskill01",
+    "layer": "BgLayer below role units",
+    "timing": "created by the same impact behavior that applies hurt and creates the floating damage number"
+  },
+  "validation": {
+    "h13Assertions": "15/15",
+    "battleVisualAssertions": "25/25",
+    "testFiles": "37/37",
+    "assetImport": "137 assets / 0 missing meta",
+    "typescript": "Creator 3.8.8 bundled TypeScript exited 0 with skipLibCheck",
+    "webBuild": "build Task (web-mobile) Finished; CLI exit 36 is the known extension-manager ECONNRESET after successful output",
+    "browserConsoleErrors": []
+  },
+  "boundary": "The H13 base projectile and its source-exact low-layer impact Spine are closed for the matched 4.010-second sub-baseline. The original displays 27 damage while the reconstruction displays 23 because account-derived attack growth is still unmatched. Battle gear glow, shadow, sorting and animation comparison remain pending."
+}

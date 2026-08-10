@@ -26,14 +26,15 @@ also reproduces all displayed production rates without overrides.
 
 ## Remaining presentation work
 
-1. Bind or reconstruct the exact trait title ribbon, card shell, pictograms and
-   decorated action buttons from the original package.
+1. Finish inline colored spans and minor font-metric calibration in the trait
+   descriptions. Original ribbon/card/button/pictogram art is now bound; see
+   `../2026-08-09-trait-package/visual-comparison.md`.
 2. Tighten backpack panel, grid and control geometry against normalized viewport
    coordinates; the semantic topology is now fixed, so geometry can be compared
    without random-state noise.
-3. Correct the battle-only capture's missing top HUD and capture at a matched
-   elapsed-time/RNG event boundary. The current battle image proves the real wave
-   and developed board, but is not a pixel-equivalent moment.
+3. Capture at a matched elapsed-time/RNG event boundary. The current battle image
+   already contains the reconstructed HUD; the absent white strip is the excluded
+   WeChat host header, not a missing in-game component.
 
 These are presentation/timing differences. The account state, gear identities,
 home-HP rule, connectivity, rates and visible trait selection are no longer blockers.

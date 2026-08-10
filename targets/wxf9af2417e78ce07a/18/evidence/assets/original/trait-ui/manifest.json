@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0",
+  "capturedAt": "2026-08-09",
+  "target": "wxf9af2417e78ce07a/18",
+  "authorization": "user-approved reconstruction evidence",
+  "remoteBase": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote",
+  "resources": [
+    {
+      "file": "resources2.config.f7a66.json",
+      "url": "resources2/config.f7a66.json",
+      "sha256": "204c5283a78dff38c7ff9442714ac93b72bbaef15d26c30b7cc8fb4da7c98ae0"
+    },
+    {
+      "file": "bagLikeBuff.5583a.bin",
+      "path": "ui/bagLikeBuff",
+      "uuid": "80b5e7ae-23be-4043-95a1-40cda31efe36",
+      "nativeVersion": "5583a",
+      "sha256": "c3854661cfc41cd6baff45b34ab6704de27aa69f56bede930a8f24a727357fb0"
+    },
+    {
+      "file": "bagLikeBuff_0.d9605.png",
+      "path": "ui/bagLikeBuff_0",
+      "uuid": "318d4166-b800-4575-b989-c9175e57043f",
+      "nativeVersion": "d9605",
+      "dimensions": "867x102",
+      "sha256": "ccedad53e60b2fedc1ead7555e880bf3c67b5ee20389e8e6878d94a6800e0c29"
+    },
+    {
+      "file": "effect.56054.png",
+      "path": "image/effect",
+      "uuid": "7f2cc19b-e5f8-47e5-9938-388d0d437af0",
+      "nativeVersion": "56054",
+      "dimensions": "1024x496",
+      "sha256": "da0f386f4f2202cb0eef59dc7517716e6d5a580a9ce6b6be859b6b4cb599a3d6"
+    }
+  ],
+  "decoded": {
+    "package": "bagLikeBuff",
+    "packageId": "yrcuvub6",
+    "designResolution": "750x1334",
+    "components": 6,
+    "images": 4,
+    "layout": "bagLikeBuff.layout.json",
+    "capturedTraitFrames": {
+      "RG_ALL_abl13_eff01": "buff_0027",
+      "RG_H02_abl02_eff01": "buff_0036",
+      "RG_H03_abl02_eff01": "buff_0006"
+    }
+  }
+}

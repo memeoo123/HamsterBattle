@@ -39,6 +39,9 @@ $levelRows = @($levels | Sort-Object id | ForEach-Object {
         goldMultiple = [int]$_.goldMultiple
         recommendHeroIds = @($_.recommendHeroIds)
         roundIds = @($_.roundIds)
+        initRewards = if ($null -eq $_.initRewards) { $null } else { @($_.initRewards) }
+        staticBuffs = if ($null -eq $_.staticBuffs) { $null } else { @($_.staticBuffs) }
+        staticBricks = if ($null -eq $_.staticBricks) { $null } else { @($_.staticBricks) }
     }
 })
 
@@ -54,6 +57,7 @@ foreach ($round in ($rounds | Sort-Object id)) {
         monsterIds = @($round.monsterIds)
         atkMultiple = [int]$round.atkMultiple
         hpMultiple = [int]$round.hpMultiple
+        coinRewards = if ($null -eq $round.coinRewards) { $null } else { @($round.coinRewards) }
     }
 }
 
@@ -81,7 +85,7 @@ foreach ($hero in $heroes) {
 }
 
 $payload = [ordered]@{
-    version = 1
+    version = 2
     source = "wxf9af2417e78ce07a/18"
     levelCount = $levelRows.Count
     roundCount = $roundRows.Count

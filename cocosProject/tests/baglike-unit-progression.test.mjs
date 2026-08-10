@@ -5,6 +5,7 @@ import { dirname, resolve } from 'node:path';
 import {
     bagLikeHeroBaseHpAtStar,
     bagLikeProducerProfile,
+    bagLikeProducerShape,
     bagLikeWheelHomeHpContribution,
 } from '../assets/scripts/BagLikeUnitProgression.ts';
 
@@ -20,6 +21,12 @@ const hamsterFamilies = {
     H02: 'js_sheshou',
     H03: 'js_fashi',
     H04: 'js_qishi',
+};
+
+const mechanicsOnlyHamsterFamilies = {
+    H05: 'js_lieren',
+    H06: 'js_feixingyuan',
+    H16: 'js_konglong',
 };
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -48,7 +55,23 @@ for (const [family, modelName] of Object.entries(hamsterFamilies)) {
     }
 }
 
+for (const [family, modelName] of Object.entries(mechanicsOnlyHamsterFamilies)) {
+    for (let level = 1; level <= 4; level += 1) {
+        const gearId = `${family}0${level}`;
+        const profile = bagLikeProducerProfile(gearId);
+        check(profile?.heroId, family, `${gearId} keeps its recovered hero family`);
+        check(profile?.kind, 'hamster', `${gearId} creates a persistent hamster unit`);
+        check(profile?.attributeMultiple, expectedMultiples[level - 1], `${gearId} uses the recovered attribute multiple`);
+        check(profile?.sourceModelPath, `spine/hero/${modelName}_${level}/${modelName}_${level}`, `${gearId} keeps the decoded model path`);
+        check(profile?.modelScale, family === 'H16' ? (level === 4 ? 1 : 0.88) : (level === 4 ? 0.88 : 0.8), `${gearId} keeps the decoded model scale`);
+        check(profile?.primarySkillId, family === 'H05' ? 5001 : family === 'H06' ? 6001 : 11001, `${gearId} keeps its decoded primary skill`);
+    }
+}
+
 check(bagLikeProducerProfile('H0204')?.primarySkillId, 2002, 'level-4 archer switches to original skill 2002');
+check(bagLikeProducerShape('H0601'), [[0, 0], [0, 1], [1, 0], [1, 1]], 'H06 keeps its recovered 2x2 footprint');
+check(bagLikeProducerShape('H1404'), [[0, 1], [1, 0], [1, 1]], 'every H14 level keeps its recovered lower-right L footprint');
+check(bagLikeProducerShape('H1703'), [[0, 0], [0, 1], [0, 2]], 'H17 keeps its recovered horizontal-three footprint');
 
 const fusionModels = {
     H0705: ['H07', 'R1001', 'js_gangtiexia', 1.2, 8001],
@@ -68,7 +91,25 @@ for (const [gearId, [heroId, modelId, modelName, modelScale, primarySkillId]] of
     }
 }
 
-for (const family of ['H11', 'H12', 'H13']) {
+const mechanicsOnlyFusions = {
+    H1005: ['H10', 'hamster', 'R1004', 'H1005', 1.1, 10001, [[0, 0], [0, 1], [1, 0], [1, 1]]],
+    H1505: ['H15', 'wheel', null, 'H1505', null, 110001, [[0, 1], [1, 1]]],
+    H1805: ['H18', 'hamster', 'R1005', 'H1805', 1, 12001, [[0, 0], [0, 1], [1, 1]]],
+};
+for (const [gearId, [heroId, kind, modelId, headId, modelScale, primarySkillId, shape]] of Object.entries(mechanicsOnlyFusions)) {
+    const profile = bagLikeProducerProfile(gearId);
+    check(profile?.heroId, heroId, `${gearId} switches to its recovered fusion hero family`);
+    check(profile?.kind, kind, `${gearId} keeps its recovered producer kind`);
+    check(profile?.level, 5, `${gearId} remains a level-5 producer`);
+    check(profile?.attributeMultiple, 1, `${gearId} uses the recovered 10000 attribute multiple`);
+    check(profile?.modelId, modelId, `${gearId} keeps its decoded model identity`);
+    check(profile?.headId, headId, `${gearId} uses its exact configured head`);
+    check(profile?.modelScale, modelScale, `${gearId} keeps its decoded model scale`);
+    check(profile?.primarySkillId, primarySkillId, `${gearId} keeps its primary skill identity`);
+    check(bagLikeProducerShape(gearId), shape, `${gearId} keeps its decoded fusion footprint`);
+}
+
+for (const family of ['H11', 'H12', 'H13', 'H14', 'H17']) {
     for (let level = 1; level <= 4; level += 1) {
         const gearId = `${family}0${level}`;
         const profile = bagLikeProducerProfile(gearId);
@@ -80,6 +121,8 @@ for (const family of ['H11', 'H12', 'H13']) {
 }
 
 check(bagLikeProducerProfile('H1101')?.primarySkillId, 'ZL_1101', 'H11 uses the recovered healing skill identity');
+check(bagLikeProducerProfile('H1401')?.primarySkillId, 'SY_1401', 'H14 uses the recovered shark skill identity');
+check(bagLikeProducerProfile('H1701')?.primarySkillId, 'LS_1501', 'H17 uses the recovered laser skill identity');
 
 check(bagLikeHeroBaseHpAtStar(300, 1), 300, 'one-star H13 keeps its HeroConfig base HP');
 check(bagLikeHeroBaseHpAtStar(300, 3), 363, 'three-star H13 applies the recovered 21% star modifier');
@@ -95,8 +138,19 @@ check(
     330 + 220 + 544.5,
     'all restored wheel families apply their gear-level attribute multiplier',
 );
+check(
+    bagLikeWheelHomeHpContribution(['H1401', 'H1702'], { H14: 1, H17: 1 }),
+    280 + 480,
+    'late-game wheel families contribute their decoded base HP and gear multiplier',
+);
+check(
+    bagLikeWheelHomeHpContribution(['H1505'], { H15: 1 }),
+    1134,
+    'H1505 contributes its recovered WHEEL base HP to the home',
+);
 
 check(bagLikeProducerProfile('C0101'), null, 'coin gears do not create hero profiles');
+check(bagLikeProducerShape('C01'), null, 'non-producer gears do not invent a producer footprint');
 check(bagLikeProducerProfile('H0105'), null, 'same-family level 5 does not invent a profile');
 
 console.log(`baglike unit progression: ${assertions} assertions passed`);

@@ -3,9 +3,14 @@ export type CandidateGearId =
     | 'H0201' | 'H0202' | 'H0203'
     | 'H0301' | 'H0302' | 'H0303'
     | 'H0401' | 'H0402' | 'H0403'
+    | 'H0501' | 'H0502' | 'H0503'
+    | 'H0601' | 'H0602' | 'H0603'
     | 'H1101' | 'H1102' | 'H1103'
     | 'H1201' | 'H1202' | 'H1203'
     | 'H1301' | 'H1302' | 'H1303'
+    | 'H1401' | 'H1402' | 'H1403'
+    | 'H1601' | 'H1602' | 'H1603'
+    | 'H1701' | 'H1702' | 'H1703'
     | 'C01' | 'C02' | 'C03'
     | 'G01' | 'G02' | 'G03' | 'G04' | 'G05' | 'G06' | 'G07' | 'G08' | 'G09';
 
@@ -56,7 +61,10 @@ type WeightedEntry<T> = {
     weight: number;
 };
 
-const HERO_FAMILIES = ['H01', 'H02', 'H03', 'H04', 'H11', 'H12', 'H13'] as const;
+const HERO_FAMILIES = [
+    'H01', 'H02', 'H03', 'H04', 'H05', 'H06',
+    'H11', 'H12', 'H13', 'H14', 'H16', 'H17',
+] as const;
 const COIN_REWARD_WEIGHT_MULTIPLIERS = [
     10000, 8000, 5000, 3000, 2500, 2000, 1500, 1000,
     850, 700, 500, 300, 250, 200, 150, 100,
@@ -356,6 +364,35 @@ export type PlacedFootprint = {
 
 export function placementCells(shape: GridShape, row: number, col: number): Array<[number, number]> {
     return shape.map(([rowOffset, colOffset]) => [row + rowOffset, col + colOffset]);
+}
+
+export function gearDropHitsTarget(
+    shape: GridShape,
+    targetX: number,
+    targetY: number,
+    targetScale: number,
+    dropX: number,
+    dropY: number,
+    gridSize: number,
+): boolean {
+    const scale = Math.max(0, targetScale);
+    const cellRadius = gridSize * 0.46 * scale;
+    const hitsOccupiedCell = shape.some(([rowOffset, colOffset]) => {
+        const cellX = targetX + colOffset * gridSize * scale;
+        const cellY = targetY - rowOffset * gridSize * scale;
+        return Math.abs(dropX - cellX) <= cellRadius && Math.abs(dropY - cellY) <= cellRadius;
+    });
+    if (hitsOccupiedCell || shape.length === 0) return hitsOccupiedCell;
+
+    // Irregular pieces render their portrait at the footprint centre. For an L
+    // shape that point can lie in the gap between occupied-cell hit boxes, so a
+    // visually centred drop would otherwise fail (level 8's H1401 shark).
+    const footprintRows = Math.max(...shape.map(([row]) => row)) + 1;
+    const footprintColumns = Math.max(...shape.map(([, column]) => column)) + 1;
+    const portraitX = targetX + (footprintColumns - 1) * gridSize * 0.5 * scale;
+    const portraitY = targetY - (footprintRows - 1) * gridSize * 0.5 * scale;
+    const portraitRadius = gridSize * 0.45 * scale;
+    return Math.abs(dropX - portraitX) <= portraitRadius && Math.abs(dropY - portraitY) <= portraitRadius;
 }
 
 export function placementAreaValid(

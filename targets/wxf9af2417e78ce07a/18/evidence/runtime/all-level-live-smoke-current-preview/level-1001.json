@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-09T07:55:13.053Z",
+  "levels": [
+    1001
+  ],
+  "scope": "Early/middle/late production Web smoke for data loading, shape-aware drag, direct core contact, wave-1 entry and live production work.",
+  "evidence": [
+    {
+      "levelId": 1001,
+      "preparation": {
+        "levelId": "1001",
+        "levelName": "宁静森林",
+        "phase": "deploy",
+        "round": "1",
+        "roundCount": "5",
+        "staticBatchCount": "8",
+        "selfHp": "500",
+        "maxHp": "500",
+        "gold": "0",
+        "failedAttempts": "0",
+        "candidateIds": "H0101",
+        "gearIds": "P01",
+        "gearRuntime": "P01#1@2,3:0.0",
+        "selfUnits": "0",
+        "selfSpawns": "0",
+        "powerClock": "2:0.082:0.000",
+        "powerContacts": "17",
+        "powerGearTriggers": "0",
+        "workerApplies": "0",
+        "powerMissingGear": "0",
+        "powerMissingConfig": "0",
+        "enemyUnits": "0"
+      },
+      "battle": {
+        "levelId": "1001",
+        "levelName": "宁静森林",
+        "phase": "battle",
+        "round": "1",
+        "roundCount": "5",
+        "staticBatchCount": "8",
+        "selfHp": "500",
+        "maxHp": "500",
+        "gold": "0",
+        "failedAttempts": "0",
+        "candidateIds": "",
+        "gearIds": "P01,H0101",
+        "gearRuntime": "P01#1@2,3:0.0;H0101#2@1,3:60.0",
+        "selfUnits": "0",
+        "selfSpawns": "0",
+        "powerClock": "0:0.267:0.000",
+        "powerContacts": "47",
+        "powerGearTriggers": "6",
+        "workerApplies": "6",
+        "powerMissingGear": "0",
+        "powerMissingConfig": "0",
+        "enemyUnits": "1"
+      }
+    }
+  ]
+}

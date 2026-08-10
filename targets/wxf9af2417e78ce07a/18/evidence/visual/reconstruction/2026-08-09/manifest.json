@@ -9,7 +9,7 @@
     "designResolution": "750x1334"
   },
   "matchedBaselineStatus": "partial",
-  "matchedBaselineReason": "The developed fixture now matches the original account/layout semantics: H13 star 3, 863 max home HP, H13/H03/H02 gear identities and footprints, four-side connectivity, all four displayed rates, the coin candidate, trait level 2, and the exact three trait choices. Component geometry and several package-art details still differ, and the battle capture is not synchronized to the original event timestamp.",
+  "matchedBaselineReason": "The developed fixture matches the original account/layout semantics. A later fresh-build capture additionally binds the recovered bagLikeBuff component atlas, common button art and exact three effect pictograms; see ../2026-08-09-trait-package/manifest.json. Minor typography, preparation geometry and synchronized battle timing remain.",
   "images": [
     {
       "file": "developed-preparation.png",
@@ -40,8 +40,8 @@
     }
   ],
   "remainingDifferences": [
-    "Preparation/backpack and trait component geometry still differs from the original package layout.",
-    "Exact original trait title ribbon, card shell, ability pictograms and button decorations are not yet bound.",
-    "The battle capture requires a matched elapsed-time/RNG event trace and correction of the missing top HUD in the battle-only capture before it is a pixel baseline."
+    "Preparation/backpack geometry still differs from the original package layout.",
+    "Trait component art is now bound; inline colored description spans and minor font metrics remain.",
+    "The battle capture requires a matched elapsed-time/RNG event trace before it is a pixel baseline. The normalized reconstruction intentionally excludes the original WeChat host header."
   ]
 }

@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-09T04:33:30.022Z",
+  "assertionCount": 28,
+  "scope": "Candidate preparation and wave-1 production smoke; not full victory/defeat closure or original-game visual baseline.",
+  "evidence": [
+    {
+      "id": 1002,
+      "name": "密林深处",
+      "roundCount": 8,
+      "staticBatchCount": 3,
+      "preparation": {
+        "levelId": "1002",
+        "levelName": "密林深处",
+        "phase": "deploy",
+        "round": "1",
+        "roundCount": "8",
+        "staticBatchCount": "3"
+      },
+      "battle": {
+        "levelId": "1002",
+        "levelName": "密林深处",
+        "phase": "battle",
+        "round": "1",
+        "roundCount": "8",
+        "staticBatchCount": "3"
+      },
+      "captures": [
+        {
+          "file": "level-1002-preparation.png",
+          "bytes": 219566,
+          "sha256": "c1e90fac04622a0b41edcb2ae788122aaa6406c1d8bda5c7eecabe7d4f4f3caa"
+        },
+        {
+          "file": "level-1002-wave-1.png",
+          "bytes": 432936,
+          "sha256": "2e28ba5716ac3a4a9cdac959ad55f703fbcce4cc5e483ef3ed7325de92b765c3"
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "name": "荒漠边缘",
+      "roundCount": 10,
+      "staticBatchCount": 3,
+      "preparation": {
+        "levelId": "1003",
+        "levelName": "荒漠边缘",
+        "phase": "deploy",
+        "round": "1",
+        "roundCount": "10",
+        "staticBatchCount": "3"
+      },
+      "battle": {
+        "levelId": "1003",
+        "levelName": "荒漠边缘",
+        "phase": "battle",
+        "round": "1",
+        "roundCount": "10",
+        "staticBatchCount": "3"
+      },
+      "captures": [
+        {
+          "file": "level-1003-preparation.png",
+          "bytes": 144205,
+          "sha256": "c5cbe22c6438b484e027f4bd5710047c2c5fbdd8839559ba430bf8dd8f025c59"
+        },
+        {
+          "file": "level-1003-wave-1.png",
+          "bytes": 249432,
+          "sha256": "a5ce78e7a9ee1b55de6c2318f602d907b35711debf310be4e88b745ea7235a7a"
+        }
+      ]
+    }
+  ]
+}

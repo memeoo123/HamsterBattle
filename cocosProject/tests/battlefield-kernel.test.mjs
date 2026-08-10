@@ -15,6 +15,7 @@ import {
     attackIntervalSeconds,
     battlefieldDistance,
     defeatCompensation,
+    mechanicsFirstDefeatCompensation,
     EMPTY_COMBAT_ATTRIBUTES,
     heroSeparationVector,
     h02BarrageEffectiveShotDelays,
@@ -198,6 +199,10 @@ assert.equal(defeatCompensation(0), 1, 'initial attempt has no compensation');
 assert.equal(defeatCompensation(1), 0.95, 'first retry uses row 1');
 assert.equal(defeatCompensation(2), 0.9025, 'second retry uses row 2');
 assert.equal(defeatCompensation(99), 0.4633, 'retry compensation clamps at row 15');
+assert.equal(mechanicsFirstDefeatCompensation(3), 0.8574, 'mechanics-first assist preserves the first three recovered rows');
+assert.equal(mechanicsFirstDefeatCompensation(4), 0.8145 * 0.75, 'mechanics-first assist starts only after three failed attempts');
+assert.equal(mechanicsFirstDefeatCompensation(17), 0.01, 'mechanics-first assist reaches the one-percent floor after sustained late-level losses');
+assert.equal(mechanicsFirstDefeatCompensation(99), 0.01, 'mechanics-first assist guarantees a non-zero accessibility floor');
 
 const origin = { x: 0, y: 0 };
 const splitMainTarget = { uid: 1, x: 100, y: 0 };

@@ -1,0 +1,33 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "capturedAt": "2026-08-09",
+  "viewport": "750x1334",
+  "url": "http://127.0.0.1:18100/?levelId=1004&developedValidation=battle",
+  "reference": "../../../original/2026-08-01/battle-wave-1.png",
+  "reconstruction": "developed-battle-4.01s.png",
+  "fixture": {
+    "levelId": 1004,
+    "phase": "battle",
+    "round": 1,
+    "roundClock": 4.01,
+    "selfHp": 863,
+    "maxHp": 863,
+    "gearIds": ["P01", "H1301", "H0301", "H0202"],
+    "enemyRuntime": [
+      "M02#6@109.3,0.0",
+      "M02#8@229.3,-125.0",
+      "M07#9@259.3,125.0",
+      "M02#10@289.3,-45.0"
+    ],
+    "enemyUnits": 4,
+    "selfUnits": 0
+  },
+  "consoleErrors": [],
+  "notes": [
+    "The original 820x1542 screenshot includes an 88px WeChat host header; comparison uses the remaining game area normalized to 750px width.",
+    "The 100401 schedule spawns M02/M02/M07/M02 at 1.001/3.001/3.501/4.001 seconds; the fixture freezes immediately after the fourth spawn.",
+    "Enemy Y positions are screenshot-constrained deterministic fixture values because the source runtime uses unseeded Math.random for native spawn placement.",
+    "The fixture is browser-query-only and does not alter normal gameplay RNG or timing.",
+    "The backpack HP uses the recovered bagLike/xl_icon.png atlas frame at (439,374,32x27), positioned from the source HpShieldBar geometry."
+  ]
+}

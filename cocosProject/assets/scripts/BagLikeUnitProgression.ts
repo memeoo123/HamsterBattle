@@ -1,6 +1,10 @@
-export type BagLikeHeroFamilyId = 'H01' | 'H02' | 'H03' | 'H04' | 'H07' | 'H08' | 'H09' | 'H11' | 'H12' | 'H13';
+export type BagLikeHeroFamilyId =
+    | 'H01' | 'H02' | 'H03' | 'H04' | 'H05' | 'H06'
+    | 'H07' | 'H08' | 'H09'
+    | 'H10' | 'H11' | 'H12' | 'H13' | 'H14' | 'H15' | 'H16' | 'H17' | 'H18';
 export type BagLikeProducerKind = 'hamster' | 'wheel';
 export type BagLikePrimarySkillId = number | string;
+export type BagLikeGridShape = ReadonlyArray<readonly [number, number]>;
 
 export type BagLikeProducerProfile = {
     gearId: string;
@@ -18,13 +22,53 @@ export type BagLikeProducerProfile = {
 
 const LEVEL_ATTRIBUTE_MULTIPLES = [0, 1, 1.5, 2.25, 3.375] as const;
 
+// BagLikeShapeConfig IDs recovered for each producer family. Keeping these in
+// the pure runtime catalog lets both the Cocos interaction path and the 200-level
+// accessibility checks consume exactly the same footprints.
+const PRODUCER_SHAPES: Readonly<Record<BagLikeHeroFamilyId, BagLikeGridShape>> = {
+    H01: [[0, 0]],
+    H02: [[0, 0], [0, 1]],
+    H03: [[0, 0], [1, 0]],
+    H04: [[0, 0], [1, 0], [2, 0]],
+    H05: [[0, 0], [1, 0], [1, 1]],
+    H06: [[0, 0], [0, 1], [1, 0], [1, 1]],
+    H07: [[0, 0], [0, 1]],
+    H08: [[0, 0], [1, 0]],
+    H09: [[0, 0], [0, 1], [1, 0]],
+    H10: [[0, 0], [0, 1], [1, 0], [1, 1]],
+    H11: [[0, 0], [1, 0]],
+    H12: [[0, 0], [0, 1]],
+    H13: [[0, 0], [0, 1], [1, 0]],
+    H14: [[0, 1], [1, 0], [1, 1]],
+    H15: [[0, 1], [1, 1]],
+    H16: [[0, 0], [0, 1], [1, 1]],
+    H17: [[0, 0], [0, 1], [0, 2]],
+    H18: [[0, 0], [0, 1], [1, 1]],
+};
+
+export function bagLikeProducerShape(gearId: string): BagLikeGridShape | null {
+    const fusionFamily = gearId === 'H0705' ? 'H07'
+        : gearId === 'H0805' ? 'H08'
+        : gearId === 'H0905' ? 'H09'
+        : gearId === 'H1005' ? 'H10'
+        : gearId === 'H1505' ? 'H15'
+        : gearId === 'H1805' ? 'H18'
+        : null;
+    if (fusionFamily) return PRODUCER_SHAPES[fusionFamily];
+    const match = /^(H01|H02|H03|H04|H05|H06|H11|H12|H13|H14|H16|H17)0[1-4]$/.exec(gearId);
+    return match ? PRODUCER_SHAPES[match[1] as BagLikeHeroFamilyId] : null;
+}
+
 // hero.HeroConfig + hero.HeroStarConfig. The original HeroModel floors the
 // star-adjusted base attribute before BagLilkeManager applies the gear-level
 // multiplier. Only WHEEL heroes contribute to the player's home max HP.
-const WHEEL_BASE_HP: Readonly<Record<'H11' | 'H12' | 'H13', number>> = {
+const WHEEL_BASE_HP: Readonly<Record<'H11' | 'H12' | 'H13' | 'H14' | 'H15' | 'H17', number>> = {
     H11: 220,
     H12: 200,
     H13: 300,
+    H14: 280,
+    H15: 1134,
+    H17: 320,
 };
 
 const HERO_STAR_ATTRIBUTE_MODIFIERS = [
@@ -52,11 +96,14 @@ export function bagLikeWheelHomeHpContribution(
     return total;
 }
 
-const HAMSTER_MODEL_NAMES: Readonly<Record<'H01' | 'H02' | 'H03' | 'H04', string>> = {
+const HAMSTER_MODEL_NAMES: Readonly<Record<'H01' | 'H02' | 'H03' | 'H04' | 'H05' | 'H06' | 'H16', string>> = {
     H01: 'js_zhanshi',
     H02: 'js_sheshou',
     H03: 'js_fashi',
     H04: 'js_qishi',
+    H05: 'js_lieren',
+    H06: 'js_feixingyuan',
+    H16: 'js_konglong',
 };
 
 const PRIMARY_SKILLS: Readonly<Record<BagLikeHeroFamilyId, BagLikePrimarySkillId>> = {
@@ -64,12 +111,20 @@ const PRIMARY_SKILLS: Readonly<Record<BagLikeHeroFamilyId, BagLikePrimarySkillId
     H02: 2001,
     H03: 3001,
     H04: 4001,
+    H05: 5001,
+    H06: 6001,
     H07: 8001,
     H08: 7001,
     H09: 9001,
+    H10: 10001,
     H11: 'ZL_1101',
     H12: 'LY_1201',
     H13: 'TZ_1301',
+    H14: 'SY_1401',
+    H15: 110001,
+    H16: 11001,
+    H17: 'LS_1501',
+    H18: 12001,
 };
 
 export function bagLikeProducerProfile(gearId: string): BagLikeProducerProfile | null {
@@ -89,10 +144,25 @@ export function bagLikeProducerProfile(gearId: string): BagLikeProducerProfile |
             headId: 'H0905', modelId: 'R1003', sourceModelPath: 'spine/hero/js_zhanche/js_zhanche',
             spineResourcePath: 'spine/H0905/js_zhanche', modelScale: 1, primarySkillId: PRIMARY_SKILLS.H09,
         },
+        H1005: {
+            gearId: 'H1005', heroId: 'H10', level: 5, kind: 'hamster', attributeMultiple: 1,
+            headId: 'H1005', modelId: 'R1004', sourceModelPath: 'spine/hero/js_feidieshu/js_feidieshu',
+            spineResourcePath: null, modelScale: 1.1, primarySkillId: PRIMARY_SKILLS.H10,
+        },
+        H1505: {
+            gearId: 'H1505', heroId: 'H15', level: 5, kind: 'wheel', attributeMultiple: 1,
+            headId: 'H1505', modelId: null, sourceModelPath: null,
+            spineResourcePath: null, modelScale: null, primarySkillId: PRIMARY_SKILLS.H15,
+        },
+        H1805: {
+            gearId: 'H1805', heroId: 'H18', level: 5, kind: 'hamster', attributeMultiple: 1,
+            headId: 'H1805', modelId: 'R1005', sourceModelPath: 'spine/hero/js_gesila/js_gesila',
+            spineResourcePath: null, modelScale: 1, primarySkillId: PRIMARY_SKILLS.H18,
+        },
     };
     if (fusionProfiles[gearId]) return fusionProfiles[gearId];
 
-    const match = /^(H01|H02|H03|H04|H11|H12|H13)0([1-4])$/.exec(gearId);
+    const match = /^(H01|H02|H03|H04|H05|H06|H11|H12|H13|H14|H16|H17)0([1-4])$/.exec(gearId);
     if (!match) return null;
 
     const heroId = match[1] as BagLikeHeroFamilyId;
@@ -104,6 +174,11 @@ export function bagLikeProducerProfile(gearId: string): BagLikeProducerProfile |
     const kind: BagLikeProducerKind = hamsterModelName ? 'hamster' : 'wheel';
     const modelId = hamsterModelName ? gearId : null;
     const modelFile = hamsterModelName ? `${hamsterModelName}_${level}` : null;
+    const modelScale = modelFile
+        ? heroId === 'H16'
+            ? (level === 4 ? 1 : 0.88)
+            : (level === 4 ? 0.88 : 0.8)
+        : null;
 
     return {
         gearId,
@@ -115,7 +190,7 @@ export function bagLikeProducerProfile(gearId: string): BagLikeProducerProfile |
         modelId,
         sourceModelPath: modelFile ? `spine/hero/${modelFile}/${modelFile}` : null,
         spineResourcePath: modelFile ? `spine/${gearId}/${modelFile}` : null,
-        modelScale: modelFile ? (level === 4 ? 0.88 : 0.8) : null,
+        modelScale,
         primarySkillId: heroId === 'H02' && level === 4 ? 2002 : PRIMARY_SKILLS[heroId],
     };
 }

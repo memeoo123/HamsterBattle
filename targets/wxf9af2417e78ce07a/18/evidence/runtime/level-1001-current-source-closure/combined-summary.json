@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-09T09:07:23.867Z",
+  "levelId": 1001,
+  "continuousBrowserSession": true,
+  "segments": [
+    "manifest.json",
+    "../level-1001-current-source-closure-resumed/manifest.json"
+  ],
+  "lossesBeforeVictory": 6,
+  "highestRound": 5,
+  "won": true,
+  "finalFailedAttempts": 0,
+  "finalSelfHp": 569,
+  "finalMaxHp": 700,
+  "finalGold": 45,
+  "finalPowerGearTriggers": 879,
+  "finalWorkerApplications": 879,
+  "missingGear": 0,
+  "missingConfig": 0,
+  "runtimeErrors": [],
+  "stateOverrides": false
+}

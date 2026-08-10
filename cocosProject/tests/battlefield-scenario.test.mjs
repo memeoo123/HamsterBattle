@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
+    ACTIVE_BACKPACK_BACKGROUND_OFFSET_Y,
+    ACTIVE_BACKPACK_HP_OFFSET_Y,
+    ACTIVE_BACKPACK_PANEL_OFFSET_Y,
     battlefieldLayoutForPhase,
     DEPLOY_CANDIDATE_Y,
     DEPLOY_GRID_OFFSET_Y,
@@ -40,6 +43,14 @@ assert.equal(battle.showBackpack, true, 'the original backpack remains visible d
 assert.equal(battle.showPreparationControls, false);
 assert.ok(battle.battleHeight > deploy.battleHeight, 'the battlefield expands when battle starts');
 assert.ok(battle.gridOffsetY < deploy.gridOffsetY, 'the backpack moves below the expanded battlefield');
+assert.equal(battle.backpackBackgroundOffsetY, ACTIVE_BACKPACK_BACKGROUND_OFFSET_Y);
+assert.equal(battle.backpackPanelOffsetY, ACTIVE_BACKPACK_PANEL_OFFSET_Y);
+assert.equal(battle.backpackHpOffsetY, ACTIVE_BACKPACK_HP_OFFSET_Y);
+assert.deepEqual(
+    [battle.backpackBackgroundOffsetY, battle.backpackPanelOffsetY, battle.backpackHpOffsetY],
+    [34, 7, 17],
+    'battle-only source pivots align the background, panel, and HP bar without moving the matched gear grid',
+);
 assert.deepEqual(trait, battle, 'trait selection pauses over the active battlefield without collapsing the backpack');
 
 assert.equal(expTargetForLevel(1), 20);
@@ -63,4 +74,4 @@ assert.deepEqual(CAPTURED_LEVEL_2_TRAITS, [
 assert.equal(TRAIT_REROLL_MAX, 10);
 assert.equal(TRAIT_TAKE_ALL_MAX, 3);
 
-console.log('battlefield scenario: 28 assertions passed');
+console.log('battlefield scenario: 32 assertions passed');

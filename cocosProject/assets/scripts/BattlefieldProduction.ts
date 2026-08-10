@@ -5,6 +5,14 @@ export const POWER_QUARTER_LAP_SECONDS = POWER_LAP_SECONDS / 4;
 export const WORKER_COMPLETE_ANIMATION_SECONDS = 0.25;
 export const HAMSTER_SPAWN_FLIGHT_SECONDS = 0.5;
 export const BATTLE_SPEED_UP_MULTIPLE = 1.5;
+// POWER:INIT_DATA equips P01 at star 0. P01_SKILL_S0 is a ROUND_START
+// PRODUCTIVITY effect with param 1000 for 5000 ms.
+export const P01_ROUND_START_PRODUCTIVITY_BASIS_POINTS = 1000;
+export const P01_ROUND_START_PRODUCTIVITY_SECONDS = 5;
+
+export function p01RoundStartProductivity(remainingSeconds: number): number {
+    return remainingSeconds > 0 ? 1 + P01_ROUND_START_PRODUCTIVITY_BASIS_POINTS / 10000 : 1;
+}
 
 export type PowerCoreClockState = {
     nextDirection: 0 | 1 | 2 | 3;
@@ -23,6 +31,7 @@ export function advancePowerCoreClock(
     state: PowerCoreClockState,
     elapsedSeconds: number,
     occupiedAtDirection: (direction: 0 | 1 | 2 | 3) => boolean,
+    productivity = 1,
 ): { state: PowerCoreClockState; contacts: PowerCoreContact[] } {
     let nextDirection = state.nextDirection;
     let remainingSeconds = state.remainingSeconds - Math.max(0, elapsedSeconds);
@@ -31,8 +40,9 @@ export function advancePowerCoreClock(
         const occupied = occupiedAtDirection(nextDirection);
         contacts.push({ direction: nextDirection, occupied });
         nextDirection = ((nextDirection + 1) % 4) as 0 | 1 | 2 | 3;
-        remainingSeconds += POWER_QUARTER_LAP_SECONDS
-            + (occupied ? POWER_CONTACT_DELAY_SECONDS : 0);
+        const safeProductivity = productivity > 0 ? productivity : 1;
+        remainingSeconds += (POWER_QUARTER_LAP_SECONDS
+            + (occupied ? POWER_CONTACT_DELAY_SECONDS : 0)) / safeProductivity;
     }
     return { state: { nextDirection, remainingSeconds }, contacts };
 }
@@ -212,5 +222,8 @@ export function connectedGearUidsAtCoreSide(
             }
         }
     }
-    return [...result];
+    // Creator 3.8.8's release Babel target lowers `[...set]` to
+    // `[].concat(set)`, producing `[Set]` instead of numeric UIDs. Array.from
+    // preserves the iterable semantics in both Node tests and Web builds.
+    return Array.from(result);
 }

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "capturedAt": "2026-08-09",
+  "source": "Fresh Cocos Creator 3.8.8 web-mobile build captured through Chrome DevTools at an emulated 750x1334 viewport",
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "packageVersion": "18",
+    "levelId": 1004,
+    "fixture": "developedValidation=trait"
+  },
+  "image": {
+    "file": "developed-trait.png",
+    "resolution": "750x1334",
+    "sha256": "e0ec96ca2577b43b0957942ee2b2ef096d423a4a09c4dde497df98fddccb1538"
+  },
+  "runtime": {
+    "consoleErrors": [],
+    "build": "Cocos Creator logged build Task (web-mobile) Finished; known CLI exit code 36"
+  },
+  "matched": [
+    "original title ribbon art and normalized geometry",
+    "172x477 card shells and three-card spacing",
+    "purple description panels",
+    "original recommendation flags",
+    "original buff_0027, buff_0036 and buff_0006 pictograms",
+    "original blue/purple action button skins and play icons",
+    "separate remaining-count labels and action hints"
+  ],
+  "remaining": [
+    "inline green/purple emphasis within trait descriptions",
+    "minor font metrics and line-break calibration",
+    "a synchronized battle elapsed-time/RNG frame",
+    "remaining preparation/backpack geometry polish"
+  ],
+  "visualBaseline": "pending"
+}

@@ -1,0 +1,7813 @@
+{
+  "schemaVersion": 1,
+  "target": "wxf9af2417e78ce07a/18",
+  "sourceDigest": "af61a6f7360f4e0d70eb398709c9043eb47903d62df7d55c9cebd5a2b69add62",
+  "capabilityDigest": "2b8ea09eda818f63ea21560487a614b5e7d56e2b4dc0e6bfc3a95a025fee0741",
+  "summary": {
+    "totalLevels": 200,
+    "totalRounds": 2978,
+    "totalScheduledSpawns": 54816,
+    "verifiedPlayableLevels": 200,
+    "runtimeReadyUnverifiedLevels": 0,
+    "blockedLevels": 0,
+    "levelsWithAllEnemyModels": 200,
+    "levelsWithBackgroundAsset": 200,
+    "levelsWithPreparationConfig": 200,
+    "levelsWithSupportedRecommendations": 200,
+    "uniqueBackgrounds": 4,
+    "missingBackgrounds": 0,
+    "uniqueEnemyModels": 25,
+    "missingEnemyModels": 0,
+    "uniqueRecommendedHeroFamilies": 12,
+    "missingRecommendedHeroFamilies": 0,
+    "missingPreparationLevels": 0
+  },
+  "dependencyCatalog": {
+    "backgrounds": [
+      {
+        "id": "fightscene_01",
+        "usedByLevelCount": 80,
+        "status": "implemented"
+      },
+      {
+        "id": "fightscene_02",
+        "usedByLevelCount": 40,
+        "status": "implemented"
+      },
+      {
+        "id": "fightscene_03",
+        "usedByLevelCount": 40,
+        "status": "implemented"
+      },
+      {
+        "id": "fightscene_04",
+        "usedByLevelCount": 40,
+        "status": "implemented"
+      }
+    ],
+    "enemies": [
+      {
+        "id": "M02",
+        "name": "云云猪",
+        "usedByLevelCount": 83,
+        "status": "implemented"
+      },
+      {
+        "id": "Boss02",
+        "name": "精英云云猪",
+        "usedByLevelCount": 82,
+        "status": "implemented"
+      },
+      {
+        "id": "M12",
+        "name": "先锋狼",
+        "usedByLevelCount": 79,
+        "status": "implemented"
+      },
+      {
+        "id": "M03",
+        "name": "僵僵猫",
+        "usedByLevelCount": 70,
+        "status": "implemented"
+      },
+      {
+        "id": "Boss03",
+        "name": "精英僵僵猫",
+        "usedByLevelCount": 68,
+        "status": "implemented"
+      },
+      {
+        "id": "Boss07",
+        "name": "精英鬼鬼羊",
+        "usedByLevelCount": 68,
+        "status": "implemented"
+      },
+      {
+        "id": "B03",
+        "name": "冰岩国王",
+        "usedByLevelCount": 52,
+        "status": "implemented"
+      },
+      {
+        "id": "M04",
+        "name": "冰坨坨",
+        "usedByLevelCount": 52,
+        "status": "implemented"
+      },
+      {
+        "id": "M13",
+        "name": "爆爆虫",
+        "usedByLevelCount": 52,
+        "status": "implemented"
+      },
+      {
+        "id": "Boss01",
+        "name": "巨型莱莱姆",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "Boss09",
+        "name": "巨型恶魔犬",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "Boss10",
+        "name": "精英脏脏蛇",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "Boss11",
+        "name": "精英海马狼",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "Boss14",
+        "name": "巨型厄厄怪",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "M01",
+        "name": "莱莱姆",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "M05",
+        "name": "火火炉",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "M09",
+        "name": "恶魔犬",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "M10",
+        "name": "脏脏蛇",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "M11",
+        "name": "海马狼",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "B01",
+        "name": "大恶魔",
+        "usedByLevelCount": 26,
+        "status": "implemented"
+      },
+      {
+        "id": "Boss06",
+        "name": "精英冰冰狗",
+        "usedByLevelCount": 26,
+        "status": "implemented"
+      },
+      {
+        "id": "M06",
+        "name": "冰冰狗",
+        "usedByLevelCount": 26,
+        "status": "implemented"
+      },
+      {
+        "id": "M14",
+        "name": "厄厄怪",
+        "usedByLevelCount": 26,
+        "status": "implemented"
+      },
+      {
+        "id": "M07",
+        "name": "鬼鬼羊",
+        "usedByLevelCount": 15,
+        "status": "implemented"
+      },
+      {
+        "id": "B02",
+        "name": "惊乍怪",
+        "usedByLevelCount": 13,
+        "status": "implemented"
+      }
+    ],
+    "recommendedHeroFamilies": [
+      {
+        "id": "H01",
+        "name": "仓鼠战士",
+        "usedByLevelCount": 41,
+        "status": "implemented"
+      },
+      {
+        "id": "H03",
+        "name": "仓鼠法师",
+        "usedByLevelCount": 41,
+        "status": "implemented"
+      },
+      {
+        "id": "H05",
+        "name": "仓鼠召唤师",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "H06",
+        "name": "仓鼠飞行员",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "H16",
+        "name": "仓鼠怪兽",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "H17",
+        "name": "镭射齿轮",
+        "usedByLevelCount": 39,
+        "status": "implemented"
+      },
+      {
+        "id": "H02",
+        "name": "仓鼠射手",
+        "usedByLevelCount": 28,
+        "status": "implemented"
+      },
+      {
+        "id": "H11",
+        "name": "治疗齿轮",
+        "usedByLevelCount": 28,
+        "status": "implemented"
+      },
+      {
+        "id": "H12",
+        "name": "雷云齿轮",
+        "usedByLevelCount": 28,
+        "status": "implemented"
+      },
+      {
+        "id": "H13",
+        "name": "火炮齿轮",
+        "usedByLevelCount": 27,
+        "status": "implemented"
+      },
+      {
+        "id": "H04",
+        "name": "仓鼠骑士",
+        "usedByLevelCount": 26,
+        "status": "implemented"
+      },
+      {
+        "id": "H14",
+        "name": "鲨鱼齿轮",
+        "usedByLevelCount": 26,
+        "status": "implemented"
+      }
+    ],
+    "preparation": {
+      "mode": "generic-table-driven",
+      "implementedLevelIds": [
+        1001,
+        1002,
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009,
+        1010,
+        1011,
+        1012,
+        1013,
+        1014,
+        1015,
+        1016,
+        1017,
+        1018,
+        1019,
+        1020,
+        1021,
+        1022,
+        1023,
+        1024,
+        1025,
+        1026,
+        1027,
+        1028,
+        1029,
+        1030,
+        1031,
+        1032,
+        1033,
+        1034,
+        1035,
+        1036,
+        1037,
+        1038,
+        1039,
+        1040,
+        1041,
+        1042,
+        1043,
+        1044,
+        1045,
+        1046,
+        1047,
+        1048,
+        1049,
+        1050,
+        1051,
+        1052,
+        1053,
+        1054,
+        1055,
+        1056,
+        1057,
+        1058,
+        1059,
+        1060,
+        1061,
+        1062,
+        1063,
+        1064,
+        1065,
+        1066,
+        1067,
+        1068,
+        1069,
+        1070,
+        1071,
+        1072,
+        1073,
+        1074,
+        1075,
+        1076,
+        1077,
+        1078,
+        1079,
+        1080,
+        1081,
+        1082,
+        1083,
+        1084,
+        1085,
+        1086,
+        1087,
+        1088,
+        1089,
+        1090,
+        1091,
+        1092,
+        1093,
+        1094,
+        1095,
+        1096,
+        1097,
+        1098,
+        1099,
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107,
+        1108,
+        1109,
+        1110,
+        1111,
+        1112,
+        1113,
+        1114,
+        1115,
+        1116,
+        1117,
+        1118,
+        1119,
+        1120,
+        1121,
+        1122,
+        1123,
+        1124,
+        1125,
+        1126,
+        1127,
+        1128,
+        1129,
+        1130,
+        1131,
+        1132,
+        1133,
+        1134,
+        1135,
+        1136,
+        1137,
+        1138,
+        1139,
+        1140,
+        1141,
+        1142,
+        1143,
+        1144,
+        1145,
+        1146,
+        1147,
+        1148,
+        1149,
+        1150,
+        1151,
+        1152,
+        1153,
+        1154,
+        1155,
+        1156,
+        1157,
+        1158,
+        1159,
+        1160,
+        1161,
+        1162,
+        1163,
+        1164,
+        1165,
+        1166,
+        1167,
+        1168,
+        1169,
+        1170,
+        1171,
+        1172,
+        1173,
+        1174,
+        1175,
+        1176,
+        1177,
+        1178,
+        1179,
+        1180,
+        1181,
+        1182,
+        1183,
+        1184,
+        1185,
+        1186,
+        1187,
+        1188,
+        1189,
+        1190,
+        1191,
+        1192,
+        1193,
+        1194,
+        1195,
+        1196,
+        1197,
+        1198,
+        1199,
+        1200
+      ],
+      "missingLevelIds": [],
+      "note": "All levels consume recovered staticBricks/initRewards and per-round coinRewards through the shared runtime path."
+    }
+  },
+  "levels": [
+    {
+      "id": 1001,
+      "chapter": 1,
+      "name": "宁静森林",
+      "roundCount": 5,
+      "scheduledSpawnCount": 45,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss03",
+        "M02",
+        "M03"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1002,
+      "chapter": 2,
+      "name": "密林深处",
+      "roundCount": 8,
+      "scheduledSpawnCount": 134,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "M02",
+        "M03"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1003,
+      "chapter": 3,
+      "name": "荒漠边缘",
+      "roundCount": 10,
+      "scheduledSpawnCount": 166,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H04"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1004,
+      "chapter": 4,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1005,
+      "chapter": 5,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1006,
+      "chapter": 6,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 215,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H11",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1007,
+      "chapter": 7,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 218,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1008,
+      "chapter": 8,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1009,
+      "chapter": 9,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1010,
+      "chapter": 10,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1011,
+      "chapter": 11,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1012,
+      "chapter": 12,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1013,
+      "chapter": 13,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1014,
+      "chapter": 14,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1015,
+      "chapter": 15,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1016,
+      "chapter": 16,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1017,
+      "chapter": 17,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1018,
+      "chapter": 18,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1019,
+      "chapter": 19,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1020,
+      "chapter": 20,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1021,
+      "chapter": 21,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1022,
+      "chapter": 22,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1023,
+      "chapter": 23,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1024,
+      "chapter": 24,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1025,
+      "chapter": 25,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1026,
+      "chapter": 26,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1027,
+      "chapter": 27,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1028,
+      "chapter": 28,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1029,
+      "chapter": 29,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1030,
+      "chapter": 30,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1031,
+      "chapter": 31,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1032,
+      "chapter": 32,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1033,
+      "chapter": 33,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1034,
+      "chapter": 34,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1035,
+      "chapter": 35,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1036,
+      "chapter": 36,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1037,
+      "chapter": 37,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1038,
+      "chapter": 38,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1039,
+      "chapter": 39,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1040,
+      "chapter": 40,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1041,
+      "chapter": 41,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1042,
+      "chapter": 42,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1043,
+      "chapter": 43,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1044,
+      "chapter": 44,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1045,
+      "chapter": 45,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1046,
+      "chapter": 46,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1047,
+      "chapter": 47,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1048,
+      "chapter": 48,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1049,
+      "chapter": 49,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1050,
+      "chapter": 50,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1051,
+      "chapter": 51,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1052,
+      "chapter": 52,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1053,
+      "chapter": 53,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1054,
+      "chapter": 54,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1055,
+      "chapter": 55,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1056,
+      "chapter": 56,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1057,
+      "chapter": 57,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1058,
+      "chapter": 58,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1059,
+      "chapter": 59,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1060,
+      "chapter": 60,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1061,
+      "chapter": 61,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1062,
+      "chapter": 62,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1063,
+      "chapter": 63,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1064,
+      "chapter": 64,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1065,
+      "chapter": 65,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1066,
+      "chapter": 66,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1067,
+      "chapter": 67,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1068,
+      "chapter": 68,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1069,
+      "chapter": 69,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1070,
+      "chapter": 70,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1071,
+      "chapter": 71,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1072,
+      "chapter": 72,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1073,
+      "chapter": 73,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1074,
+      "chapter": 74,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1075,
+      "chapter": 75,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1076,
+      "chapter": 76,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1077,
+      "chapter": 77,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1078,
+      "chapter": 78,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1079,
+      "chapter": 79,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1080,
+      "chapter": 80,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1081,
+      "chapter": 81,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1082,
+      "chapter": 82,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1083,
+      "chapter": 83,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1084,
+      "chapter": 84,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1085,
+      "chapter": 85,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1086,
+      "chapter": 86,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1087,
+      "chapter": 87,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1088,
+      "chapter": 88,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1089,
+      "chapter": 89,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1090,
+      "chapter": 90,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1091,
+      "chapter": 91,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1092,
+      "chapter": 92,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1093,
+      "chapter": 93,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1094,
+      "chapter": 94,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1095,
+      "chapter": 95,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1096,
+      "chapter": 96,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1097,
+      "chapter": 97,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1098,
+      "chapter": 98,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1099,
+      "chapter": 99,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1100,
+      "chapter": 100,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1101,
+      "chapter": 101,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1102,
+      "chapter": 102,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1103,
+      "chapter": 103,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1104,
+      "chapter": 104,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1105,
+      "chapter": 105,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1106,
+      "chapter": 106,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1107,
+      "chapter": 107,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1108,
+      "chapter": 108,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1109,
+      "chapter": 109,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1110,
+      "chapter": 110,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1111,
+      "chapter": 111,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1112,
+      "chapter": 112,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1113,
+      "chapter": 113,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1114,
+      "chapter": 114,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1115,
+      "chapter": 115,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1116,
+      "chapter": 116,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1117,
+      "chapter": 117,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1118,
+      "chapter": 118,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1119,
+      "chapter": 119,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1120,
+      "chapter": 120,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1121,
+      "chapter": 121,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1122,
+      "chapter": 122,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1123,
+      "chapter": 123,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1124,
+      "chapter": 124,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1125,
+      "chapter": 125,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1126,
+      "chapter": 126,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1127,
+      "chapter": 127,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1128,
+      "chapter": 128,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1129,
+      "chapter": 129,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1130,
+      "chapter": 130,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1131,
+      "chapter": 131,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1132,
+      "chapter": 132,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1133,
+      "chapter": 133,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1134,
+      "chapter": 134,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1135,
+      "chapter": 135,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1136,
+      "chapter": 136,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1137,
+      "chapter": 137,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1138,
+      "chapter": 138,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1139,
+      "chapter": 139,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1140,
+      "chapter": 140,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1141,
+      "chapter": 141,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1142,
+      "chapter": 142,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1143,
+      "chapter": 143,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1144,
+      "chapter": 144,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1145,
+      "chapter": 145,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1146,
+      "chapter": 146,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1147,
+      "chapter": 147,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1148,
+      "chapter": 148,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1149,
+      "chapter": 149,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1150,
+      "chapter": 150,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1151,
+      "chapter": 151,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1152,
+      "chapter": 152,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1153,
+      "chapter": 153,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1154,
+      "chapter": 154,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1155,
+      "chapter": 155,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1156,
+      "chapter": 156,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1157,
+      "chapter": 157,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1158,
+      "chapter": 158,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1159,
+      "chapter": 159,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1160,
+      "chapter": 160,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1161,
+      "chapter": 161,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1162,
+      "chapter": 162,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1163,
+      "chapter": 163,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1164,
+      "chapter": 164,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1165,
+      "chapter": 165,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1166,
+      "chapter": 166,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1167,
+      "chapter": 167,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1168,
+      "chapter": 168,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1169,
+      "chapter": 169,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1170,
+      "chapter": 170,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1171,
+      "chapter": 171,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1172,
+      "chapter": 172,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1173,
+      "chapter": 173,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1174,
+      "chapter": 174,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1175,
+      "chapter": 175,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1176,
+      "chapter": 176,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1177,
+      "chapter": 177,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1178,
+      "chapter": 178,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1179,
+      "chapter": 179,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1180,
+      "chapter": 180,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1181,
+      "chapter": 181,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1182,
+      "chapter": 182,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1183,
+      "chapter": 183,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1184,
+      "chapter": 184,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1185,
+      "chapter": 185,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1186,
+      "chapter": 186,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss07",
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1187,
+      "chapter": 187,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss11",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H05"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1188,
+      "chapter": 188,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 291,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H12",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1189,
+      "chapter": 189,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 276,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B02",
+        "Boss01",
+        "Boss03",
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "recommendedHeroIds": [
+        "H13",
+        "H14"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1190,
+      "chapter": 190,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 290,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "B01",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M05",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H13"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1191,
+      "chapter": 191,
+      "name": "宁静森林",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B03",
+        "Boss02",
+        "Boss09",
+        "M02",
+        "M04",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H06"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1192,
+      "chapter": 192,
+      "name": "密林深处",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "B01",
+        "Boss06",
+        "Boss09",
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H02"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1193,
+      "chapter": 193,
+      "name": "荒漠边缘",
+      "roundCount": 15,
+      "scheduledSpawnCount": 249,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M05",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H11",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1194,
+      "chapter": 194,
+      "name": "荒漠沙地",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_03",
+      "monsterIds": [
+        "B03",
+        "Boss06",
+        "Boss14",
+        "M06",
+        "M12",
+        "M14"
+      ],
+      "recommendedHeroIds": [
+        "H01",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1195,
+      "chapter": 195,
+      "name": "雪山脚下",
+      "roundCount": 15,
+      "scheduledSpawnCount": 226,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "B03",
+        "Boss07",
+        "Boss14",
+        "M04",
+        "M12",
+        "M13"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H16"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1196,
+      "chapter": 196,
+      "name": "无尽雪山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_02",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss10",
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "recommendedHeroIds": [
+        "H06",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1197,
+      "chapter": 197,
+      "name": "青绿草原",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss01",
+        "Boss10",
+        "Boss11",
+        "M01",
+        "M10",
+        "M11"
+      ],
+      "recommendedHeroIds": [
+        "H04",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1198,
+      "chapter": 198,
+      "name": "草原咆哮",
+      "roundCount": 15,
+      "scheduledSpawnCount": 296,
+      "backgroundId": "fightscene_01",
+      "monsterIds": [
+        "Boss10",
+        "Boss11",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H05",
+        "H17"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1199,
+      "chapter": 199,
+      "name": "初见火山",
+      "roundCount": 15,
+      "scheduledSpawnCount": 321,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "recommendedHeroIds": [
+        "H03",
+        "H12"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    },
+    {
+      "id": 1200,
+      "chapter": 200,
+      "name": "火山熔岩",
+      "roundCount": 15,
+      "scheduledSpawnCount": 267,
+      "backgroundId": "fightscene_04",
+      "monsterIds": [
+        "Boss02",
+        "Boss03",
+        "Boss07",
+        "M02",
+        "M03",
+        "M12"
+      ],
+      "recommendedHeroIds": [
+        "H02",
+        "H11"
+      ],
+      "dependencies": {
+        "dataComplete": true,
+        "preparationReady": true,
+        "backgroundReady": true,
+        "enemiesReady": true,
+        "recommendationHeroesReady": true,
+        "preparationDataComplete": true,
+        "missingRoundIds": [],
+        "malformedRoundIds": [],
+        "unknownMonsterIds": [],
+        "missingEnemyModelIds": [],
+        "missingRecommendedHeroIds": []
+      },
+      "blockers": [],
+      "runtimeReady": true,
+      "verifiedPlayable": true,
+      "status": "verified-playable"
+    }
+  ]
+}

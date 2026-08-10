@@ -130,12 +130,16 @@ const boundsResult = await call('Runtime.evaluate', {
         const canvas = document.querySelector('canvas');
         if (!canvas) return null;
         const rect = canvas.getBoundingClientRect();
-        return { x: rect.x, y: rect.y, width: rect.width, height: rect.height };
+        return {
+            clip: { x: rect.x, y: rect.y, width: rect.width, height: rect.height },
+            dataset: { ...canvas.dataset },
+        };
     })()`,
     returnByValue: true,
 });
-const clip = boundsResult.result.value;
-if (!clip) throw new Error('Cocos preview canvas was not found');
+const captureState = boundsResult.result.value;
+if (!captureState) throw new Error('Cocos preview canvas was not found');
+const { clip, dataset } = captureState;
 const screenshot = await call('Page.captureScreenshot', {
     format: 'png',
     fromSurface: true,
@@ -143,4 +147,4 @@ const screenshot = await call('Page.captureScreenshot', {
 });
 writeFileSync(output, Buffer.from(screenshot.data, 'base64'));
 socket.close();
-console.log(JSON.stringify({ output, clip, consoleMessages }, null, 2));
+console.log(JSON.stringify({ output, clip, dataset, consoleMessages }, null, 2));

@@ -373,6 +373,19 @@ export function defeatCompensation(failedAttempts: number): number {
     return DEFEAT_MULTIPLIERS[Math.min(Math.floor(failedAttempts), DEFEAT_MULTIPLIERS.length) - 1];
 }
 
+/**
+ * Mechanics-first reconstruction assist. The first three retries retain the
+ * recovered table exactly. Afterwards an additional decay prevents a fresh,
+ * zero-progression reconstruction profile from becoming permanently stuck;
+ * the original table remains available through defeatCompensation().
+ */
+export function mechanicsFirstDefeatCompensation(failedAttempts: number): number {
+    const attempts = Math.max(0, Math.floor(Number.isFinite(failedAttempts) ? failedAttempts : 0));
+    const recovered = defeatCompensation(attempts);
+    if (attempts <= 3) return recovered;
+    return Math.max(0.01, recovered * Math.pow(0.75, attempts - 3));
+}
+
 export function battlefieldDistance(left: BattlefieldPoint, right: BattlefieldPoint): number {
     return Math.hypot(right.x - left.x, right.y - left.y);
 }

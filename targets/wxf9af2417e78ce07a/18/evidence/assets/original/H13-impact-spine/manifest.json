@@ -1,0 +1,40 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "sourceBundle": "resources3",
+  "skillId": "TZ_1301",
+  "behaviorId": "B_TZ_1301_2",
+  "modelId": "H13_S1_LOWER",
+  "effectLayer": "BgLayer",
+  "modelPath": "spine/skill/touzhi/baomihua_hill",
+  "action": "pskill01",
+  "spineVersion": "3.8.99",
+  "files": [
+    {
+      "name": "baomihua_hill.skel",
+      "compressedUuid": "111dngUEBKuamy4lcDrrwm",
+      "uuid": "11d5d9e0-5040-4ab9-a9b2-e25703aebc26",
+      "nativeVersion": "09605",
+      "bytes": 1410,
+      "sha256": "5332a7bc3e8f2e3306daf859b13c93dda6a9b30c4dd172a24a243b74cc076b3d"
+    },
+    {
+      "name": "baomihua_hill.atlas",
+      "compressedUuid": "e9miP2SslEYIeDaglpnIYY",
+      "uuid": "e99a23f6-4ac9-4460-8783-6a09699c8618",
+      "nativeVersion": "d5812",
+      "bytes": 1648,
+      "sha256": "5fb727f2a8ba4c5697c9c53a0dc3aa12408ec682763c438eeeae8d63463697e1"
+    },
+    {
+      "name": "baomihua_hill.png",
+      "compressedUuid": "f4daVY55JOxJcMFEmnbA4Z",
+      "uuid": "f475a558-e792-4ec4-970c-1449a76c0e19",
+      "nativeVersion": "0d429",
+      "bytes": 34830,
+      "sha256": "f8a3259565f55b2584ac52b3c96b03984ce11922302355bbbd9e5cc873cfaa5a"
+    }
+  ],
+  "atlasTexture": "baomihua_hill.png",
+  "nativeSize": [280, 288],
+  "provenance": "SkillConfig TZ_1301 launches M_TZ_1301_1. Its impact behavior B_TZ_1301_2 binds low-layer model H13_S1_LOWER while applying hurt; ModelConfig binds this exact Spine path and pskill01 action. SkillBehavior.showSkillEffect routes low models to BgLayer."
+}

@@ -192,6 +192,13 @@ function parseImageItem(reader, index, start, type, id, name) {
   };
 }
 
+function parseFontItem(reader, index, start, type, id, name) {
+  const rawLength = reader.u32();
+  const rawStart = reader.pos;
+  reader.skip(rawLength);
+  return { index, start, type, id, name, rawStart, rawLength };
+}
+
 function main() {
   const source = process.argv[2];
   const output = process.argv[3];
@@ -210,6 +217,7 @@ function main() {
     const name = reader.string();
     if (type === 3) items.push(parseComponentItem(reader, index, start, type, id, name));
     else if (type === 0) items.push(parseImageItem(reader, index, start, type, id, name));
+    else if (type === 5) items.push(parseFontItem(reader, index, start, type, id, name));
     else throw new Error(`unsupported package item type ${type} at index ${index}, offset ${start}`);
   }
   const itemsById = new Map(items.map((item) => [item.id, item]));
@@ -234,8 +242,10 @@ function main() {
     declaredItemCount: itemCount,
     parsedComponentCount: components.length,
     parsedImageCount: items.filter((item) => item.type === 0).length,
+    parsedFontCount: items.filter((item) => item.type === 5).length,
     limitation: 'Parses compact package component headers, image atlas records, and setup_beforeAdd child geometry. Controller, relation, gear, and transition tails remain unparsed.',
     images: items.filter((item) => item.type === 0),
+    fonts: items.filter((item) => item.type === 5),
     components,
   };
   fs.writeFileSync(output, `${JSON.stringify(result, null, 2)}\n`);

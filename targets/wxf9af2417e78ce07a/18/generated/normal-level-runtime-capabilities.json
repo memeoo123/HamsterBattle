@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "target": "wxf9af2417e78ce07a/18",
+  "purpose": "Evidence-backed implementation capability inventory used to gate normal levels.",
+  "sources": {
+    "levelData": "cocosProject/assets/resources/data/normal-levels.json",
+    "runtime": "cocosProject/assets/scripts/CangshuGame.ts + NormalLevelRuntime.ts",
+    "levelFlow": "cocosProject/assets/scripts/MainLevelFlow.ts",
+    "battlefieldState": "targets/wxf9af2417e78ce07a/18/BATTLEFIELD_RESTORE_STATE.json"
+  },
+  "implemented": {
+    "backgroundIds": [
+      "fightscene_01",
+      "fightscene_02",
+      "fightscene_03",
+      "fightscene_04"
+    ],
+    "enemyModelIds": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M07",
+      "M09",
+      "M10",
+      "M11",
+      "M12",
+      "M13",
+      "M14",
+      "Boss01",
+      "Boss02",
+      "Boss03",
+      "Boss06",
+      "Boss07",
+      "Boss09",
+      "Boss10",
+      "Boss11",
+      "Boss14",
+      "B01",
+      "B02",
+      "B03"
+    ],
+    "heroFamilyIds": [
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07",
+      "H08",
+      "H09",
+      "H11",
+      "H12",
+      "H13",
+      "H14",
+      "H16",
+      "H17"
+    ],
+    "genericPreparation": {
+      "enabled": true,
+      "coinItemId": 5,
+      "foreverStaticLevelIds": [
+        1001,
+        1002,
+        1006,
+        1007
+      ]
+    },
+    "verifiedPlayableLevelIds": [
+      1001,
+      1004
+    ],
+    "verifiedPlayableAllRecoveredLevels": true
+  },
+  "semantics": {
+    "background": "The fightscene ID is executable. fightscene_01/03 use imported originals; fightscene_02/04 intentionally fall back to fightscene_01 until presentation restoration.",
+    "enemyModel": "The enemy has a table-driven mechanics profile. Missing Spine art intentionally uses the runtime geometry fallback and remains presentation backlog.",
+    "heroFamily": "The family has a production candidate/gear/unit or level-5 fusion path. Recommendation support is informative and is not itself a hard runtime gate.",
+    "preparation": "The Cocos loader consumes each level's recovered staticBricks and each round's coinRewards. Static batches are selected only under the recovered first-challenge/forever-static condition; otherwise the shared dynamic draw path is used.",
+    "verifiedPlayable": "Every recovered level is intentionally exposed by MainLevelFlow and passes the all-level schedule/profile contract. This does not claim matched visual fidelity or default-account balance clearance."
+  }
+}

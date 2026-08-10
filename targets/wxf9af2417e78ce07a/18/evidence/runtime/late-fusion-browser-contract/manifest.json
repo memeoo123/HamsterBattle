@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-09T18:52:38+08:00",
+  "target": "wxf9af2417e78ce07a/18",
+  "build": "Cocos Creator 3.8.8 web-mobile debug build; build Task (web-mobile) Finished",
+  "fixture": "?fusionValidation=late-battle",
+  "command": "node tests/late-fusion-browser-contract.mjs http://127.0.0.1:19225 http://127.0.0.1:18100",
+  "assertions": 13,
+  "passed": true,
+  "state": {
+    "levelId": "1004",
+    "phase": "trait",
+    "gearIds": "P01,H1005,H1505,H1805",
+    "workerProgressBars": "H1005#5:1.000:visible;H1505#6:1.000:visible;H1805#7:1.000:visible",
+    "gearPortraits": "H1005#5:loaded;H1505#6:loaded;H1805#7:loaded",
+    "selfSpawns": 4,
+    "fusionActiveCasts": 1,
+    "fusionActiveHits": 2,
+    "h10PrimaryBulletCasts": 5,
+    "h10PrimaryBulletHits": 2,
+    "h15KillCoins": 0,
+    "h15RoundCoins": 0,
+    "powerContacts": 17,
+    "powerGearTriggers": 20,
+    "workerApplies": 20,
+    "powerMissingGear": 0,
+    "powerMissingConfig": 0
+  },
+  "errors": [],
+  "scope": "Functional mechanism evidence. The refreshed contract adds live H1005 fallback-BulletUnit cast/hit counters. H15 kill and round-end coin behaviors remain covered by pure logic assertions because this 20-second sample produced no H15 kill and had not completed a round. Original Spine and skill visuals remain presentation backlog."
+}

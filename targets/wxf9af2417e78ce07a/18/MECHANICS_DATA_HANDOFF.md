@@ -170,8 +170,9 @@ Updated: 2026-08-07
      → disposal → bullets(reverse) → end check, including same-frame spawn/bullet behavior.
    - Native spawn/jitter draws and the BattleManager `9301/49297/233280` seeded combat
      stream are separated and tested.
-   - Still recover the cross-scheduler tie between a due core `GameTimer` callback and a
-     due combat `BattleTimer` callback, plus simultaneous death/reward/EXP transitions.
+   - The common Timer/launcher source and bundled Cocos Scheduler now prove the
+     cross-scheduler tie: a due core `GameTimer` callback runs before a due combat
+     `BattleTimer` callback. Simultaneous death/reward/EXP transitions are also closed.
 4. **Persistence and edge cases**
    - Simultaneous deaths, pending hits after attacker/target removal, process-restart defeat
      count, and any modal phase that can interrupt a wave.

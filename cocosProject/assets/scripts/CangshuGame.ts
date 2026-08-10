@@ -51,6 +51,7 @@ import {
     H13ReplacementTraitId,
     H13SkillId,
     HeroAttackType,
+    mechanicsFirstDefeatCompensation,
     createBattleSeedRandom,
     randomBattleRoll,
     resolveAttackAtImpact,
@@ -75,6 +76,8 @@ import {
     connectedGearUidsAtCoreSide,
     HAMSTER_SPAWN_FLIGHT_SECONDS,
     isGearDirectlyAdjacentToCore,
+    P01_ROUND_START_PRODUCTIVITY_SECONDS,
+    p01RoundStartProductivity,
     POWER_QUARTER_LAP_SECONDS,
     powerContactsByGear,
     productionRatePerSecond,
@@ -163,6 +166,7 @@ import {
     candidateDrawIds,
     drawDynamicCandidateBatch,
     displacedPlacementUids,
+    gearDropHitsTarget,
     placementAreaValid,
     placementCells,
     shouldUseStaticCandidateBatch,
@@ -202,6 +206,7 @@ import {
 } from './BagLikeLevelSelection';
 import {
     bagLikeProducerProfile,
+    bagLikeProducerShape,
     bagLikeWheelHomeHpContribution,
     BagLikePrimarySkillId,
     BagLikeProducerProfile,
@@ -214,40 +219,58 @@ import {
     VisualEnemyEntry,
     VisualGearEntry,
 } from './VisualRoster';
+import {
+    bagLikeFusionActiveProfile,
+    bagLikeFusionPrimaryBulletProfile,
+    bagLikeH15KillCoins,
+    bagLikeH15RoundEndCoins,
+    BagLikeFusionActiveProfile,
+    BagLikeFusionPrimaryBulletProfile,
+} from './BagLikeFusionHeroMechanics';
+import {
+    directBootLevelId,
+    playableLevelCards,
+    PlayableLevelCard,
+} from './MainLevelFlow';
+import {
+    advanceEnemySpecialCast,
+    assassinateDestination,
+    buildNormalLevelRuntimeConfig,
+    buildNormalEnemyMechanicsProfiles,
+    ItemReward,
+    normalLevelFailedAttempts,
+    normalLevelRetryState,
+    NormalMonsterRow,
+    resolveNormalBattleOutcome,
+    resolveNormalRoundCompletion,
+    selectFarthestEnemySkillTarget,
+} from './NormalLevelRuntime';
 
 const { ccclass, property } = _decorator;
 
 type Team = 'self' | 'enemy';
 type Phase = 'deploy' | 'battle' | 'trait' | 'roundClear' | 'won' | 'lost';
-type ModelId =
-    | 'H0101'
-    | 'H0201'
-    | 'H0301'
-    | 'H0401'
-    | 'H1101'
-    | 'H1201'
-    | 'H1301'
-    | 'H07'
-    | 'H08'
-    | 'H09'
-    | 'M02'
-    | 'M03'
-    | 'M07'
-    | 'Boss02'
-    | 'Boss03'
-    | 'Boss07';
+type ModelId = string;
 type GearId = CandidateGearId
     | 'P01'
     | 'H0104'
     | 'H0204'
     | 'H0304'
     | 'H0404'
+    | 'H0504'
+    | 'H0604'
     | 'H1104'
     | 'H1204'
     | 'H1304'
+    | 'H1404'
+    | 'H1604'
+    | 'H1704'
     | 'H0705'
     | 'H0805'
     | 'H0905'
+    | 'H1005'
+    | 'H1505'
+    | 'H1805'
     | 'C04';
 type GearLocation = 'grid' | 'candidate';
 
@@ -287,18 +310,18 @@ const HERO_SMALL_HEAD_FRAMES: Record<string, HeadFrame> = {
     H0604: { x: 169, y: 653, width: 82, height: 72, offsetX: -1, offsetY: -1 },
     H1201: { x: 85, y: 725, width: 78, height: 56, offsetX: -1, offsetY: 0 },
     H1301: { x: 183, y: 81, width: 68, height: 68, offsetX: 0, offsetY: 0 },
-    H0705: { x: 165, y: 1499, width: 78, height: 70, offsetX: 0, offsetY: 1 },
-    H0805: { x: 175, y: 957, width: 76, height: 76, offsetX: 1, offsetY: 1 },
-    H0905: { x: 169, y: 727, width: 82, height: 70, offsetX: 1, offsetY: 1 },
-    H1005: { x: 171, y: 491, width: 80, height: 80, offsetX: -2, offsetY: 1 },
-    H1101: { x: 165, y: 1571, width: 72, height: 70, offsetX: 0, offsetY: 1 },
     H1401: { x: 85, y: 261, width: 86, height: 66, offsetX: -2, offsetY: -3 },
-    H1505: { x: 85, y: 647, width: 82, height: 76, offsetX: 0, offsetY: 0 },
     H1601: { x: 85, y: 1495, width: 78, height: 74, offsetX: 0, offsetY: 0 },
     H1602: { x: 85, y: 1571, width: 78, height: 74, offsetX: 0, offsetY: 0 },
     H1603: { x: 173, y: 1269, width: 78, height: 74, offsetX: 0, offsetY: 0 },
     H1604: { x: 85, y: 1341, width: 80, height: 76, offsetX: 0, offsetY: 0 },
     H1701: { x: 93, y: 867, width: 62, height: 88, offsetX: 0, offsetY: 0 },
+    H0705: { x: 165, y: 1499, width: 78, height: 70, offsetX: 0, offsetY: 1 },
+    H0805: { x: 175, y: 957, width: 76, height: 76, offsetX: 1, offsetY: 1 },
+    H0905: { x: 169, y: 727, width: 82, height: 70, offsetX: 1, offsetY: 1 },
+    H1005: { x: 171, y: 491, width: 80, height: 80, offsetX: -2, offsetY: 1 },
+    H1101: { x: 165, y: 1571, width: 72, height: 70, offsetX: 0, offsetY: 1 },
+    H1505: { x: 85, y: 647, width: 82, height: 76, offsetX: 0, offsetY: 0 },
     H1805: { x: 93, y: 957, width: 80, height: 78, offsetX: 0, offsetY: 0 },
     P01: { x: 167, y: 1345, width: 78, height: 74, offsetX: 0, offsetY: 0 },
     coin: { x: 177, y: 259, width: 70, height: 68, offsetX: 0, offsetY: 0 },
@@ -307,11 +330,50 @@ const HERO_SMALL_HEAD_FRAMES: Record<string, HeadFrame> = {
 // Exact FairyGUI atlas rectangles recovered from bagLike.a597d.bin. The five
 // 110x110 sprites are ui://bagLike/cl1..cl5 in merge-level order.
 const GEAR_BODY_FRAMES: Readonly<Record<number, Rect>> = {
-    1: new Rect(1024, 0, 110, 110),
+    1: new Rect(1024, 1, 110, 110),
     2: new Rect(775, 117, 110, 110),
     3: new Rect(887, 117, 110, 110),
     4: new Rect(439, 262, 110, 110),
     5: new Rect(551, 262, 110, 110),
+};
+
+type BattleNumberGlyph = {
+    rect: Rect;
+    offset: Vec2;
+};
+
+// Exact glyph rectangles decoded from resources2/ui/battleNum. Normal damage
+// uses Font_white2; healing uses Font_green2. Every glyph has a 22x28 source
+// cell, matching the original bitmap-font metrics.
+const BATTLE_NUMBER_GLYPHS: Readonly<Record<'white' | 'green', Readonly<Record<string, BattleNumberGlyph>>>> = {
+    white: {
+        '0': { rect: new Rect(25, 226, 22, 28), offset: new Vec2(0, 0) },
+        '1': { rect: new Rect(182, 226, 18, 27), offset: new Vec2(2, 1) },
+        '2': { rect: new Rect(119, 57, 22, 28), offset: new Vec2(0, 0) },
+        '3': { rect: new Rect(190, 85, 21, 28), offset: new Vec2(1, 0) },
+        '4': { rect: new Rect(43, 144, 22, 27), offset: new Vec2(0, 1) },
+        '5': { rect: new Rect(86, 170, 21, 27), offset: new Vec2(1, 1) },
+        '6': { rect: new Rect(72, 215, 21, 27), offset: new Vec2(0, 1) },
+        '7': { rect: new Rect(109, 170, 21, 27), offset: new Vec2(1, 1) },
+        '8': { rect: new Rect(143, 56, 22, 28), offset: new Vec2(0, 0) },
+        '9': { rect: new Rect(43, 114, 21, 28), offset: new Vec2(0, 0) },
+        '-': { rect: new Rect(199, 173, 17, 12), offset: new Vec2(3, 8) },
+        '+': { rect: new Rect(135, 116, 21, 21), offset: new Vec2(1, 4) },
+    },
+    green: {
+        '0': { rect: new Rect(89, 112, 21, 27), offset: new Vec2(1, 1) },
+        '1': { rect: new Rect(183, 196, 17, 27), offset: new Vec2(3, 1) },
+        '2': { rect: new Rect(190, 56, 22, 27), offset: new Vec2(0, 1) },
+        '3': { rect: new Rect(119, 87, 22, 27), offset: new Vec2(0, 1) },
+        '4': { rect: new Rect(166, 86, 22, 27), offset: new Vec2(0, 1) },
+        '5': { rect: new Rect(67, 141, 21, 27), offset: new Vec2(0, 1) },
+        '6': { rect: new Rect(118, 199, 20, 27), offset: new Vec2(1, 1) },
+        '7': { rect: new Rect(139, 228, 20, 27), offset: new Vec2(2, 1) },
+        '8': { rect: new Rect(214, 61, 22, 27), offset: new Vec2(0, 1) },
+        '9': { rect: new Rect(90, 141, 21, 27), offset: new Vec2(1, 1) },
+        '-': { rect: new Rect(202, 227, 17, 11), offset: new Vec2(3, 11) },
+        '+': { rect: new Rect(43, 202, 21, 21), offset: new Vec2(1, 4) },
+    },
 };
 
 type BagLikeAtlasFrame = {
@@ -354,6 +416,11 @@ const BAGLIKE_ATLAS_FRAMES: Readonly<Record<string, BagLikeAtlasFrame>> = {
         rect: new Rect(621, 102, 152, 152),
         sourceSize: new Size(152, 152),
     },
+    hpHeart: {
+        // bagLike/xl_icon.png, used by HpShieldBar at x=292, y=16.
+        rect: new Rect(439, 374, 32, 27),
+        sourceSize: new Size(32, 27),
+    },
 };
 
 const COMM_ATLAS_FRAMES: Readonly<Record<string, BagLikeAtlasFrame>> = {
@@ -384,6 +451,16 @@ const COMM_ATLAS_FRAMES: Readonly<Record<string, BagLikeAtlasFrame>> = {
         rect: new Rect(807, 175, 120, 128),
         sourceSize: new Size(120, 128),
         insets: [56, 43, 38, 42],
+    },
+    traitDescription: {
+        rect: new Rect(1203, 439, 46, 46),
+        sourceSize: new Size(46, 46),
+        insets: [20, 20, 20, 20],
+    },
+    playIcon: {
+        rect: new Rect(1336, 445, 44, 45),
+        sourceSize: new Size(50, 50),
+        offset: [3, 3],
     },
     yellowButton: {
         rect: new Rect(956, 72, 120, 128),
@@ -516,6 +593,25 @@ type UnitConfig = {
     productionLevel?: number;
     productionSkillId?: BagLikePrimarySkillId;
     visualModelId?: string;
+    focusHome?: boolean;
+    selfDestructRadius?: number;
+    knockbackDistance?: number;
+    assassinate?: boolean;
+    assassinatePreCooldown?: number;
+    assassinateCooldown?: number;
+    assassinateDistance?: number;
+    enemySpecialAttack?: 'line' | 'self-area';
+    enemySpecialPreCooldown?: number;
+    enemySpecialCooldown?: number;
+    enemySpecialCastTime?: number;
+    enemySpecialBehaviorDelay?: number;
+    enemySpecialEffectRatio?: number;
+    enemySpecialRadius?: number;
+    enemySpecialWidth?: number;
+    enemySpecialHeight?: number;
+    multiHitDelays?: number[];
+    fusionActive?: BagLikeFusionActiveProfile;
+    fusionPrimaryBullet?: BagLikeFusionPrimaryBulletProfile;
 };
 
 type RoundConfig = {
@@ -528,12 +624,17 @@ type RoundConfig = {
 
 type LevelTableRow = {
     id: number;
+    chapter?: number;
     name: string;
     fightscene: string;
     homeHp: number;
     atkMultiple: number;
     hpMultiple: number;
     roundIds: number[];
+    recommendHeroIds?: string[];
+    initRewards?: ItemReward[] | null;
+    staticBuffs?: Array<{ k: number; v: string }> | null;
+    staticBricks?: string[][] | null;
 };
 
 type RoundTableRow = {
@@ -542,17 +643,14 @@ type RoundTableRow = {
     monsterIds: string[];
     atkMultiple: number;
     hpMultiple: number;
+    coinRewards?: ItemReward[] | null;
 };
 
 type NormalLevelTable = {
     source: string;
     levels: LevelTableRow[];
     rounds: Record<string, RoundTableRow>;
-};
-
-type PreparationConfig = {
-    staticBatches: GearId[][];
-    roundCoinRewards: number[];
+    monsters: Record<string, NormalMonsterRow>;
 };
 
 type GearConfig = {
@@ -620,6 +718,13 @@ type BattleUnit = {
     warriorCombo: WarriorComboProfile | null;
     warriorComboCompletedAttacks: number;
     warriorComboCriticalReady: boolean;
+    enemySpecialCooldown: number;
+    enemySpecialCasting: boolean;
+    enemySpecialElapsed: number;
+    enemySpecialBehaviorTriggered: boolean;
+    enemySpecialTarget: BattleUnit | null;
+    fusionActiveCooldown: number;
+    fusionActiveCastRemaining: number;
 };
 
 type PendingHit = {
@@ -644,6 +749,15 @@ type PendingHit = {
     countsAsWarriorAttack: boolean;
 };
 
+type PendingFusionSkillHit = {
+    timer: number;
+    attacker: BattleUnit;
+    profile: BagLikeFusionActiveProfile;
+    effectRatio: number;
+    target: BattleUnit;
+    launchAttack: number;
+};
+
 type ProductionJob = {
     timer: number;
     gear: Gear;
@@ -661,8 +775,10 @@ type Trace = {
 
 type FloatingText = {
     node: Node;
-    label: Label;
-    life: number;
+    sprites: Sprite[];
+    fallbackLabel: Label | null;
+    elapsed: number;
+    startY: number;
 };
 
 type ProjectileVisual = {
@@ -697,6 +813,11 @@ const GRID_COLS = 7;
 const POWER_INDEX = 17;
 const DEFAULT_LEVEL_ID = 1004;
 const INFERRED_EFFECT_FRAME_SECONDS = 1 / 30;
+// The recovered battle screenshot shows the first four 100401 schedule entries,
+// with the 4.001s monster only just inside the field. Freeze the browser-only
+// developed fixture at the matching timestamp so delayed captures stay stable.
+const DEVELOPED_BATTLE_ELAPSED_SECONDS = 4.01;
+const DEVELOPED_BATTLE_SPAWN_Y = [0, -125, 125, -45] as const;
 
 const WHITE = new Color(255, 255, 255, 255);
 const INK = new Color(62, 48, 43, 255);
@@ -710,7 +831,7 @@ const PANEL = new Color(34, 45, 48, 224);
 
 const DEFAULT_ATTRS: Attributes = EMPTY_COMBAT_ATTRIBUTES;
 
-const UNITS: Record<ModelId, UnitConfig> = {
+const UNITS: Record<string, UnitConfig> = {
     H0101: {
         id: 'H0101',
         name: '仓鼠战士',
@@ -778,6 +899,42 @@ const UNITS: Record<ModelId, UnitConfig> = {
         spineScale: 0.8,
         color: new Color(107, 183, 106, 255),
     },
+    H0501: {
+        id: 'H0501',
+        name: '仓鼠召唤师',
+        atk: 30,
+        hp: 128,
+        range: 150,
+        searchRange: 400,
+        moveSpeed: 60,
+        attackInterval: 1,
+        attackType: 'HAMSTER',
+        effectRatio: 10000,
+        attackDelay: 0.3,
+        spinePath: 'spine/H0501/js_lieren_1',
+        spineScale: 0.8,
+        color: new Color(107, 174, 92, 255),
+    },
+    H0601: {
+        id: 'H0601',
+        name: '仓鼠飞行员',
+        atk: 146,
+        hp: 137,
+        range: 250,
+        searchRange: 400,
+        moveSpeed: 60,
+        attackInterval: 1,
+        attackType: 'HAMSTER',
+        effectRatio: 5000,
+        attackDelay: 0.3,
+        projectileSpeed: 800,
+        areaRadius: 50,
+        maxTargets: 99,
+        spinePath: 'spine/H0601/js_feixingyuan_1',
+        spineScale: 0.8,
+        color: new Color(76, 153, 215, 255),
+        attrs: { attackSpeed: -5000 },
+    },
     H1101: {
         id: 'H1101',
         name: '治疗齿轮',
@@ -836,6 +993,61 @@ const UNITS: Record<ModelId, UnitConfig> = {
         spineScale: 0.8,
         color: new Color(224, 132, 61, 255),
     },
+    H1401: {
+        id: 'H1401',
+        name: '鲨鱼齿轮',
+        atk: 71,
+        hp: 280,
+        range: 9999,
+        searchRange: 9999,
+        moveSpeed: 0,
+        attackInterval: 1,
+        attackType: 'WHEEL',
+        effectRatio: 3000,
+        attackDelay: 0.3,
+        areaRadius: 75,
+        maxTargets: 3,
+        randomTarget: true,
+        knockbackDistance: 50,
+        spinePath: '',
+        spineScale: 0.8,
+        color: new Color(53, 166, 185, 255),
+    },
+    H1601: {
+        id: 'H1601',
+        name: '仓鼠怪兽',
+        atk: 43,
+        hp: 341,
+        range: 75,
+        searchRange: 400,
+        moveSpeed: 60,
+        attackInterval: 1,
+        attackType: 'HAMSTER',
+        effectRatio: 10000,
+        attackDelay: 0.3,
+        spinePath: 'spine/H1601/js_konglong_1',
+        spineScale: 0.88,
+        color: new Color(97, 178, 102, 255),
+    },
+    H1701: {
+        id: 'H1701',
+        name: '镭射齿轮',
+        atk: 140,
+        hp: 320,
+        range: 9999,
+        searchRange: 9999,
+        moveSpeed: 0,
+        attackInterval: 1,
+        attackType: 'WHEEL',
+        effectRatio: 3000,
+        attackDelay: 0,
+        maxTargets: 1,
+        randomTarget: true,
+        multiHitDelays: [0, 0.33, 0.66, 1, 1.3, 1.4],
+        spinePath: '',
+        spineScale: 0.8,
+        color: new Color(226, 75, 96, 255),
+    },
     H07: {
         id: 'H07',
         name: '仓鼠铁铁侠',
@@ -887,6 +1099,62 @@ const UNITS: Record<ModelId, UnitConfig> = {
         spinePath: 'spine/H0905/js_zhanche',
         spineScale: 1,
         color: new Color(185, 74, 69, 255),
+    },
+    H10: {
+        id: 'H10',
+        name: '仓鼠飞碟',
+        atk: 370,
+        hp: 694,
+        range: 250,
+        searchRange: 400,
+        moveSpeed: 60,
+        attackInterval: 1,
+        attackType: 'HAMSTER',
+        effectRatio: 5000,
+        attackDelay: 0.3,
+        projectileSpeed: 1000,
+        spinePath: '',
+        spineScale: 1.1,
+        color: new Color(202, 91, 151, 255),
+        fusionPrimaryBullet: bagLikeFusionPrimaryBulletProfile('H10') || undefined,
+        fusionActive: bagLikeFusionActiveProfile('H10') || undefined,
+    },
+    H15: {
+        id: 'H15',
+        name: '吞宝鲨',
+        atk: 288,
+        hp: 1134,
+        range: 9999,
+        searchRange: 9999,
+        moveSpeed: 0,
+        attackInterval: 1,
+        attackType: 'WHEEL',
+        effectRatio: 3000,
+        attackDelay: 0,
+        areaRadius: 75,
+        maxTargets: 5,
+        randomTarget: true,
+        knockbackDistance: 50,
+        spinePath: '',
+        spineScale: 1,
+        color: new Color(71, 174, 179, 255),
+    },
+    H18: {
+        id: 'H18',
+        name: '仓鼠哥吱拉',
+        atk: 218,
+        hp: 1726,
+        range: 150,
+        searchRange: 400,
+        moveSpeed: 60,
+        attackInterval: 1,
+        attackType: 'HAMSTER',
+        effectRatio: 10000,
+        attackDelay: 0.3,
+        spinePath: '',
+        spineScale: 1,
+        color: new Color(91, 139, 105, 255),
+        fusionActive: bagLikeFusionActiveProfile('H18') || undefined,
     },
     M02: {
         id: 'M02',
@@ -1008,6 +1276,68 @@ const UNITS: Record<ModelId, UnitConfig> = {
     },
 };
 
+function registerRecoveredNormalEnemies(monsters: Readonly<Record<string, NormalMonsterRow>>): void {
+    const profiles = buildNormalEnemyMechanicsProfiles(monsters);
+    const palette = [
+        new Color(186, 126, 215, 255), new Color(91, 173, 154, 255),
+        new Color(216, 172, 103, 255), new Color(196, 92, 83, 255),
+        new Color(88, 139, 202, 255), new Color(164, 115, 77, 255),
+    ];
+    for (const id of Object.keys(profiles)) {
+        const profile = profiles[id];
+        if (UNITS[id]) continue;
+        const numericId = Array.from(id).reduce((sum, character) => sum + character.charCodeAt(0), 0);
+        const visualFamily = /^Boss(\d+)$/.exec(id);
+        const visualModelId = visualFamily ? `M${visualFamily[1]}` : id;
+        UNITS[id] = {
+            id,
+            name: profile.name,
+            atk: profile.atk,
+            hp: profile.hp,
+            range: profile.range,
+            searchRange: profile.searchRange,
+            moveSpeed: profile.moveSpeed,
+            attackInterval: profile.attackInterval,
+            attackType: null,
+            effectRatio: profile.effectRatio,
+            attackDelay: profile.attackDelay,
+            projectileSpeed: profile.projectileSpeed || undefined,
+            areaRadius: profile.areaRadius || undefined,
+            maxTargets: profile.maxTargets,
+            controlImmune: profile.controlImmune,
+            spinePath: '',
+            spineScale: profile.boss ? 1.1 : 0.65,
+            color: palette[numericId % palette.length],
+            attrs: {
+                heroResistance: profile.heroResistance,
+                towerResistance: profile.towerResistance,
+                attackSpeed: profile.attackSpeed,
+            },
+            boss: profile.boss,
+            gold: profile.gold,
+            exp: profile.exp,
+            visualModelId,
+            focusHome: profile.focusHome,
+            selfDestructRadius: profile.selfDestructRadius,
+            knockbackDistance: profile.knockbackDistance,
+            assassinate: profile.assassinate,
+            assassinatePreCooldown: profile.assassinatePreCooldown,
+            assassinateCooldown: profile.assassinateCooldown,
+            assassinateDistance: profile.assassinateDistance,
+            enemySpecialAttack: profile.specialAttack || undefined,
+            enemySpecialPreCooldown: profile.specialPreCooldown,
+            enemySpecialCooldown: profile.specialCooldown,
+            enemySpecialCastTime: profile.specialCastTime,
+            enemySpecialBehaviorDelay: profile.specialBehaviorDelay,
+            enemySpecialEffectRatio: profile.specialEffectRatio,
+            enemySpecialRadius: profile.specialRadius,
+            enemySpecialWidth: profile.specialWidth,
+            enemySpecialHeight: profile.specialHeight,
+            multiHitDelays: profile.multiHitDelays,
+        };
+    }
+}
+
 const GEARS: Record<GearId, GearConfig> = {
     P01: { id: 'P01', name: '能量核心', tint: new Color(255, 193, 52, 255), shape: [[0, 0]] },
     H0101: { id: 'H0101', name: '仓鼠战士', level: 1, nextId: 'H0102', tint: new Color(225, 84, 64, 255), powerPerTrigger: 10, unit: 'H0101', shape: [[0, 0]] },
@@ -1026,6 +1356,14 @@ const GEARS: Record<GearId, GearConfig> = {
     H0402: { id: 'H0402', name: '仓鼠骑士', level: 2, nextId: 'H0403', tint: new Color(59, 153, 111, 255), powerPerTrigger: 6, unit: 'H0401', shape: [[0, 0], [1, 0], [2, 0]] },
     H0403: { id: 'H0403', name: '仓鼠骑士', level: 3, nextId: 'H0404', tint: new Color(73, 132, 151, 255), powerPerTrigger: 6, unit: 'H0401', shape: [[0, 0], [1, 0], [2, 0]] },
     H0404: { id: 'H0404', name: '仓鼠骑士', level: 4, tint: new Color(112, 101, 181, 255), powerPerTrigger: 6, unit: 'H0401', shape: [[0, 0], [1, 0], [2, 0]] },
+    H0501: { id: 'H0501', name: '仓鼠召唤师', level: 1, nextId: 'H0502', tint: new Color(107, 174, 92, 255), powerPerTrigger: 5, unit: 'H0501', shape: [[0, 0], [1, 0], [1, 1]] },
+    H0502: { id: 'H0502', name: '仓鼠召唤师', level: 2, nextId: 'H0503', tint: new Color(94, 157, 102, 255), powerPerTrigger: 5, unit: 'H0501', shape: [[0, 0], [1, 0], [1, 1]] },
+    H0503: { id: 'H0503', name: '仓鼠召唤师', level: 3, nextId: 'H0504', tint: new Color(97, 132, 141, 255), powerPerTrigger: 5, unit: 'H0501', shape: [[0, 0], [1, 0], [1, 1]] },
+    H0504: { id: 'H0504', name: '仓鼠召唤师', level: 4, tint: new Color(125, 105, 166, 255), powerPerTrigger: 5, unit: 'H0501', shape: [[0, 0], [1, 0], [1, 1]] },
+    H0601: { id: 'H0601', name: '仓鼠飞行员', level: 1, nextId: 'H0602', tint: new Color(76, 153, 215, 255), powerPerTrigger: 3, unit: 'H0601', shape: [[0, 0], [0, 1], [1, 0], [1, 1]] },
+    H0602: { id: 'H0602', name: '仓鼠飞行员', level: 2, nextId: 'H0603', tint: new Color(75, 135, 207, 255), powerPerTrigger: 3, unit: 'H0601', shape: [[0, 0], [0, 1], [1, 0], [1, 1]] },
+    H0603: { id: 'H0603', name: '仓鼠飞行员', level: 3, nextId: 'H0604', tint: new Color(100, 107, 198, 255), powerPerTrigger: 3, unit: 'H0601', shape: [[0, 0], [0, 1], [1, 0], [1, 1]] },
+    H0604: { id: 'H0604', name: '仓鼠飞行员', level: 4, tint: new Color(137, 82, 184, 255), powerPerTrigger: 3, unit: 'H0601', shape: [[0, 0], [0, 1], [1, 0], [1, 1]] },
     H1101: { id: 'H1101', name: '治疗齿轮', level: 1, nextId: 'H1102', tint: new Color(55, 189, 126, 255), powerPerTrigger: H11_POWER_PER_TRIGGER, unit: 'H1101', shape: H11_GEAR_SHAPE },
     H1102: { id: 'H1102', name: '治疗齿轮', level: 2, nextId: 'H1103', tint: new Color(48, 167, 117, 255), powerPerTrigger: H11_POWER_PER_TRIGGER, unit: 'H1101', shape: H11_GEAR_SHAPE },
     H1103: { id: 'H1103', name: '治疗齿轮', level: 3, nextId: 'H1104', tint: new Color(63, 151, 147, 255), powerPerTrigger: H11_POWER_PER_TRIGGER, unit: 'H1101', shape: H11_GEAR_SHAPE },
@@ -1038,9 +1376,24 @@ const GEARS: Record<GearId, GearConfig> = {
     H1302: { id: 'H1302', name: '火炮齿轮', level: 2, nextId: 'H1303', tint: new Color(214, 110, 66, 255), powerPerTrigger: 15, unit: 'H1301', shape: [[0, 0], [0, 1], [1, 0]] },
     H1303: { id: 'H1303', name: '火炮齿轮', level: 3, nextId: 'H1304', tint: new Color(190, 87, 104, 255), powerPerTrigger: 15, unit: 'H1301', shape: [[0, 0], [0, 1], [1, 0]] },
     H1304: { id: 'H1304', name: '火炮齿轮', level: 4, tint: new Color(159, 76, 154, 255), powerPerTrigger: 15, unit: 'H1301', shape: [[0, 0], [0, 1], [1, 0]] },
+    H1401: { id: 'H1401', name: '鲨鱼齿轮', level: 1, nextId: 'H1402', tint: new Color(53, 166, 185, 255), powerPerTrigger: 12, unit: 'H1401', shape: [[0, 1], [1, 0], [1, 1]] },
+    H1402: { id: 'H1402', name: '鲨鱼齿轮', level: 2, nextId: 'H1403', tint: new Color(61, 144, 178, 255), powerPerTrigger: 12, unit: 'H1401', shape: [[0, 1], [1, 0], [1, 1]] },
+    H1403: { id: 'H1403', name: '鲨鱼齿轮', level: 3, nextId: 'H1404', tint: new Color(91, 117, 173, 255), powerPerTrigger: 12, unit: 'H1401', shape: [[0, 1], [1, 0], [1, 1]] },
+    H1404: { id: 'H1404', name: '鲨鱼齿轮', level: 4, tint: new Color(127, 91, 164, 255), powerPerTrigger: 12, unit: 'H1401', shape: [[0, 1], [1, 0], [1, 1]] },
+    H1601: { id: 'H1601', name: '仓鼠怪兽', level: 1, nextId: 'H1602', tint: new Color(97, 178, 102, 255), powerPerTrigger: 4, unit: 'H1601', shape: [[0, 0], [0, 1], [1, 1]] },
+    H1602: { id: 'H1602', name: '仓鼠怪兽', level: 2, nextId: 'H1603', tint: new Color(86, 157, 111, 255), powerPerTrigger: 4, unit: 'H1601', shape: [[0, 0], [0, 1], [1, 1]] },
+    H1603: { id: 'H1603', name: '仓鼠怪兽', level: 3, nextId: 'H1604', tint: new Color(91, 132, 144, 255), powerPerTrigger: 4, unit: 'H1601', shape: [[0, 0], [0, 1], [1, 1]] },
+    H1604: { id: 'H1604', name: '仓鼠怪兽', level: 4, tint: new Color(122, 104, 166, 255), powerPerTrigger: 4, unit: 'H1601', shape: [[0, 0], [0, 1], [1, 1]] },
+    H1701: { id: 'H1701', name: '镭射齿轮', level: 1, nextId: 'H1702', tint: new Color(226, 75, 96, 255), powerPerTrigger: 7, unit: 'H1701', shape: [[0, 0], [0, 1], [0, 2]] },
+    H1702: { id: 'H1702', name: '镭射齿轮', level: 2, nextId: 'H1703', tint: new Color(210, 76, 113, 255), powerPerTrigger: 7, unit: 'H1701', shape: [[0, 0], [0, 1], [0, 2]] },
+    H1703: { id: 'H1703', name: '镭射齿轮', level: 3, nextId: 'H1704', tint: new Color(185, 76, 139, 255), powerPerTrigger: 7, unit: 'H1701', shape: [[0, 0], [0, 1], [0, 2]] },
+    H1704: { id: 'H1704', name: '镭射齿轮', level: 4, tint: new Color(154, 77, 164, 255), powerPerTrigger: 7, unit: 'H1701', shape: [[0, 0], [0, 1], [0, 2]] },
     H0705: { id: 'H0705', name: '仓鼠铁铁侠', level: 5, tint: new Color(255, 99, 99, 255), powerPerTrigger: 8, unit: 'H07', shape: [[0, 0], [0, 1]] },
     H0805: { id: 'H0805', name: '仓鼠凹凸曼', level: 5, tint: new Color(255, 99, 99, 255), powerPerTrigger: 7, unit: 'H08', shape: [[0, 0], [1, 0]] },
     H0905: { id: 'H0905', name: '仓鼠战车', level: 5, tint: new Color(255, 99, 99, 255), powerPerTrigger: 6, unit: 'H09', shape: [[0, 0], [0, 1], [1, 0]] },
+    H1005: { id: 'H1005', name: '仓鼠飞碟', level: 5, tint: new Color(255, 99, 99, 255), powerPerTrigger: 3, unit: 'H10', shape: [[0, 0], [0, 1], [1, 0], [1, 1]] },
+    H1505: { id: 'H1505', name: '吞宝鲨', level: 5, tint: new Color(255, 99, 99, 255), powerPerTrigger: 12, unit: 'H15', shape: [[0, 1], [1, 1]] },
+    H1805: { id: 'H1805', name: '仓鼠哥吱拉', level: 5, tint: new Color(255, 99, 99, 255), powerPerTrigger: 4, unit: 'H18', shape: [[0, 0], [0, 1], [1, 1]] },
     C01: { id: 'C01', name: '银币齿轮', level: 1, nextId: 'C02', tint: new Color(255, 190, 43, 255), powerPerTrigger: 3, coinAmount: 2, shape: [[0, 0]] },
     C02: { id: 'C02', name: '银币齿轮', level: 2, nextId: 'C03', tint: new Color(245, 169, 41, 255), powerPerTrigger: 3, coinAmount: 4, shape: [[0, 0]] },
     C03: { id: 'C03', name: '银币齿轮', level: 3, nextId: 'C04', tint: new Color(232, 139, 55, 255), powerPerTrigger: 3, coinAmount: 8, shape: [[0, 0]] },
@@ -1056,32 +1409,6 @@ const GEARS: Record<GearId, GearConfig> = {
     G09: { id: 'G09', name: '右上三格', tint: new Color(84, 205, 180, 255), shape: [[0, 0], [0, 1], [1, 1]], gridUnlock: true },
 };
 
-const STATIC_BATCHES: GearId[][] = [
-    ['H0101'],
-    ['H0201', 'C01'],
-    ['G02'],
-    ['H0401', 'H0101', 'H0201'],
-    ['H0101', 'H0401', 'H1201'],
-    ['H1201', 'H0201', 'G02'],
-    ['H0401', 'H0202', 'H0203'],
-    ['H1202', 'H0203', 'H0201', 'G03'],
-];
-
-const ROUND_COIN_REWARDS = [0, 0, 15, 15, 15];
-const PREPARATION_CONFIGS: Record<number, PreparationConfig> = {
-    1001: {
-        staticBatches: STATIC_BATCHES,
-        roundCoinRewards: ROUND_COIN_REWARDS,
-    },
-    1004: {
-        staticBatches: [
-            ['H0401', 'H0401', 'H1301'],
-            ['H1201', 'H0101', 'C01'],
-            ['H0402', 'C01', 'G03'],
-        ],
-        roundCoinRewards: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 15, 15, 15, 15, 15],
-    },
-};
 const REFRESH_COST = 15;
 const CANDIDATE_TRAY_HEIGHT = 250;
 const CANDIDATE_TRAY_WIDTH = 730;
@@ -1101,10 +1428,10 @@ export class CangshuGame extends Component {
     levelId = DEFAULT_LEVEL_ID;
 
     @property({ tooltip: 'Original challenge count: non-forever-static levels use weighted candidate drops after the first challenge' })
-    challengeTimes = 2;
+    challengeTimes = 1;
 
     @property({ tooltip: 'Semicolon-separated account-unlocked hero families currently supported by the reconstruction candidate/production chain' })
-    unlockedHeroFamilies = 'H01;H02;H04;H12';
+    unlockedHeroFamilies = 'H01;H02;H03;H04;H05;H06;H11;H12;H13;H14;H16;H17';
 
     @property({ min: 0, max: 20, step: 1, tooltip: 'Legacy fallback H01 star; the runtime account profile persists the active value' })
     h01HeroStar = 1;
@@ -1118,6 +1445,12 @@ export class CangshuGame extends Component {
     @property({ min: 0, max: 20, step: 1, tooltip: 'Legacy fallback H04 star; the runtime account profile persists the active value' })
     h04HeroStar = 1;
 
+    @property({ min: 0, max: 15, step: 1, tooltip: 'Saved H05 hero star used by recovered H1005 fusion verification' })
+    h05HeroStar = 1;
+
+    @property({ min: 0, max: 15, step: 1, tooltip: 'Saved H06 hero star used by recovered H1005 fusion verification' })
+    h06HeroStar = 1;
+
     @property({ min: 0, max: 20, step: 1, tooltip: 'Legacy fallback H11 star; baseline 1 keeps unevidenced account upgrades disabled' })
     h11HeroStar = 1;
 
@@ -1127,6 +1460,15 @@ export class CangshuGame extends Component {
     @property({ min: 0, max: 20, step: 1, tooltip: 'Legacy fallback H13 star; the runtime account profile persists the active value' })
     h13HeroStar = 1;
 
+    @property({ min: 0, max: 15, step: 1, tooltip: 'Saved H14 hero star used by recovered H1505 fusion verification' })
+    h14HeroStar = 1;
+
+    @property({ min: 0, max: 15, step: 1, tooltip: 'Saved H16 hero star used by recovered H1805 fusion verification' })
+    h16HeroStar = 1;
+
+    @property({ min: 0, max: 15, step: 1, tooltip: 'Saved H17 hero star used by recovered H1805 fusion verification' })
+    h17HeroStar = 1;
+
     private initialized = false;
     private accountProfile!: BagLikeAccountProfile;
     private accountDefaultProfile!: BagLikeAccountProfile;
@@ -1135,6 +1477,8 @@ export class CangshuGame extends Component {
     private accountUnlockedThisAttempt: BagLikeAccountHeroFamily[] = [];
     private validationHeroStarOverrides: Partial<Record<BagLikeAccountHeroFamily, number>> | null = null;
     private originalFont: TTFFont | null = null;
+    private levelTable: NormalLevelTable | null = null;
+    private levelSelectionPage = 0;
     private levelName = '';
     private levelCatalog: LevelTableRow[] = [];
     private levelSelectPage = 0;
@@ -1143,6 +1487,7 @@ export class CangshuGame extends Component {
     private levelHomeHp = 500;
     private levelAtkMultiple = 10000;
     private levelHpMultiple = 10000;
+    private initialGold = 0;
     private rounds: RoundConfig[] = [];
     private staticBatches: GearId[][] = [];
     private roundCoinRewards: number[] = [];
@@ -1157,8 +1502,10 @@ export class CangshuGame extends Component {
     private candidates: Gear[] = [];
     private units: BattleUnit[] = [];
     private pendingHits: PendingHit[] = [];
+    private pendingFusionSkillHits: PendingFusionSkillHit[] = [];
     private traces: Trace[] = [];
     private floatingTexts: FloatingText[] = [];
+    private battleNumberAtlasFrame: SpriteFrame | null = null;
     private projectileVisuals: ProjectileVisual[] = [];
     private hitEffectVisuals: HitEffectVisual[] = [];
     private h02ProjectileFrame: SpriteFrame | null = null;
@@ -1176,6 +1523,7 @@ export class CangshuGame extends Component {
     private h12HitAudio: AudioClip | null = null;
     private h12AudioSource: AudioSource | null = null;
     private h13ProjectileFrame: SpriteFrame | null = null;
+    private h13ImpactData: sp.SkeletonData | null = null;
     private h0705HitFrames: SpriteFrame[] = [];
     private h08HitFrames: SpriteFrame[] = [];
     private h0905ProjectileFrame: SpriteFrame | null = null;
@@ -1194,9 +1542,22 @@ export class CangshuGame extends Component {
     private freeRefreshUsed = false;
     private powerDirection: 0 | 1 | 2 | 3 = 1;
     private powerTimer = POWER_QUARTER_LAP_SECONDS;
+    private powerSkillRemaining = 0;
     private battleRandom: () => number = createBattleSeedRandom();
     private visualFixtureRandom: () => number = createBattleSeedRandom(1004);
     private productionJobs: ProductionJob[] = [];
+    private selfSpawnCount = 0;
+    private fusionActiveCastCount = 0;
+    private fusionActiveHitCount = 0;
+    private h10PrimaryBulletCastCount = 0;
+    private h10PrimaryBulletHitCount = 0;
+    private h15KillCoinsEarned = 0;
+    private h15RoundCoinsEarned = 0;
+    private powerContactCount = 0;
+    private powerGearTriggerCount = 0;
+    private workerApplyCount = 0;
+    private powerMissingGearCount = 0;
+    private powerMissingConfigCount = 0;
     private speed: 1 | typeof BATTLE_SPEED_UP_MULTIPLE = 1;
     private paused = false;
     private failedAttempts = 0;
@@ -1205,6 +1566,7 @@ export class CangshuGame extends Component {
     private traitRerollsUsed = 0;
     private traitTakeAllUsed = 0;
     private currentTraitChoices: TraitDefinition[] = [];
+    private staticBuffsByLevel: ReadonlyMap<number, readonly string[]> = new Map();
     private pendingTraitReturnPhase: 'battle' | 'roundClear' = 'battle';
     private traitStacks = new Map<TraitId, number>();
     private warriorKillAttackStacks = 0;
@@ -1213,6 +1575,7 @@ export class CangshuGame extends Component {
     private h13SkillId: H13SkillId = H13_BASE_SKILL_ID;
 
     private battleLayer!: Node;
+    private backgroundEffectLayer!: Node;
     private unitLayer!: Node;
     private effectLayer!: Node;
     private prepareLayer!: Node;
@@ -1244,6 +1607,7 @@ export class CangshuGame extends Component {
     private actionLabel!: Label;
     private refreshLabel!: Label;
     private adRefreshLabel!: Label;
+    private refreshCostNode!: Node;
     private speedLabel!: Label;
     private pauseLabel!: Label;
     private accountButtonLabel!: Label;
@@ -1276,10 +1640,14 @@ export class CangshuGame extends Component {
         this.preloadH11Healing();
         this.preloadH12Skill();
         this.preloadH13Projectile();
+        this.preloadH13Impact();
         this.preloadH0705Impact();
         this.preloadH08Impact();
         this.preloadH0905Effects();
         this.preloadMeleeAttackAudio();
+        resources.load('original/battleNum_0/spriteFrame', SpriteFrame, (error, frame) => {
+            if (!error && frame) this.battleNumberAtlasFrame = frame;
+        });
         resources.load('original/default', TTFFont, (fontError, font) => {
             if (!fontError && font) this.originalFont = font;
             if (this.visualCatalogMode()) {
@@ -1298,47 +1666,15 @@ export class CangshuGame extends Component {
                 return;
             }
             try {
-                this.configureLevel(asset.json as unknown as NormalLevelTable);
+                this.levelTable = asset.json as unknown as NormalLevelTable;
+                // Existing browser evidence URLs keep opening their exact battle
+                // fixture. A normal launch now enters the reconstructed main flow.
+                const search = typeof window === 'undefined' ? '' : window.location.search;
+                const directLevelId = directBootLevelId(search, this.levelId);
+                this.levelId = directLevelId ?? this.levelId;
                 if (!this.loadAccountProfile()) return;
-                this.buildScene();
-                this.initGrid();
-                this.addPlacedGear('P01', 2, 3);
-                const traitValidationEnabled = this.traitValidationEnabled();
-                const developedValidationMode = this.developedValidationMode();
-                if (traitValidationEnabled || developedValidationMode) profiler.hideStats();
-                else this.dealPreparationBatch();
-                const fusionValidationMode = this.fusionValidationMode();
-                if (developedValidationMode) this.applyDevelopedValidationFixture();
-                else if (fusionValidationMode) this.applyFusionValidationFixture(fusionValidationMode);
-                else if (traitValidationEnabled) this.applyFusionValidationFixture('placed');
-                this.applyPhaseLayout();
-                this.initialized = true;
-                if (developedValidationMode === 'trait') {
-                    this.startRound();
-                    this.bagLikeLevel = 2;
-                    this.drawExpBar();
-                    this.openTraitSelection();
-                    this.currentTraitChoices = [
-                        IMPLEMENTED_TRAIT_POOL.find((trait) => trait.id === 'RG_ALL_abl13_eff01')!,
-                        IMPLEMENTED_TRAIT_POOL.find((trait) => trait.id === 'RG_H02_abl02_eff01')!,
-                        IMPLEMENTED_TRAIT_POOL.find((trait) => trait.id === 'RG_H03_abl02_eff01')!,
-                    ];
-                    this.renderTraitChoices();
-                } else if (developedValidationMode === 'battle') {
-                    this.startRound();
-                    this.applyDevelopedBattleCaptureFixture();
-                } else if (traitValidationEnabled) {
-                    this.startRound();
-                    this.openTraitSelection();
-                } else if (fusionValidationMode === 'battle') {
-                    this.startRound();
-                    for (const gear of this.gears) {
-                        if (gear.id === 'P01') continue;
-                        gear.workerPower = 99;
-                        this.queueProduction(gear);
-                    }
-                }
-                this.refreshUi();
+                if (directLevelId !== null) this.launchLevel(directLevelId);
+                else this.showMainScene();
             } catch (levelError) {
                 console.error('[cangshu] initialization failed', levelError);
                 this.showLoadError(levelError instanceof Error ? levelError.message : String(levelError));
@@ -1346,13 +1682,271 @@ export class CangshuGame extends Component {
         });
     }
 
+    private launchLevel(levelId: number): void {
+        if (!this.levelTable) throw new Error('关卡表尚未加载');
+        this.resetLevelSession();
+        this.destroyRootChildren();
+        this.levelId = levelId;
+        this.configureLevel(this.levelTable);
+        this.buildScene();
+        this.initGrid();
+        this.addPlacedGear('P01', 2, 3);
+        const traitValidationEnabled = this.traitValidationEnabled();
+        const developedValidationMode = this.developedValidationMode();
+        if (traitValidationEnabled || developedValidationMode) profiler.hideStats();
+        else this.dealPreparationBatch();
+        const fusionValidationMode = this.fusionValidationMode();
+        if (developedValidationMode) this.applyDevelopedValidationFixture();
+        else if (fusionValidationMode) this.applyFusionValidationFixture(fusionValidationMode);
+        else if (traitValidationEnabled) this.applyFusionValidationFixture('placed');
+        this.applyPhaseLayout();
+        this.initialized = true;
+        if (developedValidationMode === 'trait') {
+            this.startRound();
+            this.bagLikeLevel = 2;
+            this.drawExpBar();
+            this.openTraitSelection();
+            this.currentTraitChoices = [
+                IMPLEMENTED_TRAIT_POOL.find((trait) => trait.id === 'RG_ALL_abl13_eff01')!,
+                IMPLEMENTED_TRAIT_POOL.find((trait) => trait.id === 'RG_H02_abl02_eff01')!,
+                IMPLEMENTED_TRAIT_POOL.find((trait) => trait.id === 'RG_H03_abl02_eff01')!,
+            ];
+            this.renderTraitChoices();
+        } else if (developedValidationMode === 'battle') {
+            this.startRound();
+            this.applyDevelopedBattleCaptureFixture();
+        } else if (traitValidationEnabled) {
+            this.startRound();
+            this.openTraitSelection();
+        } else if (fusionValidationMode === 'battle' || fusionValidationMode === 'late-battle') {
+            this.startRound();
+            for (const gear of this.gears) {
+                if (gear.id === 'P01') continue;
+                gear.workerPower = 99;
+                this.queueProduction(gear);
+            }
+        }
+        this.refreshUi();
+    }
+
+    private showMainScene(): void {
+        profiler.hideStats();
+        this.resetLevelSession();
+        this.destroyRootChildren();
+        const root = this.makeNode('MainScene', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        this.addMenuBackground(root, 'fightscene_01');
+
+        const shade = this.makeNode('MainShade', root, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        const shadeGraphics = shade.addComponent(Graphics);
+        shadeGraphics.fillColor = new Color(16, 30, 36, 130);
+        shadeGraphics.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
+        shadeGraphics.fill();
+
+        const titlePanel = this.makeNode('MainTitlePanel', root, 0, 335, 650, 250);
+        const titlePanelGraphics = titlePanel.addComponent(Graphics);
+        titlePanelGraphics.fillColor = new Color(25, 45, 48, 225);
+        titlePanelGraphics.roundRect(-325, -125, 650, 250, 32);
+        titlePanelGraphics.fill();
+        titlePanelGraphics.strokeColor = new Color(255, 207, 72, 255);
+        titlePanelGraphics.lineWidth = 5;
+        titlePanelGraphics.roundRect(-322, -122, 644, 244, 29);
+        titlePanelGraphics.stroke();
+        const title = this.makeLabel('MainTitle', titlePanel, 0, 38, 600, 80, '仓鼠齿轮保卫战', 48, GOLD);
+        this.applyOriginalOutline(title, new Color(63, 35, 14, 255), 4);
+        this.makeLabel('MainSubtitle', titlePanel, 0, -55, 570, 54, '布置齿轮 · 生产英雄 · 守住兵营', 24, CREAM);
+
+        const start = this.makeButton('OpenLevelSelection', root, 0, 20, 430, 104, '选择关卡', () => {
+            this.levelSelectionPage = 0;
+            this.showLevelSelection();
+        });
+        this.restyleButton(start, new Color(255, 177, 43, 255), new Color(255, 246, 190, 255));
+        start.fontSize = 36;
+        start.lineHeight = 42;
+
+        const continueBattle = this.makeButton('ContinueBattle', root, 0, -118, 430, 84, '继续：荒漠沙地', () => this.launchLevel(DEFAULT_LEVEL_ID));
+        this.restyleButton(continueBattle, new Color(48, 172, 139, 255), new Color(213, 255, 237, 255));
+        continueBattle.fontSize = 28;
+
+        this.makeLabel('MainProgress', root, 0, -280, 620, 44, '机制与数据关卡 200 / 200', 22, WHITE);
+        this.makeLabel('MainEvidenceNotice', root, 0, -345, 650, 88, '全部关卡已接入原始波次与数值表\n缺失敌人美术暂以机制占位显示', 18, CREAM);
+    }
+
+    private showLevelSelection(): void {
+        if (!this.levelTable) return;
+        profiler.hideStats();
+        this.initialized = false;
+        this.destroyRootChildren();
+        const root = this.makeNode('LevelSelectionScene', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        this.addMenuBackground(root, 'fightscene_03');
+        const shade = this.makeNode('LevelSelectionShade', root, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        const shadeGraphics = shade.addComponent(Graphics);
+        shadeGraphics.fillColor = new Color(12, 20, 25, 176);
+        shadeGraphics.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
+        shadeGraphics.fill();
+
+        const back = this.makeButton('BackToMain', root, -290, 590, 120, 62, '返回', () => this.showMainScene());
+        this.restyleButton(back, new Color(44, 126, 153, 255), new Color(200, 244, 255, 255));
+        this.makeLabel('LevelSelectionTitle', root, 0, 586, 430, 70, '选择关卡', 42, GOLD);
+        this.makeLabel('LevelSelectionHint', root, 0, 520, 650, 46, '200 关均可进入；每页 10 关', 20, CREAM);
+
+        const cards = playableLevelCards(this.levelTable.levels);
+        const pageSize = 10;
+        const pageCount = Math.ceil(cards.length / pageSize);
+        this.levelSelectionPage = Math.max(0, Math.min(pageCount - 1, this.levelSelectionPage));
+        cards.slice(this.levelSelectionPage * pageSize, (this.levelSelectionPage + 1) * pageSize)
+            .forEach((card, index) => this.buildCompactLevelCard(root, card, index));
+        const previous = this.makeButton('PreviousLevelPage', root, -235, -535, 180, 60, '上一页', () => {
+            this.levelSelectionPage = Math.max(0, this.levelSelectionPage - 1);
+            this.showLevelSelection();
+        });
+        const next = this.makeButton('NextLevelPage', root, 235, -535, 180, 60, '下一页', () => {
+            this.levelSelectionPage = Math.min(pageCount - 1, this.levelSelectionPage + 1);
+            this.showLevelSelection();
+        });
+        previous.node.active = this.levelSelectionPage > 0;
+        next.node.active = this.levelSelectionPage < pageCount - 1;
+        this.makeLabel('LevelPage', root, 0, -535, 180, 54, `${this.levelSelectionPage + 1} / ${pageCount}`, 22, GOLD);
+    }
+
+    private buildCompactLevelCard(root: Node, card: PlayableLevelCard, index: number): void {
+        const column = index % 2;
+        const row = Math.floor(index / 2);
+        const x = column === 0 ? -170 : 170;
+        const y = 400 - row * 170;
+        const node = this.makeNode(`LevelCard_${card.id}`, root, x, y, 310, 145);
+        const panel = node.addComponent(Graphics);
+        panel.fillColor = new Color(24, 49, 55, 235);
+        panel.roundRect(-155, -72, 310, 144, 18);
+        panel.fill();
+        panel.strokeColor = card.id === DEFAULT_LEVEL_ID ? GOLD : new Color(91, 193, 157, 255);
+        panel.lineWidth = 3;
+        panel.roundRect(-153, -70, 306, 140, 16);
+        panel.stroke();
+        this.makeLabel('Chapter', node, -92, 40, 105, 32, `第 ${card.chapter} 关`, 18, GOLD);
+        const name = this.makeLabel('LevelName', node, -15, 3, 240, 40, card.name, 24, WHITE);
+        name.overflow = Label.Overflow.SHRINK;
+        this.makeLabel('LevelInfo', node, -72, -39, 125, 28, `${card.roundCount} 波`, 17, CREAM);
+        const challenge = this.makeButton('Challenge', node, 88, -39, 105, 42, '挑战', () => this.launchLevel(card.id));
+        this.restyleButton(challenge, new Color(48, 183, 130, 255), new Color(222, 255, 235, 255));
+        challenge.fontSize = 18;
+    }
+
+    private buildLevelCard(root: Node, card: PlayableLevelCard, y: number): void {
+        const node = this.makeNode(`LevelCard_${card.id}`, root, 0, y, 660, 300);
+        const preview = this.makeNode('Preview', node, 0, 0, 650, 290);
+        this.addMenuBackground(preview, card.background, 650, 290);
+        const shade = this.makeNode('CardShade', node, 0, 0, 650, 290);
+        const shadeGraphics = shade.addComponent(Graphics);
+        shadeGraphics.fillColor = new Color(19, 33, 38, 155);
+        shadeGraphics.roundRect(-325, -145, 650, 290, 24);
+        shadeGraphics.fill();
+        shadeGraphics.strokeColor = card.id === DEFAULT_LEVEL_ID ? GOLD : new Color(116, 221, 190, 255);
+        shadeGraphics.lineWidth = 5;
+        shadeGraphics.roundRect(-322, -142, 644, 284, 21);
+        shadeGraphics.stroke();
+
+        this.makeLabel('Chapter', node, -235, 86, 150, 42, `第 ${card.chapter} 关`, 24, GOLD);
+        const name = this.makeLabel('LevelName', node, -105, 28, 400, 66, card.name, 38, WHITE, HorizontalTextAlignment.LEFT);
+        this.applyOriginalOutline(name, new Color(0, 0, 0, 255), 3);
+        const heroes = card.recommendedHeroes.length > 0 ? card.recommendedHeroes.join(' · ') : '未记录';
+        this.makeLabel('LevelInfo', node, -72, -42, 470, 48, `${card.roundCount} 波　推荐 ${heroes}`, 21, CREAM, HorizontalTextAlignment.LEFT);
+        this.makeLabel('LevelBadge', node, 238, 93, 150, 42, card.badge, 18, GOLD);
+        const challenge = this.makeButton('Challenge', node, 220, -78, 170, 70, '开始挑战', () => this.launchLevel(card.id));
+        this.restyleButton(challenge, new Color(48, 183, 130, 255), new Color(222, 255, 235, 255));
+        challenge.fontSize = 23;
+    }
+
+    private addMenuBackground(parent: Node, resourceName: string, width = DESIGN_WIDTH, height = DESIGN_HEIGHT): void {
+        const background = this.makeNode(`MenuBackground_${resourceName}`, parent, 0, 0, width, height);
+        const sprite = background.addComponent(Sprite);
+        sprite.sizeMode = Sprite.SizeMode.CUSTOM;
+        const resolvedResource = resourceName === 'fightscene_01' || resourceName === 'fightscene_03'
+            ? resourceName
+            : 'fightscene_01';
+        resources.load(`original/${resolvedResource}/spriteFrame`, SpriteFrame, (error, frame) => {
+            if (!error && background.isValid) sprite.spriteFrame = frame;
+        });
+    }
+
+    private returnToMainScene(): void {
+        this.showMainScene();
+    }
+
+    private resetLevelSession(): void {
+        this.initialized = false;
+        this.unscheduleAllCallbacks();
+        this.clearUnits();
+        for (const gear of [...this.gears, ...this.candidates]) {
+            if (gear.node.isValid) gear.node.destroy();
+        }
+        this.gears = [];
+        this.candidates = [];
+        this.phase = 'deploy';
+        this.roundIndex = 0;
+        this.roundClock = 0;
+        this.spawnIndex = 0;
+        this.clearTimer = 0;
+        this.serial = 0;
+        this.selfHp = 500;
+        this.gold = 0;
+        this.refreshIndex = 0;
+        this.normalRefreshTimes = 0;
+        this.nonAdRefreshTimes = 0;
+        this.freeRefreshUsed = false;
+        this.powerDirection = 1;
+        this.powerTimer = POWER_QUARTER_LAP_SECONDS;
+        this.powerSkillRemaining = 0;
+        this.productionJobs = [];
+        this.selfSpawnCount = 0;
+        this.fusionActiveCastCount = 0;
+        this.fusionActiveHitCount = 0;
+        this.h10PrimaryBulletCastCount = 0;
+        this.h10PrimaryBulletHitCount = 0;
+        this.h15KillCoinsEarned = 0;
+        this.h15RoundCoinsEarned = 0;
+        this.powerContactCount = 0;
+        this.powerGearTriggerCount = 0;
+        this.workerApplyCount = 0;
+        this.powerMissingGearCount = 0;
+        this.powerMissingConfigCount = 0;
+        this.speed = 1;
+        this.paused = false;
+        this.failedAttempts = 0;
+        this.bagLikeLevel = 1;
+        this.bagLikeExp = 0;
+        this.traitRerollsUsed = 0;
+        this.traitTakeAllUsed = 0;
+        this.currentTraitChoices = [];
+        this.traitStacks.clear();
+        this.warriorKillAttackStacks = 0;
+        this.h11SkillId = H11_BASE_SKILL_ID;
+        this.h12SkillId = H12_BASE_SKILL_ID;
+        this.h13SkillId = H13_BASE_SKILL_ID;
+        this.unlocked.clear();
+        this.dragGear = null;
+    }
+
+    private destroyRootChildren(): void {
+        // Camera is authored in Main.scene and must survive runtime screen
+        // transitions; every other child is generated by this component.
+        for (const child of [...this.node.children]) {
+            if (child.name !== 'Camera') child.destroy();
+        }
+    }
+
     update(dt: number): void {
         if (!this.initialized) return;
-        const scaled = Math.min(dt, 0.05) * this.speed;
+        let scaled = Math.min(dt, 0.05) * this.speed;
+        const freezeDevelopedBattle = this.developedValidationMode() === 'battle' && this.phase === 'battle';
+        if (freezeDevelopedBattle) {
+            scaled = Math.min(scaled, Math.max(0, DEVELOPED_BATTLE_ELAPSED_SECONDS - this.roundClock));
+            if (scaled === 0) this.paused = true;
+        }
         if (!this.paused && (this.phase === 'deploy' || this.phase === 'battle')) {
             this.stepPowerProduction(scaled, this.phase === 'battle');
         }
         if (this.phase === 'battle' && !this.paused) this.stepBattle(scaled);
+        if (freezeDevelopedBattle && this.roundClock >= DEVELOPED_BATTLE_ELAPSED_SECONDS) this.paused = true;
         this.stepEffects(scaled);
         this.drawEffects();
         this.drawHomes();
@@ -1361,35 +1955,81 @@ export class CangshuGame extends Component {
 
     private configureLevel(table: NormalLevelTable): void {
         this.levelCatalog = table.levels.map((row) => ({ ...row, roundIds: [...row.roundIds] }));
-        const level = table.levels.find((row) => row.id === this.levelId);
-        if (!level) throw new Error(`恢复关卡 ${this.levelId} 不存在于 ${table.source || 'normal-levels'}`);
-        const preparation = PREPARATION_CONFIGS[level.id];
-        if (!preparation) throw new Error(`恢复关卡 ${level.id} 尚未加入准备阶段配置`);
-        const supportedModels = new Set(Object.keys(UNITS));
-        const rounds = level.roundIds.map((roundId) => {
-            const row = table.rounds[String(roundId)];
-            if (!row) throw new Error(`恢复关卡 ${level.id} 缺少波次 ${roundId}`);
-            for (const modelId of row.monsterIds) {
-                if (!supportedModels.has(modelId)) throw new Error(`波次 ${roundId} 使用了未恢复单位 ${modelId}`);
-            }
-            return {
-                id: row.id,
-                times: [...row.monsterTimes],
-                monsters: [...row.monsterIds] as ModelId[],
-                atkMultiple: row.atkMultiple,
-                hpMultiple: row.hpMultiple,
-            };
-        });
+        registerRecoveredNormalEnemies(table.monsters);
+        const runtime = buildNormalLevelRuntimeConfig(table, this.levelId, new Set(Object.keys(UNITS)));
+        const level = runtime.level;
+        const preparation = runtime.preparation;
         this.levelName = level.name;
-        this.levelBackground = level.fightscene.split('/').pop() || 'fightscene_01';
+        this.levelBackground = runtime.backgroundId;
         this.baseLevelHomeHp = level.homeHp;
         this.levelHomeHp = level.homeHp;
         this.levelAtkMultiple = level.atkMultiple;
         this.levelHpMultiple = level.hpMultiple;
         this.selfHp = level.homeHp;
-        this.rounds = rounds;
-        this.staticBatches = preparation.staticBatches.map((batch) => [...batch]);
+        this.initialGold = preparation.initialCoin;
+        this.gold = preparation.initialCoin;
+        this.staticBuffsByLevel = preparation.staticBuffsByLevel;
+        this.rounds = runtime.rounds.map((round) => ({ ...round, monsters: round.monsters as ModelId[] }));
+        this.staticBatches = preparation.staticBatches.map((batch) => [...batch] as GearId[]);
         this.roundCoinRewards = [...preparation.roundCoinRewards];
+        this.syncBrowserContractState();
+    }
+
+    private syncBrowserContractState(): void {
+        if (typeof document === 'undefined') return;
+        const canvas = document.querySelector('canvas');
+        if (!canvas) return;
+        canvas.dataset.levelId = String(this.levelId);
+        canvas.dataset.levelName = this.levelName;
+        canvas.dataset.phase = this.phase;
+        canvas.dataset.round = String(this.roundIndex + 1);
+        canvas.dataset.roundCount = String(this.rounds.length);
+        canvas.dataset.staticBatchCount = String(this.staticBatches.length);
+        canvas.dataset.selfHp = String(Math.max(0, Math.floor(this.selfHp)));
+        canvas.dataset.maxHp = String(Math.max(0, Math.floor(this.levelHomeHp)));
+        canvas.dataset.gold = String(Math.max(0, Math.floor(this.gold)));
+        canvas.dataset.failedAttempts = String(this.failedAttempts);
+        canvas.dataset.roundClock = this.roundClock.toFixed(3);
+        canvas.dataset.candidateIds = this.candidates.map((gear) => gear.id).join(',');
+        canvas.dataset.candidateRuntime = this.candidates
+            .map((gear) => `${gear.id}@${gear.node.position.x.toFixed(1)},${gear.node.position.y.toFixed(1)}`)
+            .join(';');
+        canvas.dataset.gearIds = this.gears.map((gear) => gear.id).join(',');
+        canvas.dataset.gearRuntime = this.gears
+            .map((gear) => `${gear.id}#${gear.uid}@${gear.row},${gear.col}:${gear.workerPower.toFixed(1)}`)
+            .join(';');
+        canvas.dataset.workerProgressBars = this.gears
+            .filter((gear) => Boolean(GEARS[gear.id].powerPerTrigger))
+            .map((gear) => `${gear.id}#${gear.uid}:${this.workerProgressRatio(gear).toFixed(3)}:${gear.node.getChildByName('WorkerProgressBar') ? 'visible' : 'missing'}`)
+            .join(';');
+        canvas.dataset.gearPortraits = [...this.gears, ...this.candidates]
+            .filter((gear) => Boolean(GEARS[gear.id].powerPerTrigger))
+            .map((gear) => {
+                const portrait = gear.node.children.find((child) => child.name.startsWith('GearPortrait_'));
+                const sprite = portrait?.getComponent(Sprite);
+                const state = sprite?.spriteFrame?.texture ? 'loaded' : portrait ? 'pending' : 'missing';
+                return `${gear.id}#${gear.uid}:${state}`;
+            })
+            .join(';');
+        canvas.dataset.selfUnits = String(this.units.filter((unit) => unit.team === 'self' && !unit.dead).length);
+        canvas.dataset.selfSpawns = String(this.selfSpawnCount);
+        canvas.dataset.fusionActiveCasts = String(this.fusionActiveCastCount);
+        canvas.dataset.fusionActiveHits = String(this.fusionActiveHitCount);
+        canvas.dataset.h10PrimaryBulletCasts = String(this.h10PrimaryBulletCastCount);
+        canvas.dataset.h10PrimaryBulletHits = String(this.h10PrimaryBulletHitCount);
+        canvas.dataset.h15KillCoins = String(this.h15KillCoinsEarned);
+        canvas.dataset.h15RoundCoins = String(this.h15RoundCoinsEarned);
+        canvas.dataset.powerClock = `${this.powerDirection}:${this.powerTimer.toFixed(3)}:${this.powerSkillRemaining.toFixed(3)}`;
+        canvas.dataset.powerContacts = String(this.powerContactCount);
+        canvas.dataset.powerGearTriggers = String(this.powerGearTriggerCount);
+        canvas.dataset.workerApplies = String(this.workerApplyCount);
+        canvas.dataset.powerMissingGear = String(this.powerMissingGearCount);
+        canvas.dataset.powerMissingConfig = String(this.powerMissingConfigCount);
+        canvas.dataset.enemyUnits = String(this.units.filter((unit) => unit.team === 'enemy' && !unit.dead).length);
+        canvas.dataset.enemyRuntime = this.units
+            .filter((unit) => unit.team === 'enemy' && !unit.dead)
+            .map((unit) => `${unit.cfg.id}#${unit.uid}@${unit.x.toFixed(1)},${unit.y.toFixed(1)}`)
+            .join(';');
     }
 
     private showLoadError(message: string): void {
@@ -1449,10 +2089,10 @@ export class CangshuGame extends Component {
         }
     }
 
-    private fusionValidationMode(): 'tray' | 'placed' | 'battle' | null {
+    private fusionValidationMode(): 'tray' | 'placed' | 'battle' | 'late-tray' | 'late-placed' | 'late-battle' | null {
         if (typeof window === 'undefined') return null;
-        const match = /(?:^|[?&])fusionValidation=(tray|placed|battle)(?:&|$)/.exec(window.location.search);
-        return match ? match[1] as 'tray' | 'placed' | 'battle' : null;
+        const match = /(?:^|[?&])fusionValidation=(tray|placed|battle|late-tray|late-placed|late-battle)(?:&|$)/.exec(window.location.search);
+        return match ? match[1] as 'tray' | 'placed' | 'battle' | 'late-tray' | 'late-placed' | 'late-battle' : null;
     }
 
     private traitValidationEnabled(): boolean {
@@ -1614,6 +2254,8 @@ export class CangshuGame extends Component {
         this.addPlacedGear('H0301', 1, 4);
         this.addPlacedGear('H0202', 3, 2);
         this.replaceCandidates(['C01']);
+        this.normalRefreshTimes = 1;
+        this.addDevelopedGridReward();
     }
 
     // Screenshot-only 10 s boundary normalized from the authorized level-1004
@@ -1639,7 +2281,7 @@ export class CangshuGame extends Component {
 
     // Explicit browser-only visual fixture. It is unreachable in the normal
     // game URL and does not alter target-account star defaults or drop tables.
-    private applyFusionValidationFixture(mode: 'tray' | 'placed' | 'battle'): void {
+    private applyFusionValidationFixture(mode: 'tray' | 'placed' | 'battle' | 'late-tray' | 'late-placed' | 'late-battle'): void {
         this.clearCandidates();
         const core = this.gears.find((gear) => gear.id === 'P01');
         for (const gear of this.gears) {
@@ -1648,8 +2290,11 @@ export class CangshuGame extends Component {
         this.gears = core ? [core] : [];
         this.refreshPlacedWheelHomeHp();
 
-        if (mode === 'tray') {
-            this.replaceCandidates(['H0705', 'H0805', 'H0905']);
+        const lateFusion = mode.startsWith('late-');
+        if (mode === 'tray' || mode === 'late-tray') {
+            this.replaceCandidates(lateFusion
+                ? ['H1005', 'H1505', 'H1805']
+                : ['H0705', 'H0805', 'H0905']);
             return;
         }
 
@@ -1658,20 +2303,33 @@ export class CangshuGame extends Component {
         // side of the power core without overlapping one another.
         for (const [row, col] of [[2, 5], [3, 5]] as const) this.unlocked.add(row * GRID_COLS + col);
         this.drawGrid();
-        this.addPlacedGear('H0705', 1, 3);
-        this.addPlacedGear('H0805', 2, 2);
-        this.addPlacedGear('H0905', 2, 4);
+        if (lateFusion) {
+            this.addPlacedGear('H1005', 0, 2);
+            this.addPlacedGear('H1505', 2, 1);
+            this.addPlacedGear('H1805', 2, 4);
+        } else {
+            this.addPlacedGear('H0705', 1, 3);
+            this.addPlacedGear('H0805', 2, 2);
+            this.addPlacedGear('H0905', 2, 4);
+        }
     }
 
     private buildScene(): void {
         const background = this.makeNode('OriginalBattlefield', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
         const backgroundSprite = background.addComponent(Sprite);
         backgroundSprite.sizeMode = Sprite.SizeMode.CUSTOM;
-        resources.load(`original/${this.levelBackground}/spriteFrame`, SpriteFrame, (error, frame) => {
+        // The package references fightscene_02 and fightscene_04, but those two
+        // source textures have not been recovered. Resolve synchronously to an
+        // existing functional backdrop so late levels never render as black.
+        const resolvedBackground = this.levelBackground === 'fightscene_01' || this.levelBackground === 'fightscene_03'
+            ? this.levelBackground
+            : 'fightscene_01';
+        resources.load(`original/${resolvedBackground}/spriteFrame`, SpriteFrame, (error, frame) => {
             if (!error && background.isValid) backgroundSprite.spriteFrame = frame;
         });
 
         this.battleLayer = this.makeNode('BattleLayer', this.node, 0, DEPLOY_BATTLE_Y, 750, DEPLOY_BATTLE_HEIGHT);
+        this.backgroundEffectLayer = this.makeNode('BackgroundEffects', this.battleLayer, 0, 0, 750, DEPLOY_BATTLE_HEIGHT);
         this.unitLayer = this.makeNode('Units', this.battleLayer, 0, 0, 750, DEPLOY_BATTLE_HEIGHT);
         this.effectLayer = this.makeNode('BattleEffects', this.battleLayer, 0, 0, 750, DEPLOY_BATTLE_HEIGHT);
         this.effectGraphics = this.effectLayer.addComponent(Graphics);
@@ -1740,7 +2398,10 @@ export class CangshuGame extends Component {
 
         this.backpackHpBar = this.makeNode('BackpackHpBar', this.prepareLayer, 0, 330, 680, 38);
         this.backpackHpGraphics = this.backpackHpBar.addComponent(Graphics);
-        this.backpackHpLabel = this.makeLabel('BackpackHpText', this.backpackHpBar, 0, 0, 180, 30, `♥ ${this.levelHomeHp}`, 20, WHITE);
+        const backpackHpHeart = this.makeNode('BackpackHpHeart', this.backpackHpBar, -25, 0, 32, 27);
+        this.attachBagLikeAtlasSprite(backpackHpHeart, BAGLIKE_ATLAS_FRAMES.hpHeart);
+        this.backpackHpLabel = this.makeLabel('BackpackHpText', this.backpackHpBar, 21, 0, 90, 30, `${this.levelHomeHp}`, 20, WHITE);
+        this.applyOriginalOutline(this.backpackHpLabel, new Color(0, 0, 0, 255), 2);
         // FairyGUI places the 529px panel at y=77 in BagLikeOperComp's
         // top-left coordinates. Its Cocos centre is therefore y=51.5.
         this.backpackPanel = this.makeNode('BackpackPanel', this.prepareLayer, 0, 51.5, 730, 529);
@@ -1776,12 +2437,27 @@ export class CangshuGame extends Component {
             label.fontSize = 30;
             label.lineHeight = 36;
         }
+        this.adRefreshLabel.node.setPosition(20, 10);
+        this.adRefreshLabel.node.getComponent(UITransform)!.setContentSize(150, 52);
+        const adRefreshIcon = this.makeNode('AdRefreshTicket', this.adRefreshLabel.node.parent!, -61, 10, 42, 34);
+        this.attachRecoveredAtlasSprite(adRefreshIcon, 'original/item/spriteFrame', ITEM_ATLAS_FRAMES.adTicket);
+        const adRefreshHint = this.makeLabel('AdRefreshHint', this.adRefreshLabel.node.parent!, 0, -34, 190, 24, '必出高级齿轮', 15, new Color(244, 236, 255, 255));
+        this.applyOriginalOutline(adRefreshHint, new Color(77, 27, 107, 255), 2);
+        this.refreshCostNode = this.makeNode('RefreshCost', this.refreshLabel.node.parent!, 0, -32, 92, 28);
+        const refreshCoin = this.makeNode('RefreshCostCoin', this.refreshCostNode, -25, 0, 26, 26);
+        this.attachRecoveredAtlasSprite(refreshCoin, 'original/item/spriteFrame', ITEM_ATLAS_FRAMES.coin);
+        const refreshCost = this.makeLabel('RefreshCostValue', this.refreshCostNode, 15, 0, 50, 26, `${REFRESH_COST}`, 19, WHITE);
+        this.applyOriginalOutline(refreshCost, new Color(0, 0, 0, 255), 2);
         this.speedLabel = this.makeButton('Speed', this.node, -256.5, 476.5, 150, 54, '1× 速度', () => {
             this.speed = this.speed === 1 ? BATTLE_SPEED_UP_MULTIPLE : 1;
             this.speedLabel.string = `${this.speed}× 速度`;
         });
         this.speedLabel.node.parent!.active = false;
         this.pauseLabel = this.makeButton('Pause', this.node, -296, 617, 72, 72, '', () => {
+            if (this.phase === 'deploy') {
+                this.returnToMainScene();
+                return;
+            }
             if (this.phase !== 'battle') return;
             this.paused = !this.paused;
             this.pauseLabel.string = '';
@@ -1826,8 +2502,9 @@ export class CangshuGame extends Component {
         resultGraphics.stroke();
         this.resultTitleLabel = this.makeLabel('ResultTitle', this.resultLayer, 0, 118, 480, 64, '关卡胜利', 38, GOLD);
         this.resultBodyLabel = this.makeLabel('ResultBody', this.resultLayer, 0, 36, 540, 110, '', 20, CREAM);
-        this.makeButton('Retry', this.resultLayer, -130, -125, 230, 64, '重新挑战', () => this.restartLevel());
-        this.resultNextButtonLabel = this.makeButton('NextLevel', this.resultLayer, 130, -125, 230, 64,
+        this.makeButton('Retry', this.resultLayer, -220, -125, 190, 64, '重新挑战', () => this.restartLevel());
+        this.makeButton('ResultHome', this.resultLayer, 0, -125, 190, 64, '返回主页', () => this.returnToMainScene());
+        this.resultNextButtonLabel = this.makeButton('NextLevel', this.resultLayer, 220, -125, 190, 64,
             '进入下一关', () => this.navigateToLevel(this.levelId + 1));
         this.restyleButton(this.resultNextButtonLabel, new Color(45, 151, 92, 255), new Color(231, 255, 231, 255));
         this.resultNextButtonLabel.node.parent!.active = false;
@@ -2133,15 +2810,16 @@ export class CangshuGame extends Component {
         const layout = battlefieldLayoutForPhase(this.phase);
         this.battleLayer.setPosition(0, layout.battleY);
         this.battleLayer.getComponent(UITransform)!.setContentSize(DESIGN_WIDTH, layout.battleHeight);
+        this.backgroundEffectLayer.getComponent(UITransform)!.setContentSize(DESIGN_WIDTH, layout.battleHeight);
         this.unitLayer.getComponent(UITransform)!.setContentSize(DESIGN_WIDTH, layout.battleHeight);
         const effectLayer = this.battleLayer.getChildByName('BattleEffects');
         effectLayer?.getComponent(UITransform)?.setContentSize(DESIGN_WIDTH, layout.battleHeight);
 
         this.gridOffsetY = layout.gridOffsetY;
         this.battleLayer.active = this.phase === 'battle' || this.phase === 'trait' || this.phase === 'roundClear';
-        this.backpackBackground.setPosition(0, -150 + this.gridOffsetY);
-        this.backpackPanel.setPosition(0, 51.5 + this.gridOffsetY);
-        this.backpackHpBar.setPosition(0, 330 + this.gridOffsetY);
+        this.backpackBackground.setPosition(0, -150 + this.gridOffsetY + layout.backpackBackgroundOffsetY);
+        this.backpackPanel.setPosition(0, 51.5 + this.gridOffsetY + layout.backpackPanelOffsetY);
+        this.backpackHpBar.setPosition(0, 330 + this.gridOffsetY + layout.backpackHpOffsetY);
         this.gridLayer.setPosition(0, 0);
         for (const gear of this.gears) {
             const position = this.gridPosition(gear.row, gear.col);
@@ -2216,7 +2894,9 @@ export class CangshuGame extends Component {
         this.spawnIndex = 0;
         this.clearTimer = 0;
         this.pendingHits = [];
+        this.pendingFusionSkillHits = [];
         this.productionJobs = [];
+        this.powerSkillRemaining = P01_ROUND_START_PRODUCTIVITY_SECONDS;
         this.battleRandom = createBattleSeedRandom();
         this.visualFixtureRandom = createBattleSeedRandom(1004);
         for (const gear of this.gears) {
@@ -2263,6 +2943,7 @@ export class CangshuGame extends Component {
             this.accountProfile = incrementBagLikeAccountChallengeTimes(this.accountProfile, this.levelId);
             this.persistAccountProfile();
         }
+        const retryState = normalLevelRetryState(this.failedAttempts);
         this.clearUnits();
         for (const gear of [...this.gears]) gear.node.destroy();
         for (const gear of [...this.candidates]) gear.node.destroy();
@@ -2270,9 +2951,10 @@ export class CangshuGame extends Component {
         this.candidates = [];
         this.refreshPlacedWheelHomeHp();
         this.phase = 'deploy';
-        this.roundIndex = 0;
+        this.roundIndex = retryState.roundIndex;
+        this.failedAttempts = retryState.failedAttempts;
         this.selfHp = this.levelHomeHp;
-        this.gold = 0;
+        this.gold = this.initialGold;
         this.refreshIndex = 0;
         this.normalRefreshTimes = 0;
         this.nonAdRefreshTimes = 0;
@@ -2360,6 +3042,10 @@ export class CangshuGame extends Component {
     }
 
     private replaceCandidates(batch: GearId[]): void {
+        const unsupportedIds = batch.filter((id) => !GEARS[id]);
+        if (unsupportedIds.length > 0) {
+            throw new Error(`候选批次包含未恢复齿轮：${unsupportedIds.join(', ')}；完整批次：${batch.join(', ')}`);
+        }
         for (const gear of this.candidates) {
             if (gear.node.isValid) gear.node.destroy();
         }
@@ -2431,7 +3117,7 @@ export class CangshuGame extends Component {
     }
 
     private gearFootprint(id: GearId): { rows: number; columns: number } {
-        const shape = GEARS[id].shape;
+        const shape = this.gearShape(id);
         return {
             rows: Math.max(...shape.map(([row]) => row)) + 1,
             columns: Math.max(...shape.map(([, col]) => col)) + 1,
@@ -2440,6 +3126,7 @@ export class CangshuGame extends Component {
 
     private renderGear(gear: Gear): void {
         const config = GEARS[gear.id];
+        const shape = this.gearShape(gear.id);
         const footprint = this.gearFootprint(gear.id);
         const transform = gear.node.getComponent(UITransform)!;
         transform.setContentSize(footprint.columns * GRID_CELL, footprint.rows * GRID_CELL);
@@ -2450,10 +3137,10 @@ export class CangshuGame extends Component {
         const g = gear.node.getComponent(Graphics)!;
         g.clear();
         const bodyColor = bagLikeGearBodyColor(config.level, [config.tint.r, config.tint.g, config.tint.b]);
-        if (config.level && config.shape.length > 1) {
-            this.attachGearConnectorSprite(gear.node, config.shape, new Color(bodyColor[0], bodyColor[1], bodyColor[2], 255));
+        if (config.level && shape.length > 1) {
+            this.attachGearConnectorSprite(gear.node, shape, new Color(bodyColor[0], bodyColor[1], bodyColor[2], 255));
         }
-        for (const [shapeRow, shapeCol] of config.shape) {
+        for (const [shapeRow, shapeCol] of shape) {
             const cellX = shapeCol * GRID_CELL;
             const cellY = -shapeRow * GRID_CELL;
             g.fillColor = new Color(bodyColor[0], bodyColor[1], bodyColor[2], 245);
@@ -2469,7 +3156,7 @@ export class CangshuGame extends Component {
             g.stroke();
             if (config.level) this.attachGearBodySprite(gear.node, config.level, cellX, cellY);
         }
-        if ((config.level || 0) >= 5) this.attachLevelFiveShapeOverlay(gear.node, config.shape);
+        if ((config.level || 0) >= 5) this.attachLevelFiveShapeOverlay(gear.node, shape);
         const headKey = this.gearHeadKey(gear.id);
         if (headKey) {
             const portraitX = (footprint.columns - 1) * GRID_CELL * 0.5;
@@ -2484,6 +3171,9 @@ export class CangshuGame extends Component {
             const productionRate = this.productionRateForGear(gear).toFixed(2);
             const labelX = (footprint.columns - 1) * GRID_CELL * 0.5;
             const labelY = -(footprint.rows - 1) * GRID_CELL - 55;
+            const progressNode = this.makeNode('WorkerProgressBar', gear.node, labelX, labelY + 22, 82, 14);
+            progressNode.addComponent(Graphics);
+            this.drawWorkerProgressBar(gear);
             g.fillColor = new Color(40, 48, 82, 245);
             g.roundRect(labelX - 43, labelY - 12, 86, 24, 7);
             g.fill();
@@ -2500,6 +3190,8 @@ export class CangshuGame extends Component {
         if (id.startsWith('H11')) return 'H1101';
         if (id.startsWith('H12')) return 'H1201';
         if (id.startsWith('H13')) return 'H1301';
+        const profile = bagLikeProducerProfile(id);
+        if (profile && HERO_SMALL_HEAD_FRAMES[profile.headId]) return profile.headId;
         return HERO_SMALL_HEAD_FRAMES[id] ? id : null;
     }
 
@@ -2532,6 +3224,7 @@ export class CangshuGame extends Component {
         const frameData = HERO_SMALL_HEAD_FRAMES[headKey];
         if (!frameData) return;
         const portraitNode = this.makeNode(`GearPortrait_${headKey}`, gear.node, x, y, 90, 90);
+        if (headKey === 'coin') portraitNode.setScale(0.68, 0.68, 1);
         const fillNode = this.makeNode('WorkerProgressFill', portraitNode, 0, 0, 90, 90);
         resources.load('original/heroSmallHead/spriteFrame', SpriteFrame, (error, atlasFrame) => {
             if (error || !portraitNode.isValid) return;
@@ -2924,6 +3617,23 @@ export class CangshuGame extends Component {
         });
     }
 
+    private preloadH13Impact(): void {
+        resources.load('spine/H13Impact/baomihua_hill', sp.SkeletonData, (error, data) => {
+            if (!error && data) this.h13ImpactData = data;
+        });
+    }
+
+    private addH13Impact(x: number, y: number): void {
+        if (!this.h13ImpactData || !this.backgroundEffectLayer?.isValid) return;
+        const node = this.makeNode('H13_S1_LOWER', this.backgroundEffectLayer, x, y, 280, 288);
+        const skeleton = node.addComponent(sp.Skeleton);
+        skeleton.skeletonData = this.h13ImpactData;
+        skeleton.setCompleteListener(() => {
+            if (node.isValid) node.destroy();
+        });
+        skeleton.setAnimation(0, 'pskill01', false);
+    }
+
     private addH13Projectile(
         fromX: number,
         fromY: number,
@@ -3175,9 +3885,52 @@ export class CangshuGame extends Component {
         return label;
     }
 
+    private addDevelopedGridReward(): void {
+        if (this.prepareLayer.getChildByName('DevelopedGridReward')) return;
+        const reward = this.makeNode('DevelopedGridReward', this.prepareLayer, -298, -283, 104, 132);
+        const tile = this.makeNode('GridRewardTile', reward, 0, 0, 56, 56);
+        const graphics = tile.addComponent(Graphics);
+        graphics.fillColor = new Color(151, 156, 189, 255);
+        graphics.strokeColor = new Color(49, 45, 66, 255);
+        graphics.lineWidth = 4;
+        graphics.roundRect(-28, -28, 56, 56, 8);
+        graphics.fill();
+        graphics.stroke();
+        const question = this.makeLabel('GridRewardQuestion', tile, 0, 0, 48, 48, '?', 32, new Color(56, 55, 70, 255));
+        this.applyOriginalOutline(question, new Color(222, 224, 239, 255), 1);
+        const ticket = this.makeNode('GridRewardTicket', reward, -28, 42, 34, 28);
+        this.attachRecoveredAtlasSprite(ticket, 'original/item/spriteFrame', ITEM_ATLAS_FRAMES.adTicket);
+        const count = this.makeLabel('GridRewardCount', reward, 19, 41, 48, 28, '×3', 19, WHITE);
+        this.applyOriginalOutline(count, new Color(0, 0, 0, 255), 2);
+        const title = this.makeLabel('GridRewardTitle', reward, 0, -47, 104, 30, '获取格子', 20, WHITE);
+        this.applyOriginalOutline(title, new Color(0, 0, 0, 255), 3);
+    }
+
     private workerProgressRatio(gear: Gear): number {
         if (this.phase !== 'battle' || gear.location !== 'grid' || !GEARS[gear.id].powerPerTrigger) return 1;
         return Math.max(0, Math.min(1, gear.workerPower / 100));
+    }
+
+    private drawWorkerProgressBar(gear: Gear): void {
+        const progressNode = gear.node.getChildByName('WorkerProgressBar');
+        const visible = this.phase === 'battle' && gear.location === 'grid';
+        if (progressNode) progressNode.active = visible;
+        if (!visible) return;
+        const graphics = progressNode?.getComponent(Graphics);
+        if (!graphics) return;
+        const ratio = this.workerProgressRatio(gear);
+        graphics.clear();
+        graphics.fillColor = new Color(19, 24, 35, 245);
+        graphics.roundRect(-41, -7, 82, 14, 7);
+        graphics.fill();
+        graphics.strokeColor = CREAM;
+        graphics.lineWidth = 2;
+        graphics.roundRect(-40, -6, 80, 12, 6);
+        graphics.stroke();
+        if (ratio <= 0) return;
+        graphics.fillColor = new Color(255, 205, 62, 255);
+        graphics.roundRect(-37, -3, 74 * ratio, 6, 3);
+        graphics.fill();
     }
 
     private beginGearDrag(gear: Gear, _event: EventTouch): void {
@@ -3271,12 +4024,15 @@ export class CangshuGame extends Component {
             const sameFamilyMerge = target.id === dragged.id && Boolean(GEARS[dragged.id].nextId);
             const fusion = bagLikeFusionRecipe(dragged.id, target.id);
             if (!sameFamilyMerge && !fusion) continue;
-            const scale = target.node.scale.x;
-            for (const [rowOffset, colOffset] of GEARS[target.id].shape) {
-                const cellX = target.node.position.x + colOffset * GRID_CELL * scale;
-                const cellY = target.node.position.y - rowOffset * GRID_CELL * scale;
-                if (Math.abs(x - cellX) <= GRID_CELL * 0.46 * scale && Math.abs(y - cellY) <= GRID_CELL * 0.46 * scale) return target;
-            }
+            if (gearDropHitsTarget(
+                this.gearShape(target.id),
+                target.node.position.x,
+                target.node.position.y,
+                target.node.scale.x,
+                x,
+                y,
+                GRID_CELL,
+            )) return target;
         }
         return null;
     }
@@ -3321,7 +4077,11 @@ export class CangshuGame extends Component {
     }
 
     private gearCellsAt(id: GearId, row: number, col: number): Array<[number, number]> {
-        return placementCells(GEARS[id].shape, row, col);
+        return placementCells(this.gearShape(id), row, col);
+    }
+
+    private gearShape(id: GearId): ReadonlyArray<readonly [number, number]> {
+        return bagLikeProducerShape(id) || GEARS[id].shape;
     }
 
     private productionSources(): Array<{ uid: number; row: number; col: number; shape: ReadonlyArray<readonly [number, number]> }> {
@@ -3329,7 +4089,7 @@ export class CangshuGame extends Component {
             uid: gear.uid,
             row: gear.row,
             col: gear.col,
-            shape: GEARS[gear.id].shape,
+            shape: this.gearShape(gear.id),
         }));
     }
 
@@ -3344,7 +4104,7 @@ export class CangshuGame extends Component {
 
     private canPlaceGear(id: GearId, row: number, col: number): boolean {
         return placementAreaValid(
-            GEARS[id].shape,
+            this.gearShape(id),
             row,
             col,
             GRID_ROWS,
@@ -3360,10 +4120,10 @@ export class CangshuGame extends Component {
                 uid: gear.uid,
                 row: gear.row,
                 col: gear.col,
-                shape: GEARS[gear.id].shape,
+                shape: this.gearShape(gear.id),
             })),
             moving.uid,
-            GEARS[moving.id].shape,
+            this.gearShape(moving.id),
             row,
             col,
         ));
@@ -3418,21 +4178,25 @@ export class CangshuGame extends Component {
         for (let index = monsters.length - 1; index >= 0; index -= 1) {
             this.stepUnit(monsters[index], dt);
         }
+        this.stepFusionSkillHits(dt);
         this.stepPendingHits(dt);
         if (this.phase !== 'battle') return;
 
-        if (this.selfHp <= 0) {
+        const enemiesAlive = this.units.some((unit) => !unit.dead && unit.team === 'enemy');
+        const outcome = resolveNormalBattleOutcome({
+            homeHp: this.selfHp,
+            scheduleComplete: this.spawnIndex >= round.times.length,
+            enemiesAlive,
+            clearTimer: this.clearTimer,
+            dt,
+        });
+        this.clearTimer = outcome.clearTimer;
+        if (outcome.state === 'lost') {
             this.selfHp = 0;
             this.finish(false);
             return;
         }
-        const enemiesAlive = this.units.some((unit) => !unit.dead && unit.team === 'enemy');
-        if (this.spawnIndex >= round.times.length && !enemiesAlive) {
-            this.clearTimer += dt;
-            if (this.clearTimer >= 1) this.completeRound();
-        } else {
-            this.clearTimer = 0;
-        }
+        if (outcome.state === 'round-clear') this.completeRound();
     }
 
     private stepPowerProduction(dt: number, applyBattlePower: boolean): void {
@@ -3454,21 +4218,33 @@ export class CangshuGame extends Component {
         }
 
         const sources = this.productionSources();
+        const productivity = applyBattlePower ? p01RoundStartProductivity(this.powerSkillRemaining) : 1;
         const advanced = advancePowerCoreClock(
             { nextDirection: this.powerDirection, remainingSeconds: this.powerTimer },
             dt,
             (direction) => connectedGearUidsAtCoreSide(sources, core.uid, direction).length > 0,
+            productivity,
         );
         this.powerDirection = advanced.state.nextDirection;
         this.powerTimer = advanced.state.remainingSeconds;
+        this.powerContactCount += advanced.contacts.length;
+        if (applyBattlePower) this.powerSkillRemaining = Math.max(0, this.powerSkillRemaining - dt);
         if (!applyBattlePower) return;
         for (const contact of advanced.contacts) {
             const triggeredUids = connectedGearUidsAtCoreSide(sources, core.uid, contact.direction);
+            this.powerGearTriggerCount += triggeredUids.length;
             for (const uid of triggeredUids) {
                 const gear = this.gears.find((item) => item.uid === uid);
-                if (!gear) continue;
+                if (!gear) {
+                    this.powerMissingGearCount += 1;
+                    continue;
+                }
                 const config = GEARS[gear.id];
-                if (!config.powerPerTrigger) continue;
+                if (!config.powerPerTrigger) {
+                    this.powerMissingConfigCount += 1;
+                    continue;
+                }
+                this.workerApplyCount += 1;
                 const powerPerTrigger = this.workerPowerPerTrigger(gear, config.powerPerTrigger);
                 const result = applyWorkerPower(gear.workerPower, powerPerTrigger);
                 gear.workerPower = result.value;
@@ -3528,6 +4304,8 @@ export class CangshuGame extends Component {
         }
         if (unit.barrageCooldown > 0) unit.barrageCooldown = Math.max(0, unit.barrageCooldown - dt);
         if (unit.laserCooldown > 0) unit.laserCooldown = Math.max(0, unit.laserCooldown - dt);
+        if (unit.enemySpecialCooldown > 0) unit.enemySpecialCooldown = Math.max(0, unit.enemySpecialCooldown - dt);
+        if (unit.fusionActiveCooldown > 0) unit.fusionActiveCooldown = Math.max(0, unit.fusionActiveCooldown - dt);
         if (unit.frozen > 0) {
             if (unit.barrageCasting) {
                 unit.barrageCasting = false;
@@ -3540,8 +4318,18 @@ export class CangshuGame extends Component {
                 unit.laserElapsed = 0;
                 unit.laserTarget = null;
             }
+            unit.fusionActiveCastRemaining = 0;
             unit.frozen = Math.max(0, unit.frozen - dt);
             this.playAnimation(unit, 'idle', true);
+            return;
+        }
+        if (unit.enemySpecialCasting) {
+            this.stepEnemySpecialCast(unit, dt);
+            return;
+        }
+        if (unit.fusionActiveCastRemaining > 0) {
+            unit.fusionActiveCastRemaining = Math.max(0, unit.fusionActiveCastRemaining - dt);
+            if (unit.fusionActiveCastRemaining === 0) this.playAnimation(unit, 'idle', true);
             return;
         }
         if (unit.barrageCasting) {
@@ -3556,6 +4344,9 @@ export class CangshuGame extends Component {
         }
         unit.cooldown -= dt;
         const opponents = this.units.filter((candidate) => !candidate.dead && candidate.team !== unit.team);
+        const targetingOpponents = unit.team === 'enemy' && unit.cfg.focusHome ? [] : opponents;
+        if (unit.team === 'enemy' && this.tryBeginEnemySpecial(unit, opponents)) return;
+        if (unit.team === 'self' && this.tryBeginFusionActive(unit, opponents)) return;
         if (unit.laser && unit.laserCooldown <= 0 && opponents.length > 0) {
             const laserIntent = resolveTargetingIntent(
                 unit,
@@ -3602,7 +4393,7 @@ export class CangshuGame extends Component {
         const enemyHome = { x: unit.team === 'self' ? BATTLEFIELD_HOME_X : -BATTLEFIELD_HOME_X, y: 0 };
         const intent = resolveTargetingIntent(
             unit,
-            opponents,
+            targetingOpponents,
             unit.cfg.searchRange,
             unit.cfg.range,
             unit.cfg.moveSpeed * dt,
@@ -3621,6 +4412,137 @@ export class CangshuGame extends Component {
         unit.y += intent.moveY + separation.y;
         unit.node.setPosition(unit.x, unit.y);
         this.playAnimation(unit, intent.moveX || intent.moveY ? 'run' : 'idle', true);
+    }
+
+    private tryBeginFusionActive(unit: BattleUnit, opponents: BattleUnit[]): boolean {
+        const profile = unit.cfg.fusionActive;
+        if (!profile || unit.fusionActiveCooldown > 0 || opponents.length === 0) return false;
+        const target = selectNearestBattlefieldTarget(unit, opponents, profile.castingRange);
+        if (!target) return false;
+        unit.fusionActiveCooldown = profile.cooldownSeconds;
+        unit.fusionActiveCastRemaining = profile.castTimeSeconds;
+        this.fusionActiveCastCount += 1;
+        const launchAttack = this.effectiveAttack(unit);
+        for (const step of profile.steps) {
+            this.pendingFusionSkillHits.push({
+                timer: step.delaySeconds,
+                attacker: unit,
+                profile,
+                effectRatio: step.effectRatio,
+                target,
+                launchAttack,
+            });
+        }
+        this.playAnimation(unit, profile.skillId === '12001_2' ? 'laser' : 'attack', false);
+        return true;
+    }
+
+    private stepFusionSkillHits(dt: number): void {
+        for (const hit of this.pendingFusionSkillHits) hit.timer -= dt;
+        const ready = this.pendingFusionSkillHits.filter((hit) => hit.timer <= 0);
+        this.pendingFusionSkillHits = this.pendingFusionSkillHits.filter((hit) => hit.timer > 0);
+        for (const hit of ready) {
+            if (hit.attacker.dead && hit.profile.targeting !== 'global') continue;
+            const opponents = this.units.filter((unit) => !unit.dead && unit.team !== hit.attacker.team);
+            const targets = hit.profile.targeting === 'global'
+                ? opponents
+                : selectH03LaserTargets(
+                    hit.attacker,
+                    hit.target,
+                    opponents,
+                    hit.profile.width,
+                    hit.profile.height,
+                    999,
+                );
+            for (const target of targets) {
+                this.damageUnit(
+                    target,
+                    this.calculateDamage(hit.attacker, target.cfg, hit.effectRatio, hit.launchAttack),
+                    hit.attacker,
+                );
+                this.fusionActiveHitCount += 1;
+            }
+            this.addTrace(hit.attacker, hit.target.x, hit.target.y);
+        }
+    }
+
+    private tryBeginEnemySpecial(unit: BattleUnit, opponents: BattleUnit[]): boolean {
+        if (unit.enemySpecialCooldown > 0 || opponents.length === 0) return false;
+        let target: BattleUnit | null = null;
+        if (unit.cfg.assassinate) {
+            target = selectFarthestEnemySkillTarget(unit, opponents, unit.cfg.searchRange);
+            if (!target || battlefieldDistance(unit, target) < unit.cfg.range) return false;
+            unit.enemySpecialCooldown = unit.cfg.assassinateCooldown || 20;
+        } else if (unit.cfg.enemySpecialAttack) {
+            target = selectNearestBattlefieldTarget(unit, opponents, 150);
+            if (!target) return false;
+            unit.enemySpecialCooldown = unit.cfg.enemySpecialCooldown || 5;
+        } else {
+            return false;
+        }
+        unit.enemySpecialCasting = true;
+        unit.enemySpecialElapsed = 0;
+        unit.enemySpecialBehaviorTriggered = false;
+        unit.enemySpecialTarget = target;
+        // The recovered special animation names remain presentation backlog for
+        // fallback-rendered enemies; the simulation uses the common attack pose.
+        this.playAnimation(unit, 'attack', false);
+        return true;
+    }
+
+    private stepEnemySpecialCast(unit: BattleUnit, dt: number): void {
+        const behaviorDelay = unit.cfg.assassinate ? 0.3 : unit.cfg.enemySpecialBehaviorDelay || 0.3;
+        const castTime = unit.cfg.assassinate ? 1 : unit.cfg.enemySpecialCastTime || 1.5;
+        const advance = advanceEnemySpecialCast(
+            { elapsed: unit.enemySpecialElapsed, behaviorTriggered: unit.enemySpecialBehaviorTriggered },
+            dt,
+            behaviorDelay,
+            castTime,
+        );
+        unit.enemySpecialElapsed = advance.elapsed;
+        unit.enemySpecialBehaviorTriggered = advance.behaviorTriggered;
+        if (advance.triggerBehavior) this.resolveEnemySpecial(unit);
+        if (!advance.complete) return;
+        unit.enemySpecialCasting = false;
+        unit.enemySpecialElapsed = 0;
+        unit.enemySpecialTarget = null;
+        this.playAnimation(unit, 'idle', true);
+    }
+
+    private resolveEnemySpecial(unit: BattleUnit): void {
+        const target = unit.enemySpecialTarget;
+        if (unit.cfg.assassinate) {
+            if (!target || target.dead) return;
+            const destination = assassinateDestination(unit, target, unit.cfg.assassinateDistance || 45);
+            unit.x = destination.x;
+            unit.y = destination.y;
+            unit.node.setPosition(unit.x, unit.y);
+            this.damageUnit(target, this.calculateDamage(unit, target.cfg, 10000), unit);
+            this.addTrace(unit, target.x, target.y);
+            return;
+        }
+        if (!unit.cfg.enemySpecialAttack || !target) return;
+        const opponents = this.units.filter((candidate) => !candidate.dead && candidate.team !== unit.team);
+        const victims = unit.cfg.enemySpecialAttack === 'line'
+            ? selectH03LaserTargets(
+                unit,
+                target,
+                opponents,
+                unit.cfg.enemySpecialWidth || 150,
+                unit.cfg.enemySpecialHeight || 500,
+                999,
+            )
+            : opponents.filter((candidate) =>
+                Math.hypot(candidate.x - unit.x, candidate.y - unit.y) <= (unit.cfg.enemySpecialRadius || 150),
+            );
+        for (const victim of victims) {
+            this.damageUnit(
+                victim,
+                this.calculateDamage(unit, victim.cfg, unit.cfg.enemySpecialEffectRatio || 15000),
+                unit,
+            );
+        }
+        this.addTrace(unit, target.x, target.y);
     }
 
     private beginH02BarrageCast(unit: BattleUnit, target: BattleUnit): void {
@@ -3773,15 +4695,30 @@ export class CangshuGame extends Component {
         unit.cooldown = attackIntervalSeconds(unit.cfg.attackInterval, attrs.attackSpeed);
         this.playAnimation(unit, 'attack', false);
         this.playMeleeAttackAudio(unit);
+        const primaryBullet = unit.cfg.fusionPrimaryBullet;
+        const launchX = unit.x + (primaryBullet?.launchOffsetX || 0);
+        const launchY = unit.y + (primaryBullet?.launchOffsetY || 0);
         const travelDistance = target
-            ? Math.hypot(target.x - unit.x, target.y - unit.y)
+            ? Math.hypot(target.x - launchX, target.y - launchY)
             : targetHome
-              ? Math.hypot(-BATTLEFIELD_HOME_X - unit.x, unit.y)
+              ? Math.hypot(-BATTLEFIELD_HOME_X - launchX, launchY)
               : 0;
-        const travelTime = unit.cfg.projectileSpeed ? travelDistance / unit.cfg.projectileSpeed : 0;
+        // Type 11 has no version-18 BulletType factory case and falls through
+        // to BulletUnit: fixed launch direction, cfg.speed, and a path ending
+        // about 20 units before the target's launch position.
+        const travelTime = primaryBullet
+            ? Math.max(0, travelDistance - primaryBullet.stopShortDistance) / primaryBullet.speed
+            : unit.cfg.projectileSpeed ? travelDistance / unit.cfg.projectileSpeed : 0;
         const behaviorDelay = attackBehaviorDelaySeconds(unit.cfg.attackDelay, attrs.attackSpeed);
-        const impactX = target ? target.x : targetHome ? -BATTLEFIELD_HOME_X : unit.x;
-        const impactY = target ? target.y : -10;
+        const primaryTravelRatio = primaryBullet && travelDistance > 0
+            ? Math.max(0, travelDistance - primaryBullet.stopShortDistance) / travelDistance
+            : 1;
+        const impactX = target
+            ? launchX + (target.x - launchX) * primaryTravelRatio
+            : targetHome ? -BATTLEFIELD_HOME_X : launchX;
+        const impactY = target
+            ? launchY + (target.y - launchY) * primaryTravelRatio
+            : -10;
         const h13BounceProfile = unit.cfg.id === 'H1301' || unit.cfg.id === 'H09'
             ? resolveH13BounceProfileForSkill(this.h13SkillId)
             : null;
@@ -3817,30 +4754,36 @@ export class CangshuGame extends Component {
                 this.addH02Projectile(unit.x, unit.y, splitTarget.x, splitTarget.y, splitTravelTime);
             }
         }
-        this.pendingHits.push({
-            timer: behaviorDelay + travelTime,
-            attacker: unit,
-            target,
-            targetHome,
-            fromX: unit.x,
-            fromY: unit.y,
-            effectRatio: unit.cfg.effectRatio,
-            areaRadius: unit.cfg.areaRadius || 0,
-            maxTargets: unit.cfg.maxTargets || 1,
-            impactX,
-            impactY,
-            projectile: Boolean(unit.cfg.projectileSpeed),
-            launchAttack: this.effectiveAttack(unit),
-            bounceTimes: 0,
-            bounceMaxTimes: resolveBounceMaxTimes(
-                unit.cfg.bounceTimes || 0,
-                this.traitEffectAmount('bounceTimes', unit.cfg),
-            ),
-            bounceRange: unit.cfg.bounceRange || 0,
-            bounceAttackIncrease: h13BounceProfile?.attackIncreasePerBounce || 0,
-            bounceHitUids: new Set<number>(),
-            countsAsWarriorAttack: true,
-        });
+        const hitDelays = unit.cfg.multiHitDelays && unit.cfg.multiHitDelays.length > 0
+            ? unit.cfg.multiHitDelays
+            : [behaviorDelay];
+        if (primaryBullet && target) this.h10PrimaryBulletCastCount += 1;
+        for (const hitDelay of hitDelays) {
+            this.pendingHits.push({
+                timer: hitDelay + travelTime,
+                attacker: unit,
+                target,
+                targetHome,
+                fromX: launchX,
+                fromY: launchY,
+                effectRatio: unit.cfg.effectRatio,
+                areaRadius: unit.cfg.areaRadius || 0,
+                maxTargets: unit.cfg.maxTargets || 1,
+                impactX,
+                impactY,
+                projectile: Boolean(unit.cfg.projectileSpeed),
+                launchAttack: this.effectiveAttack(unit),
+                bounceTimes: 0,
+                bounceMaxTimes: resolveBounceMaxTimes(
+                    unit.cfg.bounceTimes || 0,
+                    this.traitEffectAmount('bounceTimes', unit.cfg),
+                ),
+                bounceRange: unit.cfg.bounceRange || 0,
+                bounceAttackIncrease: h13BounceProfile?.attackIncreasePerBounce || 0,
+                bounceHitUids: new Set<number>(),
+                countsAsWarriorAttack: true,
+            });
+        }
         if (unit.cfg.id === 'H09' && target && travelTime > 0) {
             this.addH0905Projectile(unit.x, unit.y, impactX, impactY, travelTime, behaviorDelay);
         }
@@ -3868,7 +4811,17 @@ export class CangshuGame extends Component {
             if (hit.target && (!hit.target.dead || (hit.projectile && hit.areaRadius > 0))) {
                 const centerX = hit.projectile ? hit.impactX : hit.target.x;
                 const centerY = hit.projectile ? hit.impactY : hit.target.y;
-                const targets = hit.areaRadius > 0
+                const primaryBullet = hit.attacker.cfg.fusionPrimaryBullet;
+                const targets = primaryBullet
+                    ? selectH03LaserTargets(
+                        { x: hit.impactX, y: hit.impactY },
+                        hit.target,
+                        this.units.filter((unit) => !unit.dead && unit.team !== hit.attacker.team),
+                        primaryBullet.width,
+                        primaryBullet.height,
+                        999,
+                    )
+                    : hit.areaRadius > 0
                     ? this.units
                           .filter((unit) => !unit.dead && unit.team !== hit.attacker.team)
                           .map((unit) => ({ unit, distance: Math.hypot(unit.x - centerX, unit.y - centerY) }))
@@ -3912,6 +4865,13 @@ export class CangshuGame extends Component {
                     );
                     if (counterattack > 0) this.damageUnit(hit.attacker, counterattack, target);
                     this.damageUnit(target, damage.value, hit.attacker);
+                    if (primaryBullet) this.h10PrimaryBulletHitCount += 1;
+                    if (!target.dead && hit.attacker.cfg.knockbackDistance) {
+                        const direction = hit.attacker.team === 'enemy' ? -1 : 1;
+                        target.x += direction * hit.attacker.cfg.knockbackDistance;
+                        target.x = Math.max(-HOME_X + 55, Math.min(HOME_X - 55, target.x));
+                        target.node.setPosition(target.x, target.y);
+                    }
                     warriorCriticalConsumed ||= forcedWarriorCritical && damage.status === 'critical';
                     if (hit.attacker.transform) {
                         const transform = applyH03TransformHit({
@@ -3941,6 +4901,7 @@ export class CangshuGame extends Component {
                 if (hit.attacker.cfg.id === 'H07') this.addH0705Impact(centerX, centerY);
                 if (hit.attacker.cfg.id === 'H08') this.addH08Impact(centerX, centerY);
                 if (hit.attacker.cfg.id === 'H09') this.addH0905Impact(centerX, centerY);
+                if (hit.attacker.cfg.id === 'H1301') this.addH13Impact(centerX, centerY);
                 if (hit.attacker.cfg.id === 'H1201') this.playH12HitAudio();
                 if (hit.target && hit.bounceMaxTimes > 0) this.queueBounceHit(hit);
                 if (warriorCombo && (hit.countsAsWarriorAttack || warriorCriticalConsumed)) {
@@ -3958,6 +4919,12 @@ export class CangshuGame extends Component {
                 );
                 const damage = this.calculateDamage(hit.attacker, null, hit.effectRatio, attack);
                 this.selfHp -= damage;
+                if (hit.attacker.cfg.selfDestructRadius && !hit.attacker.dead) {
+                    // ZB_1701 completes by killing its caster; the ConType_14
+                    // death behavior is the single 10000-ratio home hit above.
+                    // It does not add a second area hit to nearby heroes.
+                    this.killUnit(hit.attacker);
+                }
                 const x = -HOME_X + 20;
                 this.addDamageText(damage, x, -15);
                 this.addTrace(hit.attacker, x, -10);
@@ -4094,7 +5061,12 @@ export class CangshuGame extends Component {
         target.shield = result.shield;
         this.addDamageText(damage, target.x, target.y + 48);
         if (target.hp <= 0) {
-            if (target.team === 'enemy' && attacker) this.completeWarriorKill(attacker);
+            if (target.team === 'enemy' && attacker) {
+                this.completeWarriorKill(attacker);
+                const h15Coins = bagLikeH15KillCoins(attacker.cfg.id, true);
+                this.gold += h15Coins;
+                this.h15KillCoinsEarned += h15Coins;
+            }
             this.killUnit(target);
         }
     }
@@ -4313,7 +5285,7 @@ export class CangshuGame extends Component {
             const model = GEARS[gear.id].unit;
             if (model) usedHeroIds.add(model.slice(0, 3));
         }
-        this.currentTraitChoices = drawWeightedTraits(
+        const randomChoices = drawWeightedTraits(
             IMPLEMENTED_TRAIT_POOL,
             usedHeroIds,
             this.traitStacks,
@@ -4324,12 +5296,27 @@ export class CangshuGame extends Component {
             bagLikeHomeHpPercent(this.selfHp, this.levelHomeHp),
             new Map(Object.keys(this.currentHeroStars()).map((heroId) => [heroId, this.currentHeroStars()[heroId]])),
         );
+        const fixedChoices = minimumQuality === 0
+            ? (this.staticBuffsByLevel.get(this.bagLikeLevel) || [])
+                .map((id) => IMPLEMENTED_TRAIT_POOL.find((trait) => trait.id === id))
+                .filter((trait): trait is TraitDefinition => Boolean(trait))
+            : [];
+        const fixedIds = new Set(fixedChoices.map((trait) => trait.id));
+        this.currentTraitChoices = [
+            ...fixedChoices,
+            ...randomChoices.filter((trait) => !fixedIds.has(trait.id)),
+        ].slice(0, 3);
     }
 
     private currentHeroStars(): Record<string, number> {
         return {
             ...this.accountProfile.stars,
             ...(this.validationHeroStarOverrides || {}),
+            H05: this.h05HeroStar,
+            H06: this.h06HeroStar,
+            H14: this.h14HeroStar,
+            H16: this.h16HeroStar,
+            H17: this.h17HeroStar,
         };
     }
 
@@ -4415,7 +5402,7 @@ export class CangshuGame extends Component {
 
     private spawnHero(model: ModelId, gear: Gear): void {
         const profile = bagLikeProducerProfile(gear.id);
-        if (!profile || profile.kind !== 'hamster' || !profile.modelId || !profile.spineResourcePath || !profile.modelScale) return;
+        if (!profile || profile.kind !== 'hamster' || !UNITS[model]) return;
         if (this.fusionValidationMode()) console.log(`[fusion-validation] spawning ${gear.id} as ${profile.modelId}`);
         const config: UnitConfig = {
             ...UNITS[model],
@@ -4423,13 +5410,20 @@ export class CangshuGame extends Component {
             productionLevel: profile.level,
             productionSkillId: profile.primarySkillId,
             visualModelId: profile.modelId,
-            spinePath: profile.spineResourcePath,
-            spineScale: profile.modelScale,
+            spinePath: profile.spineResourcePath || UNITS[model].spinePath,
+            spineScale: profile.modelScale || UNITS[model].spineScale,
         };
         const scales = this.producerAttributeScales(gear, profile, config);
-        const validationSpawnY: Readonly<Record<string, number>> = { H0705: -95, H0805: 0, H0905: 95 };
-        const spawnY = this.fusionValidationMode() ? validationSpawnY[gear.id] : Math.random() * 150;
+        const validationSpawnY: Readonly<Record<string, number>> = {
+            H0705: -95,
+            H0805: 0,
+            H0905: 95,
+            H1005: -95,
+            H1805: 95,
+        };
+        const spawnY = this.fusionValidationMode() ? (validationSpawnY[gear.id] || 0) : Math.random() * 150;
         this.createUnit('self', config, -300, spawnY, scales.attack, scales.hp);
+        this.selfSpawnCount += 1;
     }
 
     private castTowerSkill(model: ModelId, gear: Gear): void {
@@ -4487,7 +5481,24 @@ export class CangshuGame extends Component {
             warriorCombo: null,
             warriorComboCompletedAttacks: 0,
             warriorComboCriticalReady: false,
+            enemySpecialCooldown: 0,
+            enemySpecialCasting: false,
+            enemySpecialElapsed: 0,
+            enemySpecialBehaviorTriggered: false,
+            enemySpecialTarget: null,
+            fusionActiveCooldown: 0,
+            fusionActiveCastRemaining: 0,
         };
+        if (model === 'H1701') {
+            // LS_1501 emits six recovered pulses through a 150 x 500 forward
+            // rectangle. Wheel attacks originate at the player's battlefield
+            // edge rather than at the backpack's UI-space gear coordinates.
+            caster.x = -HOME_X + 55;
+            caster.y = 0;
+            const lineTargets = selectH03LaserTargets(caster, target, targets, 150, 500, 999);
+            for (const lineTarget of lineTargets) this.beginAttack(caster, lineTarget, null);
+            return;
+        }
         if (cfg.projectileSpeed) {
             this.beginAttack(caster, target, null);
             return;
@@ -4510,7 +5521,13 @@ export class CangshuGame extends Component {
             .sort((left, right) => left.distance - right.distance)
             .slice(0, cfg.maxTargets || 1)
             .map((entry) => entry.unit);
-        for (const unit of affected) this.damageUnit(unit, this.calculateDamage(caster, unit.cfg, cfg.effectRatio), caster);
+        for (const unit of affected) {
+            this.damageUnit(unit, this.calculateDamage(caster, unit.cfg, cfg.effectRatio), caster);
+            if (!unit.dead && cfg.knockbackDistance) {
+                unit.x = Math.min(HOME_X - 40, unit.x + cfg.knockbackDistance);
+                unit.node.setPosition(unit.x, unit.y);
+            }
+        }
         this.addTrace(caster, target.x, target.y);
     }
 
@@ -4588,13 +5605,16 @@ export class CangshuGame extends Component {
     private spawnMonster(model: ModelId, round: RoundConfig): void {
         const base = UNITS[model];
         const config = base;
-        const defeatScale = defeatCompensation(this.failedAttempts);
+        const defeatScale = mechanicsFirstDefeatCompensation(this.failedAttempts);
         const atkScale = (this.levelAtkMultiple / 10000) * (round.atkMultiple / 10000) * defeatScale;
         const hpScale = (this.levelHpMultiple / 10000) * (round.hpMultiple / 10000) * defeatScale;
-        const positionRandom = this.developedValidationMode() === 'battle' ? this.visualFixtureRandom : Math.random;
-        const y = positionRandom() * UNIT_Y_LIMIT * 2 - UNIT_Y_LIMIT;
-        const xJitter = 2 * (positionRandom() - 0.5);
-        const yJitter = 2 * (positionRandom() - 0.5);
+        const developedBattle = this.developedValidationMode() === 'battle';
+        const fixtureY = DEVELOPED_BATTLE_SPAWN_Y[this.spawnIndex];
+        const y = developedBattle && fixtureY !== undefined
+            ? fixtureY
+            : Math.random() * UNIT_Y_LIMIT * 2 - UNIT_Y_LIMIT;
+        const xJitter = developedBattle ? 0 : 2 * (Math.random() - 0.5);
+        const yJitter = developedBattle ? 0 : 2 * (Math.random() - 0.5);
         this.createUnit('enemy', config, HOME_X - 55 + xJitter, y + yJitter, atkScale, hpScale);
     }
 
@@ -4671,6 +5691,13 @@ export class CangshuGame extends Component {
             warriorCombo,
             warriorComboCompletedAttacks: 0,
             warriorComboCriticalReady: false,
+            enemySpecialCooldown: cfg.assassinatePreCooldown || cfg.enemySpecialPreCooldown || 0,
+            enemySpecialCasting: false,
+            enemySpecialElapsed: 0,
+            enemySpecialBehaviorTriggered: false,
+            enemySpecialTarget: null,
+            fusionActiveCooldown: cfg.fusionActive?.initialCooldownSeconds || 0,
+            fusionActiveCastRemaining: 0,
         };
         this.units.push(unit);
         this.loadSkeleton(unit);
@@ -4721,32 +5748,38 @@ export class CangshuGame extends Component {
 
     private completeRound(): void {
         this.phase = 'roundClear';
+        // The recovered controller removes every remaining bullet as soon as
+        // victory is detected. EXP has already been emitted synchronously by
+        // each monster death; round coin rewards wait for roundEnd one second
+        // later.
         this.clearUnits();
-        this.gold += this.roundCoinRewards[this.roundIndex] || 0;
         this.claimAccountRoundReward(this.roundIndex + 1);
         this.scheduleOnce(() => {
-            if (this.roundIndex >= this.rounds.length - 1) {
+            const h15RoundCoins = bagLikeH15RoundEndCoins(this.gears.map((gear) => gear.id));
+            this.gold += (this.roundCoinRewards[this.roundIndex] || 0) + h15RoundCoins;
+            this.h15RoundCoinsEarned += h15RoundCoins;
+            const completion = resolveNormalRoundCompletion(this.roundIndex, this.rounds.length);
+            if (completion.state === 'won') {
                 this.finish(true);
                 return;
             }
-            this.roundIndex += 1;
+            this.roundIndex = completion.roundIndex;
             this.phase = 'deploy';
             this.freeRefreshUsed = false;
             this.dealPreparationBatch();
             this.tipLabel.string = `进入第 ${this.roundIndex + 1} 波准备：新候选需手动摆放`;
             this.applyPhaseLayout();
-        }, 0.7);
+        }, 1);
     }
 
     private finish(won: boolean): void {
         if (won) {
-            this.failedAttempts = 0;
             const completion = completeBagLikeAccountLevel(this.accountProfile, this.levelId);
             this.accountProfile = completion.profile;
             this.accountUnlockedThisAttempt = completion.unlocked;
             this.persistAccountProfile(false);
         }
-        else this.failedAttempts += 1;
+        this.failedAttempts = normalLevelFailedAttempts(this.failedAttempts, won);
         this.phase = won ? 'won' : 'lost';
         this.paused = false;
         this.traitLayer.active = false;
@@ -4759,7 +5792,7 @@ export class CangshuGame extends Component {
             : '';
         this.resultBodyLabel.string = won
             ? `${this.rounds.length} 波敌人已经全部清除\n账号奖励：${this.accountAttemptRewardText()}${unlockedText}`
-            : `我方兵营已被摧毁\n下次敌军属性降至 ${Math.round(defeatCompensation(this.failedAttempts) * 100)}%`;
+            : `我方兵营已被摧毁\n下次敌军属性降至 ${Math.round(mechanicsFirstDefeatCompensation(this.failedAttempts) * 100)}%`;
         this.resultNextButtonLabel.node.parent!.active = won && this.levelId < BAGLIKE_LAST_LEVEL_ID;
         this.resultNextButtonLabel.string = this.levelId < BAGLIKE_LAST_LEVEL_ID
             ? `进入第 ${bagLikeLevelNumber(this.levelId + 1)} 关`
@@ -4774,6 +5807,7 @@ export class CangshuGame extends Component {
         }
         this.units = [];
         this.pendingHits = [];
+        this.pendingFusionSkillHits = [];
         this.productionJobs = [];
         this.traces = [];
         for (const visual of this.projectileVisuals) {
@@ -4798,25 +5832,65 @@ export class CangshuGame extends Component {
     }
 
     private addDamageText(damage: number, x: number, y: number): void {
-        const label = this.makeLabel(`Damage_${this.serial}`, this.unitLayer, x, y, 100, 30, `-${damage}`, 19, damage >= 25 ? GOLD : WHITE);
-        this.floatingTexts.push({ node: label.node, label, life: 0.7 });
+        this.addBattleNumberText(`${damage}`, x, y, 'white');
     }
 
     private addHealText(amount: number, x: number, y: number): void {
-        const label = this.makeLabel(`Heal_${this.serial}`, this.unitLayer, x, y, 100, 30, `+${amount}`, 19, GREEN);
-        this.floatingTexts.push({ node: label.node, label, life: 0.7 });
+        this.addBattleNumberText(`+${amount}`, x, y, 'green');
+    }
+
+    private addBattleNumberText(value: string, x: number, y: number, palette: 'white' | 'green'): void {
+        const node = this.makeNode(`BattleNumber_${this.serial}`, this.unitLayer, x, y, 100, 30);
+        node.setScale(1.3, 1.3, 1);
+        const sprites: Sprite[] = [];
+        let fallbackLabel: Label | null = null;
+        const atlasFrame = this.battleNumberAtlasFrame;
+        if (atlasFrame) {
+            const glyphs = Array.from(value);
+            const advance = 22;
+            const startX = (1 - glyphs.length) * advance * 0.5;
+            glyphs.forEach((character, index) => {
+                const glyph = BATTLE_NUMBER_GLYPHS[palette][character];
+                if (!glyph) return;
+                const glyphNode = this.makeNode(`Glyph_${character}_${index}`, node, startX + index * advance, 0, 22, 28);
+                const frame = new SpriteFrame();
+                frame.reset({
+                    texture: atlasFrame.texture,
+                    rect: glyph.rect,
+                    originalSize: new Size(22, 28),
+                    offset: glyph.offset,
+                });
+                const sprite = glyphNode.addComponent(Sprite);
+                sprite.sizeMode = Sprite.SizeMode.CUSTOM;
+                sprite.spriteFrame = frame;
+                sprites.push(sprite);
+            });
+        } else {
+            fallbackLabel = this.makeLabel('BitmapFontFallback', node, 0, 0, 100, 30, value, 24, palette === 'green' ? GREEN : WHITE);
+        }
+        this.floatingTexts.push({ node, sprites, fallbackLabel, elapsed: 0, startY: y });
     }
 
     private stepEffects(dt: number): void {
         for (const trace of this.traces) trace.life -= dt;
         this.traces = this.traces.filter((trace) => trace.life > 0);
         for (const floating of this.floatingTexts) {
-            floating.life -= dt;
-            floating.node.setPosition(floating.node.position.x, floating.node.position.y + dt * 42);
-            floating.label.color = new Color(floating.label.color.r, floating.label.color.g, floating.label.color.b, Math.max(0, floating.life / 0.7) * 255);
-            if (floating.life <= 0 && floating.node.isValid) floating.node.destroy();
+            floating.elapsed += dt;
+            // resources2/battleNum transition "t": move 46 px upward over 2/3 s
+            // with QuadOut easing; begin a 0.7 s QuadOut fade at t=0.3 s.
+            const moveProgress = Math.min(1, floating.elapsed / (2 / 3));
+            const moveEase = 1 - (1 - moveProgress) * (1 - moveProgress);
+            floating.node.setPosition(floating.node.position.x, floating.startY + 46 * moveEase);
+            const fadeProgress = Math.max(0, Math.min(1, (floating.elapsed - 0.3) / 0.7));
+            const alpha = Math.round((1 - fadeProgress) * (1 - fadeProgress) * 255);
+            for (const sprite of floating.sprites) sprite.color = new Color(255, 255, 255, alpha);
+            if (floating.fallbackLabel) {
+                const color = floating.fallbackLabel.color;
+                floating.fallbackLabel.color = new Color(color.r, color.g, color.b, alpha);
+            }
+            if (floating.elapsed >= 1 && floating.node.isValid) floating.node.destroy();
         }
-        this.floatingTexts = this.floatingTexts.filter((floating) => floating.life > 0);
+        this.floatingTexts = this.floatingTexts.filter((floating) => floating.elapsed < 1);
         for (const visual of this.projectileVisuals) {
             let activeDt = dt;
             if (visual.delay > 0) {
@@ -4889,7 +5963,7 @@ export class CangshuGame extends Component {
         g.fillColor = new Color(72, 194, 91, 255);
         g.rect(-333, -8, 666 * ratio, 16);
         g.fill();
-        this.backpackHpLabel.string = `♥ ${Math.ceil(this.selfHp)}`;
+        this.backpackHpLabel.string = `${Math.ceil(this.selfHp)}`;
     }
 
     private drawHomeBar(g: Graphics, ratio: number, color: Color): void {
@@ -4903,6 +5977,7 @@ export class CangshuGame extends Component {
     }
 
     private refreshUi(): void {
+        this.syncBrowserContractState();
         const phaseText: Record<Phase, string> = {
             deploy: '布阵阶段',
             battle: '战斗中',
@@ -4918,17 +5993,20 @@ export class CangshuGame extends Component {
         this.objectiveLabel.string = this.phase === 'battle' || this.phase === 'trait' ? `剩余敌人 ${this.units.filter((unit) => unit.team === 'enemy' && !unit.dead).length}` : '目标：清除全部敌人';
         this.actionLabel.string =
             this.phase === 'deploy'
-                ? `开始第 ${this.roundIndex + 1} 波`
+                ? '开战'
                 : this.phase === 'won' || this.phase === 'lost'
                   ? '重新挑战'
                   : '战斗进行中';
-        this.refreshLabel.string = this.normalRefreshTimes === 0 ? '免费刷新' : `刷新 ${REFRESH_COST}`;
+        this.refreshLabel.string = '刷新';
+        this.refreshLabel.node.setPosition(0, this.normalRefreshTimes > 0 ? 10 : 0);
+        this.refreshCostNode.active = this.normalRefreshTimes > 0;
         this.refreshLabel.color = this.phase === 'deploy' ? CREAM : new Color(170, 170, 170, 255);
-        this.adRefreshLabel.string = this.freeRefreshUsed ? '广告刷新 0/1' : '广告刷新 1/1';
+        this.adRefreshLabel.string = '刷新';
         this.adRefreshLabel.color = this.phase === 'deploy' && !this.freeRefreshUsed ? CREAM : new Color(170, 170, 170, 255);
         this.pauseLabel.string = '';
         this.levelButtonLabel.string = `第 ${bagLikeLevelNumber(this.levelId)} 关`;
         for (const gear of [...this.gears, ...this.candidates]) {
+            this.drawWorkerProgressBar(gear);
             const headKey = this.gearHeadKey(gear.id);
             const progressFill = headKey
                 ? gear.node.getChildByName(`GearPortrait_${headKey}`)?.getChildByName('WorkerProgressFill')?.getComponent(Sprite)

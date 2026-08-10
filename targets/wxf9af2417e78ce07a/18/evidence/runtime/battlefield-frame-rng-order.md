@@ -2,7 +2,7 @@
 
 Target: `wxf9af2417e78ce07a/18`
 
-Status: confirmed for the battle-controller frame order, the power-core phase lifetime, and the two RNG domains described below. The relative callback order between the independent `GameTimer` power-core tween and the `BattleTimer` combat frame is not proven by the recovered modules and remains a matched-trace item.
+Status: confirmed for the battle-controller frame order, the power-core phase lifetime, and the two RNG domains described below. The separately recovered common Timer/launcher and bundled Scheduler source also confirms that the independent `GameTimer` power-core tween runs before the `BattleTimer` combat frame; see `battlefield-cross-scheduler-boundary.md`.
 
 ## Battle frame order
 

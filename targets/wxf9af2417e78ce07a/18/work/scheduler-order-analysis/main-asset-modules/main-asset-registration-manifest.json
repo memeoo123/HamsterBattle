@@ -1,0 +1,2022 @@
+[
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/AccountHistoryCom.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs",
+      "./UIScriptManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/AccountHistoryModel.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseModel.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/AccountWin.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./UILoginConfig.ts",
+      "./LoginNotificationKey.ts",
+      "./AccountHistoryModel.ts",
+      "./UIScriptManager.ts",
+      "./UIWin.ts",
+      "./SdkManager.ts",
+      "./LayerManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/AdAPI.ts",
+    "dependencies": [
+      "cc",
+      "./NativeAPI.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/AgeTipsWin.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./UILoginConfig.ts",
+      "./UIScriptManager.ts",
+      "./UICommWin.ts",
+      "./LayerManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/AnimBaseUnitNode.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./Logger.ts",
+      "./TableManager.ts",
+      "./TimeManager.ts",
+      "./GameTimer.ts",
+      "./ColorUtils.ts",
+      "./NodeUtils.ts",
+      "./BaseUnitNode.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ArrayUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/AssetBundleKeys.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/AudioEnums.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/AudioManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts",
+      "./AssetBundleKeys.ts",
+      "./BattleTimer.ts",
+      "./GameTimer.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/Base64.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/BaseController.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseNotification.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/BaseLauncher.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./G.ts",
+      "./LayerManager.ts",
+      "./ScreenAdaptManager.ts",
+      "./FGUIManager.ts",
+      "./I18nManager.ts",
+      "./Logger.ts",
+      "./FacadeManager.ts",
+      "./UIManager.ts",
+      "./NativeAPI.ts",
+      "./ResManager.ts",
+      "./TableManager.ts",
+      "./TimeManager.ts",
+      "./BattleTimer.ts",
+      "./GameTimer.ts",
+      "./SaveManager.ts",
+      "./SdkManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/BaseModel.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./SaveManager.ts",
+      "./NetSaveManager.ts",
+      "./BaseNotification.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/BaseNotification.ts",
+    "dependencies": [
+      "cc",
+      "./FacadeManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/BaseNotificationKey.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/BaseSingleton.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/BaseUnitNode.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/BattleTimer.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./Timer.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/BgCom.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs",
+      "./UIScriptManager.ts",
+      "./Res.ts",
+      "./GameTimer.ts",
+      "./Logger.ts",
+      "./ResManager.ts",
+      "./PlatformManager.ts",
+      "./ChannelManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/BootProcedure.ts",
+    "dependencies": [
+      "cc",
+      "./TaskManager.ts",
+      "./Handler.ts",
+      "./LoginTask.ts",
+      "./InitAppInfoTask.ts",
+      "./LoginPageTask.ts",
+      "./UploadEventManager.ts",
+      "./InitAppStateTask.ts",
+      "./DebugUtils.ts",
+      "./CheckVersionTask.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/CallLater.ts",
+    "dependencies": [
+      "cc",
+      "./Utils.ts",
+      "./Timer.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ChannelManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts",
+      "./env"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/CheckVersionTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./TaskManager.ts",
+      "./FacadeManager.ts",
+      "./LoginNotificationKey.ts",
+      "./HotUpdateManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ClassUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ClipboardUtils.ts",
+    "dependencies": [
+      "cc",
+      "./G.ts",
+      "./DebugUtils.ts",
+      "./PlatformManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/CocosTweenSystem.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ColorUtils.ts",
+    "dependencies": [
+      "cc",
+      "./MathUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ComponentUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ConstantI18n.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/DateUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/debug-view-runtime-control.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/DebugUtils.ts",
+    "dependencies": [
+      "cc",
+      "./env"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/EditBoxImplPrototypeExtension.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/EnterGameProcedure.ts",
+    "dependencies": [
+      "cc",
+      "./TaskManager.ts",
+      "./EnterTask.ts",
+      "./LoadResTask.ts",
+      "./Handler.ts",
+      "./LoadGameScriptsTask.ts",
+      "./InitPlayerInfoTask.ts",
+      "./TableTask.ts",
+      "./FontTask.ts",
+      "./UploadEventManager.ts",
+      "./LoginAccountTask.ts",
+      "./LoginCheckTask.ts",
+      "./FacadeManager.ts",
+      "./LoginNotificationKey.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/EnterTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./G.ts",
+      "./AdAPI.ts",
+      "./TaskManager.ts",
+      "./LoginNotificationKey.ts",
+      "./GameTaskProgress.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/EnumUIColor.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/EnumUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/EventManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FacadeManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts",
+      "./LinkTableArray.ts",
+      "./EventManager.ts",
+      "./GameTimer.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FGUI.ts",
+    "dependencies": [
+      "cc",
+      "./fairygui.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FGUICocosNodeComponent.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FguiGListEffect.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FguiGListExtension.ts",
+    "dependencies": [
+      "cc",
+      "./fairygui.mjs",
+      "./G.ts",
+      "./FguiGListEffect.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FguiGListUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FguiGRichTextFieldExtension.ts",
+    "dependencies": [
+      "cc",
+      "./I18nUtils.ts",
+      "./G.ts",
+      "./fairygui.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FguiGTextFieldPrototypeExtension.ts",
+    "dependencies": [
+      "cc",
+      "./I18nUtils.ts",
+      "./G.ts",
+      "./fairygui.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FguiGTextInputExtension.ts",
+    "dependencies": [
+      "cc",
+      "./G.ts",
+      "./I18nUtils.ts",
+      "./fairygui.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FGUILoader.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs",
+      "./G.ts",
+      "./I18nUtils.ts",
+      "./Res.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FGUIManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs",
+      "./BaseSingleton.ts",
+      "./FGUILoader.ts",
+      "./FGUIPkgLoader.ts",
+      "./Res.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FguiNodeExtension.ts",
+    "dependencies": [
+      "cc",
+      "./fairygui.mjs",
+      "./TableManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FGUINotificationComponent.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs",
+      "./FacadeManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FGUINotificationGButton.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs",
+      "./FacadeManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FGUIPkgLoader.ts",
+    "dependencies": [
+      "cc",
+      "./fairygui.mjs",
+      "./FGUIPkgResource.ts",
+      "./ResManager.ts",
+      "./ResRef.ts",
+      "./ResURL.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FGUIPkgResource.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs",
+      "./ResURL.ts",
+      "./Resource.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FguiUtils.ts",
+    "dependencies": [
+      "cc",
+      "./fairygui.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FontTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./Res.ts",
+      "./TaskManager.ts",
+      "./fairygui.mjs",
+      "./GameTaskProgress.ts",
+      "./FacadeManager.ts",
+      "./LoginNotificationKey.ts",
+      "./UploadEventManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ForbiddenManager.ts",
+    "dependencies": [
+      "cc",
+      "./SdkManager.ts",
+      "./StringUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ForbiddenTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./TaskManager.ts",
+      "./Res.ts",
+      "./ForbiddenManager.ts",
+      "./DebugUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FrameAnim.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./FrameAnimNamesManager.ts",
+      "./GameTimer.ts",
+      "./MathUtils.ts",
+      "./Logger.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FrameAnimNamesManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/FunctionOnceBinder.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/G.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs",
+      "./NativeAPI.ts",
+      "./Utils.ts",
+      "./PlatformManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/GameTaskProgress.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/GameTimer.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./Timer.ts",
+      "./CallLater.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/GameUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/GrowableStack.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/Handler.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/HotUpdateManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./LoginNotificationKey.ts",
+      "./BaseSingleton.ts",
+      "./FacadeManager.ts",
+      "./UploadEventManager.ts",
+      "./G.ts",
+      "./Logger.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/HttpRequest.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/I18nManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts",
+      "./G.ts",
+      "./ConstantI18n.ts",
+      "./I18nUtils.ts",
+      "./Logger.ts",
+      "./StringUtils.ts",
+      "./MapUtils.ts",
+      "./BaseNotificationKey.ts",
+      "./TableManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/I18nUtils.ts",
+    "dependencies": [
+      "cc",
+      "./ObjectUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/IContainer.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ILoginVo.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/InitAppInfoTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./TaskManager.ts",
+      "./NativeAPI.ts",
+      "./LoginController.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/InitAppStateTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./TaskManager.ts",
+      "./BattleTimer.ts",
+      "./PlatformManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/InitPlayerInfoTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./SaveManager.ts",
+      "./FacadeManager.ts",
+      "./UploadEventManager.ts",
+      "./TaskManager.ts",
+      "./LoginModel.ts",
+      "./LoginNotificationKey.ts",
+      "./GameTaskProgress.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/INotification.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/IPoolInstance.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/IProcedure.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/IResource.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/IResRef.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LambdaExtension.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LayerManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts",
+      "./fairygui.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LayoutUtils.ts",
+    "dependencies": [
+      "cc",
+      "./ScreenAdaptManager.ts",
+      "./fairygui.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LinkTableArray.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./GrowableStack.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LoadGameScriptsTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./TaskManager.ts",
+      "./DebugUtils.ts",
+      "./GameTaskProgress.ts",
+      "./UploadEventManager.ts",
+      "./FacadeManager.ts",
+      "./LoginNotificationKey.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LoadResTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./FacadeManager.ts",
+      "./UIManager.ts",
+      "./Res.ts",
+      "./UploadEventManager.ts",
+      "./TaskManager.ts",
+      "./LoginNotificationKey.ts",
+      "./GameTaskProgress.ts",
+      "./GameTimer.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LogBusiness.ts",
+    "dependencies": [
+      "cc",
+      "./DateUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/Logger.ts",
+    "dependencies": [
+      "cc",
+      "./ObjectUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LoginAccountTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./G.ts",
+      "./SdkManager.ts",
+      "./TaskManager.ts",
+      "./LoginNotificationKey.ts",
+      "./GameTaskProgress.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LoginCheckTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./G.ts",
+      "./FacadeManager.ts",
+      "./SdkManager.ts",
+      "./TaskManager.ts",
+      "./LoginNotificationKey.ts",
+      "./GameTaskProgress.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LoginController.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./LoginNotificationKey.ts",
+      "./AccountHistoryModel.ts",
+      "./LoginModel.ts",
+      "./BaseController.ts",
+      "./Logger.ts",
+      "./EnterGameProcedure.ts",
+      "./NetSaveManager.ts",
+      "./G.ts",
+      "./ChannelManager.ts",
+      "./UIPrivacyConfig.ts",
+      "./SdkManager.ts",
+      "./UILoginConfig.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LoginModel.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./LoginVo.ts",
+      "./BaseModel.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LoginNotificationKey.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseNotificationKey.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LoginPage.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./UIScriptManager.ts",
+      "./UIManager.ts",
+      "./ChannelManager.ts",
+      "./LoginNotificationKey.ts",
+      "./UILoginConfig.ts",
+      "./UIView.ts",
+      "./GameTaskProgress.ts",
+      "./GameTimer.ts",
+      "./NumberUtils.ts",
+      "./LayerManager.ts",
+      "./UploadEventManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LoginPageTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./G.ts",
+      "./NativeAPI.ts",
+      "./UploadEventManager.ts",
+      "./TaskManager.ts",
+      "./UILoginConfig.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LoginTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./TaskManager.ts",
+      "./FacadeManager.ts",
+      "./LoginNotificationKey.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LoginVo.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseModel.ts",
+      "./ChannelManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/LongForNetwork.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/main",
+    "dependencies": [
+      "./debug-view-runtime-control.ts",
+      "./BaseLauncher.ts",
+      "./BaseSingleton.ts",
+      "./FrameAnimNamesManager.ts",
+      "./CocosTweenSystem.ts",
+      "./FrameAnim.ts",
+      "./AudioEnums.ts",
+      "./AudioManager.ts",
+      "./ForbiddenManager.ts",
+      "./G.ts",
+      "./LayerManager.ts",
+      "./PlatformManager.ts",
+      "./SaveManager.ts",
+      "./ScreenAdaptManager.ts",
+      "./UIScriptManager.ts",
+      "./UiTweenMgr.ts",
+      "./MyDecorator.ts",
+      "./FGUI.ts",
+      "./FGUIManager.ts",
+      "./FGUIPkgLoader.ts",
+      "./FGUIPkgResource.ts",
+      "./FGUICocosNodeComponent.ts",
+      "./FGUILoader.ts",
+      "./FGUINotificationComponent.ts",
+      "./FGUINotificationGButton.ts",
+      "./ConstantI18n.ts",
+      "./I18nManager.ts",
+      "./I18nUtils.ts",
+      "./LogBusiness.ts",
+      "./Logger.ts",
+      "./BaseNotification.ts",
+      "./FacadeManager.ts",
+      "./UIManager.ts",
+      "./BaseController.ts",
+      "./BaseNotificationKey.ts",
+      "./EventManager.ts",
+      "./INotification.ts",
+      "./BaseModel.ts",
+      "./EnumUIColor.ts",
+      "./UIBindingKey.ts",
+      "./IContainer.ts",
+      "./ViewContainer.ts",
+      "./NotificationComponent.ts",
+      "./UICommWin.ts",
+      "./UIPage.ts",
+      "./UIView.ts",
+      "./UIWin.ts",
+      "./ViewBaseComp.ts",
+      "./ViewBlackBgComp.ts",
+      "./ViewEffectComp.ts",
+      "./ViewEffectComp2.ts",
+      "./ViewFlatEffectComp.ts",
+      "./ViewPageEffectComp.ts",
+      "./AdAPI.ts",
+      "./FunctionOnceBinder.ts",
+      "./NativeAPI.ts",
+      "./HttpRequest.ts",
+      "./Base64.ts",
+      "./NetInterface.ts",
+      "./NetParseMap.ts",
+      "./NetPushCache.ts",
+      "./NetSaveManager.ts",
+      "./BaseUnitNode.ts",
+      "./AnimBaseUnitNode.ts",
+      "./SpineUnitNode.ts",
+      "./SpriteFrameUnitNode.ts",
+      "./SpriteUnitNode.ts",
+      "./IPoolInstance.ts",
+      "./PoolManager.ts",
+      "./FguiGListEffect.ts",
+      "./FguiGListExtension.ts",
+      "./FguiGRichTextFieldExtension.ts",
+      "./FguiGTextFieldPrototypeExtension.ts",
+      "./FguiGTextInputExtension.ts",
+      "./FguiNodeExtension.ts",
+      "./LongForNetwork.ts",
+      "./NodePrototypeExtension.ts",
+      "./NumberPrototypeExtension.ts",
+      "./StringPrototypeExtension.ts",
+      "./Vec2Extension.ts",
+      "./Vec3Extension.ts",
+      "./EditBoxImplPrototypeExtension.ts",
+      "./RichTextPrototypeExtension.ts",
+      "./SpineSkeletonPrototypeExtension.ts",
+      "./TiledLayerPrototypeExtension.ts",
+      "./TweenPrototypeExtension.ts",
+      "./AssetBundleKeys.ts",
+      "./IResRef.ts",
+      "./IResource.ts",
+      "./Res.ts",
+      "./ResManager.ts",
+      "./ResRef.ts",
+      "./ResURL.ts",
+      "./Resource.ts",
+      "./ChannelManager.ts",
+      "./SdkBase.ts",
+      "./SdkFunctions.ts",
+      "./SdkManager.ts",
+      "./UploadEventManager.ts",
+      "./TableManager.ts",
+      "./TableZipParser.ts",
+      "./TaskManager.ts",
+      "./TaskQueueMgr.ts",
+      "./TimeManager.ts",
+      "./TimeModel.ts",
+      "./WeekDay.ts",
+      "./BattleTimer.ts",
+      "./CallLater.ts",
+      "./GameTimer.ts",
+      "./Timer.ts",
+      "./ComponentUtils.ts",
+      "./FguiGListUtils.ts",
+      "./FguiUtils.ts",
+      "./LambdaExtension.ts",
+      "./LayoutUtils.ts",
+      "./MapUtils.ts",
+      "./NodeUtils.ts",
+      "./ObjectMap.ts",
+      "./ObjectUtils.ts",
+      "./UrlUtils.ts",
+      "./VectorUtils.ts",
+      "./WeightUtils.ts",
+      "./ArrayUtils.ts",
+      "./ClassUtils.ts",
+      "./ClipboardUtils.ts",
+      "./ColorUtils.ts",
+      "./DateUtils.ts",
+      "./DebugUtils.ts",
+      "./EnumUtils.ts",
+      "./GameUtils.ts",
+      "./GrowableStack.ts",
+      "./Handler.ts",
+      "./LinkTableArray.ts",
+      "./MathUtils.ts",
+      "./NumberFormatter.ts",
+      "./NumberUtils.ts",
+      "./RandomUtils.ts",
+      "./StringUtils.ts",
+      "./TimeUnit.ts",
+      "./Utils.ts",
+      "./ZlibUtils.ts",
+      "./WxGameSDK.ts",
+      "./MsgConst.ts",
+      "./protobuf.min.mjs_cjs=&original=.js",
+      "./protobufGame.mjs_cjs=&original=.js",
+      "./someLibs.mjs_cjs=&original=.js",
+      "./table.mjs_cjs=&original=.js",
+      "./MainLauncher.ts",
+      "./LoginNotificationKey.ts",
+      "./HotUpdateManager.ts",
+      "./LoginController.ts",
+      "./AccountHistoryCom.ts",
+      "./BgCom.ts",
+      "./UILoginConfig.ts",
+      "./AccountHistoryModel.ts",
+      "./LoginModel.ts",
+      "./AccountWin.ts",
+      "./AgeTipsWin.ts",
+      "./LoginPage.ts",
+      "./ILoginVo.ts",
+      "./LoginVo.ts",
+      "./PrivacyTxtWin.ts",
+      "./PrivacyWin.ts",
+      "./UIPrivacyConfig.ts",
+      "./BootProcedure.ts",
+      "./EnterGameProcedure.ts",
+      "./GameTaskProgress.ts",
+      "./IProcedure.ts",
+      "./FontTask.ts",
+      "./ForbiddenTask.ts",
+      "./TableTask.ts",
+      "./CheckVersionTask.ts",
+      "./InitAppInfoTask.ts",
+      "./InitAppStateTask.ts",
+      "./LoginPageTask.ts",
+      "./LoginTask.ts",
+      "./SubPackageTask.ts",
+      "./EnterTask.ts",
+      "./InitPlayerInfoTask.ts",
+      "./LoadGameScriptsTask.ts",
+      "./LoadResTask.ts",
+      "./LoginAccountTask.ts",
+      "./LoginCheckTask.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/MainLauncher.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseLauncher.ts",
+      "./BootProcedure.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/MapUtils.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/MathUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/MsgConst.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/MyDecorator.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/NativeAPI.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./FunctionOnceBinder.ts",
+      "./FacadeManager.ts",
+      "./BaseNotificationKey.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/NetInterface.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/NetParseMap.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/NetPushCache.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/NetSaveManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts",
+      "./G.ts",
+      "./BaseNotificationKey.ts",
+      "./SdkManager.ts",
+      "./TimeManager.ts",
+      "./TimeModel.ts",
+      "./DebugUtils.ts",
+      "./HttpRequest.ts",
+      "./Base64.ts",
+      "./NetParseMap.ts",
+      "./NetPushCache.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/NodePrototypeExtension.ts",
+    "dependencies": [
+      "cc",
+      "./NodeUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/NodeUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/NotificationComponent.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/NumberFormatter.ts",
+    "dependencies": [
+      "cc",
+      "./ConstantI18n.ts",
+      "./G.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/NumberPrototypeExtension.ts",
+    "dependencies": [
+      "cc",
+      "./LongForNetwork.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/NumberUtils.ts",
+    "dependencies": [
+      "cc",
+      "./ObjectUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ObjectMap.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ObjectUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/PlatformManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./env"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/PoolManager.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/PrivacyTxtWin.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./LayerManager.ts",
+      "./UIScriptManager.ts",
+      "./UICommWin.ts",
+      "./HttpRequest.ts",
+      "./GameTimer.ts",
+      "./UIPrivacyConfig.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/PrivacyWin.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./G.ts",
+      "./LayerManager.ts",
+      "./UIScriptManager.ts",
+      "./ChannelManager.ts",
+      "./UIPrivacyConfig.ts",
+      "./fairygui.mjs",
+      "./LoginNotificationKey.ts",
+      "./UICommWin.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/protobuf.min.js",
+    "dependencies": [
+      "./cjs-loader.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/protobuf.min.mjs_cjs=&original=.js",
+    "dependencies": [
+      "./protobuf.min.js",
+      "./cjs-loader.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/protobufGame.js",
+    "dependencies": [
+      "./cjs-loader.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/protobufGame.mjs_cjs=&original=.js",
+    "dependencies": [
+      "./protobufGame.js",
+      "./cjs-loader.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/RandomUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/Res.ts",
+    "dependencies": [
+      "cc",
+      "./ResManager.ts",
+      "./ResRef.ts",
+      "./ResURL.ts",
+      "./Resource.ts",
+      "./AssetBundleKeys.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ResManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts",
+      "./Logger.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/Resource.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./Logger.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ResRef.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./ResManager.ts",
+      "./PoolManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ResURL.ts",
+    "dependencies": [
+      "cc",
+      "./AssetBundleKeys.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/RichTextPrototypeExtension.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/SaveManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts",
+      "./NetSaveManager.ts",
+      "./GameTimer.ts",
+      "./GameUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ScreenAdaptManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts",
+      "./PlatformManager.ts",
+      "./G.ts",
+      "./LayerManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/SdkBase.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/SdkFunctions.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./G.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/SdkManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts",
+      "./FacadeManager.ts",
+      "./LoginNotificationKey.ts",
+      "./G.ts",
+      "./SdkFunctions.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/someLibs.js",
+    "dependencies": [
+      "./cjs-loader.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/someLibs.mjs_cjs=&original=.js",
+    "dependencies": [
+      "./someLibs.js",
+      "./cjs-loader.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/SpineSkeletonPrototypeExtension.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/SpineUnitNode.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./AudioManager.ts",
+      "./G.ts",
+      "./Logger.ts",
+      "./AssetBundleKeys.ts",
+      "./Res.ts",
+      "./GameTimer.ts",
+      "./AnimBaseUnitNode.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/SpriteFrameUnitNode.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./FrameAnim.ts",
+      "./Logger.ts",
+      "./AssetBundleKeys.ts",
+      "./Res.ts",
+      "./AnimBaseUnitNode.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/SpriteUnitNode.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./AssetBundleKeys.ts",
+      "./Res.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/StringPrototypeExtension.ts",
+    "dependencies": [
+      "cc",
+      "./StringUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/StringUtils.ts",
+    "dependencies": [
+      "cc",
+      "./MathUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/SubPackageTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./TaskManager.ts",
+      "./PlatformManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/table.js",
+    "dependencies": [
+      "./cjs-loader.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/table.mjs_cjs=&original=.js",
+    "dependencies": [
+      "./table.js",
+      "./cjs-loader.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/TableManager.ts",
+    "dependencies": [
+      "cc",
+      "./Res.ts",
+      "./TableZipParser.ts",
+      "./Logger.ts",
+      "./AssetBundleKeys.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/TableTask.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./FacadeManager.ts",
+      "./UploadEventManager.ts",
+      "./TableManager.ts",
+      "./TaskManager.ts",
+      "./DebugUtils.ts",
+      "./LoginNotificationKey.ts",
+      "./GameTaskProgress.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/TableZipParser.ts",
+    "dependencies": [
+      "cc",
+      "./GameTimer.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/TaskManager.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/TaskQueueMgr.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/TiledLayerPrototypeExtension.ts",
+    "dependencies": [
+      "cc",
+      "./ScreenAdaptManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/TimeManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./DateUtils.ts",
+      "./WeekDay.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/TimeModel.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseNotificationKey.ts",
+      "./BaseModel.ts",
+      "./TableManager.ts",
+      "./GameTimer.ts",
+      "./TimeManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/Timer.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./Utils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/TimeUnit.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/TweenPrototypeExtension.ts",
+    "dependencies": [
+      "cc",
+      "./fairygui.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/UIBindingKey.ts",
+    "dependencies": [
+      "cc",
+      "./UIScriptManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/UICommWin.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./UIWin.ts",
+      "./ViewBlackBgComp.ts",
+      "./ViewEffectComp.ts",
+      "./ViewFlatEffectComp.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/UILoginConfig.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/UIManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./UIBindingKey.ts",
+      "./fairygui.mjs",
+      "./BaseSingleton.ts",
+      "./G.ts",
+      "./LayerManager.ts",
+      "./UIScriptManager.ts",
+      "./Logger.ts",
+      "./PoolManager.ts",
+      "./Res.ts",
+      "./ResManager.ts",
+      "./BaseNotificationKey.ts",
+      "./UIView.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/UIPage.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./UIView.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/UIPrivacyConfig.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/UIScriptManager.ts",
+    "dependencies": [
+      "cc",
+      "./fairygui.mjs"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/UiTweenMgr.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts",
+      "./ArrayUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/UIView.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs",
+      "./BaseNotification.ts",
+      "./GameTimer.ts",
+      "./ScreenAdaptManager.ts",
+      "./ViewPageEffectComp.ts",
+      "./LayerManager.ts",
+      "./ResManager.ts",
+      "./G.ts",
+      "./DebugUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/UIWin.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./UIView.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/UploadEventManager.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseSingleton.ts",
+      "./SdkManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/UrlUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/Utils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/Vec2Extension.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/Vec3Extension.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/VectorUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ViewBaseComp.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ViewBlackBgComp.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./ViewBaseComp.ts",
+      "./fairygui.mjs",
+      "./GameTimer.ts",
+      "./EnumUIColor.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ViewContainer.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./UIScriptManager.ts",
+      "./UIManager.ts",
+      "./fairygui.mjs",
+      "./ArrayUtils.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ViewEffectComp.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs",
+      "./GameTimer.ts",
+      "./UIView.ts",
+      "./ViewBaseComp.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ViewEffectComp2.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs",
+      "./GameTimer.ts",
+      "./ViewBaseComp.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ViewFlatEffectComp.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./fairygui.mjs",
+      "./EnumUIColor.ts",
+      "./GameTimer.ts",
+      "./UIView.ts",
+      "./ViewBaseComp.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ViewPageEffectComp.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./ViewEffectComp.ts",
+      "./UiTweenMgr.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/WeekDay.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/WeightUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/WxGameSDK.ts",
+    "dependencies": [
+      "./rollupPluginModLoBabelHelpers.js",
+      "cc",
+      "./BaseNotificationKey.ts",
+      "./FacadeManager.ts",
+      "./NetSaveManager.ts"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "chunks:///_virtual/ZlibUtils.ts",
+    "dependencies": [
+      "cc"
+    ]
+  },
+  {
+    "method": "register",
+    "name": "virtual:///prerequisite-imports/main",
+    "dependencies": [
+      "chunks:///_virtual/main"
+    ]
+  }
+]
