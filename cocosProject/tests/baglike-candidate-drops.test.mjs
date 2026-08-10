@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import {
     candidateDrawIds,
     candidateHeroFamily,
@@ -127,4 +128,21 @@ const fillMissingFamily = drawDynamicCandidateBatch(
 );
 assert.ok(fillMissingFamily.includes('H1201'), 'a duplicate candidate is replaced with an unlocked missing family until five are represented');
 
-console.log('baglike candidate drops: 40 assertions passed');
+const gameSource = readFileSync(new URL('../assets/scripts/CangshuGame.ts', import.meta.url), 'utf8');
+const candidateSource = readFileSync(new URL('../assets/scripts/BagLikeCandidateDrops.ts', import.meta.url), 'utf8');
+const allReachableCandidateIds = new Set();
+for (const drawId of [3014, 3015, 3016, 3030, 3034]) {
+    for (let step = 0; step <= 1000; step += 1) {
+        const item = drawCandidateReward(drawId, context, () => step / 1000);
+        if (item) allReachableCandidateIds.add(item);
+    }
+}
+assert.ok(
+    [...allReachableCandidateIds].every((id) => new RegExp(`\\b${id}: \\{`).test(gameSource)),
+    `every reachable candidate has a renderable GEARS entry: ${[...allReachableCandidateIds].join(',')}`,
+);
+assert.match(candidateSource, /Array\.from\(unlockedHeroFamilies\)/, 'Creator build keeps Set iteration when replacing missing families');
+assert.match(candidateSource, /Array\.from\(context\.unlockedHeroFamilies\)/, 'Creator build keeps Set iteration at the five-family cap');
+assert.doesNotMatch(candidateSource, /\.\.\.unlockedHeroFamilies/, 'loose Babel cannot lower Set spread into a one-element Set array');
+
+console.log('baglike candidate drops: 44 assertions passed');

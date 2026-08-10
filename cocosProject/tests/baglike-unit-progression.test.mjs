@@ -84,6 +84,7 @@ check(bagLikeProducerProfile('H1101')?.primarySkillId, 'ZL_1101', 'H11 uses the 
 check(bagLikeHeroBaseHpAtStar(300, 1), 300, 'one-star H13 keeps its HeroConfig base HP');
 check(bagLikeHeroBaseHpAtStar(300, 3), 363, 'three-star H13 applies the recovered 21% star modifier');
 check(bagLikeHeroBaseHpAtStar(300, 15), 1137, 'the full recovered 15-star table remains available to wheel HP');
+check(bagLikeHeroBaseHpAtStar(300, 20), 1833, 'the package 20-star maximum remains available to wheel HP');
 check(
     bagLikeWheelHomeHpContribution(['P01', 'H1301', 'H0101'], { H13: 3 }),
     363,

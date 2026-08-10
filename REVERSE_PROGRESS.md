@@ -125,6 +125,13 @@
 - [x] 建立日常副本、额外怪物能力与无尽模式的独立难度模型
 - [ ] 分析特殊玩法的奖励、挑战次数与解锁条件
 
+## 特质能力图标恢复（2026-08-10）
+
+- 已沿 `BagLikeAbilityEffectConfig.json`、`resources3.config.cce0e.json` 与 `resources3.import.0de4fdaf8.fe248.json` 建立三张发展态特质卡的精确资源链。
+- 原始图集已保存为 `targets/wxf9af2417e78ce07a/18/evidence/assets/original/trait-icons/effect.png`，SHA-256 为 `da0f386f4f2202cb0eef59dc7517716e6d5a580a9ce6b6be859b6b4cb599a3d6`；完整 UUID、native version、裁切和偏移见同目录 `manifest.json`。
+- 精确绑定为：`RG_ALL_abl13_eff01 → buff_0027`、`RG_H02_abl02_eff01 → buff_0036`、`RG_H03_abl02_eff01 → buff_0006`。
+- 2026-08-10 已从 Dashboard 登记定位 `C:\ProgramData\cocos\editors\Creator\3.8.8`；图集由 Creator 正式导入到 `cocosProject/assets/resources/original/trait-icons/effect.png`，自动生成 meta UUID `007031c2-937b-430e-833f-49b3b2def12f`。三张精确裁切已进入运行时并由 Fresh Web Mobile 截图确认。
+
 
 
 

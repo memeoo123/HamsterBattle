@@ -1,0 +1,1929 @@
+﻿{
+    "schemaVersion":  "1.0",
+    "target":  "wxf9af2417e78ce07a/18",
+    "scope":  "All enemy/Boss identities used by the 200 normal levels and all HERO/COIN BagLike gear items",
+    "levelCount":  200,
+    "roundCount":  2978,
+    "enemyIdentityCount":  25,
+    "enemyUniqueSpineCount":  16,
+    "gearItemCount":  58,
+    "enemies":  [
+                    {
+                        "id":  "B01",
+                        "name":  "大恶魔",
+                        "kind":  "BOSS",
+                        "modelPath":  "spine/moster/boss_1/boss_1",
+                        "scaleX":  0.9,
+                        "scaleY":  0.9,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "B02",
+                        "name":  "惊乍怪",
+                        "kind":  "BOSS",
+                        "modelPath":  "spine/moster/boss_2/boss_2",
+                        "scaleX":  0.9,
+                        "scaleY":  0.9,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "B03",
+                        "name":  "冰岩国王",
+                        "kind":  "BOSS",
+                        "modelPath":  "spine/moster/boss_3/boss_3",
+                        "scaleX":  0.9,
+                        "scaleY":  0.9,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "Boss01",
+                        "name":  "巨型莱莱姆",
+                        "kind":  "BOSS",
+                        "modelPath":  "spine/moster/gw_01/gw_01",
+                        "scaleX":  1.2,
+                        "scaleY":  1.2,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "Boss02",
+                        "name":  "精英云云猪",
+                        "kind":  "BOSS",
+                        "modelPath":  "spine/moster/gw_02/gw_02",
+                        "scaleX":  1.2,
+                        "scaleY":  1.2,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "Boss03",
+                        "name":  "精英僵僵猫",
+                        "kind":  "BOSS",
+                        "modelPath":  "spine/moster/gw_03/gw_03",
+                        "scaleX":  1.2,
+                        "scaleY":  1.2,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "Boss06",
+                        "name":  "精英冰冰狗",
+                        "kind":  "BOSS",
+                        "modelPath":  "spine/moster/gw_06/gw_06",
+                        "scaleX":  1.2,
+                        "scaleY":  1.2,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "Boss07",
+                        "name":  "精英鬼鬼羊",
+                        "kind":  "BOSS",
+                        "modelPath":  "spine/moster/gw_07/gw_07",
+                        "scaleX":  1.1,
+                        "scaleY":  1.1,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "Boss09",
+                        "name":  "巨型恶魔犬",
+                        "kind":  "BOSS",
+                        "modelPath":  "spine/moster/gw_09/gw_09",
+                        "scaleX":  1.2,
+                        "scaleY":  1.2,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "Boss10",
+                        "name":  "精英脏脏蛇",
+                        "kind":  "BOSS",
+                        "modelPath":  "spine/moster/gw_10/gw_10",
+                        "scaleX":  1.2,
+                        "scaleY":  1.2,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "Boss11",
+                        "name":  "精英海马狼",
+                        "kind":  "BOSS",
+                        "modelPath":  "spine/moster/gw_11/gw_11",
+                        "scaleX":  1.2,
+                        "scaleY":  1.2,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "Boss14",
+                        "name":  "巨型厄厄怪",
+                        "kind":  "BOSS",
+                        "modelPath":  "spine/moster/gw_14/gw_14",
+                        "scaleX":  1.2,
+                        "scaleY":  1.2,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M01",
+                        "name":  "莱莱姆",
+                        "kind":  "NORMAL",
+                        "modelPath":  "spine/moster/gw_01/gw_01",
+                        "scaleX":  0.6,
+                        "scaleY":  0.6,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M02",
+                        "name":  "云云猪",
+                        "kind":  "NORMAL",
+                        "modelPath":  "spine/moster/gw_02/gw_02",
+                        "scaleX":  0.6,
+                        "scaleY":  0.6,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M03",
+                        "name":  "僵僵猫",
+                        "kind":  "NORMAL",
+                        "modelPath":  "spine/moster/gw_03/gw_03",
+                        "scaleX":  0.6,
+                        "scaleY":  0.6,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M04",
+                        "name":  "冰坨坨",
+                        "kind":  "ELITE",
+                        "modelPath":  "spine/moster/gw_04/gw_04",
+                        "scaleX":  0.9,
+                        "scaleY":  0.9,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M05",
+                        "name":  "火火炉",
+                        "kind":  "NORMAL",
+                        "modelPath":  "spine/moster/gw_05/gw_05",
+                        "scaleX":  0.6,
+                        "scaleY":  0.6,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M06",
+                        "name":  "冰冰狗",
+                        "kind":  "NORMAL",
+                        "modelPath":  "spine/moster/gw_06/gw_06",
+                        "scaleX":  0.6,
+                        "scaleY":  0.6,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M07",
+                        "name":  "鬼鬼羊",
+                        "kind":  "NORMAL",
+                        "modelPath":  "spine/moster/gw_07/gw_07",
+                        "scaleX":  0.7,
+                        "scaleY":  0.7,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M09",
+                        "name":  "恶魔犬",
+                        "kind":  "NORMAL",
+                        "modelPath":  "spine/moster/gw_09/gw_09",
+                        "scaleX":  0.6,
+                        "scaleY":  0.6,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M10",
+                        "name":  "脏脏蛇",
+                        "kind":  "NORMAL",
+                        "modelPath":  "spine/moster/gw_10/gw_10",
+                        "scaleX":  0.6,
+                        "scaleY":  0.6,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M11",
+                        "name":  "海马狼",
+                        "kind":  "NORMAL",
+                        "modelPath":  "spine/moster/gw_11/gw_11",
+                        "scaleX":  0.6,
+                        "scaleY":  0.6,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M12",
+                        "name":  "先锋狼",
+                        "kind":  "NORMAL",
+                        "modelPath":  "spine/moster/gw_12/gw_12",
+                        "scaleX":  0.6,
+                        "scaleY":  0.6,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M13",
+                        "name":  "爆爆虫",
+                        "kind":  "NORMAL",
+                        "modelPath":  "spine/moster/gw_13/gw_13",
+                        "scaleX":  0.6,
+                        "scaleY":  0.6,
+                        "action":  "idle"
+                    },
+                    {
+                        "id":  "M14",
+                        "name":  "厄厄怪",
+                        "kind":  "NORMAL",
+                        "modelPath":  "spine/moster/gw_14/gw_14",
+                        "scaleX":  0.6,
+                        "scaleY":  0.6,
+                        "action":  "idle"
+                    }
+                ],
+    "gears":  [
+                  {
+                      "id":  "H0101",
+                      "name":  "仓鼠战士",
+                      "type":  "HERO",
+                      "level":  1,
+                      "shapeId":  1,
+                      "headPath":  "image/heroSmallHead/H0101",
+                      "headFrame":  {
+                                        "name":  "H0101",
+                                        "x":  169,
+                                        "y":  799,
+                                        "width":  80,
+                                        "height":  74,
+                                        "offsetX":  2,
+                                        "offsetY":  -3,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0101"
+                  },
+                  {
+                      "id":  "H0102",
+                      "name":  "仓鼠战士",
+                      "type":  "HERO",
+                      "level":  2,
+                      "shapeId":  1,
+                      "headPath":  "image/heroSmallHead/H0102",
+                      "headFrame":  {
+                                        "name":  "H0102",
+                                        "x":  93,
+                                        "y":  1193,
+                                        "width":  80,
+                                        "height":  74,
+                                        "offsetX":  2,
+                                        "offsetY":  -3,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0102"
+                  },
+                  {
+                      "id":  "H0103",
+                      "name":  "仓鼠战士",
+                      "type":  "HERO",
+                      "level":  3,
+                      "shapeId":  1,
+                      "headPath":  "image/heroSmallHead/H0103",
+                      "headFrame":  {
+                                        "name":  "H0103",
+                                        "x":  93,
+                                        "y":  1037,
+                                        "width":  80,
+                                        "height":  76,
+                                        "offsetX":  2,
+                                        "offsetY":  -3,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0103"
+                  },
+                  {
+                      "id":  "H0104",
+                      "name":  "仓鼠战士",
+                      "type":  "HERO",
+                      "level":  4,
+                      "shapeId":  1,
+                      "headPath":  "image/heroSmallHead/H0104",
+                      "headFrame":  {
+                                        "name":  "H0104",
+                                        "x":  1,
+                                        "y":  1367,
+                                        "width":  82,
+                                        "height":  80,
+                                        "offsetX":  1,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0104"
+                  },
+                  {
+                      "id":  "H0201",
+                      "name":  "仓鼠射手",
+                      "type":  "HERO",
+                      "level":  1,
+                      "shapeId":  2,
+                      "headPath":  "image/heroSmallHead/H0201",
+                      "headFrame":  {
+                                        "name":  "H0201",
+                                        "x":  1,
+                                        "y":  1123,
+                                        "width":  90,
+                                        "height":  76,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0201"
+                  },
+                  {
+                      "id":  "H0202",
+                      "name":  "仓鼠射手",
+                      "type":  "HERO",
+                      "level":  2,
+                      "shapeId":  2,
+                      "headPath":  "image/heroSmallHead/H0202",
+                      "headFrame":  {
+                                        "name":  "H0202",
+                                        "x":  85,
+                                        "y":  489,
+                                        "width":  84,
+                                        "height":  76,
+                                        "offsetX":  1,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0202"
+                  },
+                  {
+                      "id":  "H0203",
+                      "name":  "仓鼠射手",
+                      "type":  "HERO",
+                      "level":  3,
+                      "shapeId":  2,
+                      "headPath":  "image/heroSmallHead/H0203",
+                      "headFrame":  {
+                                        "name":  "H0203",
+                                        "x":  1,
+                                        "y":  1449,
+                                        "width":  82,
+                                        "height":  80,
+                                        "offsetX":  0,
+                                        "offsetY":  -1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0203"
+                  },
+                  {
+                      "id":  "H0204",
+                      "name":  "仓鼠射手",
+                      "type":  "HERO",
+                      "level":  4,
+                      "shapeId":  2,
+                      "headPath":  "image/heroSmallHead/H0204",
+                      "headFrame":  {
+                                        "name":  "H0204",
+                                        "x":  93,
+                                        "y":  1115,
+                                        "width":  80,
+                                        "height":  76,
+                                        "offsetX":  -1,
+                                        "offsetY":  -3,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0204"
+                  },
+                  {
+                      "id":  "H0301",
+                      "name":  "仓鼠法师",
+                      "type":  "HERO",
+                      "level":  1,
+                      "shapeId":  3,
+                      "headPath":  "image/heroSmallHead/H0301",
+                      "headFrame":  {
+                                        "name":  "H0301",
+                                        "x":  1,
+                                        "y":  1531,
+                                        "width":  82,
+                                        "height":  80,
+                                        "offsetX":  1,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0301"
+                  },
+                  {
+                      "id":  "H0302",
+                      "name":  "仓鼠法师",
+                      "type":  "HERO",
+                      "level":  2,
+                      "shapeId":  3,
+                      "headPath":  "image/heroSmallHead/H0302",
+                      "headFrame":  {
+                                        "name":  "H0302",
+                                        "x":  1,
+                                        "y":  177,
+                                        "width":  82,
+                                        "height":  90,
+                                        "offsetX":  1,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0302"
+                  },
+                  {
+                      "id":  "H0303",
+                      "name":  "仓鼠法师",
+                      "type":  "HERO",
+                      "level":  3,
+                      "shapeId":  3,
+                      "headPath":  "image/heroSmallHead/H0303",
+                      "headFrame":  {
+                                        "name":  "H0303",
+                                        "x":  1,
+                                        "y":  359,
+                                        "width":  80,
+                                        "height":  88,
+                                        "offsetX":  1,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0303"
+                  },
+                  {
+                      "id":  "H0304",
+                      "name":  "仓鼠法师",
+                      "type":  "HERO",
+                      "level":  4,
+                      "shapeId":  3,
+                      "headPath":  "image/heroSmallHead/H0304",
+                      "headFrame":  {
+                                        "name":  "H0304",
+                                        "x":  85,
+                                        "y":  567,
+                                        "width":  82,
+                                        "height":  78,
+                                        "offsetX":  2,
+                                        "offsetY":  -1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0304"
+                  },
+                  {
+                      "id":  "H0401",
+                      "name":  "仓鼠骑士",
+                      "type":  "HERO",
+                      "level":  1,
+                      "shapeId":  5,
+                      "headPath":  "image/heroSmallHead/H0401",
+                      "headFrame":  {
+                                        "name":  "H0401",
+                                        "x":  83,
+                                        "y":  329,
+                                        "width":  84,
+                                        "height":  78,
+                                        "offsetX":  1,
+                                        "offsetY":  2,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0401"
+                  },
+                  {
+                      "id":  "H0402",
+                      "name":  "仓鼠骑士",
+                      "type":  "HERO",
+                      "level":  2,
+                      "shapeId":  5,
+                      "headPath":  "image/heroSmallHead/H0402",
+                      "headFrame":  {
+                                        "name":  "H0402",
+                                        "x":  85,
+                                        "y":  177,
+                                        "width":  90,
+                                        "height":  82,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0402"
+                  },
+                  {
+                      "id":  "H0403",
+                      "name":  "仓鼠骑士",
+                      "type":  "HERO",
+                      "level":  3,
+                      "shapeId":  5,
+                      "headPath":  "image/heroSmallHead/H0403",
+                      "headFrame":  {
+                                        "name":  "H0403",
+                                        "x":  1,
+                                        "y":  89,
+                                        "width":  90,
+                                        "height":  86,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0403"
+                  },
+                  {
+                      "id":  "H0404",
+                      "name":  "仓鼠骑士",
+                      "type":  "HERO",
+                      "level":  4,
+                      "shapeId":  5,
+                      "headPath":  "image/heroSmallHead/H0404",
+                      "headFrame":  {
+                                        "name":  "H0404",
+                                        "x":  93,
+                                        "y":  1,
+                                        "width":  86,
+                                        "height":  88,
+                                        "offsetX":  0,
+                                        "offsetY":  -1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0404"
+                  },
+                  {
+                      "id":  "H0501",
+                      "name":  "仓鼠召唤师",
+                      "type":  "HERO",
+                      "level":  1,
+                      "shapeId":  6,
+                      "headPath":  "image/heroSmallHead/H0501",
+                      "headFrame":  {
+                                        "name":  "H0501",
+                                        "x":  85,
+                                        "y":  1419,
+                                        "width":  78,
+                                        "height":  74,
+                                        "offsetX":  -1,
+                                        "offsetY":  1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0501"
+                  },
+                  {
+                      "id":  "H0502",
+                      "name":  "仓鼠召唤师",
+                      "type":  "HERO",
+                      "level":  2,
+                      "shapeId":  6,
+                      "headPath":  "image/heroSmallHead/H0502",
+                      "headFrame":  {
+                                        "name":  "H0502",
+                                        "x":  175,
+                                        "y":  1113,
+                                        "width":  76,
+                                        "height":  72,
+                                        "offsetX":  -1,
+                                        "offsetY":  2,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0502"
+                  },
+                  {
+                      "id":  "H0503",
+                      "name":  "仓鼠召唤师",
+                      "type":  "HERO",
+                      "level":  3,
+                      "shapeId":  6,
+                      "headPath":  "image/heroSmallHead/H0503",
+                      "headFrame":  {
+                                        "name":  "H0503",
+                                        "x":  175,
+                                        "y":  1187,
+                                        "width":  76,
+                                        "height":  72,
+                                        "offsetX":  -1,
+                                        "offsetY":  2,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0503"
+                  },
+                  {
+                      "id":  "H0504",
+                      "name":  "仓鼠召唤师",
+                      "type":  "HERO",
+                      "level":  4,
+                      "shapeId":  6,
+                      "headPath":  "image/heroSmallHead/H0504",
+                      "headFrame":  {
+                                        "name":  "H0504",
+                                        "x":  165,
+                                        "y":  1421,
+                                        "width":  72,
+                                        "height":  76,
+                                        "offsetX":  -1,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0504"
+                  },
+                  {
+                      "id":  "H0601",
+                      "name":  "仓鼠飞行员",
+                      "type":  "HERO",
+                      "level":  1,
+                      "shapeId":  10,
+                      "headPath":  "image/heroSmallHead/H0601",
+                      "headFrame":  {
+                                        "name":  "H0601",
+                                        "x":  1,
+                                        "y":  1613,
+                                        "width":  82,
+                                        "height":  80,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0601"
+                  },
+                  {
+                      "id":  "H0602",
+                      "name":  "仓鼠飞行员",
+                      "type":  "HERO",
+                      "level":  2,
+                      "shapeId":  10,
+                      "headPath":  "image/heroSmallHead/H0602",
+                      "headFrame":  {
+                                        "name":  "H0602",
+                                        "x":  1,
+                                        "y":  1283,
+                                        "width":  82,
+                                        "height":  82,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0602"
+                  },
+                  {
+                      "id":  "H0603",
+                      "name":  "仓鼠飞行员",
+                      "type":  "HERO",
+                      "level":  3,
+                      "shapeId":  10,
+                      "headPath":  "image/heroSmallHead/H0603",
+                      "headFrame":  {
+                                        "name":  "H0603",
+                                        "x":  1,
+                                        "y":  537,
+                                        "width":  82,
+                                        "height":  86,
+                                        "offsetX":  0,
+                                        "offsetY":  2,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0603"
+                  },
+                  {
+                      "id":  "H0604",
+                      "name":  "仓鼠飞行员",
+                      "type":  "HERO",
+                      "level":  4,
+                      "shapeId":  10,
+                      "headPath":  "image/heroSmallHead/H0604",
+                      "headFrame":  {
+                                        "name":  "H0604",
+                                        "x":  169,
+                                        "y":  653,
+                                        "width":  82,
+                                        "height":  72,
+                                        "offsetX":  -1,
+                                        "offsetY":  -1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H0604"
+                  },
+                  {
+                      "id":  "H0705",
+                      "name":  "仓鼠铁铁侠",
+                      "type":  "HERO",
+                      "level":  5,
+                      "shapeId":  2,
+                      "headPath":  "image/heroSmallHead/H0705",
+                      "headFrame":  {
+                                        "name":  "H0705",
+                                        "x":  165,
+                                        "y":  1499,
+                                        "width":  78,
+                                        "height":  70,
+                                        "offsetX":  0,
+                                        "offsetY":  1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "R1001"
+                  },
+                  {
+                      "id":  "H0805",
+                      "name":  "仓鼠凹凸曼",
+                      "type":  "HERO",
+                      "level":  5,
+                      "shapeId":  3,
+                      "headPath":  "image/heroSmallHead/H0805",
+                      "headFrame":  {
+                                        "name":  "H0805",
+                                        "x":  175,
+                                        "y":  957,
+                                        "width":  76,
+                                        "height":  76,
+                                        "offsetX":  1,
+                                        "offsetY":  1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "R1002"
+                  },
+                  {
+                      "id":  "H0905",
+                      "name":  "仓鼠战车",
+                      "type":  "HERO",
+                      "level":  5,
+                      "shapeId":  7,
+                      "headPath":  "image/heroSmallHead/H0905",
+                      "headFrame":  {
+                                        "name":  "H0905",
+                                        "x":  169,
+                                        "y":  727,
+                                        "width":  82,
+                                        "height":  70,
+                                        "offsetX":  1,
+                                        "offsetY":  1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "R1003"
+                  },
+                  {
+                      "id":  "H1005",
+                      "name":  "仓鼠飞碟",
+                      "type":  "HERO",
+                      "level":  5,
+                      "shapeId":  10,
+                      "headPath":  "image/heroSmallHead/H1005",
+                      "headFrame":  {
+                                        "name":  "H1005",
+                                        "x":  171,
+                                        "y":  491,
+                                        "width":  80,
+                                        "height":  80,
+                                        "offsetX":  -2,
+                                        "offsetY":  1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "R1004"
+                  },
+                  {
+                      "id":  "H1101",
+                      "name":  "治疗齿轮",
+                      "type":  "HERO",
+                      "level":  1,
+                      "shapeId":  3,
+                      "headPath":  "image/heroSmallHead/H1101",
+                      "headFrame":  {
+                                        "name":  "H1101",
+                                        "x":  165,
+                                        "y":  1571,
+                                        "width":  72,
+                                        "height":  70,
+                                        "offsetX":  0,
+                                        "offsetY":  1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1102",
+                      "name":  "治疗齿轮",
+                      "type":  "HERO",
+                      "level":  2,
+                      "shapeId":  3,
+                      "headPath":  "image/heroSmallHead/H1101",
+                      "headFrame":  {
+                                        "name":  "H1101",
+                                        "x":  165,
+                                        "y":  1571,
+                                        "width":  72,
+                                        "height":  70,
+                                        "offsetX":  0,
+                                        "offsetY":  1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1103",
+                      "name":  "治疗齿轮",
+                      "type":  "HERO",
+                      "level":  3,
+                      "shapeId":  3,
+                      "headPath":  "image/heroSmallHead/H1101",
+                      "headFrame":  {
+                                        "name":  "H1101",
+                                        "x":  165,
+                                        "y":  1571,
+                                        "width":  72,
+                                        "height":  70,
+                                        "offsetX":  0,
+                                        "offsetY":  1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1104",
+                      "name":  "治疗齿轮",
+                      "type":  "HERO",
+                      "level":  4,
+                      "shapeId":  3,
+                      "headPath":  "image/heroSmallHead/H1101",
+                      "headFrame":  {
+                                        "name":  "H1101",
+                                        "x":  165,
+                                        "y":  1571,
+                                        "width":  72,
+                                        "height":  70,
+                                        "offsetX":  0,
+                                        "offsetY":  1,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1201",
+                      "name":  "雷云齿轮",
+                      "type":  "HERO",
+                      "level":  1,
+                      "shapeId":  2,
+                      "headPath":  "image/heroSmallHead/H1201",
+                      "headFrame":  {
+                                        "name":  "H1201",
+                                        "x":  85,
+                                        "y":  725,
+                                        "width":  78,
+                                        "height":  56,
+                                        "offsetX":  -1,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1202",
+                      "name":  "雷云齿轮",
+                      "type":  "HERO",
+                      "level":  2,
+                      "shapeId":  2,
+                      "headPath":  "image/heroSmallHead/H1201",
+                      "headFrame":  {
+                                        "name":  "H1201",
+                                        "x":  85,
+                                        "y":  725,
+                                        "width":  78,
+                                        "height":  56,
+                                        "offsetX":  -1,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1203",
+                      "name":  "雷云齿轮",
+                      "type":  "HERO",
+                      "level":  3,
+                      "shapeId":  2,
+                      "headPath":  "image/heroSmallHead/H1201",
+                      "headFrame":  {
+                                        "name":  "H1201",
+                                        "x":  85,
+                                        "y":  725,
+                                        "width":  78,
+                                        "height":  56,
+                                        "offsetX":  -1,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1204",
+                      "name":  "雷云齿轮",
+                      "type":  "HERO",
+                      "level":  4,
+                      "shapeId":  2,
+                      "headPath":  "image/heroSmallHead/H1201",
+                      "headFrame":  {
+                                        "name":  "H1201",
+                                        "x":  85,
+                                        "y":  725,
+                                        "width":  78,
+                                        "height":  56,
+                                        "offsetX":  -1,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1301",
+                      "name":  "火炮齿轮",
+                      "type":  "HERO",
+                      "level":  1,
+                      "shapeId":  7,
+                      "headPath":  "image/heroSmallHead/H1301",
+                      "headFrame":  {
+                                        "name":  "H1301",
+                                        "x":  183,
+                                        "y":  81,
+                                        "width":  68,
+                                        "height":  68,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1302",
+                      "name":  "火炮齿轮",
+                      "type":  "HERO",
+                      "level":  2,
+                      "shapeId":  7,
+                      "headPath":  "image/heroSmallHead/H1301",
+                      "headFrame":  {
+                                        "name":  "H1301",
+                                        "x":  183,
+                                        "y":  81,
+                                        "width":  68,
+                                        "height":  68,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1303",
+                      "name":  "火炮齿轮",
+                      "type":  "HERO",
+                      "level":  3,
+                      "shapeId":  7,
+                      "headPath":  "image/heroSmallHead/H1301",
+                      "headFrame":  {
+                                        "name":  "H1301",
+                                        "x":  183,
+                                        "y":  81,
+                                        "width":  68,
+                                        "height":  68,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1304",
+                      "name":  "火炮齿轮",
+                      "type":  "HERO",
+                      "level":  4,
+                      "shapeId":  7,
+                      "headPath":  "image/heroSmallHead/H1301",
+                      "headFrame":  {
+                                        "name":  "H1301",
+                                        "x":  183,
+                                        "y":  81,
+                                        "width":  68,
+                                        "height":  68,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1401",
+                      "name":  "鲨鱼齿轮",
+                      "type":  "HERO",
+                      "level":  1,
+                      "shapeId":  8,
+                      "headPath":  "image/heroSmallHead/H1401",
+                      "headFrame":  {
+                                        "name":  "H1401",
+                                        "x":  85,
+                                        "y":  261,
+                                        "width":  86,
+                                        "height":  66,
+                                        "offsetX":  -2,
+                                        "offsetY":  -3,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1402",
+                      "name":  "鲨鱼齿轮",
+                      "type":  "HERO",
+                      "level":  2,
+                      "shapeId":  8,
+                      "headPath":  "image/heroSmallHead/H1401",
+                      "headFrame":  {
+                                        "name":  "H1401",
+                                        "x":  85,
+                                        "y":  261,
+                                        "width":  86,
+                                        "height":  66,
+                                        "offsetX":  -2,
+                                        "offsetY":  -3,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1403",
+                      "name":  "鲨鱼齿轮",
+                      "type":  "HERO",
+                      "level":  3,
+                      "shapeId":  8,
+                      "headPath":  "image/heroSmallHead/H1401",
+                      "headFrame":  {
+                                        "name":  "H1401",
+                                        "x":  85,
+                                        "y":  261,
+                                        "width":  86,
+                                        "height":  66,
+                                        "offsetX":  -2,
+                                        "offsetY":  -3,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1404",
+                      "name":  "鲨鱼齿轮",
+                      "type":  "HERO",
+                      "level":  4,
+                      "shapeId":  8,
+                      "headPath":  "image/heroSmallHead/H1401",
+                      "headFrame":  {
+                                        "name":  "H1401",
+                                        "x":  85,
+                                        "y":  261,
+                                        "width":  86,
+                                        "height":  66,
+                                        "offsetX":  -2,
+                                        "offsetY":  -3,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1505",
+                      "name":  "吞宝鲨",
+                      "type":  "HERO",
+                      "level":  5,
+                      "shapeId":  8,
+                      "headPath":  "image/heroSmallHead/H1505",
+                      "headFrame":  {
+                                        "name":  "H1505",
+                                        "x":  85,
+                                        "y":  647,
+                                        "width":  82,
+                                        "height":  76,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "C01",
+                      "name":  "银币齿轮",
+                      "type":  "COIN",
+                      "level":  1,
+                      "shapeId":  1,
+                      "headPath":  "image/heroSmallHead/coin",
+                      "headFrame":  {
+                                        "name":  "coin",
+                                        "x":  177,
+                                        "y":  259,
+                                        "width":  70,
+                                        "height":  68,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "C02",
+                      "name":  "银币齿轮",
+                      "type":  "COIN",
+                      "level":  2,
+                      "shapeId":  1,
+                      "headPath":  "image/heroSmallHead/coin",
+                      "headFrame":  {
+                                        "name":  "coin",
+                                        "x":  177,
+                                        "y":  259,
+                                        "width":  70,
+                                        "height":  68,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "C03",
+                      "name":  "银币齿轮",
+                      "type":  "COIN",
+                      "level":  3,
+                      "shapeId":  1,
+                      "headPath":  "image/heroSmallHead/coin",
+                      "headFrame":  {
+                                        "name":  "coin",
+                                        "x":  177,
+                                        "y":  259,
+                                        "width":  70,
+                                        "height":  68,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "C04",
+                      "name":  "银币齿轮",
+                      "type":  "COIN",
+                      "level":  4,
+                      "shapeId":  1,
+                      "headPath":  "image/heroSmallHead/coin",
+                      "headFrame":  {
+                                        "name":  "coin",
+                                        "x":  177,
+                                        "y":  259,
+                                        "width":  70,
+                                        "height":  68,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1601",
+                      "name":  "仓鼠怪兽",
+                      "type":  "HERO",
+                      "level":  1,
+                      "shapeId":  9,
+                      "headPath":  "image/heroSmallHead/H1601",
+                      "headFrame":  {
+                                        "name":  "H1601",
+                                        "x":  85,
+                                        "y":  1495,
+                                        "width":  78,
+                                        "height":  74,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H1601"
+                  },
+                  {
+                      "id":  "H1602",
+                      "name":  "仓鼠怪兽",
+                      "type":  "HERO",
+                      "level":  2,
+                      "shapeId":  9,
+                      "headPath":  "image/heroSmallHead/H1602",
+                      "headFrame":  {
+                                        "name":  "H1602",
+                                        "x":  85,
+                                        "y":  1571,
+                                        "width":  78,
+                                        "height":  74,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H1602"
+                  },
+                  {
+                      "id":  "H1603",
+                      "name":  "仓鼠怪兽",
+                      "type":  "HERO",
+                      "level":  3,
+                      "shapeId":  9,
+                      "headPath":  "image/heroSmallHead/H1603",
+                      "headFrame":  {
+                                        "name":  "H1603",
+                                        "x":  173,
+                                        "y":  1269,
+                                        "width":  78,
+                                        "height":  74,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H1603"
+                  },
+                  {
+                      "id":  "H1604",
+                      "name":  "仓鼠怪兽",
+                      "type":  "HERO",
+                      "level":  4,
+                      "shapeId":  9,
+                      "headPath":  "image/heroSmallHead/H1604",
+                      "headFrame":  {
+                                        "name":  "H1604",
+                                        "x":  85,
+                                        "y":  1341,
+                                        "width":  80,
+                                        "height":  76,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "H1604"
+                  },
+                  {
+                      "id":  "H1701",
+                      "name":  "镭射齿轮",
+                      "type":  "HERO",
+                      "level":  1,
+                      "shapeId":  4,
+                      "headPath":  "image/heroSmallHead/H1701",
+                      "headFrame":  {
+                                        "name":  "H1701",
+                                        "x":  93,
+                                        "y":  867,
+                                        "width":  62,
+                                        "height":  88,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1702",
+                      "name":  "镭射齿轮",
+                      "type":  "HERO",
+                      "level":  2,
+                      "shapeId":  4,
+                      "headPath":  "image/heroSmallHead/H1701",
+                      "headFrame":  {
+                                        "name":  "H1701",
+                                        "x":  93,
+                                        "y":  867,
+                                        "width":  62,
+                                        "height":  88,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1703",
+                      "name":  "镭射齿轮",
+                      "type":  "HERO",
+                      "level":  3,
+                      "shapeId":  4,
+                      "headPath":  "image/heroSmallHead/H1701",
+                      "headFrame":  {
+                                        "name":  "H1701",
+                                        "x":  93,
+                                        "y":  867,
+                                        "width":  62,
+                                        "height":  88,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1704",
+                      "name":  "镭射齿轮",
+                      "type":  "HERO",
+                      "level":  4,
+                      "shapeId":  4,
+                      "headPath":  "image/heroSmallHead/H1701",
+                      "headFrame":  {
+                                        "name":  "H1701",
+                                        "x":  93,
+                                        "y":  867,
+                                        "width":  62,
+                                        "height":  88,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  ""
+                  },
+                  {
+                      "id":  "H1805",
+                      "name":  "仓鼠哥吱拉",
+                      "type":  "HERO",
+                      "level":  5,
+                      "shapeId":  9,
+                      "headPath":  "image/heroSmallHead/H1805",
+                      "headFrame":  {
+                                        "name":  "H1805",
+                                        "x":  93,
+                                        "y":  957,
+                                        "width":  80,
+                                        "height":  78,
+                                        "offsetX":  0,
+                                        "offsetY":  0,
+                                        "originalWidth":  90,
+                                        "originalHeight":  90
+                                    },
+                      "modelId":  "R1005"
+                  }
+              ],
+    "files":  [
+                  {
+                      "logicalPath":  "spine/moster/boss_1/boss_1",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "ccxHPBad1NirF7u2xwzTZR",
+                      "uuid":  "ccc473c1-69dd-4d8a-b17b-bb6c70cd3651",
+                      "nativeVersion":  "80bb8",
+                      "remotePath":  "remote/resources3/native/cc/ccc473c1-69dd-4d8a-b17b-bb6c70cd3651.80bb8.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\boss_1__boss_1\\boss_1.png",
+                      "bytes":  278765,
+                      "sha256":  "374ce0a452fdba138c58dfa379ff78ff4100f8064b497064fcbb46b6a8e6009d"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/boss_1/boss_1",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "db3lfiDYJEN4FSJsecja85",
+                      "uuid":  "dbde57e2-0d82-4437-8152-26c79c8daf39",
+                      "nativeVersion":  "520e5",
+                      "remotePath":  "remote/resources3/native/db/dbde57e2-0d82-4437-8152-26c79c8daf39.520e5.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\boss_1__boss_1\\boss_1.atlas",
+                      "bytes":  2934,
+                      "sha256":  "dcd8afba802751cd88b6162e00a81f25490a78c6250cb8a7dadda54b60d5730c"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/boss_1/boss_1",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "74Ei4mWjBHG580CFjgEpac",
+                      "uuid":  "74122e26-5a30-471b-9f34-0858e012969c",
+                      "nativeVersion":  "dbe67",
+                      "remotePath":  "remote/resources3/native/74/74122e26-5a30-471b-9f34-0858e012969c.dbe67.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\boss_1__boss_1\\boss_1.skel",
+                      "bytes":  71820,
+                      "sha256":  "a21c0eee550f43ede5aee784cb14a62afda8dc61fa238221a85b21802dab7b2a"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/boss_2/boss_2",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "ae6/HMesJCWrB5ZNhzkPWW",
+                      "uuid":  "aeebf1cc-7ac2-425a-b079-64d87390f596",
+                      "nativeVersion":  "d7718",
+                      "remotePath":  "remote/resources3/native/ae/aeebf1cc-7ac2-425a-b079-64d87390f596.d7718.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\boss_2__boss_2\\boss_2.png",
+                      "bytes":  300087,
+                      "sha256":  "606bc13e57582e3b380df1b86269e1f01246d134a39baea36cfd3a4a113ac0ad"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/boss_2/boss_2",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "c5u9N8Je9HEpH8JL9BHl0v",
+                      "uuid":  "c5bbd37c-25ef-4712-91fc-24bf411e5d2f",
+                      "nativeVersion":  "c51f4",
+                      "remotePath":  "remote/resources3/native/c5/c5bbd37c-25ef-4712-91fc-24bf411e5d2f.c51f4.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\boss_2__boss_2\\boss_2.atlas",
+                      "bytes":  4998,
+                      "sha256":  "1dad2b3ef1cf5e513cb247a8b6dea50391b9adc38f3e63aaf66624ccf10e6596"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/boss_2/boss_2",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "782lkaFp9FCIE4BCZ3srbC",
+                      "uuid":  "78da591a-169f-4508-8138-042677b2b6c2",
+                      "nativeVersion":  "4e9bf",
+                      "remotePath":  "remote/resources3/native/78/78da591a-169f-4508-8138-042677b2b6c2.4e9bf.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\boss_2__boss_2\\boss_2.skel",
+                      "bytes":  39971,
+                      "sha256":  "be7ea3ef6e7213cfe1dcc11dfd2b2e8ee4c89d8fd5f897a5c50c1584db73abf5"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/boss_3/boss_3",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "0chZ4iRzJF47ddqkmw7bSu",
+                      "uuid":  "0c859e22-4732-45e3-b75d-aa49b0edb4ae",
+                      "nativeVersion":  "7fc13",
+                      "remotePath":  "remote/resources3/native/0c/0c859e22-4732-45e3-b75d-aa49b0edb4ae.7fc13.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\boss_3__boss_3\\boss_3.png",
+                      "bytes":  56679,
+                      "sha256":  "2876ba7382fe167c109d86590a3a67578579020002e483b6b9bb8578a2588414"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/boss_3/boss_3",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "08QjO2zvxAxLe3ThUTeXcI",
+                      "uuid":  "084233b6-cefc-40c4-b7b7-4e1513797708",
+                      "nativeVersion":  "073a9",
+                      "remotePath":  "remote/resources3/native/08/084233b6-cefc-40c4-b7b7-4e1513797708.073a9.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\boss_3__boss_3\\boss_3.atlas",
+                      "bytes":  2964,
+                      "sha256":  "e6a60b2267a9fe876899515d530db9026f9393efe951a075f2c8717a5d976bb7"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/boss_3/boss_3",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "8542p8oJdLWZekU2TNWuDd",
+                      "uuid":  "85e36a7c-a097-4b59-97a4-5364cd5ae0dd",
+                      "nativeVersion":  "163ed",
+                      "remotePath":  "remote/resources3/native/85/85e36a7c-a097-4b59-97a4-5364cd5ae0dd.163ed.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\boss_3__boss_3\\boss_3.skel",
+                      "bytes":  30886,
+                      "sha256":  "0701d66f48e95a971aa0b57692fb438b1338cec05a5333fddcbe83f731c7b8c0"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_01/gw_01",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "d8Lo62V45H0pGaTFrngCy6",
+                      "uuid":  "d82e8eb6-578e-47d2-919a-4c5ae7802cba",
+                      "nativeVersion":  "02a5f",
+                      "remotePath":  "remote/resources3/native/d8/d82e8eb6-578e-47d2-919a-4c5ae7802cba.02a5f.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_01__gw_01\\gw_01.png",
+                      "bytes":  2466,
+                      "sha256":  "f5127bd930f3b1f74325d56d0c886f148bf08fc1fbbb8f67c2df6778b29e0f5f"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_01/gw_01",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "e7fMydhVNCgIVSklycX5pq",
+                      "uuid":  "e77ccc9d-8553-4280-8552-925c9c5f9a6a",
+                      "nativeVersion":  "a870d",
+                      "remotePath":  "remote/resources3/native/e7/e77ccc9d-8553-4280-8552-925c9c5f9a6a.a870d.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_01__gw_01\\gw_01.atlas",
+                      "bytes":  334,
+                      "sha256":  "f23ac981478aae7bdfbfd7c768c8611051025c562bcc8e9115609a89344729a6"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_01/gw_01",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "a4tsKb6J1JLr0R21Y37H6O",
+                      "uuid":  "a4b6c29b-e89d-492e-bd11-db5637ec7e8e",
+                      "nativeVersion":  "dd27a",
+                      "remotePath":  "remote/resources3/native/a4/a4b6c29b-e89d-492e-bd11-db5637ec7e8e.dd27a.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_01__gw_01\\gw_01.skel",
+                      "bytes":  12916,
+                      "sha256":  "c5b661d65541598172beae2b12dffb4b6417e0aa445bdbef99d0dafabfd0d71e"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_02/gw_02",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "32zkfhYU1CublxeT52uZcp",
+                      "uuid":  "32ce47e1-614d-42b9-b971-793e76b99729",
+                      "nativeVersion":  "405cc",
+                      "remotePath":  "remote/resources3/native/32/32ce47e1-614d-42b9-b971-793e76b99729.405cc.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_02__gw_02\\gw_02.png",
+                      "bytes":  3560,
+                      "sha256":  "efa7cbaa78b4f6bf036cf0c2099e8ec0439b16956e1bb2e5946e1aa31e108440"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_02/gw_02",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "6ebPbIgmxJ+qPM0hNXUvKg",
+                      "uuid":  "6e6cf6c8-826c-49fa-a3cc-d2135752f2a0",
+                      "nativeVersion":  "ec8c8",
+                      "remotePath":  "remote/resources3/native/6e/6e6cf6c8-826c-49fa-a3cc-d2135752f2a0.ec8c8.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_02__gw_02\\gw_02.atlas",
+                      "bytes":  424,
+                      "sha256":  "c475d57701b95c113a64ef3007e61ee35362489e0785f7ada070195e7ea2a5b8"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_02/gw_02",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "3eYPc1qDNFHaomM8cJr7qK",
+                      "uuid":  "3e60f735-a833-451d-aa26-33c709afba8a",
+                      "nativeVersion":  "c80b9",
+                      "remotePath":  "remote/resources3/native/3e/3e60f735-a833-451d-aa26-33c709afba8a.c80b9.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_02__gw_02\\gw_02.skel",
+                      "bytes":  5763,
+                      "sha256":  "ac760261a2d9edc2495dc9fc7d589a8857a580acad1b69062dde6f5978da9f9e"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_03/gw_03",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "38RZsZ0tZIOZING+87ayqv",
+                      "uuid":  "38459b19-d2d6-4839-920d-1bef3b6b2aaf",
+                      "nativeVersion":  "e7a70",
+                      "remotePath":  "remote/resources3/native/38/38459b19-d2d6-4839-920d-1bef3b6b2aaf.e7a70.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_03__gw_03\\gw_03.png",
+                      "bytes":  21677,
+                      "sha256":  "ac058de59618f228925fa7b59db50c08b050ea0a130f9c4b624f2a0337f25434"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_03/gw_03",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "c0Hp9rKMVCR4vD8+2f6Brm",
+                      "uuid":  "c01e9f6b-28c5-4247-8bc3-f3ed9fe81ae6",
+                      "nativeVersion":  "2777e",
+                      "remotePath":  "remote/resources3/native/c0/c01e9f6b-28c5-4247-8bc3-f3ed9fe81ae6.2777e.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_03__gw_03\\gw_03.atlas",
+                      "bytes":  888,
+                      "sha256":  "8aa3d29af40a9bf344ce6f1bf7b2e34d1e4182814c36cee26cf35a1e73e57939"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_03/gw_03",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "b5ai9Mmg5IcJuQPws8C3T4",
+                      "uuid":  "b56a2f4c-9a0e-4870-9b90-3f0b3c0b74f8",
+                      "nativeVersion":  "3ef37",
+                      "remotePath":  "remote/resources3/native/b5/b56a2f4c-9a0e-4870-9b90-3f0b3c0b74f8.3ef37.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_03__gw_03\\gw_03.skel",
+                      "bytes":  4471,
+                      "sha256":  "32ca411f743e0b7c35bd9f068565917f6037ed770f6c0327ed58569c280021a1"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_04/gw_04",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "f1Ulh7JvZLaquigKruynpO",
+                      "uuid":  "f152587b-26f6-4b6a-aba2-80aaeeca7a4e",
+                      "nativeVersion":  "62acf",
+                      "remotePath":  "remote/resources3/native/f1/f152587b-26f6-4b6a-aba2-80aaeeca7a4e.62acf.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_04__gw_04\\gw_04.png",
+                      "bytes":  13693,
+                      "sha256":  "d752894a9bde921e6dcc0e0ecbe627e5a893c37e3ffd31f332d5e7942dedc05b"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_04/gw_04",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "7e9GzZc0hKHaMV/HkvIQRV",
+                      "uuid":  "7ef46cd9-7348-4a1d-a315-fc792f210455",
+                      "nativeVersion":  "cda4f",
+                      "remotePath":  "remote/resources3/native/7e/7ef46cd9-7348-4a1d-a315-fc792f210455.cda4f.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_04__gw_04\\gw_04.atlas",
+                      "bytes":  342,
+                      "sha256":  "4e6e74faa04556691107b9fab435f718c2bfd22f1f93398954a35e6935006da7"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_04/gw_04",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "c6/ROghBtMgazI1gAfPe2R",
+                      "uuid":  "c6fd13a0-841b-4c81-acc8-d6001f3ded91",
+                      "nativeVersion":  "867ba",
+                      "remotePath":  "remote/resources3/native/c6/c6fd13a0-841b-4c81-acc8-d6001f3ded91.867ba.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_04__gw_04\\gw_04.skel",
+                      "bytes":  3748,
+                      "sha256":  "f06b384c7e1e57a077da04441b80153ab7ad0322137e7b653dddc140db2423a8"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_05/gw_05",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "27Dbtk/DdDLJ7ZBt9pNHtW",
+                      "uuid":  "270dbb64-fc37-432c-9ed9-06df69347b56",
+                      "nativeVersion":  "e6a70",
+                      "remotePath":  "remote/resources3/native/27/270dbb64-fc37-432c-9ed9-06df69347b56.e6a70.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_05__gw_05\\gw_05.png",
+                      "bytes":  41317,
+                      "sha256":  "59c50649ba9960aebe4718c7849f7522220586bc69bc4138a8d2fdde5ef335b4"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_05/gw_05",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "b2dDGXSX9OGouOFa5E6Vzx",
+                      "uuid":  "b2743197-497f-4e1a-8b8e-15ae44e95cf1",
+                      "nativeVersion":  "bf2c2",
+                      "remotePath":  "remote/resources3/native/b2/b2743197-497f-4e1a-8b8e-15ae44e95cf1.bf2c2.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_05__gw_05\\gw_05.atlas",
+                      "bytes":  1441,
+                      "sha256":  "eaa057655318314ded3f74fb309dae07f53451fee2c4208b5d6f6304ec485eea"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_05/gw_05",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "c5JsL9WdhGKrDzpIDbrLSV",
+                      "uuid":  "c526c2fd-59d8-462a-b0f3-a480dbacb495",
+                      "nativeVersion":  "8c579",
+                      "remotePath":  "remote/resources3/native/c5/c526c2fd-59d8-462a-b0f3-a480dbacb495.8c579.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_05__gw_05\\gw_05.skel",
+                      "bytes":  5485,
+                      "sha256":  "c03d9db9df907a14a4bc116f314e3c323b9582daf5c9bf6cb0a02282c6c30d4c"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_06/gw_06",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "65lvwFsVZHN6MaoRnIG+ng",
+                      "uuid":  "6596fc05-b156-4737-a31a-a119c81be9e0",
+                      "nativeVersion":  "81a15",
+                      "remotePath":  "remote/resources3/native/65/6596fc05-b156-4737-a31a-a119c81be9e0.81a15.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_06__gw_06\\gw_06.png",
+                      "bytes":  22318,
+                      "sha256":  "306fc8aba45d9c70f528036e075c536789bba27ef35c7e5f71ec4d5eebe06434"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_06/gw_06",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "29eJcPikdGg7iXpu5NB1Xm",
+                      "uuid":  "2978970f-8a47-4683-b897-a6ee4d0755e6",
+                      "nativeVersion":  "eb0d2",
+                      "remotePath":  "remote/resources3/native/29/2978970f-8a47-4683-b897-a6ee4d0755e6.eb0d2.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_06__gw_06\\gw_06.atlas",
+                      "bytes":  1266,
+                      "sha256":  "9885977fab36b9ed2277aa2ef3b7924e76b23b116234289d1098c9021864d0aa"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_06/gw_06",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "69YbxcMNxC240m/oOKkKmG",
+                      "uuid":  "6961bc5c-30dc-42db-8d26-fe838a90a986",
+                      "nativeVersion":  "b8de2",
+                      "remotePath":  "remote/resources3/native/69/6961bc5c-30dc-42db-8d26-fe838a90a986.b8de2.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_06__gw_06\\gw_06.skel",
+                      "bytes":  10202,
+                      "sha256":  "3aeef5e8035c1df9741c08cb410aae345c224bc277b10ed255345ee790c83d04"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_07/gw_07",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "b4p/oJO/RCELfCtD6Zxdqh",
+                      "uuid":  "b4a7fa09-3bf4-4210-b7c2-b43e99c5daa1",
+                      "nativeVersion":  "ee676",
+                      "remotePath":  "remote/resources3/native/b4/b4a7fa09-3bf4-4210-b7c2-b43e99c5daa1.ee676.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_07__gw_07\\gw_07.png",
+                      "bytes":  59284,
+                      "sha256":  "64b701c7e575255dcb4335fe56db7704c57e0d793474450631135e0a7ed742c1"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_07/gw_07",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "cdOPvXGAVOI5iTu8JF+CfU",
+                      "uuid":  "cd38fbd7-1805-4e23-9893-bbc245f827d4",
+                      "nativeVersion":  "47feb",
+                      "remotePath":  "remote/resources3/native/cd/cd38fbd7-1805-4e23-9893-bbc245f827d4.47feb.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_07__gw_07\\gw_07.atlas",
+                      "bytes":  1182,
+                      "sha256":  "8b74c057586f0b6ce27d90b3712c5df478f8058555de49d8198985e658aa67e9"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_07/gw_07",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "afWuG6LHVOrqZ131N2XQdv",
+                      "uuid":  "af5ae1ba-2c75-4eae-a675-df53765d076f",
+                      "nativeVersion":  "1d3a5",
+                      "remotePath":  "remote/resources3/native/af/af5ae1ba-2c75-4eae-a675-df53765d076f.1d3a5.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_07__gw_07\\gw_07.skel",
+                      "bytes":  22554,
+                      "sha256":  "979e8f4ac48e404e6aec8ee86c0b1d7d69ec99961c04db8a446e607f4485ea4b"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_09/gw_09",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "d9M7pbwyBF4I+X8Y/u3Pk9",
+                      "uuid":  "d933ba5b-c320-45e0-8f97-f18feedcf93d",
+                      "nativeVersion":  "e5f94",
+                      "remotePath":  "remote/resources3/native/d9/d933ba5b-c320-45e0-8f97-f18feedcf93d.e5f94.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_09__gw_09\\gw_09.png",
+                      "bytes":  10228,
+                      "sha256":  "799f90a456196cff10661dfe7176603dab9aba6f98e02f436053c57cebf9dbaa"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_09/gw_09",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "12bPg+RFxImY2ersKBV5DU",
+                      "uuid":  "126cf83e-445c-4899-8d9e-aec2815790d4",
+                      "nativeVersion":  "6e969",
+                      "remotePath":  "remote/resources3/native/12/126cf83e-445c-4899-8d9e-aec2815790d4.6e969.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_09__gw_09\\gw_09.atlas",
+                      "bytes":  438,
+                      "sha256":  "7aaad4c8eb40c0f166e184336e795ced36791335595c94094823d3dc09660d21"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_09/gw_09",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "8dr/dmlVxApLnURwbXTdRG",
+                      "uuid":  "8daff766-955c-40a4-b9d4-4706d74dd446",
+                      "nativeVersion":  "d4931",
+                      "remotePath":  "remote/resources3/native/8d/8daff766-955c-40a4-b9d4-4706d74dd446.d4931.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_09__gw_09\\gw_09.skel",
+                      "bytes":  10979,
+                      "sha256":  "dd9b44e01605f8cdfe723b87e9c5d344e9db6336399342a108347a0b4cc6095c"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_10/gw_10",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "93xkhisgBOdJL86Oa2LwEE",
+                      "uuid":  "93c64862-b200-4e74-92fc-e8e6b62f0104",
+                      "nativeVersion":  "27970",
+                      "remotePath":  "remote/resources3/native/93/93c64862-b200-4e74-92fc-e8e6b62f0104.27970.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_10__gw_10\\gw_10.png",
+                      "bytes":  48455,
+                      "sha256":  "423959548f846dda3c30f44cc20233b28643d643f904985a210a6d3cff5e3571"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_10/gw_10",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "1d1ZWC/2VDcoCn5i88/yMW",
+                      "uuid":  "1dd59582-ff65-4372-80a7-e62f3cff2316",
+                      "nativeVersion":  "e22c4",
+                      "remotePath":  "remote/resources3/native/1d/1dd59582-ff65-4372-80a7-e62f3cff2316.e22c4.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_10__gw_10\\gw_10.atlas",
+                      "bytes":  1622,
+                      "sha256":  "2880a41b2735456fa0f5048d0111e5662b66dff9b3bc34cc2d209658fad769f6"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_10/gw_10",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "58NaMGW8hPcYO0OBnb4xCY",
+                      "uuid":  "5835a306-5bc8-4f71-83b4-3819dbe31098",
+                      "nativeVersion":  "4b619",
+                      "remotePath":  "remote/resources3/native/58/5835a306-5bc8-4f71-83b4-3819dbe31098.4b619.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_10__gw_10\\gw_10.skel",
+                      "bytes":  16297,
+                      "sha256":  "e42f1652c9bd4de1e5d39efa50cf7eab3c1fe20cae89b6e1490b4a6a5cdaa035"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_11/gw_11",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "13LhMwP/VC4KVaPPMLgehZ",
+                      "uuid":  "132e1330-3ff5-42e0-a55a-3cf30b81e859",
+                      "nativeVersion":  "349d0",
+                      "remotePath":  "remote/resources3/native/13/132e1330-3ff5-42e0-a55a-3cf30b81e859.349d0.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_11__gw_11\\gw_11.png",
+                      "bytes":  22733,
+                      "sha256":  "8ea8b5f4c03478d993159ccc5f520cea3edc4063abdf9714f7b49fa7bdecb441"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_11/gw_11",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "fch+lUDmtNOZgJaaE7bwF2",
+                      "uuid":  "fc87e954-0e6b-4d39-9809-69a13b6f0176",
+                      "nativeVersion":  "2b21e",
+                      "remotePath":  "remote/resources3/native/fc/fc87e954-0e6b-4d39-9809-69a13b6f0176.2b21e.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_11__gw_11\\gw_11.atlas",
+                      "bytes":  1043,
+                      "sha256":  "af6cef431dbd0e1a1fbeaff62ab28d83aeabb1ca387ef58c704996bd53704715"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_11/gw_11",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "221TawNepOibZ6EaGHmXmo",
+                      "uuid":  "22d536b0-35ea-4e89-b67a-11a1879979a8",
+                      "nativeVersion":  "826ab",
+                      "remotePath":  "remote/resources3/native/22/22d536b0-35ea-4e89-b67a-11a1879979a8.826ab.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_11__gw_11\\gw_11.skel",
+                      "bytes":  18408,
+                      "sha256":  "f70767a703b27482e4383cb774133c3902cd3d35719ec18d4bf8f27e371e03b8"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_12/gw_12",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "c2cEAAtk5G1rTmqpZIGyNo",
+                      "uuid":  "c2704000-b64e-46d6-b4e6-aa96481b2368",
+                      "nativeVersion":  "ca768",
+                      "remotePath":  "remote/resources3/native/c2/c2704000-b64e-46d6-b4e6-aa96481b2368.ca768.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_12__gw_12\\gw_12.png",
+                      "bytes":  16845,
+                      "sha256":  "7605e6db61b6098f92a7588800aa914a8fe2fc2257d9b461296aac716664dda5"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_12/gw_12",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "dcJqTryW1G8ZbBoSV+tGnC",
+                      "uuid":  "dc26a4eb-c96d-46f1-96c1-a1257eb469c2",
+                      "nativeVersion":  "6332a",
+                      "remotePath":  "remote/resources3/native/dc/dc26a4eb-c96d-46f1-96c1-a1257eb469c2.6332a.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_12__gw_12\\gw_12.atlas",
+                      "bytes":  978,
+                      "sha256":  "04223ef5c12da4176a4bff8452fddc223ee0449585277a661d6e5c11efdd740d"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_12/gw_12",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "76J3ySFdhMXa1Kg7d/OZ1m",
+                      "uuid":  "76277c92-15d8-4c5d-ad4a-83b77f399d66",
+                      "nativeVersion":  "efb49",
+                      "remotePath":  "remote/resources3/native/76/76277c92-15d8-4c5d-ad4a-83b77f399d66.efb49.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_12__gw_12\\gw_12.skel",
+                      "bytes":  11723,
+                      "sha256":  "18233f70e746c77e33df53c38cd147bb0a3b9eae232cfe2fd900c9a38ceb9181"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_13/gw_13",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "425Gy94+5EE4kYyAhkMQPb",
+                      "uuid":  "42e46cbd-e3ee-4413-8918-c808643103db",
+                      "nativeVersion":  "94efc",
+                      "remotePath":  "remote/resources3/native/42/42e46cbd-e3ee-4413-8918-c808643103db.94efc.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_13__gw_13\\gw_13.png",
+                      "bytes":  78625,
+                      "sha256":  "dacfd72ed12924cac664a030c2e35ade12e1643ef0d0b4f25f749e74345f6fd9"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_13/gw_13",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "e79Cun8LBF3a4EyA6AxVKO",
+                      "uuid":  "e7f42ba7-f0b0-45dd-ae04-c80e80c5528e",
+                      "nativeVersion":  "dedff",
+                      "remotePath":  "remote/resources3/native/e7/e7f42ba7-f0b0-45dd-ae04-c80e80c5528e.dedff.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_13__gw_13\\gw_13.atlas",
+                      "bytes":  2051,
+                      "sha256":  "b1acdba7a3cf76e77e45a8baff8080cd566001753aa926d6b32b5fe345c43d11"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_13/gw_13",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "5dHO4Qj5JJ47j4RJlixJp5",
+                      "uuid":  "5d1cee10-8f92-49e3-b8f8-449962c49a79",
+                      "nativeVersion":  "7a63c",
+                      "remotePath":  "remote/resources3/native/5d/5d1cee10-8f92-49e3-b8f8-449962c49a79.7a63c.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_13__gw_13\\gw_13.skel",
+                      "bytes":  7814,
+                      "sha256":  "79b8bbf8115f15ac88231957cbc8d9f628d9d143b5cb1160d39a273d194b91fe"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_14/gw_14",
+                      "type":  "cc.ImageAsset",
+                      "compressedUuid":  "23XxMZ46tB0abQZYg+cdOe",
+                      "uuid":  "235f1319-e3ab-41d1-a6d0-65883e71d39e",
+                      "nativeVersion":  "73ce3",
+                      "remotePath":  "remote/resources3/native/23/235f1319-e3ab-41d1-a6d0-65883e71d39e.73ce3.png",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_14__gw_14\\gw_14.png",
+                      "bytes":  67684,
+                      "sha256":  "8f4f7f2b1543d42480c602e2ad451b00c12d0a238144d4053bfb8b33522aab7e"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_14/gw_14",
+                      "type":  "cc.Asset",
+                      "compressedUuid":  "9esfK6znpHc4zJvZZ8w8tg",
+                      "uuid":  "9eb1f2ba-ce7a-4773-8cc9-bd967cc3cb60",
+                      "nativeVersion":  "16d00",
+                      "remotePath":  "remote/resources3/native/9e/9eb1f2ba-ce7a-4773-8cc9-bd967cc3cb60.16d00.atlas",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_14__gw_14\\gw_14.atlas",
+                      "bytes":  1182,
+                      "sha256":  "8c7d3685fd01e9fea9d299f8ea2d354175a6e76a408916872862eafd1c9e3149"
+                  },
+                  {
+                      "logicalPath":  "spine/moster/gw_14/gw_14",
+                      "type":  "sp.SkeletonData",
+                      "compressedUuid":  "0eutAuybtMsKaY2RHhwG+K",
+                      "uuid":  "0ebad02e-c9bb-4cb0-a698-d911e1c06f8a",
+                      "nativeVersion":  "f9794",
+                      "remotePath":  "remote/resources3/native/0e/0ebad02e-c9bb-4cb0-a698-d911e1c06f8a.f9794.bin",
+                      "file":  "C:\\Users\\jiachengwei\\Documents\\wechat\\cangshu-visual-staging\\output\\enemy-spine\\gw_14__gw_14\\gw_14.skel",
+                      "bytes":  21599,
+                      "sha256":  "5bd9687ba49076b58197af4536c908ad7a1d150dfef411d5fc615c81f3fa7538"
+                  }
+              ]
+}

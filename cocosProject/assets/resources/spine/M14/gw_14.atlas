@@ -1,0 +1,83 @@
+
+gw_14.png
+size: 497,200
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+js_0
+  rotate: false
+  xy: 71, 12
+  size: 30, 12
+  orig: 30, 12
+  offset: 0, 0
+  index: -1
+js_1
+  rotate: false
+  xy: 282, 7
+  size: 70, 53
+  orig: 70, 53
+  offset: 0, 0
+  index: -1
+js_2
+  rotate: false
+  xy: 207, 3
+  size: 72, 50
+  orig: 72, 50
+  offset: 0, 0
+  index: -1
+js_22
+  rotate: false
+  xy: 133, 3
+  size: 72, 50
+  orig: 72, 50
+  offset: 0, 0
+  index: -1
+js_3
+  rotate: false
+  xy: 49, 4
+  size: 26, 46
+  orig: 26, 46
+  offset: 0, 0
+  index: -1
+mohu
+  rotate: false
+  xy: 389, 3
+  size: 106, 85
+  orig: 107, 85
+  offset: 1, 0
+  index: -1
+skill01_huan_50_00002
+  rotate: true
+  xy: 389, 90
+  size: 108, 84
+  orig: 160, 160
+  offset: 10, 7
+  index: -1
+skill01_huan_50_00003
+  rotate: false
+  xy: 2, 53
+  size: 147, 145
+  orig: 149, 152
+  offset: 1, 6
+  index: -1
+skill01_huan_50_00005
+  rotate: false
+  xy: 151, 54
+  size: 139, 144
+  orig: 160, 160
+  offset: 15, 10
+  index: -1
+skill01_huan_50_00006
+  rotate: false
+  xy: 292, 66
+  size: 95, 132
+  orig: 160, 160
+  offset: 57, 22
+  index: -1
+skill02_shou_00009
+  rotate: false
+  xy: 2, 12
+  size: 47, 40
+  orig: 49, 57
+  offset: 2, 12
+  index: -1

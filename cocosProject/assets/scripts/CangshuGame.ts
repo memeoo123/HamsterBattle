@@ -6,7 +6,6 @@ import {
     Color,
     Component,
     EventTouch,
-    Font,
     Graphics,
     HorizontalTextAlignment,
     JsonAsset,
@@ -15,10 +14,13 @@ import {
     profiler,
     ResolutionPolicy,
     Rect,
+    RichText,
     resources,
     Size,
     Sprite,
     SpriteFrame,
+    sys,
+    TTFFont,
     UITransform,
     Vec2,
     Vec3,
@@ -166,11 +168,52 @@ import {
     shouldUseStaticCandidateBatch,
 } from './BagLikeCandidateDrops';
 import {
+    bagLikeAccountHeroFragments,
+    bagLikeHeroBaseAttributeAtStar,
+    BagLikeAccountHeroFamily,
+    BagLikeAccountProfile,
+    BagLikeLevelAccountReward,
+    BAGLIKE_ACCOUNT_HERO_FAMILIES,
+    bagLikeAccountChallengeTimes,
+    bagLikeAccountUnlockedHeroFamilies,
+    bagLikeHeroUnlockLevel,
+    bagLikeHeroUpgradeCost,
+    claimBagLikeLevelRoundAccountReward,
+    cloneBagLikeAccountProfile,
+    completeBagLikeAccountLevel,
+    createBagLikeAccountProfile,
+    incrementBagLikeAccountChallengeTimes,
+    loadBagLikeAccountProfile,
+    saveBagLikeAccountProfile,
+    setAllBagLikeAccountHeroStars,
+    setBagLikeAccountChallengeTimes,
+    tryUpgradeBagLikeAccountHero,
+} from './BagLikeAccountProfile';
+import {
+    BAGLIKE_LAST_LEVEL_ID,
+    bagLikeLatestUnlockedLevel,
+    bagLikeLevelFromSearch,
+    bagLikeLevelIdsForPage,
+    bagLikeLevelNumber,
+    bagLikeLevelPageCount,
+    bagLikeLevelPageForId,
+    bagLikeLevelPassed,
+    bagLikeLevelUnlocked,
+} from './BagLikeLevelSelection';
+import {
     bagLikeProducerProfile,
     bagLikeWheelHomeHpContribution,
     BagLikePrimarySkillId,
+    BagLikeProducerProfile,
 } from './BagLikeUnitProgression';
 import { bagLikeFusionRecipe, bagLikeFusionRequirementsMet } from './BagLikeFusion';
+import {
+    VISUAL_ENEMY_ROSTER,
+    VISUAL_GEAR_ROSTER,
+    VISUAL_GEAR_SHAPES,
+    VisualEnemyEntry,
+    VisualGearEntry,
+} from './VisualRoster';
 
 const { ccclass, property } = _decorator;
 
@@ -234,11 +277,29 @@ const HERO_SMALL_HEAD_FRAMES: Record<string, HeadFrame> = {
     H0402: { x: 85, y: 177, width: 90, height: 82, offsetX: 0, offsetY: 0 },
     H0403: { x: 1, y: 89, width: 90, height: 86, offsetX: 0, offsetY: 0 },
     H0404: { x: 93, y: 1, width: 86, height: 88, offsetX: 0, offsetY: -1 },
+    H0501: { x: 85, y: 1419, width: 78, height: 74, offsetX: -1, offsetY: 1 },
+    H0502: { x: 175, y: 1113, width: 76, height: 72, offsetX: -1, offsetY: 2 },
+    H0503: { x: 175, y: 1187, width: 76, height: 72, offsetX: -1, offsetY: 2 },
+    H0504: { x: 165, y: 1421, width: 72, height: 76, offsetX: -1, offsetY: 0 },
+    H0601: { x: 1, y: 1613, width: 82, height: 80, offsetX: 0, offsetY: 0 },
+    H0602: { x: 1, y: 1283, width: 82, height: 82, offsetX: 0, offsetY: 0 },
+    H0603: { x: 1, y: 537, width: 82, height: 86, offsetX: 0, offsetY: 2 },
+    H0604: { x: 169, y: 653, width: 82, height: 72, offsetX: -1, offsetY: -1 },
     H1201: { x: 85, y: 725, width: 78, height: 56, offsetX: -1, offsetY: 0 },
     H1301: { x: 183, y: 81, width: 68, height: 68, offsetX: 0, offsetY: 0 },
     H0705: { x: 165, y: 1499, width: 78, height: 70, offsetX: 0, offsetY: 1 },
     H0805: { x: 175, y: 957, width: 76, height: 76, offsetX: 1, offsetY: 1 },
     H0905: { x: 169, y: 727, width: 82, height: 70, offsetX: 1, offsetY: 1 },
+    H1005: { x: 171, y: 491, width: 80, height: 80, offsetX: -2, offsetY: 1 },
+    H1101: { x: 165, y: 1571, width: 72, height: 70, offsetX: 0, offsetY: 1 },
+    H1401: { x: 85, y: 261, width: 86, height: 66, offsetX: -2, offsetY: -3 },
+    H1505: { x: 85, y: 647, width: 82, height: 76, offsetX: 0, offsetY: 0 },
+    H1601: { x: 85, y: 1495, width: 78, height: 74, offsetX: 0, offsetY: 0 },
+    H1602: { x: 85, y: 1571, width: 78, height: 74, offsetX: 0, offsetY: 0 },
+    H1603: { x: 173, y: 1269, width: 78, height: 74, offsetX: 0, offsetY: 0 },
+    H1604: { x: 85, y: 1341, width: 80, height: 76, offsetX: 0, offsetY: 0 },
+    H1701: { x: 93, y: 867, width: 62, height: 88, offsetX: 0, offsetY: 0 },
+    H1805: { x: 93, y: 957, width: 80, height: 78, offsetX: 0, offsetY: 0 },
     P01: { x: 167, y: 1345, width: 78, height: 74, offsetX: 0, offsetY: 0 },
     coin: { x: 177, y: 259, width: 70, height: 68, offsetX: 0, offsetY: 0 },
 };
@@ -305,6 +366,20 @@ const COMM_ATLAS_FRAMES: Readonly<Record<string, BagLikeAtlasFrame>> = {
         sourceSize: new Size(138, 128),
         insets: [69, 40, 51, 70],
     },
+    purpleButton: {
+        rect: new Rect(803, 305, 120, 128),
+        sourceSize: new Size(120, 128),
+        insets: [56, 43, 38, 42],
+    },
+    traitTitleRibbon: {
+        rect: new Rect(416, 1, 524, 83),
+        sourceSize: new Size(524, 83),
+    },
+    videoIcon: {
+        rect: new Rect(1336, 445, 44, 45),
+        sourceSize: new Size(50, 50),
+        offset: [3, 3],
+    },
     greenButton: {
         rect: new Rect(807, 175, 120, 128),
         sourceSize: new Size(120, 128),
@@ -331,6 +406,44 @@ const COMM_ATLAS_FRAMES: Readonly<Record<string, BagLikeAtlasFrame>> = {
     },
 };
 
+// Normalized from the original 820x1542 gameplay crop to the 750x1334
+// reconstruction canvas. Keep this geometry centralized so a fresh visual
+// capture can be compared without hunting through modal construction code.
+const TRAIT_VISUAL_LAYOUT = {
+    titleY: 420,
+    cardsY: 85,
+    cardStepX: 212,
+    cardWidth: 174,
+    cardHeight: 470,
+    iconY: 158,
+    descriptionY: -83,
+    descriptionWidth: 150,
+    descriptionHeight: 240,
+    actionY: -360,
+    actionHintY: -430,
+} as const;
+
+// Exact SpriteFrame records decoded from the authorized resources3 effect atlas.
+// Unmapped traits intentionally retain the text fallback until their original
+// image keys have the same evidence chain.
+const TRAIT_ICON_FRAMES: Readonly<Record<string, BagLikeAtlasFrame>> = {
+    RG_ALL_abl13_eff01: {
+        rect: new Rect(315, 301, 76, 82),
+        sourceSize: new Size(100, 100),
+        offset: [-1, 0],
+    },
+    RG_H02_abl02_eff01: {
+        rect: new Rect(467, 71, 92, 72),
+        sourceSize: new Size(100, 100),
+        offset: [2, -2],
+    },
+    RG_H03_abl02_eff01: {
+        rect: new Rect(315, 71, 76, 72),
+        sourceSize: new Size(100, 100),
+        offset: [-1, 1],
+    },
+};
+
 function wrapTraitDescription(text: string, maxUnits = 7.5): string {
     const lines: string[] = [];
     let line = '';
@@ -347,6 +460,13 @@ function wrapTraitDescription(text: string, maxUnits = 7.5): string {
     }
     if (line) lines.push(line);
     return lines.join('\n');
+}
+
+function traitDescriptionMarkup(text: string): string {
+    return wrapTraitDescription(text).replace(
+        /(仓鼠(?:射手|法师|战士|牧师|刺客|矿工)|\d+(?:\.\d+)?%)/g,
+        '<color=#6dff70>$1</color>',
+    );
 }
 
 // ItemConfig rows 5 (COIN) and 4 (AD_TICKET) point to these exact
@@ -965,6 +1085,15 @@ const PREPARATION_CONFIGS: Record<number, PreparationConfig> = {
 const REFRESH_COST = 15;
 const CANDIDATE_TRAY_HEIGHT = 250;
 const CANDIDATE_TRAY_WIDTH = 730;
+const ACCOUNT_HERO_NAMES: Readonly<Record<BagLikeAccountHeroFamily, string>> = {
+    H01: '仓鼠战士',
+    H02: '仓鼠射手',
+    H03: '仓鼠法师',
+    H04: '仓鼠骑士',
+    H11: '治疗齿轮',
+    H12: '雷云齿轮',
+    H13: '火炮齿轮',
+};
 
 @ccclass('CangshuGame')
 export class CangshuGame extends Component {
@@ -975,32 +1104,40 @@ export class CangshuGame extends Component {
     challengeTimes = 2;
 
     @property({ tooltip: 'Semicolon-separated account-unlocked hero families currently supported by the reconstruction candidate/production chain' })
-    unlockedHeroFamilies = 'H01;H02;H03;H04;H11;H12;H13';
+    unlockedHeroFamilies = 'H01;H02;H04;H12';
 
-    @property({ min: 0, max: 15, step: 1, tooltip: 'Saved H01 hero star used by HERO_STAR_GE; keep 1 until the target account star is evidenced' })
+    @property({ min: 0, max: 20, step: 1, tooltip: 'Legacy fallback H01 star; the runtime account profile persists the active value' })
     h01HeroStar = 1;
 
-    @property({ min: 0, max: 15, step: 1, tooltip: 'Saved H02 hero star used by recovered level-5 fusion verification' })
+    @property({ min: 0, max: 20, step: 1, tooltip: 'Legacy fallback H02 star; the runtime account profile persists the active value' })
     h02HeroStar = 1;
 
-    @property({ min: 0, max: 15, step: 1, tooltip: 'Saved H03 hero star used by recovered level-5 fusion verification' })
+    @property({ min: 0, max: 20, step: 1, tooltip: 'Legacy fallback H03 star; the runtime account profile persists the active value' })
     h03HeroStar = 1;
 
-    @property({ min: 0, max: 15, step: 1, tooltip: 'Saved H04 hero star used by recovered level-5 fusion verification' })
+    @property({ min: 0, max: 20, step: 1, tooltip: 'Legacy fallback H04 star; the runtime account profile persists the active value' })
     h04HeroStar = 1;
 
-    @property({ min: 0, max: 15, step: 1, tooltip: 'Saved H11 hero star; baseline 1 keeps unevidenced account upgrades disabled' })
+    @property({ min: 0, max: 20, step: 1, tooltip: 'Legacy fallback H11 star; baseline 1 keeps unevidenced account upgrades disabled' })
     h11HeroStar = 1;
 
-    @property({ min: 0, max: 15, step: 1, tooltip: 'Saved H12 hero star used by recovered level-5 fusion verification' })
+    @property({ min: 0, max: 20, step: 1, tooltip: 'Legacy fallback H12 star; the runtime account profile persists the active value' })
     h12HeroStar = 1;
 
-    @property({ min: 0, max: 15, step: 1, tooltip: 'Saved H13 hero star used by recovered level-5 fusion verification' })
+    @property({ min: 0, max: 20, step: 1, tooltip: 'Legacy fallback H13 star; the runtime account profile persists the active value' })
     h13HeroStar = 1;
 
     private initialized = false;
-    private originalFont: Font | null = null;
+    private accountProfile!: BagLikeAccountProfile;
+    private accountDefaultProfile!: BagLikeAccountProfile;
+    private claimedAccountRewardRounds = new Set<number>();
+    private accountRewardsThisAttempt: BagLikeLevelAccountReward[] = [];
+    private accountUnlockedThisAttempt: BagLikeAccountHeroFamily[] = [];
+    private validationHeroStarOverrides: Partial<Record<BagLikeAccountHeroFamily, number>> | null = null;
+    private originalFont: TTFFont | null = null;
     private levelName = '';
+    private levelCatalog: LevelTableRow[] = [];
+    private levelSelectPage = 0;
     private levelBackground = '';
     private baseLevelHomeHp = 500;
     private levelHomeHp = 500;
@@ -1058,6 +1195,7 @@ export class CangshuGame extends Component {
     private powerDirection: 0 | 1 | 2 | 3 = 1;
     private powerTimer = POWER_QUARTER_LAP_SECONDS;
     private battleRandom: () => number = createBattleSeedRandom();
+    private visualFixtureRandom: () => number = createBattleSeedRandom(1004);
     private productionJobs: ProductionJob[] = [];
     private speed: 1 | typeof BATTLE_SPEED_UP_MULTIPLE = 1;
     private paused = false;
@@ -1085,6 +1223,10 @@ export class CangshuGame extends Component {
     private candidateLayer!: Node;
     private resultLayer!: Node;
     private traitLayer!: Node;
+    private accountLayer!: Node;
+    private accountContentLayer!: Node;
+    private levelSelectionLayer!: Node;
+    private levelSelectionContentLayer!: Node;
     private traitCardsLayer!: Node;
     private gridLayer!: Node;
     private effectGraphics!: Graphics;
@@ -1104,13 +1246,18 @@ export class CangshuGame extends Component {
     private adRefreshLabel!: Label;
     private speedLabel!: Label;
     private pauseLabel!: Label;
+    private accountButtonLabel!: Label;
+    private levelButtonLabel!: Label;
     private levelTitleLabel!: Label;
     private expLevelLabel!: Label;
     private expValueLabel!: Label;
     private traitRerollLabel!: Label;
     private traitTakeAllLabel!: Label;
+    private traitRerollCountLabel!: RichText;
+    private traitTakeAllCountLabel!: RichText;
     private resultTitleLabel!: Label;
     private resultBodyLabel!: Label;
+    private resultNextButtonLabel!: Label;
     private tipLabel!: Label;
     private dragGear: Gear | null = null;
     private dragOrigin = { row: 0, col: 0, x: 0, y: 0, scale: 1, location: 'grid' as GearLocation };
@@ -1119,6 +1266,8 @@ export class CangshuGame extends Component {
         view.setDesignResolutionSize(DESIGN_WIDTH, DESIGN_HEIGHT, ResolutionPolicy.SHOW_ALL);
         const transform = this.node.getComponent(UITransform) || this.node.addComponent(UITransform);
         transform.setContentSize(DESIGN_WIDTH, DESIGN_HEIGHT);
+        const requestedLevel = bagLikeLevelFromSearch(typeof window === 'undefined' ? '' : window.location.search);
+        if (requestedLevel !== null) this.levelId = requestedLevel;
         this.preloadH02Projectile();
         this.preloadH0204Projectile();
         this.preloadH03Projectile();
@@ -1131,8 +1280,13 @@ export class CangshuGame extends Component {
         this.preloadH08Impact();
         this.preloadH0905Effects();
         this.preloadMeleeAttackAudio();
-        resources.load('original/default', Font, (fontError, font) => {
+        resources.load('original/default', TTFFont, (fontError, font) => {
             if (!fontError && font) this.originalFont = font;
+            if (this.visualCatalogMode()) {
+                profiler.hideStats();
+                this.buildVisualCatalog();
+                return;
+            }
             this.loadLevelAndBuildScene();
         });
     }
@@ -1145,6 +1299,7 @@ export class CangshuGame extends Component {
             }
             try {
                 this.configureLevel(asset.json as unknown as NormalLevelTable);
+                if (!this.loadAccountProfile()) return;
                 this.buildScene();
                 this.initGrid();
                 this.addPlacedGear('P01', 2, 3);
@@ -1171,6 +1326,7 @@ export class CangshuGame extends Component {
                     this.renderTraitChoices();
                 } else if (developedValidationMode === 'battle') {
                     this.startRound();
+                    this.applyDevelopedBattleCaptureFixture();
                 } else if (traitValidationEnabled) {
                     this.startRound();
                     this.openTraitSelection();
@@ -1204,6 +1360,7 @@ export class CangshuGame extends Component {
     }
 
     private configureLevel(table: NormalLevelTable): void {
+        this.levelCatalog = table.levels.map((row) => ({ ...row, roundIds: [...row.roundIds] }));
         const level = table.levels.find((row) => row.id === this.levelId);
         if (!level) throw new Error(`恢复关卡 ${this.levelId} 不存在于 ${table.source || 'normal-levels'}`);
         const preparation = PREPARATION_CONFIGS[level.id];
@@ -1239,6 +1396,59 @@ export class CangshuGame extends Component {
         this.makeLabel('LoadError', this.node, 0, 0, 680, 180, message, 24, RED);
     }
 
+    private loadAccountProfile(): boolean {
+        this.accountDefaultProfile = createBagLikeAccountProfile({
+            unlockedHeroFamilies: this.unlockedHeroFamilies,
+            heroStars: {
+                H01: this.h01HeroStar,
+                H02: this.h02HeroStar,
+                H03: this.h03HeroStar,
+                H04: this.h04HeroStar,
+                H11: this.h11HeroStar,
+                H12: this.h12HeroStar,
+                H13: this.h13HeroStar,
+            },
+            levelId: this.levelId,
+            challengeTimes: this.challengeTimes,
+            // The representative default starts immediately before level 1004. URL
+            // navigation must not manufacture progress for an arbitrary requested level.
+            maxPassedLevelId: Math.max(1000, DEFAULT_LEVEL_ID - 1),
+        });
+        const loaded = loadBagLikeAccountProfile(sys.localStorage, this.accountDefaultProfile);
+        this.accountProfile = loaded.profile;
+        this.syncAccountProfileToRuntime();
+        if (loaded.recoveredFromInvalidSave) {
+            console.warn('[cangshu] invalid account save ignored; restored evidence-safe defaults');
+        }
+        if (!bagLikeLevelUnlocked(this.accountProfile.maxPassedLevelId, this.levelId)) {
+            const fallbackLevel = bagLikeLatestUnlockedLevel(this.accountProfile.maxPassedLevelId);
+            console.warn(`[cangshu] locked level ${this.levelId} rejected; returning to ${fallbackLevel}`);
+            this.navigateToLevel(fallbackLevel);
+            return false;
+        }
+        return true;
+    }
+
+    private syncAccountProfileToRuntime(syncChallengeTimes = true): void {
+        const stars = this.accountProfile.stars;
+        this.h01HeroStar = stars.H01;
+        this.h02HeroStar = stars.H02;
+        this.h03HeroStar = stars.H03;
+        this.h04HeroStar = stars.H04;
+        this.h11HeroStar = stars.H11;
+        this.h12HeroStar = stars.H12;
+        this.h13HeroStar = stars.H13;
+        this.unlockedHeroFamilies = [...bagLikeAccountUnlockedHeroFamilies(this.accountProfile)].join(';');
+        if (syncChallengeTimes) this.challengeTimes = bagLikeAccountChallengeTimes(this.accountProfile, this.levelId);
+    }
+
+    private persistAccountProfile(syncChallengeTimes = true): void {
+        this.syncAccountProfileToRuntime(syncChallengeTimes);
+        if (!saveBagLikeAccountProfile(sys.localStorage, this.accountProfile)) {
+            console.warn('[cangshu] account profile could not be persisted in this runtime');
+        }
+    }
+
     private fusionValidationMode(): 'tray' | 'placed' | 'battle' | null {
         if (typeof window === 'undefined') return null;
         const match = /(?:^|[?&])fusionValidation=(tray|placed|battle)(?:&|$)/.exec(window.location.search);
@@ -1256,6 +1466,136 @@ export class CangshuGame extends Component {
         return match ? match[1] as 'preparation' | 'battle' | 'trait' : null;
     }
 
+    private accountDebugEnabled(): boolean {
+        if (typeof window === 'undefined') return false;
+        return /(?:^|[?&])accountDebug=1(?:&|$)/.test(window.location.search);
+    }
+
+    private visualCatalogMode(): 'enemies' | 'gears' | null {
+        if (typeof window === 'undefined') return null;
+        const match = /(?:^|[?&])visualCatalog=(enemies|gears)(?:&|$)/.exec(window.location.search);
+        return match ? match[1] as 'enemies' | 'gears' : null;
+    }
+
+    private visualCatalogPage(): number {
+        if (typeof window === 'undefined') return 0;
+        const match = /(?:^|[?&])visualPage=(\d+)(?:&|$)/.exec(window.location.search);
+        return match ? Math.max(0, Number(match[1]) || 0) : 0;
+    }
+
+    private navigateVisualCatalog(mode: 'enemies' | 'gears', page = 0): void {
+        if (typeof window === 'undefined') return;
+        const url = new URL(window.location.href);
+        url.searchParams.set('visualCatalog', mode);
+        if (mode === 'gears') url.searchParams.set('visualPage', String(page));
+        else url.searchParams.delete('visualPage');
+        window.location.href = url.toString();
+    }
+
+    private buildVisualCatalog(): void {
+        const mode = this.visualCatalogMode() || 'enemies';
+        const background = this.makeNode('VisualCatalogBackground', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        const backgroundGraphics = background.addComponent(Graphics);
+        backgroundGraphics.fillColor = new Color(22, 31, 48, 255);
+        backgroundGraphics.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
+        backgroundGraphics.fill();
+
+        this.makeLabel('VisualCatalogTitle', this.node, 0, 620, 700, 52,
+            mode === 'enemies' ? '200关敌人 / Boss 原始外观（25种）' : '我方齿轮原始外观（58件）', 30, WHITE);
+        this.makeButton('EnemyCatalogTab', this.node, -170, 566, 290, 54, '敌人 / Boss 25种', () => this.navigateVisualCatalog('enemies'));
+        this.makeButton('GearCatalogTab', this.node, 170, 566, 290, 54, '我方齿轮 58件', () => this.navigateVisualCatalog('gears'));
+
+        if (mode === 'enemies') this.buildEnemyVisualCatalog();
+        else this.buildGearVisualCatalog();
+    }
+
+    private buildEnemyVisualCatalog(): void {
+        VISUAL_ENEMY_ROSTER.forEach((entry, index) => {
+            const column = index % 5;
+            const row = Math.floor(index / 5);
+            const card = this.makeVisualCatalogCard(`EnemyVisual_${entry.id}`, -292 + column * 146, 435 - row * 180, 136, 168);
+            this.attachEnemyVisual(card, entry);
+            this.makeLabel(`EnemyName_${entry.id}`, card, 0, -54, 128, 40, `${entry.id}\n${entry.name}`, 17,
+                entry.kind === 'BOSS' ? GOLD : WHITE);
+        });
+        this.makeLabel('EnemyCatalogEvidence', this.node, 0, -486, 700, 30,
+            '覆盖 normal-levels.json 的200关、2978波；同族Boss按原配置放大显示', 16, CREAM);
+    }
+
+    private attachEnemyVisual(parent: Node, entry: VisualEnemyEntry): void {
+        const modelNode = this.makeNode(`EnemySpine_${entry.id}`, parent, 0, 25, 120, 120);
+        resources.load(entry.spinePath, sp.SkeletonData, (error, data) => {
+            if (error || !modelNode.isValid) {
+                console.error(`[visual-catalog] enemy asset failed ${entry.id} ${entry.spinePath}: ${error?.message || 'invalid node'}`);
+                return;
+            }
+            const skeleton = modelNode.addComponent(sp.Skeleton);
+            skeleton.skeletonData = data;
+            skeleton.premultipliedAlpha = false;
+            const galleryScale = entry.spineScale * (entry.kind === 'BOSS' ? 0.55 : 0.72);
+            modelNode.setScale(galleryScale, galleryScale, 1);
+            try {
+                if (skeleton.findAnimation('idle')) skeleton.setAnimation(0, 'idle', true);
+            } catch {
+                // Valid 3.8.99 skeleton data still renders its setup pose.
+            }
+        });
+    }
+
+    private buildGearVisualCatalog(): void {
+        const pageSize = 20;
+        const pageCount = Math.ceil(VISUAL_GEAR_ROSTER.length / pageSize);
+        const page = Math.min(this.visualCatalogPage(), pageCount - 1);
+        const pageEntries = VISUAL_GEAR_ROSTER.slice(page * pageSize, (page + 1) * pageSize);
+        pageEntries.forEach((entry, index) => {
+            const column = index % 4;
+            const row = Math.floor(index / 4);
+            const card = this.makeVisualCatalogCard(`GearVisual_${entry.id}`, -270 + column * 180, 435 - row * 180, 168, 168);
+            this.attachGearVisual(card, entry);
+            this.makeLabel(`GearName_${entry.id}`, card, 0, -57, 158, 36, `${entry.id}  ${entry.name}`, 15, WHITE);
+        });
+        this.makeButton('GearCatalogPrevious', this.node, -205, -486, 170, 48, '上一页', () => this.navigateVisualCatalog('gears', (page + pageCount - 1) % pageCount));
+        this.makeLabel('GearCatalogPage', this.node, 0, -486, 150, 44, `${page + 1} / ${pageCount}`, 22, GOLD);
+        this.makeButton('GearCatalogNext', this.node, 205, -486, 170, 48, '下一页', () => this.navigateVisualCatalog('gears', (page + 1) % pageCount));
+    }
+
+    private attachGearVisual(parent: Node, entry: VisualGearEntry): void {
+        const shape = VISUAL_GEAR_SHAPES[entry.shapeId];
+        if (!shape) return;
+        const footprintRows = Math.max(...shape.map(([row]) => row)) + 1;
+        const footprintColumns = Math.max(...shape.map(([, column]) => column)) + 1;
+        const gearNode = this.makeNode(`ExactGear_${entry.id}`, parent,
+            -(footprintColumns - 1) * GRID_CELL * 0.19,
+            24 + (footprintRows - 1) * GRID_CELL * 0.19,
+            footprintColumns * GRID_CELL,
+            footprintRows * GRID_CELL);
+        gearNode.setScale(0.38, 0.38, 1);
+        if (shape.length > 1) this.attachGearConnectorSprite(gearNode, shape, WHITE);
+        for (const [shapeRow, shapeColumn] of shape) {
+            this.attachGearBodySprite(gearNode, entry.level, shapeColumn * GRID_CELL, -shapeRow * GRID_CELL);
+        }
+        if (entry.level >= 5) this.attachLevelFiveShapeOverlay(gearNode, shape);
+        this.attachStaticGearPortrait(
+            gearNode,
+            entry.headKey,
+            (footprintColumns - 1) * GRID_CELL * 0.5,
+            -(footprintRows - 1) * GRID_CELL * 0.5 + 3,
+        );
+    }
+
+    private makeVisualCatalogCard(name: string, x: number, y: number, width: number, height: number): Node {
+        const card = this.makeNode(name, this.node, x, y, width, height);
+        const graphics = card.addComponent(Graphics);
+        graphics.fillColor = new Color(41, 55, 78, 245);
+        graphics.roundRect(-width / 2, -height / 2, width, height, 14);
+        graphics.fill();
+        graphics.strokeColor = new Color(113, 146, 190, 255);
+        graphics.lineWidth = 2;
+        graphics.roundRect(-width / 2 + 1, -height / 2 + 1, width - 2, height - 2, 13);
+        graphics.stroke();
+        return card;
+    }
+
     // Evidence-backed account/layout fixture for the three developed-state
     // screenshots. It is isolated from the normal URL and save-state defaults.
     private applyDevelopedValidationFixture(): void {
@@ -1267,12 +1607,34 @@ export class CangshuGame extends Component {
         this.gears = core ? [core] : [];
         this.h13HeroStar = 3;
         this.h02HeroStar = 3;
+        this.validationHeroStarOverrides = { H13: 3, H02: 3 };
         this.refreshPlacedWheelHomeHp();
 
         this.addPlacedGear('H1301', 1, 2);
         this.addPlacedGear('H0301', 1, 4);
         this.addPlacedGear('H0202', 3, 2);
         this.replaceCandidates(['C01']);
+    }
+
+    // Screenshot-only 10 s boundary normalized from the authorized level-1004
+    // battle reference. The normal game URL never calls this method.
+    private applyDevelopedBattleCaptureFixture(): void {
+        if (this.developedValidationMode() !== 'battle' || this.phase !== 'battle') return;
+        this.clearUnits();
+        const round = this.rounds[0];
+        const atkScale = (this.levelAtkMultiple / 10000) * (round.atkMultiple / 10000);
+        const hpScale = (this.levelHpMultiple / 10000) * (round.hpMultiple / 10000);
+        const referenceUnits: ReadonlyArray<readonly [ModelId, number, number]> = [
+            ['M07', 310, 120],
+            ['M02', 145, 35],
+            ['M02', 285, -35],
+            ['M02', 220, -120],
+        ];
+        for (const [model, x, y] of referenceUnits) {
+            this.createUnit('enemy', UNITS[model], x, y, atkScale, hpScale);
+            this.addDamageText(27, x, y + 48);
+        }
+        this.paused = true;
     }
 
     // Explicit browser-only visual fixture. It is unreachable in the normal
@@ -1426,6 +1788,15 @@ export class CangshuGame extends Component {
         });
         this.restyleButton(this.pauseLabel, new Color(40, 179, 237, 255), new Color(197, 245, 255, 255));
         this.applyCommButtonSkin(this.pauseLabel, COMM_ATLAS_FRAMES.pause);
+        this.accountButtonLabel = this.makeButton('Account', this.node, -190, 617, 130, 58, '账号 / 星级', () => this.openAccountPanel());
+        this.restyleButton(this.accountButtonLabel, new Color(82, 79, 176, 255), new Color(235, 233, 255, 255));
+        this.accountButtonLabel.node.parent!.active = !this.traitValidationEnabled()
+            && !this.developedValidationMode()
+            && !this.fusionValidationMode();
+        this.levelButtonLabel = this.makeButton('LevelSelection', this.node, 280, 617, 140, 58,
+            `第 ${bagLikeLevelNumber(this.levelId)} 关`, () => this.openLevelSelectionPanel());
+        this.restyleButton(this.levelButtonLabel, new Color(39, 118, 171, 255), new Color(225, 248, 255, 255));
+        this.levelButtonLabel.node.parent!.active = this.accountButtonLabel.node.parent!.active;
 
         this.levelTitleLabel = this.makeLabel('LevelTitle', this.node, 0, 625, 1, 1, '', 1, CREAM);
         this.levelTitleLabel.node.active = false;
@@ -1439,21 +1810,27 @@ export class CangshuGame extends Component {
         topPanel.parent = this.hudLayer;
         this.pauseLabel.node.parent!.parent = this.hudLayer;
         this.speedLabel.node.parent!.parent = this.hudLayer;
+        this.accountButtonLabel.node.parent!.parent = this.hudLayer;
+        this.levelButtonLabel.node.parent!.parent = this.hudLayer;
         this.levelTitleLabel.node.parent = this.hudLayer;
         expNode.parent = this.hudLayer;
 
-        this.resultLayer = this.makeNode('ResultOverlay', this.node, 0, 0, 620, 330);
+        this.resultLayer = this.makeNode('ResultOverlay', this.node, 0, 0, 620, 380);
         const resultGraphics = this.resultLayer.addComponent(Graphics);
         resultGraphics.fillColor = new Color(22, 38, 40, 242);
-        resultGraphics.roundRect(-310, -165, 620, 330, 28);
+        resultGraphics.roundRect(-310, -190, 620, 380, 28);
         resultGraphics.fill();
         resultGraphics.strokeColor = new Color(239, 210, 119, 255);
         resultGraphics.lineWidth = 5;
-        resultGraphics.roundRect(-307, -162, 614, 324, 25);
+        resultGraphics.roundRect(-307, -187, 614, 374, 25);
         resultGraphics.stroke();
-        this.resultTitleLabel = this.makeLabel('ResultTitle', this.resultLayer, 0, 92, 480, 64, '关卡胜利', 38, GOLD);
-        this.resultBodyLabel = this.makeLabel('ResultBody', this.resultLayer, 0, 20, 520, 70, '', 20, CREAM);
-        this.makeButton('Retry', this.resultLayer, 0, -95, 230, 64, '重新挑战', () => this.restartLevel());
+        this.resultTitleLabel = this.makeLabel('ResultTitle', this.resultLayer, 0, 118, 480, 64, '关卡胜利', 38, GOLD);
+        this.resultBodyLabel = this.makeLabel('ResultBody', this.resultLayer, 0, 36, 540, 110, '', 20, CREAM);
+        this.makeButton('Retry', this.resultLayer, -130, -125, 230, 64, '重新挑战', () => this.restartLevel());
+        this.resultNextButtonLabel = this.makeButton('NextLevel', this.resultLayer, 130, -125, 230, 64,
+            '进入下一关', () => this.navigateToLevel(this.levelId + 1));
+        this.restyleButton(this.resultNextButtonLabel, new Color(45, 151, 92, 255), new Color(231, 255, 231, 255));
+        this.resultNextButtonLabel.node.parent!.active = false;
         this.resultLayer.active = false;
 
         this.traitLayer = this.makeNode('TraitSelectionOverlay', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
@@ -1461,25 +1838,295 @@ export class CangshuGame extends Component {
         shade.fillColor = new Color(18, 20, 28, 202);
         shade.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
         shade.fill();
-        const titleRibbon = this.makeNode('TraitTitleRibbon', this.traitLayer, 0, 300, 520, 86);
-        const titleGraphics = titleRibbon.addComponent(Graphics);
-        titleGraphics.fillColor = new Color(255, 197, 18, 255);
-        titleGraphics.roundRect(-260, -43, 520, 86, 17);
-        titleGraphics.fill();
-        titleGraphics.strokeColor = new Color(255, 122, 0, 255);
-        titleGraphics.lineWidth = 5;
-        titleGraphics.roundRect(-257, -40, 514, 80, 14);
-        titleGraphics.stroke();
-        this.makeLabel('TraitTitle', titleRibbon, 0, 0, 480, 58, '选择激活特性', 34, WHITE);
-        this.traitCardsLayer = this.makeNode('TraitCards', this.traitLayer, 0, 20, 700, 440);
-        this.traitRerollLabel = this.makeButton('TraitReroll', this.traitLayer, -176, -410, 286, 82, '换一批', () => this.rerollTraits());
-        this.traitTakeAllLabel = this.makeButton('TraitTakeAll', this.traitLayer, 176, -410, 286, 82, '全都要', () => this.takeAllTraits());
-        this.restyleButton(this.traitRerollLabel, new Color(12, 190, 239, 255), new Color(2, 73, 122, 255));
-        this.restyleButton(this.traitTakeAllLabel, new Color(225, 64, 225, 255), new Color(111, 25, 138, 255));
-        this.makeLabel('TraitRerollHint', this.traitLayer, -176, -470, 280, 28, '必出紫品以上属性', 16, new Color(190, 124, 255, 255));
-        this.makeLabel('TraitTakeAllHint', this.traitLayer, 176, -470, 280, 28, '全选胜率加倍', 16, GOLD);
+        const titleRibbon = this.makeNode('TraitTitleRibbon', this.traitLayer, 0, TRAIT_VISUAL_LAYOUT.titleY, 580, 92);
+        this.attachRecoveredAtlasSprite(titleRibbon, 'original/comm_0/spriteFrame', COMM_ATLAS_FRAMES.traitTitleRibbon);
+        const traitTitle = this.makeLabel('TraitTitle', titleRibbon, 0, 1, 480, 58, '选择激活特性', 34, WHITE);
+        this.applyOriginalOutline(traitTitle, new Color(19, 9, 0, 255), 5);
+        this.traitCardsLayer = this.makeNode('TraitCards', this.traitLayer, 0, TRAIT_VISUAL_LAYOUT.cardsY, 700, 500);
+        this.traitRerollLabel = this.makeButton('TraitReroll', this.traitLayer, -174, TRAIT_VISUAL_LAYOUT.actionY, 270, 92, '换一批', () => this.rerollTraits());
+        this.traitTakeAllLabel = this.makeButton('TraitTakeAll', this.traitLayer, 174, TRAIT_VISUAL_LAYOUT.actionY, 270, 92, '全都要', () => this.takeAllTraits());
+        this.applyCommButtonSkin(this.traitRerollLabel, COMM_ATLAS_FRAMES.blueButton);
+        this.applyCommButtonSkin(this.traitTakeAllLabel, COMM_ATLAS_FRAMES.purpleButton);
+        this.addTraitVideoIcon(this.traitRerollLabel);
+        this.addTraitVideoIcon(this.traitTakeAllLabel);
+        const rerollButtonNode = this.traitRerollLabel.node.parent!;
+        const takeAllButtonNode = this.traitTakeAllLabel.node.parent!;
+        this.traitRerollCountLabel = this.makeTraitCountLabel('TraitRerollCount', rerollButtonNode);
+        this.traitTakeAllCountLabel = this.makeTraitCountLabel('TraitTakeAllCount', takeAllButtonNode);
+        this.makeLabel('TraitRerollHint', this.traitLayer, -174, TRAIT_VISUAL_LAYOUT.actionHintY, 270, 28, '必出紫品以上属性', 16, new Color(190, 124, 255, 255));
+        this.makeLabel('TraitTakeAllHint', this.traitLayer, 174, TRAIT_VISUAL_LAYOUT.actionHintY, 270, 28, '全选胜率加倍', 16, GOLD);
         this.traitLayer.active = false;
+        this.buildAccountPanel();
+        this.buildLevelSelectionPanel();
         this.drawExpBar();
+    }
+
+    private buildAccountPanel(): void {
+        this.accountLayer = this.makeNode('AccountOverlay', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        const shade = this.accountLayer.addComponent(Graphics);
+        shade.fillColor = new Color(12, 16, 28, 220);
+        shade.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
+        shade.fill();
+
+        const panel = this.makeNode('AccountPanel', this.accountLayer, 0, 0, 700, 1120);
+        const panelGraphics = panel.addComponent(Graphics);
+        panelGraphics.fillColor = new Color(29, 40, 61, 252);
+        panelGraphics.roundRect(-350, -560, 700, 1120, 28);
+        panelGraphics.fill();
+        panelGraphics.strokeColor = new Color(139, 175, 226, 255);
+        panelGraphics.lineWidth = 4;
+        panelGraphics.roundRect(-348, -558, 696, 1116, 26);
+        panelGraphics.stroke();
+
+        this.makeLabel('AccountTitle', panel, 0, 505, 620, 58, '账号养成 · 英雄星级', 34, GOLD);
+        this.makeLabel(
+            'AccountEvidenceNotice',
+            panel,
+            0,
+            457,
+            630,
+            56,
+            '关卡奖励、解锁条件和 1–20 星消耗均来自原包配置\n金币、体力、钻石、碎片、通关进度会保存到本地',
+            17,
+            CREAM,
+        );
+        this.accountContentLayer = this.makeNode('AccountContent', panel, 0, 0, 660, 760);
+
+        this.makeButton('AccountReset', panel, -125, -500, 200, 58, '重置本地档案', () => this.resetAccountProfile());
+        this.makeButton('AccountClose', panel, 125, -500, 200, 58, '保存并关闭', () => this.closeAccountPanel());
+        if (this.accountDebugEnabled()) {
+            this.makeButton('AccountAllOneStar', panel, -210, -425, 170, 54, '测试：全 1 星', () => this.applyAccountStarPreset(1));
+            this.makeButton('AccountAllMaxStar', panel, 0, -425, 170, 54, '测试：全 20 星', () => this.applyAccountStarPreset(20));
+            this.makeButton('AccountChallengePlus', panel, 210, -425, 170, 54, '测试：挑战 +1', () => this.changeAccountChallengeTimes(1));
+        }
+        this.accountLayer.active = false;
+    }
+
+    private buildLevelSelectionPanel(): void {
+        this.levelSelectionLayer = this.makeNode('LevelSelectionOverlay', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        const shade = this.levelSelectionLayer.addComponent(Graphics);
+        shade.fillColor = new Color(12, 16, 28, 220);
+        shade.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
+        shade.fill();
+
+        const panel = this.makeNode('LevelSelectionPanel', this.levelSelectionLayer, 0, 0, 700, 1120);
+        const panelGraphics = panel.addComponent(Graphics);
+        panelGraphics.fillColor = new Color(29, 40, 61, 252);
+        panelGraphics.roundRect(-350, -560, 700, 1120, 28);
+        panelGraphics.fill();
+        panelGraphics.strokeColor = new Color(112, 193, 238, 255);
+        panelGraphics.lineWidth = 4;
+        panelGraphics.roundRect(-348, -558, 696, 1116, 26);
+        panelGraphics.stroke();
+
+        this.makeLabel('LevelSelectionTitle', panel, 0, 505, 620, 58, '主线关卡 · 1–200', 34, GOLD);
+        this.makeLabel('LevelSelectionEvidence', panel, 0, 457, 630, 42,
+            '通关当前关后只解锁下一关；规则来自原包 TrunkInstanceModel', 17, CREAM);
+        this.levelSelectionContentLayer = this.makeNode('LevelSelectionContent', panel, 0, 0, 660, 850);
+        this.makeButton('LevelSelectionClose', panel, 0, -505, 230, 62, '返回布阵', () => this.closeLevelSelectionPanel());
+        this.levelSelectionLayer.active = false;
+    }
+
+    private openLevelSelectionPanel(): void {
+        if (this.phase !== 'deploy') {
+            this.tipLabel.string = '只能在布阵阶段切换关卡';
+            return;
+        }
+        profiler.hideStats();
+        this.levelSelectPage = bagLikeLevelPageForId(this.levelId);
+        this.renderLevelSelectionPanel();
+        this.levelSelectionLayer.active = true;
+        this.levelSelectionLayer.setSiblingIndex(this.node.children.length - 1);
+    }
+
+    private closeLevelSelectionPanel(): void {
+        this.levelSelectionLayer.active = false;
+        this.tipLabel.string = `当前关卡：第 ${bagLikeLevelNumber(this.levelId)} 关 ${this.levelName}`;
+    }
+
+    private renderLevelSelectionPanel(): void {
+        for (const child of [...this.levelSelectionContentLayer.children]) {
+            child.removeFromParent();
+            child.destroy();
+        }
+        const maxPassed = this.accountProfile.maxPassedLevelId;
+        const latestUnlocked = bagLikeLatestUnlockedLevel(maxPassed);
+        const pageCount = bagLikeLevelPageCount();
+        const pageIds = bagLikeLevelIdsForPage(this.levelSelectPage);
+        this.makeLabel('LevelSelectionProgress', this.levelSelectionContentLayer, 0, 390, 620, 42,
+            `已通关 ${Math.max(0, maxPassed - 1000)}/200 · 当前可挑战到第 ${bagLikeLevelNumber(latestUnlocked)} 关`,
+            19, new Color(157, 213, 255, 255));
+
+        pageIds.forEach((levelId, index) => {
+            const row = Math.floor(index / 4);
+            const col = index % 4;
+            const level = this.levelCatalog.find((entry) => entry.id === levelId);
+            if (!level) return;
+            const passed = bagLikeLevelPassed(maxPassed, levelId);
+            const unlocked = bagLikeLevelUnlocked(maxPassed, levelId);
+            const current = levelId === this.levelId;
+            const stateText = current ? '当前' : passed ? '已通关' : unlocked ? '可挑战' : '未解锁';
+            const label = this.makeButton(
+                `Level_${levelId}`,
+                this.levelSelectionContentLayer,
+                -240 + col * 160,
+                278 - row * 130,
+                146,
+                108,
+                `第 ${bagLikeLevelNumber(levelId)} 关\n${level.name}\n${stateText}`,
+                () => this.navigateToLevel(levelId),
+            );
+            label.fontSize = 17;
+            label.lineHeight = 22;
+            const button = label.node.parent!.getComponent(Button)!;
+            button.interactable = unlocked;
+            const fill = current
+                ? new Color(190, 139, 39, 255)
+                : passed
+                  ? new Color(43, 129, 86, 255)
+                  : unlocked
+                    ? new Color(42, 111, 173, 255)
+                    : new Color(63, 69, 82, 255);
+            const textColor = unlocked ? WHITE : new Color(145, 151, 164, 255);
+            this.restyleButton(label, fill, textColor);
+        });
+
+        const previous = this.makeButton('LevelPagePrevious', this.levelSelectionContentLayer, -215, -395, 180, 58,
+            '上一页', () => {
+                this.levelSelectPage = Math.max(0, this.levelSelectPage - 1);
+                this.renderLevelSelectionPanel();
+            });
+        previous.node.parent!.getComponent(Button)!.interactable = this.levelSelectPage > 0;
+        previous.color = this.levelSelectPage > 0 ? WHITE : new Color(130, 135, 148, 255);
+        this.makeLabel('LevelPageStatus', this.levelSelectionContentLayer, 0, -395, 180, 58,
+            `${this.levelSelectPage + 1} / ${pageCount}`, 20, CREAM);
+        const next = this.makeButton('LevelPageNext', this.levelSelectionContentLayer, 215, -395, 180, 58,
+            '下一页', () => {
+                this.levelSelectPage = Math.min(pageCount - 1, this.levelSelectPage + 1);
+                this.renderLevelSelectionPanel();
+            });
+        next.node.parent!.getComponent(Button)!.interactable = this.levelSelectPage < pageCount - 1;
+        next.color = this.levelSelectPage < pageCount - 1 ? WHITE : new Color(130, 135, 148, 255);
+    }
+
+    private navigateToLevel(levelId: number): void {
+        if (!bagLikeLevelUnlocked(this.accountProfile.maxPassedLevelId, levelId)) {
+            this.tipLabel.string = `第 ${bagLikeLevelNumber(levelId)} 关尚未解锁`;
+            return;
+        }
+        if (levelId === this.levelId && this.initialized) {
+            this.closeLevelSelectionPanel();
+            return;
+        }
+        if (typeof window === 'undefined') {
+            this.tipLabel.string = '当前运行环境不支持页面级关卡切换';
+            return;
+        }
+        const debugFlag = this.accountDebugEnabled() ? '&accountDebug=1' : '';
+        window.location.search = `?level=${levelId}${debugFlag}`;
+    }
+
+    private openAccountPanel(): void {
+        if (this.phase !== 'deploy') {
+            this.tipLabel.string = '账号星级只能在准备阶段调整';
+            return;
+        }
+        profiler.hideStats();
+        this.renderAccountPanel();
+        this.accountLayer.active = true;
+        this.accountLayer.setSiblingIndex(this.node.children.length - 1);
+    }
+
+    private closeAccountPanel(): void {
+        this.accountLayer.active = false;
+        this.tipLabel.string = '账号档案已保存；英雄升星和解锁从下次刷新生效';
+        this.refreshUi();
+    }
+
+    private renderAccountPanel(): void {
+        for (const child of [...this.accountContentLayer.children]) {
+            child.removeFromParent();
+            child.destroy();
+        }
+        const challengeTimes = bagLikeAccountChallengeTimes(this.accountProfile, this.levelId);
+        const resourceSummary = `金币 ${this.accountProfile.gold}  体力 ${this.accountProfile.energy}  钻石 ${this.accountProfile.diamonds}  通关 ${this.accountProfile.maxPassedLevelId}`;
+
+        this.makeLabel('ChallengeLabel', this.accountContentLayer, 0, 360, 620, 72,
+            `${resourceSummary}\n当前关卡 ${this.levelId} · 第 ${challengeTimes} 次挑战`, 18, WHITE);
+        this.makeLabel('AccountColumns', this.accountContentLayer, 0, 292, 620, 32,
+            '英雄 / 解锁状态       星级       碎片          下一级消耗', 17, new Color(171, 188, 216, 255));
+
+        BAGLIKE_ACCOUNT_HERO_FAMILIES.forEach((family, index) => {
+            const star = this.accountProfile.stars[family];
+            const y = 238 - index * 82;
+            const unlocked = star > 0;
+            const row = this.makeNode(`AccountHero_${family}`, this.accountContentLayer, 0, y, 630, 72);
+            const rowGraphics = row.addComponent(Graphics);
+            rowGraphics.fillColor = new Color(index % 2 === 0 ? 42 : 36, index % 2 === 0 ? 57 : 50, index % 2 === 0 ? 82 : 74, 235);
+            rowGraphics.roundRect(-315, -36, 630, 72, 12);
+            rowGraphics.fill();
+            const unlockLevel = bagLikeHeroUnlockLevel(family);
+            const heroText = unlocked
+                ? `${family} ${ACCOUNT_HERO_NAMES[family]}`
+                : `${family} 通关${unlockLevel}解锁`;
+            this.makeLabel(`AccountName_${family}`, row, -226, 0, 176, 48, heroText, 17, unlocked ? WHITE : new Color(150, 155, 168, 255));
+            this.makeLabel(`AccountStar_${family}`, row, -100, 0, 72, 44, unlocked ? `${star}星` : '未解锁', 19, unlocked ? GOLD : new Color(145, 145, 145, 255));
+            const fragments = bagLikeAccountHeroFragments(this.accountProfile, family);
+            const cost = unlocked ? bagLikeHeroUpgradeCost(star) : null;
+            this.makeLabel(`AccountFragments_${family}`, row, -3, 0, 104, 44,
+                `${fragments}${cost ? `/${cost.fragments}` : ''}`, 18, new Color(157, 213, 255, 255));
+            const costText = !unlocked ? `需通关 ${unlockLevel}` : cost ? `${cost.gold} 金币` : '属性已满';
+            this.makeLabel(`AccountCost_${family}`, row, 118, 0, 142, 44, costText, 17, CREAM);
+            const upgradeLabel = this.makeButton(`AccountUpgrade_${family}`, row, 255, 0, 104, 48,
+                !unlocked ? '锁定' : cost ? '升星' : '满星', () => this.upgradeAccountHero(family));
+            if (!unlocked || !cost) this.restyleButton(upgradeLabel, new Color(74, 78, 88, 255), new Color(165, 165, 165, 255));
+        });
+    }
+
+    private upgradeAccountHero(family: BagLikeAccountHeroFamily): void {
+        const result = tryUpgradeBagLikeAccountHero(this.accountProfile, family);
+        if (!result.upgraded) {
+            const message = result.reason === 'locked'
+                ? `请先通关 ${bagLikeHeroUnlockLevel(family)} 解锁 ${ACCOUNT_HERO_NAMES[family]}`
+                : result.reason === 'maxStar'
+                  ? `${ACCOUNT_HERO_NAMES[family]}已经达到 20 星`
+                  : result.reason === 'fragments'
+                    ? `${ACCOUNT_HERO_NAMES[family]}碎片不足，需要 ${result.cost?.fragments || 0}`
+                    : `金币不足，需要 ${result.cost?.gold || 0}`;
+            this.tipLabel.string = message;
+            return;
+        }
+        this.accountProfile = result.profile;
+        this.tipLabel.string = `${ACCOUNT_HERO_NAMES[family]}升至 ${this.accountProfile.stars[family]} 星`;
+        this.applyAccountProfileChange();
+    }
+
+    private changeAccountChallengeTimes(delta: number): void {
+        const current = bagLikeAccountChallengeTimes(this.accountProfile, this.levelId);
+        this.accountProfile = setBagLikeAccountChallengeTimes(this.accountProfile, this.levelId, current + delta);
+        this.applyAccountProfileChange();
+    }
+
+    private applyAccountStarPreset(star: number): void {
+        this.accountProfile = setAllBagLikeAccountHeroStars(this.accountProfile, star);
+        this.applyAccountProfileChange();
+    }
+
+    private resetAccountProfile(): void {
+        this.accountProfile = cloneBagLikeAccountProfile(this.accountDefaultProfile);
+        if (!bagLikeLevelUnlocked(this.accountProfile.maxPassedLevelId, this.levelId)) {
+            this.persistAccountProfile(false);
+            this.navigateToLevel(bagLikeLatestUnlockedLevel(this.accountProfile.maxPassedLevelId));
+            return;
+        }
+        this.applyAccountProfileChange();
+    }
+
+    private applyAccountProfileChange(): void {
+        this.persistAccountProfile(false);
+        this.refreshPlacedWheelHomeHp();
+        this.renderAccountPanel();
+        this.refreshUi();
     }
 
     private applyPhaseLayout(): void {
@@ -1506,6 +2153,11 @@ export class CangshuGame extends Component {
         this.adRefreshLabel.node.parent!.active = layout.showPreparationControls;
         this.refreshLabel.node.parent!.active = layout.showPreparationControls;
         this.actionLabel.node.parent!.active = layout.showPreparationControls;
+        this.accountButtonLabel.node.parent!.active = layout.showPreparationControls
+            && !this.traitValidationEnabled()
+            && !this.developedValidationMode()
+            && !this.fusionValidationMode();
+        this.levelButtonLabel.node.parent!.active = this.accountButtonLabel.node.parent!.active;
         this.prepareLayer.active = layout.showBackpack;
         // BattleLayer becomes active only after start and can otherwise cover
         // the already-created HUD in the release renderer. Keep the original
@@ -1513,6 +2165,8 @@ export class CangshuGame extends Component {
         this.hudLayer.setSiblingIndex(this.node.children.length - 1);
         if (this.traitLayer.active) this.traitLayer.setSiblingIndex(this.node.children.length - 1);
         if (this.resultLayer.active) this.resultLayer.setSiblingIndex(this.node.children.length - 1);
+        if (this.accountLayer.active) this.accountLayer.setSiblingIndex(this.node.children.length - 1);
+        if (this.levelSelectionLayer.active) this.levelSelectionLayer.setSiblingIndex(this.node.children.length - 1);
         this.drawGrid();
     }
 
@@ -1564,6 +2218,7 @@ export class CangshuGame extends Component {
         this.pendingHits = [];
         this.productionJobs = [];
         this.battleRandom = createBattleSeedRandom();
+        this.visualFixtureRandom = createBattleSeedRandom(1004);
         for (const gear of this.gears) {
             gear.workerPower = 0;
         }
@@ -1580,7 +2235,34 @@ export class CangshuGame extends Component {
         this.drawHomes();
     }
 
+    private claimAccountRoundReward(roundNumber: number): void {
+        if (this.claimedAccountRewardRounds.has(roundNumber)) return;
+        const claim = claimBagLikeLevelRoundAccountReward(this.accountProfile, this.levelId, roundNumber, Math.random);
+        if (!claim.reward) return;
+        this.claimedAccountRewardRounds.add(roundNumber);
+        this.accountRewardsThisAttempt.push(claim.reward);
+        this.accountProfile = claim.profile;
+        this.persistAccountProfile(false);
+    }
+
+    private accountAttemptRewardText(): string {
+        const gold = this.accountRewardsThisAttempt.reduce((total, reward) => total + reward.gold, 0);
+        const energy = this.accountRewardsThisAttempt.reduce((total, reward) => total + reward.energy, 0);
+        const diamonds = this.accountRewardsThisAttempt.reduce((total, reward) => total + reward.diamonds, 0);
+        const fragmentBoxes = this.accountRewardsThisAttempt.reduce((total, reward) => total + reward.fragmentBoxes, 0);
+        const parts: string[] = [];
+        if (gold > 0) parts.push(`金币 +${gold}`);
+        if (energy > 0) parts.push(`体力 +${energy}`);
+        if (diamonds > 0) parts.push(`钻石 +${diamonds}`);
+        if (fragmentBoxes > 0) parts.push(`随机英雄碎片 +${fragmentBoxes}`);
+        return parts.length > 0 ? parts.join('，') : '本次尚未到达账号奖励波次';
+    }
+
     private restartLevel(): void {
+        if (this.phase === 'won' || this.phase === 'lost') {
+            this.accountProfile = incrementBagLikeAccountChallengeTimes(this.accountProfile, this.levelId);
+            this.persistAccountProfile();
+        }
         this.clearUnits();
         for (const gear of [...this.gears]) gear.node.destroy();
         for (const gear of [...this.candidates]) gear.node.destroy();
@@ -1602,6 +2284,9 @@ export class CangshuGame extends Component {
         this.currentTraitChoices = [];
         this.traitStacks.clear();
         this.warriorKillAttackStacks = 0;
+        this.claimedAccountRewardRounds.clear();
+        this.accountRewardsThisAttempt = [];
+        this.accountUnlockedThisAttempt = [];
         this.h11SkillId = H11_BASE_SKILL_ID;
         this.h12SkillId = H12_BASE_SKILL_ID;
         this.h13SkillId = H13_BASE_SKILL_ID;
@@ -1610,6 +2295,7 @@ export class CangshuGame extends Component {
         this.dealPreparationBatch();
         this.tipLabel.string = '把候选仓鼠战士拖入背包后，再开始第 1 波';
         this.resultLayer.active = false;
+        this.resultNextButtonLabel.node.parent!.active = false;
         this.traitLayer.active = false;
         this.applyPhaseLayout();
         this.drawExpBar();
@@ -1655,13 +2341,7 @@ export class CangshuGame extends Component {
         this.refreshIndex += 1;
         if (staticBatch) return [...staticBatch];
 
-        const supportedFamilies = new Set(['H01', 'H02', 'H03', 'H04', 'H11', 'H12', 'H13']);
-        const unlockedHeroFamilies = new Set(
-            this.unlockedHeroFamilies
-                .split(';')
-                .map((family) => family.trim())
-                .filter((family) => supportedFamilies.has(family)),
-        );
+        const unlockedHeroFamilies = bagLikeAccountUnlockedHeroFamilies(this.accountProfile);
         const hasLockedGrid = this.unlocked.size < GRID_ROWS * GRID_COLS;
         return drawDynamicCandidateBatch(
             candidateDrawIds(refreshType, this.nonAdRefreshTimes, hasLockedGrid),
@@ -1683,7 +2363,12 @@ export class CangshuGame extends Component {
         for (const gear of this.candidates) {
             if (gear.node.isValid) gear.node.destroy();
         }
-        this.candidates = batch.map((id, index) => this.createGear(id, -1, -1, 'candidate', index));
+        const renderableBatch = batch.filter((id) => {
+            const supported = Object.prototype.hasOwnProperty.call(GEARS, id);
+            if (!supported) console.error(`[cangshu] skipped unsupported candidate gear: ${String(id)}`);
+            return supported;
+        });
+        this.candidates = renderableBatch.map((id, index) => this.createGear(id, -1, -1, 'candidate', index));
         this.relayoutCandidates();
     }
 
@@ -1812,10 +2497,35 @@ export class CangshuGame extends Component {
 
     private gearHeadKey(id: GearId): string | null {
         if (id.startsWith('C')) return 'coin';
-        if (id.startsWith('H11')) return null;
+        if (id.startsWith('H11')) return 'H1101';
         if (id.startsWith('H12')) return 'H1201';
         if (id.startsWith('H13')) return 'H1301';
         return HERO_SMALL_HEAD_FRAMES[id] ? id : null;
+    }
+
+    private attachStaticGearPortrait(parent: Node, headKey: string, x: number, y: number): void {
+        const frameData = HERO_SMALL_HEAD_FRAMES[headKey];
+        if (!frameData) {
+            console.error(`[visual-catalog] missing recovered head frame ${headKey}`);
+            return;
+        }
+        const portraitNode = this.makeNode(`StaticGearPortrait_${headKey}`, parent, x, y, 90, 90);
+        resources.load('original/heroSmallHead/spriteFrame', SpriteFrame, (error, atlasFrame) => {
+            if (error || !portraitNode.isValid) {
+                console.error(`[visual-catalog] head atlas failed ${headKey}: ${error?.message || 'invalid node'}`);
+                return;
+            }
+            const frame = new SpriteFrame();
+            frame.reset({
+                texture: atlasFrame.texture,
+                rect: new Rect(frameData.x, frameData.y, frameData.width, frameData.height),
+                originalSize: new Size(90, 90),
+                offset: new Vec2(frameData.offsetX, frameData.offsetY),
+            });
+            const sprite = portraitNode.addComponent(Sprite);
+            sprite.sizeMode = Sprite.SizeMode.CUSTOM;
+            sprite.spriteFrame = frame;
+        });
     }
 
     private attachGearPortrait(gear: Gear, headKey: string, x: number, y: number): void {
@@ -2442,6 +3152,27 @@ export class CangshuGame extends Component {
         const skin = this.makeNode(`${buttonNode.name}OriginalSkin`, buttonNode, 0, 0, size.width, size.height);
         skin.setSiblingIndex(0);
         this.attachRecoveredAtlasSprite(skin, 'original/comm_0/spriteFrame', spec);
+    }
+
+    private addTraitVideoIcon(label: Label): void {
+        const buttonNode = label.node.parent!;
+        const icon = this.makeNode(`${buttonNode.name}VideoIcon`, buttonNode, -76, 0, 52, 52);
+        this.attachRecoveredAtlasSprite(icon, 'original/comm_0/spriteFrame', COMM_ATLAS_FRAMES.videoIcon);
+        label.node.setPosition(20, 0);
+        label.node.getComponent(UITransform)!.setContentSize(178, 82);
+        label.fontSize = 24;
+    }
+
+    private makeTraitCountLabel(name: string, parent: Node): RichText {
+        const node = this.makeNode(name, parent, 0, 68, 250, 34);
+        const label = node.addComponent(RichText);
+        if (this.originalFont) label.font = this.originalFont;
+        label.fontSize = 20;
+        label.lineHeight = 26;
+        label.maxWidth = 250;
+        label.fontColor = WHITE;
+        label.horizontalAlign = HorizontalTextAlignment.CENTER;
+        return label;
     }
 
     private workerProgressRatio(gear: Gear): number {
@@ -3417,31 +4148,56 @@ export class CangshuGame extends Component {
 
     private renderTraitChoices(): void {
         for (const child of [...this.traitCardsLayer.children]) child.destroy();
-        this.currentTraitChoices.forEach((trait, index) => this.makeTraitCard(trait, -230 + index * 230));
-        this.traitRerollLabel.string = `换一批  ${TRAIT_REROLL_MAX - this.traitRerollsUsed}/${TRAIT_REROLL_MAX}`;
-        this.traitTakeAllLabel.string = `全都要  ${TRAIT_TAKE_ALL_MAX - this.traitTakeAllUsed}/${TRAIT_TAKE_ALL_MAX}`;
+        this.currentTraitChoices.forEach((trait, index) => this.makeTraitCard(trait, (index - 1) * TRAIT_VISUAL_LAYOUT.cardStepX));
+        this.traitRerollLabel.string = '换一批';
+        this.traitTakeAllLabel.string = '全都要';
+        this.traitRerollCountLabel.string = `<outline color=#12162f width=2>剩余次数 <color=#4aff58>${TRAIT_REROLL_MAX - this.traitRerollsUsed}/${TRAIT_REROLL_MAX}</color></outline>`;
+        this.traitTakeAllCountLabel.string = `<outline color=#12162f width=2>剩余次数 <color=#4aff58>${TRAIT_TAKE_ALL_MAX - this.traitTakeAllUsed}/${TRAIT_TAKE_ALL_MAX}</color></outline>`;
     }
 
     private makeTraitCard(trait: TraitDefinition, x: number): void {
-        const card = this.makeNode(`Trait_${trait.id}`, this.traitCardsLayer, x, 0, 210, 410);
+        const card = this.makeNode(
+            `Trait_${trait.id}`,
+            this.traitCardsLayer,
+            x,
+            0,
+            TRAIT_VISUAL_LAYOUT.cardWidth,
+            TRAIT_VISUAL_LAYOUT.cardHeight,
+        );
         const graphics = card.addComponent(Graphics);
         graphics.fillColor = new Color(79, 91, 157, 255);
-        graphics.roundRect(-102, -200, 204, 400, 28);
+        graphics.circle(-58, 224, 13);
+        graphics.circle(58, 224, 13);
+        graphics.fill();
+        graphics.roundRect(-84, -230, 168, 460, 27);
         graphics.fill();
         graphics.strokeColor = new Color(35, 43, 78, 255);
         graphics.lineWidth = 5;
-        graphics.roundRect(-99, -197, 198, 394, 25);
+        graphics.roundRect(-81, -227, 162, 454, 24);
         graphics.stroke();
         const iconLevel = Math.max(1, Math.min(5, trait.quality - 1));
-        const iconGear = this.makeNode('TraitIconGear', card, 0, 112, 110, 110);
+        const iconGear = this.makeNode('TraitIconGear', card, 0, TRAIT_VISUAL_LAYOUT.iconY, 110, 110);
         this.attachRecoveredAtlasSprite(iconGear, 'original/bagLike_0/spriteFrame', {
             rect: GEAR_BODY_FRAMES[iconLevel],
             sourceSize: new Size(110, 110),
         });
-        const descriptionPanel = this.makeNode('TraitDescriptionPanel', card, 0, -65, 178, 170);
+        const descriptionPanel = this.makeNode(
+            'TraitDescriptionPanel',
+            card,
+            0,
+            TRAIT_VISUAL_LAYOUT.descriptionY,
+            TRAIT_VISUAL_LAYOUT.descriptionWidth,
+            TRAIT_VISUAL_LAYOUT.descriptionHeight,
+        );
         const descriptionGraphics = descriptionPanel.addComponent(Graphics);
         descriptionGraphics.fillColor = new Color(64, 74, 133, 255);
-        descriptionGraphics.roundRect(-89, -85, 178, 170, 14);
+        descriptionGraphics.roundRect(
+            -TRAIT_VISUAL_LAYOUT.descriptionWidth / 2,
+            -TRAIT_VISUAL_LAYOUT.descriptionHeight / 2,
+            TRAIT_VISUAL_LAYOUT.descriptionWidth,
+            TRAIT_VISUAL_LAYOUT.descriptionHeight,
+            14,
+        );
         descriptionGraphics.fill();
         const icons: Record<TraitEffectKind, string> = {
             attackIncrease: '攻',
@@ -3474,32 +4230,59 @@ export class CangshuGame extends Component {
             warriorComboCritical: '暴',
             warriorKillAttackIncrease: '叠',
         };
-        const icon = icons[trait.effect.kind];
-        const iconLabel = this.makeLabel('TraitIcon', card, 0, 112, 90, 60, icon, 34, WHITE);
-        this.applyOriginalOutline(iconLabel, new Color(6, 5, 0, 255), 2);
-        const description = this.makeLabel(
+        const exactIconFrame = TRAIT_ICON_FRAMES[trait.id];
+        if (exactIconFrame) {
+            const exactIcon = this.makeNode('TraitIcon', card, 0, TRAIT_VISUAL_LAYOUT.iconY, 94, 94);
+            this.attachRecoveredAtlasSprite(
+                exactIcon,
+                'original/trait-icons/effect/spriteFrame',
+                exactIconFrame,
+            );
+        } else {
+            const icon = icons[trait.effect.kind];
+            const iconLabel = this.makeLabel('TraitIconFallback', card, 0, TRAIT_VISUAL_LAYOUT.iconY, 90, 60, icon, 34, WHITE);
+            this.applyOriginalOutline(iconLabel, new Color(6, 5, 0, 255), 2);
+        }
+        const descriptionNode = this.makeNode(
             'TraitDescription',
             card,
             0,
-            -65,
-            158,
-            148,
-            wrapTraitDescription(trait.description),
-            20,
-            CREAM,
+            TRAIT_VISUAL_LAYOUT.descriptionY,
+            TRAIT_VISUAL_LAYOUT.descriptionWidth - 18,
+            TRAIT_VISUAL_LAYOUT.descriptionHeight - 22,
         );
-        description.overflow = Label.Overflow.CLAMP;
-        description.enableWrapText = true;
-        description.verticalAlign = VerticalTextAlignment.TOP;
+        const description = descriptionNode.addComponent(RichText);
+        description.string = traitDescriptionMarkup(trait.description);
+        if (this.originalFont) description.font = this.originalFont;
+        description.fontSize = 20;
         description.lineHeight = 27;
-        this.applyOriginalOutline(description, new Color(34, 37, 73, 255), 1);
+        description.maxWidth = TRAIT_VISUAL_LAYOUT.descriptionWidth - 18;
+        description.fontColor = CREAM;
+        description.horizontalAlign = HorizontalTextAlignment.CENTER;
         if (isRecommendedTrait(trait, this.currentTraitChoices)) {
-            const badge = this.makeNode('Recommend', card, 68, 178, 90, 42);
+            const badge = this.makeNode('Recommend', card, 56, 214, 98, 50);
+            badge.angle = -15;
             const badgeGraphics = badge.addComponent(Graphics);
-            badgeGraphics.fillColor = new Color(242, 83, 105, 255);
-            badgeGraphics.roundRect(-45, -21, 90, 42, 9);
+            badgeGraphics.fillColor = new Color(18, 9, 15, 255);
+            badgeGraphics.roundRect(-50, -26, 100, 52, 11);
             badgeGraphics.fill();
-            this.makeLabel('RecommendText', badge, 0, 0, 82, 34, '推荐', 20, GOLD);
+            badgeGraphics.fillColor = new Color(242, 83, 105, 255);
+            badgeGraphics.roundRect(-46, -22, 92, 44, 8);
+            badgeGraphics.fill();
+            badgeGraphics.fillColor = new Color(18, 9, 15, 255);
+            badgeGraphics.moveTo(-20, -25);
+            badgeGraphics.lineTo(-3, -25);
+            badgeGraphics.lineTo(-13, -39);
+            badgeGraphics.close();
+            badgeGraphics.fill();
+            badgeGraphics.fillColor = new Color(242, 83, 105, 255);
+            badgeGraphics.moveTo(-18, -22);
+            badgeGraphics.lineTo(-5, -22);
+            badgeGraphics.lineTo(-13, -34);
+            badgeGraphics.close();
+            badgeGraphics.fill();
+            const recommendText = this.makeLabel('RecommendText', badge, 0, 1, 82, 34, '推荐', 20, GOLD);
+            this.applyOriginalOutline(recommendText, new Color(18, 9, 15, 255), 2);
         }
         card.addComponent(Button);
         card.on(Button.EventType.CLICK, () => this.chooseTrait(trait), this);
@@ -3545,13 +4328,8 @@ export class CangshuGame extends Component {
 
     private currentHeroStars(): Record<string, number> {
         return {
-            H01: this.h01HeroStar,
-            H02: this.h02HeroStar,
-            H03: this.h03HeroStar,
-            H04: this.h04HeroStar,
-            H11: this.h11HeroStar,
-            H12: this.h12HeroStar,
-            H13: this.h13HeroStar,
+            ...this.accountProfile.stars,
+            ...(this.validationHeroStarOverrides || {}),
         };
     }
 
@@ -3648,7 +4426,7 @@ export class CangshuGame extends Component {
             spinePath: profile.spineResourcePath,
             spineScale: profile.modelScale,
         };
-        const scales = this.producerAttributeScales(gear, profile.attributeMultiple);
+        const scales = this.producerAttributeScales(gear, profile, config);
         const validationSpawnY: Readonly<Record<string, number>> = { H0705: -95, H0805: 0, H0905: 95 };
         const spawnY = this.fusionValidationMode() ? validationSpawnY[gear.id] : Math.random() * 150;
         this.createUnit('self', config, -300, spawnY, scales.attack, scales.hp);
@@ -3658,7 +4436,7 @@ export class CangshuGame extends Component {
         const cfg = UNITS[model];
         const profile = bagLikeProducerProfile(gear.id);
         if (!profile || profile.kind !== 'wheel') return;
-        const scales = this.producerAttributeScales(gear, profile.attributeMultiple);
+        const scales = this.producerAttributeScales(gear, profile, cfg);
         if (model === 'H1101') {
             this.castH11Healing(cfg.atk * scales.attack);
             return;
@@ -3775,12 +4553,19 @@ export class CangshuGame extends Component {
         }
     }
 
-    private producerAttributeScales(gear: Gear, attributeMultiple: number): { attack: number; hp: number } {
-        return resolveProducerAttributeScales(
-            attributeMultiple,
+    private producerAttributeScales(gear: Gear, profile: BagLikeProducerProfile, config: UnitConfig): { attack: number; hp: number } {
+        const scales = resolveProducerAttributeScales(
+            profile.attributeMultiple,
             this.isGearDirectlyAdjacentToPower(gear),
             traitPowerNearAttackMultiplier(IMPLEMENTED_TRAIT_POOL, this.traitStacks),
         );
+        const accountStar = this.currentHeroStars()[profile.heroId] || 1;
+        const starAttack = bagLikeHeroBaseAttributeAtStar(config.atk, accountStar);
+        const starHp = bagLikeHeroBaseAttributeAtStar(config.hp, accountStar);
+        return {
+            attack: scales.attack * (config.atk > 0 ? starAttack / config.atk : 1),
+            hp: scales.hp * (config.hp > 0 ? starHp / config.hp : 1),
+        };
     }
 
     private workerPowerPerTrigger(gear: Gear, powerPerTrigger: number): number {
@@ -3806,9 +4591,10 @@ export class CangshuGame extends Component {
         const defeatScale = defeatCompensation(this.failedAttempts);
         const atkScale = (this.levelAtkMultiple / 10000) * (round.atkMultiple / 10000) * defeatScale;
         const hpScale = (this.levelHpMultiple / 10000) * (round.hpMultiple / 10000) * defeatScale;
-        const y = Math.random() * UNIT_Y_LIMIT * 2 - UNIT_Y_LIMIT;
-        const xJitter = 2 * (Math.random() - 0.5);
-        const yJitter = 2 * (Math.random() - 0.5);
+        const positionRandom = this.developedValidationMode() === 'battle' ? this.visualFixtureRandom : Math.random;
+        const y = positionRandom() * UNIT_Y_LIMIT * 2 - UNIT_Y_LIMIT;
+        const xJitter = 2 * (positionRandom() - 0.5);
+        const yJitter = 2 * (positionRandom() - 0.5);
         this.createUnit('enemy', config, HOME_X - 55 + xJitter, y + yJitter, atkScale, hpScale);
     }
 
@@ -3937,6 +4723,7 @@ export class CangshuGame extends Component {
         this.phase = 'roundClear';
         this.clearUnits();
         this.gold += this.roundCoinRewards[this.roundIndex] || 0;
+        this.claimAccountRoundReward(this.roundIndex + 1);
         this.scheduleOnce(() => {
             if (this.roundIndex >= this.rounds.length - 1) {
                 this.finish(true);
@@ -3952,7 +4739,13 @@ export class CangshuGame extends Component {
     }
 
     private finish(won: boolean): void {
-        if (won) this.failedAttempts = 0;
+        if (won) {
+            this.failedAttempts = 0;
+            const completion = completeBagLikeAccountLevel(this.accountProfile, this.levelId);
+            this.accountProfile = completion.profile;
+            this.accountUnlockedThisAttempt = completion.unlocked;
+            this.persistAccountProfile(false);
+        }
         else this.failedAttempts += 1;
         this.phase = won ? 'won' : 'lost';
         this.paused = false;
@@ -3961,9 +4754,16 @@ export class CangshuGame extends Component {
         this.prepareLayer.active = false;
         this.resultLayer.active = true;
         this.resultTitleLabel.string = won ? '关卡胜利' : '关卡失败';
+        const unlockedText = this.accountUnlockedThisAttempt.length > 0
+            ? `\n新英雄解锁：${this.accountUnlockedThisAttempt.map((family) => ACCOUNT_HERO_NAMES[family]).join('、')}`
+            : '';
         this.resultBodyLabel.string = won
-            ? `${this.rounds.length} 波敌人已经全部清除\n${this.levelName}恢复了平静`
+            ? `${this.rounds.length} 波敌人已经全部清除\n账号奖励：${this.accountAttemptRewardText()}${unlockedText}`
             : `我方兵营已被摧毁\n下次敌军属性降至 ${Math.round(defeatCompensation(this.failedAttempts) * 100)}%`;
+        this.resultNextButtonLabel.node.parent!.active = won && this.levelId < BAGLIKE_LAST_LEVEL_ID;
+        this.resultNextButtonLabel.string = this.levelId < BAGLIKE_LAST_LEVEL_ID
+            ? `进入第 ${bagLikeLevelNumber(this.levelId + 1)} 关`
+            : '全部通关';
         this.tipLabel.string = won ? `${this.levelName}已通关：${this.rounds.length} 波敌人全部清除` : '我方兵营被摧毁，调整齿轮后重试';
     }
 
@@ -4127,6 +4927,7 @@ export class CangshuGame extends Component {
         this.adRefreshLabel.string = this.freeRefreshUsed ? '广告刷新 0/1' : '广告刷新 1/1';
         this.adRefreshLabel.color = this.phase === 'deploy' && !this.freeRefreshUsed ? CREAM : new Color(170, 170, 170, 255);
         this.pauseLabel.string = '';
+        this.levelButtonLabel.string = `第 ${bagLikeLevelNumber(this.levelId)} 关`;
         for (const gear of [...this.gears, ...this.candidates]) {
             const headKey = this.gearHeadKey(gear.id);
             const progressFill = headKey

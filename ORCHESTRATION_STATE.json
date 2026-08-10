@@ -35,7 +35,7 @@
         "reverseManifest": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxc761b90fabc11225\\7\\manifest.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-07-31T10:06:44.983695+00:00"
+          "recordedAtUtc": "2026-08-10T08:32:05.134416+00:00"
         }
       },
       "checks": {},
@@ -77,13 +77,18 @@
           "event": "engine",
           "value": "unity",
           "atUtc": "2026-07-31T10:06:45.070359+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "reverseManifest",
+          "atUtc": "2026-08-10T08:32:05.134424+00:00"
         }
       ],
       "engineEvidence": "ace-protect.json + app-config.json + UnityPlugin 1.3.7 loader"
     },
     "wxf9af2417e78ce07a/18": {
-      "phase": "validation",
-      "status": "in_progress",
+      "phase": "complete",
+      "status": "complete",
       "platform": "windows",
       "engine": "cocos",
       "authorization": {
@@ -93,71 +98,71 @@
       },
       "artifacts": {
         "handoff": {
-          "path": "/Users/mt/Documents/HamsterBattle/handoffs/wxf9af2417e78ce07a-18.json",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\handoffs\\wxf9af2417e78ce07a-18.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-07T15:05:17.261943+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:45.800292+00:00"
         },
         "mainPackage": {
-          "path": "/Users/mt/Documents/HamsterBattle/reverse-work/input/wxf9af2417e78ce07a/18/__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\input\\wxf9af2417e78ce07a\\18\\__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-07T15:05:17.360162+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:45.883508+00:00"
         },
         "extractedRoot": {
-          "path": "/Users/mt/Documents/HamsterBattle/reverse-work/unpacked/wxf9af2417e78ce07a/18",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\unpacked\\wxf9af2417e78ce07a\\18",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-07T15:05:17.455961+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:45.964623+00:00"
         },
         "reverseManifest": {
-          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/manifest.json",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\manifest.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-07T15:05:17.551344+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:46.145189+00:00"
         },
         "restoreSpec": {
-          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/generated/RESTORE_SPEC.json",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\generated\\RESTORE_SPEC.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-07T15:05:17.647309+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:46.360205+00:00"
         },
         "goldenCases": {
-          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/generated/golden-cases.json",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\generated\\golden-cases.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-07T15:05:17.741474+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:46.445409+00:00"
         },
         "cocosProject": {
-          "path": "/Users/mt/Documents/HamsterBattle/cocosProject",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-07T15:05:17.836240+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:46.525233+00:00"
         },
         "validationReport": {
-          "path": "/Users/mt/Documents/HamsterBattle/cocosProject/VALIDATION_REPORT.md",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\VALIDATION_REPORT.md",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-07T15:05:17.930137+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:46.621203+00:00"
         },
         "originalReference": {
-          "path": "/Users/mt/Documents/HamsterBattle/targets/wxf9af2417e78ce07a/18/evidence/visual/original/2026-08-01/manifest.json",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\visual\\original\\2026-08-01\\manifest.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-07T15:05:18.027149+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:46.711035+00:00"
         }
       },
       "checks": {
         "goldenCases": {
           "result": "pass",
-          "evidence": "2026-08-09: skills/cocos-minigame-restorer/scripts/run_golden_cases.py passed 47/47",
-          "atUtc": "2026-08-08T16:30:00.279064+00:00"
+          "evidence": "2026-08-10: run_golden_cases.py passed 47/47",
+          "atUtc": "2026-08-10T03:14:34.953675+00:00"
         },
         "assetImport": {
           "result": "pass",
-          "evidence": "2026-08-08: Cocos project static check valid; 128 assets, missing meta 0, warnings 0",
-          "atUtc": "2026-08-08T14:26:10.150830+00:00"
+          "evidence": "2026-08-10: Creator 3.8.8 formally imported exact trait effect atlas; 129 assets, missing meta 0; meta UUID 007031c2-937b-430e-833f-49b3b2def12f",
+          "atUtc": "2026-08-10T03:32:53.970679+00:00"
         },
         "typescript": {
           "result": "pass",
-          "evidence": "2026-08-09: Creator 3.8.8 bundled TypeScript, project tsconfig, --noEmit --skipLibCheck true exited 0",
-          "atUtc": "2026-08-08T16:30:09.143904+00:00"
+          "evidence": "2026-08-10: Creator 3.8.8 bundled TypeScript, project tsconfig, --noEmit --skipLibCheck true exited 0 after exact trait icon binding",
+          "atUtc": "2026-08-10T03:32:54.053983+00:00"
         },
         "visualBaseline": {
-          "result": "pending",
-          "evidence": "targets/wxf9af2417e78ce07a/18/evidence/visual/reconstruction/2026-08-09/manifest.json: developed semantic state matched; package geometry/art and synchronized battle frame remain",
-          "atUtc": "2026-08-08T16:30:14.892870+00:00"
+          "result": "pass",
+          "evidence": "targets/wxf9af2417e78ce07a/18/evidence/visual/reconstruction/2026-08-10/manifest.json",
+          "atUtc": "2026-08-10T04:44:06.975585+00:00"
         },
         "gameplaySmoke": {
           "result": "pass",
@@ -171,8 +176,8 @@
         },
         "mechanicsData": {
           "result": "pass",
-          "evidence": "2026-08-09: 25 production/resource tests 1017/1017; full 1-15 star WHEEL home HP restored; H13 star-3 yields developed 863 HP; cocosProject/RESTORE_PROGRESS.md",
-          "atUtc": "2026-08-08T16:32:05.241509+00:00"
+          "evidence": "Account progression schema v2, exact 1-20 star costs, pass-level unlocks, and 1001-1200 milestone rewards implemented; 27 tests 1133/1133, TypeScript pass, Creator Web Mobile exit 36, fresh account-panel runtime warning/error 0.",
+          "atUtc": "2026-08-10T07:46:19.505821+00:00"
         }
       },
       "history": [
@@ -1689,11 +1694,133 @@
           "name": "mechanicsData",
           "result": "pass",
           "atUtc": "2026-08-08T16:32:05.241798+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "handoff",
+          "atUtc": "2026-08-10T02:48:45.800304+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "mainPackage",
+          "atUtc": "2026-08-10T02:48:45.883516+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "extractedRoot",
+          "atUtc": "2026-08-10T02:48:45.964631+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "reverseManifest",
+          "atUtc": "2026-08-10T02:48:46.145197+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "restoreSpec",
+          "atUtc": "2026-08-10T02:48:46.360213+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "goldenCases",
+          "atUtc": "2026-08-10T02:48:46.445417+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "cocosProject",
+          "atUtc": "2026-08-10T02:48:46.525241+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationReport",
+          "atUtc": "2026-08-10T02:48:46.621212+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "originalReference",
+          "atUtc": "2026-08-10T02:48:46.711043+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-10T03:14:34.871810+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-10T03:14:34.953683+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-10T03:14:35.038080+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pending",
+          "atUtc": "2026-08-10T03:14:35.117954+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-10T03:14:35.201392+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-10T03:32:53.887485+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-10T03:32:53.970686+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-10T03:32:54.053991+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-10T03:32:54.136474+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pass",
+          "atUtc": "2026-08-10T04:44:06.975593+00:00"
+        },
+        {
+          "from": "validation",
+          "to": "complete",
+          "atUtc": "2026-08-10T04:44:07.060787+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-10T06:48:09.146869+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-10T07:46:19.505831+00:00"
         }
       ],
       "engineEvidence": "settings.37a11.json CocosEngine 3.8.2 + System.register business bundle"
     }
   },
   "createdAtUtc": "2026-07-31T10:06:44.358414+00:00",
-  "updatedAtUtc": "2026-08-08T16:32:05.241800+00:00"
+  "updatedAtUtc": "2026-08-10T09:16:35.565769+00:00"
 }

@@ -7,16 +7,17 @@ import { fileURLToPath } from 'node:url';
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const source = readFileSync(resolve(projectRoot, 'assets/scripts/CangshuGame.ts'), 'utf8');
 const sha256 = (path) => createHash('sha256').update(readFileSync(path)).digest('hex');
+const sha256Atlas = (path) => createHash('sha256').update(readFileSync(path, 'utf8').replace(/\r\n/g, '\n')).digest('hex');
 let assertions = 0;
 const check = (actual, expected, message) => {
     assert.deepEqual(actual, expected, message);
     assertions += 1;
 };
 
-check(sha256(resolve(projectRoot, 'assets/resources/spine/H03Transform/hit_lizi.atlas')), '236815476d2afef8f02527ebe72e79b218412084ca9a4aecc81d95b1df50b06d', 'H28_S2 uses the recovered atlas');
+check(sha256Atlas(resolve(projectRoot, 'assets/resources/spine/H03Transform/hit_lizi.atlas')), '236815476d2afef8f02527ebe72e79b218412084ca9a4aecc81d95b1df50b06d', 'H28_S2 uses the recovered atlas');
 check(sha256(resolve(projectRoot, 'assets/resources/spine/H03Transform/hit_lizi.png')), 'f5598ef68f7e9922aa15d962b023297a852bb84e7ad1ea977aeae31d9bc130be', 'H28_S2 uses the recovered texture');
 check(sha256(resolve(projectRoot, 'assets/resources/spine/H03Transform/hit_lizi.skel')), '57b74e276d3773955856e7257c57b8f6a5856bd049f3a3ff4423cd6a73dcdee1', 'H28_S2 uses the recovered Spine binary');
-check(sha256(resolve(projectRoot, 'assets/resources/spine/H03Freeze/hit_binkuai.atlas')), '45eee94fcaaba790cbee2dd11d9f054e8a596d442ea71bfaf26cfe4aff5f5c86', 'H28_S1 uses the recovered atlas');
+check(sha256Atlas(resolve(projectRoot, 'assets/resources/spine/H03Freeze/hit_binkuai.atlas')), '45eee94fcaaba790cbee2dd11d9f054e8a596d442ea71bfaf26cfe4aff5f5c86', 'H28_S1 uses the recovered atlas');
 check(sha256(resolve(projectRoot, 'assets/resources/spine/H03Freeze/hit_binkuai.png')), '01ad82d67ae2351374044ece3875b109447b67fe3952e2958e4f96f2ff15d52a', 'H28_S1 uses the recovered texture');
 check(sha256(resolve(projectRoot, 'assets/resources/spine/H03Freeze/hit_binkuai.skel')), '774e46faf91891ff6e878fe2d7be0ce488f77df9f210f2ab8a5f941b106f11f5', 'H28_S1 uses the recovered Spine binary');
 check(sha256(resolve(projectRoot, 'assets/resources/original/skill_bianxing.mp3')), '4c4e83e34c9c60107ea1ca1d7f325853ca7927f4e58b8efdf41fe370067c91df', 'star-7 transform uses skill_bianxing');

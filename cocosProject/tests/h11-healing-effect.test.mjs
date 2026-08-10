@@ -14,7 +14,8 @@ const check = (actual, expected, message) => {
 };
 
 const assetRoot = resolve(projectRoot, 'assets/resources/spine/H11Healing');
-check(sha256(resolve(assetRoot, 'skill01_hit_upper.atlas')), 'c124db32e7bc67ac0cae32bb4914d0b2a24b42c9e05fd9e9887f77dd5e6a0c72', 'recovered atlas is exact');
+const sha256Atlas = (path) => createHash('sha256').update(readFileSync(path, 'utf8').replace(/\r\n/g, '\n')).digest('hex');
+check(sha256Atlas(resolve(assetRoot, 'skill01_hit_upper.atlas')), 'c124db32e7bc67ac0cae32bb4914d0b2a24b42c9e05fd9e9887f77dd5e6a0c72', 'recovered atlas is exact');
 check(sha256(resolve(assetRoot, 'skill01_hit_upper.png')), '941e69fea0ec22c20564f031cf0752254c6484ae6413a78b8ff32e690a01dee4', 'recovered texture is exact');
 check(sha256(resolve(assetRoot, 'skill01_hit_upper.skel')), 'dd9667ee402a66d15e08a35c5695e5eff41d097c0d327785c34c4cc13ae16933', 'recovered skeleton is exact');
 check(source.includes("resources.load('spine/H11Healing/skill01_hit_upper', sp.SkeletonData"), true, 'H11 healing Spine is preloaded');

@@ -13,7 +13,7 @@
     "scope": "user-approved local package analysis and reconstruction"
   },
   "createdAtUtc": "2026-07-31T10:00:31.483390+00:00",
-  "updatedAtUtc": "2026-07-31T10:00:09.0455171Z",
+  "updatedAtUtc": "2026-08-10T08:30:58.3803159Z",
   "sourceArtifacts": [
     {
       "role": "mainPackage",
@@ -42,6 +42,10 @@
     {
       "kind": "resourceInventory",
       "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\resource-inventory.md"
+    },
+    {
+      "kind": "pathMappingEvidence",
+      "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxc761b90fabc11225\\7\\evidence\\unity-path-mapping.md"
     }
   ],
   "commands": [
@@ -56,6 +60,18 @@
     {
       "tool": "HTTP HEAD",
       "result": "naively concatenated data and three scene candidate URLs returned 404"
+    },
+    {
+      "tool": "Python 3 static string-table decoder",
+      "result": "decoded managerConfig without executing the recovered bundle: 166 entries, 40 left rotations, data CDN/code MD5/game name/AppID/data size confirmed"
+    },
+    {
+      "tool": "UnityPlugin 1.3.7 static path trace",
+      "result": "confirmed data-package/fbd8e870070f4b09.webgl.data.unityweb.bin.br -> decompressed plugin cache file -> Unity rawData"
+    },
+    {
+      "tool": "rg 15.1.0 bounded Radium cache scan",
+      "result": "target subpackages and target-local __GAME_FILE_CACHE directory absent; cache layout corroborated by other AppIDs"
     }
   ],
   "engineEvidence": [
@@ -72,11 +88,11 @@
       "finding": "UnityPlugin 1.3.7 data-package loader and path construction"
     }
   ],
-  "currentStage": "reconstruct-main-subpackages",
+  "currentStage": "acquire-required-subpackages",
   "blockers": [
-    "data-package/fbd8e870070f4b09.webgl.data.unityweb.bin.txt is not present in the observed standard package cache",
+    "data-package/fbd8e870070f4b09.webgl.data.unityweb.bin.br is not present in the observed package cache",
     "wasmcode, wasmcode1, and wasmcode2 package bodies are not present",
-    "the currently known CDN base cannot be used by naive path concatenation"
+    "applet/local/wxc761b90fabc11225 does not exist, so the decompressed __GAME_FILE_CACHE artifact is unavailable"
   ],
   "handoff": {
     "source": "E:\\Projects\\weichatAnalysis\\cangshu\\handoffs\\wxc761b90fabc11225-7.json",

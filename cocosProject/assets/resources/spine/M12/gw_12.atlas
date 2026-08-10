@@ -1,0 +1,76 @@
+
+gw_12.png
+size: 193,259
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+js_0
+  rotate: false
+  xy: 147, 3
+  size: 25, 21
+  orig: 25, 21
+  offset: 0, 0
+  index: -1
+js_1
+  rotate: true
+  xy: 143, 75
+  size: 52, 43
+  orig: 52, 43
+  offset: 0, 0
+  index: -1
+js_2
+  rotate: true
+  xy: 147, 28
+  size: 46, 43
+  orig: 52, 43
+  offset: 0, 0
+  index: -1
+js_3
+  rotate: 270
+  xy: 66, 3
+  size: 67, 79
+  orig: 78, 79
+  offset: 0, 0
+  index: -1
+js_4
+  rotate: false
+  xy: 39, 11
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+t1
+  rotate: false
+  xy: 2, 25
+  size: 36, 15
+  orig: 36, 15
+  offset: 0, 0
+  index: -1
+t2
+  rotate: false
+  xy: 2, 70
+  size: 139, 57
+  orig: 159, 65
+  offset: 10, 4
+  index: -1
+t3
+  rotate: false
+  xy: 2, 129
+  size: 149, 61
+  orig: 159, 65
+  offset: 5, 2
+  index: -1
+t4
+  rotate: false
+  xy: 2, 192
+  size: 159, 65
+  orig: 159, 65
+  offset: 0, 0
+  index: -1
+ya
+  rotate: false
+  xy: 2, 42
+  size: 32, 26
+  orig: 32, 26
+  offset: 0, 0
+  index: -1

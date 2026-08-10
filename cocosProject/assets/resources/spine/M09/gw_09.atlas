@@ -1,0 +1,34 @@
+
+gw_09.png
+size: 173,76
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+js_0
+  rotate: false
+  xy: 2, 4
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+js_1
+  rotate: false
+  xy: 2, 3
+  size: 107, 73
+  orig: 107, 87
+  offset: 0, 14
+  index: -1
+js_2
+  rotate: true
+  xy: 140, 14
+  size: 60, 30
+  orig: 60, 30
+  offset: 0, 0
+  index: -1
+js_3
+  rotate: true
+  xy: 111, 6
+  size: 68, 27
+  orig: 68, 27
+  offset: 0, 0
+  index: -1

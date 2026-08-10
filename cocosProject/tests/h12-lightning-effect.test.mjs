@@ -14,7 +14,8 @@ const check = (actual, expected, message) => {
 };
 
 const spineRoot = resolve(projectRoot, 'assets/resources/spine/H12Lightning');
-check(sha256(resolve(spineRoot, 'chilun_leiyun.atlas')), '1b6b82570f0084d9a7a6b80cc8483a16daaa6e82c0caaad6b22e77f16fd8e1b8', 'recovered atlas is exact');
+const sha256Atlas = (path) => createHash('sha256').update(readFileSync(path, 'utf8').replace(/\r\n/g, '\n')).digest('hex');
+check(sha256Atlas(resolve(spineRoot, 'chilun_leiyun.atlas')), '1b6b82570f0084d9a7a6b80cc8483a16daaa6e82c0caaad6b22e77f16fd8e1b8', 'recovered atlas is exact');
 check(sha256(resolve(spineRoot, 'chilun_leiyun.png')), 'b52c131e84a869f54b5dce6531519758a8425ca46a99a29346cc444261e3427e', 'recovered texture is exact');
 check(sha256(resolve(spineRoot, 'chilun_leiyun.skel')), '77341de1dabdb28b4e7020015935a5a2230061ca11d302e2c2c10161f74e9ac2', 'recovered skeleton is exact');
 check(sha256(resolve(projectRoot, 'assets/resources/original/bullet_leiyun.mp3')), '477f5ea5d6bdec5afb1e238923f8bc320c1fc88b62b92367ef879fa65253da9a', 'recovered hit audio is exact');

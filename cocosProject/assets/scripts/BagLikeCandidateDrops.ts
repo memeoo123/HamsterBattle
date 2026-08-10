@@ -213,7 +213,10 @@ function replaceDuplicateWithMissingFamily(
     random: () => number,
 ): void {
     if (counts.size >= maxFamilies) return;
-    const shuffledFamilies = [...unlockedHeroFamilies];
+    // Creator's loose Babel transform lowers `[...set]` to `[].concat(set)`,
+    // which produces one Set element and later the invalid id "[object Set]01".
+    // Array.from preserves iterable semantics in both source tests and builds.
+    const shuffledFamilies = Array.from(unlockedHeroFamilies);
     for (let index = shuffledFamilies.length - 1; index > 0; index -= 1) {
         const swapIndex = Math.floor(Math.min(0.999999999999, Math.max(0, random())) * (index + 1));
         [shuffledFamilies[index], shuffledFamilies[swapIndex]] = [shuffledFamilies[swapIndex], shuffledFamilies[index]];
@@ -311,7 +314,9 @@ export function drawDynamicCandidateBatch(
 
     for (const drawId of drawIds) {
         const allowedFamilies = counts.size >= maxFamilies
-            ? new Set([...counts.keys(), ...[...context.unlockedHeroFamilies].filter((family) => untracked.has(family))])
+            ? new Set(Array.from(counts.keys()).concat(
+                Array.from(context.unlockedHeroFamilies).filter((family) => untracked.has(family)),
+            ))
             : context.unlockedHeroFamilies;
         const item = drawCandidateReward(
             drawId,

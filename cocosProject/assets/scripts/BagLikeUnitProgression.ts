@@ -29,7 +29,7 @@ const WHEEL_BASE_HP: Readonly<Record<'H11' | 'H12' | 'H13', number>> = {
 
 const HERO_STAR_ATTRIBUTE_MODIFIERS = [
     0, 0, 1000, 2100, 3300, 4600, 6100, 7700, 9400, 11400, 13500,
-    15900, 18500, 21300, 24500, 27900,
+    15900, 18500, 21300, 24500, 27900, 31700, 35900, 40500, 45500, 51100,
 ] as const;
 
 export function bagLikeHeroBaseHpAtStar(baseHp: number, star: number): number {

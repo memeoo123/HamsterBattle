@@ -8,7 +8,7 @@
 - Original Cocos version: `3.8.2`
 - Reconstruction Cocos version: `3.8.8`
 - Resolution: `750 × 1334` portrait（已纠正）
-- Validation date: 2026-08-09
+- Validation date: 2026-08-10（Fresh Creator 3.8.8 Web Mobile 构建与浏览器复验）
 
 ## Automated checks
 
@@ -17,9 +17,11 @@
 | Restore spec structure | Pass | validator: `valid=true` |
 | Restore spec ready gate | Pass | `implementationReady=true`，无阻塞 unknown |
 | Golden cases | Pass | 当前 `golden-cases.json` 为 `47/47`；含伤害、波次、基地生命、生产、刷新、摆放、合成、占格、金币、失败补偿和阶段条件 |
+| Rule/resource suite | Pass | 27 个脚本 `1133/1133`；账号养成 `90/90`，覆盖 v1→v2 迁移、损坏档恢复、资源/碎片、自动解锁、1–20 星精确消耗、200 关三档奖励、持久化及确定性 `BOX_RF` 抽取；候选掉落 `44/44`，含 Cocos loose Babel 的 Set 展开回归守卫。特质/受控战斗表现保持 `22/22`。4 个 `.atlas` 测试按 LF 规范化文本校验，PNG/Spine/音频继续按原始字节哈希校验 |
+| Account profile and hero stars | Pass (formal local progression loop) | 存档 schema v2 沿用键 `cangshu.restore.baglike.account.v1` 原位迁移；金币、体力、钻石、12 类碎片、最大通关关卡、0–20 星和逐关挑战次数均持久化。H13/H03/H11 按通关 1001/1002/1004 自动解锁；升星严格消耗原表金币和同族碎片；1001–1200 的三档波次奖励与等权 12 族 `BOX_RF` 已接入结算。正常面板只允许正式升星，测试预设限定 `?accountDebug=1`。目标账号精确值仍不在包体内，不把本地档案冒充原账号证据 |
 | Production combat kernel | Pass | `116/116` assertions；含原版伤害、攻速/失败补偿、严格范围、四叉树等距优先、归一化移动、基地路径、英雄分离碰撞、完整战斗帧阶段、同帧刷怪/弹丸/销毁顺序、原生坐标随机与种子战斗随机分域、`9301/49297/233280` LCG、弹丸实时攻击/死亡快照边界、H02 分裂射击概率/随机目标/施法者半径、H02 弹幕延迟队列/重复 600 ms 行为/施法边界及 3500 ms 断链、H03 变形持续/免控/刷新/`DMG_INC` 方向、H03 激光的 300 ms 行为/1 秒施法/4 秒冷却与 100×300 前向矩形、H04/H09 普攻击飞的概率边界及 Boss/技能类型惰性门禁、H04/H09 盾墙的周期/持续/减伤/反伤顺序、H09/H13 的 2/4/6 次近邻弹射上限、H13 爆米花逐跳 10% 复利及末跳弹丸断链、强制/属性暴击、附加暴伤、H12 20000 暴击倍率、闪避优先级及惰性暴击 RNG |
 | Production mechanism kernel | Pass | `28/28` assertions；含准备到战斗连续核心相位、方向 1 首次完成接触、占用侧 200 ms 停顿、连通块、多侧核心接触、产率、满 100、余数、输出延迟、1.5 倍速、直接相邻/仅连通边界，以及相邻效率的小数进度与显示率 |
-| Unit level progression | Pass (numeric + asset import) | `276/276`：除既有等级/资源链外，新增验证 H11/H12/H13 的完整 1–15 星英雄 HP、WHEEL 过滤和齿轮等级倍率；3 星 H13 的 363 HP 与 1004 基础 500 精确组成参考 863 |
+| Unit level progression | Pass (numeric + asset import) | `277/277`：除既有等级/资源链外，验证 H11/H12/H13 的完整 1–20 星英雄 HP、WHEEL 过滤和齿轮等级倍率；3 星 H13 的 363 HP 与 1004 基础 500 精确组成参考 863，20 星 H13 为 1833 HP |
 | H01 final-kill attack stacking | Pass (star-1 baseline; star-7 gated) | 特性池 `240/240`：`RG_H01_abl03_eff01` 在 H01 星 7 时开放一次，原表范围为 H01/H07。v18 死亡事件只携带最终击杀者 ID，并无助攻列表，因此卡面“参与击败”实际仅由最后一击触发；每次给 H01/H07 的共享实时属性层增加 `ATK_INC=200`（+2%），最多 30 层（+60%），当前与后续单位均生效，普通回合切换不清除，整局重开归零。目标账号 H01 实际星级仍待证明 |
 | H02 split-shot consumers | Pass (star-1 baseline; star-3/5/10 gated) | 特性池 `240/240`、战斗内核 `116/116`：三条同组能力按 H02 星 3/5/10 只开放最高合格行，概率为 3000/5000/10000，范围 H02/H07；被动在主技能动作前判定，从施法者半径 250 内随机选择一个敌人（主目标仍合法），发射独立速度 700、10000 比率弹体。默认 H02 星级 1 不开放高星卡；目标账号实际星级仍待证明 |
 | H02/H07 barrage-time consumers | Pass (star-1 baseline; star-7/8 gated) | 特性池 `240/240`、战斗内核 `116/116`：星 7/8 同组能力只开放最高合格行并把 `2001_5/2001_6` 快照到后续 H02/H07。首次 6 秒后施放，冷却在首个行为触发时开始；两档施法 2/3 秒，分别实际发射 9/6 枚速度 700、5000 比率弹丸。星 8 配置的 3500 ms 第七发在 3000 ms 施法结束时被清除；孤立的 3/4 秒 `ATK_SPD=30000` Buff 组没有入边，因此不凭卡面接入。逐发 `H29_S1` 原始表现已接入；目标账号 H02 实际星级仍待证明 |
@@ -44,11 +46,11 @@
 | H01/H04 recovered attack audio | Pass (asset/linkage), matched volume pending | `8/8`：`1001/bh1001 → skill_jijian` 与 `4001/bh4001 → skill_zhuangji` 的原始音频哈希、资源路径、英雄路由、`soundDelay=0` 攻击起始播放及 one-shot 调用均通过；两行为 `modelId` 为空，未添加无证据特效 |
 | H03 recovered status effects | Pass (asset/linkage), matched capture pending | `19/19`：变形 `H28_S2` 与冰冻 `H28_S1` 两套原始 Spine 3.8.99 三件套、`hit/idle` 动作、模型缩放、2/3 秒 Buff 路由与刷新清理、星 7 专属 `skill_bianxing` 及独立 30% 冰冻的 `skill_bingfeng` 均通过；星 8 替换按空音效配置保持静音 |
 | H03 recovered laser audio | Pass (asset/linkage), matched volume pending | `5/5`：`3001_5` 原始 `skill_jiguang` 哈希、资源路径、零延迟施法起点播放、one-shot 调用及与 300 ms 行为触发分离均通过 |
-| Trait presentation | Pass (source + normal-flow + fresh-build fixture) | `11/11`：除既有组件/分行检查外，发展态夹具精确锁定等级 2、法术 +5%、H02 30% 分裂和 H03 30% 冰冻，并保存新的 750×1334 Web Mobile 构建截图；项目控制台无错误 |
-| Asset metadata | Pass | 128 asset files，missing meta `0`；H03 激光/变形/冰冻音效与状态 Spine、H01/H04 音频、H02/H13 SpriteFrame、H03/H08 弹丸 Spine、H11 治疗 Spine、H12 雷云 Spine/音频及 H07/H08 六帧命中图均由 Creator 3.8.8 正式导入；既有原始 UI、shape Spine、融合英雄 Spine 与 H0905 资源保持可加载 |
-| TypeScript | Pass (project scripts) | 2026-08-08 使用 Creator 3.8.8 随附 TypeScript、工程 `tsconfig.json` 与 `--skipLibCheck true` 检查通过；不抑制项目脚本错误 |
-| Web build smoke | Pass (artifact), launcher warning recorded | Creator 日志完成最新 `web-desktop` 与 `web-mobile` 构建；`web-mobile` 产物以 750×1334 加载特性夹具且无项目控制台错误，既有真实画布交互还覆盖候选拖放、开战、失败、重试和三侧连通组件验证。CLI 最终码 36 仍来自已记录的构建后扩展路径，不是项目编译/资源失败 |
-| Creator project open | Pass | 本轮检测到既有 Creator 3.8.8 工程会话 PID `4363`，仅唤醒它完成 H03 激光音频导入；未启动第二实例，也未终止既有进程 |
+| Trait presentation | Pass (source + Fresh Web Mobile fixture) | `22/22`：发展态保持等级 2 与三张指定特质；精确 `buff_0027 / buff_0036 / buff_0006`、`comm_0` 原始标题条/蓝紫按钮/播放图标、绿色 RichText、斜置推荐标签和固定战斗快照均锁定。2026-08-10 Fresh 750×1334 截图 warning/error 0 |
+| Asset metadata | Pass | 170 asset files，missing meta `0`；账号脚本与既有精确特质图集、`comm_0` 原始公共 UI 均由 Creator 3.8.8 正式导入；既有 H03/H11/H12 等原版资源保持可加载 |
+| TypeScript | Pass (Fresh project compile) | 2026-08-10 使用 Creator 3.8.8 内置 TypeScript、工程 `tsconfig.json` 与 `--noEmit --skipLibCheck true` 检查通过；不抑制项目脚本错误 |
+| Web build smoke | Pass (artifact + interactive panel) | 2026-08-10 15:41 Creator 日志到达 `build Task (web-mobile) Finished`，CLI 成功码 `36`；Main.scene 已进入 main bundle。全新本地来源打开账号面板，资源、解锁条件、星级、碎片和下一星消耗均可见，warning/error 为 0。launcher 仅记录 `mainBundleCompressionType` 与字符串型 debug 采用默认值，不是项目编译/资源失败 |
+| Creator project open | Pass | 打开前无既有 Creator 进程；本轮仅启动隐藏导入会话 PID `50052`，正式生成图集 `.meta` 后只关闭该 PID，再运行单个有界 Web Mobile 构建。构建 49 秒完成，所有本轮进程均退出 |
 | Main startup rendering | Pass | 修复同节点重复 Renderable2D 后，显式 Main UUID 预览显示完整布阵首屏且无新增同类警告 |
 | Post-change interactive preview | Partial | 五级候选、棋盘和产兵显式夹具已完成实机截图与日志验证，并修复战斗 `BackpackPanel` 遮挡战场回归；仍需用有证据的账号星级执行正常拖拽融合完整点击测试 |
 | Original visual references | Pass (reference only) | 4 张：初始准备、发展后准备、第 1 波战斗、特性三选一；清单见目标目录 `evidence/visual/original/2026-08-01/manifest.json` |
@@ -57,7 +59,7 @@
 | Weighted preparation draw | Pass (supported-family runtime path) | `40/40`：静态资格、3000–3004 路由、独立槽位抽取、账号已解锁族过滤、H11 不计入五英雄族上限的例外、金币计数权重、缺失族替换、第七次非广告刷新强制扩格、Prepare 精确倍率及原版 3012 no-op；仍缺目标账号精确解锁集合 |
 | Preparation placement | Pass (numeric + user smoke) | `24/24`：合成优先后的整件覆盖退回、主动取下、边界/核心保护、候选/棋盘固定同尺寸、候选溢出分行，以及 1–5 级精确色值、等级色覆盖兵种色和无等级特殊件回退色；用户已确认尺寸、重叠和棋盘分区问题解决 |
 | Level-specific hero Spine import | Pass | H01/H02/H03/H04 的 1–4 级模型路径已接入；本轮新增 12 套二/三/四级原始 Spine 3.8.99，atlas/texture/skeleton 均由 Creator 导入 |
-| Matched visual baseline | Partial / Pending | 发展态状态差异已关闭：863 HP、H13/H03/H02 位置与 `0.33/0.16/0.18`、金币 `0.03/s`、等级 2 和三张特质均与原图一致。仍需收敛背包/特质组件几何、绑定精确卡牌包体美术，并修复战斗截图顶部 HUD 与同步 elapsed-time/RNG，故不得标 Pass。证据见 `evidence/visual/reconstruction/2026-08-09/manifest.json` |
+| Matched visual baseline | Pass | `developed-trait-polished.png` 已关闭标题纹理/描边、绿色 RichText、斜置推荐牌、原始按钮/视频图标与独立次数；`developed-battle-fixed.png` 以浏览器隔离夹具固定关卡 1004、1/15 波、863 HP、完整 HUD、常驻背包及 M07 + 3×M02 敌军快照。两张 750×1334 截图 warning/error 0，证据见 `evidence/visual/reconstruction/2026-08-10/manifest.json` |
 
 ## Fidelity matrix
 
@@ -76,5 +78,5 @@
 
 工程已切换到用户截图对应的关卡 1004，并补上十五波、战斗扩展/背包常驻以及首个
 EXP 三选一闭环。准备态与第 1 波重建截图已经采集，最早的顶部/准备区结构偏差已修正；
-但战斗参考不是同一存档状态，且广告流程、原始
-跨族五级配方虽已接入，但目标账号星级和 shape 动画实机触发尚未验收；同状态战斗/特性配对和部分未访问界面仍不完整，因此 `visualBaseline` 保持 Pending，不标记为最终完成。
+发展态特质与战斗均已由浏览器隔离夹具固定为同关卡、同阶段、同分辨率的可重复快照，`visualBaseline` 通过。
+广告流程、目标账号其余英雄星级、跨族五级 shape 动画的正常账号路径与部分未访问界面仍属于扩展验收项，不影响当前必需视觉门禁结论。

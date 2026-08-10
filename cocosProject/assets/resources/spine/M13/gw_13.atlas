@@ -1,0 +1,153 @@
+
+gw_13.png
+size: 798,370
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bz
+  rotate: true
+  xy: 759, 192
+  size: 34, 36
+  orig: 34, 36
+  offset: 0, 0
+  index: -1
+cc
+  rotate: false
+  xy: 732, 223
+  size: 43, 64
+  orig: 43, 64
+  offset: 0, 0
+  index: -1
+cz
+  rotate: false
+  xy: 700, 289
+  size: 77, 79
+  orig: 77, 79
+  offset: 0, 0
+  index: -1
+czt
+  rotate: false
+  xy: 746, 173
+  size: 46, 17
+  orig: 46, 17
+  offset: 0, 0
+  index: -1
+t1
+  rotate: true
+  xy: 2, 2
+  size: 93, 101
+  orig: 250, 371
+  offset: 85, 51
+  index: -1
+t10
+  rotate: false
+  xy: 163, 96
+  size: 157, 93
+  orig: 250, 371
+  offset: 55, 82
+  index: -1
+t11
+  rotate: false
+  xy: 584, 124
+  size: 160, 99
+  orig: 250, 371
+  offset: 51, 70
+  index: -1
+t12
+  rotate: false
+  xy: 2, 97
+  size: 159, 92
+  orig: 250, 371
+  offset: 50, 65
+  index: -1
+t13
+  rotate: false
+  xy: 322, 21
+  size: 116, 85
+  orig: 250, 371
+  offset: 80, 64
+  index: -1
+t14
+  rotate: false
+  xy: 105, 32
+  size: 112, 62
+  orig: 253, 371
+  offset: 95, 56
+  index: -1
+t2
+  rotate: false
+  xy: 2, 191
+  size: 172, 177
+  orig: 250, 371
+  offset: 36, 29
+  index: -1
+t3
+  rotate: false
+  xy: 176, 191
+  size: 172, 177
+  orig: 250, 371
+  offset: 36, 29
+  index: -1
+t4
+  rotate: false
+  xy: 632, 24
+  size: 102, 98
+  orig: 250, 371
+  offset: 69, 76
+  index: -1
+t5
+  rotate: false
+  xy: 507, 10
+  size: 123, 112
+  orig: 250, 371
+  offset: 59, 76
+  index: -1
+t6
+  rotate: true
+  xy: 584, 225
+  size: 143, 114
+  orig: 250, 371
+  offset: 49, 85
+  index: -1
+t7
+  rotate: true
+  xy: 469, 216
+  size: 152, 113
+  orig: 250, 371
+  offset: 42, 85
+  index: -1
+t8
+  rotate: true
+  xy: 350, 207
+  size: 161, 117
+  orig: 250, 371
+  offset: 40, 73
+  index: -1
+t9
+  rotate: false
+  xy: 350, 108
+  size: 155, 97
+  orig: 250, 371
+  offset: 49, 78
+  index: -1
+tj
+  rotate: false
+  xy: 507, 187
+  size: 43, 27
+  orig: 43, 27
+  offset: 0, 0
+  index: -1
+vcw
+  rotate: false
+  xy: 779, 349
+  size: 14, 19
+  orig: 14, 19
+  offset: 0, 0
+  index: -1
+wb
+  rotate: true
+  xy: 779, 330
+  size: 17, 10
+  orig: 17, 10
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0",
+  "appId": "wxf9af2417e78ce07a",
+  "packageVersion": "18",
+  "bundle": "resources3",
+  "source": {
+    "config": "../item-ui/resources3.config.cce0e.json",
+    "packedImport": "../item-ui/resources3.import.0de4fdaf8.fe248.json",
+    "spriteAtlasUuid": "6291a532-1a5d-3966-f446-8f4a900e7b3f",
+    "textureUuid": "7f2cc19b-e5f8-47e5-9938-388d0d437af0",
+    "nativeVersion": "56054",
+    "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/7f/7f2cc19b-e5f8-47e5-9938-388d0d437af0.56054.png"
+  },
+  "atlas": {
+    "file": "effect.png",
+    "sha256": "da0f386f4f2202cb0eef59dc7517716e6d5a580a9ce6b6be859b6b4cb599a3d6",
+    "nativeSize": [1024, 496]
+  },
+  "traitBindings": [
+    {
+      "traitId": "RG_ALL_abl13_eff01",
+      "imageKey": "image/effect/buff_0027",
+      "spriteFrameUuid": "6291a532-1a5d-3966-f446-8f4a900e7b3f@d35a1",
+      "rect": [315, 301, 76, 82],
+      "originalSize": [100, 100],
+      "offset": [-1, 0]
+    },
+    {
+      "traitId": "RG_H02_abl02_eff01",
+      "imageKey": "image/effect/buff_0036",
+      "spriteFrameUuid": "6291a532-1a5d-3966-f446-8f4a900e7b3f@1ef3e",
+      "rect": [467, 71, 92, 72],
+      "originalSize": [100, 100],
+      "offset": [2, -2]
+    },
+    {
+      "traitId": "RG_H03_abl02_eff01",
+      "imageKey": "image/effect/buff_0006",
+      "spriteFrameUuid": "6291a532-1a5d-3966-f446-8f4a900e7b3f@ff98b",
+      "rect": [315, 71, 76, 72],
+      "originalSize": [100, 100],
+      "offset": [-1, 1]
+    }
+  ],
+  "provenance": "Recovered from the authorized resources3 config/import pack and its official remote native texture. Stored as evidence only until Cocos Creator can perform the asset import and generate metadata."
+}

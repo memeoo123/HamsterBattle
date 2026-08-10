@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0",
+  "appId": "wxf9af2417e78ce07a",
+  "packageVersion": "18",
+  "captureDate": "2026-08-10",
+  "creatorVersion": "3.8.8",
+  "build": {
+    "platform": "web-mobile",
+    "output": "../../../../../../cocosProject/build/web-mobile",
+    "startedAtLocal": "2026-08-10T11:22:30+08:00",
+    "finishedAtLocal": "2026-08-10T11:23:26+08:00",
+    "durationSeconds": 49,
+    "result": "pass"
+  },
+  "fixture": {
+    "query": "?developedValidation=trait",
+    "battleQuery": "?developedValidation=battle",
+    "state": "level 1004, wave 1/15, home HP 863, BagLike level 2, RG_ALL_abl13_eff01 / RG_H02_abl02_eff01 / RG_H03_abl02_eff01",
+    "viewport": [750, 1334]
+  },
+  "captures": [
+    {
+      "file": "developed-trait.png",
+      "phase": "trait",
+      "size": [750, 1334],
+      "sha256": "e267aea098547fa51032a6f6bd18fe7ccab15faded5940ee141b7538cf3f2ae9",
+      "browserWarningsOrErrors": 0
+    },
+    {
+      "file": "developed-trait-polished.png",
+      "phase": "trait",
+      "size": [750, 1334],
+      "sha256": "b67f539a4b71906c6593545e1e7a1333d967a047b9d18e9b268e459cfdb7d4a7",
+      "browserWarningsOrErrors": 0,
+      "notes": "Exact comm_0 title ribbon, blue/purple button skins and video icon; green RichText keywords; diagonal black-outlined recommendation tags; separate green remaining-count values."
+    },
+    {
+      "file": "developed-battle-fixed.png",
+      "phase": "battle",
+      "size": [750, 1334],
+      "sha256": "b16cf83f221ead1ac3f2e7cbb98e8d85f4a56897fec542ef8f60fb8ca7bd77de",
+      "browserWarningsOrErrors": 0,
+      "notes": "Controlled level-1004 wave-1 snapshot with fixed RNG boundary, full recovered HUD, persistent backpack, 863 HP, one M07 and three M02 enemies normalized from the original reference."
+    }
+  ],
+  "assetValidation": {
+    "resource": "cocosProject/assets/resources/original/trait-icons/effect.png",
+    "sha256": "da0f386f4f2202cb0eef59dc7517716e6d5a580a9ce6b6be859b6b4cb599a3d6",
+    "creatorMetaUuid": "007031c2-937b-430e-833f-49b3b2def12f",
+    "missingMetaCount": 0,
+    "commonUiResource": "cocosProject/assets/resources/original/comm_0.png",
+    "commonUiSha256": "96aaa6bc78a0992fada85ac1bd0c06f5f99befae1701603547719f392eba2d50"
+  },
+  "automatedValidation": {
+    "typescript": "pass: Creator 3.8.8 bundled TypeScript, project tsconfig, --noEmit --skipLibCheck true",
+    "traitPresentation": "22/22",
+    "fullRuleAndResourceSuite": "1028/1028"
+  },
+  "originalReference": "../../original/2026-08-01/trait-selection.png",
+  "visualBaseline": "pass",
+  "remainingDifferences": [],
+  "closedDifferences": [
+    "trait title ribbon now uses the recovered patterned comm_0 texture and heavy black-outlined title",
+    "trait descriptions now use green/white RichText keyword runs",
+    "recommendation tags now use the reference diagonal rotation, black outline and tail",
+    "action buttons now use recovered glossy skins, video icons and separate remaining-count labels",
+    "battle capture now uses a controlled visual state with a fixed enemy mix, lanes, full HUD, and persistent backpack"
+  ],
+  "captureNotes": "developed-trait-polished.png and developed-battle-fixed.png are the canonical 750x1334 in-app-browser captures. Both use explicit browser-only validation URLs and leave normal 200-level gameplay unchanged."
+}
