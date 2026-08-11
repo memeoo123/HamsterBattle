@@ -1,0 +1,3 @@
+// Module: chunks:///_virtual/EndlessModeEnterTask.ts
+// Dependencies: ./rollupPluginModLoBabelHelpers.js, cc, ./G.ts, ./TaskManager.ts, ./UIBagLikeConfig.ts
+(function(t){var n,i,r,u,o;return 0,function(){var s;return(s=HVn(HVn({},C,0),T,0))[C]=[function(t){n=t[A]},function(t){i=t[M]},function(t){r=t[w]},function(t){u=t["Task"]},function(t){o=t["UIBagLikeKey"]}],s[T]=function(){i[E][R]({},tSt,nSt,void 0),t(nSt,function(t){var i;return i=function(){var n;return n=arguments,t[H](this,n)||this},n(i,t),i[U]["run"]=function(t){var n;n=this,r["UIManager"]["open"](o["BagLikeBattlePage"],null,(function(){n["end"]()}))},i}(u)),i[E][z]()},s}[Q](this)[H]()});

@@ -1,4 +1,4 @@
-export const BAGLIKE_ACCOUNT_SCHEMA_VERSION = 2;
+export const BAGLIKE_ACCOUNT_SCHEMA_VERSION = 3;
 export const BAGLIKE_ACCOUNT_STORAGE_KEY = 'cangshu.restore.baglike.account.v1';
 export const BAGLIKE_HERO_MIN_STAR = 1;
 export const BAGLIKE_HERO_MAX_STAR = 20;
@@ -9,9 +9,14 @@ export const BAGLIKE_ACCOUNT_HERO_FAMILIES = [
     'H02',
     'H03',
     'H04',
+    'H05',
+    'H06',
     'H11',
     'H12',
     'H13',
+    'H14',
+    'H16',
+    'H17',
 ] as const;
 
 export type BagLikeAccountHeroFamily = typeof BAGLIKE_ACCOUNT_HERO_FAMILIES[number];
@@ -95,9 +100,14 @@ const BAGLIKE_HERO_UNLOCK_LEVEL: Readonly<Record<BagLikeAccountHeroFamily, numbe
     H02: 1000,
     H03: 1002,
     H04: 1000,
+    H05: 1005,
+    H06: 1009,
     H11: 1004,
     H12: 1000,
     H13: 1001,
+    H14: 1007,
+    H16: 1012,
+    H17: 1015,
 };
 
 function integerInRange(value: unknown, minimum: number, maximum: number, fallback: number): number {

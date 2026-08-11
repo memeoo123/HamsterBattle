@@ -7,6 +7,9 @@ import { fileURLToPath } from 'node:url';
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const source = readFileSync(resolve(projectRoot, 'assets/scripts/CangshuGame.ts'), 'utf8');
 const sha256 = (path) => createHash('sha256').update(readFileSync(path)).digest('hex');
+const sha256NormalizedText = (path) => createHash('sha256')
+    .update(readFileSync(path, 'utf8').replace(/\r\n/g, '\n'))
+    .digest('hex');
 let assertions = 0;
 const check = (actual, expected, message) => {
     assert.deepEqual(actual, expected, message);
@@ -24,7 +27,7 @@ check(
     'H13_S1_LOWER uses the recovered original skeleton',
 );
 check(
-    sha256(resolve(projectRoot, 'assets/resources/spine/H13Impact/baomihua_hill.atlas')),
+    sha256NormalizedText(resolve(projectRoot, 'assets/resources/spine/H13Impact/baomihua_hill.atlas')),
     '5fb727f2a8ba4c5697c9c53a0dc3aa12408ec682763c438eeeae8d63463697e1',
     'H13_S1_LOWER uses the recovered original atlas',
 );

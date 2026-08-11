@@ -5,6 +5,8 @@ import {
     applyWorkerPower,
     BATTLE_SPEED_UP_MULTIPLE,
     connectedGearUidsAtCoreSide,
+    gearRotationAngleDegrees,
+    gearRotationParity,
     HAMSTER_SPAWN_FLIGHT_SECONDS,
     isGearDirectlyAdjacentToCore,
     p01RoundStartProductivity,
@@ -15,6 +17,7 @@ import {
     resolveProducerAttributeScales,
     resolveWorkerPowerPerTrigger,
     WORKER_COMPLETE_ANIMATION_SECONDS,
+    unitPresentationBackToFront,
 } from '../assets/scripts/BattlefieldProduction.ts';
 
 const gears = [
@@ -57,6 +60,17 @@ assert.equal(BATTLE_SPEED_UP_MULTIPLE, 1.5, 'battle speed toggle uses the origin
 assert.equal(p01RoundStartProductivity(5), 1.1, 'P01 star-0 round-start skill raises productivity by 10%');
 assert.equal(p01RoundStartProductivity(0), 1, 'P01 star-0 productivity returns to baseline after five seconds');
 
+assert.equal(gearRotationParity(10, 17), 0, 'an even meshing cell uses the clockwise-negative branch');
+assert.equal(gearRotationParity(11, 17), 1, 'an adjacent cell alternates to the counter-clockwise-positive branch');
+assert.equal(gearRotationAngleDegrees(10, 17, 0.1, 0.2), -180, 'an even cell reaches a negative half turn halfway through the decoded delay');
+assert.equal(gearRotationAngleDegrees(11, 17, 0.1, 0.2), 202.5, 'an adjacent cell reaches the opposite half turn from its 22.5-degree phase');
+assert.equal(gearRotationAngleDegrees(11, 17, 0.2, 0.2), 22.5, 'a completed revolution lands on its visually equivalent base phase');
+assert.deepEqual(
+    unitPresentationBackToFront([{ uid: 3, y: -30 }, { uid: 2, y: 24 }, { uid: 1, y: 24 }]),
+    [1, 2, 3],
+    'higher units render first while equal-depth units retain stable uid order',
+);
+
 const firstQuarter = advancePowerCoreClock(
     { nextDirection: 1, remainingSeconds: POWER_QUARTER_LAP_SECONDS },
     POWER_QUARTER_LAP_SECONDS,
@@ -87,11 +101,11 @@ assert.ok(
 );
 
 const gameSource = fs.readFileSync(new URL('../assets/scripts/CangshuGame.ts', import.meta.url), 'utf8');
-const productionStep = gameSource.indexOf('this.stepPowerProduction(scaled, this.phase === \'battle\');');
-const battleStep = gameSource.indexOf("if (this.phase === 'battle' && !this.paused) this.stepBattle(scaled);");
+const productionStep = gameSource.indexOf('this.stepPowerProduction(simulationDt, this.phase === \'battle\');');
+const battleStep = gameSource.indexOf("if (this.phase === 'battle' && !this.paused) this.stepBattle(simulationDt);");
 assert.ok(
     productionStep >= 0 && battleStep > productionStep,
     'the reconstructed engine tick runs the recovered GameTimer/core-production phase before BattleTimer/combat',
 );
 
-console.log('battlefield production: 32 assertions passed');
+console.log('battlefield production: 38 assertions passed');

@@ -8,7 +8,7 @@
 - Original Cocos version: `3.8.2`
 - Reconstruction Cocos version: `3.8.8`
 - Resolution: `750 × 1334` portrait（已纠正）
-- Validation date: 2026-08-10
+- Validation date: 2026-08-11
 
 ## Automated checks
 
@@ -16,6 +16,9 @@
 |---|---|---|
 | All 200 normal levels | Pass (data/runtime/state-machine/opening-deployment + early/middle/late smoke + representative full closure) | 主选择开放 `1001..1200`；契约逐关构建 2,978 波和 54,816 个刷怪项，依赖矩阵 `200 verified / 0 blocked`，全部波次 reducer 与 1,728 种动态开局均通过。Creator 实机通过 1001/1100/1200 的真实拖放、开战和生产；1001、1002、1100 分别完成 5/8/15 波正式胜利闭环。1100 从零累计 17 次失败后在重建专用 1% 最终补偿下正常完成全部 15 波并清零失败计数，获胜段峰值己方 9、敌方 22，0 缺失生产配置和 0 运行错误；原版账号平衡仍单独保持高保真取证项 |
 | Main scene and level flow | Pass (functional reconstruction) | 正常启动进入主页；关卡页从恢复表开放 `1001..1200` 全部 200 关并分页显示。既有真实 750×1334 Web Mobile 画布完成“主页 → 选关 → 1004 → 返回主页 → 选关 → 1001”点击契约 `9/9`，无运行时/控制台错误；仍待新构建早/中/晚关抽样。该 UI 是功能性还原，不声明与原版主页视觉一致 |
+| Role and cultivation navigation | Pass (evidence-backed functional reconstruction) | 按原 `MainPageTabItemConfig` 恢复 `商店 / 角色 / 战斗 / 培养 / 活动` 顺序；角色页接入 P01–P04 原名/品质及 `PowerAbilityConfig` 每人完整 0–8 星九档能力，培养页覆盖 12 兵种、恢复头像、本地资源、1–20 星消耗和解锁关卡。750×1334 新构建实机点击 P04 九档能力、培养页及 H14 鲨鱼页，warning/error `0`；无 matched 菜单截图，因此不声明像素级一致 |
+| Out-of-battle pages | Pass (evidence-backed functional reconstruction + explicit mock ads) | 资源栏、四类商店、七日登录、每日任务及设置本地持久化均已接通。每日挑战现在按日期轮换并真实消费 5 体力，运行 15 格/10 波战斗、12 种效果、每日 3 次、500/波金币与四档领取；无尽运行 `400001` 的 300 秒/560 刷怪、敌方基地、击杀/金币、第三次广告条件和永久最高纪录。用户授权的本地模拟广告覆盖无尽第 3 次、局内刷新、词条操作和体力商品；成功才发放/扣除，取消失败无副作用。随机广告宝箱奖励池仍不伪造；兑换码、反馈与签到服务器状态未接入。关外原图未取得，不声明像素级一致 |
+| Large/irregular gear merge interaction | Pass (numeric + live interaction) | 拖动保留抓取偏移，合并按双方 footprint 磁吸并选择最近兼容目标。专项含 H1401 L 形鲨鱼 `(72,58)` 偏移吸附、远距拒绝和最近目标排序；1004 实机从 H0401 边缘抓取并以约 `(65,40)` 锚点偏移释放，成功合成 H0402，`powerMissingGear=0` |
 | Normal-level preparation data | Pass (table-driven integration) | v2 运行表覆盖 `200` 关 / `2978` 波，逐关导出 `initRewards/staticBuffs/staticBricks`、逐波导出 `coinRewards`；正式加载器已删除 `PREPARATION_CONFIGS` 白名单。导出重现 `3383/3383`、准备配置 `411/411`，依赖矩阵为 `200 verified / 0 blocked`；全部静态齿轮 ID 与 12 个推荐英雄族均有生产配置 |
 | Candidate levels 1002/1003 | 1002 full 8-wave live closure; both publicly selectable | 生产配置构建器验证两关共 18 波的排期、模型依赖与准备奖励，专项 `71/71`。1002 的 Creator 3.8.8 Web Mobile 连续会话完成三组静态发牌、H13 两次合成、H04 替换、P01 加速、特质、累计 5 次失败/重试及全部 8 波；第 6 次挑战以 361/1375 HP 正常 `won`，失败计数清零，产兵缺失配置和运行错误均为 0，且无战斗数值/阶段覆盖。1003 全波次长跑仍待抽样 |
 | Restore spec structure | Pass | validator: `valid=true` |
@@ -51,10 +54,10 @@
 | H03 recovered laser audio | Pass (asset/linkage), matched volume pending | `5/5`：`3001_5` 原始 `skill_jiguang` 哈希、资源路径、零延迟施法起点播放、one-shot 调用及与 300 ms 行为触发分离均通过 |
 | Trait presentation | Pass (source + recovered art + fresh-build fixture) | `21/21`：发展态夹具精确锁定等级 2 与三张能力；原版 `bagLikeBuff` 丝带/卡框/推荐角标、common 蓝紫按钮/播放图标和 `image/effect` 的 `buff_0027 / buff_0036 / buff_0006` 已绑定。说明文字使用恢复字体和 RichText，复现原表绿色强调与原图断行；新的 750×1334 Web Mobile 截图无控制台错误。证据见 `evidence/visual/reconstruction/2026-08-09-trait-richtext/manifest.json` |
 | Preparation presentation | Pass (global geometry and controls) | `15/15`：归一化顶部 HUD、血条、背包板、棋盘、候选和底部按钮锚点保持匹配；恢复“获取格子 ×3”、广告刷新提示、15 银币费用和 `刷新 / 刷新 / 开战`，隐藏准备期产兵条并移除遮挡货币栏的重建主页按钮。新鲜 750×1334 Web Mobile 截图无控制台错误；证据见 `evidence/visual/reconstruction/2026-08-09-preparation-controls/manifest.json` |
-| Asset metadata | Pass | 137 asset files，missing meta `0`；新增 H13 命中 Spine 的 skeleton/atlas/texture 已由 Creator 正式导入；既有音频、SpriteFrame、Spine 资源保持可加载 |
-| TypeScript | Pass (project scripts) | 2026-08-09 使用 Creator 3.8.8 随附 TypeScript、工程 `tsconfig.json` 与 `--skipLibCheck true` 检查通过；不抑制项目脚本错误 |
-| Web build smoke | Pass (actual 200-level artifact) | 2026-08-10 的 `web-mobile` 产物已包含 H13 命中 Spine 并到达 `build Task (web-mobile) Finished`。正常主页真实点击契约既有 `13/13`：20 页 × 10 关、连续 19 次下一页、第 20 页进入 1200、返回主页后再进选关重置第 1 页。1001/1100/1200 既有真实拖放/开战和产兵验证保持通过。Creator CLI 仍因 extension-manager `ECONNRESET` 以已知码 36 退出，但资源和脚本构建任务已完成 |
-| Creator project open | Pass | 本轮检测到既有 Creator 3.8.8 工程会话 PID `4363`，未终止或修改该交互会话；另启动一次有界 CLI 构建完成 H13 资源导入和 Web 产物，命令自行退出 |
+| Asset metadata | Pass | 184 asset files，missing meta `0`；新增 `MockAdvertisement.ts`、`OutOfBattleConfig.ts`、`SpecialModeRuntime.ts` 与 `special-modes.json` 已由 Creator 3.8.8 正式导入，既有音频、SpriteFrame、Spine 资源保持可加载 |
+| TypeScript | Pass (project scripts) | 2026-08-11 使用 Creator 3.8.8 随附 TypeScript、工程 `tsconfig.json`、`--noEmit` 与 `--skipLibCheck true` 检查通过；不抑制项目脚本错误 |
+| Web build smoke | Pass (actual 200-level + activity + mock-ad artifact) | 2026-08-11 14:43 的新鲜 `web-mobile` 产物完成。750×1334 真实画布验证体力模拟广告成功后体力 `40→50`、计数 `1→2`；取消场景体力保持 `50`、计数保持 `2`，warning/error `0`。正常主页、活动战斗以及 1001/1100/1200 既有验证保持通过。Creator extension-manager 的 `ECONNRESET` 不影响本地脚本、资源或构建任务 |
+| Creator project open | Pass | 使用 Creator 3.8.8 隐藏 CLI 完成两次有界 Web Mobile 构建；首次发现每日挑战返回缺口，修复后的增量构建 7 秒完成且命令自行退出。未发现或终止用户既有 Creator 会话 |
 | Main startup rendering | Pass | 修复同节点重复 Renderable2D 后，显式 Main UUID 预览显示完整布阵首屏且无新增同类警告 |
 | Post-change interactive preview | Partial | 五级候选、棋盘和产兵显式夹具已完成实机截图与日志验证，并修复战斗 `BackpackPanel` 遮挡战场回归；仍需用有证据的账号星级执行正常拖拽融合完整点击测试 |
 | Original visual references | Pass (reference only) | 4 张：初始准备、发展后准备、第 1 波战斗、特性三选一；清单见目标目录 `evidence/visual/original/2026-08-01/manifest.json` |

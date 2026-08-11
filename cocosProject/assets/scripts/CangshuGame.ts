@@ -74,15 +74,18 @@ import {
     applyWorkerPower,
     BATTLE_SPEED_UP_MULTIPLE,
     connectedGearUidsAtCoreSide,
+    gearRotationAngleDegrees,
     HAMSTER_SPAWN_FLIGHT_SECONDS,
     isGearDirectlyAdjacentToCore,
     P01_ROUND_START_PRODUCTIVITY_SECONDS,
     p01RoundStartProductivity,
+    POWER_CONTACT_DELAY_SECONDS,
     POWER_QUARTER_LAP_SECONDS,
     powerContactsByGear,
     productionRatePerSecond,
     resolveProducerAttributeScales,
     resolveWorkerPowerPerTrigger,
+    unitPresentationBackToFront,
     WORKER_COMPLETE_ANIMATION_SECONDS,
 } from './BattlefieldProduction';
 import {
@@ -166,7 +169,7 @@ import {
     candidateDrawIds,
     drawDynamicCandidateBatch,
     displacedPlacementUids,
-    gearDropHitsTarget,
+    gearMergeTargetScore,
     placementAreaValid,
     placementCells,
     shouldUseStaticCandidateBatch,
@@ -233,6 +236,38 @@ import {
     PlayableLevelCard,
 } from './MainLevelFlow';
 import {
+    OUT_OF_BATTLE_BOX_EXP_PER_DRAW,
+    OUT_OF_BATTLE_BOX_LEVEL_MAX,
+    OUT_OF_BATTLE_BOX_ONE_DRAW_DIAMONDS,
+    OUT_OF_BATTLE_BOX_TEN_DRAW_DIAMONDS,
+    OUT_OF_BATTLE_DAILY_CHALLENGE_COST_ENERGY,
+    OUT_OF_BATTLE_DAILY_CHALLENGE_TIMES,
+    OUT_OF_BATTLE_DAILY_EFFECTS,
+    OUT_OF_BATTLE_DAILY_INSTANCES,
+    OUT_OF_BATTLE_DAILY_REWARD_ROUNDS,
+    OUT_OF_BATTLE_DAILY_RULES,
+    OUT_OF_BATTLE_DAILY_ACTIVE_REWARDS,
+    OUT_OF_BATTLE_DAILY_SHOP_AD_REFRESH_MAX,
+    OUT_OF_BATTLE_DAILY_TASKS,
+    OUT_OF_BATTLE_ENDLESS,
+    OUT_OF_BATTLE_GAMEPLAYS,
+    OUT_OF_BATTLE_POWER_LEVEL_ONE_COST,
+    OUT_OF_BATTLE_POWER_ROLES,
+    OUT_OF_BATTLE_POWER_STAR_MAX,
+    OUT_OF_BATTLE_POWER_STAR_ZERO_COST,
+    OUT_OF_BATTLE_SEVEN_DAY_REWARDS,
+    OUT_OF_BATTLE_SHOP_GOODS,
+    OUT_OF_BATTLE_SHOP_NAMES,
+    OUT_OF_BATTLE_TABS,
+    OutOfBattlePowerRole,
+    OutOfBattleShopGood,
+    OutOfBattleTabName,
+    outOfBattlePowerAbilities,
+    outOfBattleSystemUnlockLevel,
+    outOfBattleSystemUnlocked,
+    purchaseOutOfBattleShopGood,
+} from './OutOfBattleConfig';
+import {
     advanceEnemySpecialCast,
     assassinateDestination,
     buildNormalLevelRuntimeConfig,
@@ -245,6 +280,40 @@ import {
     resolveNormalRoundCompletion,
     selectFarthestEnemySkillTarget,
 } from './NormalLevelRuntime';
+import {
+    canStartSpecialMode,
+    claimDailyMilestone,
+    currentDailyInstance,
+    currentDailyRotation,
+    dailyEnemyDamageResistance,
+    dailyEnemyMoveMultiplier,
+    dailyExtraRoundId,
+    dailyHeroAttackMultiplier,
+    dailyProductionCount,
+    dailyRefreshCost,
+    dailyRewardForProgress,
+    loadSpecialModeState,
+    mergeDailyRound,
+    saveSpecialModeState,
+    settleDailyChallenge,
+    settleEndlessChallenge,
+    SpecialMode,
+    SpecialModeState,
+    SpecialModeTable,
+    spendSpecialModeEnergy,
+} from './SpecialModeRuntime';
+import {
+    canClaimMockShopEnergy,
+    completeMockAdvertisement,
+    loadMockAdvertisementState,
+    MockAdvertisementState,
+    MockAdOutcome,
+    MockAdPlacement,
+    mockAdvertisementOutcomeFromSearch,
+    mockAdvertisementPlacementCount,
+    mockAdvertisementPlacementLabel,
+    saveMockAdvertisementState,
+} from './MockAdvertisement';
 
 const { ccclass, property } = _decorator;
 
@@ -587,6 +656,7 @@ type UnitConfig = {
     color: Color;
     attrs?: Partial<Attributes>;
     boss?: boolean;
+    monsterType?: string;
     gold?: number;
     exp?: number;
     productionGearId?: string;
@@ -628,6 +698,8 @@ type LevelTableRow = {
     name: string;
     fightscene: string;
     homeHp: number;
+    enemyHomeHp?: number;
+    enemyHomeGold?: number;
     atkMultiple: number;
     hpMultiple: number;
     roundIds: number[];
@@ -675,6 +747,10 @@ type Gear = {
     workerPower: number;
     location: GearLocation;
     candidateIndex: number;
+    rotationElapsed: number;
+    rotationDuration: number;
+    rotationActive: boolean;
+    rotationTriggerCount: number;
 };
 
 type BattleUnit = {
@@ -682,6 +758,7 @@ type BattleUnit = {
     team: Team;
     cfg: UnitConfig;
     node: Node;
+    shadow: Node;
     hpGraphics: Graphics;
     fallback: Graphics;
     skeleton: sp.Skeleton | null;
@@ -805,6 +882,7 @@ const DESIGN_HEIGHT = 1334;
 const HOME_X = 345;
 const UNIT_Y_LIMIT = 110;
 const GRID_CELL = 100;
+const LONG_RUN_VALIDATION_SPEED = 90;
 const GRID_FACE_SIZE = 84;
 const GRID_TOP = 252;
 const GRID_LEFT = -300;
@@ -1417,9 +1495,14 @@ const ACCOUNT_HERO_NAMES: Readonly<Record<BagLikeAccountHeroFamily, string>> = {
     H02: '仓鼠射手',
     H03: '仓鼠法师',
     H04: '仓鼠骑士',
+    H05: '仓鼠召唤师',
+    H06: '仓鼠飞行员',
     H11: '治疗齿轮',
     H12: '雷云齿轮',
     H13: '火炮齿轮',
+    H14: '鲨鱼齿轮',
+    H16: '仓鼠怪兽',
+    H17: '镭射齿轮',
 };
 
 @ccclass('CangshuGame')
@@ -1472,16 +1555,38 @@ export class CangshuGame extends Component {
     private initialized = false;
     private accountProfile!: BagLikeAccountProfile;
     private accountDefaultProfile!: BagLikeAccountProfile;
+    private longRunOriginalAccountProfile: BagLikeAccountProfile | null = null;
     private claimedAccountRewardRounds = new Set<number>();
     private accountRewardsThisAttempt: BagLikeLevelAccountReward[] = [];
     private accountUnlockedThisAttempt: BagLikeAccountHeroFamily[] = [];
     private validationHeroStarOverrides: Partial<Record<BagLikeAccountHeroFamily, number>> | null = null;
     private originalFont: TTFFont | null = null;
     private levelTable: NormalLevelTable | null = null;
+    private specialModeTable: SpecialModeTable | null = null;
+    private specialModeState!: SpecialModeState;
+    private mockAdvertisementState!: MockAdvertisementState;
+    private mockAdvertisementBusy = false;
+    private mockAdvertisementPlacement = '';
+    private mockAdvertisementOutcome: MockAdOutcome = 'completed';
+    private mockAdvertisementPreviousPaused = false;
+    private battleMode: SpecialMode = 'normal';
+    private dailyBuffIds: string[] = [];
+    private enemyHomeHp = 0;
+    private enemyHomeMaxHp = 0;
+    private enemyHomeGold = 0;
+    private specialKillCount = 0;
+    private specialDropGold = 0;
+    private specialBattleElapsed = 0;
     private levelSelectionPage = 0;
     private levelName = '';
     private levelCatalog: LevelTableRow[] = [];
     private levelSelectPage = 0;
+    private cultivationPage = 0;
+    private accountHeroPage = 0;
+    private shopSectionId: 101 | 102 | 103 | 104 = 101;
+    private selectedDailyInstanceIndex = 0;
+    private outOfBattleMusicVolume = 1;
+    private outOfBattleSoundVolume = 1;
     private levelBackground = '';
     private baseLevelHomeHp = 500;
     private levelHomeHp = 500;
@@ -1558,9 +1663,15 @@ export class CangshuGame extends Component {
     private workerApplyCount = 0;
     private powerMissingGearCount = 0;
     private powerMissingConfigCount = 0;
-    private speed: 1 | typeof BATTLE_SPEED_UP_MULTIPLE = 1;
+    private speed = 1;
     private paused = false;
     private failedAttempts = 0;
+    private longRunAutomationTimer = 0;
+    private longRunElapsedSeconds = 0;
+    private longRunRetries = 0;
+    private longRunMaxSelfUnits = 0;
+    private longRunMaxEnemyUnits = 0;
+    private longRunStatus = 'disabled';
     private bagLikeLevel = 1;
     private bagLikeExp = 0;
     private traitRerollsUsed = 0;
@@ -1595,6 +1706,7 @@ export class CangshuGame extends Component {
     private effectGraphics!: Graphics;
     private gridGraphics!: Graphics;
     private selfHomeGraphics!: Graphics;
+    private enemyHomeGraphics!: Graphics;
     private backpackHpGraphics!: Graphics;
     private expGraphics!: Graphics;
     private phaseLabel!: Label;
@@ -1625,6 +1737,7 @@ export class CangshuGame extends Component {
     private tipLabel!: Label;
     private dragGear: Gear | null = null;
     private dragOrigin = { row: 0, col: 0, x: 0, y: 0, scale: 1, location: 'grid' as GearLocation };
+    private dragTouchOffset = { x: 0, y: 0 };
 
     onLoad(): void {
         view.setDesignResolutionSize(DESIGN_WIDTH, DESIGN_HEIGHT, ResolutionPolicy.SHOW_ALL);
@@ -1667,14 +1780,29 @@ export class CangshuGame extends Component {
             }
             try {
                 this.levelTable = asset.json as unknown as NormalLevelTable;
-                // Existing browser evidence URLs keep opening their exact battle
-                // fixture. A normal launch now enters the reconstructed main flow.
-                const search = typeof window === 'undefined' ? '' : window.location.search;
-                const directLevelId = directBootLevelId(search, this.levelId);
-                this.levelId = directLevelId ?? this.levelId;
-                if (!this.loadAccountProfile()) return;
-                if (directLevelId !== null) this.launchLevel(directLevelId);
-                else this.showMainScene();
+                resources.load('data/special-modes', JsonAsset, (specialError, specialAsset) => {
+                    if (specialError || !specialAsset) {
+                        this.showLoadError(`活动关卡表加载失败：${specialError?.message || 'missing data/special-modes'}`);
+                        return;
+                    }
+                    this.specialModeTable = specialAsset.json as unknown as SpecialModeTable;
+                    // Existing browser evidence URLs keep opening their exact battle
+                    // fixture. A normal launch now enters the reconstructed main flow.
+                    const search = typeof window === 'undefined' ? '' : window.location.search;
+                    const directLevelId = directBootLevelId(search, this.levelId);
+                    this.levelId = directLevelId ?? this.levelId;
+                    if (!this.loadAccountProfile()) return;
+                    this.specialModeState = loadSpecialModeState(sys.localStorage);
+                    saveSpecialModeState(sys.localStorage, this.specialModeState);
+                    this.mockAdvertisementState = loadMockAdvertisementState(sys.localStorage);
+                    saveMockAdvertisementState(sys.localStorage, this.mockAdvertisementState);
+                    const longRunMode = this.longRunRequestedMode();
+                    if (longRunMode) {
+                        this.showMainScene();
+                        this.beginSpecialBattle(longRunMode);
+                    } else if (directLevelId !== null) this.launchLevel(directLevelId);
+                    else this.showMainScene();
+                });
             } catch (levelError) {
                 console.error('[cangshu] initialization failed', levelError);
                 this.showLoadError(levelError instanceof Error ? levelError.message : String(levelError));
@@ -1685,6 +1813,8 @@ export class CangshuGame extends Component {
     private launchLevel(levelId: number): void {
         if (!this.levelTable) throw new Error('关卡表尚未加载');
         this.resetLevelSession();
+        this.battleMode = 'normal';
+        this.longRunOriginalAccountProfile = null;
         this.destroyRootChildren();
         this.levelId = levelId;
         this.configureLevel(this.levelTable);
@@ -1729,6 +1859,161 @@ export class CangshuGame extends Component {
         this.refreshUi();
     }
 
+    private beginSpecialBattle(mode: Exclude<SpecialMode, 'normal'>): void {
+        if (!this.levelTable || !this.specialModeTable) return;
+        this.specialModeState = loadSpecialModeState(sys.localStorage);
+        const eligibility = canStartSpecialMode(this.specialModeState, this.accountProfile, mode);
+        if (!eligibility.allowed) {
+            const message = eligibility.reason === 'attempts' ? '今日挑战次数已用完' : `体力不足，需要 5 点体力`;
+            if (mode === 'daily') this.showDailyInstanceScene(message);
+            else this.showEndlessModeScene(message);
+            return;
+        }
+        if (eligibility.needsAd) {
+            this.playMockAdvertisement('endless-third', () => this.startSpecialBattle(mode, true), (outcome) => {
+                this.showEndlessModeScene(outcome === 'cancelled' ? '模拟广告已取消，本次未扣体力和挑战次数' : '模拟广告播放失败，本次未扣体力和挑战次数');
+            });
+            return;
+        }
+        this.startSpecialBattle(mode, false);
+    }
+
+    private startSpecialBattle(mode: Exclude<SpecialMode, 'normal'>, watchedAdvertisement: boolean): void {
+        if (!this.levelTable || !this.specialModeTable) return;
+        this.accountProfile = spendSpecialModeEnergy(this.accountProfile);
+        this.persistAccountProfile(false);
+        this.resetLevelSession();
+        this.battleMode = mode;
+        if (this.longRunLateProgressionEnabled()) {
+            // Validation account only: run every recovered star modifier through
+            // the normal account/profile formulas without persisting the preset.
+            this.longRunOriginalAccountProfile = cloneBagLikeAccountProfile(this.accountProfile);
+            this.accountProfile = setAllBagLikeAccountHeroStars(this.accountProfile, 20);
+            this.syncAccountProfileToRuntime(false);
+        } else {
+            this.longRunOriginalAccountProfile = null;
+        }
+        this.destroyRootChildren();
+        this.configureSpecialMode(mode);
+        this.buildScene();
+        this.initGrid();
+        this.addPlacedGear('P01', 2, 3);
+        this.dealPreparationBatch();
+        this.applyPhaseLayout();
+        this.initialized = true;
+        this.tipLabel.string = watchedAdvertisement
+            ? '本地模拟广告已完成：第 3 次无尽挑战开始'
+            : mode === 'daily' ? '每日挑战：增益与减益已生效' : '无尽试炼：300 秒内尽可能击杀敌人';
+        this.refreshUi();
+    }
+
+    private playMockAdvertisement(
+        placement: MockAdPlacement,
+        onCompleted: () => void,
+        onRejected?: (outcome: Exclude<MockAdOutcome, 'completed'>) => void,
+    ): void {
+        if (this.mockAdvertisementBusy) return;
+        const outcome = mockAdvertisementOutcomeFromSearch(typeof window === 'undefined' ? '' : window.location.search);
+        this.mockAdvertisementBusy = true;
+        this.mockAdvertisementPlacement = placement;
+        this.mockAdvertisementOutcome = outcome;
+        this.mockAdvertisementPreviousPaused = this.paused;
+        this.paused = true;
+        this.syncBrowserContractState();
+
+        const overlay = this.makeNode('MockAdvertisementOverlay', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        const shade = overlay.addComponent(Graphics);
+        shade.fillColor = new Color(4, 8, 14, 230);
+        shade.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
+        shade.fill();
+        const panel = this.makeNode('MockAdvertisementPanel', overlay, 0, 0, 620, 430);
+        const panelGraphics = panel.addComponent(Graphics);
+        panelGraphics.fillColor = new Color(31, 48, 71, 255);
+        panelGraphics.roundRect(-310, -215, 620, 430, 28);
+        panelGraphics.fill();
+        panelGraphics.strokeColor = GOLD;
+        panelGraphics.lineWidth = 4;
+        panelGraphics.roundRect(-308, -213, 616, 426, 26);
+        panelGraphics.stroke();
+        this.makeLabel('MockAdvertisementTitle', panel, 0, 142, 540, 58, '本地模拟广告', 38, GOLD);
+        this.makeLabel('MockAdvertisementPlacement', panel, 0, 66, 540, 48,
+            mockAdvertisementPlacementLabel(placement), 23, WHITE);
+        const statusText = outcome === 'completed'
+            ? '正在播放测试广告…\n完成后才会发放奖励或进入挑战'
+            : outcome === 'cancelled' ? '测试场景：模拟用户取消广告' : '测试场景：模拟广告加载失败';
+        this.makeLabel('MockAdvertisementStatus', panel, 0, -20, 540, 90, statusText, 19, CREAM);
+        this.makeLabel('MockAdvertisementTag', panel, 0, -151, 540, 36,
+            'MOCK · 不请求网络 · 可替换微信激励视频接口', 15, new Color(150, 181, 211, 255));
+
+        let finished = false;
+        const finish = (): void => {
+            if (finished) return;
+            finished = true;
+            if (overlay.isValid) overlay.destroy();
+            this.mockAdvertisementBusy = false;
+            this.paused = this.mockAdvertisementPreviousPaused;
+            if (outcome === 'completed') {
+                this.mockAdvertisementState = completeMockAdvertisement(this.mockAdvertisementState, placement);
+                saveMockAdvertisementState(sys.localStorage, this.mockAdvertisementState);
+                this.syncBrowserContractState();
+                onCompleted();
+                return;
+            }
+            this.syncBrowserContractState();
+            if (onRejected) onRejected(outcome);
+        };
+        // Out-of-battle pages intentionally keep the battle component inactive,
+        // so use the host timer here instead of Cocos' component scheduler.
+        setTimeout(finish, outcome === 'completed' ? 800 : 550);
+    }
+
+    private configureSpecialMode(mode: Exclude<SpecialMode, 'normal'>): void {
+        if (!this.levelTable || !this.specialModeTable) return;
+        registerRecoveredNormalEnemies(this.levelTable.monsters);
+        const progressId = Math.max(1001, Math.min(1200, this.accountProfile.maxPassedLevelId));
+        const progress = this.levelTable.levels.find((row) => row.id === progressId) || this.levelTable.levels[0];
+        this.levelId = progress.id;
+        this.levelAtkMultiple = progress.atkMultiple;
+        this.levelHpMultiple = progress.hpMultiple;
+        this.baseLevelHomeHp = progress.homeHp;
+        this.levelHomeHp = progress.homeHp;
+        this.selfHp = progress.homeHp;
+        this.staticBuffsByLevel = new Map();
+        this.staticBatches = [];
+        this.enemyHomeHp = 0;
+        this.enemyHomeMaxHp = 0;
+        this.enemyHomeGold = 0;
+        this.dailyBuffIds = [];
+        if (mode === 'daily') {
+            const instance = currentDailyInstance(this.specialModeTable);
+            const rotation = currentDailyRotation(this.specialModeTable);
+            this.levelName = `每日挑战·${instance.name}`;
+            this.levelBackground = instance.fightscene.split('/').pop() || 'fightscene_01';
+            this.initialGold = this.specialModeTable.daily.initCoin;
+            this.gold = this.initialGold;
+            this.dailyBuffIds = [...rotation.buffIds];
+            this.rounds = instance.roundIds.map((id, index) => {
+                const base = this.specialModeTable!.rounds[String(id)];
+                const extraId = dailyExtraRoundId(this.dailyBuffIds, index);
+                const merged = mergeDailyRound(base, extraId === null ? null : this.specialModeTable!.rounds[String(extraId)]);
+                return { id: merged.id, times: [...merged.monsterTimes], monsters: [...merged.monsterIds], atkMultiple: merged.atkMultiple, hpMultiple: merged.hpMultiple };
+            });
+            this.roundCoinRewards = this.rounds.map(() => 20);
+        } else {
+            const row = this.specialModeTable.rounds['400001'];
+            this.levelName = '无尽试炼';
+            this.levelBackground = 'fightscene_03';
+            this.initialGold = 300;
+            this.gold = this.initialGold;
+            this.rounds = [{ id: row.id, times: [...row.monsterTimes], monsters: [...row.monsterIds], atkMultiple: row.atkMultiple, hpMultiple: row.hpMultiple }];
+            this.roundCoinRewards = [0];
+            this.enemyHomeHp = Math.max(1, progress.enemyHomeHp || progress.homeHp);
+            this.enemyHomeMaxHp = this.enemyHomeHp;
+            this.enemyHomeGold = Math.max(0, progress.enemyHomeGold || 0);
+        }
+        this.syncBrowserContractState();
+    }
+
     private showMainScene(): void {
         profiler.hideStats();
         this.resetLevelSession();
@@ -1767,8 +2052,625 @@ export class CangshuGame extends Component {
         this.restyleButton(continueBattle, new Color(48, 172, 139, 255), new Color(213, 255, 237, 255));
         continueBattle.fontSize = 28;
 
-        this.makeLabel('MainProgress', root, 0, -280, 620, 44, '机制与数据关卡 200 / 200', 22, WHITE);
-        this.makeLabel('MainEvidenceNotice', root, 0, -345, 650, 88, '全部关卡已接入原始波次与数值表\n缺失敌人美术暂以机制占位显示', 18, CREAM);
+        this.makeLabel('MainProgress', root, 0, -270, 620, 44, '机制与数据关卡 200 / 200', 22, WHITE);
+        this.makeLabel('MainEvidenceNotice', root, 0, -340, 650, 76, '全部关卡已接入原始波次与数值表\n缺失敌人美术暂以机制占位显示', 18, CREAM);
+        this.buildOutOfBattleResourceHeader(root, '主界面');
+        const dailyTask = this.makeButton('MainDailyTask', root, -225, -445, 190, 62, '每日任务', () => this.showDailyTaskScene());
+        this.restyleButton(dailyTask, new Color(43, 99, 132, 255), WHITE);
+        const sevenDay = this.makeButton('MainSevenDay', root, 0, -445, 190, 62, '七天登录', () => this.showSevenDayScene());
+        this.restyleButton(sevenDay, new Color(129, 77, 154, 255), WHITE);
+        const settings = this.makeButton('MainSettings', root, 225, -445, 190, 62, '设置', () => this.showSettingsScene());
+        this.restyleButton(settings, new Color(65, 72, 83, 255), WHITE);
+        this.buildMainBottomNavigation(root, '战斗');
+    }
+
+    private buildOutOfBattleResourceHeader(parent: Node, pageTitle: string): void {
+        const header = this.makeNode('OutOfBattleResourceHeader', parent, 0, 622, 720, 74);
+        const graphics = header.addComponent(Graphics);
+        graphics.fillColor = new Color(18, 29, 42, 242);
+        graphics.roundRect(-360, -37, 720, 74, 20);
+        graphics.fill();
+        graphics.strokeColor = new Color(98, 128, 162, 255);
+        graphics.lineWidth = 2;
+        graphics.roundRect(-358, -35, 716, 70, 18);
+        graphics.stroke();
+        this.makeLabel('OutOfBattlePageName', header, -270, 0, 150, 42, pageTitle, 22, GOLD);
+        this.makeLabel('OutOfBattleWallet', header, 105, 0, 540, 42,
+            `体力 ${this.accountProfile.energy}　金币 ${this.accountProfile.gold}　钻石 ${this.accountProfile.diamonds}　观影券 --`,
+            17, WHITE);
+    }
+
+    private buildMainBottomNavigation(parent: Node, active: OutOfBattleTabName): void {
+        const bar = this.makeNode('MainBottomNavigation', parent, 0, -610, 750, 108);
+        const background = bar.addComponent(Graphics);
+        background.fillColor = new Color(18, 29, 42, 248);
+        background.roundRect(-375, -54, 750, 108, 24);
+        background.fill();
+        background.strokeColor = new Color(99, 130, 169, 255);
+        background.lineWidth = 3;
+        background.roundRect(-373, -52, 746, 104, 22);
+        background.stroke();
+
+        const openTab: Record<OutOfBattleTabName, () => void> = {
+            商店: () => this.showShopScene(),
+            角色: () => this.showRoleScene(),
+            战斗: () => this.showMainScene(),
+            培养: () => this.showCultivationScene(),
+            活动: () => this.showActivityScene(),
+        };
+        const tabs = OUT_OF_BATTLE_TABS.map((tab) => ({ ...tab, open: openTab[tab.name] }));
+        tabs.forEach((tab, index) => {
+            const selected = tab.name === active;
+            const unlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, tab.systemId);
+            const label = this.makeButton(`MainTab_${tab.name}`, bar, -300 + index * 150, 0, 136, 76, tab.name, tab.open);
+            this.restyleButton(
+                label,
+                selected ? new Color(211, 145, 38, 255) : new Color(40, 61, 83, 255),
+                unlocked ? WHITE : new Color(177, 186, 199, 255),
+            );
+            label.fontSize = selected ? 24 : 21;
+            label.node.parent!.getComponent(Button)!.interactable = !selected;
+        });
+    }
+
+    private createOutOfBattleScene(sceneName: string, backgroundName: string, pageTitle: string): Node {
+        profiler.hideStats();
+        this.resetLevelSession();
+        this.destroyRootChildren();
+        const root = this.makeNode(sceneName, this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        this.addMenuBackground(root, backgroundName);
+        const shade = this.makeNode(`${sceneName}Shade`, root, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        const graphics = shade.addComponent(Graphics);
+        graphics.fillColor = new Color(12, 20, 30, 218);
+        graphics.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
+        graphics.fill();
+        this.buildOutOfBattleResourceHeader(root, pageTitle);
+        return root;
+    }
+
+    private loadOutOfBattleAudioSettings(): void {
+        const clampVolume = (value: string | null): number => {
+            const parsed = value === null ? 1 : Number(value);
+            return Number.isFinite(parsed) ? Math.max(0, Math.min(1, parsed)) : 1;
+        };
+        this.outOfBattleMusicVolume = clampVolume(sys.localStorage.getItem('hamsterBattle.musicVolume'));
+        this.outOfBattleSoundVolume = clampVolume(sys.localStorage.getItem('hamsterBattle.soundVolume'));
+        this.applyOutOfBattleSoundVolume();
+    }
+
+    private applyOutOfBattleSoundVolume(): void {
+        this.node.getComponents(AudioSource).forEach((source) => {
+            source.volume = this.outOfBattleSoundVolume;
+        });
+    }
+
+    private adjustOutOfBattleAudio(kind: 'music' | 'sound', delta: number): void {
+        if (kind === 'music') {
+            this.outOfBattleMusicVolume = Math.max(0, Math.min(1, this.outOfBattleMusicVolume + delta));
+            sys.localStorage.setItem('hamsterBattle.musicVolume', this.outOfBattleMusicVolume.toFixed(2));
+        } else {
+            this.outOfBattleSoundVolume = Math.max(0, Math.min(1, this.outOfBattleSoundVolume + delta));
+            sys.localStorage.setItem('hamsterBattle.soundVolume', this.outOfBattleSoundVolume.toFixed(2));
+            this.applyOutOfBattleSoundVolume();
+        }
+        this.showSettingsScene();
+    }
+
+    private showSettingsScene(): void {
+        this.loadOutOfBattleAudioSettings();
+        const root = this.createOutOfBattleScene('SettingsScene', 'fightscene_01', '设置');
+        this.makeLabel('SettingsTitle', root, 0, 550, 620, 58, '设置', 40, GOLD);
+        this.makeLabel('SettingsHint', root, 0, 502, 700, 40,
+            '原包 SettingMainView：音乐、音效、兑换码、反馈与账号 ID', 18, CREAM);
+
+        const makeVolumeRow = (kind: 'music' | 'sound', y: number, title: string, value: number): void => {
+            const row = this.makeNode(`Settings_${kind}`, root, 0, y, 660, 126);
+            const graphics = row.addComponent(Graphics);
+            graphics.fillColor = new Color(31, 48, 71, 247);
+            graphics.roundRect(-330, -63, 660, 126, 22);
+            graphics.fill();
+            graphics.strokeColor = new Color(103, 147, 187, 255);
+            graphics.lineWidth = 3;
+            graphics.roundRect(-328, -61, 656, 122, 20);
+            graphics.stroke();
+            this.makeLabel(`Settings_${kind}_Title`, row, -225, 0, 150, 44, title, 24, WHITE);
+            const minus = this.makeButton(`Settings_${kind}_Minus`, row, -68, 0, 72, 54, '－', () => this.adjustOutOfBattleAudio(kind, -0.25));
+            const plus = this.makeButton(`Settings_${kind}_Plus`, row, 250, 0, 72, 54, '＋', () => this.adjustOutOfBattleAudio(kind, 0.25));
+            minus.node.parent!.getComponent(Button)!.interactable = value > 0;
+            plus.node.parent!.getComponent(Button)!.interactable = value < 1;
+            this.makeLabel(`Settings_${kind}_Value`, row, 90, 0, 220, 50, `${Math.round(value * 100)}%`, 26, GOLD);
+        };
+        makeVolumeRow('music', 365, '音乐音量', this.outOfBattleMusicVolume);
+        makeVolumeRow('sound', 205, '音效音量', this.outOfBattleSoundVolume);
+
+        const code = this.makeButton('SettingsCode', root, -180, 25, 300, 68, '兑换码', () => undefined);
+        const feedback = this.makeButton('SettingsFeedback', root, 180, 25, 300, 68, '问题反馈', () => undefined);
+        this.restyleButton(code, new Color(68, 75, 88, 255), new Color(168, 174, 186, 255));
+        this.restyleButton(feedback, new Color(68, 75, 88, 255), new Color(168, 174, 186, 255));
+        code.node.parent!.getComponent(Button)!.interactable = false;
+        feedback.node.parent!.getComponent(Button)!.interactable = false;
+        this.makeLabel('SettingsUnavailable', root, 0, -85, 700, 96,
+            '兑换码领取记录与反馈能力依赖平台/服务器，当前只保留真实入口，不本地伪造领取', 17, CREAM);
+        this.makeLabel('SettingsAccount', root, 0, -205, 700, 74,
+            '账号 ID：--\n原包在联网存档返回 UID 后显示并支持复制', 18, WHITE);
+        const close = this.makeButton('SettingsClose', root, 0, -350, 260, 66, '关闭', () => this.showMainScene());
+        this.restyleButton(close, new Color(43, 99, 132, 255), WHITE);
+        this.buildMainBottomNavigation(root, '战斗');
+    }
+
+    private showShopScene(message = ''): void {
+        this.mockAdvertisementState = loadMockAdvertisementState(sys.localStorage);
+        const root = this.createOutOfBattleScene('ShopScene', 'fightscene_02', '商店');
+        this.makeLabel('ShopTitle', root, 0, 550, 620, 58, '商店', 40, GOLD);
+        const shopUnlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, 'SHOP');
+        const shopUnlockLevel = outOfBattleSystemUnlockLevel('SHOP')! - 1000;
+        this.makeLabel('ShopUnlockHint', root, 0, 507, 690, 36,
+            shopUnlocked ? '商品与价格来自原包 ShopConfig / ShopGoodsConfig' : `通关第${shopUnlockLevel}关后开放 · 当前为配置预览`,
+            17, CREAM);
+
+        const sectionIds: Array<101 | 102 | 103 | 104> = [101, 102, 103, 104];
+        sectionIds.forEach((shopId, index) => {
+            const selected = shopId === this.shopSectionId;
+            const tab = this.makeButton(`ShopSection_${shopId}`, root, -270 + index * 180, 455, 168, 56,
+                OUT_OF_BATTLE_SHOP_NAMES[shopId], () => {
+                    this.shopSectionId = shopId;
+                    this.showShopScene();
+                });
+            this.restyleButton(tab, selected ? new Color(211, 145, 38, 255) : new Color(45, 69, 91, 255), WHITE);
+            tab.node.parent!.getComponent(Button)!.interactable = !selected;
+        });
+
+        const goods = OUT_OF_BATTLE_SHOP_GOODS.filter((good) => good.shopId === this.shopSectionId);
+        goods.forEach((good, index) => {
+            const column = index % 2;
+            const row = Math.floor(index / 2);
+            const card = this.makeNode(`ShopGood_${good.id}`, root, column === 0 ? -183 : 183, 285 - row * 285, 340, 244);
+            const cardGraphics = card.addComponent(Graphics);
+            cardGraphics.fillColor = new Color(31, 48, 71, 247);
+            cardGraphics.roundRect(-170, -122, 340, 244, 22);
+            cardGraphics.fill();
+            const mockEnergyGood = good.id === 104002;
+            const mockEnergyAvailable = mockEnergyGood && canClaimMockShopEnergy(this.mockAdvertisementState);
+            cardGraphics.strokeColor = good.action === 'fixed' || mockEnergyAvailable ? new Color(92, 177, 154, 255) : new Color(107, 133, 166, 255);
+            cardGraphics.lineWidth = 3;
+            cardGraphics.roundRect(-168, -120, 336, 240, 20);
+            cardGraphics.stroke();
+            this.makeLabel(`ShopGoodId_${good.id}`, card, 0, 88, 300, 30, `${good.id}`, 14, new Color(146, 181, 216, 255));
+            this.makeLabel(`ShopGoodName_${good.id}`, card, 0, 52, 300, 38, good.name, 23, WHITE);
+            this.makeLabel(`ShopGoodReward_${good.id}`, card, 0, 12, 310, 34, good.rewardText, 20, GOLD);
+            this.makeLabel(`ShopGoodCost_${good.id}`, card, 0, -25, 310, 34, good.costText, 16, CREAM);
+            const supported = good.action === 'fixed' || mockEnergyAvailable;
+            const actionText = good.action === 'fixed' ? '购买'
+                : mockEnergyGood
+                  ? mockEnergyAvailable
+                      ? `模拟广告 ${mockAdvertisementPlacementCount(this.mockAdvertisementState, 'shop-energy')}/3`
+                      : '今日已领 3/3'
+                  : good.action === 'advertisement' ? '奖励池待恢复' : good.action === 'chest' ? '宝箱预览' : '状态待同步';
+            const action = this.makeButton(`ShopGoodAction_${good.id}`, card, 0, -82, 220, 52, actionText,
+                () => this.purchaseShopGood(good));
+            if (!supported || !shopUnlocked) {
+                this.restyleButton(action, new Color(68, 75, 88, 255), new Color(160, 166, 178, 255));
+                action.node.parent!.getComponent(Button)!.interactable = false;
+            }
+        });
+        const shopRule = this.shopSectionId === 101
+            ? `每日商店手动刷新上限 ${OUT_OF_BATTLE_DAILY_SHOP_AD_REFRESH_MAX} 次，配置中每次均为广告刷新`
+            : this.shopSectionId === 102
+              ? `单抽 ${OUT_OF_BATTLE_BOX_ONE_DRAW_DIAMONDS} 钻 / 十连 ${OUT_OF_BATTLE_BOX_TEN_DRAW_DIAMONDS} 钻 · 每抽宝箱经验 ${OUT_OF_BATTLE_BOX_EXP_PER_DRAW} · 最高 ${OUT_OF_BATTLE_BOX_LEVEL_MAX} 级`
+              : this.shopSectionId === 104
+                ? '体力广告每日限领 3 次；当前使用本地模拟广告并按自然日存档'
+                : '金币商店包含每日免费/广告档与固定钻石购买档';
+        this.makeLabel('ShopRule', root, 0, -340, 700, 64, shopRule, 16, GOLD);
+        this.makeLabel('ShopMessage', root, 0, -410, 700, 64,
+            message || '体力广告已接入本地模拟；随机奖励、免费商品和宝箱仍等待服务端奖励池', 17, message ? WHITE : CREAM);
+        this.buildMainBottomNavigation(root, '商店');
+    }
+
+    private purchaseShopGood(good: OutOfBattleShopGood): void {
+        if (!outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, 'SHOP')) {
+            this.showShopScene('请先通关第3关解锁商店');
+            return;
+        }
+        if (good.id === 104002) {
+            if (!canClaimMockShopEnergy(this.mockAdvertisementState)) {
+                this.showShopScene('今日 3 次模拟广告体力已经领取完毕');
+                return;
+            }
+            this.playMockAdvertisement('shop-energy', () => {
+                const next = cloneBagLikeAccountProfile(this.accountProfile);
+                next.energy += good.rewardEnergy || 0;
+                this.accountProfile = next;
+                this.persistAccountProfile(false);
+                this.showShopScene(`模拟广告完成：${good.rewardText}`);
+            }, (outcome) => {
+                this.showShopScene(outcome === 'cancelled' ? '模拟广告已取消，未发放体力且未消耗次数' : '模拟广告播放失败，未发放体力且未消耗次数');
+            });
+            return;
+        }
+        const result = purchaseOutOfBattleShopGood(this.accountProfile, good.id);
+        if (!result.purchased) {
+            this.showShopScene(result.reason === 'diamonds' ? `钻石不足，需要 ${good.costDiamonds || 0}` : '该商品依赖平台或服务器状态，当前不执行');
+            return;
+        }
+        const next = cloneBagLikeAccountProfile(this.accountProfile);
+        next.gold = result.wallet.gold;
+        next.energy = result.wallet.energy;
+        next.diamonds = result.wallet.diamonds;
+        this.accountProfile = next;
+        this.persistAccountProfile(false);
+        this.showShopScene(`购买成功：${good.rewardText}`);
+    }
+
+    private showActivityScene(): void {
+        const root = this.createOutOfBattleScene('ActivityScene', 'fightscene_03', '活动');
+        this.makeLabel('ActivityTitle', root, 0, 550, 620, 58, '活动', 40, GOLD);
+        const gameplayUnlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, 'GAMEPLAY');
+        this.makeLabel('ActivityHint', root, 0, 500, 700, 38,
+            gameplayUnlocked ? '玩法入口来自原包 GameplayConfig' : '通关第6关后开放 · 当前为配置预览', 18, CREAM);
+        OUT_OF_BATTLE_GAMEPLAYS.forEach((gameplay, index) => {
+            const x = -240 + index * 240;
+            const card = this.makeNode(`Gameplay_${gameplay.systemId}`, root, x, 230, 218, 300);
+            const graphics = card.addComponent(Graphics);
+            graphics.fillColor = new Color(31, 48, 71, 247);
+            graphics.roundRect(-109, -150, 218, 300, 22);
+            graphics.fill();
+            graphics.strokeColor = new Color(111, 145, 183, 255);
+            graphics.lineWidth = 3;
+            graphics.roundRect(-107, -148, 214, 296, 20);
+            graphics.stroke();
+            this.makeLabel(`GameplayName_${gameplay.id}`, card, 0, 96, 190, 48, gameplay.name, 23, GOLD);
+            this.makeLabel(`GameplayUnlock_${gameplay.id}`, card, 0, 42, 190, 38,
+                `第 ${gameplay.unlockLevel - 1000} 关开放`, 17, WHITE);
+            this.makeLabel(`GameplayReward_${gameplay.id}`, card, 0, -24, 190, 90,
+                `奖励/说明\n${gameplay.rewards}`, 16, CREAM);
+            const open = gameplay.systemId === 'ENDLESS_MODE'
+                ? () => this.showEndlessModeScene()
+                : gameplay.systemId === 'DAILY_INSTANCE'
+                  ? () => this.showDailyInstanceScene()
+                  : () => undefined;
+            const supported = gameplay.systemId !== 'OTHER_GAMES';
+            const preview = this.makeButton(`GameplayPreview_${gameplay.id}`, card, 0, -105, 172, 50,
+                supported ? '查看规则' : '资料不足', open);
+            this.restyleButton(preview,
+                supported ? new Color(43, 99, 132, 255) : new Color(68, 75, 88, 255),
+                supported ? WHITE : new Color(160, 166, 178, 255));
+            preview.node.parent!.getComponent(Button)!.interactable = supported;
+        });
+        const daily = this.makeButton('ActivityDailyTask', root, -170, -110, 280, 70, '每日任务', () => this.showDailyTaskScene());
+        this.restyleButton(daily, new Color(43, 99, 132, 255), WHITE);
+        const sevenDay = this.makeButton('ActivitySevenDay', root, 170, -110, 280, 70, '七天登录', () => this.showSevenDayScene());
+        this.restyleButton(sevenDay, new Color(129, 77, 154, 255), WHITE);
+        this.makeLabel('ActivityEvidence', root, 0, -285, 700, 120,
+            '无尽试炼 / 每日挑战 / 玩法合集的入口、开放关卡与奖励类型已恢复\n活动战斗、签到领取依赖缺失的服务器状态，因此不伪造结算', 17, CREAM);
+        this.buildMainBottomNavigation(root, '活动');
+    }
+
+    private showDailyInstanceScene(notice = ''): void {
+        if (!this.specialModeTable) return;
+        this.specialModeState = loadSpecialModeState(sys.localStorage);
+        const selectedRuntime = currentDailyInstance(this.specialModeTable);
+        const rotation = currentDailyRotation(this.specialModeTable);
+        const selected = OUT_OF_BATTLE_DAILY_INSTANCES.find((row) => row.id === selectedRuntime.id) || OUT_OF_BATTLE_DAILY_INSTANCES[0];
+        const rewardRow = dailyRewardForProgress(this.specialModeTable, this.accountProfile.maxPassedLevelId);
+        const unlocked = this.accountProfile.maxPassedLevelId >= 1010;
+        const eligibility = canStartSpecialMode(this.specialModeState, this.accountProfile, 'daily');
+        const root = this.createOutOfBattleScene('DailyInstanceScene', selected.fightScene, '每日挑战');
+        this.makeLabel('DailyInstanceTitle', root, 0, 550, 620, 58, '每日挑战', 40, GOLD);
+        this.makeLabel('DailyInstanceHint', root, 0, 505, 700, 38,
+            `今日第 ${rotation.id} 组 · 剩余 ${Math.max(0, 3 - this.specialModeState.daily.challengeTimes)}/3 次 · 每次体力 5`, 18, CREAM);
+
+        const detail = this.makeNode('DailyInstanceDetail', root, 0, 145, 690, 520);
+        const detailGraphics = detail.addComponent(Graphics);
+        detailGraphics.fillColor = new Color(31, 48, 71, 247);
+        detailGraphics.roundRect(-345, -260, 690, 520, 24);
+        detailGraphics.fill();
+        detailGraphics.strokeColor = new Color(111, 145, 183, 255);
+        detailGraphics.lineWidth = 3;
+        detailGraphics.roundRect(-343, -258, 686, 516, 22);
+        detailGraphics.stroke();
+        this.makeLabel('DailyInstanceName', detail, 0, 176, 620, 46, `${selected.id} · ${selected.name}`, 28, GOLD);
+        this.makeLabel('DailyInstanceRounds', detail, 0, 132, 620, 36,
+            `${selected.roundCount} 波 · 初始副本金币 ${selected.initialDailyGold}`, 18, WHITE);
+        rotation.buffIds.forEach((effectId, index) => {
+            const effect = OUT_OF_BATTLE_DAILY_EFFECTS[effectId];
+            const color = effect.buff ? new Color(128, 241, 165, 255) : new Color(255, 157, 142, 255);
+            this.makeLabel(`DailyInstanceEffect_${effectId}`, detail, 0, 72 - index * 66, 626, 58,
+                `${effect.buff ? '增益' : '减益'} · ${effect.name}：${effect.description}`, 16, color);
+        });
+        const ruleText = OUT_OF_BATTLE_DAILY_RULES.map((rule) => `${rule.title}：${rule.description}`).join('\n');
+        this.makeLabel('DailyInstanceRules', detail, 0, -190, 640, 104, ruleText, 15, CREAM);
+
+        this.makeLabel('DailyInstanceRewards', root, 0, -170, 700, 70,
+            `今日局内金币 ${this.specialModeState.daily.dailyGold} · 里程碑 ${rewardRow.rewardRounds.join(' / ')}`, 16, GOLD);
+        const startText = !unlocked ? '通关第10关开放'
+            : eligibility.reason === 'attempts' ? '今日次数已用完'
+              : eligibility.reason === 'energy' ? '体力不足'
+                : '开始每日挑战';
+        const start = this.makeButton('DailyInstanceStart', root, -205, -265, 280, 62, startText, () => this.beginSpecialBattle('daily'));
+        start.node.parent!.getComponent(Button)!.interactable = unlocked && eligibility.allowed;
+        this.restyleButton(start, unlocked && eligibility.allowed ? new Color(211, 145, 38, 255) : new Color(68, 75, 88, 255), WHITE);
+        const claim = this.makeButton('DailyInstanceClaim', root, 120, -265, 210, 62, '领取里程碑', () => this.claimAvailableDailyMilestones());
+        this.restyleButton(claim, new Color(45, 151, 92, 255), WHITE);
+        const back = this.makeButton('DailyInstanceBack', root, 285, -265, 105, 62, '返回', () => this.showActivityScene());
+        this.restyleButton(back, new Color(43, 99, 132, 255), WHITE);
+        this.makeLabel('DailyInstanceEvidence', root, 0, -345, 700, 80,
+            notice || '当天轮换、挑战次数、局内金币与里程碑领取均已接入本地日期存档', 16, CREAM);
+        this.buildMainBottomNavigation(root, '活动');
+    }
+
+    private claimAvailableDailyMilestones(): void {
+        if (!this.specialModeTable) return;
+        const rewardRow = dailyRewardForProgress(this.specialModeTable, this.accountProfile.maxPassedLevelId);
+        const messages: string[] = [];
+        for (let index = 0; index < rewardRow.rewardRounds.length; index += 1) {
+            const claim = claimDailyMilestone(this.specialModeState, this.accountProfile, rewardRow, index, Math.random);
+            if (!claim.claimed) continue;
+            this.specialModeState = claim.state;
+            this.accountProfile = claim.profile;
+            messages.push(claim.text);
+        }
+        saveSpecialModeState(sys.localStorage, this.specialModeState);
+        this.persistAccountProfile(false);
+        this.showDailyInstanceScene(messages.length > 0 ? `领取成功：${messages.join('；')}` : '当前没有可领取的里程碑奖励');
+    }
+
+    private showEndlessModeScene(notice = ''): void {
+        this.specialModeState = loadSpecialModeState(sys.localStorage);
+        const unlocked = this.accountProfile.maxPassedLevelId >= 1006;
+        const eligibility = canStartSpecialMode(this.specialModeState, this.accountProfile, 'endless');
+        const root = this.createOutOfBattleScene('EndlessModeScene', OUT_OF_BATTLE_ENDLESS.fightScene, '无尽试炼');
+        this.makeLabel('EndlessModeTitle', root, 0, 550, 620, 58, '无尽试炼', 40, GOLD);
+        this.makeLabel('EndlessModeHint', root, 0, 502, 700, 40, '原包 EndlessModeConfig / TrunkInstanceRoundConfig', 18, CREAM);
+        const panel = this.makeNode('EndlessModePanel', root, 0, 165, 680, 520);
+        const graphics = panel.addComponent(Graphics);
+        graphics.fillColor = new Color(31, 48, 71, 247);
+        graphics.roundRect(-340, -260, 680, 520, 28);
+        graphics.fill();
+        graphics.strokeColor = GOLD;
+        graphics.lineWidth = 4;
+        graphics.roundRect(-338, -258, 676, 516, 26);
+        graphics.stroke();
+        this.makeLabel('EndlessModeRound', panel, 0, 196, 610, 48,
+            `轮次 ${OUT_OF_BATTLE_ENDLESS.roundIds[0]} · ${OUT_OF_BATTLE_ENDLESS.recoveredSpawnCount} 个刷怪条目`, 21, GOLD);
+        this.makeLabel('EndlessModeRules', panel, 0, 65, 610, 210,
+            `每日挑战 ${OUT_OF_BATTLE_ENDLESS.dailyChallengeTimes} 次，跨天清零\n每次消耗体力 ${OUT_OF_BATTLE_ENDLESS.costEnergy}\n初始副本金币 ${OUT_OF_BATTLE_ENDLESS.initialDailyGold}\n第 ${OUT_OF_BATTLE_ENDLESS.advertisementAttempt} 次挑战需要广告\n难度继承当前主线进度倍率`, 19, WHITE);
+        this.makeLabel('EndlessModeRecord', panel, 0, -105, 610, 92,
+            `最高击杀 ${this.specialModeState.endless.maxKillCount} · 最高金币 ${this.specialModeState.endless.maxGold}\n今日剩余 ${Math.max(0, 3 - this.specialModeState.endless.challengeTimes)}/3 次`, 18, CREAM);
+        const startText = !unlocked ? '通关第6关开放'
+            : eligibility.reason === 'attempts' ? '今日次数已用完'
+              : eligibility.reason === 'energy' ? '体力不足'
+                : eligibility.needsAd ? '广告挑战（第3次）' : '开始无尽试炼';
+        const start = this.makeButton('EndlessModeStart', panel, 0, -205, 320, 62, startText, () => this.beginSpecialBattle('endless'));
+        this.restyleButton(start, unlocked && eligibility.allowed ? new Color(211, 145, 38, 255) : new Color(68, 75, 88, 255), WHITE);
+        start.node.parent!.getComponent(Button)!.interactable = unlocked && eligibility.allowed;
+        this.makeLabel('EndlessModeEvidence', root, 0, -180, 700, 104,
+            notice || '300 秒计时、560 条刷怪、敌方基地、击杀金币与历史最高纪录均已接入', 17, CREAM);
+        const back = this.makeButton('EndlessModeBack', root, 0, -315, 260, 62, '返回活动', () => this.showActivityScene());
+        this.restyleButton(back, new Color(43, 99, 132, 255), WHITE);
+        this.buildMainBottomNavigation(root, '活动');
+    }
+
+    private showSevenDayScene(): void {
+        const root = this.createOutOfBattleScene('SevenDayScene', 'fightscene_03', '七天登录');
+        this.makeLabel('SevenDayTitle', root, 0, 550, 620, 58, '七天登录', 40, GOLD);
+        this.makeLabel('SevenDayHint', root, 0, 500, 700, 38, '通关第2关开放 · 奖励来自 SevenDayActivityConfig', 18, CREAM);
+        OUT_OF_BATTLE_SEVEN_DAY_REWARDS.forEach((reward, index) => {
+            const column = index % 4;
+            const row = Math.floor(index / 4);
+            const x = -270 + column * 180;
+            const y = 300 - row * 230;
+            const card = this.makeNode(`SevenDay_${reward.day}`, root, x, y, 164, 190);
+            const graphics = card.addComponent(Graphics);
+            graphics.fillColor = reward.day === 7 ? new Color(102, 62, 125, 248) : new Color(31, 48, 71, 247);
+            graphics.roundRect(-82, -95, 164, 190, 18);
+            graphics.fill();
+            graphics.strokeColor = reward.day === 7 ? GOLD : new Color(111, 145, 183, 255);
+            graphics.lineWidth = 3;
+            graphics.roundRect(-80, -93, 160, 186, 16);
+            graphics.stroke();
+            this.makeLabel(`SevenDayNumber_${reward.day}`, card, 0, 53, 140, 38, `第${reward.day}天`, 20, GOLD);
+            this.makeLabel(`SevenDayReward_${reward.day}`, card, 0, -3, 146, 72,
+                reward.day === 7 ? '豪华齿轮碎片\n×100' : reward.rewardText, reward.day === 7 ? 15 : 17, WHITE);
+            this.makeLabel(`SevenDayState_${reward.day}`, card, 0, -65, 140, 30, '状态待同步', 14, new Color(163, 171, 184, 255));
+        });
+        this.makeLabel('SevenDayEvidence', root, 0, -310, 700, 90,
+            '原包未包含目标账号的签到日期与领取记录，故不提供本地代领；页面保留全部真实奖励', 17, CREAM);
+        this.buildMainBottomNavigation(root, '活动');
+    }
+
+    private showDailyTaskScene(): void {
+        this.mockAdvertisementState = loadMockAdvertisementState(sys.localStorage);
+        const root = this.createOutOfBattleScene('DailyTaskScene', 'fightscene_02', '每日任务');
+        this.makeLabel('DailyTaskTitle', root, 0, 550, 620, 58, '每日任务', 40, GOLD);
+        const unlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, 'DAILY_TASK');
+        this.makeLabel('DailyTaskHint', root, 0, 505, 700, 38,
+            unlocked ? '任务目标与活跃度来自 DailyTaskConfig' : '通关第2关后开放 · 当前为配置预览', 18, CREAM);
+        OUT_OF_BATTLE_DAILY_TASKS.forEach((task, index) => {
+            const y = 420 - index * 86;
+            const row = this.makeNode(`DailyTask_${task.id}`, root, 0, y, 690, 70);
+            const graphics = row.addComponent(Graphics);
+            graphics.fillColor = new Color(31, 48, 71, 242);
+            graphics.roundRect(-345, -35, 690, 70, 16);
+            graphics.fill();
+            this.makeLabel(`DailyTaskText_${task.id}`, row, -105, 0, 430, 38, task.text, 18, WHITE);
+            const progressText = task.id === 1005
+                ? `${Math.min(task.target, this.mockAdvertisementState.todayCompleted)} / ${task.target}`
+                : `-- / ${task.target}`;
+            this.makeLabel(`DailyTaskProgress_${task.id}`, row, 165, 0, 130, 38, progressText, 17, CREAM);
+            this.makeLabel(`DailyTaskActive_${task.id}`, row, 285, 0, 90, 38, `+${task.activeScore}`, 18, GOLD);
+        });
+        const activeRewards = OUT_OF_BATTLE_DAILY_ACTIVE_REWARDS.map((reward) => `${reward.active}:${reward.rewardText}`).join('　');
+        this.makeLabel('DailyActiveRewards', root, 0, -230, 700, 100, `活跃度宝箱\n${activeRewards}`, 15, GOLD);
+        this.makeLabel('DailyTaskEvidence', root, 0, -345, 700, 72,
+            '广告任务显示本地模拟完成数；其他目标账号进度不在包体中，以 -- 显示且不本地代领', 17, CREAM);
+        this.buildMainBottomNavigation(root, '战斗');
+    }
+
+    private showRoleScene(): void {
+        profiler.hideStats();
+        this.resetLevelSession();
+        this.destroyRootChildren();
+        const root = this.makeNode('RoleScene', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        this.addMenuBackground(root, 'fightscene_03');
+        const shade = this.makeNode('RoleShade', root, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        const shadeGraphics = shade.addComponent(Graphics);
+        shadeGraphics.fillColor = new Color(12, 20, 30, 205);
+        shadeGraphics.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
+        shadeGraphics.fill();
+        this.buildOutOfBattleResourceHeader(root, '角色');
+        this.makeLabel('RoleTitle', root, 0, 550, 620, 62, '角色', 42, GOLD);
+        const roleUnlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, 'ROLE');
+        this.makeLabel('RoleHint', root, 0, 500, 690, 42,
+            roleUnlocked ? '原包角色阵容 · 当前由跑跑鼠出战' : '通关第5关后开放 · 当前为配置预览', 20, CREAM);
+
+        OUT_OF_BATTLE_POWER_ROLES.forEach((role, index) => {
+            const column = index % 2;
+            const row = Math.floor(index / 2);
+            const x = column === 0 ? -178 : 178;
+            const y = 310 - row * 335;
+            const card = this.makeNode(`RoleCard_${role.id}`, root, x, y, 320, 300);
+            const cardGraphics = card.addComponent(Graphics);
+            cardGraphics.fillColor = new Color(31, 48, 70, 245);
+            cardGraphics.roundRect(-160, -150, 320, 300, 24);
+            cardGraphics.fill();
+            cardGraphics.strokeColor = role.id === 'P01' ? GOLD : new Color(111, 145, 183, 255);
+            cardGraphics.lineWidth = 4;
+            cardGraphics.roundRect(-158, -148, 316, 296, 22);
+            cardGraphics.stroke();
+            this.makeLabel(`RoleId_${role.id}`, card, 0, 105, 260, 32, `${role.id} · ${role.fragmentId}`, 16, new Color(157, 213, 255, 255));
+            this.makeLabel(`RoleName_${role.id}`, card, 0, 62, 280, 44, role.name, 28, WHITE);
+            this.makeLabel(`RoleQuality_${role.id}`, card, 0, 20, 280, 34, `${'★'.repeat(role.quality)}  品质 ${role.quality}`, 18, GOLD);
+            this.makeLabel(`RoleAbility_${role.id}`, card, 0, -37, 286, 72, `${role.baseAbility}\n${role.activeSkill}`, 15, CREAM);
+            const detail = this.makeButton(`RoleDetail_${role.id}`, card, 0, -112, 250, 48,
+                role.id === 'P01' ? '能力详情 · 出战中' : '能力详情', () => this.showRoleDetailScene(role.id));
+            this.restyleButton(detail,
+                role.id === 'P01' ? new Color(43, 132, 96, 255) : new Color(43, 99, 132, 255), WHITE);
+        });
+        this.makeLabel('RoleEvidence', root, 0, -420, 700, 80,
+            `名称/品质/技能来自 PowerConfig · 1级消耗${OUT_OF_BATTLE_POWER_LEVEL_ONE_COST}主角经验\n0→1星消耗${OUT_OF_BATTLE_POWER_STAR_ZERO_COST}角色碎片 · 最高${OUT_OF_BATTLE_POWER_STAR_MAX}星 · 账号角色存档未恢复`, 17, CREAM);
+        this.buildMainBottomNavigation(root, '角色');
+    }
+
+    private showRoleDetailScene(powerId: OutOfBattlePowerRole['id']): void {
+        const role = OUT_OF_BATTLE_POWER_ROLES.find((entry) => entry.id === powerId) || OUT_OF_BATTLE_POWER_ROLES[0];
+        const abilities = outOfBattlePowerAbilities(role.id);
+        const root = this.createOutOfBattleScene('RoleDetailScene', 'fightscene_03', '角色详情');
+        this.makeLabel('RoleDetailTitle', root, 0, 550, 620, 58, `${role.name} · ${role.id}`, 38, GOLD);
+        this.makeLabel('RoleDetailHint', root, 0, 505, 700, 38,
+            `${'★'.repeat(role.quality)} 品质 ${role.quality} · 碎片 ${role.fragmentId} · 最高 ${OUT_OF_BATTLE_POWER_STAR_MAX} 星`, 18, CREAM);
+        abilities.forEach((ability, index) => {
+            const y = 418 - index * 78;
+            const row = this.makeNode(`RoleAbility_${ability.id}`, root, 0, y, 690, 66);
+            const graphics = row.addComponent(Graphics);
+            graphics.fillColor = index === 0 ? new Color(65, 70, 101, 247) : new Color(31, 48, 71, 242);
+            graphics.roundRect(-345, -33, 690, 66, 15);
+            graphics.fill();
+            graphics.strokeColor = ability.star === 0 ? GOLD : new Color(89, 122, 157, 255);
+            graphics.lineWidth = 2;
+            graphics.roundRect(-343, -31, 686, 62, 13);
+            graphics.stroke();
+            this.makeLabel(`RoleAbilityStar_${ability.id}`, row, -282, 0, 100, 38,
+                ability.star === 0 ? '基础' : `${ability.star} 星`, 18, ability.star === 0 ? GOLD : WHITE);
+            this.makeLabel(`RoleAbilityText_${ability.id}`, row, 58, 0, 550, 54,
+                ability.description, 15, CREAM);
+        });
+        this.makeLabel('RoleDetailEvidence', root, 0, -325, 700, 64,
+            '九档能力逐条来自 PowerAbilityConfig；目标账号角色等级、星级和碎片存档未包含在包体中', 16, CREAM);
+        const back = this.makeButton('RoleDetailBack', root, 0, -405, 250, 56, '返回角色', () => this.showRoleScene());
+        this.restyleButton(back, new Color(43, 99, 132, 255), WHITE);
+        this.buildMainBottomNavigation(root, '角色');
+    }
+
+    private showCultivationScene(message = ''): void {
+        profiler.hideStats();
+        this.resetLevelSession();
+        this.destroyRootChildren();
+        const root = this.makeNode('CultivationScene', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        this.addMenuBackground(root, 'fightscene_01');
+        const shade = this.makeNode('CultivationShade', root, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
+        const shadeGraphics = shade.addComponent(Graphics);
+        shadeGraphics.fillColor = new Color(12, 19, 30, 218);
+        shadeGraphics.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
+        shadeGraphics.fill();
+        this.makeLabel('CultivationTitle', root, 0, 588, 620, 58, '兵种培养', 40, GOLD);
+        this.makeLabel('CultivationResources', root, 0, 535, 680, 42,
+            `金币 ${this.accountProfile.gold}　体力 ${this.accountProfile.energy}　钻石 ${this.accountProfile.diamonds}`,
+            20, WHITE);
+
+        const pageSize = 6;
+        const pageCount = Math.ceil(BAGLIKE_ACCOUNT_HERO_FAMILIES.length / pageSize);
+        this.cultivationPage = Math.max(0, Math.min(pageCount - 1, this.cultivationPage));
+        BAGLIKE_ACCOUNT_HERO_FAMILIES
+            .slice(this.cultivationPage * pageSize, (this.cultivationPage + 1) * pageSize)
+            .forEach((family, index) => {
+                const column = index % 2;
+                const row = Math.floor(index / 2);
+                const x = column === 0 ? -184 : 184;
+                const y = 385 - row * 270;
+                const star = this.accountProfile.stars[family];
+                const unlocked = star > 0;
+                const fragments = bagLikeAccountHeroFragments(this.accountProfile, family);
+                const cost = unlocked ? bagLikeHeroUpgradeCost(star) : null;
+                const unlockLevel = bagLikeHeroUnlockLevel(family);
+                const card = this.makeNode(`CultivationCard_${family}`, root, x, y, 340, 236);
+                const cardGraphics = card.addComponent(Graphics);
+                cardGraphics.fillColor = new Color(31, 48, 71, 247);
+                cardGraphics.roundRect(-170, -118, 340, 236, 22);
+                cardGraphics.fill();
+                cardGraphics.strokeColor = unlocked ? new Color(105, 171, 222, 255) : new Color(83, 91, 107, 255);
+                cardGraphics.lineWidth = 3;
+                cardGraphics.roundRect(-168, -116, 336, 232, 20);
+                cardGraphics.stroke();
+                const headKey = this.gearHeadKey(`${family}01` as GearId);
+                if (headKey) this.attachStaticGearPortrait(card, headKey, -105, 48);
+                this.makeLabel(`CultivationName_${family}`, card, 49, 72, 205, 38,
+                    `${family} ${ACCOUNT_HERO_NAMES[family]}`, 21, unlocked ? WHITE : new Color(151, 157, 169, 255));
+                this.makeLabel(`CultivationStar_${family}`, card, 45, 29, 200, 34,
+                    unlocked ? `${star} 星` : `通关 ${unlockLevel} 解锁`, 20, unlocked ? GOLD : new Color(154, 160, 173, 255));
+                this.makeLabel(`CultivationFragments_${family}`, card, -58, -42, 190, 36,
+                    `碎片 ${fragments}${cost ? ` / ${cost.fragments}` : ''}`, 18, new Color(157, 213, 255, 255));
+                this.makeLabel(`CultivationGold_${family}`, card, 82, -42, 130, 36,
+                    cost ? `${cost.gold} 金币` : unlocked ? '已满星' : '未解锁', 17, CREAM);
+                const upgrade = this.makeButton(`CultivationUpgrade_${family}`, card, 0, -88, 230, 50,
+                    !unlocked ? '尚未解锁' : cost ? '升星' : '已满星', () => this.upgradeCultivationHero(family));
+                if (!unlocked || !cost) {
+                    this.restyleButton(upgrade, new Color(70, 76, 88, 255), new Color(160, 164, 174, 255));
+                    upgrade.node.parent!.getComponent(Button)!.interactable = false;
+                }
+            });
+
+        const previous = this.makeButton('CultivationPrevious', root, -205, -450, 160, 56, '上一页', () => {
+            this.cultivationPage -= 1;
+            this.showCultivationScene();
+        });
+        previous.node.parent!.getComponent(Button)!.interactable = this.cultivationPage > 0;
+        const next = this.makeButton('CultivationNext', root, 205, -450, 160, 56, '下一页', () => {
+            this.cultivationPage += 1;
+            this.showCultivationScene();
+        });
+        next.node.parent!.getComponent(Button)!.interactable = this.cultivationPage < pageCount - 1;
+        this.makeLabel('CultivationPage', root, 0, -450, 150, 52, `${this.cultivationPage + 1} / ${pageCount}`, 20, GOLD);
+        this.makeLabel('CultivationMessage', root, 0, -515, 680, 42,
+            message || '升星消耗与 1–20 星上限来自原包 HeroStarConfig', 18, message ? WHITE : CREAM);
+        this.buildMainBottomNavigation(root, '培养');
+    }
+
+    private upgradeCultivationHero(family: BagLikeAccountHeroFamily): void {
+        const result = tryUpgradeBagLikeAccountHero(this.accountProfile, family);
+        if (!result.upgraded) {
+            const message = result.reason === 'locked'
+                ? `请先通关 ${bagLikeHeroUnlockLevel(family)} 解锁 ${ACCOUNT_HERO_NAMES[family]}`
+                : result.reason === 'maxStar'
+                  ? `${ACCOUNT_HERO_NAMES[family]}已经达到 20 星`
+                  : result.reason === 'fragments'
+                    ? `${ACCOUNT_HERO_NAMES[family]}碎片不足，需要 ${result.cost?.fragments || 0}`
+                    : `金币不足，需要 ${result.cost?.gold || 0}`;
+            this.showCultivationScene(message);
+            return;
+        }
+        this.accountProfile = result.profile;
+        this.persistAccountProfile(false);
+        this.showCultivationScene(`${ACCOUNT_HERO_NAMES[family]}升至 ${this.accountProfile.stars[family]} 星`);
     }
 
     private showLevelSelection(): void {
@@ -1806,6 +2708,7 @@ export class CangshuGame extends Component {
         previous.node.active = this.levelSelectionPage > 0;
         next.node.active = this.levelSelectionPage < pageCount - 1;
         this.makeLabel('LevelPage', root, 0, -535, 180, 54, `${this.levelSelectionPage + 1} / ${pageCount}`, 22, GOLD);
+        this.buildMainBottomNavigation(root, '战斗');
     }
 
     private buildCompactLevelCard(root: Node, card: PlayableLevelCard, index: number): void {
@@ -1888,6 +2791,13 @@ export class CangshuGame extends Component {
         this.clearTimer = 0;
         this.serial = 0;
         this.selfHp = 500;
+        this.enemyHomeHp = 0;
+        this.enemyHomeMaxHp = 0;
+        this.enemyHomeGold = 0;
+        this.specialKillCount = 0;
+        this.specialDropGold = 0;
+        this.specialBattleElapsed = 0;
+        this.dailyBuffIds = [];
         this.gold = 0;
         this.refreshIndex = 0;
         this.normalRefreshTimes = 0;
@@ -1936,18 +2846,27 @@ export class CangshuGame extends Component {
 
     update(dt: number): void {
         if (!this.initialized) return;
-        let scaled = Math.min(dt, 0.05) * this.speed;
-        const freezeDevelopedBattle = this.developedValidationMode() === 'battle' && this.phase === 'battle';
-        if (freezeDevelopedBattle) {
-            scaled = Math.min(scaled, Math.max(0, DEVELOPED_BATTLE_ELAPSED_SECONDS - this.roundClock));
-            if (scaled === 0) this.paused = true;
+        const longRun = this.longRunValidationEnabled();
+        const totalScaled = (longRun ? Math.min(Math.max(0, dt), 1) : Math.min(dt, 0.05)) * this.speed;
+        const simulationSteps = longRun ? Math.max(1, Math.ceil(totalScaled / 0.05)) : 1;
+        const scaledStep = totalScaled / simulationSteps;
+        const rawStep = Math.max(0, dt) / simulationSteps;
+        for (let step = 0; step < simulationSteps; step += 1) {
+            this.stepLongRunAutomation(rawStep, scaledStep);
+            let simulationDt = scaledStep;
+            const freezeDevelopedBattle = this.developedValidationMode() === 'battle' && this.phase === 'battle';
+            if (freezeDevelopedBattle) {
+                simulationDt = Math.min(simulationDt, Math.max(0, DEVELOPED_BATTLE_ELAPSED_SECONDS - this.roundClock));
+                if (simulationDt === 0) this.paused = true;
+            }
+            if (!this.paused && (this.phase === 'deploy' || this.phase === 'battle')) {
+                this.stepPowerProduction(simulationDt, this.phase === 'battle');
+                this.stepGearRotations(simulationDt);
+            }
+            if (this.phase === 'battle' && !this.paused) this.stepBattle(simulationDt);
+            if (freezeDevelopedBattle && this.roundClock >= DEVELOPED_BATTLE_ELAPSED_SECONDS) this.paused = true;
+            this.stepEffects(simulationDt);
         }
-        if (!this.paused && (this.phase === 'deploy' || this.phase === 'battle')) {
-            this.stepPowerProduction(scaled, this.phase === 'battle');
-        }
-        if (this.phase === 'battle' && !this.paused) this.stepBattle(scaled);
-        if (freezeDevelopedBattle && this.roundClock >= DEVELOPED_BATTLE_ELAPSED_SECONDS) this.paused = true;
-        this.stepEffects(scaled);
         this.drawEffects();
         this.drawHomes();
         this.refreshUi();
@@ -1980,6 +2899,7 @@ export class CangshuGame extends Component {
         const canvas = document.querySelector('canvas');
         if (!canvas) return;
         canvas.dataset.levelId = String(this.levelId);
+        canvas.dataset.battleMode = this.battleMode;
         canvas.dataset.levelName = this.levelName;
         canvas.dataset.phase = this.phase;
         canvas.dataset.round = String(this.roundIndex + 1);
@@ -1988,7 +2908,29 @@ export class CangshuGame extends Component {
         canvas.dataset.selfHp = String(Math.max(0, Math.floor(this.selfHp)));
         canvas.dataset.maxHp = String(Math.max(0, Math.floor(this.levelHomeHp)));
         canvas.dataset.gold = String(Math.max(0, Math.floor(this.gold)));
+        canvas.dataset.specialKills = String(this.specialKillCount);
+        canvas.dataset.specialDropGold = String(this.specialDropGold);
+        canvas.dataset.enemyHomeHp = String(Math.max(0, Math.floor(this.enemyHomeHp)));
+        canvas.dataset.specialElapsed = this.specialBattleElapsed.toFixed(3);
+        canvas.dataset.mockAdBusy = String(this.mockAdvertisementBusy);
+        canvas.dataset.mockAdPlacement = this.mockAdvertisementPlacement;
+        canvas.dataset.mockAdOutcome = this.mockAdvertisementOutcome;
+        canvas.dataset.mockAdViews = String(this.mockAdvertisementState?.todayCompleted || 0);
         canvas.dataset.failedAttempts = String(this.failedAttempts);
+        canvas.dataset.longRunEnabled = String(this.longRunValidationEnabled());
+        canvas.dataset.longRunStatus = this.longRunStatus;
+        canvas.dataset.longRunRetries = String(this.longRunRetries);
+        canvas.dataset.longRunElapsed = this.longRunElapsedSeconds.toFixed(3);
+        canvas.dataset.longRunSpeed = String(this.longRunValidationEnabled() ? LONG_RUN_VALIDATION_SPEED : this.speed);
+        canvas.dataset.longRunAccountScope = this.longRunValidationEnabled()
+            ? this.longRunLateProgressionEnabled()
+                ? 'late-progression-fixture'
+                : !bagLikeLevelUnlocked(this.accountProfile.maxPassedLevelId, this.levelId)
+                    ? 'validation-unlock-only'
+                    : 'normal-account'
+            : 'normal-account';
+        canvas.dataset.longRunMaxSelfUnits = String(this.longRunMaxSelfUnits);
+        canvas.dataset.longRunMaxEnemyUnits = String(this.longRunMaxEnemyUnits);
         canvas.dataset.roundClock = this.roundClock.toFixed(3);
         canvas.dataset.candidateIds = this.candidates.map((gear) => gear.id).join(',');
         canvas.dataset.candidateRuntime = this.candidates
@@ -1997,6 +2939,13 @@ export class CangshuGame extends Component {
         canvas.dataset.gearIds = this.gears.map((gear) => gear.id).join(',');
         canvas.dataset.gearRuntime = this.gears
             .map((gear) => `${gear.id}#${gear.uid}@${gear.row},${gear.col}:${gear.workerPower.toFixed(1)}`)
+            .join(';');
+        canvas.dataset.gearRotation = this.gears
+            .filter((gear) => gear.id !== 'P01')
+            .map((gear) => {
+                const rotor = gear.node.children.find((child) => child.name.startsWith('GearRotor_'));
+                return `${gear.id}#${gear.uid}:${gear.rotationActive ? 'active' : 'idle'}:${(rotor?.angle || 0).toFixed(1)}:${gear.rotationTriggerCount}`;
+            })
             .join(';');
         canvas.dataset.workerProgressBars = this.gears
             .filter((gear) => Boolean(GEARS[gear.id].powerPerTrigger))
@@ -2012,6 +2961,11 @@ export class CangshuGame extends Component {
             })
             .join(';');
         canvas.dataset.selfUnits = String(this.units.filter((unit) => unit.team === 'self' && !unit.dead).length);
+        canvas.dataset.unitShadows = String(this.units.filter((unit) => !unit.dead && unit.shadow.isValid).length);
+        canvas.dataset.unitDepth = (this.unitLayer?.children || [])
+            .filter((child) => child.name.startsWith('self_') || child.name.startsWith('enemy_'))
+            .map((child) => child.name)
+            .join(';');
         canvas.dataset.selfSpawns = String(this.selfSpawnCount);
         canvas.dataset.fusionActiveCasts = String(this.fusionActiveCastCount);
         canvas.dataset.fusionActiveHits = String(this.fusionActiveHitCount);
@@ -2044,15 +2998,23 @@ export class CangshuGame extends Component {
                 H02: this.h02HeroStar,
                 H03: this.h03HeroStar,
                 H04: this.h04HeroStar,
+                H05: this.h05HeroStar,
+                H06: this.h06HeroStar,
                 H11: this.h11HeroStar,
                 H12: this.h12HeroStar,
                 H13: this.h13HeroStar,
+                H14: this.h14HeroStar,
+                H16: this.h16HeroStar,
+                H17: this.h17HeroStar,
             },
             levelId: this.levelId,
             challengeTimes: this.challengeTimes,
             // The representative default starts immediately before level 1004. URL
             // navigation must not manufacture progress for an arbitrary requested level.
             maxPassedLevelId: Math.max(1000, DEFAULT_LEVEL_ID - 1),
+            // Levels 1001–1003 already completed by this representative profile
+            // grant 10 energy each at their recovered middle reward milestone.
+            energy: 30,
         });
         const loaded = loadBagLikeAccountProfile(sys.localStorage, this.accountDefaultProfile);
         this.accountProfile = loaded.profile;
@@ -2060,7 +3022,8 @@ export class CangshuGame extends Component {
         if (loaded.recoveredFromInvalidSave) {
             console.warn('[cangshu] invalid account save ignored; restored evidence-safe defaults');
         }
-        if (!bagLikeLevelUnlocked(this.accountProfile.maxPassedLevelId, this.levelId)) {
+        if (!bagLikeLevelUnlocked(this.accountProfile.maxPassedLevelId, this.levelId)
+            && !this.longRunValidationEnabled()) {
             const fallbackLevel = bagLikeLatestUnlockedLevel(this.accountProfile.maxPassedLevelId);
             console.warn(`[cangshu] locked level ${this.levelId} rejected; returning to ${fallbackLevel}`);
             this.navigateToLevel(fallbackLevel);
@@ -2075,9 +3038,14 @@ export class CangshuGame extends Component {
         this.h02HeroStar = stars.H02;
         this.h03HeroStar = stars.H03;
         this.h04HeroStar = stars.H04;
+        this.h05HeroStar = stars.H05;
+        this.h06HeroStar = stars.H06;
         this.h11HeroStar = stars.H11;
         this.h12HeroStar = stars.H12;
         this.h13HeroStar = stars.H13;
+        this.h14HeroStar = stars.H14;
+        this.h16HeroStar = stars.H16;
+        this.h17HeroStar = stars.H17;
         this.unlockedHeroFamilies = [...bagLikeAccountUnlockedHeroFamilies(this.accountProfile)].join(';');
         if (syncChallengeTimes) this.challengeTimes = bagLikeAccountChallengeTimes(this.accountProfile, this.levelId);
     }
@@ -2350,6 +3318,9 @@ export class CangshuGame extends Component {
         resources.load('original/red_base/spriteFrame', SpriteFrame, (error, frame) => {
             if (!error && enemyHome.isValid) enemySprite.spriteFrame = frame;
         });
+        const enemyHomeHp = this.makeNode('EnemyCampHp', enemyHome, 0, 0, 124, 90);
+        this.enemyHomeGraphics = enemyHomeHp.addComponent(Graphics);
+        enemyHomeHp.active = this.battleMode === 'endless';
 
         // Recovered FairyGUI BagLikeTopItem is 750x320 at the top of the
         // 750x1334 design canvas. Child coordinates below are converted from
@@ -2502,8 +3473,8 @@ export class CangshuGame extends Component {
         resultGraphics.stroke();
         this.resultTitleLabel = this.makeLabel('ResultTitle', this.resultLayer, 0, 118, 480, 64, '关卡胜利', 38, GOLD);
         this.resultBodyLabel = this.makeLabel('ResultBody', this.resultLayer, 0, 36, 540, 110, '', 20, CREAM);
-        this.makeButton('Retry', this.resultLayer, -220, -125, 190, 64, '重新挑战', () => this.restartLevel());
-        this.makeButton('ResultHome', this.resultLayer, 0, -125, 190, 64, '返回主页', () => this.returnToMainScene());
+        this.makeButton('Retry', this.resultLayer, -220, -125, 190, 64, '重新挑战', () => this.retryCurrentMode());
+        this.makeButton('ResultHome', this.resultLayer, 0, -125, 190, 64, '返回主页', () => this.returnFromBattleResult());
         this.resultNextButtonLabel = this.makeButton('NextLevel', this.resultLayer, 220, -125, 190, 64,
             '进入下一关', () => this.navigateToLevel(this.levelId + 1));
         this.restyleButton(this.resultNextButtonLabel, new Color(45, 151, 92, 255), new Color(231, 255, 231, 255));
@@ -2709,6 +3680,7 @@ export class CangshuGame extends Component {
             return;
         }
         profiler.hideStats();
+        this.accountHeroPage = 0;
         this.renderAccountPanel();
         this.accountLayer.active = true;
         this.accountLayer.setSiblingIndex(this.node.children.length - 1);
@@ -2733,7 +3705,12 @@ export class CangshuGame extends Component {
         this.makeLabel('AccountColumns', this.accountContentLayer, 0, 292, 620, 32,
             '英雄 / 解锁状态       星级       碎片          下一级消耗', 17, new Color(171, 188, 216, 255));
 
-        BAGLIKE_ACCOUNT_HERO_FAMILIES.forEach((family, index) => {
+        const pageSize = 6;
+        const pageCount = Math.ceil(BAGLIKE_ACCOUNT_HERO_FAMILIES.length / pageSize);
+        this.accountHeroPage = Math.max(0, Math.min(pageCount - 1, this.accountHeroPage));
+        BAGLIKE_ACCOUNT_HERO_FAMILIES
+            .slice(this.accountHeroPage * pageSize, (this.accountHeroPage + 1) * pageSize)
+            .forEach((family, index) => {
             const star = this.accountProfile.stars[family];
             const y = 238 - index * 82;
             const unlocked = star > 0;
@@ -2756,8 +3733,155 @@ export class CangshuGame extends Component {
             this.makeLabel(`AccountCost_${family}`, row, 118, 0, 142, 44, costText, 17, CREAM);
             const upgradeLabel = this.makeButton(`AccountUpgrade_${family}`, row, 255, 0, 104, 48,
                 !unlocked ? '锁定' : cost ? '升星' : '满星', () => this.upgradeAccountHero(family));
-            if (!unlocked || !cost) this.restyleButton(upgradeLabel, new Color(74, 78, 88, 255), new Color(165, 165, 165, 255));
+            if (!unlocked || !cost) {
+                this.restyleButton(upgradeLabel, new Color(74, 78, 88, 255), new Color(165, 165, 165, 255));
+                upgradeLabel.node.parent!.getComponent(Button)!.interactable = false;
+            }
         });
+        const previous = this.makeButton('AccountHeroPrevious', this.accountContentLayer, -185, -305, 150, 52, '上一页', () => {
+            this.accountHeroPage -= 1;
+            this.renderAccountPanel();
+        });
+        previous.node.parent!.getComponent(Button)!.interactable = this.accountHeroPage > 0;
+        const next = this.makeButton('AccountHeroNext', this.accountContentLayer, 185, -305, 150, 52, '下一页', () => {
+            this.accountHeroPage += 1;
+            this.renderAccountPanel();
+        });
+        next.node.parent!.getComponent(Button)!.interactable = this.accountHeroPage < pageCount - 1;
+        this.makeLabel('AccountHeroPage', this.accountContentLayer, 0, -305, 140, 48,
+            `${this.accountHeroPage + 1} / ${pageCount}`, 19, GOLD);
+    }
+
+    private longRunValidationEnabled(): boolean {
+        if (typeof window === 'undefined') return false;
+        return /(?:^|[?&])longRunValidation=1(?:&|$)/.test(window.location.search);
+    }
+
+    private longRunRequestedMode(): 'daily' | 'endless' | null {
+        if (typeof window === 'undefined') return null;
+        const match = /(?:^|[?&])longRunMode=(daily|endless)(?:&|$)/.exec(window.location.search);
+        return match ? match[1] as 'daily' | 'endless' : null;
+    }
+
+    private longRunLateProgressionEnabled(): boolean {
+        if (typeof window === 'undefined') return false;
+        return /(?:^|[?&])longRunProgression=late(?:&|$)/.test(window.location.search);
+    }
+
+    private stepLongRunAutomation(dt: number, scaledDt: number): void {
+        if (!this.longRunValidationEnabled()) return;
+        this.speed = LONG_RUN_VALIDATION_SPEED;
+        if (this.phase === 'battle') this.longRunElapsedSeconds += Math.max(0, scaledDt);
+        const livingSelf = this.units.filter((unit) => !unit.dead && unit.team === 'self').length;
+        const livingEnemy = this.units.filter((unit) => !unit.dead && unit.team === 'enemy').length;
+        this.longRunMaxSelfUnits = Math.max(this.longRunMaxSelfUnits, livingSelf);
+        this.longRunMaxEnemyUnits = Math.max(this.longRunMaxEnemyUnits, livingEnemy);
+        this.longRunAutomationTimer -= Math.max(0, dt);
+        if (this.longRunAutomationTimer > 0) return;
+        this.longRunAutomationTimer = 0.65;
+
+        if (this.phase === 'deploy') {
+            this.longRunStatus = `deploy-round-${this.roundIndex + 1}`;
+            this.longRunPrepareBoard();
+            if (this.gears.some((gear) => Boolean(GEARS[gear.id].unit))) this.startRound();
+            return;
+        }
+        if (this.phase === 'trait' && this.currentTraitChoices.length > 0) {
+            const choice = this.currentTraitChoices.find((trait) => isRecommendedTrait(trait, this.currentTraitChoices))
+                || this.currentTraitChoices[0];
+            this.longRunStatus = `trait-${choice.id}`;
+            this.chooseTrait(choice);
+            return;
+        }
+        if (this.phase === 'lost' && this.battleMode === 'normal' && this.longRunRetries < 30) {
+            this.longRunRetries += 1;
+            this.longRunStatus = `retry-${this.longRunRetries}`;
+            this.restartLevel();
+            return;
+        }
+        if (this.phase === 'won') this.longRunStatus = this.battleMode === 'normal' ? 'cleared' : 'settled';
+        else if (this.phase === 'battle') this.longRunStatus = `battle-round-${this.roundIndex + 1}`;
+    }
+
+    private longRunPrepareBoard(): void {
+        // Merge only identical ordinary gears through the normal merge reducer.
+        // This mirrors a user dropping one matching candidate onto another and
+        // deliberately avoids fusion/star shortcuts.
+        for (const candidate of [...this.candidates]) {
+            if (!candidate.node.isValid || !GEARS[candidate.id].nextId) continue;
+            const target = [...this.gears, ...this.candidates]
+                .find((gear) => gear !== candidate && gear.id === candidate.id);
+            if (target) this.mergeGears(candidate, target);
+        }
+
+        // Consume recovered grid rewards through their normal unlock rule.
+        for (const reward of [...this.candidates]) {
+            if (!GEARS[reward.id].gridUnlock) continue;
+            let unlocked = false;
+            for (let row = 0; row < GRID_ROWS && !unlocked; row += 1) {
+                for (let col = 0; col < GRID_COLS && !unlocked; col += 1) {
+                    if (!this.canUnlockShape(reward.id, row, col)) continue;
+                    for (const [cellRow, cellCol] of this.gearCellsAt(reward.id, row, col)) {
+                        this.unlocked.add(cellRow * GRID_COLS + cellCol);
+                    }
+                    this.candidates = this.candidates.filter((gear) => gear !== reward);
+                    reward.node.destroy();
+                    unlocked = true;
+                }
+            }
+            if (unlocked) this.drawGrid();
+        }
+
+        const occupied = (): Set<string> => {
+            const cells = new Set<string>();
+            for (const gear of this.gears) {
+                for (const [row, col] of this.gearCellsAt(gear.id, gear.row, gear.col)) cells.add(`${row}:${col}`);
+            }
+            return cells;
+        };
+        const ordered = [...this.candidates].sort((left, right) =>
+            Number(Boolean(GEARS[right.id].unit)) - Number(Boolean(GEARS[left.id].unit))
+            || (GEARS[right.id].level || 0) - (GEARS[left.id].level || 0));
+        for (const candidate of ordered) {
+            if (!candidate.node.isValid || GEARS[candidate.id].gridUnlock) continue;
+            const currentCells = occupied();
+            let placed = false;
+            for (let radius = 1; radius <= GRID_ROWS + GRID_COLS && !placed; radius += 1) {
+                for (let row = 0; row < GRID_ROWS && !placed; row += 1) {
+                    for (let col = 0; col < GRID_COLS && !placed; col += 1) {
+                        if (Math.abs(row - 2) + Math.abs(col - 3) !== radius) continue;
+                        if (!this.canPlaceGear(candidate.id, row, col)) continue;
+                        const cells = this.gearCellsAt(candidate.id, row, col);
+                        const connected = cells.some(([cellRow, cellCol]) => [
+                            `${cellRow}:${cellCol + 1}`,
+                            `${cellRow + 1}:${cellCol}`,
+                            `${cellRow}:${cellCol - 1}`,
+                            `${cellRow - 1}:${cellCol}`,
+                        ].some((key) => currentCells.has(key)));
+                        if (!connected) continue;
+                        this.longRunPlaceCandidate(candidate, row, col);
+                        placed = true;
+                    }
+                }
+            }
+        }
+        this.relayoutCandidates();
+    }
+
+    private longRunPlaceCandidate(gear: Gear, row: number, col: number): void {
+        this.candidates = this.candidates.filter((candidate) => candidate !== gear);
+        gear.location = 'grid';
+        gear.candidateIndex = -1;
+        gear.row = row;
+        gear.col = col;
+        gear.rotationActive = false;
+        gear.rotationElapsed = gear.rotationDuration;
+        if (this.gears.indexOf(gear) < 0) this.gears.push(gear);
+        const target = this.gridPosition(row, col);
+        gear.node.setPosition(target.x, target.y);
+        gear.node.setScale(1, 1, 1);
+        this.applyGearRotationPresentation(gear);
+        this.refreshPlacedWheelHomeHp();
     }
 
     private upgradeAccountHero(family: BagLikeAccountHeroFamily): void {
@@ -2850,6 +3974,13 @@ export class CangshuGame extends Component {
 
     private initGrid(): void {
         this.unlocked.clear();
+        if (this.battleMode !== 'normal') {
+            for (let row = 1; row <= 3; row += 1) {
+                for (let col = 1; col <= 5; col += 1) this.unlocked.add(row * GRID_COLS + col);
+            }
+            this.drawGrid();
+            return;
+        }
         for (let row = 1; row <= 3; row += 1) {
             for (let col = 2; col <= 4; col += 1) this.unlocked.add(row * GRID_COLS + col);
         }
@@ -2983,9 +4114,21 @@ export class CangshuGame extends Component {
         this.drawExpBar();
     }
 
+    private retryCurrentMode(): void {
+        if (this.battleMode === 'normal') this.restartLevel();
+        else this.beginSpecialBattle(this.battleMode);
+    }
+
+    private returnFromBattleResult(): void {
+        if (this.battleMode === 'daily') this.showDailyInstanceScene();
+        else if (this.battleMode === 'endless') this.showEndlessModeScene();
+        else this.returnToMainScene();
+    }
+
     private claimNextBatch(_free: boolean): void {
         if (this.phase !== 'deploy') return;
-        const cost = this.normalRefreshTimes > 0 ? REFRESH_COST : 0;
+        const baseCost = this.normalRefreshTimes > 0 ? REFRESH_COST : 0;
+        const cost = this.battleMode === 'daily' ? dailyRefreshCost(baseCost, this.dailyBuffIds) : baseCost;
         if (this.gold < cost) {
             this.tipLabel.string = `金币不足：本次刷新需要 ${cost}`;
             return;
@@ -3002,9 +4145,15 @@ export class CangshuGame extends Component {
             this.tipLabel.string = '本准备回合的广告刷新已经使用';
             return;
         }
-        this.freeRefreshUsed = true;
-        this.replaceCandidates(this.nextCandidateBatch('ad'));
-        this.tipLabel.string = '广告刷新完成；候选齿轮仍需手动拖入背包';
+        this.playMockAdvertisement('battle-refresh', () => {
+            this.freeRefreshUsed = true;
+            this.replaceCandidates(this.nextCandidateBatch('ad'));
+            this.tipLabel.string = '模拟广告完成：候选齿轮已刷新，仍需手动拖入背包';
+            this.refreshUi();
+        }, (outcome) => {
+            this.tipLabel.string = outcome === 'cancelled' ? '已取消模拟广告，刷新次数未消耗' : '模拟广告失败，刷新次数未消耗';
+            this.refreshUi();
+        });
     }
 
     private dealPreparationBatch(): void {
@@ -3025,7 +4174,12 @@ export class CangshuGame extends Component {
 
         const unlockedHeroFamilies = bagLikeAccountUnlockedHeroFamilies(this.accountProfile);
         const hasLockedGrid = this.unlocked.size < GRID_ROWS * GRID_COLS;
-        return drawDynamicCandidateBatch(
+        const dailyPrepareModifiers = this.battleMode === 'daily'
+            && refreshType === 'prepare'
+            && this.dailyBuffIds.indexOf('DI_BUFF_eff02') >= 0
+            ? [{ rewardType: 'REWARD' as const, rewardId: 3013, multiplier: 20000 }]
+            : [];
+        const batch = drawDynamicCandidateBatch(
             candidateDrawIds(refreshType, this.nonAdRefreshTimes, hasLockedGrid),
             {
                 unlockedHeroFamilies,
@@ -3036,9 +4190,17 @@ export class CangshuGame extends Component {
             Math.random,
             candidateRewardModifiersForRefresh(
                 refreshType,
-                traitPrepareRewardWeightModifiers(IMPLEMENTED_TRAIT_POOL, this.traitStacks),
+                [...traitPrepareRewardWeightModifiers(IMPLEMENTED_TRAIT_POOL, this.traitStacks), ...dailyPrepareModifiers],
             ),
         );
+        if (this.battleMode === 'daily' && this.dailyBuffIds.indexOf('DI_BUFF_eff07') >= 0
+            && batch.length > 0 && Math.floor(Math.random() * 10000) <= 200) {
+            const maxLevelIds = Array.from(bagLikeAccountUnlockedHeroFamilies(this.accountProfile))
+                .map((family) => `${family}04` as GearId)
+                .filter((id) => Boolean(GEARS[id]));
+            if (maxLevelIds.length > 0) batch[0] = maxLevelIds[Math.floor(Math.random() * maxLevelIds.length)] as CandidateGearId;
+        }
+        return batch;
     }
 
     private replaceCandidates(batch: GearId[]): void {
@@ -3105,7 +4267,20 @@ export class CangshuGame extends Component {
         const pos = location === 'grid' ? this.gridPosition(row, col) : { x: 0, y: DEPLOY_CANDIDATE_Y };
         const node = this.makeNode(`Gear_${id}_${this.serial}`, this.prepareLayer, pos.x, pos.y, GRID_CELL, GRID_CELL);
         node.addComponent(Graphics);
-        const gear: Gear = { uid: ++this.serial, id, row, col, node, workerPower: 0, location, candidateIndex };
+        const gear: Gear = {
+            uid: ++this.serial,
+            id,
+            row,
+            col,
+            node,
+            workerPower: 0,
+            location,
+            candidateIndex,
+            rotationElapsed: 0,
+            rotationDuration: POWER_CONTACT_DELAY_SECONDS,
+            rotationActive: false,
+            rotationTriggerCount: 0,
+        };
         this.renderGear(gear);
         if (id !== 'P01') {
             node.on(Node.EventType.TOUCH_START, (event: EventTouch) => this.beginGearDrag(gear, event), this);
@@ -3154,7 +4329,15 @@ export class CangshuGame extends Component {
             g.lineWidth = 2;
             g.circle(cellX, cellY, 25);
             g.stroke();
-            if (config.level) this.attachGearBodySprite(gear.node, config.level, cellX, cellY);
+            if (config.level) {
+                const gridIndex = gear.location === 'grid'
+                    ? (gear.row + shapeRow) * GRID_COLS + gear.col + shapeCol
+                    : POWER_INDEX;
+                const baseAngle = gear.location === 'grid'
+                    ? gearRotationAngleDegrees(gridIndex, POWER_INDEX, 0, 0)
+                    : 0;
+                this.attachGearBodySprite(gear.node, config.level, cellX, cellY, shapeRow, shapeCol, baseAngle);
+            }
         }
         if ((config.level || 0) >= 5) this.attachLevelFiveShapeOverlay(gear.node, shape);
         const headKey = this.gearHeadKey(gear.id);
@@ -3183,6 +4366,7 @@ export class CangshuGame extends Component {
             g.stroke();
             this.makeLabel('ProductionRate', gear.node, labelX, labelY, 82, 22, `${productionRate}/s`, 14, CREAM);
         }
+        this.applyGearRotationPresentation(gear);
     }
 
     private gearHeadKey(id: GearId): string | null {
@@ -3253,23 +4437,48 @@ export class CangshuGame extends Component {
         });
     }
 
-    private attachGearBodySprite(parent: Node, level: number, x: number, y: number): void {
+    private attachGearBodySprite(
+        parent: Node,
+        level: number,
+        x: number,
+        y: number,
+        shapeRow = 0,
+        shapeCol = 0,
+        baseAngle = 0,
+    ): void {
         const rect = GEAR_BODY_FRAMES[level];
         if (!rect) return;
-        const bodyNode = this.makeNode(`GearBody_cl${level}`, parent, x, y, 110, 110);
-        bodyNode.setSiblingIndex(0);
+        const rotor = this.makeNode(`GearRotor_${shapeRow}_${shapeCol}`, parent, x, y, 116, 116);
+        rotor.angle = baseAngle;
+        rotor.setSiblingIndex(0);
+        const shadowNode = this.makeNode(`GearBodyShadow_cl${level}`, rotor, 4, -5, 110, 110);
+        shadowNode.setScale(1.04, 1.04, 1);
+        const glowNode = this.makeNode('GearPowerGlow', rotor, 0, 0, 110, 110);
+        glowNode.setScale(1.09, 1.09, 1);
+        const bodyNode = this.makeNode(`GearBody_cl${level}`, rotor, 0, 0, 110, 110);
         resources.load('original/bagLike_0/spriteFrame', SpriteFrame, (error, atlasFrame) => {
-            if (error || !bodyNode.isValid) return;
-            const frame = new SpriteFrame();
-            frame.reset({
-                texture: atlasFrame.texture,
-                rect,
-                originalSize: new Size(110, 110),
-                offset: Vec2.ZERO,
-            });
-            const sprite = bodyNode.addComponent(Sprite);
-            sprite.sizeMode = Sprite.SizeMode.CUSTOM;
-            sprite.spriteFrame = frame;
+            if (error || !rotor.isValid) return;
+            const makeFrame = (): SpriteFrame => {
+                const frame = new SpriteFrame();
+                frame.reset({
+                    texture: atlasFrame.texture,
+                    rect,
+                    originalSize: new Size(110, 110),
+                    offset: Vec2.ZERO,
+                });
+                return frame;
+            };
+            const shadow = shadowNode.addComponent(Sprite);
+            shadow.sizeMode = Sprite.SizeMode.CUSTOM;
+            shadow.color = new Color(30, 34, 48, 145);
+            shadow.spriteFrame = makeFrame();
+            const glow = glowNode.addComponent(Sprite);
+            glow.sizeMode = Sprite.SizeMode.CUSTOM;
+            glow.color = new Color(255, 226, 104, 0);
+            glow.spriteFrame = makeFrame();
+            const body = bodyNode.addComponent(Sprite);
+            body.sizeMode = Sprite.SizeMode.CUSTOM;
+            body.spriteFrame = makeFrame();
         });
     }
 
@@ -3933,9 +5142,15 @@ export class CangshuGame extends Component {
         graphics.fill();
     }
 
-    private beginGearDrag(gear: Gear, _event: EventTouch): void {
+    private beginGearDrag(gear: Gear, event: EventTouch): void {
         if (this.phase !== 'deploy') return;
         this.dragGear = gear;
+        const touch = event.getUILocation();
+        const localTouch = this.node.getComponent(UITransform)!.convertToNodeSpaceAR(new Vec3(touch.x, touch.y, 0));
+        this.dragTouchOffset = {
+            x: localTouch.x - gear.node.position.x,
+            y: localTouch.y - gear.node.position.y,
+        };
         this.dragOrigin = {
             row: gear.row,
             col: gear.col,
@@ -3952,16 +5167,19 @@ export class CangshuGame extends Component {
         if (this.dragGear !== gear || this.phase !== 'deploy') return;
         const p = event.getUILocation();
         const local = this.node.getComponent(UITransform)!.convertToNodeSpaceAR(new Vec3(p.x, p.y, 0));
-        gear.node.setPosition(local.x, local.y);
+        gear.node.setPosition(local.x - this.dragTouchOffset.x, local.y - this.dragTouchOffset.y);
     }
 
     private endGearDrag(gear: Gear, event: EventTouch): void {
         if (this.dragGear !== gear) return;
         const p = event.getUILocation();
         const local = this.node.getComponent(UITransform)!.convertToNodeSpaceAR(new Vec3(p.x, p.y, 0));
-        const cell = this.positionToGrid(local.x, local.y);
+        const dropX = local.x - this.dragTouchOffset.x;
+        const dropY = local.y - this.dragTouchOffset.y;
+        gear.node.setPosition(dropX, dropY);
+        const cell = this.positionToGrid(dropX, dropY);
         const config = GEARS[gear.id];
-        const mergeTarget = this.findMergeTarget(gear, local.x, local.y);
+        const mergeTarget = this.findMergeTarget(gear, dropX, dropY);
         if (mergeTarget && this.mergeGears(gear, mergeTarget)) {
             this.dragGear = null;
             return;
@@ -3992,6 +5210,9 @@ export class CangshuGame extends Component {
             const target = this.gridPosition(gear.row, gear.col);
             gear.node.setPosition(target.x, target.y);
             gear.node.setScale(1, 1, 1);
+            gear.rotationActive = false;
+            gear.rotationElapsed = gear.rotationDuration;
+            this.applyGearRotationPresentation(gear);
             this.relayoutCandidates();
             this.tipLabel.string = displaced.length
                 ? `${config.name}已替换 ${displaced.length} 个旧齿轮；旧齿轮已退回候选栏`
@@ -4019,22 +5240,30 @@ export class CangshuGame extends Component {
 
     private findMergeTarget(dragged: Gear, x: number, y: number): Gear | null {
         const possibleTargets = [...this.gears, ...this.candidates];
+        let bestTarget: Gear | null = null;
+        let bestScore = Number.POSITIVE_INFINITY;
         for (const target of possibleTargets) {
             if (target === dragged) continue;
             const sameFamilyMerge = target.id === dragged.id && Boolean(GEARS[dragged.id].nextId);
             const fusion = bagLikeFusionRecipe(dragged.id, target.id);
             if (!sameFamilyMerge && !fusion) continue;
-            if (gearDropHitsTarget(
+            const score = gearMergeTargetScore(
+                this.gearShape(dragged.id),
+                x,
+                y,
+                dragged.node.scale.x,
                 this.gearShape(target.id),
                 target.node.position.x,
                 target.node.position.y,
                 target.node.scale.x,
-                x,
-                y,
                 GRID_CELL,
-            )) return target;
+            );
+            if (score !== null && score < bestScore) {
+                bestScore = score;
+                bestTarget = target;
+            }
         }
-        return null;
+        return bestTarget;
     }
 
     private mergeGears(dragged: Gear, target: Gear): boolean {
@@ -4140,6 +5369,9 @@ export class CangshuGame extends Component {
             gear.row = -1;
             gear.col = -1;
             gear.workerPower = 0;
+            gear.rotationActive = false;
+            gear.rotationElapsed = gear.rotationDuration;
+            this.applyGearRotationPresentation(gear);
             if (this.candidates.indexOf(gear) < 0) this.candidates.push(gear);
         }
         this.refreshPlacedWheelHomeHp();
@@ -4156,6 +5388,7 @@ export class CangshuGame extends Component {
     private stepBattle(dt: number): void {
         const round = this.rounds[this.roundIndex];
         this.roundClock += dt;
+        if (this.battleMode === 'endless') this.specialBattleElapsed += dt;
 
         // BattleInstanceController schedules every due monster before the
         // BattleProcessor snapshot, so a newly spawned unit acts this frame.
@@ -4178,6 +5411,7 @@ export class CangshuGame extends Component {
         for (let index = monsters.length - 1; index >= 0; index -= 1) {
             this.stepUnit(monsters[index], dt);
         }
+        this.refreshUnitPresentationOrder();
         this.stepFusionSkillHits(dt);
         this.stepPendingHits(dt);
         if (this.phase !== 'battle') return;
@@ -4190,10 +5424,32 @@ export class CangshuGame extends Component {
             clearTimer: this.clearTimer,
             dt,
         });
+        if (this.battleMode === 'endless') {
+            if (this.enemyHomeHp <= 0) {
+                const livingGold = this.units
+                    .filter((unit) => !unit.dead && unit.team === 'enemy')
+                    .reduce((total, unit) => total + Math.max(0, unit.cfg.gold || 0), 0);
+                let scheduledGold = 0;
+                for (let index = this.spawnIndex; index < round.monsters.length; index += 1) {
+                    scheduledGold += Math.max(0, UNITS[round.monsters[index]]?.gold || 0);
+                }
+                this.specialDropGold += livingGold + scheduledGold + this.enemyHomeGold;
+                this.finishSpecialMode();
+                return;
+            }
+            if (this.selfHp <= 0 || this.specialBattleElapsed >= 300
+                || (this.spawnIndex >= round.times.length && !enemiesAlive)) {
+                this.selfHp = Math.max(0, this.selfHp);
+                this.finishSpecialMode();
+                return;
+            }
+            return;
+        }
         this.clearTimer = outcome.clearTimer;
         if (outcome.state === 'lost') {
             this.selfHp = 0;
-            this.finish(false);
+            if (this.battleMode === 'daily') this.finishSpecialMode();
+            else this.finish(false);
             return;
         }
         if (outcome.state === 'round-clear') this.completeRound();
@@ -4239,6 +5495,7 @@ export class CangshuGame extends Component {
                     this.powerMissingGearCount += 1;
                     continue;
                 }
+                this.triggerGearRotation(gear, POWER_CONTACT_DELAY_SECONDS / productivity);
                 const config = GEARS[gear.id];
                 if (!config.powerPerTrigger) {
                     this.powerMissingConfigCount += 1;
@@ -4253,6 +5510,53 @@ export class CangshuGame extends Component {
         }
     }
 
+    private triggerGearRotation(gear: Gear, durationSeconds: number): void {
+        if (gear.location !== 'grid' || gear.id === 'P01') return;
+        gear.rotationElapsed = 0;
+        gear.rotationDuration = Math.max(0.01, durationSeconds);
+        gear.rotationActive = true;
+        gear.rotationTriggerCount += 1;
+        this.applyGearRotationPresentation(gear);
+    }
+
+    private stepGearRotations(dt: number): void {
+        for (const gear of this.gears) {
+            if (!gear.rotationActive) continue;
+            gear.rotationElapsed = Math.min(gear.rotationDuration, gear.rotationElapsed + Math.max(0, dt));
+            if (gear.rotationElapsed >= gear.rotationDuration) gear.rotationActive = false;
+            this.applyGearRotationPresentation(gear);
+        }
+    }
+
+    private applyGearRotationPresentation(gear: Gear): void {
+        const shape = this.gearShape(gear.id);
+        const activeProgress = gear.rotationActive && gear.rotationDuration > 0
+            ? Math.min(1, gear.rotationElapsed / gear.rotationDuration)
+            : 1;
+        for (const [shapeRow, shapeCol] of shape) {
+            const rotor = gear.node.getChildByName(`GearRotor_${shapeRow}_${shapeCol}`);
+            if (!rotor) continue;
+            if (gear.location === 'grid') {
+                const gridIndex = (gear.row + shapeRow) * GRID_COLS + gear.col + shapeCol;
+                rotor.angle = gearRotationAngleDegrees(
+                    gridIndex,
+                    POWER_INDEX,
+                    gear.rotationElapsed,
+                    gear.rotationDuration,
+                );
+            } else {
+                rotor.angle = 0;
+            }
+            const glow = rotor.getChildByName('GearPowerGlow')?.getComponent(Sprite);
+            if (glow) {
+                const glowAlpha = gear.rotationActive
+                    ? Math.round(12 + 36 * Math.sin(Math.PI * activeProgress))
+                    : 0;
+                glow.color = new Color(255, 226, 104, glowAlpha);
+            }
+        }
+    }
+
     private queueProduction(gear: Gear): void {
         const config = GEARS[gear.id];
         if (config.coinAmount) {
@@ -4261,11 +5565,16 @@ export class CangshuGame extends Component {
         }
         if (!config.unit) return;
         const tower = UNITS[config.unit].attackType === 'WHEEL';
-        this.productionJobs.push({
-            timer: WORKER_COMPLETE_ANIMATION_SECONDS + (tower ? 0 : HAMSTER_SPAWN_FLIGHT_SECONDS),
-            gear,
-            kind: tower ? 'tower' : 'hamster',
-        });
+        const outputCount = this.battleMode === 'daily'
+            ? dailyProductionCount(this.dailyBuffIds, tower, this.battleRandom)
+            : 1;
+        for (let index = 0; index < outputCount; index += 1) {
+            this.productionJobs.push({
+                timer: WORKER_COMPLETE_ANIMATION_SECONDS + (tower ? 0 : HAMSTER_SPAWN_FLIGHT_SECONDS) + index * 0.08,
+                gear,
+                kind: tower ? 'tower' : 'hamster',
+            });
+        }
         if (this.fusionValidationMode()) console.log(`[fusion-validation] queued ${gear.id}`);
     }
 
@@ -4398,11 +5707,11 @@ export class CangshuGame extends Component {
             unit.cfg.range,
             unit.cfg.moveSpeed * dt,
             enemyHome,
-            unit.team === 'enemy',
+            unit.team === 'enemy' || (unit.team === 'self' && this.battleMode === 'endless'),
         );
         if (intent.attackTarget || intent.attackHome) {
             if (unit.cooldown <= 0) {
-                this.beginAttack(unit, intent.target, intent.attackHome ? 'self' : null);
+                this.beginAttack(unit, intent.target, intent.attackHome ? (unit.team === 'self' ? 'enemy' : 'self') : null);
             }
             this.playAnimation(unit, 'idle', true);
             return;
@@ -4602,7 +5911,8 @@ export class CangshuGame extends Component {
                         attack,
                         false,
                         0,
-                        target.shieldWallRemaining > 0 ? target.shieldWall?.damageResistance || 0 : 0,
+                        (target.shieldWallRemaining > 0 ? target.shieldWall?.damageResistance || 0 : 0)
+                            + this.dailyModeDamageResistance(unit, target),
                     );
                     const counterattack = h04ShieldWallCounterattackDamage(
                         damage.rawValue,
@@ -4698,10 +6008,11 @@ export class CangshuGame extends Component {
         const primaryBullet = unit.cfg.fusionPrimaryBullet;
         const launchX = unit.x + (primaryBullet?.launchOffsetX || 0);
         const launchY = unit.y + (primaryBullet?.launchOffsetY || 0);
+        const homeTargetX = targetHome === 'enemy' ? BATTLEFIELD_HOME_X : -BATTLEFIELD_HOME_X;
         const travelDistance = target
             ? Math.hypot(target.x - launchX, target.y - launchY)
             : targetHome
-              ? Math.hypot(-BATTLEFIELD_HOME_X - launchX, launchY)
+              ? Math.hypot(homeTargetX - launchX, launchY)
               : 0;
         // Type 11 has no version-18 BulletType factory case and falls through
         // to BulletUnit: fixed launch direction, cfg.speed, and a path ending
@@ -4715,7 +6026,7 @@ export class CangshuGame extends Component {
             : 1;
         const impactX = target
             ? launchX + (target.x - launchX) * primaryTravelRatio
-            : targetHome ? -BATTLEFIELD_HOME_X : launchX;
+            : targetHome ? homeTargetX : launchX;
         const impactY = target
             ? launchY + (target.y - launchY) * primaryTravelRatio
             : -10;
@@ -4856,7 +6167,8 @@ export class CangshuGame extends Component {
                         attack,
                         forcedWarriorCritical,
                         forcedWarriorCritical ? warriorCombo?.bonusCritDamage || 0 : 0,
-                        target.shieldWallRemaining > 0 ? target.shieldWall?.damageResistance || 0 : 0,
+                        (target.shieldWallRemaining > 0 ? target.shieldWall?.damageResistance || 0 : 0)
+                            + this.dailyModeDamageResistance(hit.attacker, target),
                     );
                     const counterattack = h04ShieldWallCounterattackDamage(
                         damage.rawValue,
@@ -4918,14 +6230,15 @@ export class CangshuGame extends Component {
                     !hit.attacker.dead,
                 );
                 const damage = this.calculateDamage(hit.attacker, null, hit.effectRatio, attack);
-                this.selfHp -= damage;
+                if (hit.targetHome === 'enemy') this.enemyHomeHp -= damage;
+                else this.selfHp -= damage;
                 if (hit.attacker.cfg.selfDestructRadius && !hit.attacker.dead) {
                     // ZB_1701 completes by killing its caster; the ConType_14
                     // death behavior is the single 10000-ratio home hit above.
                     // It does not add a second area hit to nearby heroes.
                     this.killUnit(hit.attacker);
                 }
-                const x = -HOME_X + 20;
+                const x = hit.targetHome === 'enemy' ? HOME_X - 20 : -HOME_X + 20;
                 this.addDamageText(damage, x, -15);
                 this.addTrace(hit.attacker, x, -10);
             }
@@ -4982,7 +6295,14 @@ export class CangshuGame extends Component {
     }
 
     private calculateDamage(attacker: BattleUnit, targetConfig: UnitConfig | null, effectRatio: number, attack = this.effectiveAttack(attacker)): number {
-        return this.calculateDamageResult(attacker, targetConfig, effectRatio, attack).value;
+        const dailyResistance = this.battleMode === 'daily' && targetConfig && attacker.team === 'self'
+            ? dailyEnemyDamageResistance(
+                this.dailyBuffIds,
+                attacker.cfg.attackType === 'WHEEL' ? 'WHEEL' : 'HAMSTER',
+                targetConfig.monsterType === 'ELITE',
+            )
+            : 0;
+        return this.calculateDamageResult(attacker, targetConfig, effectRatio, attack, false, 0, dailyResistance).value;
     }
 
     private calculateDamageResult(
@@ -5091,7 +6411,13 @@ export class CangshuGame extends Component {
         }, 0.42);
         this.units = this.units.filter((item) => item.uid !== unit.uid);
         this.pendingHits = this.pendingHits.filter((hit) => hit.projectile || (hit.attacker.uid !== unit.uid && hit.target?.uid !== unit.uid));
-        if (unit.team === 'enemy') this.addExperience(unit.cfg.exp || 0);
+        if (unit.team === 'enemy') {
+            this.addExperience(unit.cfg.exp || 0);
+            if (this.battleMode === 'endless') {
+                this.specialKillCount += 1;
+                this.specialDropGold += Math.max(0, unit.cfg.gold || 0);
+            }
+        }
     }
 
     private addExperience(amount: number): void {
@@ -5267,6 +6593,12 @@ export class CangshuGame extends Component {
 
     private rerollTraits(): void {
         if (this.traitRerollsUsed >= TRAIT_REROLL_MAX) return;
+        this.playMockAdvertisement('trait-reroll', () => this.completeTraitReroll(), (outcome) => {
+            this.tipLabel.string = outcome === 'cancelled' ? '已取消模拟广告，重抽次数未消耗' : '模拟广告失败，重抽次数未消耗';
+        });
+    }
+
+    private completeTraitReroll(): void {
         this.traitRerollsUsed += 1;
         this.drawNewTraitChoices(TRAIT_REROLL_MIN_QUALITY);
         this.renderTraitChoices();
@@ -5274,6 +6606,12 @@ export class CangshuGame extends Component {
 
     private takeAllTraits(): void {
         if (this.traitTakeAllUsed >= TRAIT_TAKE_ALL_MAX) return;
+        this.playMockAdvertisement('trait-take-all', () => this.completeTraitTakeAll(), (outcome) => {
+            this.tipLabel.string = outcome === 'cancelled' ? '已取消模拟广告，全选次数未消耗' : '模拟广告失败，全选次数未消耗';
+        });
+    }
+
+    private completeTraitTakeAll(): void {
         this.traitTakeAllUsed += 1;
         for (const trait of this.currentTraitChoices) this.applyTrait(trait);
         this.closeTraitSelection();
@@ -5312,12 +6650,16 @@ export class CangshuGame extends Component {
         return {
             ...this.accountProfile.stars,
             ...(this.validationHeroStarOverrides || {}),
-            H05: this.h05HeroStar,
-            H06: this.h06HeroStar,
-            H14: this.h14HeroStar,
-            H16: this.h16HeroStar,
-            H17: this.h17HeroStar,
         };
+    }
+
+    private dailyModeDamageResistance(attacker: BattleUnit, target: BattleUnit): number {
+        if (this.battleMode !== 'daily' || attacker.team !== 'self' || target.team !== 'enemy') return 0;
+        return dailyEnemyDamageResistance(
+            this.dailyBuffIds,
+            attacker.cfg.attackType === 'WHEEL' ? 'WHEEL' : 'HAMSTER',
+            target.cfg.monsterType === 'ELITE',
+        );
     }
 
     private applyTrait(trait: TraitDefinition): void {
@@ -5445,6 +6787,7 @@ export class CangshuGame extends Component {
             team: 'self',
             cfg,
             node: gear.node,
+            shadow: gear.node,
             hpGraphics: graphics,
             fallback: graphics,
             skeleton: null,
@@ -5580,7 +6923,9 @@ export class CangshuGame extends Component {
         const starAttack = bagLikeHeroBaseAttributeAtStar(config.atk, accountStar);
         const starHp = bagLikeHeroBaseAttributeAtStar(config.hp, accountStar);
         return {
-            attack: scales.attack * (config.atk > 0 ? starAttack / config.atk : 1),
+            attack: scales.attack
+                * (config.atk > 0 ? starAttack / config.atk : 1)
+                * (this.battleMode === 'daily' ? dailyHeroAttackMultiplier(this.dailyBuffIds, GEARS[gear.id].shape.length) : 1),
             hp: scales.hp * (config.hp > 0 ? starHp / config.hp : 1),
         };
     }
@@ -5604,8 +6949,14 @@ export class CangshuGame extends Component {
 
     private spawnMonster(model: ModelId, round: RoundConfig): void {
         const base = UNITS[model];
-        const config = base;
-        const defeatScale = mechanicsFirstDefeatCompensation(this.failedAttempts);
+        const config = this.battleMode === 'daily'
+            ? {
+                ...base,
+                moveSpeed: base.moveSpeed * dailyEnemyMoveMultiplier(this.dailyBuffIds),
+                controlImmune: base.controlImmune || this.dailyBuffIds.indexOf('DI_DEBUFF_eff02') >= 0,
+            }
+            : base;
+        const defeatScale = this.battleMode === 'normal' ? mechanicsFirstDefeatCompensation(this.failedAttempts) : 1;
         const atkScale = (this.levelAtkMultiple / 10000) * (round.atkMultiple / 10000) * defeatScale;
         const hpScale = (this.levelHpMultiple / 10000) * (round.hpMultiple / 10000) * defeatScale;
         const developedBattle = this.developedValidationMode() === 'battle';
@@ -5621,7 +6972,14 @@ export class CangshuGame extends Component {
     private createUnit(team: Team, cfg: UnitConfig, x: number, y: number, atkScale: number, hpScale: number): void {
         const node = this.makeNode(`${team}_${cfg.visualModelId || cfg.id}_${this.serial}`, this.unitLayer, x, y, 90, 110);
         if (team === 'enemy') node.setScale(-1, 1, 1);
-        const fallback = node.addComponent(Graphics);
+        const shadow = this.makeNode('UnitShadow', node, 0, -43, cfg.boss ? 84 : 68, cfg.boss ? 28 : 22);
+        shadow.setScale(1, cfg.boss ? 0.38 : 0.32, 1);
+        const shadowGraphics = shadow.addComponent(Graphics);
+        shadowGraphics.fillColor = new Color(29, 29, 38, cfg.boss ? 118 : 92);
+        shadowGraphics.circle(0, 0, cfg.boss ? 39 : 32);
+        shadowGraphics.fill();
+        const fallbackNode = this.makeNode('FallbackUnit', node, 0, 0, 90, 110);
+        const fallback = fallbackNode.addComponent(Graphics);
         fallback.fillColor = cfg.color;
         fallback.circle(0, 0, cfg.boss ? 31 : 24);
         fallback.fill();
@@ -5655,6 +7013,7 @@ export class CangshuGame extends Component {
             team,
             cfg,
             node,
+            shadow,
             hpGraphics,
             fallback,
             skeleton: null,
@@ -5702,6 +7061,16 @@ export class CangshuGame extends Component {
         this.units.push(unit);
         this.loadSkeleton(unit);
         this.drawUnitHp(unit);
+        this.refreshUnitPresentationOrder();
+    }
+
+    private refreshUnitPresentationOrder(): void {
+        const living = this.units.filter((unit) => !unit.dead && unit.node.isValid);
+        const byUid = new Map(living.map((unit) => [unit.uid, unit]));
+        const order = unitPresentationBackToFront(living.map((unit) => ({ uid: unit.uid, y: unit.y })));
+        for (let index = 0; index < order.length; index += 1) {
+            byUid.get(order[index])?.node.setSiblingIndex(index);
+        }
     }
 
     private loadSkeleton(unit: BattleUnit): void {
@@ -5719,6 +7088,9 @@ export class CangshuGame extends Component {
             skeletonNode.setScale(unit.cfg.spineScale, unit.cfg.spineScale, 1);
             unit.skeleton = skeleton;
             unit.fallback.enabled = false;
+            unit.shadow.setSiblingIndex(0);
+            skeletonNode.setSiblingIndex(2);
+            unit.node.getChildByName('HpBar')?.setSiblingIndex(unit.node.children.length - 1);
             this.playAnimation(unit, 'idle', true);
         });
     }
@@ -5753,14 +7125,15 @@ export class CangshuGame extends Component {
         // each monster death; round coin rewards wait for roundEnd one second
         // later.
         this.clearUnits();
-        this.claimAccountRoundReward(this.roundIndex + 1);
+        if (this.battleMode === 'normal') this.claimAccountRoundReward(this.roundIndex + 1);
         this.scheduleOnce(() => {
             const h15RoundCoins = bagLikeH15RoundEndCoins(this.gears.map((gear) => gear.id));
             this.gold += (this.roundCoinRewards[this.roundIndex] || 0) + h15RoundCoins;
             this.h15RoundCoinsEarned += h15RoundCoins;
             const completion = resolveNormalRoundCompletion(this.roundIndex, this.rounds.length);
             if (completion.state === 'won') {
-                this.finish(true);
+                if (this.battleMode === 'daily') this.finishSpecialMode();
+                else this.finish(true);
                 return;
             }
             this.roundIndex = completion.roundIndex;
@@ -5798,6 +7171,40 @@ export class CangshuGame extends Component {
             ? `进入第 ${bagLikeLevelNumber(this.levelId + 1)} 关`
             : '全部通关';
         this.tipLabel.string = won ? `${this.levelName}已通关：${this.rounds.length} 波敌人全部清除` : '我方兵营被摧毁，调整齿轮后重试';
+    }
+
+    private finishSpecialMode(): void {
+        const mode = this.battleMode;
+        if (mode === 'daily') {
+            this.specialModeState = settleDailyChallenge(this.specialModeState, this.roundIndex);
+        } else if (mode === 'endless') {
+            this.specialModeState = settleEndlessChallenge(this.specialModeState, this.specialKillCount, this.specialDropGold);
+            this.accountProfile = cloneBagLikeAccountProfile(this.longRunOriginalAccountProfile || this.accountProfile);
+            this.accountProfile.gold += this.specialDropGold;
+            this.persistAccountProfile(false);
+        }
+        if (mode === 'daily' && this.longRunOriginalAccountProfile) {
+            this.accountProfile = cloneBagLikeAccountProfile(this.longRunOriginalAccountProfile);
+            this.persistAccountProfile(false);
+        }
+        this.longRunOriginalAccountProfile = null;
+        saveSpecialModeState(sys.localStorage, this.specialModeState);
+        this.phase = 'won';
+        this.paused = false;
+        this.traitLayer.active = false;
+        this.clearUnits();
+        this.prepareLayer.active = false;
+        this.resultLayer.active = true;
+        if (mode === 'daily') {
+            this.resultTitleLabel.string = '每日挑战结算';
+            this.resultBodyLabel.string = `完成到第 ${Math.min(this.roundIndex + 1, this.rounds.length)} 波\n本次里程碑金币 +${(this.roundIndex + 1) * 500} · 今日累计 ${this.specialModeState.daily.dailyGold}`;
+            this.tipLabel.string = '每日挑战次数与里程碑进度已保存';
+        } else {
+            this.resultTitleLabel.string = '无尽试炼结算';
+            this.resultBodyLabel.string = `本次击杀 ${this.specialKillCount} · 获得金币 ${this.specialDropGold}\n历史最高：${this.specialModeState.endless.maxKillCount} 击杀 / ${this.specialModeState.endless.maxGold} 金币`;
+            this.tipLabel.string = '无尽试炼按金币优先、同金币按击杀数更新纪录';
+        }
+        this.resultNextButtonLabel.node.parent!.active = false;
     }
 
     private clearUnits(): void {
@@ -5950,6 +7357,9 @@ export class CangshuGame extends Component {
 
     private drawHomes(): void {
         this.drawHomeBar(this.selfHomeGraphics, this.selfHp / this.levelHomeHp, BLUE);
+        if (this.enemyHomeGraphics && this.battleMode === 'endless') {
+            this.drawHomeBar(this.enemyHomeGraphics, this.enemyHomeHp / Math.max(1, this.enemyHomeMaxHp), RED);
+        }
         const ratio = Math.max(0, this.selfHp / this.levelHomeHp);
         const g = this.backpackHpGraphics;
         g.clear();
@@ -5988,6 +7398,9 @@ export class CangshuGame extends Component {
         };
         this.phaseLabel.string = phaseText[this.phase];
         this.roundLabel.string = `${Math.min(this.roundIndex + 1, this.rounds.length)}/${this.rounds.length}波`;
+        if (this.battleMode === 'endless') {
+            this.roundLabel.string = `无尽 ${Math.max(0, Math.ceil(300 - this.specialBattleElapsed))}秒`;
+        }
         this.goldLabel.string = `${this.gold}`;
         this.selfHpLabel.string = `我方兵营 ${Math.ceil(this.selfHp)} / ${this.levelHomeHp}`;
         this.objectiveLabel.string = this.phase === 'battle' || this.phase === 'trait' ? `剩余敌人 ${this.units.filter((unit) => unit.team === 'enemy' && !unit.dead).length}` : '目标：清除全部敌人';

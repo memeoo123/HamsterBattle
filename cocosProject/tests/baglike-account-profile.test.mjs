@@ -38,8 +38,8 @@ const check = (actual, expected, message) => {
 };
 
 const defaults = createBagLikeAccountProfile({
-    unlockedHeroFamilies: 'H01;H02;H03;H04;H11;H12;H13;UNKNOWN',
-    heroStars: { H01: 1, H02: 3, H03: 1, H04: 1, H11: 1, H12: 1, H13: 3 },
+    unlockedHeroFamilies: 'H01;H02;H03;H04;H05;H06;H11;H12;H13;H14;H16;H17;UNKNOWN',
+    heroStars: { H01: 1, H02: 3, H03: 1, H04: 1, H05: 1, H06: 1, H11: 1, H12: 1, H13: 3, H14: 1, H16: 1, H17: 1 },
     levelId: 1004,
     challengeTimes: 2,
     maxPassedLevelId: 1003,
@@ -122,6 +122,8 @@ check(tryUpgradeBagLikeAccountHero({ ...upgradeReady, fragments: { ...upgradeRea
 check(bagLikeHeroUnlockLevel('H13'), 1001, 'H13 unlocks after level 1001');
 check(bagLikeHeroUnlockLevel('H03'), 1002, 'H03 unlocks after level 1002');
 check(bagLikeHeroUnlockLevel('H11'), 1004, 'H11 unlocks after level 1004');
+check(bagLikeHeroUnlockLevel('H14'), 1007, 'H14 shark unlocks after level 1007');
+check(bagLikeHeroUnlockLevel('H17'), 1015, 'H17 laser gear unlocks after level 1015');
 check(bagLikeHeroUnlockLevel('H01'), null, 'H01 has no level gate');
 const completed1001 = completeBagLikeAccountLevel(upgradeReady, 1001);
 check(completed1001.unlocked, ['H13'], 'clearing 1001 automatically unlocks H13 at initStar');
@@ -189,6 +191,9 @@ assert.match(source, /completeBagLikeAccountLevel\(this\.accountProfile, this\.l
 assert.match(source, /tryUpgradeBagLikeAccountHero\(this\.accountProfile, family\)/, 'the account UI uses formal resource-spending upgrades');
 assert.match(source, /accountDebug=1[\s\S]*测试：全 20 星/, 'manual star presets are isolated behind an explicit debug query');
 assert.match(source, /账号 \/ 星级[\s\S]*buildAccountPanel\(\)/, 'the normal preparation flow exposes the account panel');
-assertions += 9;
+assert.match(source, /商店[\s\S]*角色[\s\S]*战斗[\s\S]*培养[\s\S]*活动/, 'the recovered five-tab main navigation is present in source order');
+assert.match(source, /showRoleScene\(\)[\s\S]*showCultivationScene\(/, 'role and cultivation are directly reachable from the main navigation');
+assert.match(source, /BAGLIKE_ACCOUNT_HERO_FAMILIES[\s\S]*slice\(this\.cultivationPage \* pageSize/, 'cultivation paginates the complete account hero roster');
+assertions += 12;
 
 console.log(`baglike account profile: ${assertions} assertions passed`);

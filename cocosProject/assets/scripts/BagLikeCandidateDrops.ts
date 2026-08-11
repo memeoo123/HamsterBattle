@@ -395,6 +395,54 @@ export function gearDropHitsTarget(
     return Math.abs(dropX - portraitX) <= portraitRadius && Math.abs(dropY - portraitY) <= portraitRadius;
 }
 
+export function gearMergeTargetScore(
+    draggedShape: GridShape,
+    draggedX: number,
+    draggedY: number,
+    draggedScale: number,
+    targetShape: GridShape,
+    targetX: number,
+    targetY: number,
+    targetScale: number,
+    gridSize: number,
+): number | null {
+    if (draggedShape.length === 0 || targetShape.length === 0 || gridSize <= 0) return null;
+    const draggedSafeScale = Math.max(0, draggedScale);
+    const targetSafeScale = Math.max(0, targetScale);
+    const occupiedSnapRadius = gridSize * 0.82 * Math.max(draggedSafeScale, targetSafeScale);
+    let nearestOccupiedDistance = Number.POSITIVE_INFINITY;
+    for (const [draggedRow, draggedColumn] of draggedShape) {
+        const cellX = draggedX + draggedColumn * gridSize * draggedSafeScale;
+        const cellY = draggedY - draggedRow * gridSize * draggedSafeScale;
+        for (const [targetRow, targetColumn] of targetShape) {
+            const targetCellX = targetX + targetColumn * gridSize * targetSafeScale;
+            const targetCellY = targetY - targetRow * gridSize * targetSafeScale;
+            nearestOccupiedDistance = Math.min(
+                nearestOccupiedDistance,
+                Math.hypot(cellX - targetCellX, cellY - targetCellY),
+            );
+        }
+    }
+
+    const shapeCentre = (shape: GridShape, x: number, y: number, scale: number): readonly [number, number] => {
+        const rows = Math.max(...shape.map(([row]) => row)) + 1;
+        const columns = Math.max(...shape.map(([, column]) => column)) + 1;
+        return [
+            x + (columns - 1) * gridSize * 0.5 * scale,
+            y - (rows - 1) * gridSize * 0.5 * scale,
+        ];
+    };
+    const [draggedCentreX, draggedCentreY] = shapeCentre(draggedShape, draggedX, draggedY, draggedSafeScale);
+    const [targetCentreX, targetCentreY] = shapeCentre(targetShape, targetX, targetY, targetSafeScale);
+    const centreDistance = Math.hypot(draggedCentreX - targetCentreX, draggedCentreY - targetCentreY);
+    const centreSnapRadius = gridSize * 1.05 * Math.max(draggedSafeScale, targetSafeScale);
+    if (nearestOccupiedDistance > occupiedSnapRadius && centreDistance > centreSnapRadius) return null;
+
+    // Prefer the visually closest compatible piece. Centre distance dominates for
+    // irregular/L-shaped pieces while occupied-cell distance keeps long pieces usable.
+    return centreDistance + nearestOccupiedDistance * 0.35;
+}
+
 export function placementAreaValid(
     shape: GridShape,
     row: number,

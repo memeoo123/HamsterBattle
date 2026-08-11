@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-11T15:47:02.7277511+08:00",
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "version": "18",
+    "creatorVersion": "3.8.8",
+    "build": "cocosProject/build/web-mobile"
+  },
+  "presentation": {
+    "source": "BagLikeView.onGearBeTrigger/onRo plus authorized original and reconstruction battle captures",
+    "gearRule": {
+      "degreesPerTrigger": 360,
+      "phaseDegrees": 22.5,
+      "alternatingDirections": true,
+      "baseDelaySeconds": 0.2,
+      "productivityScaled": true
+    },
+    "liveSample": {
+      "query": "?level=1003&fusionValidation=battle",
+      "phase": "battle",
+      "gearRotation": "H0705#5:active:319.5:6;H0805#6:idle:22.5:3;H0905#7:active:319.5:6",
+      "powerGearTriggers": 15,
+      "unitShadows": 8,
+      "unitDepth": "enemy_M02_14;self_R1003_13;self_R1003_9;self_R1002_11;self_R1002_8;enemy_M07_10;self_R1001_7;self_R1001_12"
+    },
+    "implemented": [
+      "per-cell gear rotors that leave portraits, connectors and worker UI upright",
+      "recovered gear-body silhouette drop shadows and restrained trigger edge-light",
+      "boss/ordinary oval unit shadows",
+      "stable y-depth sorting with uid tie-breaks",
+      "existing Spine run/idle/attack/laser/death frame animation routing retained"
+    ]
+  },
+  "longRunMethod": {
+    "queryFlag": "longRunValidation=1",
+    "scope": "input automation only: ordinary candidate merge/place, grid reward consume, start, trait choice and normal retry",
+    "forbiddenOverridesObserved": false,
+    "combatHealthOrAttributeOverrides": false,
+    "phaseOrWaveOverrides": false,
+    "validationSpeed": 90,
+    "fixedSimulationStepSeconds": 0.05,
+    "reason": "counteracts the in-app browser background frame throttle while preserving small-step combat, collision, production and animation order",
+    "normalRuntimeSpeedUnchanged": true
+  },
+  "normalClosures": [
+    {
+      "levelId": 1003,
+      "levelName": "荒漠边缘",
+      "phase": "won",
+      "round": 10,
+      "roundCount": 10,
+      "simulatedBattleSeconds": 501.504,
+      "retries": 4,
+      "failedAttemptsAfterVictory": 0,
+      "selfHp": 1706,
+      "maxHp": 2570,
+      "gold": 118,
+      "powerGearTriggers": 2883,
+      "workerApplies": 2883,
+      "powerMissingGear": 0,
+      "powerMissingConfig": 0,
+      "maxSelfUnits": 9,
+      "maxEnemyUnits": 20,
+      "accountScope": "normal-account"
+    },
+    {
+      "levelId": 1100,
+      "levelName": "火山熔岩",
+      "phase": "won",
+      "round": 15,
+      "roundCount": 15,
+      "simulatedBattleSeconds": 1416.11,
+      "retries": 16,
+      "failedAttemptsAfterVictory": 0,
+      "selfHp": 6404,
+      "maxHp": 6505,
+      "gold": 187,
+      "powerGearTriggers": 8457,
+      "workerApplies": 8457,
+      "powerMissingGear": 0,
+      "powerMissingConfig": 0,
+      "maxSelfUnits": 7,
+      "maxEnemyUnits": 22,
+      "accountScopeAtStart": "validation-unlock-only",
+      "accountScopeAfterVictory": "normal-account"
+    },
+    {
+      "levelId": 1200,
+      "levelName": "火山熔岩",
+      "phase": "won",
+      "round": 15,
+      "roundCount": 15,
+      "simulatedBattleSeconds": 993.256,
+      "retries": 16,
+      "failedAttemptsAfterVictory": 0,
+      "selfHp": 3857,
+      "maxHp": 4600,
+      "gold": 245,
+      "powerGearTriggers": 7521,
+      "workerApplies": 7521,
+      "powerMissingGear": 0,
+      "powerMissingConfig": 0,
+      "maxSelfUnits": 8,
+      "maxEnemyUnits": 19,
+      "accountScopeAtStart": "validation-unlock-only",
+      "accountScopeAfterVictory": "normal-account"
+    }
+  ],
+  "specialModeClosures": [
+    {
+      "mode": "daily",
+      "accountScope": "normal-account",
+      "phase": "won",
+      "settlement": "completed after home defeat",
+      "round": 1,
+      "roundCount": 10,
+      "simulatedBattleSeconds": 11.309,
+      "selfHp": 0,
+      "powerGearTriggers": 36,
+      "workerApplies": 36,
+      "powerMissingGear": 0,
+      "powerMissingConfig": 0
+    },
+    {
+      "mode": "daily",
+      "accountScope": "late-progression-fixture",
+      "phase": "won",
+      "settlement": "completed after home defeat",
+      "round": 1,
+      "roundCount": 10,
+      "simulatedBattleSeconds": 13.529,
+      "selfHp": 0,
+      "maxHp": 2455,
+      "powerGearTriggers": 60,
+      "workerApplies": 60,
+      "powerMissingGear": 0,
+      "powerMissingConfig": 0
+    },
+    {
+      "mode": "endless",
+      "accountScope": "late-progression-fixture",
+      "phase": "won",
+      "settlement": "completed after home defeat",
+      "simulatedBattleSeconds": 10.655,
+      "specialElapsedSeconds": 10.684,
+      "selfHp": 0,
+      "maxHp": 3799,
+      "enemyHomeHp": 74510,
+      "kills": 0,
+      "dropGold": 0,
+      "powerGearTriggers": 35,
+      "workerApplies": 35,
+      "powerMissingGear": 0,
+      "powerMissingConfig": 0
+    }
+  ],
+  "specialModeVerdict": {
+    "runtimeAndSettlementClosure": "passed",
+    "dailyTenWaveClear": "not demonstrated",
+    "endlessThreeHundredSecondSurvival": "not demonstrated",
+    "reason": "the authorized evidence does not contain the competitor account's exact P01 role progression or saved late-game loadout; even a clearly labelled 20-star hero-profile fixture cannot offset the unrecovered opening productivity gap",
+    "policy": "no direct battle-stat, health, phase or wave override was introduced to manufacture a pass"
+  },
+  "verification": {
+    "pureTestFiles": 44,
+    "longRunAutomationAssertions": 11,
+    "typescript": "passed with --skipLibCheck true",
+    "projectChecker": {
+      "valid": true,
+      "assetFileCount": 184,
+      "missingMetaCount": 0
+    },
+    "freshWebMobileBuild": true,
+    "creatorCliExitCode": 36
+  }
+}

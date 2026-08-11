@@ -9,9 +9,42 @@ export const BATTLE_SPEED_UP_MULTIPLE = 1.5;
 // PRODUCTIVITY effect with param 1000 for 5000 ms.
 export const P01_ROUND_START_PRODUCTIVITY_BASIS_POINTS = 1000;
 export const P01_ROUND_START_PRODUCTIVITY_SECONDS = 5;
+export const GEAR_ROTATION_DEGREES = 360;
+export const GEAR_ODD_PHASE_DEGREES = 22.5;
 
 export function p01RoundStartProductivity(remainingSeconds: number): number {
     return remainingSeconds > 0 ? 1 + P01_ROUND_START_PRODUCTIVITY_BASIS_POINTS / 10000 : 1;
+}
+
+// BagLikeView.onRo uses the occupied grid index and the power-core index to
+// phase neighbouring gear teeth by 22.5 degrees and rotate them in opposite
+// directions. The animation lasts for the power contact delay, then lands on
+// the visually equivalent base angle after exactly one revolution.
+export function gearRotationParity(gridIndex: number, powerIndex: number): 0 | 1 {
+    return Math.abs(Math.trunc(gridIndex + powerIndex + 1)) % 2 as 0 | 1;
+}
+
+export function gearRotationAngleDegrees(
+    gridIndex: number,
+    powerIndex: number,
+    elapsedSeconds: number,
+    durationSeconds: number,
+): number {
+    const parity = gearRotationParity(gridIndex, powerIndex);
+    const baseAngle = GEAR_ODD_PHASE_DEGREES * parity;
+    if (durationSeconds <= 0 || elapsedSeconds >= durationSeconds) return baseAngle;
+    const progress = Math.max(0, elapsedSeconds) / durationSeconds;
+    return baseAngle + (parity ? 1 : -1) * GEAR_ROTATION_DEGREES * progress;
+}
+
+export type PresentationDepthSource = { uid: number; y: number };
+
+// Cocos renders later siblings in front. Units lower on screen therefore need
+// a higher sibling index; uid keeps equal-y ordering stable across frames.
+export function unitPresentationBackToFront(units: readonly PresentationDepthSource[]): number[] {
+    return [...units]
+        .sort((left, right) => right.y - left.y || left.uid - right.uid)
+        .map((unit) => unit.uid);
 }
 
 export type PowerCoreClockState = {

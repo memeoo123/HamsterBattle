@@ -10,6 +10,7 @@ import {
     drawCandidateReward,
     drawDynamicCandidateBatch,
     gearDropHitsTarget,
+    gearMergeTargetScore,
     placedCoinGearCount,
     shouldForceGridCandidate,
     shouldUseStaticCandidateBatch,
@@ -86,6 +87,19 @@ const sharkShape = [[0, 1], [1, 0], [1, 1]];
 assert.equal(gearDropHitsTarget(sharkShape, 0, 0, 1, 50, -50, 100), true, 'H1401 accepts a drop at its portrait centre');
 assert.equal(gearDropHitsTarget(sharkShape, 0, 0, 1, 25, -25, 100), true, 'H1401 portrait area tolerates an imprecise centred drop');
 assert.equal(gearDropHitsTarget(sharkShape, 0, 0, 1, -60, 40, 100), false, 'a drop outside the shark body and portrait remains rejected');
+assert.notEqual(
+    gearMergeTargetScore(sharkShape, 72, 58, 1, sharkShape, 0, 0, 1, 100),
+    null,
+    'H1401 merges with a generous magnetic snap even when its anchor is over half a cell off',
+);
+assert.equal(
+    gearMergeTargetScore(sharkShape, 190, 150, 1, sharkShape, 0, 0, 1, 100),
+    null,
+    'the magnetic merge range still rejects an unrelated distant shark',
+);
+const nearScore = gearMergeTargetScore(sharkShape, 45, 20, 1, sharkShape, 0, 0, 1, 100);
+const farScore = gearMergeTargetScore(sharkShape, 45, 20, 1, sharkShape, 95, 55, 1, 100);
+assert.ok(nearScore !== null && farScore !== null && nearScore < farScore, 'compatible merge targets can be ranked by visual proximity');
 
 const forcedGridBatch = drawDynamicCandidateBatch(
     [3014, 3014, 3014],
@@ -148,6 +162,8 @@ assert.ok(
     [...allReachableCandidateIds].every((id) => new RegExp(`\\b${id}: \\{`).test(gameSource)),
     `every reachable candidate has a renderable GEARS entry: ${[...allReachableCandidateIds].join(',')}`,
 );
+assert.match(gameSource, /dragTouchOffset[\s\S]*localTouch\.x - gear\.node\.position\.x/, 'dragging preserves the original grab point instead of jumping the gear anchor to the finger');
+assert.match(gameSource, /let bestScore = Number\.POSITIVE_INFINITY[\s\S]*score < bestScore/, 'merge selection chooses the nearest compatible magnetic target');
 assert.match(candidateSource, /Array\.from\(unlockedHeroFamilies\)/, 'Creator build keeps Set iteration when replacing missing families');
 assert.match(candidateSource, /Array\.from\(context\.unlockedHeroFamilies\)/, 'Creator build keeps Set iteration at the five-family cap');
 assert.doesNotMatch(candidateSource, /\.\.\.unlockedHeroFamilies/, 'loose Babel cannot lower Set spread into a one-element Set array');

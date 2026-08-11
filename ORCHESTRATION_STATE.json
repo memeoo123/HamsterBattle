@@ -135,7 +135,7 @@
         "validationReport": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\VALIDATION_REPORT.md",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-10T02:48:46.621203+00:00"
+          "recordedAtUtc": "2026-08-11T04:05:54.056938+00:00"
         },
         "originalReference": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\visual\\original\\2026-08-01\\manifest.json",
@@ -151,13 +151,13 @@
         },
         "assetImport": {
           "result": "pass",
-          "evidence": "2026-08-10: Creator 3.8.8 formally imported exact trait effect atlas; 129 assets, missing meta 0; meta UUID 007031c2-937b-430e-833f-49b3b2def12f",
-          "atUtc": "2026-08-10T03:32:53.970679+00:00"
+          "evidence": "cocosProject check: 181 assets, 0 missing meta",
+          "atUtc": "2026-08-11T04:05:53.703460+00:00"
         },
         "typescript": {
           "result": "pass",
-          "evidence": "2026-08-10: Creator 3.8.8 bundled TypeScript, project tsconfig, --noEmit --skipLibCheck true exited 0 after exact trait icon binding",
-          "atUtc": "2026-08-10T03:32:54.053983+00:00"
+          "evidence": "Creator 3.8.8 tsc --noEmit --skipLibCheck passed after out-of-battle secondary pages",
+          "atUtc": "2026-08-11T04:05:53.792058+00:00"
         },
         "visualBaseline": {
           "result": "pass",
@@ -166,8 +166,8 @@
         },
         "gameplaySmoke": {
           "result": "pass",
-          "evidence": "User confirmed in Creator preview that candidate/grid sizing, overlap, and preparation-region separation are resolved; numeric placement 15/15 and scenario layout 27/27 also pass",
-          "atUtc": "2026-08-01T15:42:24.172635+00:00"
+          "evidence": "fresh 750x1334 Web Mobile: settings, P04 abilities, daily challenge pages/back, endless; 0 warning/error",
+          "atUtc": "2026-08-11T04:05:53.968008+00:00"
         },
         "restoreSpecReady": {
           "result": "pass",
@@ -176,8 +176,8 @@
         },
         "mechanicsData": {
           "result": "pass",
-          "evidence": "Account progression schema v2, exact 1-20 star costs, pass-level unlocks, and 1001-1200 milestone rewards implemented; 27 tests 1133/1133, TypeScript pass, Creator Web Mobile exit 36, fresh account-panel runtime warning/error 0.",
-          "atUtc": "2026-08-10T07:46:19.505821+00:00"
+          "evidence": "41/41 test files and golden cases 47/47",
+          "atUtc": "2026-08-11T04:05:53.880346+00:00"
         }
       },
       "history": [
@@ -1816,11 +1816,81 @@
           "name": "mechanicsData",
           "result": "pass",
           "atUtc": "2026-08-10T07:46:19.505831+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-11T02:56:10.386816+00:00"
+        },
+        {
+          "event": "check",
+          "name": "gameplaySmoke",
+          "result": "pass",
+          "atUtc": "2026-08-11T02:56:10.485301+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-11T03:23:04.302057+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-11T03:23:04.398363+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-11T03:23:04.494503+00:00"
+        },
+        {
+          "event": "check",
+          "name": "gameplaySmoke",
+          "result": "pass",
+          "atUtc": "2026-08-11T03:23:04.593158+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationReport",
+          "atUtc": "2026-08-11T03:23:04.685325+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-11T04:05:53.703469+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-11T04:05:53.792066+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-11T04:05:53.880355+00:00"
+        },
+        {
+          "event": "check",
+          "name": "gameplaySmoke",
+          "result": "pass",
+          "atUtc": "2026-08-11T04:05:53.968017+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationReport",
+          "atUtc": "2026-08-11T04:05:54.056948+00:00"
         }
       ],
       "engineEvidence": "settings.37a11.json CocosEngine 3.8.2 + System.register business bundle"
     }
   },
   "createdAtUtc": "2026-07-31T10:06:44.358414+00:00",
-  "updatedAtUtc": "2026-08-10T09:16:35.565769+00:00"
+  "updatedAtUtc": "2026-08-11T04:05:54.056950+00:00"
 }
