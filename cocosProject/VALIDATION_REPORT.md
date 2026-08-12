@@ -120,9 +120,9 @@ P02–P04 精确头像与 P04 `H33_S1/feibiao` 已在后续表现闭环中恢复
 | Check | Result | Evidence |
 |---|---|---|
 | Android native build | Pass | Creator 3.8.8 生成原生工程；Gradle 8.11.1 `assembleDebug` 成功，90 项任务完成，680/680 C/C++ 编译并链接 `libcocos.so` |
-| APK package | Pass | `com.cangshu.hamsterbattle` 1.0；35,095,085 bytes；minSdk 21、targetSdk 35、portrait、arm64-v8a |
-| APK integrity | Pass | SHA-256 `280C3C53EDC03925DCBB1D9C0DB3A7316461542692E3968EE1BCEEBCCE2C2E5D`；使用首包同一 Debug 证书，v1/v2/v3 签名及 4-byte zipalign 均验证通过 |
+| APK package | Pass | `com.cangshu.hamsterbattle` 1.0.1（versionCode 2）；35,095,085 bytes；minSdk 21、targetSdk 35、portrait、arm64-v8a |
+| APK integrity | Pass | SHA-256 `846555C43C3FBBB97F8CA45DBD56D06857941599B79524D3DAF833AA79B6AD4A`；使用首包同一 Debug 证书，v1/v2/v3 签名及 4-byte zipalign 均验证通过 |
 | Physical device smoke | Pass | Redmi Note 8 / Android 13 / arm64-v8a 覆盖安装成功；第 4 关布阵与实际战斗均正常渲染，进程存活，未匹配到 JS exception、fatal exception、native fatal signal 或 ANR |
 | Native level-entry regression | Pass | 原生 canvas shim 存在但无 `dataset`，旧实现清场后写浏览器观测字段触发 TypeError；现已在任何 DOM 写入前保护退出。专项 4 项、全量 52/52、200 关 / 2,978 波 / 54,816 刷怪项、TypeScript 与新鲜 Android 构建均通过；诊断消耗已恢复为 30 体力、空挑战计数 |
 
-交付包位于 `artifacts/android/cangshu-hamster-battle-debug-arm64.apk`；这是供实机体验的 debug 签名包，不是应用商店 release 包。完整记录见 `targets/wxf9af2417e78ce07a/18/evidence/runtime/android-apk-build-2026-08-12.md`。
+交付包位于 `artifacts/android/cangshu-hamster-battle-1.0.1-v2-arm64.apk`；这是供实机体验的 debug 签名包，不是应用商店 release 包。Huawei 报告暂缺 ADB 设备现场，先通过 versionCode 2 和独立文件名排除旧包误装；若 1.0.1 仍复现，必须以该机 logcat 判定是否存在第二条原生异常或 GPU/Shader 分支，不在无证据时切换渲染后端。完整记录见 `targets/wxf9af2417e78ce07a/18/evidence/runtime/android-apk-build-2026-08-12.md`。

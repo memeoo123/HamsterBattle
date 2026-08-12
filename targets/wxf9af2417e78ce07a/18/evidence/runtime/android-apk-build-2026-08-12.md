@@ -2,11 +2,11 @@
 
 ## Artifact
 
-- APK: `artifacts/android/cangshu-hamster-battle-debug-arm64.apk`
+- APK: `artifacts/android/cangshu-hamster-battle-1.0.1-v2-arm64.apk`
 - Size: 35,095,085 bytes
-- SHA-256: `280C3C53EDC03925DCBB1D9C0DB3A7316461542692E3968EE1BCEEBCCE2C2E5D`
+- SHA-256: `846555C43C3FBBB97F8CA45DBD56D06857941599B79524D3DAF833AA79B6AD4A`
 - Package: `com.cangshu.hamsterbattle`
-- Version: `1.0` (`versionCode=1`)
+- Version: `1.0.1` (`versionCode=2`)
 - ABI: `arm64-v8a`; packaged native library: `lib/arm64-v8a/libcocos.so`
 - Minimum/target SDK: 21 / 35
 - Orientation: portrait
@@ -67,3 +67,21 @@ Validation after the fix:
   JS exception, fatal signal, fatal Java exception, or ANR;
 - diagnostic challenge consumption was restored to the pre-test account state:
   `energy=30`, empty `challengeTimesByLevel`, `maxPassedLevelId=1003`.
+
+## Huawei report intake
+
+A later Huawei report still described a black frame after level entry. At intake time the
+Huawei device was absent from both `adb devices -l` and ADB mDNS discovery, so no Huawei
+model, OS/GPU information, installed APK fingerprint, screenshot, or logcat trace was
+available. The distributed fixed APK was opened as a ZIP and its packaged
+`assets/assets/main/index.js` was confirmed to contain the native `dataset` guard.
+
+The earlier fixed package and the pre-fix package both reported version `1.0 (1)` and used
+the same filename, leaving stale-package installation ambiguous on a second phone. The
+package is therefore reissued as `1.0.1 (2)` under a distinct filename while retaining the
+same signing certificate, package ID, save data, arm64 ABI, min SDK and target SDK. The
+versioned APK passed v1/v2/v3 signature verification, zipalign, the 53-file regression
+suite, 200-level state machine, Creator TypeScript and asset/meta checks. Huawei-specific
+render-backend changes remain deliberately unmade until a device trace identifies a GPU
+or shader failure; a working main scene already proves that the device created the GLES3
+runtime successfully.
