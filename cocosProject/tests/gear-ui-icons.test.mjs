@@ -1,10 +1,19 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { bagLikeProducerProfile } from '../assets/scripts/BagLikeUnitProgression.ts';
+import {
+    bagLikeProducerProfile,
+    bagLikeProducerRolePosition,
+    bagLikeProducerShape,
+    bagLikeProducerShapeId,
+} from '../assets/scripts/BagLikeUnitProgression.ts';
 
 const source = fs.readFileSync(new URL('../assets/scripts/CangshuGame.ts', import.meta.url), 'utf8');
 const itemConfig = JSON.parse(fs.readFileSync(
     new URL('../../reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/baglike.BagLikeItemConfig.json', import.meta.url),
+    'utf8',
+).replace(/^\uFEFF/, ''));
+const shapeConfig = JSON.parse(fs.readFileSync(
+    new URL('../../reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/baglike.BagLikeShapeConfig.json', import.meta.url),
     'utf8',
 ).replace(/^\uFEFF/, ''));
 const frameBlock = /const HERO_SMALL_HEAD_FRAMES[^=]*= \{([\s\S]*?)\n\};/.exec(source)?.[1];
@@ -26,6 +35,8 @@ for (const gearId of producerIds) {
 
 assert.match(source, /const profile = bagLikeProducerProfile\(id\);/, 'gear rendering consumes the producer profile source of truth');
 assert.match(source, /HERO_SMALL_HEAD_FRAMES\[profile\.headId\]/, 'gear rendering validates the configured head frame');
+assert.match(source, /bagLikeProducerRolePosition\(gear\.id, GRID_CELL\)/, 'board portraits consume recovered per-shape rolePos coordinates');
+assert.match(source, /bagLikeShapeRolePosition\(entry\.shapeId, GRID_CELL\)/, 'visual catalog portraits consume the same recovered rolePos coordinates');
 assert.ok(frameIds.has('coin'), 'coin gear portrait is recovered');
 assert.ok(frameIds.has('P01'), 'power core portrait is recovered');
 assert.match(source, /gear\.id\.startsWith\('G'\) \? '格' : '★'/, 'grid expansion pieces use their explicit non-portrait marker');
@@ -39,4 +50,28 @@ assert.deepEqual(
     'every configured hero gear resolves through the restored portrait/runtime catalog',
 );
 
-console.log(`gear UI icons: ${producerIds.length}/${configuredHeroIds.length} hero gear configurations resolve`);
+const shapeRowsById = new Map(shapeConfig.rows.map((row) => [row.id, row]));
+for (const item of itemConfig.rows.filter((row) => row.type === 'HERO')) {
+    const recoveredShape = shapeRowsById.get(item.shapeId);
+    assert.ok(recoveredShape, `${item.id} resolves original shape ${item.shapeId}`);
+    const expectedCells = recoveredShape.shapeArr.flatMap((columns, row) =>
+        columns.flatMap((occupied, column) => occupied ? [[row, column]] : []));
+    assert.equal(bagLikeProducerShapeId(item.id), item.shapeId, `${item.id} keeps its original shapeId`);
+    assert.deepEqual(bagLikeProducerShape(item.id), expectedCells, `${item.id} keeps its exact original footprint`);
+
+    const rolePosition = bagLikeProducerRolePosition(item.id);
+    const expectedRolePosition = {
+        x: (recoveredShape.shapeArr[0].length - 1) * 50 - (recoveredShape.rolePos?.x || 0),
+        y: -(recoveredShape.shapeArr.length - 1) * 50 + (recoveredShape.rolePos?.y || 0),
+    };
+    assert.deepEqual(rolePosition, expectedRolePosition, `${item.id} converts its original rolePos exactly`);
+    if (recoveredShape.rolePos) {
+        const roleCell = [-rolePosition.y / 100, rolePosition.x / 100];
+        assert.ok(
+            expectedCells.some(([row, column]) => row === roleCell[0] && column === roleCell[1]),
+            `${item.id} anchors its portrait on an occupied irregular-shape cell`,
+        );
+    }
+}
+
+console.log(`gear UI icons: ${producerIds.length}/${configuredHeroIds.length} hero gear configurations and role positions resolve`);

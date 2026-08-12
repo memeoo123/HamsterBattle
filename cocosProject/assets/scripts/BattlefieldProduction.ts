@@ -37,6 +37,22 @@ export function gearRotationAngleDegrees(
     return baseAngle + (parity ? 1 : -1) * GEAR_ROTATION_DEGREES * progress;
 }
 
+// BrickShowBaseCom rotates the power-core panel in quarter laps and pauses on
+// an occupied side before starting the next quarter. nextDirection points at
+// the side the panel is currently travelling towards; any time beyond the
+// scheduled quarter is therefore the decoded occupied-side pause.
+export function powerCoreRotationAngleDegrees(
+    nextDirection: 0 | 1 | 2 | 3,
+    remainingSeconds: number,
+    quarterSeconds = POWER_QUARTER_LAP_SECONDS,
+): number {
+    const safeQuarter = quarterSeconds > 0 ? quarterSeconds : POWER_QUARTER_LAP_SECONDS;
+    const completedDirection = (nextDirection + 3) % 4;
+    const rotationRemaining = Math.min(safeQuarter, Math.max(0, remainingSeconds));
+    const progress = 1 - rotationRemaining / safeQuarter;
+    return (completedDirection * 90 + progress * 90) % 360;
+}
+
 export type PresentationDepthSource = { uid: number; y: number };
 
 // Cocos renders later siblings in front. Units lower on screen therefore need

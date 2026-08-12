@@ -22,41 +22,74 @@ export type BagLikeProducerProfile = {
 
 const LEVEL_ATTRIBUTE_MULTIPLES = [0, 1, 1.5, 2.25, 3.375] as const;
 
-// BagLikeShapeConfig IDs recovered for each producer family. Keeping these in
-// the pure runtime catalog lets both the Cocos interaction path and the 200-level
-// accessibility checks consume exactly the same footprints.
-const PRODUCER_SHAPES: Readonly<Record<BagLikeHeroFamilyId, BagLikeGridShape>> = {
-    H01: [[0, 0]],
-    H02: [[0, 0], [0, 1]],
-    H03: [[0, 0], [1, 0]],
-    H04: [[0, 0], [1, 0], [2, 0]],
-    H05: [[0, 0], [1, 0], [1, 1]],
-    H06: [[0, 0], [0, 1], [1, 0], [1, 1]],
-    H07: [[0, 0], [0, 1]],
-    H08: [[0, 0], [1, 0]],
-    H09: [[0, 0], [0, 1], [1, 0]],
-    H10: [[0, 0], [0, 1], [1, 0], [1, 1]],
-    H11: [[0, 0], [1, 0]],
-    H12: [[0, 0], [0, 1]],
-    H13: [[0, 0], [0, 1], [1, 0]],
-    H14: [[0, 1], [1, 0], [1, 1]],
-    H15: [[0, 1], [1, 1]],
-    H16: [[0, 0], [0, 1], [1, 1]],
-    H17: [[0, 0], [0, 1], [0, 2]],
-    H18: [[0, 0], [0, 1], [1, 1]],
+// BagLikeShapeConfig recovered from the original table. Keeping shape identity,
+// footprint and rolePos together prevents the UI from re-centering irregular
+// gears: the original deliberately anchors the worker on one occupied cell.
+const BAGLIKE_SHAPES: Readonly<Record<number, BagLikeGridShape>> = {
+    1: [[0, 0]],
+    2: [[0, 0], [0, 1]],
+    3: [[0, 0], [1, 0]],
+    4: [[0, 0], [0, 1], [0, 2]],
+    5: [[0, 0], [1, 0], [2, 0]],
+    6: [[0, 0], [1, 0], [1, 1]],
+    7: [[0, 0], [0, 1], [1, 0]],
+    8: [[0, 1], [1, 0], [1, 1]],
+    9: [[0, 0], [0, 1], [1, 1]],
+    10: [[0, 0], [0, 1], [1, 0], [1, 1]],
 };
 
-export function bagLikeProducerShape(gearId: string): BagLikeGridShape | null {
-    const fusionFamily = gearId === 'H0705' ? 'H07'
+const PRODUCER_SHAPE_IDS: Readonly<Record<BagLikeHeroFamilyId, number>> = {
+    H01: 1, H02: 2, H03: 3, H04: 5, H05: 6, H06: 10,
+    H07: 2, H08: 3, H09: 7, H10: 10,
+    H11: 3, H12: 2, H13: 7, H14: 8, H15: 8, H16: 9, H17: 4, H18: 9,
+};
+
+const SHAPE_ROLE_POS: Readonly<Partial<Record<number, Readonly<{ x: number; y: number }>>>> = {
+    6: { x: 50, y: -50 },
+    7: { x: 50, y: 50 },
+    8: { x: -50, y: -50 },
+    9: { x: -50, y: 50 },
+};
+
+function bagLikeProducerFamily(gearId: string): BagLikeHeroFamilyId | null {
+    const fusionFamily: BagLikeHeroFamilyId | null = gearId === 'H0705' ? 'H07'
         : gearId === 'H0805' ? 'H08'
         : gearId === 'H0905' ? 'H09'
         : gearId === 'H1005' ? 'H10'
         : gearId === 'H1505' ? 'H15'
         : gearId === 'H1805' ? 'H18'
         : null;
-    if (fusionFamily) return PRODUCER_SHAPES[fusionFamily];
+    if (fusionFamily) return fusionFamily;
     const match = /^(H01|H02|H03|H04|H05|H06|H11|H12|H13|H14|H16|H17)0[1-4]$/.exec(gearId);
-    return match ? PRODUCER_SHAPES[match[1] as BagLikeHeroFamilyId] : null;
+    return match ? match[1] as BagLikeHeroFamilyId : null;
+}
+
+export function bagLikeProducerShapeId(gearId: string): number | null {
+    const family = bagLikeProducerFamily(gearId);
+    return family ? PRODUCER_SHAPE_IDS[family] : null;
+}
+
+export function bagLikeProducerShape(gearId: string): BagLikeGridShape | null {
+    const shapeId = bagLikeProducerShapeId(gearId);
+    return shapeId ? BAGLIKE_SHAPES[shapeId] : null;
+}
+
+export function bagLikeShapeRolePosition(shapeId: number, gridCell = 100): Readonly<{ x: number; y: number }> | null {
+    const shape = BAGLIKE_SHAPES[shapeId];
+    if (!shape) return null;
+    const rows = Math.max(...shape.map(([row]) => row)) + 1;
+    const columns = Math.max(...shape.map(([, column]) => column)) + 1;
+    const rolePos = SHAPE_ROLE_POS[shapeId] || { x: 0, y: 0 };
+    const scale = gridCell / 100;
+    return {
+        x: (columns - 1) * gridCell * 0.5 - rolePos.x * scale,
+        y: -(rows - 1) * gridCell * 0.5 + rolePos.y * scale,
+    };
+}
+
+export function bagLikeProducerRolePosition(gearId: string, gridCell = 100): Readonly<{ x: number; y: number }> | null {
+    const shapeId = bagLikeProducerShapeId(gearId);
+    return shapeId ? bagLikeShapeRolePosition(shapeId, gridCell) : null;
 }
 
 // hero.HeroConfig + hero.HeroStarConfig. The original HeroModel floors the

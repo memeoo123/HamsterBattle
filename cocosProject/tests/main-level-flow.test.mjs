@@ -3,8 +3,12 @@ import {
     CANDIDATE_VALIDATION_LEVEL_IDS,
     PLAYABLE_LEVEL_IDS,
     directBootLevelId,
+    directBattleBypassesProgression,
+    enterNormalLevel,
     isCandidateValidationLevelId,
     isPlayableLevelId,
+    latestMainLevelId,
+    NORMAL_LEVEL_ENERGY_COST,
     playableLevelCards,
 } from '../assets/scripts/MainLevelFlow.ts';
 
@@ -78,10 +82,29 @@ assert.equal(directBootLevelId('?developedValidation=trait', 1004), 1004, 'devel
 assert.equal(directBootLevelId('?traitValidation=1&level=1001', 1004), 1001, 'trait validation can target a playable level');
 assert.equal(directBootLevelId('?fusionValidation=battle', 9999), 1001, 'invalid fallback resolves to the first playable level');
 
+const profile = {
+    schemaVersion: 4,
+    stars: { H01: 1, H02: 1, H03: 0, H04: 1, H05: 0, H06: 0, H11: 0, H12: 1, H13: 0, H14: 0, H16: 0, H17: 0 },
+    challengeTimesByLevel: {}, gold: 0, energy: 9, diamonds: 0,
+    fragments: { H01: 0, H02: 0, H03: 0, H04: 0, H05: 0, H06: 0, H11: 0, H12: 0, H13: 0, H14: 0, H16: 0, H17: 0 },
+    maxPassedLevelId: 1001,
+};
+assert.equal(NORMAL_LEVEL_ENERGY_COST, 5, 'TrunkInstanceConfig charges five energy');
+assert.equal(latestMainLevelId(profile.maxPassedLevelId), 1002, 'main scene follows the latest unlocked level');
+assert.equal(enterNormalLevel(profile, 1003).reason, 'locked', 'future levels cannot bypass progression');
+const entered = enterNormalLevel(profile, 1002);
+assert.equal(entered.entered, true, 'the next level can be entered');
+assert.equal(entered.profile.energy, 4, 'normal entry deducts five energy');
+assert.equal(profile.energy, 9, 'entry does not mutate the input profile');
+assert.equal(enterNormalLevel({ ...profile, energy: 4 }, 1002).reason, 'energy', 'insufficient energy blocks entry');
+assert.equal(enterNormalLevel(profile, 1200, true).entered, true, 'explicit validation may bypass progression');
+assert.equal(directBattleBypassesProgression('?directBattle=1&level=1200'), true, 'direct evidence route bypasses account cost');
+assert.equal(directBattleBypassesProgression('?level=1200'), false, 'plain level query is not a bypass');
+
 assert.throws(
     () => playableLevelCards(levels.filter((level) => level.id !== 1200)),
     /已恢复关卡 1200 不存在于关卡表/,
     'missing recovered rows fail instead of creating guessed cards',
 );
 
-console.log('main level flow: 31 assertions passed');
+console.log('main level flow assertions passed');

@@ -64,7 +64,11 @@
 | Level-1004 deterministic scenario | Pass | `32/32`：15 波、Boss 顺序、准备棋盘/候选分区、战斗态三个独立源枢轴偏移、EXP 阈值、截图三能力 ID，以及 1.5 倍 EXP 的单级升级/小数余数 |
 | Weighted trait draw and gear upgrade | Pass | `240/240`：权重边界、不重复、阵容/账号星级/次数/波次/基地生命过滤、同组最高星级版本、普通升级无保底、仅刷新品质 4 保底；覆盖随机棋盘升级、3012 no-op、经验强化、全敌军减攻、核心相邻强化、两种基地治疗、H01 连击必暴四版本与最终击杀共享叠攻、H02 分裂射击三版本与弹幕两版本、H03 变形两版本与穿透激光、H04 骑士活力两版本、盾墙两版本与星 8 H04/H09 普攻击飞、H11 星 2 护盾/星 5 基地修复/星 7 分派断链 no-op、H12 全部能力，以及 H13 弹射次数/爆米花替换能力 |
 | Weighted preparation draw | Pass (supported-family runtime path) | `41/41`：静态资格、3000–3004 路由、全部 12 个推荐英雄族、独立槽位抽取、账号已解锁族过滤、H11 不计入五英雄族上限的例外、金币计数权重、缺失族替换、第七次非广告刷新强制扩格、Prepare 精确倍率及原版 3012 no-op；仍缺目标账号精确解锁集合 |
-| Preparation placement | Pass (numeric + user smoke) | `24/24`：合成优先后的整件覆盖退回、主动取下、边界/核心保护、候选/棋盘固定同尺寸、候选溢出分行，以及 1–5 级精确色值、等级色覆盖兵种色和无等级特殊件回退色；用户已确认尺寸、重叠和棋盘分区问题解决 |
+| Preparation placement | Pass (numeric + live P01 drag) | `24/24` 既有占格/覆盖/回退/尺寸/颜色规则保持通过；2026-08-12 进一步按竞品恢复 P01 通用拖动，在 1004 实机从 `(2,3)` 拖到 `(1,3)`，动力索引随位置更新，无效落点回原位，warning/error `0` |
+| P01 power-core presentation | Pass (source + fresh build) | 使用原始 `power1.png` 金色齿轮，齿轮层连续四分之一圈旋转并保留占用侧暂停，仓鼠层独立循环移动且保持正向；移位后的角度样本 `243.3° → 297.3° → 351.4° → 45.4°`。专项 48 项、全量 44/44、Creator TypeScript 与 2026-08-12 10:51 Web Mobile 构建通过；证据见 `evidence/runtime/p01-power-core-motion-and-drag.md` |
+| Irregular gear role position | Pass (source table + full roster + fresh build) | 原版 `BrickShowBaseCom` 的逐形状 `rolePos` 已进入棋盘与图鉴共用路径：H05 左下、H09/H13 左上、H14/H15 右下、H16/H18 右上；H1505 足迹同时恢复为三格 L。54/54 个 HERO 的原始 `shapeId`、足迹和头像坐标均逐项通过，所有非中心锚点均落在实际占用格；全量 44/44、200/200 关状态机、Creator TypeScript 与 2026-08-12 11:17 Web Mobile 构建通过，三页图鉴/棋盘截图 warning/error `0`；证据见 `evidence/visual/reconstruction/2026-08-12-shape-rolepos/manifest.json` |
+| Progressive hero-family unlocks | Pass (migration + runtime filtering) | Schema 4 会把旧版“全兵种 1 星”存档中尚未达到关卡门槛的族重新锁定；动态发牌继续只消费账号已解锁集合。第 4 关代表存档为 `H01/H02/H03/H04/H12/H13`，后续按恢复表加入。账号专项 `95/95`、候选专项 `47/47`、200/200 关状态机通过 |
+| Power-role acquisition | Pass (source-exact local path; platform ad mocked) | P01 按 `POWER:INIT_DATA` 初始 0 星并出战；P02-P04 初始 -1。按原 `RoleMgr` 恢复每角色每日 3 次、每次 2 碎片、10 片招募、0-8 星成本与已获得角色出战切换；广告使用本地模拟完成回调，取消/失败不发碎片。角色系统仍在 1005 开放。专项 `21/21`，角色页 750×1334 实机显示通过 |
 | Level-specific hero Spine import | Pass | H01/H02/H03/H04 的 1–4 级模型路径已接入；本轮新增 12 套二/三/四级原始 Spine 3.8.99，atlas/texture/skeleton 均由 Creator 导入 |
 | Matched visual baseline | Pass | 最终 `developed-trait-polished.png` 与 `developed-battle-fixed.png` 已关闭精确图标、RichText、标题/按钮、完整 HUD、常驻背包、863 HP 和固定敌军快照；H13 原始 `pskill01` 与 `Font_white2` 伤害数字同帧子基线也保持通过。750×1334 截图 warning/error 0；最终证据见 `evidence/visual/reconstruction/2026-08-10/manifest.json`，H13 子基线见 `evidence/visual/reconstruction/2026-08-10-h13-impact/manifest.json` |
 
@@ -85,3 +89,17 @@
 
 工程已完成 1001–1200 的 200 关机制数据闭环，并合入账号成长、关卡奖励与连续推进。
 最终特质和固定战斗截图已通过 `visualBaseline`；目标账号精确存档、广告平台流程、shape 动画逐帧复验和部分未访问界面保留为非阻塞扩展。
+
+## 2026-08-12 progression/role audit addendum
+
+| Check | Result | Evidence |
+|---|---|---|
+| Sequential level entry and energy | Pass | Only passed + latest challenge are interactable; normal entry spends 5 energy, validation routes are isolated bypasses |
+| Unit unlock pool | Pass | Candidate families are derived from the recovered chapter unlock table; locked families cannot enter dynamic draws |
+| Role acquisition and leveling | Pass | P01 default equipped; P02–P04 require 10 fragments; 3×2 daily fragments, 3 daily free levels, star level caps, 0–8 star costs and equip persistence are active |
+| Role battle attributes | Pass | Equipped level/star attributes, all-role global level/star milestones, P01 start reward, P02/P03 actives and P04 active/passive consumers are connected |
+| P04 damage source | Pass | Recovered `getTotalAtk()` source; left-to-right y=0 Dart, radius 150, max 10 distinct hits, 6000/9000/12000 base ratio with 1000 decay |
+| Hero soft separation | Pass (source + deterministic); dense live replay pending | Stationary attacking/casting heroes now consume the recovered environment vector instead of pinning rear units; frozen units remain immobile. Kernel 116 assertions and movement integration 10 assertions pass |
+| Regression/build | Pass | TypeScript pass; 47/47 tests; 200 levels / 2,978 rounds / 54,816 spawns; Web Mobile build finished at 14:24:23 |
+
+P04 `H33_S1` and exact P02–P04 portraits remain explicit visual fallbacks, not mechanics blockers. Runtime/source evidence: `targets/wxf9af2417e78ce07a/18/evidence/runtime/progression-role-system-gates-2026-08-12.md`.

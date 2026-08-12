@@ -5,7 +5,10 @@ import { dirname, resolve } from 'node:path';
 import {
     bagLikeHeroBaseHpAtStar,
     bagLikeProducerProfile,
+    bagLikeProducerRolePosition,
     bagLikeProducerShape,
+    bagLikeProducerShapeId,
+    bagLikeShapeRolePosition,
     bagLikeWheelHomeHpContribution,
 } from '../assets/scripts/BagLikeUnitProgression.ts';
 
@@ -72,6 +75,14 @@ check(bagLikeProducerProfile('H0204')?.primarySkillId, 2002, 'level-4 archer swi
 check(bagLikeProducerShape('H0601'), [[0, 0], [0, 1], [1, 0], [1, 1]], 'H06 keeps its recovered 2x2 footprint');
 check(bagLikeProducerShape('H1404'), [[0, 1], [1, 0], [1, 1]], 'every H14 level keeps its recovered lower-right L footprint');
 check(bagLikeProducerShape('H1703'), [[0, 0], [0, 1], [0, 2]], 'H17 keeps its recovered horizontal-three footprint');
+check(bagLikeProducerShapeId('H1401'), 8, 'shark gears retain recovered BagLikeShapeConfig id 8');
+check(bagLikeProducerRolePosition('H1401'), { x: 100, y: -100 }, 'shark portrait anchors on the occupied lower-right gear like the original');
+check(bagLikeProducerRolePosition('H1505'), { x: 100, y: -100 }, 'fusion shark shares the original lower-right role position');
+check(bagLikeShapeRolePosition(6), { x: 0, y: -100 }, 'shape 6 rolePos anchors its occupied lower-left cell');
+check(bagLikeShapeRolePosition(7), { x: 0, y: 0 }, 'shape 7 rolePos anchors its occupied upper-left cell');
+check(bagLikeShapeRolePosition(8), { x: 100, y: -100 }, 'shape 8 rolePos anchors its occupied lower-right cell');
+check(bagLikeShapeRolePosition(9), { x: 100, y: 0 }, 'shape 9 rolePos anchors its occupied upper-right cell');
+check(bagLikeShapeRolePosition(10), { x: 50, y: -50 }, 'shape 10 without rolePos stays at its geometric center');
 
 const fusionModels = {
     H0705: ['H07', 'R1001', 'js_gangtiexia', 1.2, 8001],
@@ -93,7 +104,7 @@ for (const [gearId, [heroId, modelId, modelName, modelScale, primarySkillId]] of
 
 const mechanicsOnlyFusions = {
     H1005: ['H10', 'hamster', 'R1004', 'H1005', 1.1, 10001, [[0, 0], [0, 1], [1, 0], [1, 1]]],
-    H1505: ['H15', 'wheel', null, 'H1505', null, 110001, [[0, 1], [1, 1]]],
+    H1505: ['H15', 'wheel', null, 'H1505', null, 110001, [[0, 1], [1, 0], [1, 1]]],
     H1805: ['H18', 'hamster', 'R1005', 'H1805', 1, 12001, [[0, 0], [0, 1], [1, 1]]],
 };
 for (const [gearId, [heroId, kind, modelId, headId, modelScale, primarySkillId, shape]] of Object.entries(mechanicsOnlyFusions)) {

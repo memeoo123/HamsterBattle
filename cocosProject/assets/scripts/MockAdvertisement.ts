@@ -5,7 +5,10 @@ export type MockAdPlacement =
     | 'battle-refresh'
     | 'trait-reroll'
     | 'trait-take-all'
-    | 'shop-energy';
+    | 'shop-energy'
+    | 'shop-energy-diamond'
+    | 'role-fragment'
+    | 'role-level';
 
 export type MockAdOutcome = 'completed' | 'cancelled' | 'failed';
 
@@ -51,7 +54,7 @@ export function normalizeMockAdvertisementState(value: unknown, now = new Date()
     const sameDay = source.dayKey === today;
     const placementToday: Partial<Record<MockAdPlacement, number>> = {};
     if (sameDay && source.placementToday && typeof source.placementToday === 'object') {
-        for (const placement of ['endless-third', 'battle-refresh', 'trait-reroll', 'trait-take-all', 'shop-energy'] as MockAdPlacement[]) {
+        for (const placement of ['endless-third', 'battle-refresh', 'trait-reroll', 'trait-take-all', 'shop-energy', 'shop-energy-diamond', 'role-fragment', 'role-level'] as MockAdPlacement[]) {
             const count = safeCount(source.placementToday[placement]);
             if (count > 0) placementToday[placement] = count;
         }
@@ -120,6 +123,10 @@ export function canClaimMockShopEnergy(state: MockAdvertisementState, now = new 
     return mockAdvertisementPlacementCount(state, 'shop-energy', now) < 3;
 }
 
+export function canBuyDiamondShopEnergy(state: MockAdvertisementState, now = new Date()): boolean {
+    return mockAdvertisementPlacementCount(state, 'shop-energy-diamond', now) < 3;
+}
+
 export function mockAdvertisementPlacementLabel(placement: MockAdPlacement): string {
     return {
         'endless-third': '无尽试炼第 3 次挑战',
@@ -127,5 +134,8 @@ export function mockAdvertisementPlacementLabel(placement: MockAdPlacement): str
         'trait-reroll': '局内词条重抽',
         'trait-take-all': '局内词条全选',
         'shop-energy': '商店体力奖励',
+        'shop-energy-diamond': '商店钻石体力购买',
+        'role-fragment': '角色免费碎片',
+        'role-level': '角色免费升级',
     }[placement];
 }

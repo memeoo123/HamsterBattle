@@ -75,6 +75,7 @@ import {
     BATTLE_SPEED_UP_MULTIPLE,
     connectedGearUidsAtCoreSide,
     gearRotationAngleDegrees,
+    powerCoreRotationAngleDegrees,
     HAMSTER_SPAWN_FLIGHT_SECONDS,
     isGearDirectlyAdjacentToCore,
     P01_ROUND_START_PRODUCTIVITY_SECONDS,
@@ -209,7 +210,9 @@ import {
 } from './BagLikeLevelSelection';
 import {
     bagLikeProducerProfile,
+    bagLikeProducerRolePosition,
     bagLikeProducerShape,
+    bagLikeShapeRolePosition,
     bagLikeWheelHomeHpContribution,
     BagLikePrimarySkillId,
     BagLikeProducerProfile,
@@ -231,7 +234,11 @@ import {
     BagLikeFusionPrimaryBulletProfile,
 } from './BagLikeFusionHeroMechanics';
 import {
+    directBattleBypassesProgression,
     directBootLevelId,
+    enterNormalLevel,
+    latestMainLevelId,
+    NORMAL_LEVEL_ENERGY_COST,
     playableLevelCards,
     PlayableLevelCard,
 } from './MainLevelFlow';
@@ -303,6 +310,7 @@ import {
     spendSpecialModeEnergy,
 } from './SpecialModeRuntime';
 import {
+    canBuyDiamondShopEnergy,
     canClaimMockShopEnergy,
     completeMockAdvertisement,
     loadMockAdvertisementState,
@@ -314,6 +322,39 @@ import {
     mockAdvertisementPlacementLabel,
     saveMockAdvertisementState,
 } from './MockAdvertisement';
+import {
+    activatePowerRole,
+    claimPowerRoleFreeLevel,
+    claimPowerRoleFreeFragments,
+    equipPowerRole,
+    loadPowerRoleState,
+    POWER_ROLE_DAILY_FREE_FRAGMENT_TIMES,
+    POWER_ROLE_DAILY_FREE_LEVEL_TIMES,
+    POWER_ROLE_FREE_FRAGMENT_COUNT,
+    POWER_ROLE_MAX_STAR,
+    POWER_ROLE_STAR_COSTS,
+    powerRoleLevelLimit,
+    PowerRoleId,
+    PowerRoleState,
+    savePowerRoleState,
+    upgradePowerRoleStar,
+} from './PowerRoleProgression';
+import {
+    addPowerRoleEnergy,
+    p01StartRewardGearLevel,
+    p03ActiveHealBasisPoints,
+    p04DamageBasisPointsAtHit,
+    p04KillProductivityBasisPoints,
+    p04KillProductivityCap,
+    P04_MAX_HITS,
+    POWER_ROLE_ACTIVE_ENERGY_COST,
+    POWER_ROLE_ACTIVE_ENERGY_MAX,
+    POWER_ROLE_ACTIVE_SECONDS,
+    powerRoleActiveAvailable,
+    powerRoleActiveBasisPoints,
+    powerRoleGlobalAttackBasisPoints,
+    powerRoleRoundStartProductivityBasisPoints,
+} from './PowerRoleBattle';
 
 const { ccclass, property } = _decorator;
 
@@ -454,6 +495,12 @@ type BagLikeAtlasFrame = {
 
 // Exact image records and 9-slice borders decoded from bagLike.a597d.bin.
 const BAGLIKE_ATLAS_FRAMES: Readonly<Record<string, BagLikeAtlasFrame>> = {
+    powerCore: {
+        // FairyGUI bagLike/power1.png: the exact gold power gear used behind
+        // the independently animated equipped hamster model.
+        rect: new Rect(775, 341, 108, 102),
+        sourceSize: new Size(114, 114),
+    },
     gridOpen: {
         rect: new Rect(1049, 376, 58, 58),
         sourceSize: new Size(58, 58),
@@ -1554,6 +1601,7 @@ export class CangshuGame extends Component {
 
     private initialized = false;
     private accountProfile!: BagLikeAccountProfile;
+    private powerRoleState!: PowerRoleState;
     private accountDefaultProfile!: BagLikeAccountProfile;
     private longRunOriginalAccountProfile: BagLikeAccountProfile | null = null;
     private claimedAccountRewardRounds = new Set<number>();
@@ -1587,6 +1635,7 @@ export class CangshuGame extends Component {
     private selectedDailyInstanceIndex = 0;
     private outOfBattleMusicVolume = 1;
     private outOfBattleSoundVolume = 1;
+    private outOfBattleAnimationClock = 0;
     private levelBackground = '';
     private baseLevelHomeHp = 500;
     private levelHomeHp = 500;
@@ -1647,7 +1696,13 @@ export class CangshuGame extends Component {
     private freeRefreshUsed = false;
     private powerDirection: 0 | 1 | 2 | 3 = 1;
     private powerTimer = POWER_QUARTER_LAP_SECONDS;
+    private powerVisualQuarterSeconds = POWER_QUARTER_LAP_SECONDS;
+    private powerCoreModelElapsed = 0;
     private powerSkillRemaining = 0;
+    private powerRoleEnergy = 0;
+    private powerRoleActiveRemaining = 0;
+    private powerRoleKillProductivityStacks = 0;
+    private powerRoleStartRewardClaimed = false;
     private battleRandom: () => number = createBattleSeedRandom();
     private visualFixtureRandom: () => number = createBattleSeedRandom(1004);
     private productionJobs: ProductionJob[] = [];
@@ -1722,6 +1777,7 @@ export class CangshuGame extends Component {
     private refreshCostNode!: Node;
     private speedLabel!: Label;
     private pauseLabel!: Label;
+    private powerRoleActiveLabel!: Label;
     private accountButtonLabel!: Label;
     private levelButtonLabel!: Label;
     private levelTitleLabel!: Label;
@@ -1796,6 +1852,8 @@ export class CangshuGame extends Component {
                     saveSpecialModeState(sys.localStorage, this.specialModeState);
                     this.mockAdvertisementState = loadMockAdvertisementState(sys.localStorage);
                     saveMockAdvertisementState(sys.localStorage, this.mockAdvertisementState);
+                    this.powerRoleState = loadPowerRoleState(sys.localStorage);
+                    savePowerRoleState(sys.localStorage, this.powerRoleState);
                     const longRunMode = this.longRunRequestedMode();
                     if (longRunMode) {
                         this.showMainScene();
@@ -1812,6 +1870,17 @@ export class CangshuGame extends Component {
 
     private launchLevel(levelId: number): void {
         if (!this.levelTable) throw new Error('关卡表尚未加载');
+        const search = typeof window === 'undefined' ? '' : window.location.search;
+        const entry = enterNormalLevel(this.accountProfile, levelId, directBattleBypassesProgression(search));
+        if (!entry.entered) {
+            const message = entry.reason === 'locked'
+                ? `请先通关第 ${bagLikeLevelNumber(levelId) - 1} 关`
+                : `体力不足，挑战主线需要 ${NORMAL_LEVEL_ENERGY_COST} 点体力`;
+            this.showMainScene(message);
+            return;
+        }
+        this.accountProfile = entry.profile;
+        if (!directBattleBypassesProgression(search)) this.persistAccountProfile(false);
         this.resetLevelSession();
         this.battleMode = 'normal';
         this.longRunOriginalAccountProfile = null;
@@ -2014,7 +2083,7 @@ export class CangshuGame extends Component {
         this.syncBrowserContractState();
     }
 
-    private showMainScene(): void {
+    private showMainScene(message = ''): void {
         profiler.hideStats();
         this.resetLevelSession();
         this.destroyRootChildren();
@@ -2023,72 +2092,136 @@ export class CangshuGame extends Component {
 
         const shade = this.makeNode('MainShade', root, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
         const shadeGraphics = shade.addComponent(Graphics);
-        shadeGraphics.fillColor = new Color(16, 30, 36, 130);
+        shadeGraphics.fillColor = new Color(16, 30, 36, 82);
         shadeGraphics.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
         shadeGraphics.fill();
 
-        const titlePanel = this.makeNode('MainTitlePanel', root, 0, 335, 650, 250);
-        const titlePanelGraphics = titlePanel.addComponent(Graphics);
-        titlePanelGraphics.fillColor = new Color(25, 45, 48, 225);
-        titlePanelGraphics.roundRect(-325, -125, 650, 250, 32);
-        titlePanelGraphics.fill();
-        titlePanelGraphics.strokeColor = new Color(255, 207, 72, 255);
-        titlePanelGraphics.lineWidth = 5;
-        titlePanelGraphics.roundRect(-322, -122, 644, 244, 29);
-        titlePanelGraphics.stroke();
-        const title = this.makeLabel('MainTitle', titlePanel, 0, 38, 600, 80, '仓鼠齿轮保卫战', 48, GOLD);
+        const title = this.makeLabel('MainTitle', root, 0, 515, 500, 66, '仓鼠齿轮', 42, GOLD);
         this.applyOriginalOutline(title, new Color(63, 35, 14, 255), 4);
-        this.makeLabel('MainSubtitle', titlePanel, 0, -55, 570, 54, '布置齿轮 · 生产英雄 · 守住兵营', 24, CREAM);
+        this.makeLabel('MainSubtitle', root, 0, 468, 420, 40, '齿轮转动，英雄出击', 20, CREAM);
 
-        const start = this.makeButton('OpenLevelSelection', root, 0, 20, 430, 104, '选择关卡', () => {
+        const halo = this.makeNode('MainHeroHalo', root, 0, 185, 370, 370);
+        const haloGraphics = halo.addComponent(Graphics);
+        haloGraphics.fillColor = new Color(22, 77, 75, 155);
+        haloGraphics.circle(0, 0, 165);
+        haloGraphics.fill();
+        haloGraphics.strokeColor = new Color(255, 216, 92, 210);
+        haloGraphics.lineWidth = 5;
+        haloGraphics.circle(0, 0, 145);
+        haloGraphics.stroke();
+        haloGraphics.strokeColor = new Color(93, 218, 189, 170);
+        haloGraphics.lineWidth = 3;
+        haloGraphics.circle(0, 0, 174);
+        haloGraphics.stroke();
+
+        const mainPowerRotor = this.makeNode('MainPowerRotor', root, 0, 185, 114, 114);
+        mainPowerRotor.setScale(2.5, 2.5, 1);
+        const mainPowerShadow = this.makeNode('MainPowerShadow', mainPowerRotor, 3, -4, 114, 114);
+        this.attachRecoveredAtlasSprite(
+            mainPowerShadow,
+            'original/bagLike_0/spriteFrame',
+            BAGLIKE_ATLAS_FRAMES.powerCore,
+            new Color(40, 30, 25, 150),
+        );
+        const mainPowerBody = this.makeNode('MainPowerBody', mainPowerRotor, 0, 0, 114, 114);
+        this.attachBagLikeAtlasSprite(mainPowerBody, BAGLIKE_ATLAS_FRAMES.powerCore);
+        const mainHeroMascot = this.makeNode('MainHeroMascot', root, 0, 198, 90, 90);
+        mainHeroMascot.setScale(2.05, 2.05, 1);
+        this.attachStaticGearPortrait(mainHeroMascot, this.powerRoleState.equippedRoleId, 0, 0);
+
+        const latestLevelId = latestMainLevelId(this.accountProfile.maxPassedLevelId);
+        const latestLevel = this.levelTable?.levels.find((level) => level.id === latestLevelId);
+        const latestLevelNumber = bagLikeLevelNumber(latestLevelId);
+
+        const stagePanel = this.makeNode('MainStagePanel', root, 0, -90, 500, 120);
+        const stageGraphics = stagePanel.addComponent(Graphics);
+        stageGraphics.fillColor = new Color(24, 47, 55, 235);
+        stageGraphics.roundRect(-250, -60, 500, 120, 24);
+        stageGraphics.fill();
+        stageGraphics.strokeColor = new Color(255, 211, 88, 255);
+        stageGraphics.lineWidth = 3;
+        stageGraphics.roundRect(-248, -58, 496, 116, 22);
+        stageGraphics.stroke();
+        this.makeLabel('MainStageChapter', stagePanel, 0, 25, 440, 38, `主线 · 第 ${latestLevelNumber} 关`, 22, GOLD);
+        this.makeLabel('MainStageName', stagePanel, 0, -22, 440, 44, latestLevel?.name || `第 ${latestLevelNumber} 关`, 30, WHITE);
+
+        const levelSelect = this.makeButton('OpenLevelSelection', root, -132, -230, 238, 78, '选择关卡', () => {
             this.levelSelectionPage = 0;
             this.showLevelSelection();
         });
-        this.restyleButton(start, new Color(255, 177, 43, 255), new Color(255, 246, 190, 255));
-        start.fontSize = 36;
-        start.lineHeight = 42;
+        this.restyleButton(levelSelect, new Color(44, 104, 131, 255), WHITE);
+        levelSelect.fontSize = 24;
+        const continueBattle = this.makeButton('ContinueBattle', root, 132, -230, 238, 78, `挑战（-${NORMAL_LEVEL_ENERGY_COST}）`, () => this.launchLevel(latestLevelId));
+        this.restyleButton(continueBattle, new Color(238, 160, 40, 255), new Color(255, 248, 207, 255));
+        continueBattle.fontSize = 25;
 
-        const continueBattle = this.makeButton('ContinueBattle', root, 0, -118, 430, 84, '继续：荒漠沙地', () => this.launchLevel(DEFAULT_LEVEL_ID));
-        this.restyleButton(continueBattle, new Color(48, 172, 139, 255), new Color(213, 255, 237, 255));
-        continueBattle.fontSize = 28;
-
-        this.makeLabel('MainProgress', root, 0, -270, 620, 44, '机制与数据关卡 200 / 200', 22, WHITE);
-        this.makeLabel('MainEvidenceNotice', root, 0, -340, 650, 76, '全部关卡已接入原始波次与数值表\n缺失敌人美术暂以机制占位显示', 18, CREAM);
         this.buildOutOfBattleResourceHeader(root, '主界面');
-        const dailyTask = this.makeButton('MainDailyTask', root, -225, -445, 190, 62, '每日任务', () => this.showDailyTaskScene());
-        this.restyleButton(dailyTask, new Color(43, 99, 132, 255), WHITE);
-        const sevenDay = this.makeButton('MainSevenDay', root, 0, -445, 190, 62, '七天登录', () => this.showSevenDayScene());
-        this.restyleButton(sevenDay, new Color(129, 77, 154, 255), WHITE);
-        const settings = this.makeButton('MainSettings', root, 225, -445, 190, 62, '设置', () => this.showSettingsScene());
-        this.restyleButton(settings, new Color(65, 72, 83, 255), WHITE);
+        const sevenDay = this.makeButton('MainSevenDay', root, -287, 330, 116, 74, '七天\n登录', () => this.showSevenDayScene());
+        this.restyleButton(sevenDay, new Color(132, 75, 157, 242), WHITE);
+        sevenDay.fontSize = 18;
+        sevenDay.lineHeight = 24;
+        const community = this.makeButton('MainCommunity', root, -287, 235, 116, 70, '游戏圈', () => undefined);
+        this.restyleButton(community, new Color(49, 91, 105, 226), new Color(203, 229, 224, 255));
+        community.node.parent!.getComponent(Button)!.interactable = false;
+        const dailyTask = this.makeButton('MainDailyTask', root, 287, 330, 116, 74, '每日\n任务', () => this.showDailyTaskScene());
+        this.restyleButton(dailyTask, new Color(43, 105, 143, 242), WHITE);
+        dailyTask.fontSize = 18;
+        dailyTask.lineHeight = 24;
+        const dailyTaskUnlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, 'DAILY_TASK');
+        dailyTask.node.parent!.getComponent(Button)!.interactable = dailyTaskUnlocked;
+        if (!dailyTaskUnlocked) this.restyleButton(dailyTask, new Color(68, 75, 88, 255), new Color(160, 166, 178, 255));
+        const invitation = this.makeButton('MainInvitation', root, 287, 235, 116, 70, '邀请有礼', () => undefined);
+        this.restyleButton(invitation, new Color(49, 91, 105, 226), new Color(203, 229, 224, 255));
+        invitation.node.parent!.getComponent(Button)!.interactable = false;
+        const settings = this.makeButton('MainSettings', root, 296, 505, 100, 58, '设置', () => this.showSettingsScene());
+        this.restyleButton(settings, new Color(55, 70, 80, 235), WHITE);
+        settings.fontSize = 18;
+        if (message) this.makeLabel('MainNotice', root, 0, -315, 650, 48, message, 18, new Color(255, 225, 139, 255));
         this.buildMainBottomNavigation(root, '战斗');
     }
 
     private buildOutOfBattleResourceHeader(parent: Node, pageTitle: string): void {
-        const header = this.makeNode('OutOfBattleResourceHeader', parent, 0, 622, 720, 74);
+        const header = this.makeNode('OutOfBattleResourceHeader', parent, 0, 622, 720, 84);
         const graphics = header.addComponent(Graphics);
         graphics.fillColor = new Color(18, 29, 42, 242);
-        graphics.roundRect(-360, -37, 720, 74, 20);
+        graphics.roundRect(-360, -42, 720, 84, 20);
         graphics.fill();
         graphics.strokeColor = new Color(98, 128, 162, 255);
         graphics.lineWidth = 2;
-        graphics.roundRect(-358, -35, 716, 70, 18);
+        graphics.roundRect(-358, -40, 716, 80, 18);
         graphics.stroke();
-        this.makeLabel('OutOfBattlePageName', header, -270, 0, 150, 42, pageTitle, 22, GOLD);
-        this.makeLabel('OutOfBattleWallet', header, 105, 0, 540, 42,
-            `体力 ${this.accountProfile.energy}　金币 ${this.accountProfile.gold}　钻石 ${this.accountProfile.diamonds}　观影券 --`,
-            17, WHITE);
+        this.makeLabel('OutOfBattlePageName', header, -300, 0, 110, 42, pageTitle, 20, GOLD);
+        const resources = [
+            { key: 'Energy', icon: '⚡', value: `${this.accountProfile.energy}`, color: new Color(84, 220, 157, 255), canBuy: true },
+            { key: 'Gold', icon: '●', value: `${this.accountProfile.gold}`, color: new Color(255, 210, 67, 255), canBuy: true },
+            { key: 'Diamond', icon: '◆', value: `${this.accountProfile.diamonds}`, color: new Color(93, 221, 255, 255), canBuy: true },
+            { key: 'Ticket', icon: '券', value: '--', color: new Color(216, 166, 255, 255), canBuy: false },
+        ];
+        resources.forEach((resource, index) => {
+            const item = this.makeNode(`OutOfBattleResource${resource.key}`, header, -150 + index * 145, 0, 136, 54);
+            const itemGraphics = item.addComponent(Graphics);
+            itemGraphics.fillColor = new Color(31, 48, 65, 245);
+            itemGraphics.roundRect(-68, -27, 136, 54, 15);
+            itemGraphics.fill();
+            itemGraphics.strokeColor = new Color(resource.color.r, resource.color.g, resource.color.b, 175);
+            itemGraphics.lineWidth = 2;
+            itemGraphics.roundRect(-66, -25, 132, 50, 13);
+            itemGraphics.stroke();
+            this.makeLabel(`OutOfBattleResourceIcon${resource.key}`, item, -43, 0, 34, 36, resource.icon, 21, resource.color);
+            this.makeLabel(`OutOfBattleResourceValue${resource.key}`, item, 5, 0, 66, 34, resource.value, 17, WHITE);
+            if (resource.canBuy) this.makeLabel(`OutOfBattleResourceAdd${resource.key}`, item, 51, 0, 24, 30, '+', 20, GOLD);
+        });
     }
 
     private buildMainBottomNavigation(parent: Node, active: OutOfBattleTabName): void {
-        const bar = this.makeNode('MainBottomNavigation', parent, 0, -610, 750, 108);
+        const bar = this.makeNode('MainBottomNavigation', parent, 0, -608, 750, 116);
         const background = bar.addComponent(Graphics);
         background.fillColor = new Color(18, 29, 42, 248);
-        background.roundRect(-375, -54, 750, 108, 24);
+        background.roundRect(-375, -58, 750, 116, 24);
         background.fill();
         background.strokeColor = new Color(99, 130, 169, 255);
         background.lineWidth = 3;
-        background.roundRect(-373, -52, 746, 104, 22);
+        background.roundRect(-373, -56, 746, 112, 22);
         background.stroke();
 
         const openTab: Record<OutOfBattleTabName, () => void> = {
@@ -2099,17 +2232,20 @@ export class CangshuGame extends Component {
             活动: () => this.showActivityScene(),
         };
         const tabs = OUT_OF_BATTLE_TABS.map((tab) => ({ ...tab, open: openTab[tab.name] }));
+        const tabGlyphs: Record<OutOfBattleTabName, string> = { 商店: '店', 角色: '角', 战斗: '战', 培养: '育', 活动: '活' };
         tabs.forEach((tab, index) => {
             const selected = tab.name === active;
             const unlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, tab.systemId);
-            const label = this.makeButton(`MainTab_${tab.name}`, bar, -300 + index * 150, 0, 136, 76, tab.name, tab.open);
+            const label = this.makeButton(`MainTab_${tab.name}`, bar, -288 + index * 144, selected ? 6 : -1, 128, selected ? 96 : 86,
+                `${tabGlyphs[tab.name]}\n${tab.name}`, tab.open);
             this.restyleButton(
                 label,
                 selected ? new Color(211, 145, 38, 255) : new Color(40, 61, 83, 255),
                 unlocked ? WHITE : new Color(177, 186, 199, 255),
             );
-            label.fontSize = selected ? 24 : 21;
-            label.node.parent!.getComponent(Button)!.interactable = !selected;
+            label.fontSize = selected ? 21 : 19;
+            label.lineHeight = selected ? 31 : 28;
+            label.node.parent!.getComponent(Button)!.interactable = !selected && unlocked;
         });
     }
 
@@ -2121,7 +2257,7 @@ export class CangshuGame extends Component {
         this.addMenuBackground(root, backgroundName);
         const shade = this.makeNode(`${sceneName}Shade`, root, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
         const graphics = shade.addComponent(Graphics);
-        graphics.fillColor = new Color(12, 20, 30, 218);
+        graphics.fillColor = new Color(12, 20, 30, 184);
         graphics.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
         graphics.fill();
         this.buildOutOfBattleResourceHeader(root, pageTitle);
@@ -2230,6 +2366,7 @@ export class CangshuGame extends Component {
             cardGraphics.roundRect(-170, -122, 340, 244, 22);
             cardGraphics.fill();
             const mockEnergyGood = good.id === 104002;
+            const diamondEnergyGood = good.id === 104001;
             const mockEnergyAvailable = mockEnergyGood && canClaimMockShopEnergy(this.mockAdvertisementState);
             cardGraphics.strokeColor = good.action === 'fixed' || mockEnergyAvailable ? new Color(92, 177, 154, 255) : new Color(107, 133, 166, 255);
             cardGraphics.lineWidth = 3;
@@ -2239,8 +2376,13 @@ export class CangshuGame extends Component {
             this.makeLabel(`ShopGoodName_${good.id}`, card, 0, 52, 300, 38, good.name, 23, WHITE);
             this.makeLabel(`ShopGoodReward_${good.id}`, card, 0, 12, 310, 34, good.rewardText, 20, GOLD);
             this.makeLabel(`ShopGoodCost_${good.id}`, card, 0, -25, 310, 34, good.costText, 16, CREAM);
-            const supported = good.action === 'fixed' || mockEnergyAvailable;
-            const actionText = good.action === 'fixed' ? '购买'
+            const diamondEnergyAvailable = diamondEnergyGood && canBuyDiamondShopEnergy(this.mockAdvertisementState);
+            const supported = (good.action === 'fixed' && (!diamondEnergyGood || diamondEnergyAvailable)) || mockEnergyAvailable;
+            const actionText = diamondEnergyGood
+                ? diamondEnergyAvailable
+                    ? `购买 ${mockAdvertisementPlacementCount(this.mockAdvertisementState, 'shop-energy-diamond')}/3`
+                    : '今日已购 3/3'
+                : good.action === 'fixed' ? '购买'
                 : mockEnergyGood
                   ? mockEnergyAvailable
                       ? `模拟广告 ${mockAdvertisementPlacementCount(this.mockAdvertisementState, 'shop-energy')}/3`
@@ -2287,6 +2429,10 @@ export class CangshuGame extends Component {
             });
             return;
         }
+        if (good.id === 104001 && !canBuyDiamondShopEnergy(this.mockAdvertisementState)) {
+            this.showShopScene('该体力商品今天已经购买 3 次');
+            return;
+        }
         const result = purchaseOutOfBattleShopGood(this.accountProfile, good.id);
         if (!result.purchased) {
             this.showShopScene(result.reason === 'diamonds' ? `钻石不足，需要 ${good.costDiamonds || 0}` : '该商品依赖平台或服务器状态，当前不执行');
@@ -2297,6 +2443,10 @@ export class CangshuGame extends Component {
         next.energy = result.wallet.energy;
         next.diamonds = result.wallet.diamonds;
         this.accountProfile = next;
+        if (good.id === 104001) {
+            this.mockAdvertisementState = completeMockAdvertisement(this.mockAdvertisementState, 'shop-energy-diamond');
+            saveMockAdvertisementState(sys.localStorage, this.mockAdvertisementState);
+        }
         this.persistAccountProfile(false);
         this.showShopScene(`购买成功：${good.rewardText}`);
     }
@@ -2329,12 +2479,13 @@ export class CangshuGame extends Component {
                   ? () => this.showDailyInstanceScene()
                   : () => undefined;
             const supported = gameplay.systemId !== 'OTHER_GAMES';
+            const gameplayEntryUnlocked = this.accountProfile.maxPassedLevelId >= gameplay.unlockLevel;
             const preview = this.makeButton(`GameplayPreview_${gameplay.id}`, card, 0, -105, 172, 50,
                 supported ? '查看规则' : '资料不足', open);
             this.restyleButton(preview,
                 supported ? new Color(43, 99, 132, 255) : new Color(68, 75, 88, 255),
                 supported ? WHITE : new Color(160, 166, 178, 255));
-            preview.node.parent!.getComponent(Button)!.interactable = supported;
+            preview.node.parent!.getComponent(Button)!.interactable = supported && gameplayEntryUnlocked;
         });
         const daily = this.makeButton('ActivityDailyTask', root, -170, -110, 280, 70, '每日任务', () => this.showDailyTaskScene());
         this.restyleButton(daily, new Color(43, 99, 132, 255), WHITE);
@@ -2506,7 +2657,8 @@ export class CangshuGame extends Component {
         this.buildMainBottomNavigation(root, '战斗');
     }
 
-    private showRoleScene(): void {
+    private showRoleScene(message = ''): void {
+        this.powerRoleState = loadPowerRoleState(sys.localStorage);
         profiler.hideStats();
         this.resetLevelSession();
         this.destroyRootChildren();
@@ -2514,14 +2666,14 @@ export class CangshuGame extends Component {
         this.addMenuBackground(root, 'fightscene_03');
         const shade = this.makeNode('RoleShade', root, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
         const shadeGraphics = shade.addComponent(Graphics);
-        shadeGraphics.fillColor = new Color(12, 20, 30, 205);
+        shadeGraphics.fillColor = new Color(12, 20, 30, 172);
         shadeGraphics.rect(-DESIGN_WIDTH / 2, -DESIGN_HEIGHT / 2, DESIGN_WIDTH, DESIGN_HEIGHT);
         shadeGraphics.fill();
         this.buildOutOfBattleResourceHeader(root, '角色');
         this.makeLabel('RoleTitle', root, 0, 550, 620, 62, '角色', 42, GOLD);
         const roleUnlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, 'ROLE');
         this.makeLabel('RoleHint', root, 0, 500, 690, 42,
-            roleUnlocked ? '原包角色阵容 · 当前由跑跑鼠出战' : '通关第5关后开放 · 当前为配置预览', 20, CREAM);
+            roleUnlocked ? `当前出战：${OUT_OF_BATTLE_POWER_ROLES.find((role) => role.id === this.powerRoleState.equippedRoleId)?.name || '跑跑鼠'}` : '通关第5关后开放', 20, CREAM);
 
         OUT_OF_BATTLE_POWER_ROLES.forEach((role, index) => {
             const column = index % 2;
@@ -2537,18 +2689,117 @@ export class CangshuGame extends Component {
             cardGraphics.lineWidth = 4;
             cardGraphics.roundRect(-158, -148, 316, 296, 22);
             cardGraphics.stroke();
-            this.makeLabel(`RoleId_${role.id}`, card, 0, 105, 260, 32, `${role.id} · ${role.fragmentId}`, 16, new Color(157, 213, 255, 255));
-            this.makeLabel(`RoleName_${role.id}`, card, 0, 62, 280, 44, role.name, 28, WHITE);
-            this.makeLabel(`RoleQuality_${role.id}`, card, 0, 20, 280, 34, `${'★'.repeat(role.quality)}  品质 ${role.quality}`, 18, GOLD);
-            this.makeLabel(`RoleAbility_${role.id}`, card, 0, -37, 286, 72, `${role.baseAbility}\n${role.activeSkill}`, 15, CREAM);
-            const detail = this.makeButton(`RoleDetail_${role.id}`, card, 0, -112, 250, 48,
-                role.id === 'P01' ? '能力详情 · 出战中' : '能力详情', () => this.showRoleDetailScene(role.id));
-            this.restyleButton(detail,
-                role.id === 'P01' ? new Color(43, 132, 96, 255) : new Color(43, 99, 132, 255), WHITE);
+            const progress = this.powerRoleState.roles[role.id];
+            const owned = progress.star >= 0;
+            const equipped = this.powerRoleState.equippedRoleId === role.id;
+            const targetStar = Math.max(0, progress.star + 1);
+            const fragmentCost = POWER_ROLE_STAR_COSTS[Math.min(POWER_ROLE_MAX_STAR, targetStar)];
+            const remainingFree = Math.max(0, POWER_ROLE_DAILY_FREE_FRAGMENT_TIMES - progress.freeFragmentTimes);
+            this.makeLabel(`RoleId_${role.id}`, card, 0, 112, 260, 30, `${role.id} · ${role.fragmentId}`, 15, new Color(157, 213, 255, 255));
+            this.makeLabel(`RoleName_${role.id}`, card, 0, 78, 280, 40, role.name, 26, owned ? WHITE : new Color(172, 179, 190, 255));
+            this.makeLabel(`RoleQuality_${role.id}`, card, 0, 42, 280, 30,
+                owned ? `${progress.star} 星 · ${equipped ? '出战中' : '已获得'}` : '尚未获得', 17, owned ? GOLD : CREAM);
+            this.makeLabel(`RoleFragments_${role.id}`, card, 0, 5, 280, 32,
+                progress.star >= POWER_ROLE_MAX_STAR ? '已满星' : `碎片 ${progress.fragments} / ${fragmentCost}`, 17, new Color(157, 213, 255, 255));
+
+            const enoughFragments = progress.fragments >= fragmentCost;
+            const progressActionText = progress.star >= POWER_ROLE_MAX_STAR
+                ? '已满星'
+                : enoughFragments
+                  ? owned ? '升星' : '招募'
+                  : `免费碎片 +${POWER_ROLE_FREE_FRAGMENT_COUNT}（${remainingFree}/3）`;
+            const progressAction = this.makeButton(`RoleProgress_${role.id}`, card, 0, -42, 262, 42,
+                progressActionText, () => this.progressPowerRole(role.id));
+            if (progress.star >= POWER_ROLE_MAX_STAR || (!enoughFragments && remainingFree <= 0) || !roleUnlocked) {
+                this.restyleButton(progressAction, new Color(70, 76, 88, 255), new Color(160, 164, 174, 255));
+                progressAction.node.parent!.getComponent(Button)!.interactable = false;
+            } else {
+                this.restyleButton(progressAction, enoughFragments ? new Color(211, 145, 38, 255) : new Color(94, 76, 153, 255), WHITE);
+            }
+            progressAction.fontSize = 16;
+            const levelLimit = powerRoleLevelLimit(progress.star);
+            const freeLevelRemaining = Math.max(0, POWER_ROLE_DAILY_FREE_LEVEL_TIMES - progress.freeLevelTimes);
+            const levelUp = this.makeButton(`RoleLevel_${role.id}`, card, 0, -84, 262, 38,
+                owned ? `等级 ${progress.level}/${levelLimit} · 免费升级 ${freeLevelRemaining}/3` : '招募后可升级',
+                () => this.upgradePowerRoleLevelFromUi(role.id));
+            this.restyleButton(levelUp, new Color(57, 91, 135, 255), WHITE);
+            levelUp.fontSize = 14;
+            levelUp.node.parent!.getComponent(Button)!.interactable = owned && progress.level < levelLimit && freeLevelRemaining > 0 && roleUnlocked;
+            const detail = this.makeButton(`RoleDetail_${role.id}`, card, -70, -125, 118, 38, '详情', () => this.showRoleDetailScene(role.id));
+            this.restyleButton(detail, new Color(43, 99, 132, 255), WHITE);
+            detail.fontSize = 17;
+            const equip = this.makeButton(`RoleEquip_${role.id}`, card, 70, -125, 118, 38,
+                equipped ? '出战中' : owned ? '出战' : '未获得', () => this.equipPowerRoleFromUi(role.id));
+            this.restyleButton(equip, equipped ? new Color(43, 132, 96, 255) : new Color(56, 82, 105, 255), WHITE);
+            equip.fontSize = 17;
+            equip.node.parent!.getComponent(Button)!.interactable = owned && !equipped && roleUnlocked;
         });
-        this.makeLabel('RoleEvidence', root, 0, -420, 700, 80,
-            `名称/品质/技能来自 PowerConfig · 1级消耗${OUT_OF_BATTLE_POWER_LEVEL_ONE_COST}主角经验\n0→1星消耗${OUT_OF_BATTLE_POWER_STAR_ZERO_COST}角色碎片 · 最高${OUT_OF_BATTLE_POWER_STAR_MAX}星 · 账号角色存档未恢复`, 17, CREAM);
+        this.makeLabel('RoleMessage', root, 0, -420, 700, 74,
+            message || `每名角色每天可领取 3 次免费碎片；集齐 ${OUT_OF_BATTLE_POWER_STAR_ZERO_COST} 片即可招募`, 17, message ? WHITE : CREAM);
         this.buildMainBottomNavigation(root, '角色');
+    }
+
+    private progressPowerRole(id: PowerRoleId): void {
+        const progress = this.powerRoleState.roles[id];
+        const targetStar = Math.max(0, progress.star + 1);
+        const cost = POWER_ROLE_STAR_COSTS[Math.min(POWER_ROLE_MAX_STAR, targetStar)];
+        if (progress.fragments >= cost) {
+            if (progress.star < 0) {
+                const result = activatePowerRole(this.powerRoleState, id);
+                this.powerRoleState = result.state;
+                savePowerRoleState(sys.localStorage, this.powerRoleState);
+                this.showRoleScene(result.activated ? '角色招募成功，现在可以设为出战角色' : '角色碎片不足');
+            } else {
+                const result = upgradePowerRoleStar(this.powerRoleState, id);
+                this.powerRoleState = result.state;
+                savePowerRoleState(sys.localStorage, this.powerRoleState);
+                this.showRoleScene(result.upgraded ? `升星成功：${this.powerRoleState.roles[id].star} 星` : '角色碎片不足');
+            }
+            return;
+        }
+        if (progress.freeFragmentTimes >= POWER_ROLE_DAILY_FREE_FRAGMENT_TIMES) {
+            this.showRoleScene('该角色今天的 3 次免费碎片已经领取完毕');
+            return;
+        }
+        this.playMockAdvertisement('role-fragment', () => {
+            const result = claimPowerRoleFreeFragments(this.powerRoleState, id);
+            this.powerRoleState = result.state;
+            savePowerRoleState(sys.localStorage, this.powerRoleState);
+            this.showRoleScene(result.claimed ? `获得 ${POWER_ROLE_FREE_FRAGMENT_COUNT} 个角色碎片` : '今天的免费次数已经用完');
+        }, (outcome) => {
+            this.showRoleScene(outcome === 'cancelled' ? '模拟广告已取消，未发放碎片' : '模拟广告播放失败，未发放碎片');
+        });
+    }
+
+    private equipPowerRoleFromUi(id: PowerRoleId): void {
+        const result = equipPowerRole(this.powerRoleState, id);
+        this.powerRoleState = result.state;
+        savePowerRoleState(sys.localStorage, this.powerRoleState);
+        this.showRoleScene(result.equipped ? '出战角色已更换' : '请先招募该角色');
+    }
+
+    private upgradePowerRoleLevelFromUi(id: PowerRoleId): void {
+        const progress = this.powerRoleState.roles[id];
+        if (progress.star < 0) {
+            this.showRoleScene('请先招募该角色');
+            return;
+        }
+        if (progress.level >= powerRoleLevelLimit(progress.star)) {
+            this.showRoleScene('当前星级的等级已经达到上限，请先升星');
+            return;
+        }
+        if (progress.freeLevelTimes >= POWER_ROLE_DAILY_FREE_LEVEL_TIMES) {
+            this.showRoleScene('该角色今天的 3 次免费升级已经用完');
+            return;
+        }
+        this.playMockAdvertisement('role-level', () => {
+            const result = claimPowerRoleFreeLevel(this.powerRoleState, id);
+            this.powerRoleState = result.state;
+            savePowerRoleState(sys.localStorage, this.powerRoleState);
+            this.showRoleScene(result.upgraded ? `免费升级成功：${this.powerRoleState.roles[id].level} 级` : '当前无法升级');
+        }, (outcome) => {
+            this.showRoleScene(outcome === 'cancelled' ? '模拟广告已取消，未升级' : '模拟广告播放失败，未升级');
+        });
     }
 
     private showRoleDetailScene(powerId: OutOfBattlePowerRole['id']): void {
@@ -2626,7 +2877,7 @@ export class CangshuGame extends Component {
                 this.makeLabel(`CultivationName_${family}`, card, 49, 72, 205, 38,
                     `${family} ${ACCOUNT_HERO_NAMES[family]}`, 21, unlocked ? WHITE : new Color(151, 157, 169, 255));
                 this.makeLabel(`CultivationStar_${family}`, card, 45, 29, 200, 34,
-                    unlocked ? `${star} 星` : `通关 ${unlockLevel} 解锁`, 20, unlocked ? GOLD : new Color(154, 160, 173, 255));
+                    unlocked ? `${star} 星` : `通关第 ${bagLikeLevelNumber(unlockLevel)} 关解锁`, 20, unlocked ? GOLD : new Color(154, 160, 173, 255));
                 this.makeLabel(`CultivationFragments_${family}`, card, -58, -42, 190, 36,
                     `碎片 ${fragments}${cost ? ` / ${cost.fragments}` : ''}`, 18, new Color(157, 213, 255, 255));
                 this.makeLabel(`CultivationGold_${family}`, card, 82, -42, 130, 36,
@@ -2659,7 +2910,7 @@ export class CangshuGame extends Component {
         const result = tryUpgradeBagLikeAccountHero(this.accountProfile, family);
         if (!result.upgraded) {
             const message = result.reason === 'locked'
-                ? `请先通关 ${bagLikeHeroUnlockLevel(family)} 解锁 ${ACCOUNT_HERO_NAMES[family]}`
+                ? `请先通关第 ${bagLikeLevelNumber(bagLikeHeroUnlockLevel(family))} 关解锁 ${ACCOUNT_HERO_NAMES[family]}`
                 : result.reason === 'maxStar'
                   ? `${ACCOUNT_HERO_NAMES[family]}已经达到 20 星`
                   : result.reason === 'fragments'
@@ -2689,7 +2940,9 @@ export class CangshuGame extends Component {
         const back = this.makeButton('BackToMain', root, -290, 590, 120, 62, '返回', () => this.showMainScene());
         this.restyleButton(back, new Color(44, 126, 153, 255), new Color(200, 244, 255, 255));
         this.makeLabel('LevelSelectionTitle', root, 0, 586, 430, 70, '选择关卡', 42, GOLD);
-        this.makeLabel('LevelSelectionHint', root, 0, 520, 650, 46, '200 关均可进入；每页 10 关', 20, CREAM);
+        const latestUnlocked = latestMainLevelId(this.accountProfile.maxPassedLevelId);
+        this.makeLabel('LevelSelectionHint', root, 0, 520, 650, 46,
+            `已开放至第 ${bagLikeLevelNumber(latestUnlocked)} 关 · 挑战消耗 ${NORMAL_LEVEL_ENERGY_COST} 体力`, 20, CREAM);
 
         const cards = playableLevelCards(this.levelTable.levels);
         const pageSize = 10;
@@ -2712,6 +2965,8 @@ export class CangshuGame extends Component {
     }
 
     private buildCompactLevelCard(root: Node, card: PlayableLevelCard, index: number): void {
+        const unlocked = bagLikeLevelUnlocked(this.accountProfile.maxPassedLevelId, card.id);
+        const passed = bagLikeLevelPassed(this.accountProfile.maxPassedLevelId, card.id);
         const column = index % 2;
         const row = Math.floor(index / 2);
         const x = column === 0 ? -170 : 170;
@@ -2721,16 +2976,21 @@ export class CangshuGame extends Component {
         panel.fillColor = new Color(24, 49, 55, 235);
         panel.roundRect(-155, -72, 310, 144, 18);
         panel.fill();
-        panel.strokeColor = card.id === DEFAULT_LEVEL_ID ? GOLD : new Color(91, 193, 157, 255);
+        panel.strokeColor = passed ? GOLD : unlocked ? new Color(91, 193, 157, 255) : new Color(82, 91, 104, 255);
         panel.lineWidth = 3;
         panel.roundRect(-153, -70, 306, 140, 16);
         panel.stroke();
         this.makeLabel('Chapter', node, -92, 40, 105, 32, `第 ${card.chapter} 关`, 18, GOLD);
-        const name = this.makeLabel('LevelName', node, -15, 3, 240, 40, card.name, 24, WHITE);
+        const name = this.makeLabel('LevelName', node, -15, 3, 240, 40, unlocked ? card.name : '尚未开放', 24,
+            unlocked ? WHITE : new Color(154, 160, 173, 255));
         name.overflow = Label.Overflow.SHRINK;
         this.makeLabel('LevelInfo', node, -72, -39, 125, 28, `${card.roundCount} 波`, 17, CREAM);
-        const challenge = this.makeButton('Challenge', node, 88, -39, 105, 42, '挑战', () => this.launchLevel(card.id));
-        this.restyleButton(challenge, new Color(48, 183, 130, 255), new Color(222, 255, 235, 255));
+        const challenge = this.makeButton('Challenge', node, 88, -39, 105, 42,
+            passed ? '重玩' : unlocked ? '挑战' : '锁定', () => this.launchLevel(card.id));
+        this.restyleButton(challenge,
+            unlocked ? new Color(48, 183, 130, 255) : new Color(68, 75, 88, 255),
+            unlocked ? new Color(222, 255, 235, 255) : new Color(160, 166, 178, 255));
+        challenge.node.parent!.getComponent(Button)!.interactable = unlocked;
         challenge.fontSize = 18;
     }
 
@@ -2805,7 +3065,13 @@ export class CangshuGame extends Component {
         this.freeRefreshUsed = false;
         this.powerDirection = 1;
         this.powerTimer = POWER_QUARTER_LAP_SECONDS;
+        this.powerVisualQuarterSeconds = POWER_QUARTER_LAP_SECONDS;
+        this.powerCoreModelElapsed = 0;
         this.powerSkillRemaining = 0;
+        this.powerRoleEnergy = 0;
+        this.powerRoleActiveRemaining = 0;
+        this.powerRoleKillProductivityStacks = 0;
+        this.powerRoleStartRewardClaimed = false;
         this.productionJobs = [];
         this.selfSpawnCount = 0;
         this.fusionActiveCastCount = 0;
@@ -2845,6 +3111,19 @@ export class CangshuGame extends Component {
     }
 
     update(dt: number): void {
+        const mainScene = this.node.getChildByName('MainScene');
+        if (mainScene) {
+            this.outOfBattleAnimationClock += Math.max(0, Math.min(dt, 0.05));
+            const mainRotor = mainScene.getChildByName('MainPowerRotor');
+            if (mainRotor) mainRotor.angle = -this.outOfBattleAnimationClock * 34;
+            const mainMascot = mainScene.getChildByName('MainHeroMascot');
+            if (mainMascot) {
+                mainMascot.setPosition(
+                    Math.sin(this.outOfBattleAnimationClock * 0.9) * 7,
+                    198 + Math.sin(this.outOfBattleAnimationClock * 2.1) * 8,
+                );
+            }
+        }
         if (!this.initialized) return;
         const longRun = this.longRunValidationEnabled();
         const totalScaled = (longRun ? Math.min(Math.max(0, dt), 1) : Math.min(dt, 0.05)) * this.speed;
@@ -2933,6 +3212,15 @@ export class CangshuGame extends Component {
         canvas.dataset.longRunMaxEnemyUnits = String(this.longRunMaxEnemyUnits);
         canvas.dataset.roundClock = this.roundClock.toFixed(3);
         canvas.dataset.candidateIds = this.candidates.map((gear) => gear.id).join(',');
+        canvas.dataset.unlockedHeroFamilies = Array.from(bagLikeAccountUnlockedHeroFamilies(this.accountProfile)).join(',');
+        canvas.dataset.powerRoleState = this.powerRoleState
+            ? `${this.powerRoleState.equippedRoleId}:` + Object.keys(this.powerRoleState.roles)
+                .map((id) => {
+                    const role = this.powerRoleState.roles[id as PowerRoleId];
+                    return `${id}=${role.star}/${role.fragments}/${role.freeFragmentTimes}`;
+                })
+                .join(',')
+            : 'missing';
         canvas.dataset.candidateRuntime = this.candidates
             .map((gear) => `${gear.id}@${gear.node.position.x.toFixed(1)},${gear.node.position.y.toFixed(1)}`)
             .join(';');
@@ -2961,6 +3249,10 @@ export class CangshuGame extends Component {
             })
             .join(';');
         canvas.dataset.selfUnits = String(this.units.filter((unit) => unit.team === 'self' && !unit.dead).length);
+        canvas.dataset.selfRuntime = this.units
+            .filter((unit) => unit.team === 'self' && !unit.dead)
+            .map((unit) => `${unit.cfg.id}#${unit.uid}@${unit.x.toFixed(1)},${unit.y.toFixed(1)}`)
+            .join(';');
         canvas.dataset.unitShadows = String(this.units.filter((unit) => !unit.dead && unit.shadow.isValid).length);
         canvas.dataset.unitDepth = (this.unitLayer?.children || [])
             .filter((child) => child.name.startsWith('self_') || child.name.startsWith('enemy_'))
@@ -2974,6 +3266,12 @@ export class CangshuGame extends Component {
         canvas.dataset.h15KillCoins = String(this.h15KillCoinsEarned);
         canvas.dataset.h15RoundCoins = String(this.h15RoundCoinsEarned);
         canvas.dataset.powerClock = `${this.powerDirection}:${this.powerTimer.toFixed(3)}:${this.powerSkillRemaining.toFixed(3)}`;
+        const powerCore = this.gears.find((gear) => gear.id === 'P01');
+        const powerRotor = powerCore?.node.getChildByName('PowerCoreRotor');
+        const powerHamster = powerCore?.node.getChildByName('PowerCoreHamster');
+        canvas.dataset.powerCore = powerCore
+            ? `${powerCore.row},${powerCore.col}:${(powerRotor?.angle || 0).toFixed(1)}:${(powerHamster?.position.x || 0).toFixed(1)},${(powerHamster?.position.y || 0).toFixed(1)}`
+            : 'missing';
         canvas.dataset.powerContacts = String(this.powerContactCount);
         canvas.dataset.powerGearTriggers = String(this.powerGearTriggerCount);
         canvas.dataset.workerApplies = String(this.workerApplyCount);
@@ -3183,11 +3481,12 @@ export class CangshuGame extends Component {
             this.attachGearBodySprite(gearNode, entry.level, shapeColumn * GRID_CELL, -shapeRow * GRID_CELL);
         }
         if (entry.level >= 5) this.attachLevelFiveShapeOverlay(gearNode, shape);
+        const rolePosition = bagLikeShapeRolePosition(entry.shapeId, GRID_CELL);
         this.attachStaticGearPortrait(
             gearNode,
             entry.headKey,
-            (footprintColumns - 1) * GRID_CELL * 0.5,
-            -(footprintRows - 1) * GRID_CELL * 0.5 + 3,
+            rolePosition?.x ?? (footprintColumns - 1) * GRID_CELL * 0.5,
+            rolePosition?.y ?? -(footprintRows - 1) * GRID_CELL * 0.5,
         );
     }
 
@@ -3461,6 +3760,11 @@ export class CangshuGame extends Component {
         this.levelButtonLabel.node.parent!.parent = this.hudLayer;
         this.levelTitleLabel.node.parent = this.hudLayer;
         expNode.parent = this.hudLayer;
+        this.powerRoleActiveLabel = this.makeButton('PowerRoleActive', this.hudLayer, 286, 480, 142, 64,
+            '', () => this.activateEquippedPowerRole());
+        this.restyleButton(this.powerRoleActiveLabel, new Color(91, 74, 162, 245), WHITE);
+        this.powerRoleActiveLabel.fontSize = 15;
+        this.powerRoleActiveLabel.lineHeight = 20;
 
         this.resultLayer = this.makeNode('ResultOverlay', this.node, 0, 0, 620, 380);
         const resultGraphics = this.resultLayer.addComponent(Graphics);
@@ -3666,12 +3970,7 @@ export class CangshuGame extends Component {
             this.closeLevelSelectionPanel();
             return;
         }
-        if (typeof window === 'undefined') {
-            this.tipLabel.string = '当前运行环境不支持页面级关卡切换';
-            return;
-        }
-        const debugFlag = this.accountDebugEnabled() ? '&accountDebug=1' : '';
-        window.location.search = `?level=${levelId}${debugFlag}`;
+        this.launchLevel(levelId);
     }
 
     private openAccountPanel(): void {
@@ -3698,10 +3997,10 @@ export class CangshuGame extends Component {
             child.destroy();
         }
         const challengeTimes = bagLikeAccountChallengeTimes(this.accountProfile, this.levelId);
-        const resourceSummary = `金币 ${this.accountProfile.gold}  体力 ${this.accountProfile.energy}  钻石 ${this.accountProfile.diamonds}  通关 ${this.accountProfile.maxPassedLevelId}`;
+        const resourceSummary = `金币 ${this.accountProfile.gold}  体力 ${this.accountProfile.energy}  钻石 ${this.accountProfile.diamonds}  已通关第 ${Math.max(0, bagLikeLevelNumber(this.accountProfile.maxPassedLevelId))} 关`;
 
         this.makeLabel('ChallengeLabel', this.accountContentLayer, 0, 360, 620, 72,
-            `${resourceSummary}\n当前关卡 ${this.levelId} · 第 ${challengeTimes} 次挑战`, 18, WHITE);
+            `${resourceSummary}\n当前第 ${bagLikeLevelNumber(this.levelId)} 关 · 第 ${challengeTimes} 次挑战`, 18, WHITE);
         this.makeLabel('AccountColumns', this.accountContentLayer, 0, 292, 620, 32,
             '英雄 / 解锁状态       星级       碎片          下一级消耗', 17, new Color(171, 188, 216, 255));
 
@@ -3722,14 +4021,14 @@ export class CangshuGame extends Component {
             const unlockLevel = bagLikeHeroUnlockLevel(family);
             const heroText = unlocked
                 ? `${family} ${ACCOUNT_HERO_NAMES[family]}`
-                : `${family} 通关${unlockLevel}解锁`;
+                : `${family} 第${bagLikeLevelNumber(unlockLevel)}关解锁`;
             this.makeLabel(`AccountName_${family}`, row, -226, 0, 176, 48, heroText, 17, unlocked ? WHITE : new Color(150, 155, 168, 255));
             this.makeLabel(`AccountStar_${family}`, row, -100, 0, 72, 44, unlocked ? `${star}星` : '未解锁', 19, unlocked ? GOLD : new Color(145, 145, 145, 255));
             const fragments = bagLikeAccountHeroFragments(this.accountProfile, family);
             const cost = unlocked ? bagLikeHeroUpgradeCost(star) : null;
             this.makeLabel(`AccountFragments_${family}`, row, -3, 0, 104, 44,
                 `${fragments}${cost ? `/${cost.fragments}` : ''}`, 18, new Color(157, 213, 255, 255));
-            const costText = !unlocked ? `需通关 ${unlockLevel}` : cost ? `${cost.gold} 金币` : '属性已满';
+            const costText = !unlocked ? `需通关第${bagLikeLevelNumber(unlockLevel)}关` : cost ? `${cost.gold} 金币` : '属性已满';
             this.makeLabel(`AccountCost_${family}`, row, 118, 0, 142, 44, costText, 17, CREAM);
             const upgradeLabel = this.makeButton(`AccountUpgrade_${family}`, row, 255, 0, 104, 48,
                 !unlocked ? '锁定' : cost ? '升星' : '满星', () => this.upgradeAccountHero(family));
@@ -4027,7 +4326,10 @@ export class CangshuGame extends Component {
         this.pendingHits = [];
         this.pendingFusionSkillHits = [];
         this.productionJobs = [];
-        this.powerSkillRemaining = P01_ROUND_START_PRODUCTIVITY_SECONDS;
+        this.powerSkillRemaining = this.powerRoleState.equippedRoleId === 'P01'
+            ? P01_ROUND_START_PRODUCTIVITY_SECONDS
+            : 0;
+        this.powerRoleActiveRemaining = 0;
         this.battleRandom = createBattleSeedRandom();
         this.visualFixtureRandom = createBattleSeedRandom(1004);
         for (const gear of this.gears) {
@@ -4044,6 +4346,90 @@ export class CangshuGame extends Component {
         const healed = this.selfHp - previousHp;
         if (healed > 0) this.addHealText(healed, -HOME_X + 20, -15);
         this.drawHomes();
+    }
+
+    private activateEquippedPowerRole(): void {
+        if (this.phase !== 'battle' || !powerRoleActiveAvailable(this.powerRoleState, this.powerRoleEnergy)) return;
+        const roleId = this.powerRoleState.equippedRoleId;
+        this.powerRoleEnergy -= POWER_ROLE_ACTIVE_ENERGY_COST;
+        this.powerRoleActiveRemaining = POWER_ROLE_ACTIVE_SECONDS;
+        if (roleId === 'P03') {
+            const previousHp = this.selfHp;
+            this.selfHp = resolveHomeHeal(this.selfHp, this.levelHomeHp, p03ActiveHealBasisPoints(this.powerRoleState));
+            const healed = this.selfHp - previousHp;
+            if (healed > 0) this.addHealText(healed, -HOME_X + 20, -15);
+            this.drawHomes();
+        } else if (roleId === 'P04') {
+            this.castP04ScreenDart();
+        }
+        this.tipLabel.string = `${roleId} 主动能力已释放`;
+        this.refreshUi();
+    }
+
+    private powerRoleSkillTotalAttack(): number {
+        const roleBasisPoints = powerRoleGlobalAttackBasisPoints(this.powerRoleState);
+        const heroStars = this.currentHeroStars();
+        let total = 0;
+        for (const gear of this.gears) {
+            const gearConfig = GEARS[gear.id];
+            if (!gearConfig.unit) continue;
+            const profile = bagLikeProducerProfile(gear.id);
+            const unitConfig = UNITS[gearConfig.unit];
+            if (!profile || !unitConfig) continue;
+            const starAttack = bagLikeHeroBaseAttributeAtStar(unitConfig.atk, heroStars[profile.heroId] || 1);
+            const roleAdjustedAttack = Math.floor(starAttack * (1 + roleBasisPoints / 10000));
+            const producerScale = resolveProducerAttributeScales(
+                profile.attributeMultiple,
+                this.isGearDirectlyAdjacentToPower(gear),
+                traitPowerNearAttackMultiplier(IMPLEMENTED_TRAIT_POOL, this.traitStacks),
+            ).attack;
+            const dailyScale = this.battleMode === 'daily'
+                ? dailyHeroAttackMultiplier(this.dailyBuffIds, gearConfig.shape.length)
+                : 1;
+            total += roleAdjustedAttack * producerScale * dailyScale;
+        }
+        return total || 1;
+    }
+
+    private castP04ScreenDart(): void {
+        // Original chain: PowerSkillVo -> CREATE_POWER_SKILL ->
+        // BagLilkeManager.getTotalAtk() -> FB_1601 -> M_FB_P04. The Dart unit
+        // travels left-to-right at y=0, hits at most ten distinct enemies in a
+        // 150 radius, and reduces the configured ratio by 10% of itself per hit.
+        const sourceAttack = this.powerRoleSkillTotalAttack();
+        const targets = this.units
+            .filter((unit) => unit.team === 'enemy' && !unit.dead && Math.abs(unit.y) <= 150)
+            .sort((left, right) => left.x - right.x)
+            .slice(0, P04_MAX_HITS);
+        const dart = this.makeNode('P04ScreenDart', this.unitLayer, -HOME_X, 0, 70, 30);
+        const graphics = dart.addComponent(Graphics);
+        graphics.fillColor = new Color(131, 101, 233, 245);
+        graphics.roundRect(-30, -8, 60, 16, 8);
+        graphics.fill();
+        graphics.strokeColor = new Color(236, 221, 255, 230);
+        graphics.lineWidth = 3;
+        graphics.moveTo(-36, 0);
+        graphics.lineTo(24, 0);
+        graphics.stroke();
+        targets.forEach((target, index) => {
+            this.scheduleOnce(() => {
+                if (!dart.isValid) return;
+                dart.setPosition(target.x, 0);
+                if (target.dead) return;
+                const damageRatio = p04DamageBasisPointsAtHit(this.powerRoleState, index);
+                const wasAlive = !target.dead;
+                this.damageUnit(target, Math.max(1, Math.round(sourceAttack * damageRatio / 10000)));
+                if (wasAlive && target.dead) {
+                    this.powerRoleKillProductivityStacks = Math.min(
+                        p04KillProductivityCap(this.powerRoleState),
+                        this.powerRoleKillProductivityStacks + 1,
+                    );
+                }
+            }, index * 0.08);
+        });
+        this.scheduleOnce(() => {
+            if (dart.isValid) dart.destroy();
+        }, Math.max(0.24, targets.length * 0.08 + 0.12));
     }
 
     private claimAccountRoundReward(roundNumber: number): void {
@@ -4092,6 +4478,10 @@ export class CangshuGame extends Component {
         this.freeRefreshUsed = false;
         this.bagLikeLevel = 1;
         this.bagLikeExp = 0;
+        this.powerRoleEnergy = 0;
+        this.powerRoleActiveRemaining = 0;
+        this.powerRoleKillProductivityStacks = 0;
+        this.powerRoleStartRewardClaimed = false;
         this.traitRerollsUsed = 0;
         this.traitTakeAllUsed = 0;
         this.currentTraitChoices = [];
@@ -4200,6 +4590,16 @@ export class CangshuGame extends Component {
                 .filter((id) => Boolean(GEARS[id]));
             if (maxLevelIds.length > 0) batch[0] = maxLevelIds[Math.floor(Math.random() * maxLevelIds.length)] as CandidateGearId;
         }
+        const startRewardLevel = p01StartRewardGearLevel(this.powerRoleState);
+        if (refreshType === 'prepare' && !this.powerRoleStartRewardClaimed && startRewardLevel > 0) {
+            const rewardIds = Array.from(unlockedHeroFamilies)
+                .map((family) => `${family}0${startRewardLevel}` as GearId)
+                .filter((id) => Boolean(GEARS[id]));
+            if (rewardIds.length > 0) {
+                batch.push(rewardIds[Math.floor(Math.random() * rewardIds.length)] as CandidateGearId);
+                this.powerRoleStartRewardClaimed = true;
+            }
+        }
         return batch;
     }
 
@@ -4282,12 +4682,10 @@ export class CangshuGame extends Component {
             rotationTriggerCount: 0,
         };
         this.renderGear(gear);
-        if (id !== 'P01') {
-            node.on(Node.EventType.TOUCH_START, (event: EventTouch) => this.beginGearDrag(gear, event), this);
-            node.on(Node.EventType.TOUCH_MOVE, (event: EventTouch) => this.moveGearDrag(gear, event), this);
-            node.on(Node.EventType.TOUCH_END, (event: EventTouch) => this.endGearDrag(gear, event), this);
-            node.on(Node.EventType.TOUCH_CANCEL, () => this.cancelGearDrag(gear), this);
-        }
+        node.on(Node.EventType.TOUCH_START, (event: EventTouch) => this.beginGearDrag(gear, event), this);
+        node.on(Node.EventType.TOUCH_MOVE, (event: EventTouch) => this.moveGearDrag(gear, event), this);
+        node.on(Node.EventType.TOUCH_END, (event: EventTouch) => this.endGearDrag(gear, event), this);
+        node.on(Node.EventType.TOUCH_CANCEL, () => this.cancelGearDrag(gear), this);
         return gear;
     }
 
@@ -4311,6 +4709,11 @@ export class CangshuGame extends Component {
 
         const g = gear.node.getComponent(Graphics)!;
         g.clear();
+        if (gear.id === 'P01') {
+            this.attachPowerCorePresentation(gear);
+            this.applyPowerCorePresentation(gear);
+            return;
+        }
         const bodyColor = bagLikeGearBodyColor(config.level, [config.tint.r, config.tint.g, config.tint.b]);
         if (config.level && shape.length > 1) {
             this.attachGearConnectorSprite(gear.node, shape, new Color(bodyColor[0], bodyColor[1], bodyColor[2], 255));
@@ -4332,9 +4735,9 @@ export class CangshuGame extends Component {
             if (config.level) {
                 const gridIndex = gear.location === 'grid'
                     ? (gear.row + shapeRow) * GRID_COLS + gear.col + shapeCol
-                    : POWER_INDEX;
+                    : this.currentPowerIndex();
                 const baseAngle = gear.location === 'grid'
-                    ? gearRotationAngleDegrees(gridIndex, POWER_INDEX, 0, 0)
+                    ? gearRotationAngleDegrees(gridIndex, this.currentPowerIndex(), 0, 0)
                     : 0;
                 this.attachGearBodySprite(gear.node, config.level, cellX, cellY, shapeRow, shapeCol, baseAngle);
             }
@@ -4342,8 +4745,9 @@ export class CangshuGame extends Component {
         if ((config.level || 0) >= 5) this.attachLevelFiveShapeOverlay(gear.node, shape);
         const headKey = this.gearHeadKey(gear.id);
         if (headKey) {
-            const portraitX = (footprint.columns - 1) * GRID_CELL * 0.5;
-            const portraitY = -(footprint.rows - 1) * GRID_CELL * 0.5 + 3;
+            const rolePosition = bagLikeProducerRolePosition(gear.id, GRID_CELL);
+            const portraitX = rolePosition?.x ?? (footprint.columns - 1) * GRID_CELL * 0.5;
+            const portraitY = rolePosition?.y ?? -(footprint.rows - 1) * GRID_CELL * 0.5 + 3;
             this.attachGearPortrait(gear, headKey, portraitX, portraitY);
         } else {
             const fallbackX = (footprint.columns - 1) * GRID_CELL * 0.5;
@@ -4382,7 +4786,17 @@ export class CangshuGame extends Component {
     private attachStaticGearPortrait(parent: Node, headKey: string, x: number, y: number): void {
         const frameData = HERO_SMALL_HEAD_FRAMES[headKey];
         if (!frameData) {
-            console.error(`[visual-catalog] missing recovered head frame ${headKey}`);
+            const badge = this.makeNode(`StaticGearPortrait_${headKey}`, parent, x, y, 76, 76);
+            const graphics = badge.addComponent(Graphics);
+            const colors: Record<string, Color> = {
+                P02: new Color(207, 67, 65, 255),
+                P03: new Color(62, 151, 218, 255),
+                P04: new Color(107, 91, 166, 255),
+            };
+            graphics.fillColor = colors[headKey] || new Color(75, 85, 102, 255);
+            graphics.circle(0, 0, 36);
+            graphics.fill();
+            this.makeLabel(`StaticGearPortraitLabel_${headKey}`, badge, 0, 0, 68, 42, headKey, 19, WHITE);
             return;
         }
         const portraitNode = this.makeNode(`StaticGearPortrait_${headKey}`, parent, x, y, 90, 90);
@@ -4480,6 +4894,25 @@ export class CangshuGame extends Component {
             body.sizeMode = Sprite.SizeMode.CUSTOM;
             body.spriteFrame = makeFrame();
         });
+    }
+
+    private attachPowerCorePresentation(gear: Gear): void {
+        const rotor = this.makeNode('PowerCoreRotor', gear.node, 0, 0, 114, 114);
+        rotor.setSiblingIndex(0);
+        const shadow = this.makeNode('PowerCoreShadow', rotor, 4, -5, 114, 114);
+        this.attachRecoveredAtlasSprite(
+            shadow,
+            'original/bagLike_0/spriteFrame',
+            BAGLIKE_ATLAS_FRAMES.powerCore,
+            new Color(35, 31, 34, 135),
+        );
+        const body = this.makeNode('PowerCoreBody', rotor, 0, 0, 114, 114);
+        this.attachBagLikeAtlasSprite(body, BAGLIKE_ATLAS_FRAMES.powerCore);
+
+        // The original keeps the equipped role model outside the rotating
+        // power-panel node and loops its battle animation independently.
+        const hamster = this.makeNode('PowerCoreHamster', gear.node, 0, 7, 90, 90);
+        this.attachStaticGearPortrait(hamster, this.powerRoleState.equippedRoleId, 0, 0);
     }
 
     private attachBagLikeAtlasSprite(node: Node, spec: BagLikeAtlasFrame): void {
@@ -5212,11 +5645,20 @@ export class CangshuGame extends Component {
             gear.node.setScale(1, 1, 1);
             gear.rotationActive = false;
             gear.rotationElapsed = gear.rotationDuration;
-            this.applyGearRotationPresentation(gear);
+            if (gear.id === 'P01') {
+                for (const placed of this.gears) this.applyGearRotationPresentation(placed);
+            } else {
+                this.applyGearRotationPresentation(gear);
+            }
             this.relayoutCandidates();
             this.tipLabel.string = displaced.length
                 ? `${config.name}已替换 ${displaced.length} 个旧齿轮；旧齿轮已退回候选栏`
                 : `${config.name}已手动摆入背包`;
+        } else if (gear.location === 'grid' && gear.id === 'P01') {
+            gear.row = this.dragOrigin.row;
+            gear.col = this.dragOrigin.col;
+            gear.node.setPosition(this.dragOrigin.x, this.dragOrigin.y);
+            this.tipLabel.string = '动力仓鼠需要放在已解锁的棋盘格内';
         } else if (gear.location === 'grid') {
             this.returnGearsToCandidates([gear]);
             this.tipLabel.string = `${config.name}已从背包取下并退回候选栏`;
@@ -5331,6 +5773,11 @@ export class CangshuGame extends Component {
         return productionRatePerSecond(this.workerPowerPerTrigger(gear, basePowerPerTrigger), contacts);
     }
 
+    private currentPowerIndex(): number {
+        const core = this.gears.find((gear) => gear.id === 'P01' && gear.location === 'grid');
+        return core ? core.row * GRID_COLS + core.col : POWER_INDEX;
+    }
+
     private canPlaceGear(id: GearId, row: number, col: number): boolean {
         return placementAreaValid(
             this.gearShape(id),
@@ -5339,7 +5786,7 @@ export class CangshuGame extends Component {
             GRID_ROWS,
             GRID_COLS,
             this.unlocked,
-            new Set([POWER_INDEX]),
+            id === 'P01' ? new Set<number>() : new Set([this.currentPowerIndex()]),
         );
     }
 
@@ -5474,7 +5921,19 @@ export class CangshuGame extends Component {
         }
 
         const sources = this.productionSources();
-        const productivity = applyBattlePower ? p01RoundStartProductivity(this.powerSkillRemaining) : 1;
+        const roundStartBasisPoints = powerRoleRoundStartProductivityBasisPoints(this.powerRoleState, this.roundIndex + 1);
+        const activeProductivityBasisPoints = this.powerRoleState.equippedRoleId === 'P03' && this.powerRoleActiveRemaining > 0
+            ? powerRoleActiveBasisPoints(this.powerRoleState)
+            : 0;
+        const killProductivityBasisPoints = p04KillProductivityBasisPoints(
+            this.powerRoleState,
+            this.powerRoleKillProductivityStacks,
+        );
+        const productivity = applyBattlePower
+            ? 1 + (this.powerSkillRemaining > 0 ? roundStartBasisPoints : 0) / 10000
+                + activeProductivityBasisPoints / 10000
+                + killProductivityBasisPoints / 10000
+            : 1;
         const advanced = advancePowerCoreClock(
             { nextDirection: this.powerDirection, remainingSeconds: this.powerTimer },
             dt,
@@ -5483,8 +5942,16 @@ export class CangshuGame extends Component {
         );
         this.powerDirection = advanced.state.nextDirection;
         this.powerTimer = advanced.state.remainingSeconds;
+        if (advanced.contacts.length > 0) {
+            this.powerVisualQuarterSeconds = POWER_QUARTER_LAP_SECONDS / Math.max(0.01, productivity);
+        }
+        this.powerCoreModelElapsed += Math.max(0, dt);
+        this.applyPowerCorePresentation(core);
         this.powerContactCount += advanced.contacts.length;
-        if (applyBattlePower) this.powerSkillRemaining = Math.max(0, this.powerSkillRemaining - dt);
+        if (applyBattlePower) {
+            this.powerSkillRemaining = Math.max(0, this.powerSkillRemaining - dt);
+            this.powerRoleActiveRemaining = Math.max(0, this.powerRoleActiveRemaining - dt);
+        }
         if (!applyBattlePower) return;
         for (const contact of advanced.contacts) {
             const triggeredUids = connectedGearUidsAtCoreSide(sources, core.uid, contact.direction);
@@ -5529,6 +5996,10 @@ export class CangshuGame extends Component {
     }
 
     private applyGearRotationPresentation(gear: Gear): void {
+        if (gear.id === 'P01') {
+            this.applyPowerCorePresentation(gear);
+            return;
+        }
         const shape = this.gearShape(gear.id);
         const activeProgress = gear.rotationActive && gear.rotationDuration > 0
             ? Math.min(1, gear.rotationElapsed / gear.rotationDuration)
@@ -5540,7 +6011,7 @@ export class CangshuGame extends Component {
                 const gridIndex = (gear.row + shapeRow) * GRID_COLS + gear.col + shapeCol;
                 rotor.angle = gearRotationAngleDegrees(
                     gridIndex,
-                    POWER_INDEX,
+                    this.currentPowerIndex(),
                     gear.rotationElapsed,
                     gear.rotationDuration,
                 );
@@ -5554,6 +6025,24 @@ export class CangshuGame extends Component {
                     : 0;
                 glow.color = new Color(255, 226, 104, glowAlpha);
             }
+        }
+    }
+
+    private applyPowerCorePresentation(core: Gear): void {
+        const rotor = core.node.getChildByName('PowerCoreRotor');
+        if (rotor) {
+            rotor.angle = powerCoreRotationAngleDegrees(
+                this.powerDirection,
+                this.powerTimer,
+                this.powerVisualQuarterSeconds,
+            );
+        }
+        const hamster = core.node.getChildByName('PowerCoreHamster');
+        if (hamster) {
+            const phase = this.powerCoreModelElapsed * Math.PI * 2 / 0.58;
+            hamster.setPosition(Math.sin(phase * 0.5) * 1.5, 7 + Math.sin(phase) * 4);
+            const squash = Math.sin(phase + Math.PI / 2) * 0.025;
+            hamster.setScale(1 + squash, 1 - squash, 1);
         }
     }
 
@@ -5639,23 +6128,29 @@ export class CangshuGame extends Component {
         if (unit.fusionActiveCastRemaining > 0) {
             unit.fusionActiveCastRemaining = Math.max(0, unit.fusionActiveCastRemaining - dt);
             if (unit.fusionActiveCastRemaining === 0) this.playAnimation(unit, 'idle', true);
+            this.applyStationaryHeroSeparation(unit, separation);
             return;
         }
         if (unit.barrageCasting) {
             unit.cooldown -= dt;
             this.stepH02BarrageCast(unit, dt);
+            this.applyStationaryHeroSeparation(unit, separation);
             return;
         }
         if (unit.laserCasting) {
             unit.cooldown -= dt;
             this.stepH03LaserCast(unit, dt);
+            this.applyStationaryHeroSeparation(unit, separation);
             return;
         }
         unit.cooldown -= dt;
         const opponents = this.units.filter((candidate) => !candidate.dead && candidate.team !== unit.team);
         const targetingOpponents = unit.team === 'enemy' && unit.cfg.focusHome ? [] : opponents;
         if (unit.team === 'enemy' && this.tryBeginEnemySpecial(unit, opponents)) return;
-        if (unit.team === 'self' && this.tryBeginFusionActive(unit, opponents)) return;
+        if (unit.team === 'self' && this.tryBeginFusionActive(unit, opponents)) {
+            this.applyStationaryHeroSeparation(unit, separation);
+            return;
+        }
         if (unit.laser && unit.laserCooldown <= 0 && opponents.length > 0) {
             const laserIntent = resolveTargetingIntent(
                 unit,
@@ -5668,6 +6163,7 @@ export class CangshuGame extends Component {
             );
             if (laserIntent.attackTarget && laserIntent.target) {
                 this.beginH03LaserCast(unit, laserIntent.target);
+                this.applyStationaryHeroSeparation(unit, separation);
                 return;
             }
             if (laserIntent.target) {
@@ -5682,6 +6178,7 @@ export class CangshuGame extends Component {
             const barrageTarget = selectNearestBattlefieldTarget(unit, opponents, 9999);
             if (barrageTarget) {
                 this.beginH02BarrageCast(unit, barrageTarget);
+                this.applyStationaryHeroSeparation(unit, separation);
                 return;
             }
         }
@@ -5694,6 +6191,7 @@ export class CangshuGame extends Component {
                 if (battlefieldDistance(unit, target) < unit.cfg.range) {
                     if (unit.cooldown <= 0) this.beginAttack(unit, target, null);
                     this.playAnimation(unit, 'idle', true);
+                    this.applyStationaryHeroSeparation(unit, separation);
                     return;
                 }
             }
@@ -5714,6 +6212,7 @@ export class CangshuGame extends Component {
                 this.beginAttack(unit, intent.target, intent.attackHome ? (unit.team === 'self' ? 'enemy' : 'self') : null);
             }
             this.playAnimation(unit, 'idle', true);
+            this.applyStationaryHeroSeparation(unit, separation);
             return;
         }
 
@@ -5721,6 +6220,21 @@ export class CangshuGame extends Component {
         unit.y += intent.moveY + separation.y;
         unit.node.setPosition(unit.x, unit.y);
         this.playAnimation(unit, intent.moveX || intent.moveY ? 'run' : 'idle', true);
+    }
+
+    private applyStationaryHeroSeparation(
+        unit: BattleUnit,
+        separation: Readonly<{ x: number; y: number }>,
+    ): void {
+        // In the recovered ActorUnit.updatePos path, envVec is still applied
+        // when updateAI has no main movement vector (for example while the
+        // hero is attacking or casting). Keeping that displacement prevents a
+        // stationary front line from permanently pinning the moving units
+        // behind it. Frozen units return before this path, matching canMove().
+        if (unit.team !== 'self' || (!separation.x && !separation.y)) return;
+        unit.x += separation.x;
+        unit.y += separation.y;
+        unit.node.setPosition(unit.x, unit.y);
     }
 
     private tryBeginFusionActive(unit: BattleUnit, opponents: BattleUnit[]): boolean {
@@ -6359,7 +6873,11 @@ export class CangshuGame extends Component {
         if (unit.team === 'enemy') {
             return unit.atk * traitMonsterAttackMultiplier(IMPLEMENTED_TRAIT_POOL, this.traitStacks);
         }
-        return unit.atk * warriorKillAttackMultiplier(
+        const roleAttackBasisPoints = powerRoleGlobalAttackBasisPoints(this.powerRoleState)
+            + (this.powerRoleState.equippedRoleId === 'P02' && this.powerRoleActiveRemaining > 0
+                ? powerRoleActiveBasisPoints(this.powerRoleState)
+                : 0);
+        return unit.atk * (1 + roleAttackBasisPoints / 10000) * warriorKillAttackMultiplier(
             traitWarriorKillAttackProfile(IMPLEMENTED_TRAIT_POOL, this.traitStacks),
             this.warriorKillAttackStacks,
             unit.cfg.id.slice(0, 3),
@@ -6412,6 +6930,7 @@ export class CangshuGame extends Component {
         this.units = this.units.filter((item) => item.uid !== unit.uid);
         this.pendingHits = this.pendingHits.filter((hit) => hit.projectile || (hit.attacker.uid !== unit.uid && hit.target?.uid !== unit.uid));
         if (unit.team === 'enemy') {
+            this.powerRoleEnergy = addPowerRoleEnergy(this.powerRoleEnergy, unit.cfg.exp || 0);
             this.addExperience(unit.cfg.exp || 0);
             if (this.battleMode === 'endless') {
                 this.specialKillCount += 1;
@@ -7417,6 +7936,21 @@ export class CangshuGame extends Component {
         this.adRefreshLabel.string = '刷新';
         this.adRefreshLabel.color = this.phase === 'deploy' && !this.freeRefreshUsed ? CREAM : new Color(170, 170, 170, 255);
         this.pauseLabel.string = '';
+        if (this.powerRoleActiveLabel) {
+            const roleId = this.powerRoleState.equippedRoleId;
+            const active = this.powerRoleActiveRemaining > 0;
+            this.powerRoleActiveLabel.string = roleId === 'P01'
+                ? `P01 自动\n${Math.ceil(this.powerSkillRemaining)}秒`
+                : active
+                  ? `${roleId} 生效\n${Math.ceil(this.powerRoleActiveRemaining)}秒`
+                  : `${roleId} 能量\n${Math.floor(this.powerRoleEnergy)}/${POWER_ROLE_ACTIVE_ENERGY_MAX}`;
+            this.powerRoleActiveLabel.node.parent!.active = this.phase === 'battle';
+            this.powerRoleActiveLabel.node.parent!.getComponent(Button)!.interactable =
+                this.phase === 'battle' && powerRoleActiveAvailable(this.powerRoleState, this.powerRoleEnergy) && !active;
+            this.powerRoleActiveLabel.color = this.powerRoleActiveLabel.node.parent!.getComponent(Button)!.interactable
+                ? WHITE
+                : new Color(170, 170, 180, 255);
+        }
         this.levelButtonLabel.string = `第 ${bagLikeLevelNumber(this.levelId)} 关`;
         for (const gear of [...this.gears, ...this.candidates]) {
             this.drawWorkerProgressBar(gear);

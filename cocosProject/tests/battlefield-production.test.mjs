@@ -10,6 +10,7 @@ import {
     HAMSTER_SPAWN_FLIGHT_SECONDS,
     isGearDirectlyAdjacentToCore,
     p01RoundStartProductivity,
+    powerCoreRotationAngleDegrees,
     POWER_CONTACT_DELAY_SECONDS,
     POWER_QUARTER_LAP_SECONDS,
     powerContactsByGear,
@@ -65,6 +66,11 @@ assert.equal(gearRotationParity(11, 17), 1, 'an adjacent cell alternates to the 
 assert.equal(gearRotationAngleDegrees(10, 17, 0.1, 0.2), -180, 'an even cell reaches a negative half turn halfway through the decoded delay');
 assert.equal(gearRotationAngleDegrees(11, 17, 0.1, 0.2), 202.5, 'an adjacent cell reaches the opposite half turn from its 22.5-degree phase');
 assert.equal(gearRotationAngleDegrees(11, 17, 0.2, 0.2), 22.5, 'a completed revolution lands on its visually equivalent base phase');
+assert.equal(powerCoreRotationAngleDegrees(1, POWER_QUARTER_LAP_SECONDS), 0, 'the P01 panel starts from the zero-angle pose');
+assert.equal(powerCoreRotationAngleDegrees(1, POWER_QUARTER_LAP_SECONDS / 2), 45, 'the P01 panel visibly traverses its first quarter lap');
+assert.equal(powerCoreRotationAngleDegrees(2, POWER_QUARTER_LAP_SECONDS + POWER_CONTACT_DELAY_SECONDS), 90, 'an occupied-side delay holds the P01 panel on its completed quarter');
+assert.equal(powerCoreRotationAngleDegrees(2, POWER_QUARTER_LAP_SECONDS / 2), 135, 'the P01 panel resumes rotation after its occupied-side pause');
+assert.equal(powerCoreRotationAngleDegrees(0, 0), 0, 'the P01 panel wraps a completed revolution to zero degrees');
 assert.deepEqual(
     unitPresentationBackToFront([{ uid: 3, y: -30 }, { uid: 2, y: 24 }, { uid: 1, y: 24 }]),
     [1, 2, 3],
@@ -107,5 +113,10 @@ assert.ok(
     productionStep >= 0 && battleStep > productionStep,
     'the reconstructed engine tick runs the recovered GameTimer/core-production phase before BattleTimer/combat',
 );
+assert.match(gameSource, /powerCore:\s*\{[\s\S]{0,220}new Rect\(775, 341, 108, 102\)/, 'P01 uses the decoded bagLike\/power1.png atlas frame');
+assert.match(gameSource, /node\.on\(Node\.EventType\.TOUCH_START[\s\S]{0,420}TOUCH_CANCEL/, 'P01 shares the original generic preparation drag controller');
+assert.doesNotMatch(gameSource, /if \(id !== 'P01'\)\s*\{\s*node\.on/, 'P01 is no longer excluded from dragging');
+assert.match(gameSource, /id === 'P01' \? new Set<number>\(\) : new Set\(\[this\.currentPowerIndex\(\)\]\)/, 'moving P01 can target any unlocked cell while other gears reserve its live cell');
+assert.match(gameSource, /PowerCoreRotor[\s\S]{0,1000}PowerCoreHamster/, 'the rotating power panel and independently moving hamster are separate presentation nodes');
 
-console.log('battlefield production: 38 assertions passed');
+console.log('battlefield production: 48 assertions passed');

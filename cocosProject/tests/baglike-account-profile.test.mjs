@@ -48,9 +48,9 @@ const defaults = createBagLikeAccountProfile({
 check(defaults.schemaVersion, BAGLIKE_ACCOUNT_SCHEMA_VERSION, 'new saves carry an explicit schema version');
 check(defaults.stars.H02, 3, 'legacy inspector values migrate into the local account');
 check(defaults.stars.H13, 3, 'evidenced H13 star can migrate without altering other heroes');
-check(defaults.stars.H11, 1, 'legacy unlocked values remain available when explicitly supplied');
+check(defaults.stars.H11, 0, 'future level-gated heroes are re-locked despite legacy all-unlocked defaults');
 check(bagLikeAccountChallengeTimes(defaults, 1004), 2, 'the current level challenge count migrates');
-check([...bagLikeAccountUnlockedHeroFamilies(defaults)], [...BAGLIKE_ACCOUNT_HERO_FAMILIES], 'positive stars are the original unlock state');
+check([...bagLikeAccountUnlockedHeroFamilies(defaults)], ['H01', 'H02', 'H03', 'H04', 'H12', 'H13'], 'candidate families follow the recovered unlock gates at level 1003');
 check(defaults.gold, 0, 'fresh local account currency starts at zero');
 check(defaults.maxPassedLevelId, 1003, 'fresh representative state records only earlier levels as passed');
 

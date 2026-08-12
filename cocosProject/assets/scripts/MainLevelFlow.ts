@@ -1,5 +1,6 @@
 export const PLAYABLE_LEVEL_IDS: readonly number[] = Array.from({ length: 200 }, (_, index) => 1001 + index);
 export const CANDIDATE_VALIDATION_LEVEL_IDS = [1002, 1003] as const;
+export const NORMAL_LEVEL_ENERGY_COST = 5;
 
 export type PlayableLevelId = number;
 export type CandidateValidationLevelId = (typeof CANDIDATE_VALIDATION_LEVEL_IDS)[number];
@@ -64,4 +65,43 @@ export function directBootLevelId(search: string, fallbackLevelId: number): Dire
     if (candidateRequested && isCandidateValidationLevelId(requestedLevelId)) return requestedLevelId;
     if (isPlayableLevelId(fallbackLevelId)) return fallbackLevelId;
     return PLAYABLE_LEVEL_IDS[0];
+}
+
+export function directBattleBypassesProgression(search: string): boolean {
+    return /(?:^|[?&])(?:directBattle|candidateBattle|longRun)=1(?:&|$)/.test(search)
+        || /(?:^|[?&])(?:fusionValidation|traitValidation|developedValidation)=/.test(search);
+}
+
+export function latestMainLevelId(maxPassedLevelId: number): PlayableLevelId {
+    return Math.max(1001, Math.min(1200, Math.floor(maxPassedLevelId) + 1));
+}
+
+type NormalLevelAccountProfile = {
+    energy: number;
+    maxPassedLevelId: number;
+    [key: string]: unknown;
+};
+
+export type NormalLevelEntryResult<T extends NormalLevelAccountProfile = NormalLevelAccountProfile> = {
+    profile: T;
+    entered: boolean;
+    reason: 'entered' | 'locked' | 'energy';
+};
+
+/** Mirrors TrunkInstanceMgr.challenge: only the next main level is enterable and each entry costs 5 energy. */
+export function enterNormalLevel<T extends NormalLevelAccountProfile>(
+    profile: T,
+    levelId: number,
+    bypassProgression = false,
+): NormalLevelEntryResult<T> {
+    const next = JSON.parse(JSON.stringify(profile)) as T;
+    if (bypassProgression) return { profile: next, entered: true, reason: 'entered' };
+    if (!isPlayableLevelId(levelId) || levelId > latestMainLevelId(profile.maxPassedLevelId)) {
+        return { profile: next, entered: false, reason: 'locked' };
+    }
+    if (next.energy < NORMAL_LEVEL_ENERGY_COST) {
+        return { profile: next, entered: false, reason: 'energy' };
+    }
+    next.energy -= NORMAL_LEVEL_ENERGY_COST;
+    return { profile: next, entered: true, reason: 'entered' };
 }

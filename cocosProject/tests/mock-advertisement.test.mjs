@@ -23,11 +23,17 @@ for (let index = 0; index < 3; index += 1) {
 }
 assert.equal(ads.canClaimMockShopEnergy(state, today), false);
 
+for (let index = 0; index < 3; index += 1) {
+    state = ads.completeMockAdvertisement(state, 'shop-energy-diamond', today);
+}
+assert.equal(ads.canBuyDiamondShopEnergy(state, today), false);
+
 const nextDay = ads.normalizeMockAdvertisementState(state, tomorrow);
-assert.equal(nextDay.totalCompleted, 4);
+assert.equal(nextDay.totalCompleted, 7);
 assert.equal(nextDay.todayCompleted, 0);
 assert.equal(ads.mockAdvertisementPlacementCount(nextDay, 'shop-energy', tomorrow), 0);
 assert.equal(ads.canClaimMockShopEnergy(nextDay, tomorrow), true);
+assert.equal(ads.canBuyDiamondShopEnergy(nextDay, tomorrow), true);
 
 const memory = new Map();
 const storage = {
@@ -39,7 +45,7 @@ assert.deepEqual(ads.loadMockAdvertisementState(storage, today), state);
 
 const projectDirectory = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const gameSource = fs.readFileSync(path.join(projectDirectory, 'assets', 'scripts', 'CangshuGame.ts'), 'utf8');
-for (const placement of ['endless-third', 'battle-refresh', 'trait-reroll', 'trait-take-all', 'shop-energy']) {
+for (const placement of ['endless-third', 'battle-refresh', 'trait-reroll', 'trait-take-all', 'shop-energy', 'role-fragment', 'role-level']) {
     assert.match(gameSource, new RegExp(`playMockAdvertisement\\('${placement}'`));
 }
 assert.ok(gameSource.indexOf("playMockAdvertisement('endless-third'") < gameSource.indexOf('spendSpecialModeEnergy(this.accountProfile)'));

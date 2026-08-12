@@ -28,7 +28,11 @@
 | Creator 工程校验 | 自动校验与 1001/1002/1100 完整胜负闭环通过 | 13 个机制脚本 `885/885`；全量 30 脚本 `5949/5949`；Creator 3.8.8 Web 构建完成，1100 已通过全部 15 波；终局与失败断点边界已关闭，仅余跨调度器同 tick |
 | 匹配视觉验收 | 唯一主编排阻塞 | 特质弹窗组件、富文本与归一化几何子基线已关闭；尚缺准备/背包几何收口和同步战斗帧 |
 
-## 最新进度摘要（2026-08-11）
+## 最新进度摘要（2026-08-12）
+
+- **友军软避让卡位纠正（2026-08-12）**：回看 `UnitCollisionsManager / BattleProcessor / ActorUnit / HeroUnit` 后确认，原版每个邻近同队英雄提供固定 2 像素环境推力，而且攻击/施法时即使主移动为零仍会应用。重建此前在这些提前返回分支丢弃环境向量，造成前排不会让位、后排持续被反推。现已恢复普通攻击、随机攻击、H02 弹幕、H03 激光及融合主动技期间的环境位移，冻结仍不可移动；战斗内核 116 项、移动集成 10 项、全量 47/47、Creator TypeScript 和 14:24 Web Mobile 构建通过。证据见 `evidence/runtime/hero-soft-separation-stuck-fix-2026-08-12.md`。
+
+- **P01 动力仓鼠旋转与拖动（2026-08-12）**：按竞品 `BrickShowBaseCom`、通用拖动控制器和 FairyGUI `power1.png` 记录重做动力核心。金色动力齿轮连续四分之一圈旋转并保留占用侧 0.2 秒暂停；仓鼠层独立移动、不随齿轮倒转；准备态可把 P01 从 `(2,3)` 拖到 `(1,3)`，动力索引和普通齿轮啮合相位随位置更新。全量测试 44/44、Creator TypeScript、新鲜 Web Mobile 构建和 1004 实机拖动通过，移位后角度连续跨过 `243.3° → 297.3° → 351.4° → 45.4°`，warning/error 为 0。证据见 `evidence/runtime/p01-power-core-motion-and-drag.md`。
 
 - **本地模拟广告闭环（2026-08-11）**：按用户授权新增统一模拟广告适配层，覆盖无尽第 3 次挑战、准备区刷新、词条重抽/全选和体力商品 `104002`；只有完成回调才扣次数、扣体力或发奖励，取消/失败无副作用。随机广告宝箱奖励池未恢复，继续禁用。专项、全量 `43/43`、Creator TypeScript、`184 assets / 0 missing meta` 与新鲜 Web Mobile 构建均通过；真实 750×1334 成功/取消场景 warning/error `0`。证据见 `evidence/runtime/mock-advertisement-adapter.md`。
 
@@ -377,3 +381,12 @@
 - 证据见 `evidence/runtime/baglike-h1005-primary-bullet.md`。专项逻辑 `15/15`、源码契约
   `9/9`、完整静态套件、TypeScript 与 Creator Web Mobile 构建通过；新鲜浏览器契约
   `13/13`，20 秒样本记录 H1005 普攻 5 次发射、2 次有效命中、0 运行时错误。
+
+## 动力角色机制复核（2026-08-12）
+
+- 新抽取 `PowerSkillVo/HeroMgr/BattleExAttrManager/RoleAttrVo`，并与已有 `RoleModel/BagLilkePowerSkillManager/BagLilkeManager/BattleInstanceController/DartUnit` 交叉确认角色属性和 P04 技能调用链。
+- `[已确认]` P04 施法攻击为 `BagLilkeManager.getTotalAtk() || 1`，即所有已放置 HERO 齿轮的星级攻击 × 齿轮等级倍率并叠加战斗攻击加成；旧重建使用“存活己方单位最大攻击”没有源码依据，已删除。
+- `[已确认]` `M_FB_P04_1/2/3` 是一个 y=0 从左到右的 Dart，不是十枚独立导弹；150 半径内至多命中 10 个不同目标。基础比率 6000/9000/12000，`amount_Dec=1000` 经 `FightSkillInfo` 转为每次命中衰减本档基础比率的 10%。
+- `[已确认]` P04 星 1/5 仅统计 `FB_1601` 技能组击杀，每次增加 100 生产力基点，上限 10/20；P01 星 1/5 在首次符合条件的 Prepare 抽取追加 3011/3012（随机 1/2 级齿轮）。
+- `[已确认]` `HeroMgr.getHeroAttrByBase` 读取出战角色的完整属性：自身 `level*100`、`star*1000`，所有已获得角色 10/30/.../170 级全局攻击里程碑，以及每名角色 2/4/6/8 星全局攻击。运行时已补齐这些消费者。
+- 自动验证为 TypeScript 通过、46/46 测试文件、200 关/2,978 波/54,816 刷怪项通过；Web Mobile 构建 2026-08-12 12:59:09 完成。证据见 `evidence/runtime/progression-role-system-gates-2026-08-12.md`。

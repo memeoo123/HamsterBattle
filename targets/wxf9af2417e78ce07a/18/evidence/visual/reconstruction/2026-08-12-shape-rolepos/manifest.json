@@ -1,0 +1,63 @@
+{
+  "target": "wxf9af2417e78ce07a/18",
+  "capturedAt": "2026-08-12T11:22:00+08:00",
+  "purpose": "Verify source-exact per-shape worker/head placement across all configured BagLike hero gears.",
+  "sourceEvidence": {
+    "runtime": "targets/wxf9af2417e78ce07a/18/work/production-runtime-analysis/BrickShowBaseCom.ts.deobfuscated.js",
+    "formula": "worker.setPosition(view.width / 2 - (rolePos.x || 0), view.height / 2 - (rolePos.y || 0))",
+    "shapeTable": "reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/baglike.BagLikeShapeConfig.json",
+    "itemTable": "reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/baglike.BagLikeItemConfig.json",
+    "affectedGroups": {
+      "shape6LowerLeft": ["H0501", "H0502", "H0503", "H0504"],
+      "shape7UpperLeft": ["H0905", "H1301", "H1302", "H1303", "H1304"],
+      "shape8LowerRight": ["H1401", "H1402", "H1403", "H1404", "H1505"],
+      "shape9UpperRight": ["H1601", "H1602", "H1603", "H1604", "H1805"]
+    },
+    "sharkEvidence": "H1401-H1404 and H1505 all use shapeId 8; shape 8 rolePos is {-50,-50}. In the restored up-positive grid this becomes the occupied lower-right cell at {100,-100}."
+  },
+  "captures": [
+    {
+      "file": "gear-catalog-page-3.png",
+      "url": "http://127.0.0.1:19280/?visualCatalog=gears&visualPage=2",
+      "sha256": "1e485a780ab44ad1793a0f048d592b7bd9dfcf6894130402bd8ed4100238f612",
+      "result": "pass",
+      "notes": "All four H14 levels and H1505 render their portraits on the lower-right occupied cell."
+    },
+    {
+      "file": "late-fusion-board.png",
+      "url": "http://127.0.0.1:19280/?level=1004&fusionValidation=late-placed",
+      "sha256": "1394a7228150d3330b27022e7a08189b5082a67f15e48499beaa5f8f37d44d28",
+      "result": "pass",
+      "notes": "H1505 uses the complete three-cell shape 8 footprint and the shark portrait sits on its lower-right gear."
+    },
+    {
+      "file": "all-gears-page-1-audit.png",
+      "url": "http://127.0.0.1:19280/?visualCatalog=gears&visualPage=0",
+      "sha256": "068736fcc7c9fdc911b87f2a3dfc1a476e20896cf79bae461e5e3a097f40fac6",
+      "result": "pass",
+      "notes": "H05 shape-6 portraits render on the occupied lower-left cell; all other page-1 centered shapes remain centered."
+    },
+    {
+      "file": "all-gears-page-2-audit.png",
+      "url": "http://127.0.0.1:19280/?visualCatalog=gears&visualPage=1",
+      "sha256": "5206fc4d7fc53040d87b3860af7f27de9c8deb5646eeb0842ae835feb6d9683e",
+      "result": "pass",
+      "notes": "H0905 and H13 shape-7 portraits render on the occupied upper-left cell."
+    },
+    {
+      "file": "all-gears-page-3-audit.png",
+      "url": "http://127.0.0.1:19280/?visualCatalog=gears&visualPage=2",
+      "sha256": "133e769ee3af907fb815f98de3ed7c8caea0f3542b943c4a775cbd74abacc24e",
+      "result": "pass",
+      "notes": "H14/H1505 shape-8 portraits render lower-right; H16/H1805 shape-9 portraits render upper-right."
+    }
+  ],
+  "verification": {
+    "browserWarningsOrErrors": 0,
+    "typescript": "pass",
+    "nodeTests": "44/44 pass",
+    "heroShapeAndRolePositionAudit": "54/54 pass",
+    "allLevelStateMachine": "200/200 pass",
+    "webMobileBuild": "pass"
+  }
+}

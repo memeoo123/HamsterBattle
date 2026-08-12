@@ -1,4 +1,4 @@
-export const BAGLIKE_ACCOUNT_SCHEMA_VERSION = 3;
+export const BAGLIKE_ACCOUNT_SCHEMA_VERSION = 4;
 export const BAGLIKE_ACCOUNT_STORAGE_KEY = 'cangshu.restore.baglike.account.v1';
 export const BAGLIKE_HERO_MIN_STAR = 1;
 export const BAGLIKE_HERO_MAX_STAR = 20;
@@ -150,7 +150,11 @@ function normalizedFragments(
 function applyEvidenceBackedUnlocks(profile: BagLikeAccountProfile): BagLikeAccountProfile {
     const next = cloneBagLikeAccountProfile(profile);
     for (const family of BAGLIKE_ACCOUNT_HERO_FAMILIES) {
-        if (next.stars[family] <= 0 && next.maxPassedLevelId >= BAGLIKE_HERO_UNLOCK_LEVEL[family]) {
+        if (next.maxPassedLevelId < BAGLIKE_HERO_UNLOCK_LEVEL[family]) {
+            // Old reconstruction builds initialized every family at one star.
+            // Re-lock future families so the candidate pool follows HeroUnlockConfig.
+            next.stars[family] = 0;
+        } else if (next.stars[family] <= 0) {
             next.stars[family] = BAGLIKE_HERO_MIN_STAR;
         }
     }
