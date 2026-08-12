@@ -16,6 +16,7 @@
 **/build/
 **/profiles/
 **/native/
+.android-toolchain/
 
 # Rust and other compiler output
 **/target/

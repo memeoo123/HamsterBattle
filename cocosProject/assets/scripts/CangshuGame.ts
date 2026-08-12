@@ -3339,9 +3339,13 @@ export class CangshuGame extends Component {
     }
 
     private syncBrowserContractState(): void {
-        if (typeof document === 'undefined') return;
+        // Cocos' native runtime exposes a partial `document`/canvas shim, but that
+        // canvas is not an HTMLCanvasElement and has no DOMStringMap `dataset`.
+        // This contract is browser-only observability and must never interrupt
+        // native scene construction.
+        if (typeof document === 'undefined' || typeof document.querySelector !== 'function') return;
         const canvas = document.querySelector('canvas');
-        if (!canvas) return;
+        if (!canvas || !canvas.dataset) return;
         canvas.dataset.levelId = String(this.levelId);
         canvas.dataset.battleMode = this.battleMode;
         canvas.dataset.levelName = this.levelName;

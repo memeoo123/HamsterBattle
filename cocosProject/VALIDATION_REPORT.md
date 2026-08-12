@@ -114,3 +114,15 @@
 | Terminal enemy presentation | Pass | Fatal damage immediately hides HP/shadow while preserving the death body animation; round cleanup also deactivates and destroys tracked death-animation roots. Dedicated 8 assertions; full 48/48 tests; TypeScript and 14:51 Web Mobile build pass. Fresh 1004 runtime captured `roundClear` with 0 enemies, empty unit layer, 0 shadows and no console warnings/errors |
 
 P02–P04 精确头像与 P04 `H33_S1/feibiao` 已在后续表现闭环中恢复。仍保留的证据边界是目标账号精确存档、resources3 中不存在的 H18_S1 弹体，以及未访问页面的平台/服务器状态。
+
+## 2026-08-12 Android device-build addendum
+
+| Check | Result | Evidence |
+|---|---|---|
+| Android native build | Pass | Creator 3.8.8 生成原生工程；Gradle 8.11.1 `assembleDebug` 成功，90 项任务完成，680/680 C/C++ 编译并链接 `libcocos.so` |
+| APK package | Pass | `com.cangshu.hamsterbattle` 1.0；35,095,085 bytes；minSdk 21、targetSdk 35、portrait、arm64-v8a |
+| APK integrity | Pass | SHA-256 `280C3C53EDC03925DCBB1D9C0DB3A7316461542692E3968EE1BCEEBCCE2C2E5D`；使用首包同一 Debug 证书，v1/v2/v3 签名及 4-byte zipalign 均验证通过 |
+| Physical device smoke | Pass | Redmi Note 8 / Android 13 / arm64-v8a 覆盖安装成功；第 4 关布阵与实际战斗均正常渲染，进程存活，未匹配到 JS exception、fatal exception、native fatal signal 或 ANR |
+| Native level-entry regression | Pass | 原生 canvas shim 存在但无 `dataset`，旧实现清场后写浏览器观测字段触发 TypeError；现已在任何 DOM 写入前保护退出。专项 4 项、全量 52/52、200 关 / 2,978 波 / 54,816 刷怪项、TypeScript 与新鲜 Android 构建均通过；诊断消耗已恢复为 30 体力、空挑战计数 |
+
+交付包位于 `artifacts/android/cangshu-hamster-battle-debug-arm64.apk`；这是供实机体验的 debug 签名包，不是应用商店 release 包。完整记录见 `targets/wxf9af2417e78ce07a/18/evidence/runtime/android-apk-build-2026-08-12.md`。
