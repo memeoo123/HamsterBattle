@@ -76,10 +76,15 @@ Decoded tables:
   locks, 30→25 energy on entry, locked role navigation, and role acquisition UI
   with zero console warnings/errors.
 
-## Explicit visual limitation
+## Visual recovery follow-up
 
-P04 uses an evidence-backed moving Dart path and mechanics, but the projectile
-is currently drawn as a local purple streak because the exact `H33_S1` visual
-asset is not in the imported reconstruction bundle. P02–P04 exact role portrait
-atlas crops are likewise unavailable and remain labeled fallback badges. These
-are visual fidelity gaps only; they are not replaced with invented art.
+The earlier portrait/projectile limitation is now closed. `resources3.config`
+and `resources3.import` supplied the exact P02–P04 `heroSmallHead` frame rects,
+offsets and original sizes. The original remote native resource for
+`spriteFrame/skill/feibiao` was recovered with SHA-256
+`18e56bbc76ae22a3c74ea09bd216f3f9f017042b94b7af1bf3d189eae8e24140` and is
+now used by P04 `H33_S1`. The runtime moves and spins that sprite through the
+source-exact Dart path instead of drawing the former purple placeholder.
+
+Final presentation and long-run evidence is recorded in
+`final-presentation-and-long-run-closure-2026-08-12/`.

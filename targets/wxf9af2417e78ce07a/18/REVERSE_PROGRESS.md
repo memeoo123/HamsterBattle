@@ -396,3 +396,11 @@
 - 已确认重建残留来自生命周期错位：`killUnit` 先把死亡单位移出活动数组，但保留节点 0.42 秒；紧随其后的 `clearUnits` 只能遍历活动数组，因此末名敌军的死亡节点和旧 HP 几何越过逻辑结算继续显示。
 - 现按恢复源码的死亡表现契约，在逻辑死亡时隐藏 HP 与阴影，身体动画继续播放；待死亡节点单独跟踪，并由 round-clear/result 清场立即停用和销毁。绘制端也拒绝为死亡或零 HP 单位重建血条。
 - 专项 8 项、全量 48/48、Creator TypeScript、186 assets / 0 missing meta 与 14:51 Web Mobile 构建通过；1004 新鲜构建实机在 `roundClear` 捕获 `enemyUnits=0 / unitDepth=空 / unitShadows=0` 且控制台无告警错误。证据见 `evidence/runtime/terminal-enemy-hpbar-cleanup-2026-08-12.md`。
+
+## 最终表现与长跑闭环（2026-08-12）
+
+- resources3 已关闭 P02–P04 头像与 P04 `H33_S1` 表现缺口；原始 `feibiao` SHA-256 为 `18e56bbc76ae22a3c74ea09bd216f3f9f017042b94b7af1bf3d189eae8e24140`。
+- 1003、1100、1200 实机长跑全部通关；每日 10/10 波完成；无尽在 293.182 秒摧毁敌方兵营，539 击杀。五级融合 H1005/H1505/H1805 真实施放和命中通过。
+- 长跑普通关与特殊模式进度均改为非持久化验证域，避免验证结果污染玩家账号。
+- 最终 49/49 测试、200 关 / 2,978 波 / 54,816 刷怪、187 assets / 0 missing meta、Creator TypeScript 与 17:30 Web Mobile 构建通过；最终浏览器 warning/error 为 0。
+- 证据：`evidence/runtime/final-presentation-and-long-run-closure-2026-08-12/`。

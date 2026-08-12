@@ -72,6 +72,16 @@
 | Level-specific hero Spine import | Pass | H01/H02/H03/H04 的 1–4 级模型路径已接入；本轮新增 12 套二/三/四级原始 Spine 3.8.99，atlas/texture/skeleton 均由 Creator 导入 |
 | Matched visual baseline | Pass | 最终 `developed-trait-polished.png` 与 `developed-battle-fixed.png` 已关闭精确图标、RichText、标题/按钮、完整 HUD、常驻背包、863 HP 和固定敌军快照；H13 原始 `pskill01` 与 `Font_white2` 伤害数字同帧子基线也保持通过。750×1334 截图 warning/error 0；最终证据见 `evidence/visual/reconstruction/2026-08-10/manifest.json`，H13 子基线见 `evidence/visual/reconstruction/2026-08-10-h13-impact/manifest.json` |
 
+## 最终表现与长跑闭环（2026-08-12）
+
+- P02–P04 已使用原 `heroSmallHead` 精确图集帧；P04 `H33_S1` 原始 `feibiao` 已恢复，按 `speed=1000 / angleSpeed=3 / maxHits=10` 连续移动和旋转，不再使用紫色占位轨迹。
+- 关外锁定入口、玩家化文案、角色招募、兵种逐步开启、动力齿轮/仓鼠独立运动、齿轮阴影/辉光、单位阴影、Y 深度、死亡清场均已闭环；异步切页不再把已销毁节点误报为资源加载错误。
+- 实机长跑：1003 `10/10`（876.781 s）、1100 `15/15`（1652.598 s）、1200 `15/15`（1289.538 s）均胜利，缺失 gear/config 均为 0。
+- 特殊模式：每日 `10/10`、199.176 s；无尽 293.182 s 摧毁敌方兵营，539 击杀、2915 金币。后期账号/角色夹具仅走恢复的进度、刷新、放置和合成公式，结算恢复且不落盘；直达普通长跑也不会再污染玩家关卡存档。
+- 五级融合最终实机：`P01,H1005,H1505,H1805`，三头像 loaded，H10 主弹体 `6/2` 发射/命中，融合主动技 `2/2` 施放/命中，warning/error 为 0。
+- 最终 49/49 测试文件、200 关 / 2,978 波 / 54,816 刷怪项通过。Cocos 工程检查为 187 assets、0 missing meta、TypeScript 通过、0 warning/error；Web Mobile 构建时间 2026-08-12 17:30:08。
+- 结构化证据：`targets/wxf9af2417e78ce07a/18/evidence/runtime/final-presentation-and-long-run-closure-2026-08-12/manifest.json`。
+
 ## Fidelity matrix
 
 | Area | Confirmed | Approximate / pending |

@@ -1,0 +1,64 @@
+{
+  "target": {
+    "appid": "wxf9af2417e78ce07a",
+    "version": 18
+  },
+  "capturedAt": "2026-08-12T17:30:08+08:00",
+  "build": {
+    "creator": "3.8.8",
+    "platform": "web-mobile",
+    "indexLastWriteTime": "2026-08-12 17:30:08",
+    "creatorProcessExitCodeAfterArtifact": 36,
+    "runtimeWarningCount": 0,
+    "runtimeErrorCount": 0
+  },
+  "originalAssetRecovery": {
+    "powerRolePortraits": ["P02", "P03", "P04"],
+    "p04Projectile": {
+      "skillModel": "H33_S1",
+      "resource": "spriteFrame/skill/feibiao",
+      "sha256": "18e56bbc76ae22a3c74ea09bd216f3f9f017042b94b7af1bf3d189eae8e24140",
+      "speed": 1000,
+      "angleSpeedRadians": 3,
+      "maxHits": 10
+    }
+  },
+  "normalLongRuns": [
+    {"levelId": 1003, "phase": "won", "round": 10, "roundCount": 10, "retries": 7, "elapsedSeconds": 876.781, "selfHp": 2339, "maxSelfUnits": 6, "maxEnemyUnits": 21, "missingGear": 0, "missingConfig": 0},
+    {"levelId": 1100, "phase": "won", "round": 15, "roundCount": 15, "retries": 18, "elapsedSeconds": 1652.598, "selfHp": 2225, "maxSelfUnits": 4, "maxEnemyUnits": 24, "missingGear": 0, "missingConfig": 0},
+    {"levelId": 1200, "phase": "won", "round": 15, "roundCount": 15, "retries": 18, "elapsedSeconds": 1289.538, "selfHp": 1894, "maxSelfUnits": 10, "maxEnemyUnits": 22, "missingGear": 0, "missingConfig": 0}
+  ],
+  "specialModeLongRuns": {
+    "fixture": {
+      "query": "longRunValidation=1&longRunProgression=late",
+      "accountScope": "late-progression-fixture",
+      "powerRoleScope": "late-max-nonpersistent",
+      "directCombatStatOverrides": false,
+      "restoredAfterSettlement": true
+    },
+    "daily": {"levelId": 1003, "phase": "won", "round": 10, "roundCount": 10, "elapsedSeconds": 199.176, "selfHp": 33272, "maxHp": 33272, "maxSelfUnits": 4, "maxEnemyUnits": 18, "missingGear": 0, "missingConfig": 0},
+    "endless": {"levelId": 1003, "phase": "won", "settlement": "enemy-home-destroyed", "specialElapsedSeconds": 293.182, "kills": 539, "dropGold": 2915, "selfHp": 17479, "maxHp": 18920, "maxSelfUnits": 2, "maxEnemyUnits": 17, "missingGear": 0, "missingConfig": 0}
+  },
+  "levelFiveFusion": {
+    "levelId": 1004,
+    "gearIds": ["P01", "H1005", "H1505", "H1805"],
+    "portraitsLoaded": true,
+    "h10PrimaryBulletCasts": 6,
+    "h10PrimaryBulletHits": 2,
+    "fusionActiveCasts": 2,
+    "fusionActiveHits": 2,
+    "missingGear": 0,
+    "missingConfig": 0
+  },
+  "automatedValidation": {
+    "testFilesPassed": 49,
+    "normalLevels": 200,
+    "rounds": 2978,
+    "scheduledSpawns": 54816,
+    "assetFiles": 187,
+    "missingMeta": 0,
+    "typescript": "pass",
+    "projectWarnings": 0,
+    "projectErrors": 0
+  }
+}

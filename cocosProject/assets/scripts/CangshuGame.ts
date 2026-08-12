@@ -328,9 +328,11 @@ import {
     claimPowerRoleFreeFragments,
     equipPowerRole,
     loadPowerRoleState,
+    POWER_ROLE_IDS,
     POWER_ROLE_DAILY_FREE_FRAGMENT_TIMES,
     POWER_ROLE_DAILY_FREE_LEVEL_TIMES,
     POWER_ROLE_FREE_FRAGMENT_COUNT,
+    POWER_ROLE_MAX_LEVEL,
     POWER_ROLE_MAX_STAR,
     POWER_ROLE_STAR_COSTS,
     powerRoleLevelLimit,
@@ -434,6 +436,9 @@ const HERO_SMALL_HEAD_FRAMES: Record<string, HeadFrame> = {
     H1505: { x: 85, y: 647, width: 82, height: 76, offsetX: 0, offsetY: 0 },
     H1805: { x: 93, y: 957, width: 80, height: 78, offsetX: 0, offsetY: 0 },
     P01: { x: 167, y: 1345, width: 78, height: 74, offsetX: 0, offsetY: 0 },
+    P02: { x: 175, y: 1035, width: 76, height: 76, offsetX: -1, offsetY: 3 },
+    P03: { x: 87, y: 1269, width: 84, height: 70, offsetX: -1, offsetY: 1 },
+    P04: { x: 85, y: 409, width: 84, height: 78, offsetX: 0, offsetY: 0 },
     coin: { x: 177, y: 259, width: 70, height: 68, offsetX: 0, offsetY: 0 },
 };
 
@@ -914,6 +919,7 @@ type ProjectileVisual = {
     fromY: number;
     toX: number;
     toY: number;
+    angularSpeedDegrees?: number;
 };
 
 type HitEffectVisual = {
@@ -1604,6 +1610,7 @@ export class CangshuGame extends Component {
     private powerRoleState!: PowerRoleState;
     private accountDefaultProfile!: BagLikeAccountProfile;
     private longRunOriginalAccountProfile: BagLikeAccountProfile | null = null;
+    private longRunOriginalPowerRoleState: PowerRoleState | null = null;
     private claimedAccountRewardRounds = new Set<number>();
     private accountRewardsThisAttempt: BagLikeLevelAccountReward[] = [];
     private accountUnlockedThisAttempt: BagLikeAccountHeroFamily[] = [];
@@ -1679,6 +1686,7 @@ export class CangshuGame extends Component {
     private h12HitAudio: AudioClip | null = null;
     private h12AudioSource: AudioSource | null = null;
     private h13ProjectileFrame: SpriteFrame | null = null;
+    private p04ProjectileFrame: SpriteFrame | null = null;
     private h13ImpactData: sp.SkeletonData | null = null;
     private h0705HitFrames: SpriteFrame[] = [];
     private h08HitFrames: SpriteFrame[] = [];
@@ -1811,6 +1819,7 @@ export class CangshuGame extends Component {
         this.preloadH11Healing();
         this.preloadH12Skill();
         this.preloadH13Projectile();
+        this.preloadP04Projectile();
         this.preloadH13Impact();
         this.preloadH0705Impact();
         this.preloadH08Impact();
@@ -1873,7 +1882,11 @@ export class CangshuGame extends Component {
     private launchLevel(levelId: number): void {
         if (!this.levelTable) throw new Error('关卡表尚未加载');
         const search = typeof window === 'undefined' ? '' : window.location.search;
-        const entry = enterNormalLevel(this.accountProfile, levelId, directBattleBypassesProgression(search));
+        const bypassProgression = directBattleBypassesProgression(search);
+        const validationOriginalProfile = bypassProgression && this.longRunValidationEnabled()
+            ? cloneBagLikeAccountProfile(this.accountProfile)
+            : null;
+        const entry = enterNormalLevel(this.accountProfile, levelId, bypassProgression);
         if (!entry.entered) {
             const message = entry.reason === 'locked'
                 ? `请先通关第 ${bagLikeLevelNumber(levelId) - 1} 关`
@@ -1882,10 +1895,10 @@ export class CangshuGame extends Component {
             return;
         }
         this.accountProfile = entry.profile;
-        if (!directBattleBypassesProgression(search)) this.persistAccountProfile(false);
+        if (!bypassProgression) this.persistAccountProfile(false);
         this.resetLevelSession();
         this.battleMode = 'normal';
-        this.longRunOriginalAccountProfile = null;
+        this.longRunOriginalAccountProfile = validationOriginalProfile;
         this.destroyRootChildren();
         this.levelId = levelId;
         this.configureLevel(this.levelTable);
@@ -1942,7 +1955,7 @@ export class CangshuGame extends Component {
         }
         if (eligibility.needsAd) {
             this.playMockAdvertisement('endless-third', () => this.startSpecialBattle(mode, true), (outcome) => {
-                this.showEndlessModeScene(outcome === 'cancelled' ? '模拟广告已取消，本次未扣体力和挑战次数' : '模拟广告播放失败，本次未扣体力和挑战次数');
+                this.showEndlessModeScene(outcome === 'cancelled' ? '广告已取消，本次未扣体力和挑战次数' : '广告播放失败，本次未扣体力和挑战次数');
             });
             return;
         }
@@ -1956,13 +1969,18 @@ export class CangshuGame extends Component {
         this.resetLevelSession();
         this.battleMode = mode;
         if (this.longRunLateProgressionEnabled()) {
-            // Validation account only: run every recovered star modifier through
-            // the normal account/profile formulas without persisting the preset.
+            // Validation account only: run every recovered hero and power-role
+            // progression modifier through the normal formulas without persisting
+            // either preset. This keeps special-mode long runs representative of a
+            // late account instead of silently using the initialized P01 role.
             this.longRunOriginalAccountProfile = cloneBagLikeAccountProfile(this.accountProfile);
+            this.longRunOriginalPowerRoleState = this.clonePowerRoleState(this.powerRoleState);
             this.accountProfile = setAllBagLikeAccountHeroStars(this.accountProfile, 20);
+            this.powerRoleState = this.lateProgressionPowerRoleState(this.powerRoleState);
             this.syncAccountProfileToRuntime(false);
         } else {
             this.longRunOriginalAccountProfile = null;
+            this.longRunOriginalPowerRoleState = null;
         }
         this.destroyRootChildren();
         this.configureSpecialMode(mode);
@@ -1973,7 +1991,7 @@ export class CangshuGame extends Component {
         this.applyPhaseLayout();
         this.initialized = true;
         this.tipLabel.string = watchedAdvertisement
-            ? '本地模拟广告已完成：第 3 次无尽挑战开始'
+            ? '广告播放完成：第 3 次无尽挑战开始'
             : mode === 'daily' ? '每日挑战：增益与减益已生效' : '无尽试炼：300 秒内尽可能击杀敌人';
         this.refreshUi();
     }
@@ -2006,15 +2024,15 @@ export class CangshuGame extends Component {
         panelGraphics.lineWidth = 4;
         panelGraphics.roundRect(-308, -213, 616, 426, 26);
         panelGraphics.stroke();
-        this.makeLabel('MockAdvertisementTitle', panel, 0, 142, 540, 58, '本地模拟广告', 38, GOLD);
+        this.makeLabel('MockAdvertisementTitle', panel, 0, 142, 540, 58, '激励视频', 38, GOLD);
         this.makeLabel('MockAdvertisementPlacement', panel, 0, 66, 540, 48,
             mockAdvertisementPlacementLabel(placement), 23, WHITE);
         const statusText = outcome === 'completed'
-            ? '正在播放测试广告…\n完成后才会发放奖励或进入挑战'
-            : outcome === 'cancelled' ? '测试场景：模拟用户取消广告' : '测试场景：模拟广告加载失败';
+            ? '广告播放中…\n完整观看后即可获得奖励'
+            : outcome === 'cancelled' ? '广告已取消' : '广告加载失败，请稍后重试';
         this.makeLabel('MockAdvertisementStatus', panel, 0, -20, 540, 90, statusText, 19, CREAM);
         this.makeLabel('MockAdvertisementTag', panel, 0, -151, 540, 36,
-            'MOCK · 不请求网络 · 可替换微信激励视频接口', 15, new Color(150, 181, 211, 255));
+            '观看完整视频后发放奖励', 15, new Color(150, 181, 211, 255));
 
         let finished = false;
         const finish = (): void => {
@@ -2238,8 +2256,11 @@ export class CangshuGame extends Component {
         tabs.forEach((tab, index) => {
             const selected = tab.name === active;
             const unlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, tab.systemId);
+            const open = unlocked
+                ? tab.open
+                : () => this.showOutOfBattleLockedNotice(parent, tab.name, tab.systemId);
             const label = this.makeButton(`MainTab_${tab.name}`, bar, -288 + index * 144, selected ? 6 : -1, 128, selected ? 96 : 86,
-                `${tabGlyphs[tab.name]}\n${tab.name}`, tab.open);
+                `${unlocked ? tabGlyphs[tab.name] : '锁'}\n${tab.name}`, open);
             this.restyleButton(
                 label,
                 selected ? new Color(211, 145, 38, 255) : new Color(40, 61, 83, 255),
@@ -2247,8 +2268,32 @@ export class CangshuGame extends Component {
             );
             label.fontSize = selected ? 21 : 19;
             label.lineHeight = selected ? 31 : 28;
-            label.node.parent!.getComponent(Button)!.interactable = !selected && unlocked;
+            // Locked tabs remain clickable so the player gets an explicit unlock
+            // condition instead of an apparently broken navigation button.
+            label.node.parent!.getComponent(Button)!.interactable = !selected;
         });
+    }
+
+    private showOutOfBattleLockedNotice(parent: Node, tabName: OutOfBattleTabName, systemId: string): void {
+        const previous = parent.getChildByName('MainTabLockedNotice');
+        if (previous?.isValid) previous.destroy();
+        const configuredLevel = outOfBattleSystemUnlockLevel(systemId as Parameters<typeof outOfBattleSystemUnlockLevel>[0]);
+        const chapter = configuredLevel ? configuredLevel - 1000 : 1;
+        const notice = this.makeLabel(
+            'MainTabLockedNotice',
+            parent,
+            0,
+            -520,
+            620,
+            48,
+            `${tabName}将在通关第 ${chapter} 关后开放`,
+            18,
+            new Color(255, 225, 139, 255),
+        );
+        this.applyOriginalOutline(notice, new Color(35, 26, 20, 255), 3);
+        this.scheduleOnce(() => {
+            if (notice.node.isValid) notice.node.destroy();
+        }, 1.8);
     }
 
     private createOutOfBattleScene(sceneName: string, backgroundName: string, pageTitle: string): Node {
@@ -2299,7 +2344,7 @@ export class CangshuGame extends Component {
         const root = this.createOutOfBattleScene('SettingsScene', 'fightscene_01', '设置');
         this.makeLabel('SettingsTitle', root, 0, 550, 620, 58, '设置', 40, GOLD);
         this.makeLabel('SettingsHint', root, 0, 502, 700, 40,
-            '原包 SettingMainView：音乐、音效、兑换码、反馈与账号 ID', 18, CREAM);
+            '调整音乐和音效，打造更舒适的战斗体验', 18, CREAM);
 
         const makeVolumeRow = (kind: 'music' | 'sound', y: number, title: string, value: number): void => {
             const row = this.makeNode(`Settings_${kind}`, root, 0, y, 660, 126);
@@ -2328,9 +2373,9 @@ export class CangshuGame extends Component {
         code.node.parent!.getComponent(Button)!.interactable = false;
         feedback.node.parent!.getComponent(Button)!.interactable = false;
         this.makeLabel('SettingsUnavailable', root, 0, -85, 700, 96,
-            '兑换码领取记录与反馈能力依赖平台/服务器，当前只保留真实入口，不本地伪造领取', 17, CREAM);
+            '兑换码与问题反馈功能暂未开放', 17, CREAM);
         this.makeLabel('SettingsAccount', root, 0, -205, 700, 74,
-            '账号 ID：--\n原包在联网存档返回 UID 后显示并支持复制', 18, WHITE);
+            '游客账号\n游戏进度已保存在当前设备', 18, WHITE);
         const close = this.makeButton('SettingsClose', root, 0, -350, 260, 66, '关闭', () => this.showMainScene());
         this.restyleButton(close, new Color(43, 99, 132, 255), WHITE);
         this.buildMainBottomNavigation(root, '战斗');
@@ -2343,7 +2388,7 @@ export class CangshuGame extends Component {
         const shopUnlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, 'SHOP');
         const shopUnlockLevel = outOfBattleSystemUnlockLevel('SHOP')! - 1000;
         this.makeLabel('ShopUnlockHint', root, 0, 507, 690, 36,
-            shopUnlocked ? '商品与价格来自原包 ShopConfig / ShopGoodsConfig' : `通关第${shopUnlockLevel}关后开放 · 当前为配置预览`,
+            shopUnlocked ? '每日好礼与限购商品' : `通关第 ${shopUnlockLevel} 关后开放`,
             17, CREAM);
 
         const sectionIds: Array<101 | 102 | 103 | 104> = [101, 102, 103, 104];
@@ -2374,7 +2419,9 @@ export class CangshuGame extends Component {
             cardGraphics.lineWidth = 3;
             cardGraphics.roundRect(-168, -120, 336, 240, 20);
             cardGraphics.stroke();
-            this.makeLabel(`ShopGoodId_${good.id}`, card, 0, 88, 300, 30, `${good.id}`, 14, new Color(146, 181, 216, 255));
+            this.makeLabel(`ShopGoodTag_${good.id}`, card, 0, 88, 300, 30,
+                this.shopSectionId === 101 ? '每日精选' : this.shopSectionId === 104 ? '每日限购' : '珍稀商品',
+                14, new Color(146, 181, 216, 255));
             this.makeLabel(`ShopGoodName_${good.id}`, card, 0, 52, 300, 38, good.name, 23, WHITE);
             this.makeLabel(`ShopGoodReward_${good.id}`, card, 0, 12, 310, 34, good.rewardText, 20, GOLD);
             this.makeLabel(`ShopGoodCost_${good.id}`, card, 0, -25, 310, 34, good.costText, 16, CREAM);
@@ -2387,9 +2434,9 @@ export class CangshuGame extends Component {
                 : good.action === 'fixed' ? '购买'
                 : mockEnergyGood
                   ? mockEnergyAvailable
-                      ? `模拟广告 ${mockAdvertisementPlacementCount(this.mockAdvertisementState, 'shop-energy')}/3`
+                      ? `观看广告 ${mockAdvertisementPlacementCount(this.mockAdvertisementState, 'shop-energy')}/3`
                       : '今日已领 3/3'
-                  : good.action === 'advertisement' ? '奖励池待恢复' : good.action === 'chest' ? '宝箱预览' : '状态待同步';
+                  : good.action === 'chest' ? '查看宝箱' : '暂未开放';
             const action = this.makeButton(`ShopGoodAction_${good.id}`, card, 0, -82, 220, 52, actionText,
                 () => this.purchaseShopGood(good));
             if (!supported || !shopUnlocked) {
@@ -2398,15 +2445,15 @@ export class CangshuGame extends Component {
             }
         });
         const shopRule = this.shopSectionId === 101
-            ? `每日商店手动刷新上限 ${OUT_OF_BATTLE_DAILY_SHOP_AD_REFRESH_MAX} 次，配置中每次均为广告刷新`
+            ? `每日可刷新 ${OUT_OF_BATTLE_DAILY_SHOP_AD_REFRESH_MAX} 次`
             : this.shopSectionId === 102
               ? `单抽 ${OUT_OF_BATTLE_BOX_ONE_DRAW_DIAMONDS} 钻 / 十连 ${OUT_OF_BATTLE_BOX_TEN_DRAW_DIAMONDS} 钻 · 每抽宝箱经验 ${OUT_OF_BATTLE_BOX_EXP_PER_DRAW} · 最高 ${OUT_OF_BATTLE_BOX_LEVEL_MAX} 级`
               : this.shopSectionId === 104
-                ? '体力广告每日限领 3 次；当前使用本地模拟广告并按自然日存档'
+                ? '体力商品每日限购，观看广告也可领取体力'
                 : '金币商店包含每日免费/广告档与固定钻石购买档';
         this.makeLabel('ShopRule', root, 0, -340, 700, 64, shopRule, 16, GOLD);
         this.makeLabel('ShopMessage', root, 0, -410, 700, 64,
-            message || '体力广告已接入本地模拟；随机奖励、免费商品和宝箱仍等待服务端奖励池', 17, message ? WHITE : CREAM);
+            message || '部分珍稀商品会随活动陆续开放', 17, message ? WHITE : CREAM);
         this.buildMainBottomNavigation(root, '商店');
     }
 
@@ -2417,7 +2464,7 @@ export class CangshuGame extends Component {
         }
         if (good.id === 104002) {
             if (!canClaimMockShopEnergy(this.mockAdvertisementState)) {
-                this.showShopScene('今日 3 次模拟广告体力已经领取完毕');
+                this.showShopScene('今日 3 次广告体力已经领取完毕');
                 return;
             }
             this.playMockAdvertisement('shop-energy', () => {
@@ -2425,9 +2472,9 @@ export class CangshuGame extends Component {
                 next.energy += good.rewardEnergy || 0;
                 this.accountProfile = next;
                 this.persistAccountProfile(false);
-                this.showShopScene(`模拟广告完成：${good.rewardText}`);
+                this.showShopScene(`领取成功：${good.rewardText}`);
             }, (outcome) => {
-                this.showShopScene(outcome === 'cancelled' ? '模拟广告已取消，未发放体力且未消耗次数' : '模拟广告播放失败，未发放体力且未消耗次数');
+                this.showShopScene(outcome === 'cancelled' ? '广告已取消，未发放体力且未消耗次数' : '广告播放失败，未发放体力且未消耗次数');
             });
             return;
         }
@@ -2458,7 +2505,7 @@ export class CangshuGame extends Component {
         this.makeLabel('ActivityTitle', root, 0, 550, 620, 58, '活动', 40, GOLD);
         const gameplayUnlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, 'GAMEPLAY');
         this.makeLabel('ActivityHint', root, 0, 500, 700, 38,
-            gameplayUnlocked ? '玩法入口来自原包 GameplayConfig' : '通关第6关后开放 · 当前为配置预览', 18, CREAM);
+            gameplayUnlocked ? '每日挑战、无尽试炼与限时玩法' : '通关第 6 关后开放', 18, CREAM);
         OUT_OF_BATTLE_GAMEPLAYS.forEach((gameplay, index) => {
             const x = -240 + index * 240;
             const card = this.makeNode(`Gameplay_${gameplay.systemId}`, root, x, 230, 218, 300);
@@ -2483,7 +2530,7 @@ export class CangshuGame extends Component {
             const supported = gameplay.systemId !== 'OTHER_GAMES';
             const gameplayEntryUnlocked = this.accountProfile.maxPassedLevelId >= gameplay.unlockLevel;
             const preview = this.makeButton(`GameplayPreview_${gameplay.id}`, card, 0, -105, 172, 50,
-                supported ? '查看规则' : '资料不足', open);
+                supported ? '查看规则' : '敬请期待', open);
             this.restyleButton(preview,
                 supported ? new Color(43, 99, 132, 255) : new Color(68, 75, 88, 255),
                 supported ? WHITE : new Color(160, 166, 178, 255));
@@ -2494,7 +2541,7 @@ export class CangshuGame extends Component {
         const sevenDay = this.makeButton('ActivitySevenDay', root, 170, -110, 280, 70, '七天登录', () => this.showSevenDayScene());
         this.restyleButton(sevenDay, new Color(129, 77, 154, 255), WHITE);
         this.makeLabel('ActivityEvidence', root, 0, -285, 700, 120,
-            '无尽试炼 / 每日挑战 / 玩法合集的入口、开放关卡与奖励类型已恢复\n活动战斗、签到领取依赖缺失的服务器状态，因此不伪造结算', 17, CREAM);
+            '挑战不同玩法，赢取金币和成长奖励', 17, CREAM);
         this.buildMainBottomNavigation(root, '活动');
     }
 
@@ -2521,7 +2568,7 @@ export class CangshuGame extends Component {
         detailGraphics.lineWidth = 3;
         detailGraphics.roundRect(-343, -258, 686, 516, 22);
         detailGraphics.stroke();
-        this.makeLabel('DailyInstanceName', detail, 0, 176, 620, 46, `${selected.id} · ${selected.name}`, 28, GOLD);
+        this.makeLabel('DailyInstanceName', detail, 0, 176, 620, 46, selected.name, 28, GOLD);
         this.makeLabel('DailyInstanceRounds', detail, 0, 132, 620, 36,
             `${selected.roundCount} 波 · 初始副本金币 ${selected.initialDailyGold}`, 18, WHITE);
         rotation.buffIds.forEach((effectId, index) => {
@@ -2573,7 +2620,7 @@ export class CangshuGame extends Component {
         const eligibility = canStartSpecialMode(this.specialModeState, this.accountProfile, 'endless');
         const root = this.createOutOfBattleScene('EndlessModeScene', OUT_OF_BATTLE_ENDLESS.fightScene, '无尽试炼');
         this.makeLabel('EndlessModeTitle', root, 0, 550, 620, 58, '无尽试炼', 40, GOLD);
-        this.makeLabel('EndlessModeHint', root, 0, 502, 700, 40, '原包 EndlessModeConfig / TrunkInstanceRoundConfig', 18, CREAM);
+        this.makeLabel('EndlessModeHint', root, 0, 502, 700, 40, '坚持越久，奖励越丰厚', 18, CREAM);
         const panel = this.makeNode('EndlessModePanel', root, 0, 165, 680, 520);
         const graphics = panel.addComponent(Graphics);
         graphics.fillColor = new Color(31, 48, 71, 247);
@@ -2584,7 +2631,7 @@ export class CangshuGame extends Component {
         graphics.roundRect(-338, -258, 676, 516, 26);
         graphics.stroke();
         this.makeLabel('EndlessModeRound', panel, 0, 196, 610, 48,
-            `轮次 ${OUT_OF_BATTLE_ENDLESS.roundIds[0]} · ${OUT_OF_BATTLE_ENDLESS.recoveredSpawnCount} 个刷怪条目`, 21, GOLD);
+            `持续 300 秒 · 敌人会不断变强`, 21, GOLD);
         this.makeLabel('EndlessModeRules', panel, 0, 65, 610, 210,
             `每日挑战 ${OUT_OF_BATTLE_ENDLESS.dailyChallengeTimes} 次，跨天清零\n每次消耗体力 ${OUT_OF_BATTLE_ENDLESS.costEnergy}\n初始副本金币 ${OUT_OF_BATTLE_ENDLESS.initialDailyGold}\n第 ${OUT_OF_BATTLE_ENDLESS.advertisementAttempt} 次挑战需要广告\n难度继承当前主线进度倍率`, 19, WHITE);
         this.makeLabel('EndlessModeRecord', panel, 0, -105, 610, 92,
@@ -2606,7 +2653,7 @@ export class CangshuGame extends Component {
     private showSevenDayScene(): void {
         const root = this.createOutOfBattleScene('SevenDayScene', 'fightscene_03', '七天登录');
         this.makeLabel('SevenDayTitle', root, 0, 550, 620, 58, '七天登录', 40, GOLD);
-        this.makeLabel('SevenDayHint', root, 0, 500, 700, 38, '通关第2关开放 · 奖励来自 SevenDayActivityConfig', 18, CREAM);
+        this.makeLabel('SevenDayHint', root, 0, 500, 700, 38, '每日登录，连续七天领取好礼', 18, CREAM);
         OUT_OF_BATTLE_SEVEN_DAY_REWARDS.forEach((reward, index) => {
             const column = index % 4;
             const row = Math.floor(index / 4);
@@ -2624,10 +2671,10 @@ export class CangshuGame extends Component {
             this.makeLabel(`SevenDayNumber_${reward.day}`, card, 0, 53, 140, 38, `第${reward.day}天`, 20, GOLD);
             this.makeLabel(`SevenDayReward_${reward.day}`, card, 0, -3, 146, 72,
                 reward.day === 7 ? '豪华齿轮碎片\n×100' : reward.rewardText, reward.day === 7 ? 15 : 17, WHITE);
-            this.makeLabel(`SevenDayState_${reward.day}`, card, 0, -65, 140, 30, '状态待同步', 14, new Color(163, 171, 184, 255));
+            this.makeLabel(`SevenDayState_${reward.day}`, card, 0, -65, 140, 30, '暂未开放', 14, new Color(163, 171, 184, 255));
         });
         this.makeLabel('SevenDayEvidence', root, 0, -310, 700, 90,
-            '原包未包含目标账号的签到日期与领取记录，故不提供本地代领；页面保留全部真实奖励', 17, CREAM);
+            '登录奖励领取功能即将开放', 17, CREAM);
         this.buildMainBottomNavigation(root, '活动');
     }
 
@@ -2637,7 +2684,7 @@ export class CangshuGame extends Component {
         this.makeLabel('DailyTaskTitle', root, 0, 550, 620, 58, '每日任务', 40, GOLD);
         const unlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, 'DAILY_TASK');
         this.makeLabel('DailyTaskHint', root, 0, 505, 700, 38,
-            unlocked ? '任务目标与活跃度来自 DailyTaskConfig' : '通关第2关后开放 · 当前为配置预览', 18, CREAM);
+            unlocked ? '完成每日任务，积累活跃度领取宝箱' : '通关第 2 关后开放', 18, CREAM);
         OUT_OF_BATTLE_DAILY_TASKS.forEach((task, index) => {
             const y = 420 - index * 86;
             const row = this.makeNode(`DailyTask_${task.id}`, root, 0, y, 690, 70);
@@ -2655,7 +2702,7 @@ export class CangshuGame extends Component {
         const activeRewards = OUT_OF_BATTLE_DAILY_ACTIVE_REWARDS.map((reward) => `${reward.active}:${reward.rewardText}`).join('　');
         this.makeLabel('DailyActiveRewards', root, 0, -230, 700, 100, `活跃度宝箱\n${activeRewards}`, 15, GOLD);
         this.makeLabel('DailyTaskEvidence', root, 0, -345, 700, 72,
-            '广告任务显示本地模拟完成数；其他目标账号进度不在包体中，以 -- 显示且不本地代领', 17, CREAM);
+            '部分任务进度会在对应玩法完成后更新', 17, CREAM);
         this.buildMainBottomNavigation(root, '战斗');
     }
 
@@ -2697,9 +2744,11 @@ export class CangshuGame extends Component {
             const targetStar = Math.max(0, progress.star + 1);
             const fragmentCost = POWER_ROLE_STAR_COSTS[Math.min(POWER_ROLE_MAX_STAR, targetStar)];
             const remainingFree = Math.max(0, POWER_ROLE_DAILY_FREE_FRAGMENT_TIMES - progress.freeFragmentTimes);
-            this.makeLabel(`RoleId_${role.id}`, card, 0, 112, 260, 30, `${role.id} · ${role.fragmentId}`, 15, new Color(157, 213, 255, 255));
-            this.makeLabel(`RoleName_${role.id}`, card, 0, 78, 280, 40, role.name, 26, owned ? WHITE : new Color(172, 179, 190, 255));
-            this.makeLabel(`RoleQuality_${role.id}`, card, 0, 42, 280, 30,
+            this.attachStaticGearPortrait(card, role.id, -105, 70);
+            this.makeLabel(`RoleTag_${role.id}`, card, 46, 112, 190, 30,
+                equipped ? '当前出战' : owned ? '已获得角色' : '等待招募', 15, new Color(157, 213, 255, 255));
+            this.makeLabel(`RoleName_${role.id}`, card, 46, 78, 190, 40, role.name, 26, owned ? WHITE : new Color(172, 179, 190, 255));
+            this.makeLabel(`RoleQuality_${role.id}`, card, 46, 42, 190, 30,
                 owned ? `${progress.star} 星 · ${equipped ? '出战中' : '已获得'}` : '尚未获得', 17, owned ? GOLD : CREAM);
             this.makeLabel(`RoleFragments_${role.id}`, card, 0, 5, 280, 32,
                 progress.star >= POWER_ROLE_MAX_STAR ? '已满星' : `碎片 ${progress.fragments} / ${fragmentCost}`, 17, new Color(157, 213, 255, 255));
@@ -2769,7 +2818,7 @@ export class CangshuGame extends Component {
             savePowerRoleState(sys.localStorage, this.powerRoleState);
             this.showRoleScene(result.claimed ? `获得 ${POWER_ROLE_FREE_FRAGMENT_COUNT} 个角色碎片` : '今天的免费次数已经用完');
         }, (outcome) => {
-            this.showRoleScene(outcome === 'cancelled' ? '模拟广告已取消，未发放碎片' : '模拟广告播放失败，未发放碎片');
+            this.showRoleScene(outcome === 'cancelled' ? '广告已取消，未发放碎片' : '广告播放失败，未发放碎片');
         });
     }
 
@@ -2800,7 +2849,7 @@ export class CangshuGame extends Component {
             savePowerRoleState(sys.localStorage, this.powerRoleState);
             this.showRoleScene(result.upgraded ? `免费升级成功：${this.powerRoleState.roles[id].level} 级` : '当前无法升级');
         }, (outcome) => {
-            this.showRoleScene(outcome === 'cancelled' ? '模拟广告已取消，未升级' : '模拟广告播放失败，未升级');
+            this.showRoleScene(outcome === 'cancelled' ? '广告已取消，未升级' : '广告播放失败，未升级');
         });
     }
 
@@ -2808,9 +2857,9 @@ export class CangshuGame extends Component {
         const role = OUT_OF_BATTLE_POWER_ROLES.find((entry) => entry.id === powerId) || OUT_OF_BATTLE_POWER_ROLES[0];
         const abilities = outOfBattlePowerAbilities(role.id);
         const root = this.createOutOfBattleScene('RoleDetailScene', 'fightscene_03', '角色详情');
-        this.makeLabel('RoleDetailTitle', root, 0, 550, 620, 58, `${role.name} · ${role.id}`, 38, GOLD);
+        this.makeLabel('RoleDetailTitle', root, 0, 550, 620, 58, role.name, 38, GOLD);
         this.makeLabel('RoleDetailHint', root, 0, 505, 700, 38,
-            `${'★'.repeat(role.quality)} 品质 ${role.quality} · 碎片 ${role.fragmentId} · 最高 ${OUT_OF_BATTLE_POWER_STAR_MAX} 星`, 18, CREAM);
+            `${'★'.repeat(role.quality)} 传奇角色 · 最高 ${OUT_OF_BATTLE_POWER_STAR_MAX} 星`, 18, CREAM);
         abilities.forEach((ability, index) => {
             const y = 418 - index * 78;
             const row = this.makeNode(`RoleAbility_${ability.id}`, root, 0, y, 690, 66);
@@ -2828,7 +2877,7 @@ export class CangshuGame extends Component {
                 ability.description, 15, CREAM);
         });
         this.makeLabel('RoleDetailEvidence', root, 0, -325, 700, 64,
-            '九档能力逐条来自 PowerAbilityConfig；目标账号角色等级、星级和碎片存档未包含在包体中', 16, CREAM);
+            '提升星级可逐步解锁全部角色能力', 16, CREAM);
         const back = this.makeButton('RoleDetailBack', root, 0, -405, 250, 56, '返回角色', () => this.showRoleScene());
         this.restyleButton(back, new Color(43, 99, 132, 255), WHITE);
         this.buildMainBottomNavigation(root, '角色');
@@ -2877,7 +2926,7 @@ export class CangshuGame extends Component {
                 const headKey = this.gearHeadKey(`${family}01` as GearId);
                 if (headKey) this.attachStaticGearPortrait(card, headKey, -105, 48);
                 this.makeLabel(`CultivationName_${family}`, card, 49, 72, 205, 38,
-                    `${family} ${ACCOUNT_HERO_NAMES[family]}`, 21, unlocked ? WHITE : new Color(151, 157, 169, 255));
+                    ACCOUNT_HERO_NAMES[family], 21, unlocked ? WHITE : new Color(151, 157, 169, 255));
                 this.makeLabel(`CultivationStar_${family}`, card, 45, 29, 200, 34,
                     unlocked ? `${star} 星` : `通关第 ${bagLikeLevelNumber(unlockLevel)} 关解锁`, 20, unlocked ? GOLD : new Color(154, 160, 173, 255));
                 this.makeLabel(`CultivationFragments_${family}`, card, -58, -42, 190, 36,
@@ -2904,7 +2953,7 @@ export class CangshuGame extends Component {
         next.node.parent!.getComponent(Button)!.interactable = this.cultivationPage < pageCount - 1;
         this.makeLabel('CultivationPage', root, 0, -450, 150, 52, `${this.cultivationPage + 1} / ${pageCount}`, 20, GOLD);
         this.makeLabel('CultivationMessage', root, 0, -515, 680, 42,
-            message || '升星消耗与 1–20 星上限来自原包 HeroStarConfig', 18, message ? WHITE : CREAM);
+            message || '收集碎片并消耗金币，可将兵种提升至 20 星', 18, message ? WHITE : CREAM);
         this.buildMainBottomNavigation(root, '培养');
     }
 
@@ -3210,6 +3259,9 @@ export class CangshuGame extends Component {
                     ? 'validation-unlock-only'
                     : 'normal-account'
             : 'normal-account';
+        canvas.dataset.longRunPowerRoleScope = this.longRunValidationEnabled() && this.longRunLateProgressionEnabled()
+            ? 'late-max-nonpersistent'
+            : 'normal-account';
         canvas.dataset.longRunMaxSelfUnits = String(this.longRunMaxSelfUnits);
         canvas.dataset.longRunMaxEnemyUnits = String(this.longRunMaxEnemyUnits);
         canvas.dataset.roundClock = this.roundClock.toFixed(3);
@@ -3433,8 +3485,12 @@ export class CangshuGame extends Component {
     private attachEnemyVisual(parent: Node, entry: VisualEnemyEntry): void {
         const modelNode = this.makeNode(`EnemySpine_${entry.id}`, parent, 0, 25, 120, 120);
         resources.load(entry.spinePath, sp.SkeletonData, (error, data) => {
-            if (error || !modelNode.isValid) {
-                console.error(`[visual-catalog] enemy asset failed ${entry.id} ${entry.spinePath}: ${error?.message || 'invalid node'}`);
+            // Scene switches may intentionally destroy gallery nodes before an
+            // asynchronous resource callback returns. That is cancellation, not
+            // an asset failure, and must not surface as a runtime error.
+            if (!modelNode.isValid) return;
+            if (error) {
+                console.error(`[visual-catalog] enemy asset failed ${entry.id} ${entry.spinePath}: ${error.message}`);
                 return;
             }
             const skeleton = modelNode.addComponent(sp.Skeleton);
@@ -3840,7 +3896,7 @@ export class CangshuGame extends Component {
             457,
             630,
             56,
-            '关卡奖励、解锁条件和 1–20 星消耗均来自原包配置\n金币、体力、钻石、碎片、通关进度会保存到本地',
+            '培养英雄可以提升整支队伍的战斗力\n金币、体力、钻石、碎片和通关进度会自动保存',
             17,
             CREAM,
         );
@@ -3875,7 +3931,7 @@ export class CangshuGame extends Component {
 
         this.makeLabel('LevelSelectionTitle', panel, 0, 505, 620, 58, '主线关卡 · 1–200', 34, GOLD);
         this.makeLabel('LevelSelectionEvidence', panel, 0, 457, 630, 42,
-            '通关当前关后只解锁下一关；规则来自原包 TrunkInstanceModel', 17, CREAM);
+            '通关当前关卡后，即可解锁下一关', 17, CREAM);
         this.levelSelectionContentLayer = this.makeNode('LevelSelectionContent', panel, 0, 0, 660, 850);
         this.makeButton('LevelSelectionClose', panel, 0, -505, 230, 62, '返回布阵', () => this.closeLevelSelectionPanel());
         this.levelSelectionLayer.active = false;
@@ -4069,6 +4125,30 @@ export class CangshuGame extends Component {
         return /(?:^|[?&])longRunProgression=late(?:&|$)/.test(window.location.search);
     }
 
+    private clonePowerRoleState(state: PowerRoleState): PowerRoleState {
+        return {
+            ...state,
+            roles: {
+                P01: { ...state.roles.P01 },
+                P02: { ...state.roles.P02 },
+                P03: { ...state.roles.P03 },
+                P04: { ...state.roles.P04 },
+            },
+        };
+    }
+
+    private lateProgressionPowerRoleState(state: PowerRoleState): PowerRoleState {
+        const next = this.clonePowerRoleState(state);
+        for (const id of POWER_ROLE_IDS) {
+            next.roles[id].star = POWER_ROLE_MAX_STAR;
+            next.roles[id].level = POWER_ROLE_MAX_LEVEL;
+        }
+        // P01 is the source-evidenced automatic role. Keeping it equipped avoids
+        // synthetic active-skill input while still exercising all global passives.
+        next.equippedRoleId = 'P01';
+        return next;
+    }
+
     private stepLongRunAutomation(dt: number, scaledDt: number): void {
         if (!this.longRunValidationEnabled()) return;
         this.speed = LONG_RUN_VALIDATION_SPEED;
@@ -4167,6 +4247,19 @@ export class CangshuGame extends Component {
             }
         }
         this.relayoutCandidates();
+
+        // A late special-mode account normally enters with a developed bag rather
+        // than only the first three candidates. During explicit long-run validation,
+        // spend the recovered preparation currency through the normal refresh
+        // reducer and place/merge each resulting batch before starting the wave.
+        // The cap is only a recursion guard; insufficient gold stops the same path.
+        if (this.longRunLateProgressionEnabled()
+            && this.battleMode !== 'normal'
+            && this.normalRefreshTimes < 12) {
+            const previousRefreshTimes = this.normalRefreshTimes;
+            this.claimNextBatch(false);
+            if (this.normalRefreshTimes > previousRefreshTimes) this.longRunPrepareBoard();
+        }
     }
 
     private longRunPlaceCandidate(gear: Gear, row: number, col: number): void {
@@ -4403,20 +4496,44 @@ export class CangshuGame extends Component {
             .filter((unit) => unit.team === 'enemy' && !unit.dead && Math.abs(unit.y) <= 150)
             .sort((left, right) => left.x - right.x)
             .slice(0, P04_MAX_HITS);
-        const dart = this.makeNode('P04ScreenDart', this.unitLayer, -HOME_X, 0, 70, 30);
-        const graphics = dart.addComponent(Graphics);
-        graphics.fillColor = new Color(131, 101, 233, 245);
-        graphics.roundRect(-30, -8, 60, 16, 8);
-        graphics.fill();
-        graphics.strokeColor = new Color(236, 221, 255, 230);
-        graphics.lineWidth = 3;
-        graphics.moveTo(-36, 0);
-        graphics.lineTo(24, 0);
-        graphics.stroke();
+        const fromX = -HOME_X;
+        const toX = HOME_X;
+        // MissileConfig M_FB_P04_*: speed=1000, path=screnLR,
+        // angleSpeed=3 rad/s, fixed=1, offY=0 and actNum=10.
+        const travelSeconds = (toX - fromX) / 1000;
+        const dart = this.makeNode('P04ScreenDart_H33_S1', this.effectLayer, fromX, 0, 150, 150);
+        if (this.p04ProjectileFrame) {
+            const sprite = dart.addComponent(Sprite);
+            sprite.sizeMode = Sprite.SizeMode.CUSTOM;
+            sprite.spriteFrame = this.p04ProjectileFrame;
+        } else {
+            const graphics = dart.addComponent(Graphics);
+            graphics.fillColor = new Color(131, 101, 233, 245);
+            graphics.moveTo(0, 48);
+            graphics.lineTo(17, 17);
+            graphics.lineTo(48, 0);
+            graphics.lineTo(17, -17);
+            graphics.lineTo(0, -48);
+            graphics.lineTo(-17, -17);
+            graphics.lineTo(-48, 0);
+            graphics.lineTo(-17, 17);
+            graphics.close();
+            graphics.fill();
+        }
+        this.projectileVisuals.push({
+            node: dart,
+            delay: 0,
+            elapsed: 0,
+            duration: travelSeconds,
+            fromX,
+            fromY: 0,
+            toX,
+            toY: 0,
+            angularSpeedDegrees: 3 * 180 / Math.PI,
+        });
         targets.forEach((target, index) => {
+            const hitSeconds = Math.max(0, Math.min(travelSeconds, (target.x - fromX) / 1000));
             this.scheduleOnce(() => {
-                if (!dart.isValid) return;
-                dart.setPosition(target.x, 0);
                 if (target.dead) return;
                 const damageRatio = p04DamageBasisPointsAtHit(this.powerRoleState, index);
                 const wasAlive = !target.dead;
@@ -4427,11 +4544,8 @@ export class CangshuGame extends Component {
                         this.powerRoleKillProductivityStacks + 1,
                     );
                 }
-            }, index * 0.08);
+            }, hitSeconds);
         });
-        this.scheduleOnce(() => {
-            if (dart.isValid) dart.destroy();
-        }, Math.max(0.24, targets.length * 0.08 + 0.12));
     }
 
     private claimAccountRoundReward(roundNumber: number): void {
@@ -4460,7 +4574,7 @@ export class CangshuGame extends Component {
     private restartLevel(): void {
         if (this.phase === 'won' || this.phase === 'lost') {
             this.accountProfile = incrementBagLikeAccountChallengeTimes(this.accountProfile, this.levelId);
-            this.persistAccountProfile();
+            if (!this.longRunOriginalAccountProfile) this.persistAccountProfile();
         }
         const retryState = normalLevelRetryState(this.failedAttempts);
         this.clearUnits();
@@ -4540,10 +4654,10 @@ export class CangshuGame extends Component {
         this.playMockAdvertisement('battle-refresh', () => {
             this.freeRefreshUsed = true;
             this.replaceCandidates(this.nextCandidateBatch('ad'));
-            this.tipLabel.string = '模拟广告完成：候选齿轮已刷新，仍需手动拖入背包';
+            this.tipLabel.string = '广告播放完成：候选齿轮已刷新，仍需手动拖入背包';
             this.refreshUi();
         }, (outcome) => {
-            this.tipLabel.string = outcome === 'cancelled' ? '已取消模拟广告，刷新次数未消耗' : '模拟广告失败，刷新次数未消耗';
+            this.tipLabel.string = outcome === 'cancelled' ? '已取消广告，刷新次数未消耗' : '广告播放失败，刷新次数未消耗';
             this.refreshUi();
         });
     }
@@ -4803,8 +4917,9 @@ export class CangshuGame extends Component {
         }
         const portraitNode = this.makeNode(`StaticGearPortrait_${headKey}`, parent, x, y, 90, 90);
         resources.load('original/heroSmallHead/spriteFrame', SpriteFrame, (error, atlasFrame) => {
-            if (error || !portraitNode.isValid) {
-                console.error(`[visual-catalog] head atlas failed ${headKey}: ${error?.message || 'invalid node'}`);
+            if (!portraitNode.isValid) return;
+            if (error) {
+                console.error(`[visual-catalog] head atlas failed ${headKey}: ${error.message}`);
                 return;
             }
             const frame = new SpriteFrame();
@@ -7123,7 +7238,21 @@ export class CangshuGame extends Component {
     private rerollTraits(): void {
         if (this.traitRerollsUsed >= TRAIT_REROLL_MAX) return;
         this.playMockAdvertisement('trait-reroll', () => this.completeTraitReroll(), (outcome) => {
-            this.tipLabel.string = outcome === 'cancelled' ? '已取消模拟广告，重抽次数未消耗' : '模拟广告失败，重抽次数未消耗';
+            this.tipLabel.string = outcome === 'cancelled' ? '已取消广告，重抽次数未消耗' : '广告播放失败，重抽次数未消耗';
+        });
+    }
+
+    private preloadP04Projectile(): void {
+        resources.load('original/feibiao/spriteFrame', SpriteFrame, (error, sourceFrame) => {
+            if (error || !sourceFrame) return;
+            const frame = new SpriteFrame();
+            frame.reset({
+                texture: sourceFrame.texture,
+                rect: new Rect(1, 1, 288, 290),
+                originalSize: new Size(300, 300),
+                offset: new Vec2(0, 1),
+            });
+            this.p04ProjectileFrame = frame;
         });
     }
 
@@ -7136,7 +7265,7 @@ export class CangshuGame extends Component {
     private takeAllTraits(): void {
         if (this.traitTakeAllUsed >= TRAIT_TAKE_ALL_MAX) return;
         this.playMockAdvertisement('trait-take-all', () => this.completeTraitTakeAll(), (outcome) => {
-            this.tipLabel.string = outcome === 'cancelled' ? '已取消模拟广告，全选次数未消耗' : '模拟广告失败，全选次数未消耗';
+            this.tipLabel.string = outcome === 'cancelled' ? '已取消广告，全选次数未消耗' : '广告播放失败，全选次数未消耗';
         });
     }
 
@@ -7675,11 +7804,14 @@ export class CangshuGame extends Component {
     }
 
     private finish(won: boolean): void {
+        const validationOriginalProfile = this.battleMode === 'normal'
+            ? this.longRunOriginalAccountProfile
+            : null;
         if (won) {
             const completion = completeBagLikeAccountLevel(this.accountProfile, this.levelId);
             this.accountProfile = completion.profile;
             this.accountUnlockedThisAttempt = completion.unlocked;
-            this.persistAccountProfile(false);
+            if (!validationOriginalProfile) this.persistAccountProfile(false);
         }
         this.failedAttempts = normalLevelFailedAttempts(this.failedAttempts, won);
         this.phase = won ? 'won' : 'lost';
@@ -7700,6 +7832,10 @@ export class CangshuGame extends Component {
             ? `进入第 ${bagLikeLevelNumber(this.levelId + 1)} 关`
             : '全部通关';
         this.tipLabel.string = won ? `${this.levelName}已通关：${this.rounds.length} 波敌人全部清除` : '我方兵营被摧毁，调整齿轮后重试';
+        if (validationOriginalProfile) {
+            this.accountProfile = cloneBagLikeAccountProfile(validationOriginalProfile);
+            this.longRunOriginalAccountProfile = null;
+        }
     }
 
     private finishSpecialMode(): void {
@@ -7716,7 +7852,11 @@ export class CangshuGame extends Component {
             this.accountProfile = cloneBagLikeAccountProfile(this.longRunOriginalAccountProfile);
             this.persistAccountProfile(false);
         }
+        if (this.longRunOriginalPowerRoleState) {
+            this.powerRoleState = this.clonePowerRoleState(this.longRunOriginalPowerRoleState);
+        }
         this.longRunOriginalAccountProfile = null;
+        this.longRunOriginalPowerRoleState = null;
         saveSpecialModeState(sys.localStorage, this.specialModeState);
         this.phase = 'won';
         this.paused = false;
@@ -7853,6 +7993,9 @@ export class CangshuGame extends Component {
                 visual.fromX + (visual.toX - visual.fromX) * progress,
                 visual.fromY + (visual.toY - visual.fromY) * progress,
             );
+            if (visual.angularSpeedDegrees) {
+                visual.node.angle = visual.elapsed * visual.angularSpeedDegrees;
+            }
             if (progress >= 1 && visual.node.isValid) visual.node.destroy();
         }
         this.projectileVisuals = this.projectileVisuals.filter((visual) => visual.elapsed < visual.duration);
@@ -7971,12 +8114,13 @@ export class CangshuGame extends Component {
         this.pauseLabel.string = '';
         if (this.powerRoleActiveLabel) {
             const roleId = this.powerRoleState.equippedRoleId;
+            const roleName = OUT_OF_BATTLE_POWER_ROLES.find((role) => role.id === roleId)?.name || '跑跑鼠';
             const active = this.powerRoleActiveRemaining > 0;
             this.powerRoleActiveLabel.string = roleId === 'P01'
-                ? `P01 自动\n${Math.ceil(this.powerSkillRemaining)}秒`
+                ? `${roleName} 自动\n${Math.ceil(this.powerSkillRemaining)}秒`
                 : active
-                  ? `${roleId} 生效\n${Math.ceil(this.powerRoleActiveRemaining)}秒`
-                  : `${roleId} 能量\n${Math.floor(this.powerRoleEnergy)}/${POWER_ROLE_ACTIVE_ENERGY_MAX}`;
+                  ? `${roleName} 生效\n${Math.ceil(this.powerRoleActiveRemaining)}秒`
+                  : `${roleName} 能量\n${Math.floor(this.powerRoleEnergy)}/${POWER_ROLE_ACTIVE_ENERGY_MAX}`;
             this.powerRoleActiveLabel.node.parent!.active = this.phase === 'battle';
             this.powerRoleActiveLabel.node.parent!.getComponent(Button)!.interactable =
                 this.phase === 'battle' && powerRoleActiveAvailable(this.powerRoleState, this.powerRoleEnergy) && !active;
