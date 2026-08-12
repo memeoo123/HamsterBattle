@@ -32,7 +32,8 @@ for (const rect of [
 check(/originalSize: new Size\(202, 201\)/.test(source), true, 'all frames keep the recovered source size');
 check(/makeNode\('H21_S1_LOWER',[\s\S]*?setAnchorPoint\(0\.5, 0\.5\)[\s\S]*?setScale\(1\.5, 1\.5, 1\)/.test(source), true, 'model id, anchor and scale match ModelConfig');
 check(/if \(hit\.attacker\.cfg\.id === 'H08'\) this\.addH08Impact\(centerX, centerY\)/.test(source), true, 'only H08 creates this impact effect');
-check(/frameSeconds: INFERRED_EFFECT_FRAME_SECONDS/.test(source), true, 'the inferred playback rate is explicit per effect');
+check(/const ORIGINAL_EFFECT_FRAME_SECONDS = 0\.0666/.test(source), true, 'FrameAnim exact 66.6ms interval is preserved');
+check(/frameSeconds: ORIGINAL_EFFECT_FRAME_SECONDS/.test(source), true, 'the recovered playback rate is explicit per effect');
 check(/Math\.floor\(visual\.elapsed \/ visual\.frameSeconds\)/.test(source), true, 'effect playback uses its recorded frame interval');
 check(/visual\.frames\.length \* visual\.frameSeconds/.test(source), true, 'effect cleanup uses its own total duration');
 

@@ -180,7 +180,7 @@ export function bagLikeProducerProfile(gearId: string): BagLikeProducerProfile |
         H1005: {
             gearId: 'H1005', heroId: 'H10', level: 5, kind: 'hamster', attributeMultiple: 1,
             headId: 'H1005', modelId: 'R1004', sourceModelPath: 'spine/hero/js_feidieshu/js_feidieshu',
-            spineResourcePath: null, modelScale: 1.1, primarySkillId: PRIMARY_SKILLS.H10,
+            spineResourcePath: 'spine/H1005/js_feidieshu', modelScale: 1.1, primarySkillId: PRIMARY_SKILLS.H10,
         },
         H1505: {
             gearId: 'H1505', heroId: 'H15', level: 5, kind: 'wheel', attributeMultiple: 1,
@@ -190,7 +190,7 @@ export function bagLikeProducerProfile(gearId: string): BagLikeProducerProfile |
         H1805: {
             gearId: 'H1805', heroId: 'H18', level: 5, kind: 'hamster', attributeMultiple: 1,
             headId: 'H1805', modelId: 'R1005', sourceModelPath: 'spine/hero/js_gesila/js_gesila',
-            spineResourcePath: null, modelScale: 1, primarySkillId: PRIMARY_SKILLS.H18,
+            spineResourcePath: 'spine/H1805/js_gesila', modelScale: 1, primarySkillId: PRIMARY_SKILLS.H18,
         },
     };
     if (fusionProfiles[gearId]) return fusionProfiles[gearId];

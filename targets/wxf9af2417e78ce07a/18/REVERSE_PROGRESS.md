@@ -39,7 +39,7 @@
 - **准备态全局几何与控制子基线（2026-08-09）**：去除微信宿主栏并归一化后，顶部 HUD、血条、背包板、棋盘、候选和三枚底部按钮锚点已匹配；移除遮挡银币栏的重建主页按钮，隐藏准备期产兵条，恢复“获取格子 ×3”、刷新提示/费用与 `刷新 / 刷新 / 开战`。新鲜 Web Mobile 截图无项目控制台错误，专项 `15/15`；证据见 `evidence/visual/reconstruction/2026-08-09-preparation-controls/`。剩余为多格连接片局部精修和同步战斗帧。
 - **特质弹窗视觉子基线（2026-08-09）**：在既有原版 `bagLikeBuff` 组件和 `buff_0027 / buff_0036 / buff_0006` 图标基础上，说明文字已改用恢复 TTF 的 RichText，精确采用原表三段文案、绿色强调和原图行组，并把说明区顶部校准到去除 88 像素微信宿主栏、820→750 归一化后的参考位置附近。新鲜 Creator 3.8.8 Web Mobile 截图无项目控制台错误，专项 `21/21`；证据见 `evidence/visual/reconstruction/2026-08-09-trait-richtext/`。`visualBaseline` 仍因多格连接片局部精修和同步战斗帧保持 pending。
 
-- **200 关机制/数据开放（2026-08-09）**：主选择已开放恢复表 `1001..1200`，分页显示每页 10 关。新增表驱动敌人机制层，200 关引用的 25 个敌人 ID 全部可构建；29 条目录 profile 保留原始 ATK/HP/金币、距离、伤害倍率和抗性。正式战斗已消费专注、自爆、击退、M14/Boss14 刺杀、B01 三发普攻与 B01/B02/B03 五秒主动技；H05/H06/H14/H16/H17 的四级齿轮、占格、生产进度、基础攻击与动态发牌也已接通。背景 02/04 只做表现回退，不再阻塞运行。全关契约覆盖 200 关、2,978 波、54,816 个刷怪项及逐波胜负状态机，全量规则测试与 Creator 3.8.8 TypeScript 通过；敌人机制已并入现有 `.meta` 模块，仍待早/中/晚关新 Web 冒烟。
+- **200 关机制/数据开放（2026-08-09，2026-08-12 补齐资源）**：主选择已开放恢复表 `1001..1200`，分页显示每页 10 关。200 关引用的 25 个敌人 ID 全部可构建并统一接通原 Spine roster；H05/H06/H14/H16/H17 的四级齿轮、占格、生产进度、基础攻击与动态发牌也已接通。`fightscene_02/04` 原图已从 v18 resources3 恢复，不再表现回退。全关契约覆盖 200 关、2,978 波、54,816 个刷怪项及逐波胜负状态机，1005/1009 新构建运行冒烟通过。
 
 - **全普通关依赖盘点与准备接入（2026-08-09）**：新增可重复生成的依赖矩阵，验证 `200` 关、`2,978` 波、`54,816` 个排期刷怪项均有完整关卡/回合/怪物表连接。运行数据格式升至 v2，新增逐关 `initRewards/staticBuffs/staticBricks` 与逐波 `coinRewards`；Cocos 正式加载器已删除 `PREPARATION_CONFIGS` 白名单，200 关统一消费恢复表并保留首次挑战/永久静态条件。矩阵因此从 `2 ready / 198 blocked` 更新为 `2 verified + 8 runtime-ready-unverified / 190 blocked`，新增候选为 `1002/1003/1034/1064/1094/1124/1154/1184`。剩余共享内容为 2 张背景、19 种敌人和 5 个推荐英雄族。机器结果见 `generated/normal-level-dependency-matrix.json`，人工摘要和逐关表分别见同名 `.md` / `.csv`；30 个规则/数据/资源脚本 `5943/5943`、Golden Cases `47/47`、Creator TypeScript 与项目结构检查均通过。
 - **候选关卡生产闭环完成（2026-08-09）**：1002 的真实 750×1334 Release 连续会话完成三组静态发牌、H13 两次合成、H04 替换、P01 五秒加速、特质、累计 5 次失败/重试及全部 8 波；第 6 次挑战无人工改值进入 `won`，终局 361/1375 HP、80 金币，胜利清零失败计数。期间修复 Creator 3.8.8 对 Set 展开的 Release 错译；最终 5,916/5,916 次齿轮触发/应用、0 缺失配置、0 运行错误。证据见 `evidence/runtime/candidate-level-1002-closure-current/`。
@@ -174,7 +174,7 @@
   全量 487 项规则测试和 Creator TypeScript 均通过。现已进一步恢复 `H24_S1` 原始绿色
   飞弹、`H24_S1_LOWER` 三帧命中特效与 0.709583 秒 `bullet_zhanche` 音效；原包 UUID、
   native version、哈希、精确裁切/offset/锚点均已留证，新增 15 项绑定断言和 750×1334
-  Web 冒烟通过。三帧单帧时长暂按 30 FPS 推定，仍待竞品同状态录像做视听 matched replay。
+  Web 冒烟通过。三帧单帧时长已按恢复的原 `FrameAnim._perFrameTime=66.6ms` 运行；视听 matched replay 仍可在取得同状态录像后继续扩充。
   证据见 `evidence/runtime/baglike-h0905-bounce-projectile.md`。
 - **准备动态发牌规则（2026-08-02）**：`BagLilkeManager.refreshBrick`、
   `BagLikeUsedHeroMap`、`BagLikeCoinWeightDatas` 与常量/权重表共同确认：金币齿轮按等级计为
@@ -404,3 +404,16 @@
 - 长跑普通关与特殊模式进度均改为非持久化验证域，避免验证结果污染玩家账号。
 - 最终 49/49 测试、200 关 / 2,978 波 / 54,816 刷怪、187 assets / 0 missing meta、Creator TypeScript 与 17:30 Web Mobile 构建通过；最终浏览器 warning/error 为 0。
 - 证据：`evidence/runtime/final-presentation-and-long-run-closure-2026-08-12/`。
+
+## 关外、逐帧与后三种融合表现（2026-08-12）
+
+- resources3 `image/main` 图集及精确 SpriteFrame 记录已恢复到关外底栏；原 `FrameAnim._perFrameTime=66.6ms` 已抽取并替换此前 H0705/H08/H0905 的 30 FPS 推定。
+- H1005 的 R1004/H27_S1/H27_S2/核弹音效、H1505 的 H15_S1 十六帧图、H1805 的 R1005 均已从原资源表落盘并接入。H18_S1 只有逻辑引用、无资源实体，未生成近似素材。
+- 50/50 测试、47/47 golden、202 assets / 0 missing meta、TypeScript、新 Web Mobile 构建和双页面实机冒烟均通过；证据见 `evidence/runtime/presentation-pass-2-3-4-2026-08-12.md`。
+
+## 原始背景、后期英雄与敌人资源闭环（2026-08-12）
+
+- 从 v18 `resources3.config.cce0e.json` 恢复 `fightscene_02/04` 的原图、UUID、CDN 记录与哈希；1005 雪山、1009 火山直接加载通过。
+- 恢复 H05/H06/H16 1–4 级共 12 套 Spine 3.8.99；25 种普通关敌人全部绑定视觉 roster，原先 19 个空 `spinePath` 已关闭。
+- 原 `image/main` 图集的五个侧栏图标进入主页；资源门禁覆盖 25 敌人、12 后期英雄、2 背景、5 图标。
+- 运行验收发现并修复直达锁定关卡时动力角色状态初始化竞态；修复后 1009 直接进入且 P01 完整。最终 51/51、golden 47/47、240 assets / 0 missing meta、TypeScript 和 18:59:56 Web Mobile 构建通过。证据见 `evidence/runtime/autonomous-resource-regression-2026-08-12.md`。

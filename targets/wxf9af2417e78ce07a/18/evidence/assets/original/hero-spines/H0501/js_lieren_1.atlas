@@ -1,0 +1,328 @@
+
+js_lieren_1.png
+size: 500,295
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+js_0
+  rotate: false
+  xy: 240, 163
+  size: 11, 12
+  orig: 11, 12
+  offset: 0, 0
+  index: -1
+js_1
+  rotate: false
+  xy: 431, 129
+  size: 19, 14
+  orig: 19, 14
+  offset: 0, 0
+  index: -1
+js_10
+  rotate: false
+  xy: 444, 132
+  size: 54, 49
+  orig: 54, 60
+  offset: 0, 11
+  index: -1
+js_101
+  rotate: true
+  xy: 191, 11
+  size: 27, 47
+  orig: 27, 47
+  offset: 0, 0
+  index: -1
+js_11
+  rotate: false
+  xy: 470, 279
+  size: 22, 14
+  orig: 22, 14
+  offset: 0, 0
+  index: -1
+js_13
+  rotate: false
+  xy: 281, 13
+  size: 38, 21
+  orig: 38, 21
+  offset: 0, 0
+  index: -1
+js_14
+  rotate: false
+  xy: 95, 125
+  size: 23, 6
+  orig: 23, 6
+  offset: 0, 0
+  index: -1
+js_15
+  rotate: false
+  xy: 285, 111
+  size: 23, 6
+  orig: 23, 6
+  offset: 0, 0
+  index: -1
+js_151
+  rotate: false
+  xy: 371, 267
+  size: 13, 8
+  orig: 13, 8
+  offset: 0, 0
+  index: -1
+js_16
+  rotate: false
+  xy: 190, 135
+  size: 22, 13
+  orig: 22, 13
+  offset: 0, 0
+  index: -1
+js_161
+  rotate: false
+  xy: 386, 285
+  size: 17, 8
+  orig: 17, 8
+  offset: 0, 0
+  index: -1
+js_17
+  rotate: false
+  xy: 201, 281
+  size: 21, 12
+  orig: 21, 12
+  offset: 0, 0
+  index: -1
+js_2
+  rotate: false
+  xy: 481, 216
+  size: 16, 14
+  orig: 16, 14
+  offset: 0, 0
+  index: -1
+js_20
+  rotate: false
+  xy: 201, 168
+  size: 179, 126
+  orig: 179, 131
+  offset: 0, 0
+  index: -1
+js_21
+  rotate: true
+  xy: 381, 168
+  size: 126, 98
+  orig: 128, 98
+  offset: 2, 0
+  index: -1
+js_22
+  rotate: false
+  xy: 347, 172
+  size: 44, 31
+  orig: 44, 31
+  offset: 0, 0
+  index: -1
+js_23
+  rotate: false
+  xy: 347, 172
+  size: 44, 31
+  orig: 44, 31
+  offset: 0, 0
+  index: -1
+js_231
+  rotate: 270
+  xy: 114, 55
+  size: 152, 124
+  orig: 152, 124
+  offset: 0, 0
+  index: -1
+js_24
+  rotate: false
+  xy: 89, 31
+  size: 50, 36
+  orig: 50, 36
+  offset: 0, 0
+  index: -1
+js_25
+  rotate: 180
+  xy: 341, 17
+  size: 54, 31
+  orig: 54, 31
+  offset: 0, 0
+  index: -1
+js_27
+  rotate: false
+  xy: 477, 185
+  size: 21, 24
+  orig: 21, 24
+  offset: 0, 0
+  index: -1
+js_28
+  rotate: false
+  xy: 149, 104
+  size: 39, 44
+  orig: 39, 44
+  offset: 0, 0
+  index: -1
+js_281
+  rotate: false
+  xy: 349, 50
+  size: 59, 58
+  orig: 59, 58
+  offset: 0, 0
+  index: -1
+js_3
+  rotate: false
+  xy: 431, 155
+  size: 11, 12
+  orig: 11, 12
+  offset: 0, 0
+  index: -1
+js_30
+  rotate: false
+  xy: 476, 254
+  size: 21, 24
+  orig: 21, 24
+  offset: 0, 0
+  index: -1
+js_4
+  rotate: false
+  xy: 240, 4
+  size: 39, 35
+  orig: 39, 35
+  offset: 0, 0
+  index: -1
+js_5
+  rotate: false
+  xy: 410, 22
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+js_51
+  rotate: false
+  xy: 364, 276
+  size: 20, 17
+  orig: 20, 17
+  offset: 0, 0
+  index: -1
+js_6
+  rotate: true
+  xy: 2, 10
+  size: 24, 31
+  orig: 24, 31
+  offset: 0, 0
+  index: -1
+js_61
+  rotate: true
+  xy: 420, 60
+  size: 69, 78
+  orig: 79, 97
+  offset: 3, 19
+  index: -1
+js_7
+  rotate: true
+  xy: 141, 30
+  size: 24, 55
+  orig: 24, 55
+  offset: 0, 0
+  index: -1
+js_71
+  rotate: false
+  xy: 450, 25
+  size: 47, 33
+  orig: 47, 33
+  offset: 0, 0
+  index: -1
+js_9
+  rotate: false
+  xy: 240, 114
+  size: 63, 54
+  orig: 63, 56
+  offset: 0, 0
+  index: -1
+js_91
+  rotate: false
+  xy: 190, 116
+  size: 24, 17
+  orig: 24, 17
+  offset: 0, 0
+  index: -1
+texiao/attack_00009
+  rotate: false
+  xy: 2, 95
+  size: 91, 52
+  orig: 125, 60
+  offset: 31, 6
+  index: -1
+texiao/attack_00010
+  rotate: false
+  xy: 309, 110
+  size: 120, 57
+  orig: 125, 60
+  offset: 1, 3
+  index: -1
+texiao/attack_00011
+  rotate: false
+  xy: 240, 70
+  size: 107, 38
+  orig: 125, 60
+  offset: 8, 13
+  index: -1
+texiao/attack_00012
+  rotate: false
+  xy: 2, 63
+  size: 91, 30
+  orig: 125, 60
+  offset: 10, 15
+  index: -1
+texiao/attack_00014
+  rotate: false
+  xy: 206, 40
+  size: 83, 28
+  orig: 125, 60
+  offset: 11, 16
+  index: -1
+texiao/attack_00016
+  rotate: false
+  xy: 2, 34
+  size: 78, 27
+  orig: 125, 60
+  offset: 15, 16
+  index: -1
+texiao/attack_00018
+  rotate: false
+  xy: 95, 132
+  size: 44, 15
+  orig: 125, 60
+  offset: 15, 22
+  index: -1
+texiao/attack_00020
+  rotate: false
+  xy: 35, 17
+  size: 38, 15
+  orig: 125, 60
+  offset: 19, 22
+  index: -1
+texiao/guaiz
+  rotate: false
+  xy: 2, 149
+  size: 197, 144
+  orig: 209, 148
+  offset: 0, 2
+  index: -1
+texiao/skill01_yinbo
+  rotate: true
+  xy: 291, 36
+  size: 32, 48
+  orig: 32, 48
+  offset: 0, 0
+  index: -1
+texiao/skill01_yinfu2
+  rotate: false
+  xy: 201, 165
+  size: 9, 19
+  orig: 10, 20
+  offset: 0, 0
+  index: -1
+texiao/skill01_yinfu3
+  rotate: false
+  xy: 481, 232
+  size: 11, 20
+  orig: 11, 20
+  offset: 0, 0
+  index: -1

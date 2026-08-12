@@ -1,0 +1,286 @@
+
+js_feixingyuan_1.png
+size: 386,360
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+js_0
+  rotate: 270
+  xy: 58, 57
+  size: 60, 86
+  orig: 60, 86
+  offset: 0, 0
+  index: -1
+js_1
+  rotate: false
+  xy: 146, 30
+  size: 70, 46
+  orig: 70, 46
+  offset: 0, 0
+  index: -1
+js_10
+  rotate: false
+  xy: 277, 35
+  size: 50, 48
+  orig: 52, 58
+  offset: 2, 10
+  index: -1
+js_101
+  rotate: false
+  xy: 109, 124
+  size: 21, 14
+  orig: 21, 14
+  offset: 0, 0
+  index: -1
+js_11
+  rotate: false
+  xy: 105, 208
+  size: 17, 28
+  orig: 17, 28
+  offset: 0, 0
+  index: -1
+js_12
+  rotate: false
+  xy: 79, 214
+  size: 18, 18
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
+js_13
+  rotate: false
+  xy: 2, 260
+  size: 20, 7
+  orig: 20, 7
+  offset: 0, 0
+  index: -1
+js_14
+  rotate: false
+  xy: 145, 353
+  size: 20, 6
+  orig: 20, 6
+  offset: 0, 0
+  index: -1
+js_15
+  rotate: false
+  xy: 18, 168
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+js_16
+  rotate: false
+  xy: 109, 139
+  size: 20, 21
+  orig: 20, 21
+  offset: 0, 0
+  index: -1
+js_17
+  rotate: false
+  xy: 2, 167
+  size: 15, 41
+  orig: 15, 41
+  offset: 0, 0
+  index: -1
+js_18
+  rotate: false
+  xy: 218, 18
+  size: 48, 26
+  orig: 48, 26
+  offset: 0, 0
+  index: -1
+js_191
+  rotate: false
+  xy: 307, 189
+  size: 49, 27
+  orig: 49, 27
+  offset: 0, 0
+  index: -1
+js_2
+  rotate: 180
+  xy: 172, 188
+  size: 133, 61
+  orig: 133, 61
+  offset: 0, 0
+  index: -1
+js_20
+  rotate: false
+  xy: 2, 233
+  size: 175, 126
+  orig: 175, 127
+  offset: 0, 0
+  index: -1
+js_201
+  rotate: false
+  xy: 307, 217
+  size: 42, 22
+  orig: 42, 22
+  offset: 0, 0
+  index: -1
+js_21
+  rotate: true
+  xy: 289, 240
+  size: 120, 94
+  orig: 123, 94
+  offset: 3, 0
+  index: -1
+js_22
+  rotate: false
+  xy: 2, 18
+  size: 44, 31
+  orig: 44, 31
+  offset: 0, 0
+  index: -1
+js_23
+  rotate: false
+  xy: 2, 18
+  size: 44, 31
+  orig: 44, 31
+  offset: 0, 0
+  index: -1
+js_221
+  rotate: false
+  xy: 129, 127
+  size: 120, 60
+  orig: 120, 60
+  offset: 0, 0
+  index: -1
+js_231
+  rotate: 270
+  xy: 175, 4
+  size: 35, 39
+  orig: 35, 39
+  offset: 0, 0
+  index: -1
+js_24
+  rotate: false
+  xy: 323, 17
+  size: 45, 38
+  orig: 45, 40
+  offset: 0, 2
+  index: -1
+js_3
+  rotate: true
+  xy: 135, 217
+  size: 54, 33
+  orig: 54, 33
+  offset: 0, 0
+  index: -1
+js_4
+  rotate: false
+  xy: 217, 46
+  size: 74, 36
+  orig: 74, 36
+  offset: 0, 0
+  index: -1
+js_5
+  rotate: true
+  xy: 61, 19
+  size: 41, 47
+  orig: 41, 47
+  offset: 0, 0
+  index: -1
+js_51
+  rotate: false
+  xy: 2, 167
+  size: 161, 86
+  orig: 161, 86
+  offset: 0, 0
+  index: -1
+js_6
+  rotate: true
+  xy: 109, 13
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+js_9
+  rotate: true
+  xy: 2, 50
+  size: 62, 52
+  orig: 62, 55
+  offset: 0, 0
+  index: -1
+mohu
+  rotate: false
+  xy: 179, 250
+  size: 108, 108
+  orig: 108, 108
+  offset: 0, 0
+  index: -1
+shitou
+  rotate: false
+  xy: 2, 341
+  size: 15, 17
+  orig: 15, 17
+  offset: 0, 0
+  index: -1
+yanwu1
+  rotate: true
+  xy: 341, 55
+  size: 78, 39
+  orig: 78, 39
+  offset: 0, 0
+  index: -1
+yanwu2
+  rotate: false
+  xy: 241, 84
+  size: 98, 49
+  orig: 112, 53
+  offset: 1, 0
+  index: -1
+yanwu10
+  rotate: false
+  xy: 241, 84
+  size: 98, 49
+  orig: 112, 53
+  offset: 1, 0
+  index: -1
+yanwu6
+  rotate: false
+  xy: 241, 84
+  size: 98, 49
+  orig: 112, 53
+  offset: 1, 0
+  index: -1
+yanwu3
+  rotate: false
+  xy: 2, 113
+  size: 105, 52
+  orig: 112, 53
+  offset: 1, 1
+  index: -1
+yanwu7
+  rotate: false
+  xy: 2, 113
+  size: 105, 52
+  orig: 112, 53
+  offset: 1, 1
+  index: -1
+yanwu4
+  rotate: false
+  xy: 252, 135
+  size: 110, 51
+  orig: 112, 53
+  offset: 2, 0
+  index: -1
+yanwu8
+  rotate: false
+  xy: 252, 135
+  size: 110, 51
+  orig: 112, 53
+  offset: 2, 0
+  index: -1
+yanwu5
+  rotate: false
+  xy: 146, 78
+  size: 93, 47
+  orig: 112, 53
+  offset: 2, 0
+  index: -1
+yanwu9
+  rotate: false
+  xy: 146, 78
+  size: 93, 47
+  orig: 112, 53
+  offset: 2, 0
+  index: -1

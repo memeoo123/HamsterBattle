@@ -1,0 +1,76 @@
+
+js_feidieshu_dandao.png
+size: 344,698
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/texiao/02_bo_00000
+  rotate: false
+  xy: 2, 497
+  size: 111, 199
+  orig: 128, 200
+  offset: 3, 0
+  index: -1
+images/texiao/02_bo_00002
+  rotate: false
+  xy: 116, 309
+  size: 110, 195
+  orig: 128, 200
+  offset: 4, 0
+  index: -1
+images/texiao/02_bo_00004
+  rotate: false
+  xy: 229, 157
+  size: 113, 170
+  orig: 128, 200
+  offset: 3, 10
+  index: -1
+images/texiao/02_bo_00006
+  rotate: false
+  xy: 115, 506
+  size: 113, 190
+  orig: 128, 200
+  offset: 3, 0
+  index: -1
+images/texiao/02_bo_00008
+  rotate: true
+  xy: 116, 2
+  size: 110, 155
+  orig: 128, 200
+  offset: 4, 17
+  index: -1
+images/texiao/02_bo_00010
+  rotate: false
+  xy: 228, 329
+  size: 112, 175
+  orig: 128, 200
+  offset: 3, 7
+  index: -1
+images/texiao/02_bo_00012
+  rotate: false
+  xy: 230, 525
+  size: 111, 171
+  orig: 128, 200
+  offset: 3, 9
+  index: -1
+images/texiao/02_bo_00015
+  rotate: false
+  xy: 2, 300
+  size: 112, 195
+  orig: 128, 200
+  offset: 3, 0
+  index: -1
+images/texiao/02_bo_00017
+  rotate: false
+  xy: 2, 104
+  size: 112, 194
+  orig: 128, 200
+  offset: 3, 0
+  index: -1
+images/texiao/02_bo_00019
+  rotate: false
+  xy: 116, 114
+  size: 111, 193
+  orig: 128, 200
+  offset: 4, 0
+  index: -1

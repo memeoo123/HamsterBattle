@@ -1,7 +1,13 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 
 const source = readFileSync(new URL('../assets/scripts/CangshuGame.ts', import.meta.url), 'utf8');
+assert.equal(
+    createHash('sha256').update(readFileSync(new URL('../assets/resources/original/main.png', import.meta.url))).digest('hex'),
+    'a7a2d3a6eeb432673fd2537aa1c617762437c8301157049b2d8240d1ec5adcbc',
+    'main navigation uses the recovered original atlas binary',
+);
 
 const navigation = source.slice(
     source.indexOf('private buildMainBottomNavigation'),
@@ -9,8 +15,14 @@ const navigation = source.slice(
 );
 assert.match(navigation, /unlocked[\s\S]*?showOutOfBattleLockedNotice/,
     'locked tabs route to an explicit player-facing unlock notice');
-assert.match(navigation, /\$\{unlocked \? tabGlyphs\[tab\.name\] : '锁'\}/,
+assert.match(navigation, /unlocked \? tab\.name : `锁 · \$\{tab\.name\}`/,
     'locked tabs expose a visible lock marker');
+assert.match(navigation, /original\/main\/spriteFrame[\s\S]*?MAIN_TAB_ICON_FRAMES\[tab\.name\]/,
+    'bottom navigation uses the recovered original main atlas instead of text glyph placeholders');
+assert.match(source, /new Color\(255, 254, 254, 255\)/,
+    'header value color matches MainPageKv normalFontColor #FFFEFE');
+assert.match(source, /new Color\(255, 227, 41, 255\)/,
+    'header add-button color matches MainPageKv progressColor #FFE329');
 assert.match(navigation, /interactable = !selected;/,
     'locked tabs stay clickable so they cannot feel broken');
 assert.match(navigation, /通关第 \$\{chapter\} 关后开放/,
@@ -44,4 +56,4 @@ assert.doesNotMatch(source, /head atlas failed.*invalid node/,
 assert.doesNotMatch(source, /enemy asset failed.*invalid node/,
     'an intentionally destroyed asynchronous gallery target is not logged as an asset failure');
 
-console.log('out-of-battle presentation: 21 assertions passed');
+console.log('out-of-battle presentation: 25 assertions passed');

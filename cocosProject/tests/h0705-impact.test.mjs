@@ -33,6 +33,7 @@ check(/originalSize: new Size\(186, 186\)/.test(source), true, 'all frames keep 
 check(/makeNode\('H22_S1_LOWER',[\s\S]*?setAnchorPoint\(0\.3, 0\.2\)[\s\S]*?setScale\(0\.8, 0\.8, 1\)/.test(source), true, 'model id, anchor and scale match ModelConfig');
 check(/if \(hit\.attacker\.cfg\.id === 'H07'\) this\.addH0705Impact\(centerX, centerY\)/.test(source), true, 'only H0705 creates this impact effect');
 check(/\['H09', 'H0201', 'H0301', 'H07', 'H08', 'H1201', 'H1301'\]/.test(source), true, 'the placeholder trace is disabled for the recovered effect families');
-check(/frameSeconds: INFERRED_EFFECT_FRAME_SECONDS/.test(source), true, 'the inferred playback rate remains explicit');
+check(/const ORIGINAL_EFFECT_FRAME_SECONDS = 0\.0666/.test(source), true, 'FrameAnim exact 66.6ms interval is preserved');
+check(/frameSeconds: ORIGINAL_EFFECT_FRAME_SECONDS/.test(source), true, 'the recovered playback rate remains explicit');
 
 console.log(`H0705 recovered impact: ${assertions} assertions passed`);

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "appId": "wxf9af2417e78ce07a",
+  "packageVersion": "18",
+  "bundle": "resources3",
+  "config": "../item-ui/resources3.config.cce0e.json",
+  "remoteBase": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote",
+  "assets": [
+    {
+      "logicalPath": "image/unpack/fightscene/fightscene_02",
+      "uuid": "c0490936-1909-46ae-a013-c986a397cee8",
+      "compressedUuid": "c0SQk2GQlGrqATyYajl87o",
+      "nativeVersion": "9d5fb",
+      "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/c0/c0490936-1909-46ae-a013-c986a397cee8.9d5fb.jpg",
+      "file": "fightscene_02.jpg",
+      "width": 750,
+      "height": 1000,
+      "sha256": "b74b0e0e9ecc57c5aaa0002c797236fc79c216aa50d4a6be727406f04d66c679"
+    },
+    {
+      "logicalPath": "image/unpack/fightscene/fightscene_04",
+      "uuid": "abbaf37f-bc23-4466-985a-62b9d59738f6",
+      "compressedUuid": "abuvN/vCNEZphaYrnVlzj2",
+      "nativeVersion": "fa088",
+      "sourceUrl": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native/ab/abbaf37f-bc23-4466-985a-62b9d59738f6.fa088.jpg",
+      "file": "fightscene_04.jpg",
+      "width": 750,
+      "height": 1000,
+      "sha256": "74b929f83873b8627fef00495c13bdcce1173d36c642231d2a44f6824b7e429d"
+    }
+  ],
+  "provenance": "The authorized v18 resources3 config provides each logical path, compressed UUID, native version, and bundle. UUID decompression and the Cocos remote-native layout identify the exact official CDN originals."
+}

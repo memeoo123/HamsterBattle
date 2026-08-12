@@ -604,6 +604,45 @@ const COMM_ATLAS_FRAMES: Readonly<Record<string, BagLikeAtlasFrame>> = {
     },
 };
 
+// Exact SpriteFrame records decoded from the original resources3 image/main
+// atlas. These replace the temporary single-character main-tab glyphs.
+const MAIN_TAB_ICON_FRAMES: Readonly<Record<OutOfBattleTabName, BagLikeAtlasFrame>> = {
+    商店: {
+        rect: new Rect(1, 309, 92, 88),
+        sourceSize: new Size(110, 110),
+        offset: [0, 1],
+    },
+    角色: {
+        rect: new Rect(1, 215, 90, 92),
+        sourceSize: new Size(110, 110),
+        offset: [0, -2],
+    },
+    战斗: {
+        rect: new Rect(1, 1, 102, 110),
+        sourceSize: new Size(110, 110),
+    },
+    培养: {
+        rect: new Rect(1, 113, 92, 100),
+        sourceSize: new Size(110, 110),
+        offset: [0, -1],
+    },
+    活动: {
+        rect: new Rect(105, 1, 110, 84),
+        sourceSize: new Size(110, 110),
+        offset: [0, -1],
+    },
+};
+
+// MainPageTabItemConfig rows 6-11 bind these exact resource paths to the
+// out-of-battle side entries. Geometry is decoded from image/main.
+const MAIN_SIDE_ICON_FRAMES = {
+    community: { rect: new Rect(169, 315, 78, 82), sourceSize: new Size(90, 90) },
+    settings: { rect: new Rect(95, 309, 72, 74), sourceSize: new Size(90, 90), offset: [-2, 2] as const },
+    dailyTask: { rect: new Rect(177, 399, 62, 70), sourceSize: new Size(90, 90), offset: [-2, 2] as const },
+    sevenDay: { rect: new Rect(93, 231, 74, 76), sourceSize: new Size(90, 90) },
+    invitation: { rect: new Rect(95, 143, 88, 86), sourceSize: new Size(90, 90) },
+} as const satisfies Readonly<Record<string, BagLikeAtlasFrame>>;
+
 // Normalized from the original 820x1542 gameplay crop to the 750x1334
 // reconstruction canvas. Keep this geometry centralized so a fresh visual
 // capture can be compared without hunting through modal construction code.
@@ -943,7 +982,9 @@ const GRID_ROWS = 5;
 const GRID_COLS = 7;
 const POWER_INDEX = 17;
 const DEFAULT_LEVEL_ID = 1004;
-const INFERRED_EFFECT_FRAME_SECONDS = 1 / 30;
+// FrameAnim in the recovered version-18 runtime initializes perFrameTime to
+// 66.6ms. Sprite-frame effects therefore advance at about 15fps.
+const ORIGINAL_EFFECT_FRAME_SECONDS = 0.0666;
 // The recovered battle screenshot shows the first four 100401 schedule entries,
 // with the 4.001s monster only just inside the field. Freeze the browser-only
 // developed fixture at the matching timestamp so delayed captures stay stable.
@@ -1244,7 +1285,7 @@ const UNITS: Record<string, UnitConfig> = {
         effectRatio: 5000,
         attackDelay: 0.3,
         projectileSpeed: 1000,
-        spinePath: '',
+        spinePath: 'spine/H1005/js_feidieshu',
         spineScale: 1.1,
         color: new Color(202, 91, 151, 255),
         fusionPrimaryBullet: bagLikeFusionPrimaryBulletProfile('H10') || undefined,
@@ -1282,7 +1323,7 @@ const UNITS: Record<string, UnitConfig> = {
         attackType: 'HAMSTER',
         effectRatio: 10000,
         attackDelay: 0.3,
-        spinePath: '',
+        spinePath: 'spine/H1805/js_gesila',
         spineScale: 1,
         color: new Color(91, 139, 105, 255),
         fusionActive: bagLikeFusionActiveProfile('H18') || undefined,
@@ -1417,6 +1458,7 @@ function registerRecoveredNormalEnemies(monsters: Readonly<Record<string, Normal
     for (const id of Object.keys(profiles)) {
         const profile = profiles[id];
         if (UNITS[id]) continue;
+        const visualEntry = VISUAL_ENEMY_ROSTER.find((entry) => entry.id === id);
         const numericId = Array.from(id).reduce((sum, character) => sum + character.charCodeAt(0), 0);
         const visualFamily = /^Boss(\d+)$/.exec(id);
         const visualModelId = visualFamily ? `M${visualFamily[1]}` : id;
@@ -1436,8 +1478,8 @@ function registerRecoveredNormalEnemies(monsters: Readonly<Record<string, Normal
             areaRadius: profile.areaRadius || undefined,
             maxTargets: profile.maxTargets,
             controlImmune: profile.controlImmune,
-            spinePath: '',
-            spineScale: profile.boss ? 1.1 : 0.65,
+            spinePath: visualEntry?.spinePath || '',
+            spineScale: visualEntry?.spineScale || (profile.boss ? 1.1 : 0.65),
             color: palette[numericId % palette.length],
             attrs: {
                 heroResistance: profile.heroResistance,
@@ -1694,6 +1736,11 @@ export class CangshuGame extends Component {
     private h0905HitFrames: SpriteFrame[] = [];
     private h0905HitAudio: AudioClip | null = null;
     private h0905AudioSource: AudioSource | null = null;
+    private h1005ProjectileData: sp.SkeletonData | null = null;
+    private h1005NukeData: sp.SkeletonData | null = null;
+    private h1005NukeAudio: AudioClip | null = null;
+    private h1005AudioSource: AudioSource | null = null;
+    private h1505HitFrames: SpriteFrame[] = [];
     private h01AttackAudio: AudioClip | null = null;
     private h04AttackAudio: AudioClip | null = null;
     private meleeAttackAudioSource: AudioSource | null = null;
@@ -1824,6 +1871,7 @@ export class CangshuGame extends Component {
         this.preloadH0705Impact();
         this.preloadH08Impact();
         this.preloadH0905Effects();
+        this.preloadLateFusionPresentation();
         this.preloadMeleeAttackAudio();
         resources.load('original/battleNum_0/spriteFrame', SpriteFrame, (error, frame) => {
             if (!error && frame) this.battleNumberAtlasFrame = frame;
@@ -1858,13 +1906,17 @@ export class CangshuGame extends Component {
                     const search = typeof window === 'undefined' ? '' : window.location.search;
                     const directLevelId = directBootLevelId(search, this.levelId);
                     this.levelId = directLevelId ?? this.levelId;
+                    // Power-role presentation is consumed by both the main scene and
+                    // the P01 gear created while a level is launched. Initialize it
+                    // before account routing so a locked URL can safely return to the
+                    // latest unlocked level without racing an undefined role state.
+                    this.powerRoleState = loadPowerRoleState(sys.localStorage);
+                    savePowerRoleState(sys.localStorage, this.powerRoleState);
                     if (!this.loadAccountProfile()) return;
                     this.specialModeState = loadSpecialModeState(sys.localStorage);
                     saveSpecialModeState(sys.localStorage, this.specialModeState);
                     this.mockAdvertisementState = loadMockAdvertisementState(sys.localStorage);
                     saveMockAdvertisementState(sys.localStorage, this.mockAdvertisementState);
-                    this.powerRoleState = loadPowerRoleState(sys.localStorage);
-                    savePowerRoleState(sys.localStorage, this.powerRoleState);
                     const longRunMode = this.longRunRequestedMode();
                     if (longRunMode) {
                         this.showMainScene();
@@ -2178,26 +2230,46 @@ export class CangshuGame extends Component {
         this.buildOutOfBattleResourceHeader(root, '主界面');
         const sevenDay = this.makeButton('MainSevenDay', root, -287, 330, 116, 74, '七天\n登录', () => this.showSevenDayScene());
         this.restyleButton(sevenDay, new Color(132, 75, 157, 242), WHITE);
-        sevenDay.fontSize = 18;
-        sevenDay.lineHeight = 24;
+        this.applyMainSideIcon(sevenDay, MAIN_SIDE_ICON_FRAMES.sevenDay);
         const community = this.makeButton('MainCommunity', root, -287, 235, 116, 70, '游戏圈', () => undefined);
         this.restyleButton(community, new Color(49, 91, 105, 226), new Color(203, 229, 224, 255));
+        this.applyMainSideIcon(community, MAIN_SIDE_ICON_FRAMES.community, new Color(203, 229, 224, 255));
         community.node.parent!.getComponent(Button)!.interactable = false;
         const dailyTask = this.makeButton('MainDailyTask', root, 287, 330, 116, 74, '每日\n任务', () => this.showDailyTaskScene());
         this.restyleButton(dailyTask, new Color(43, 105, 143, 242), WHITE);
-        dailyTask.fontSize = 18;
-        dailyTask.lineHeight = 24;
         const dailyTaskUnlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, 'DAILY_TASK');
+        this.applyMainSideIcon(dailyTask, MAIN_SIDE_ICON_FRAMES.dailyTask,
+            dailyTaskUnlocked ? WHITE : new Color(115, 124, 138, 255));
         dailyTask.node.parent!.getComponent(Button)!.interactable = dailyTaskUnlocked;
         if (!dailyTaskUnlocked) this.restyleButton(dailyTask, new Color(68, 75, 88, 255), new Color(160, 166, 178, 255));
         const invitation = this.makeButton('MainInvitation', root, 287, 235, 116, 70, '邀请有礼', () => undefined);
         this.restyleButton(invitation, new Color(49, 91, 105, 226), new Color(203, 229, 224, 255));
+        this.applyMainSideIcon(invitation, MAIN_SIDE_ICON_FRAMES.invitation, new Color(203, 229, 224, 255));
         invitation.node.parent!.getComponent(Button)!.interactable = false;
         const settings = this.makeButton('MainSettings', root, 296, 505, 100, 58, '设置', () => this.showSettingsScene());
         this.restyleButton(settings, new Color(55, 70, 80, 235), WHITE);
-        settings.fontSize = 18;
+        this.applyMainSideIcon(settings, MAIN_SIDE_ICON_FRAMES.settings, WHITE, false, 46);
         if (message) this.makeLabel('MainNotice', root, 0, -315, 650, 48, message, 18, new Color(255, 225, 139, 255));
         this.buildMainBottomNavigation(root, '战斗');
+    }
+
+    private applyMainSideIcon(
+        label: Label,
+        frame: BagLikeAtlasFrame,
+        tint: Color = WHITE,
+        showText = true,
+        iconSize = 48,
+    ): void {
+        const buttonNode = label.node.parent!;
+        if (showText) {
+            label.node.setPosition(0, -23);
+            label.fontSize = 14;
+            label.lineHeight = 16;
+        } else {
+            label.string = '';
+        }
+        const icon = this.makeNode(`${buttonNode.name}Icon`, buttonNode, 0, showText ? 11 : 0, iconSize, iconSize);
+        this.attachRecoveredAtlasSprite(icon, 'original/main/spriteFrame', frame, tint);
     }
 
     private buildOutOfBattleResourceHeader(parent: Node, pageTitle: string): void {
@@ -2228,8 +2300,30 @@ export class CangshuGame extends Component {
             itemGraphics.roundRect(-66, -25, 132, 50, 13);
             itemGraphics.stroke();
             this.makeLabel(`OutOfBattleResourceIcon${resource.key}`, item, -43, 0, 34, 36, resource.icon, 21, resource.color);
-            this.makeLabel(`OutOfBattleResourceValue${resource.key}`, item, 5, 0, 66, 34, resource.value, 17, WHITE);
-            if (resource.canBuy) this.makeLabel(`OutOfBattleResourceAdd${resource.key}`, item, 51, 0, 24, 30, '+', 20, GOLD);
+            this.makeLabel(
+                `OutOfBattleResourceValue${resource.key}`,
+                item,
+                5,
+                0,
+                66,
+                34,
+                resource.value,
+                17,
+                new Color(255, 254, 254, 255),
+            );
+            if (resource.canBuy) {
+                this.makeLabel(
+                    `OutOfBattleResourceAdd${resource.key}`,
+                    item,
+                    51,
+                    0,
+                    24,
+                    30,
+                    '+',
+                    20,
+                    new Color(255, 227, 41, 255),
+                );
+            }
         });
     }
 
@@ -2252,22 +2346,45 @@ export class CangshuGame extends Component {
             活动: () => this.showActivityScene(),
         };
         const tabs = OUT_OF_BATTLE_TABS.map((tab) => ({ ...tab, open: openTab[tab.name] }));
-        const tabGlyphs: Record<OutOfBattleTabName, string> = { 商店: '店', 角色: '角', 战斗: '战', 培养: '育', 活动: '活' };
         tabs.forEach((tab, index) => {
             const selected = tab.name === active;
             const unlocked = outOfBattleSystemUnlocked(this.accountProfile.maxPassedLevelId, tab.systemId);
             const open = unlocked
                 ? tab.open
                 : () => this.showOutOfBattleLockedNotice(parent, tab.name, tab.systemId);
-            const label = this.makeButton(`MainTab_${tab.name}`, bar, -288 + index * 144, selected ? 6 : -1, 128, selected ? 96 : 86,
-                `${unlocked ? tabGlyphs[tab.name] : '锁'}\n${tab.name}`, open);
+            const label = this.makeButton(
+                `MainTab_${tab.name}`,
+                bar,
+                -288 + index * 144,
+                selected ? 6 : -1,
+                128,
+                selected ? 96 : 86,
+                unlocked ? tab.name : `锁 · ${tab.name}`,
+                open,
+            );
             this.restyleButton(
                 label,
                 selected ? new Color(211, 145, 38, 255) : new Color(40, 61, 83, 255),
                 unlocked ? WHITE : new Color(177, 186, 199, 255),
             );
-            label.fontSize = selected ? 21 : 19;
-            label.lineHeight = selected ? 31 : 28;
+            label.fontSize = selected ? 18 : 17;
+            label.lineHeight = 24;
+            label.node.setPosition(0, -31);
+            label.node.getComponent(UITransform)!.setContentSize(124, 28);
+            const icon = this.makeNode(
+                `MainTabIcon_${tab.name}`,
+                label.node.parent!,
+                0,
+                14,
+                selected ? 66 : 60,
+                selected ? 66 : 60,
+            );
+            this.attachRecoveredAtlasSprite(
+                icon,
+                'original/main/spriteFrame',
+                MAIN_TAB_ICON_FRAMES[tab.name],
+                unlocked ? WHITE : new Color(115, 124, 138, 255),
+            );
             // Locked tabs remain clickable so the player gets an explicit unlock
             // condition instead of an apparently broken navigation button.
             label.node.parent!.getComponent(Button)!.interactable = !selected;
@@ -3074,10 +3191,7 @@ export class CangshuGame extends Component {
         const background = this.makeNode(`MenuBackground_${resourceName}`, parent, 0, 0, width, height);
         const sprite = background.addComponent(Sprite);
         sprite.sizeMode = Sprite.SizeMode.CUSTOM;
-        const resolvedResource = resourceName === 'fightscene_01' || resourceName === 'fightscene_03'
-            ? resourceName
-            : 'fightscene_01';
-        resources.load(`original/${resolvedResource}/spriteFrame`, SpriteFrame, (error, frame) => {
+        resources.load(`original/${resourceName}/spriteFrame`, SpriteFrame, (error, frame) => {
             if (!error && background.isValid) sprite.spriteFrame = frame;
         });
     }
@@ -3374,8 +3488,10 @@ export class CangshuGame extends Component {
         if (loaded.recoveredFromInvalidSave) {
             console.warn('[cangshu] invalid account save ignored; restored evidence-safe defaults');
         }
+        const search = typeof window === 'undefined' ? '' : window.location.search;
         if (!bagLikeLevelUnlocked(this.accountProfile.maxPassedLevelId, this.levelId)
-            && !this.longRunValidationEnabled()) {
+            && !this.longRunValidationEnabled()
+            && !directBattleBypassesProgression(search)) {
             const fallbackLevel = bagLikeLatestUnlockedLevel(this.accountProfile.maxPassedLevelId);
             console.warn(`[cangshu] locked level ${this.levelId} rejected; returning to ${fallbackLevel}`);
             this.navigateToLevel(fallbackLevel);
@@ -3643,13 +3759,7 @@ export class CangshuGame extends Component {
         const background = this.makeNode('OriginalBattlefield', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
         const backgroundSprite = background.addComponent(Sprite);
         backgroundSprite.sizeMode = Sprite.SizeMode.CUSTOM;
-        // The package references fightscene_02 and fightscene_04, but those two
-        // source textures have not been recovered. Resolve synchronously to an
-        // existing functional backdrop so late levels never render as black.
-        const resolvedBackground = this.levelBackground === 'fightscene_01' || this.levelBackground === 'fightscene_03'
-            ? this.levelBackground
-            : 'fightscene_01';
-        resources.load(`original/${resolvedBackground}/spriteFrame`, SpriteFrame, (error, frame) => {
+        resources.load(`original/${this.levelBackground}/spriteFrame`, SpriteFrame, (error, frame) => {
             if (!error && background.isValid) backgroundSprite.spriteFrame = frame;
         });
 
@@ -5507,7 +5617,7 @@ export class CangshuGame extends Component {
             node,
             sprite,
             frames: this.h0705HitFrames,
-            frameSeconds: INFERRED_EFFECT_FRAME_SECONDS,
+            frameSeconds: ORIGINAL_EFFECT_FRAME_SECONDS,
             elapsed: 0,
         });
     }
@@ -5524,7 +5634,7 @@ export class CangshuGame extends Component {
             node,
             sprite,
             frames: this.h08HitFrames,
-            frameSeconds: INFERRED_EFFECT_FRAME_SECONDS,
+            frameSeconds: ORIGINAL_EFFECT_FRAME_SECONDS,
             elapsed: 0,
         });
     }
@@ -5605,13 +5715,119 @@ export class CangshuGame extends Component {
                 node,
                 sprite,
                 frames: this.h0905HitFrames,
-                frameSeconds: INFERRED_EFFECT_FRAME_SECONDS,
+                frameSeconds: ORIGINAL_EFFECT_FRAME_SECONDS,
                 elapsed: 0,
             });
         }
         if (this.h0905AudioSource && this.h0905HitAudio) {
             this.h0905AudioSource.playOneShot(this.h0905HitAudio, 1);
         }
+    }
+
+    private preloadLateFusionPresentation(): void {
+        this.h1005AudioSource = this.node.getComponent(AudioSource) || this.node.addComponent(AudioSource);
+        resources.load('spine/H1005Projectile/js_feidieshu_dandao', sp.SkeletonData, (error, data) => {
+            if (!error && data) this.h1005ProjectileData = data;
+        });
+        resources.load('spine/H1005Nuke/hedang', sp.SkeletonData, (error, data) => {
+            if (!error && data) this.h1005NukeData = data;
+        });
+        resources.load('original/bullet_hedan', AudioClip, (error, clip) => {
+            if (!error && clip) this.h1005NukeAudio = clip;
+        });
+        resources.load('original/chilun_chuangzhangsha/spriteFrame', SpriteFrame, (error, sourceFrame) => {
+            if (error || !sourceFrame) return;
+            const specs = [
+                { rect: new Rect(132, 208, 65, 9), offset: new Vec2(-58, -102) },
+                { rect: new Rect(1, 208, 129, 43), offset: new Vec2(-67, -85) },
+                { rect: new Rect(1048, 146, 157, 99), offset: new Vec2(-81, -57) },
+                { rect: new Rect(972, 1, 155, 143), offset: new Vec2(-72, -35) },
+                { rect: new Rect(809, 1, 161, 179), offset: new Vec2(-61, -17) },
+                { rect: new Rect(636, 1, 171, 205), offset: new Vec2(-48, -4) },
+                { rect: new Rect(445, 1, 189, 205), offset: new Vec2(-48, -4) },
+                { rect: new Rect(230, 1, 213, 205), offset: new Vec2(-35, -4) },
+                { rect: new Rect(1, 1, 227, 205), offset: new Vec2(-31, -4) },
+                { rect: new Rect(1129, 1, 233, 117), offset: new Vec2(-22, -48) },
+                { rect: new Rect(1207, 202, 219, 47), offset: new Vec2(-30, -83) },
+                { rect: new Rect(1364, 70, 231, 55), offset: new Vec2(-18, -79) },
+                { rect: new Rect(1364, 1, 233, 67), offset: new Vec2(-26, -73) },
+                { rect: new Rect(809, 182, 237, 67), offset: new Vec2(-24, -73) },
+                { rect: new Rect(1412, 127, 185, 73), offset: new Vec2(24, -70) },
+                { rect: new Rect(1207, 127, 203, 73), offset: new Vec2(22, -70) },
+            ];
+            this.h1505HitFrames = specs.map((spec) => {
+                const frame = new SpriteFrame();
+                frame.reset({
+                    texture: sourceFrame.texture,
+                    rect: spec.rect,
+                    originalSize: new Size(351, 213),
+                    offset: spec.offset,
+                });
+                return frame;
+            });
+        });
+    }
+
+    private addH1005Projectile(
+        fromX: number,
+        fromY: number,
+        toX: number,
+        toY: number,
+        duration: number,
+    ): void {
+        if (!this.h1005ProjectileData || !this.effectLayer?.isValid) return;
+        const node = this.makeNode('H27_S1', this.effectLayer, fromX, fromY, 128, 200);
+        node.angle = Math.atan2(toY - fromY, toX - fromX) * 180 / Math.PI;
+        const skeleton = node.addComponent(sp.Skeleton);
+        skeleton.skeletonData = this.h1005ProjectileData;
+        skeleton.setAnimation(0, 'idle', true);
+        this.projectileVisuals.push({
+            node,
+            delay: 0,
+            elapsed: 0,
+            duration: Math.max(duration, 0.001),
+            fromX,
+            fromY,
+            toX,
+            toY,
+        });
+    }
+
+    private addH1005Nuke(): void {
+        if (!this.h1005NukeData || !this.backgroundEffectLayer?.isValid) return;
+        const previous = this.backgroundEffectLayer.getChildByName('H27_S2_LOWER');
+        if (previous?.isValid) previous.destroy();
+        // BombUnit's recovered "middle" path fixes the model at (0, -160) on
+        // the under-unit layer while its five global hits resolve at 1s steps.
+        const node = this.makeNode('H27_S2_LOWER', this.backgroundEffectLayer, 0, -160, 784, 693);
+        const skeleton = node.addComponent(sp.Skeleton);
+        skeleton.skeletonData = this.h1005NukeData;
+        skeleton.setAnimation(0, 'idle', true);
+        this.scheduleOnce(() => {
+            if (node.isValid) node.destroy();
+        }, 5.1);
+    }
+
+    private playH1005NukeHitAudio(): void {
+        if (this.h1005AudioSource && this.h1005NukeAudio) {
+            this.h1005AudioSource.playOneShot(this.h1005NukeAudio, 1);
+        }
+    }
+
+    private addH1505Impact(x: number, y: number): void {
+        if (this.h1505HitFrames.length === 0 || !this.effectLayer?.isValid) return;
+        const node = this.makeNode('H15_S1', this.effectLayer, x, y, 351, 213);
+        node.getComponent(UITransform)!.setAnchorPoint(0.5, 0.2);
+        const sprite = node.addComponent(Sprite);
+        sprite.sizeMode = Sprite.SizeMode.CUSTOM;
+        sprite.spriteFrame = this.h1505HitFrames[0];
+        this.hitEffectVisuals.push({
+            node,
+            sprite,
+            frames: this.h1505HitFrames,
+            frameSeconds: ORIGINAL_EFFECT_FRAME_SECONDS,
+            elapsed: 0,
+        });
     }
 
     private applyCommButtonSkin(label: Label, spec: BagLikeAtlasFrame): void {
@@ -6373,6 +6589,7 @@ export class CangshuGame extends Component {
                 launchAttack,
             });
         }
+        if (profile.skillId === '10001_2') this.addH1005Nuke();
         this.playAnimation(unit, profile.skillId === '12001_2' ? 'laser' : 'attack', false);
         return true;
     }
@@ -6383,6 +6600,7 @@ export class CangshuGame extends Component {
         this.pendingFusionSkillHits = this.pendingFusionSkillHits.filter((hit) => hit.timer > 0);
         for (const hit of ready) {
             if (hit.attacker.dead && hit.profile.targeting !== 'global') continue;
+            if (hit.profile.skillId === '10001_2') this.playH1005NukeHitAudio();
             const opponents = this.units.filter((unit) => !unit.dead && unit.team !== hit.attacker.team);
             const targets = hit.profile.targeting === 'global'
                 ? opponents
@@ -6728,6 +6946,9 @@ export class CangshuGame extends Component {
         }
         if (unit.cfg.id === 'H09' && target && travelTime > 0) {
             this.addH0905Projectile(unit.x, unit.y, impactX, impactY, travelTime, behaviorDelay);
+        }
+        if (unit.cfg.id === 'H10' && target && travelTime > 0) {
+            this.addH1005Projectile(launchX, launchY, impactX, impactY, travelTime);
         }
         if (unit.cfg.id === 'H1301' && target && travelTime > 0) {
             this.addH13Projectile(unit.x, unit.y, impactX, impactY, travelTime, behaviorDelay);
@@ -7522,6 +7743,7 @@ export class CangshuGame extends Component {
             .sort((left, right) => left.distance - right.distance)
             .slice(0, cfg.maxTargets || 1)
             .map((entry) => entry.unit);
+        if (model === 'H15') this.addH1505Impact(target.x, target.y);
         for (const unit of affected) {
             this.damageUnit(unit, this.calculateDamage(caster, unit.cfg, cfg.effectRatio), caster);
             if (!unit.dead && cfg.knockbackDistance) {

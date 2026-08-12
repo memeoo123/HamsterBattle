@@ -1,0 +1,29 @@
+{
+  "appId": "wxf9af2417e78ce07a",
+  "version": "18",
+  "capturedAt": "2026-08-12",
+  "sourceBase": "https://kxmnrs-res.chuxinhd.com/cangshu/wx_xylxs/res/remote/resources3/native",
+  "assets": {
+    "H1005/js_feidieshu.skel": "2209259c2c3999f986cb9f309c8d5fedefc1a4daf79c65175f2277b9aaf7e461",
+    "H1005/js_feidieshu.atlas": "6c191838edddb1d616ad7c392ceca4681443293e7faca532030c1a76f0133826",
+    "H1005/js_feidieshu.png": "9f1689b63d9b1718d23b17aaf85180b83b4f3af9292ab6dd1fead65f968ac905",
+    "H1805/js_gesila.skel": "1e6c3912281bdd2b4a565229dc59ee11de78d1c01e02f471085ca2cf50ffce23",
+    "H1805/js_gesila.atlas": "0d43e85a15e0db795b22b890498424285bbdc46c7bbe6e887749f8db76b6ffc4",
+    "H1805/js_gesila.png": "8b095bc717bfabb9c8bcf48909039b1233a4ace864cb5002cf2888e2667f78f6",
+    "H1005Projectile/js_feidieshu_dandao.skel": "9adb7cc216b643436ca10759b866494db7bd309480a9a6ffa832651e68d367e9",
+    "H1005Projectile/js_feidieshu_dandao.atlas": "e3a98f5ec55f6fefd0d8487314d3f5d74a8e24b7a0c1f2dc3c5ab0d42699ec08",
+    "H1005Projectile/js_feidieshu_dandao.png": "f3180ec2d0d17c2bc809646573ea88e84aa76fc7f3f1692e0a504317ca9eb2e9",
+    "H1005Nuke/hedang.skel": "e1b2121dad8c16837dcc27cf0893614be91fd24e9bc97e93dfe8a9eef76d65e1",
+    "H1005Nuke/hedang.atlas": "d78d26e9d81a274bb7234366a0c27168eb2028269b722356bd433ab91895fcb6",
+    "H1005Nuke/hedang.png": "979cc55edebf6b46c4c088a03cf0c2d1bcb1c0f041de3e8952260cf51184f154",
+    "H1005Nuke/bullet_hedan.mp3": "e87fd1069e3fae27971300babbf95080fed78522727ec78d0c8090a7e7ca32e6",
+    "H1505Impact/chilun_chuangzhangsha.png": "2ecf00c026d20bf7ba7b30f63bbc63050d816572d736c86386720cc33ac36097"
+  },
+  "runtimeBindings": {
+    "H1005Unit": "R1004 / spine/hero/js_feidieshu/js_feidieshu / scale 1.1",
+    "H1005Primary": "H27_S1 / idle / type-11 BulletUnit",
+    "H1005Active": "H27_S2 / middle / under=1 / y=-160 / hit at 1..5 seconds",
+    "H1505Primary": "H15_S1 / 16 frames / anchor 0.5,0.2 / notLoop=1",
+    "H1805Unit": "R1005 / spine/hero/js_gesila/js_gesila / scale 1"
+  }
+}

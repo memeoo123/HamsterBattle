@@ -1,0 +1,21 @@
+{
+  "appId": "wxf9af2417e78ce07a",
+  "version": "18",
+  "sourcePath": "image/main",
+  "uuid": "504d6c50-1267-439b-877c-c60165f85d79",
+  "nativeVersion": "50ee4",
+  "sha256": "a7a2d3a6eeb432673fd2537aa1c617762437c8301157049b2d8240d1ec5adcbc",
+  "restoredFrames": [
+    "shagndian_icon",
+    "yingxiong_icon",
+    "zhandou_icon",
+    "peiyang_icon",
+    "huodong_icon"
+  ],
+  "configEvidence": {
+    "tabOrder": ["SHOP", "ROLE", "TRUNK_INSTANCE", "HERO", "GAMEPLAY"],
+    "normalFontColor": "#FFFEFE",
+    "progressColor": "#FFE329",
+    "headerCanBuy": [true, true, true, false]
+  }
+}
