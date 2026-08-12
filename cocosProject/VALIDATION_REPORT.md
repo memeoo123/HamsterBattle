@@ -101,5 +101,6 @@
 | P04 damage source | Pass | Recovered `getTotalAtk()` source; left-to-right y=0 Dart, radius 150, max 10 distinct hits, 6000/9000/12000 base ratio with 1000 decay |
 | Hero soft separation | Pass (source + deterministic); dense live replay pending | Stationary attacking/casting heroes now consume the recovered environment vector instead of pinning rear units; frozen units remain immobile. Kernel 116 assertions and movement integration 10 assertions pass |
 | Regression/build | Pass | TypeScript pass; 47/47 tests; 200 levels / 2,978 rounds / 54,816 spawns; Web Mobile build finished at 14:24:23 |
+| Terminal enemy presentation | Pass | Fatal damage immediately hides HP/shadow while preserving the death body animation; round cleanup also deactivates and destroys tracked death-animation roots. Dedicated 8 assertions; full 48/48 tests; TypeScript and 14:51 Web Mobile build pass. Fresh 1004 runtime captured `roundClear` with 0 enemies, empty unit layer, 0 shadows and no console warnings/errors |
 
 P04 `H33_S1` and exact P02–P04 portraits remain explicit visual fallbacks, not mechanics blockers. Runtime/source evidence: `targets/wxf9af2417e78ce07a/18/evidence/runtime/progression-role-system-gates-2026-08-12.md`.

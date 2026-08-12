@@ -390,3 +390,9 @@
 - `[已确认]` P04 星 1/5 仅统计 `FB_1601` 技能组击杀，每次增加 100 生产力基点，上限 10/20；P01 星 1/5 在首次符合条件的 Prepare 抽取追加 3011/3012（随机 1/2 级齿轮）。
 - `[已确认]` `HeroMgr.getHeroAttrByBase` 读取出战角色的完整属性：自身 `level*100`、`star*1000`，所有已获得角色 10/30/.../170 级全局攻击里程碑，以及每名角色 2/4/6/8 星全局攻击。运行时已补齐这些消费者。
 - 自动验证为 TypeScript 通过、46/46 测试文件、200 关/2,978 波/54,816 刷怪项通过；Web Mobile 构建 2026-08-12 12:59:09 完成。证据见 `evidence/runtime/progression-role-system-gates-2026-08-12.md`。
+
+## 战斗结束死亡节点/血条生命周期修复（2026-08-12）
+
+- 已确认重建残留来自生命周期错位：`killUnit` 先把死亡单位移出活动数组，但保留节点 0.42 秒；紧随其后的 `clearUnits` 只能遍历活动数组，因此末名敌军的死亡节点和旧 HP 几何越过逻辑结算继续显示。
+- 现按恢复源码的死亡表现契约，在逻辑死亡时隐藏 HP 与阴影，身体动画继续播放；待死亡节点单独跟踪，并由 round-clear/result 清场立即停用和销毁。绘制端也拒绝为死亡或零 HP 单位重建血条。
+- 专项 8 项、全量 48/48、Creator TypeScript、186 assets / 0 missing meta 与 14:51 Web Mobile 构建通过；1004 新鲜构建实机在 `roundClear` 捕获 `enemyUnits=0 / unitDepth=空 / unitShadows=0` 且控制台无告警错误。证据见 `evidence/runtime/terminal-enemy-hpbar-cleanup-2026-08-12.md`。

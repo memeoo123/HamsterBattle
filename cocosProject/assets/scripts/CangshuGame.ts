@@ -1655,6 +1655,8 @@ export class CangshuGame extends Component {
     private gears: Gear[] = [];
     private candidates: Gear[] = [];
     private units: BattleUnit[] = [];
+    /** Unit roots that are only being kept alive long enough to finish their death animation. */
+    private dyingUnitNodes = new Set<Node>();
     private pendingHits: PendingHit[] = [];
     private pendingFusionSkillHits: PendingFusionSkillHit[] = [];
     private traces: Trace[] = [];
@@ -6923,9 +6925,17 @@ export class CangshuGame extends Component {
     private killUnit(unit: BattleUnit): void {
         if (unit.dead) return;
         unit.dead = true;
+        // A dead unit stops participating in combat immediately, so its combat-only
+        // presentation must disappear immediately as well. Keep just the body node
+        // alive for the short death animation.
+        this.hideUnitHp(unit);
+        if (unit.shadow.isValid) unit.shadow.active = false;
+        const dyingNode = unit.node;
+        this.dyingUnitNodes.add(dyingNode);
         this.playAnimation(unit, 'die', false);
         this.scheduleOnce(() => {
-            if (unit.node.isValid) unit.node.destroy();
+            this.dyingUnitNodes.delete(dyingNode);
+            if (dyingNode.isValid) dyingNode.destroy();
         }, 0.42);
         this.units = this.units.filter((item) => item.uid !== unit.uid);
         this.pendingHits = this.pendingHits.filter((hit) => hit.projectile || (hit.attacker.uid !== unit.uid && hit.target?.uid !== unit.uid));
@@ -7727,10 +7737,21 @@ export class CangshuGame extends Component {
     }
 
     private clearUnits(): void {
+        const unitNodes = new Set<Node>();
         for (const unit of this.units) {
             unit.dead = true;
-            if (unit.node.isValid) unit.node.destroy();
+            this.hideUnitHp(unit);
+            unitNodes.add(unit.node);
         }
+        for (const node of this.dyingUnitNodes) unitNodes.add(node);
+        for (const node of unitNodes) {
+            // Node.destroy() is deferred until the end of the frame. Deactivate it
+            // first so round-clear/result screens cannot render one stale frame.
+            if (!node.isValid) continue;
+            node.active = false;
+            node.destroy();
+        }
+        this.dyingUnitNodes.clear();
         this.units = [];
         this.pendingHits = [];
         this.pendingFusionSkillHits = [];
@@ -7863,7 +7884,13 @@ export class CangshuGame extends Component {
     }
 
     private drawUnitHp(unit: BattleUnit): void {
+        if (!unit.node.isValid || !unit.hpGraphics.isValid) return;
         const g = unit.hpGraphics;
+        if (unit.dead || unit.hp <= 0) {
+            this.hideUnitHp(unit);
+            return;
+        }
+        g.node.active = true;
         g.clear();
         const ratio = Math.max(0, unit.hp / unit.maxHp);
         g.fillColor = new Color(30, 34, 34, 210);
@@ -7872,6 +7899,12 @@ export class CangshuGame extends Component {
         g.fillColor = unit.team === 'self' ? GREEN : RED;
         g.roundRect(-30, -3, 60 * ratio, 6, 3);
         g.fill();
+    }
+
+    private hideUnitHp(unit: BattleUnit): void {
+        if (!unit.hpGraphics.isValid || !unit.hpGraphics.node.isValid) return;
+        unit.hpGraphics.clear();
+        unit.hpGraphics.node.active = false;
     }
 
     private drawHomes(): void {

@@ -276,3 +276,9 @@
 - 原版会在同队英雄进入 `60×60` 邻域时为每个邻居叠加一个 2 像素反向环境向量；该向量不仅作用于奔跑英雄，也会在英雄攻击或施法、主移动向量为零时继续生效。
 - 重建此前在普通攻击、随机目标攻击、H02 弹幕、H03 激光和融合主动技的提前返回分支丢失了环境向量：前排攻击者不会让位，后排却仍被反推，形成看似被友军永久卡住的队列。现已在所有静止攻击/施法分支恢复环境位移；冰冻单位继续保持完全不可移动。
 - 新增 `selfRuntime` 实机坐标观测字段和 10 项生产集成契约。战斗内核 116 项、全量 47/47、Creator TypeScript、200 关状态机与 2026-08-12 14:24 Web Mobile 构建通过。新包单兵自动战斗冒烟无新错误；密集同屏 matched replay 仍待后续专用高产阵容采样。证据见 `targets/wxf9af2417e78ce07a/18/evidence/runtime/hero-soft-separation-stuck-fix-2026-08-12.md`。
+
+## 战斗结束敌军血条残留修复（2026-08-12）
+
+- 修复最后一名敌军逻辑死亡后已从 `units` 移除、但其 0.42 秒死亡动画节点未被回合清场捕获，导致旧血条短暂留在已结算战场的问题。
+- 死亡瞬间现在立即清空并隐藏 HP 节点及阴影，同时保留单位身体死亡动画；所有待死亡节点由独立集合跟踪，回合结束时会先停用再销毁，避免帧末延迟销毁产生残影。
+- `drawUnitHp` 追加死亡/零血保护。专项 8 项、全量 48/48、Creator TypeScript、项目资源检查（186 assets / 0 missing meta）和 2026-08-12 14:51 Web Mobile 构建通过；1004 新鲜构建实机在 `roundClear` 捕获 `enemyUnits=0 / unitDepth=空 / unitShadows=0`、控制台 0 warning/error。证据见 `targets/wxf9af2417e78ce07a/18/evidence/runtime/terminal-enemy-hpbar-cleanup-2026-08-12.md`。
