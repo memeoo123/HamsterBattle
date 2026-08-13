@@ -23,7 +23,11 @@ const check = (actual, expected, message) => {
     assertions += 1;
 };
 
-const day = new Date(2026, 7, 12, 12, 0, 0);
+// Keep the daily-reset contract independent of the calendar date on which the
+// suite runs. The former fixed 2026-08-12 fixture became "yesterday" and made
+// claim helpers normalize it before the intended next-day assertion.
+const day = new Date();
+day.setHours(12, 0, 0, 0);
 let state = createPowerRoleState(day);
 check(state.roles.P01.star, 0, 'POWER:INIT_DATA gives P01 at star zero');
 check(state.equippedRoleId, 'P01', 'POWER:INIT_DATA equips P01');
@@ -46,7 +50,8 @@ check(state.roles.P02.fragments, 6, 'three free claims grant six fragments');
 check(claimPowerRoleFreeFragments(state, 'P02').claimed, false, 'a fourth same-day claim is rejected');
 check(activatePowerRole(state, 'P02').activated, false, 'a locked role cannot activate before ten fragments');
 
-const nextDay = new Date(2026, 7, 13, 12, 0, 0);
+const nextDay = new Date(day);
+nextDay.setDate(nextDay.getDate() + 1);
 state = loadPowerRoleState({
     getItem: () => JSON.stringify(state),
     setItem: () => undefined,

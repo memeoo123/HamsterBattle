@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0",
+  "appId": "wxf9af2417e78ce07a",
+  "packageVersion": "18",
+  "representativeLevel": 1004,
+  "validationUrl": "?level=1004&projectileValidation=1",
+  "sourceEvidence": [
+    "../../assets/original/projectile-presentation/manifest.json",
+    "../../../../../../reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/battle.MissileConfig.json",
+    "../../../../../../reverse-work/resources/wxf9af2417e78ce07a/18/resources3/decoded/all-tables/battle.BehaviorConfig.json"
+  ],
+  "restoredRoutes": [
+    { "units": ["H0601"], "missile": "M_FXY_6001", "model": "H19_S1", "presentation": "five-frame quadratic throw" },
+    { "units": ["H1401"], "missile": "M_SY_1401", "model": "H14_S1", "presentation": "sixteen-frame target bomb with bullet_shayu hit audio" },
+    { "units": ["H1701"], "missile": "M_LS_1501", "model": "H32_S1", "presentation": "two-second source-scaled Spine ray" },
+    { "units": ["M03", "Boss03"], "missile": "M_YGT_50002", "model": "H31_S1", "presentation": "quadratic bone throw" },
+    { "units": ["M09", "Boss09"], "missile": "M_HS_50001", "model": "H30_S1", "presentation": "straight orb" },
+    { "units": ["M10", "Boss10"], "missile": "M10_attack_M", "model": "M10_S1", "presentation": "quadratic green Spine throw" }
+  ],
+  "browser": {
+    "canvasDataset": {
+      "projectileValidationReady": "1",
+      "projectileValidationAssets": "H06,H14,H17,M03,M09,M10",
+      "projectileValidationErrors": "0"
+    },
+    "consoleWarningCount": 0,
+    "consoleErrorCount": 0,
+    "screenshot": "projectile-matrix.png",
+    "screenshotSha256": "57f6797ca688a1c5ea9361823d2d5521006f753e13dd1638904ea234e873aaff"
+  },
+  "verification": {
+    "nodeTestFiles": { "passed": 54, "failed": 0 },
+    "projectileAssertions": 73,
+    "goldenCases": { "passed": 47, "failed": 0 },
+    "typescript": "pass",
+    "cocosProject": { "valid": true, "assetFileCount": 251, "missingMetaCount": 0 }
+  },
+  "unresolved": [
+    {
+      "unit": "H1805",
+      "model": "H18_S1",
+      "logicalPath": "spriteFrame/skill/js_fashi_dandao",
+      "reason": "The v18 resources3 config has no native asset record. No substitute was invented."
+    }
+  ]
+}

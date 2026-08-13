@@ -964,6 +964,12 @@ type ProjectileVisual = {
     toX: number;
     toY: number;
     angularSpeedDegrees?: number;
+    arcHeight?: number;
+    orientToPath?: boolean;
+    orientationOffsetDegrees?: number;
+    sprite?: Sprite;
+    frames?: SpriteFrame[];
+    frameSeconds?: number;
 };
 
 type HitEffectVisual = {
@@ -990,6 +996,10 @@ const DEFAULT_LEVEL_ID = 1004;
 // FrameAnim in the recovered version-18 runtime initializes perFrameTime to
 // 66.6ms. Sprite-frame effects therefore advance at about 15fps.
 const ORIGINAL_EFFECT_FRAME_SECONDS = 0.0666;
+const RECOVERED_PROJECTILE_PRESENTATION_IDS = new Set([
+    'H0601', 'H1401', 'H1701',
+    'M03', 'Boss03', 'M09', 'Boss09', 'M10', 'Boss10',
+]);
 // The recovered battle screenshot shows the first four 100401 schedule entries,
 // with the 4.001s monster only just inside the field. Freeze the browser-only
 // developed fixture at the matching timestamp so delayed captures stay stable.
@@ -1746,6 +1756,14 @@ export class CangshuGame extends Component {
     private h1005NukeAudio: AudioClip | null = null;
     private h1005AudioSource: AudioSource | null = null;
     private h1505HitFrames: SpriteFrame[] = [];
+    private h06ProjectileFrames: SpriteFrame[] = [];
+    private h14BombFrames: SpriteFrame[] = [];
+    private enemyBoneProjectileFrame: SpriteFrame | null = null;
+    private enemyOrbProjectileFrame: SpriteFrame | null = null;
+    private h17RayData: sp.SkeletonData | null = null;
+    private m10ProjectileData: sp.SkeletonData | null = null;
+    private h14HitAudio: AudioClip | null = null;
+    private recoveredProjectileAudioSource: AudioSource | null = null;
     private h01AttackAudio: AudioClip | null = null;
     private h04AttackAudio: AudioClip | null = null;
     private meleeAttackAudioSource: AudioSource | null = null;
@@ -1880,6 +1898,7 @@ export class CangshuGame extends Component {
         this.preloadH08Impact();
         this.preloadH0905Effects();
         this.preloadLateFusionPresentation();
+        this.preloadRecoveredProjectilePresentation();
         this.preloadMeleeAttackAudio();
         resources.load('original/battleNum_0/spriteFrame', SpriteFrame, (error, frame) => {
             if (!error && frame) this.battleNumberAtlasFrame = frame;
@@ -1967,7 +1986,8 @@ export class CangshuGame extends Component {
         this.addPlacedGear('P01', 2, 3);
         const traitValidationEnabled = this.traitValidationEnabled();
         const developedValidationMode = this.developedValidationMode();
-        if (traitValidationEnabled || developedValidationMode) profiler.hideStats();
+        const projectileValidationEnabled = this.projectileValidationEnabled();
+        if (traitValidationEnabled || developedValidationMode || projectileValidationEnabled) profiler.hideStats();
         else this.dealPreparationBatch();
         const fusionValidationMode = this.fusionValidationMode();
         if (developedValidationMode) this.applyDevelopedValidationFixture();
@@ -1999,6 +2019,12 @@ export class CangshuGame extends Component {
                 gear.workerPower = 99;
                 this.queueProduction(gear);
             }
+        } else if (projectileValidationEnabled) {
+            // startRound requires at least one production gear; keep the
+            // browser-only fixture on the same public transition path.
+            this.addPlacedGear('H0101', 1, 3);
+            this.startRound();
+            this.applyProjectileValidationFixture();
         }
         this.refreshUi();
     }
@@ -3573,6 +3599,11 @@ export class CangshuGame extends Component {
         return match ? match[1] as 'preparation' | 'battle' | 'trait' : null;
     }
 
+    private projectileValidationEnabled(): boolean {
+        if (typeof window === 'undefined') return false;
+        return /(?:^|[?&])projectileValidation=1(?:&|$)/.test(window.location.search);
+    }
+
     private accountDebugEnabled(): boolean {
         if (typeof window === 'undefined') return false;
         return /(?:^|[?&])accountDebug=1(?:&|$)/.test(window.location.search);
@@ -3753,6 +3784,52 @@ export class CangshuGame extends Component {
             this.addDamageText(27, x, y + 48);
         }
         this.paused = true;
+    }
+
+    // Browser-only presentation fixture for the recovered projectile matrix.
+    // It exercises the exact runtime loaders and visual update path without
+    // changing normal level data, account state, or combat calculations.
+    private applyProjectileValidationFixture(): void {
+        if (!this.projectileValidationEnabled() || this.phase !== 'battle') return;
+        const canvas = typeof document === 'undefined' ? null : document.querySelector('canvas');
+        const loadedAssets = [
+            this.h06ProjectileFrames.length === 5 ? 'H06' : '',
+            this.h14BombFrames.length === 16 ? 'H14' : '',
+            this.h17RayData ? 'H17' : '',
+            this.enemyBoneProjectileFrame ? 'M03' : '',
+            this.enemyOrbProjectileFrame ? 'M09' : '',
+            this.m10ProjectileData ? 'M10' : '',
+        ].filter(Boolean);
+        if (canvas) {
+            canvas.dataset.projectileValidationReady = 'starting';
+            canvas.dataset.projectileValidationAssets = loadedAssets.join(',');
+        }
+        if (loadedAssets.length < 6) {
+            if (canvas) canvas.dataset.projectileValidationReady = 'loading';
+            this.scheduleOnce(() => this.applyProjectileValidationFixture(), 0.2);
+            return;
+        }
+        this.clearUnits();
+        this.spawnIndex = this.rounds[this.roundIndex]?.monsters.length || 0;
+        let failedVisuals = 0;
+        const emit = (name: string, create: () => void): void => {
+            try {
+                create();
+            } catch (error) {
+                failedVisuals += 1;
+                console.error(`[projectile-validation] ${name} failed`, error);
+            }
+        };
+        emit('H06', () => this.addH06Projectile(-250, 140, 250, 140, 2, 0));
+        emit('H14', () => this.addH14Bomb(-145, -35));
+        emit('H17', () => this.addH17Ray(-280, 20, 280, 20));
+        emit('M03', () => this.addEnemyBoneProjectile(-250, -150, 250, -150, 2, 0));
+        emit('M09', () => this.addEnemyOrbProjectile(-250, -255, 250, -255, 2, 0));
+        emit('M10', () => this.addM10Projectile(-250, 255, 250, 255, 2, 0));
+        this.paused = true;
+        this.speed = 0;
+        if (canvas) canvas.dataset.projectileValidationReady = '1';
+        if (canvas) canvas.dataset.projectileValidationErrors = String(failedVisuals);
     }
 
     // Explicit browser-only visual fixture. It is unreachable in the normal
@@ -5312,6 +5389,265 @@ export class CangshuGame extends Component {
             // Assigning a cropped frame can restore its source size in the same
             // tick. Reapply the recovered FairyGUI target size afterwards.
             transform.setContentSize(targetWidth, targetHeight);
+        });
+    }
+
+    private preloadRecoveredProjectilePresentation(): void {
+        this.recoveredProjectileAudioSource = this.node.getComponent(AudioSource) || this.node.addComponent(AudioSource);
+        resources.load(
+            'original/projectile-matrix/js_feixingyuan_dandao2/spriteFrame',
+            SpriteFrame,
+            (error, sourceFrame) => {
+                if (error || !sourceFrame) return;
+                const specs = [
+                    { rect: new Rect(1, 119, 43, 28), offset: new Vec2(3, 0) },
+                    { rect: new Rect(1, 85, 43, 32), offset: new Vec2(3, 0) },
+                    { rect: new Rect(1, 1, 43, 40), offset: new Vec2(3, 1) },
+                    { rect: new Rect(1, 43, 43, 40), offset: new Vec2(3, 0) },
+                    { rect: new Rect(1, 149, 43, 28), offset: new Vec2(3, 0) },
+                ];
+                this.h06ProjectileFrames = specs.map((spec) => {
+                    const frame = new SpriteFrame();
+                    frame.reset({
+                        texture: sourceFrame.texture,
+                        rect: spec.rect,
+                        originalSize: new Size(51, 54),
+                        offset: spec.offset,
+                    });
+                    return frame;
+                });
+            },
+        );
+        resources.load(
+            'original/projectile-matrix/chilun_haidaosha/spriteFrame',
+            SpriteFrame,
+            (error, sourceFrame) => {
+                if (error || !sourceFrame) return;
+                const specs = [
+                    { rect: new Rect(1, 236, 65, 17), offset: new Vec2(-49, -91) },
+                    { rect: new Rect(1520, 179, 165, 69), offset: new Vec2(-90, -65) },
+                    { rect: new Rect(1711, 1, 193, 135), offset: new Vec2(-87, -37) },
+                    { rect: new Rect(1285, 1, 181, 181), offset: new Vec2(-89, -16) },
+                    { rect: new Rect(1108, 1, 175, 219), offset: new Vec2(-79, 0) },
+                    { rect: new Rect(923, 1, 183, 223), offset: new Vec2(-65, 2) },
+                    { rect: new Rect(1, 1, 217, 233), offset: new Vec2(-44, 6) },
+                    { rect: new Rect(220, 1, 219, 223), offset: new Vec2(-25, -1) },
+                    { rect: new Rect(441, 1, 223, 213), offset: new Vec2(-27, -6) },
+                    { rect: new Rect(666, 1, 255, 149), offset: new Vec2(-17, -38) },
+                    { rect: new Rect(1285, 184, 233, 69), offset: new Vec2(-28, -78) },
+                    { rect: new Rect(666, 152, 237, 75), offset: new Vec2(-8, -70) },
+                    { rect: new Rect(1468, 92, 237, 85), offset: new Vec2(-19, -68) },
+                    { rect: new Rect(1468, 1, 241, 89), offset: new Vec2(-17, -68) },
+                    { rect: new Rect(1707, 138, 193, 97), offset: new Vec2(35, -66) },
+                    { rect: new Rect(1707, 138, 193, 97), offset: new Vec2(35, -66) },
+                ];
+                this.h14BombFrames = specs.map((spec) => {
+                    const frame = new SpriteFrame();
+                    frame.reset({
+                        texture: sourceFrame.texture,
+                        rect: spec.rect,
+                        originalSize: new Size(369, 245),
+                        offset: spec.offset,
+                    });
+                    return frame;
+                });
+            },
+        );
+        resources.load(
+            'original/projectile-matrix/yugutou_dandao/spriteFrame',
+            SpriteFrame,
+            (error, sourceFrame) => {
+                if (error || !sourceFrame) return;
+                const frame = new SpriteFrame();
+                frame.reset({
+                    texture: sourceFrame.texture,
+                    rect: new Rect(1, 1, 38, 20),
+                    originalSize: new Size(38, 20),
+                    offset: Vec2.ZERO,
+                });
+                this.enemyBoneProjectileFrame = frame;
+            },
+        );
+        resources.load(
+            'original/projectile-matrix/boss_1_dandao/spriteFrame',
+            SpriteFrame,
+            (error, sourceFrame) => {
+                if (error || !sourceFrame) return;
+                const frame = new SpriteFrame();
+                frame.reset({
+                    texture: sourceFrame.texture,
+                    rect: new Rect(1, 1, 37, 38),
+                    originalSize: new Size(39, 40),
+                    offset: Vec2.ZERO,
+                });
+                this.enemyOrbProjectileFrame = frame;
+            },
+        );
+        resources.load('spine/ProjectileMatrix/H17/chilun_shexian1', sp.SkeletonData, (error, data) => {
+            if (!error && data) this.h17RayData = data;
+        });
+        resources.load('spine/ProjectileMatrix/M10/gw_10_zidan', sp.SkeletonData, (error, data) => {
+            if (!error && data) this.m10ProjectileData = data;
+        });
+        resources.load('original/projectile-matrix/bullet_shayu', AudioClip, (error, clip) => {
+            if (!error && clip) this.h14HitAudio = clip;
+        });
+    }
+
+    private addRecoveredSpriteProjectile(
+        name: string,
+        frames: SpriteFrame[],
+        width: number,
+        height: number,
+        fromX: number,
+        fromY: number,
+        toX: number,
+        toY: number,
+        duration: number,
+        delay: number,
+        scaleX: number,
+        scaleY: number,
+        arcHeight = 0,
+        animate = false,
+    ): void {
+        if (frames.length === 0 || !this.effectLayer?.isValid) return;
+        const node = this.makeNode(name, this.effectLayer, fromX, fromY, width, height);
+        node.getComponent(UITransform)!.setAnchorPoint(0.5, 0.2);
+        node.setScale(scaleX, scaleY, 1);
+        node.active = delay <= 0;
+        const sprite = node.addComponent(Sprite);
+        sprite.sizeMode = Sprite.SizeMode.CUSTOM;
+        sprite.spriteFrame = frames[0];
+        this.projectileVisuals.push({
+            node,
+            delay,
+            elapsed: 0,
+            duration: Math.max(duration, 0.001),
+            fromX,
+            fromY,
+            toX,
+            toY,
+            arcHeight,
+            orientToPath: true,
+            sprite: animate ? sprite : undefined,
+            frames: animate ? frames : undefined,
+            frameSeconds: animate ? ORIGINAL_EFFECT_FRAME_SECONDS : undefined,
+        });
+    }
+
+    private addH06Projectile(
+        fromX: number,
+        fromY: number,
+        toX: number,
+        toY: number,
+        duration: number,
+        delay: number,
+    ): void {
+        this.addRecoveredSpriteProjectile(
+            'H19_S1', this.h06ProjectileFrames, 51, 54,
+            fromX, fromY, toX, toY, duration, delay, -1.5, 1.5, 200, true,
+        );
+    }
+
+    private addEnemyBoneProjectile(
+        fromX: number,
+        fromY: number,
+        toX: number,
+        toY: number,
+        duration: number,
+        delay: number,
+    ): void {
+        const frames = this.enemyBoneProjectileFrame ? [this.enemyBoneProjectileFrame] : [];
+        this.addRecoveredSpriteProjectile(
+            'H31_S1', frames, 38, 20,
+            fromX, fromY, toX, toY, duration, delay, -1, 1, 200,
+        );
+    }
+
+    private addEnemyOrbProjectile(
+        fromX: number,
+        fromY: number,
+        toX: number,
+        toY: number,
+        duration: number,
+        delay: number,
+    ): void {
+        const frames = this.enemyOrbProjectileFrame ? [this.enemyOrbProjectileFrame] : [];
+        this.addRecoveredSpriteProjectile(
+            'H30_S1', frames, 39, 40,
+            fromX, fromY, toX, toY, duration, delay, 1, 1,
+        );
+    }
+
+    private addH14Bomb(x: number, y: number): void {
+        if (this.h14BombFrames.length === 0 || !this.effectLayer?.isValid) return;
+        const node = this.makeNode('H14_S1', this.effectLayer, x, y, 369, 245);
+        node.getComponent(UITransform)!.setAnchorPoint(0.5, 0.2);
+        const sprite = node.addComponent(Sprite);
+        sprite.sizeMode = Sprite.SizeMode.CUSTOM;
+        sprite.spriteFrame = this.h14BombFrames[0];
+        this.hitEffectVisuals.push({
+            node,
+            sprite,
+            frames: this.h14BombFrames,
+            frameSeconds: ORIGINAL_EFFECT_FRAME_SECONDS,
+            elapsed: 0,
+        });
+    }
+
+    private playH14HitAudio(): void {
+        if (this.recoveredProjectileAudioSource && this.h14HitAudio) {
+            this.recoveredProjectileAudioSource.playOneShot(this.h14HitAudio, 1);
+        }
+    }
+
+    private addH17Ray(fromX: number, fromY: number, toX: number, toY: number): void {
+        if (!this.h17RayData || !this.effectLayer?.isValid) return;
+        const distance = Math.max(1, Math.hypot(toX - fromX, toY - fromY));
+        const node = this.makeNode('H32_S1', this.effectLayer, fromX, fromY, 370, 90);
+        node.angle = Math.atan2(toY - fromY, toX - fromX) * 180 / Math.PI - 90;
+        node.setScale(1.3, distance / 370 * 1.5, 1);
+        const skeleton = node.addComponent(sp.Skeleton);
+        skeleton.skeletonData = this.h17RayData;
+        skeleton.setAnimation(0, 'idle', true);
+        this.projectileVisuals.push({
+            node,
+            delay: 0,
+            elapsed: 0,
+            duration: 2,
+            fromX,
+            fromY,
+            toX: fromX,
+            toY: fromY,
+        });
+    }
+
+    private addM10Projectile(
+        fromX: number,
+        fromY: number,
+        toX: number,
+        toY: number,
+        duration: number,
+        delay: number,
+    ): void {
+        if (!this.m10ProjectileData || !this.effectLayer?.isValid) return;
+        const node = this.makeNode('M10_S1', this.effectLayer, fromX, fromY, 128, 64);
+        node.setScale(-1, 1, 1);
+        node.active = delay <= 0;
+        const skeleton = node.addComponent(sp.Skeleton);
+        skeleton.skeletonData = this.m10ProjectileData;
+        skeleton.setAnimation(0, 'idle', true);
+        this.projectileVisuals.push({
+            node,
+            delay,
+            elapsed: 0,
+            duration: Math.max(duration, 0.001),
+            fromX,
+            fromY,
+            toX,
+            toY,
+            arcHeight: 500,
+            orientToPath: true,
         });
     }
 
@@ -7063,6 +7399,28 @@ export class CangshuGame extends Component {
         if ((unit.cfg.id === 'H0301' || unit.cfg.id === 'H08') && travelTime > 0) {
             this.addH03Projectile(unit.x, unit.y, impactX, impactY, travelTime, behaviorDelay);
         }
+        if (unit.cfg.id === 'H0601' && travelTime > 0) {
+            this.addH06Projectile(launchX, launchY, impactX, impactY, travelTime, behaviorDelay);
+        }
+        if (unit.cfg.id === 'H1401' && (target || targetHome)) {
+            // BombUnit places H14_S1 at the target immediately; its behavior and
+            // hit sound resolve after the recovered 300 ms delay.
+            this.addH14Bomb(impactX, impactY);
+        }
+        if (unit.cfg.id === 'H1701' && (target || targetHome)) {
+            // RayUnit lives for the full 2 s MissileConfig timeLimit while its
+            // six behaviors resolve at 0/330/660/1000/1300/1400 ms.
+            this.addH17Ray(launchX, launchY, impactX, impactY);
+        }
+        if ((unit.cfg.id === 'M03' || unit.cfg.id === 'Boss03') && travelTime > 0) {
+            this.addEnemyBoneProjectile(launchX, launchY, impactX, impactY, travelTime, behaviorDelay);
+        }
+        if ((unit.cfg.id === 'M09' || unit.cfg.id === 'Boss09') && travelTime > 0) {
+            this.addEnemyOrbProjectile(launchX, launchY, impactX, impactY, travelTime, behaviorDelay);
+        }
+        if ((unit.cfg.id === 'M10' || unit.cfg.id === 'Boss10') && travelTime > 0) {
+            this.addM10Projectile(launchX, launchY, impactX, impactY, travelTime, behaviorDelay);
+        }
     }
 
     private stepPendingHits(dt: number): void {
@@ -7166,12 +7524,16 @@ export class CangshuGame extends Component {
                 if (hit.attacker.cfg.id === 'H08') this.addH08Impact(centerX, centerY);
                 if (hit.attacker.cfg.id === 'H09') this.addH0905Impact(centerX, centerY);
                 if (hit.attacker.cfg.id === 'H1301') this.addH13Impact(centerX, centerY);
+                if (hit.attacker.cfg.id === 'H1401') this.playH14HitAudio();
                 if (hit.attacker.cfg.id === 'H1201') this.playH12HitAudio();
                 if (hit.target && hit.bounceMaxTimes > 0) this.queueBounceHit(hit);
                 if (warriorCombo && (hit.countsAsWarriorAttack || warriorCriticalConsumed)) {
                     this.completeWarriorAttack(hit.attacker, warriorCombo, warriorCriticalConsumed);
                 }
-                if (['H09', 'H0201', 'H0301', 'H07', 'H08', 'H1201', 'H1301'].indexOf(hit.attacker.cfg.id) < 0) {
+                if (
+                    ['H09', 'H0201', 'H0301', 'H07', 'H08', 'H1201', 'H1301'].indexOf(hit.attacker.cfg.id) < 0
+                    && !RECOVERED_PROJECTILE_PRESENTATION_IDS.has(hit.attacker.cfg.id)
+                ) {
                     this.addTrace(hit.attacker, centerX, centerY, hit.fromX, hit.fromY);
                 }
             } else if (hit.targetHome) {
@@ -7192,7 +7554,10 @@ export class CangshuGame extends Component {
                 }
                 const x = hit.targetHome === 'enemy' ? HOME_X - 20 : -HOME_X + 20;
                 this.addDamageText(damage, x, -15);
-                this.addTrace(hit.attacker, x, -10);
+                if (hit.attacker.cfg.id === 'H1401') this.playH14HitAudio();
+                if (!RECOVERED_PROJECTILE_PRESENTATION_IDS.has(hit.attacker.cfg.id)) {
+                    this.addTrace(hit.attacker, x, -10);
+                }
             }
         }
     }
@@ -8311,10 +8676,30 @@ export class CangshuGame extends Component {
             }
             visual.elapsed += activeDt;
             const progress = Math.min(1, visual.elapsed / visual.duration);
+            const controlY = Math.max(visual.fromY, visual.toY) + (visual.arcHeight || 0);
+            const inverseProgress = 1 - progress;
+            const visualY = visual.arcHeight
+                ? inverseProgress * inverseProgress * visual.fromY
+                  + 2 * inverseProgress * progress * controlY
+                  + progress * progress * visual.toY
+                : visual.fromY + (visual.toY - visual.fromY) * progress;
             visual.node.setPosition(
                 visual.fromX + (visual.toX - visual.fromX) * progress,
-                visual.fromY + (visual.toY - visual.fromY) * progress,
+                visualY,
             );
+            if (visual.sprite && visual.frames?.length && visual.frameSeconds) {
+                const frameIndex = Math.floor(visual.elapsed / visual.frameSeconds) % visual.frames.length;
+                visual.sprite.spriteFrame = visual.frames[frameIndex];
+            }
+            if (visual.orientToPath) {
+                const tangentX = visual.toX - visual.fromX;
+                const tangentY = visual.arcHeight
+                    ? 2 * inverseProgress * (controlY - visual.fromY)
+                      + 2 * progress * (visual.toY - controlY)
+                    : visual.toY - visual.fromY;
+                visual.node.angle = Math.atan2(tangentY, tangentX) * 180 / Math.PI
+                    + (visual.orientationOffsetDegrees || 0);
+            }
             if (visual.angularSpeedDegrees) {
                 visual.node.angle = visual.elapsed * visual.angularSpeedDegrees;
             }

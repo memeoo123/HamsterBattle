@@ -12,6 +12,8 @@
 
 ## 当前状态摘要（2026-08-12）
 
+- 2026-08-13 发射物表现矩阵已修复：过去未专门路由的远程单位会退化为 `0.11s` 通用轨迹；现在按原 `MissileConfig / BehaviorConfig` 恢复 H06 五帧抛物线、H14 十六帧定点爆炸与鲨鱼命中音、H17 两秒 Spine 射线、M03/Boss03 鱼骨抛物线、M09/Boss09 直线光球、M10/Boss10 Spine 抛物线，并禁止这些单位再次进入通用轨迹。共恢复 11 个原始文件，1004 浏览器矩阵显示 `H06,H14,H17,M03,M09,M10` 全部加载、资源错误 0、控制台 warning/error 0；专项 73 项、全量 54/54、Golden 47/47、TypeScript 与 Cocos 工程检查（251 assets / 0 missing meta）通过。H18 主弹体 `js_fashi_dandao` 在 v18 resources3 中没有资源记录，保持明确未恢复，不用替代美术伪造。证据见 `targets/wxf9af2417e78ce07a/18/evidence/runtime/projectile-presentation-2026-08-13/manifest.json`。
+
 - P01 动力核心已按竞品分层职责修复：原始 `bagLike/power1.png` 金色齿轮连续旋转，独立仓鼠层循环移动且保持正向；准备态允许拖动 P01，有效落点更新真实动力索引，无效落点回原位，周边普通齿轮仅在触发时旋转并按新动力格重算啮合相位。1004 实机把 P01 从 `(2,3)` 拖到 `(1,3)` 后仍连续跨过 `243.3° → 297.3° → 351.4° → 45.4°`，warning/error `0`；全量测试 `44/44`、Creator TypeScript 和 10:51 Web Mobile 新构建通过。证据见 `targets/wxf9af2417e78ce07a/18/evidence/runtime/p01-power-core-motion-and-drag.md`。
 
 - 总编排已完成：机制数据、Golden、资产导入、TypeScript 与最终视觉基线全部通过。账号成长/关卡推进和 200 关运行时已合并到同一工程。

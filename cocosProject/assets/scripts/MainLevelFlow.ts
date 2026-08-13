@@ -55,7 +55,7 @@ export function playableLevelCards(levels: readonly RecoveredLevelRow[]): Playab
 
 export function directBootLevelId(search: string, fallbackLevelId: number): DirectBootLevelId | null {
     const directRequested = /(?:^|[?&])directBattle=1(?:&|$)/.test(search);
-    const validationRequested = /(?:^|[?&])(?:fusionValidation|traitValidation|developedValidation)=/.test(search);
+    const validationRequested = /(?:^|[?&])(?:fusionValidation|traitValidation|developedValidation|projectileValidation)=/.test(search);
     const candidateRequested = /(?:^|[?&])candidateBattle=1(?:&|$)/.test(search);
     if (!directRequested && !validationRequested && !candidateRequested) return null;
 
@@ -69,7 +69,7 @@ export function directBootLevelId(search: string, fallbackLevelId: number): Dire
 
 export function directBattleBypassesProgression(search: string): boolean {
     return /(?:^|[?&])(?:directBattle|candidateBattle|longRun)=1(?:&|$)/.test(search)
-        || /(?:^|[?&])(?:fusionValidation|traitValidation|developedValidation)=/.test(search);
+        || /(?:^|[?&])(?:fusionValidation|traitValidation|developedValidation|projectileValidation)=/.test(search);
 }
 
 export function latestMainLevelId(maxPassedLevelId: number): PlayableLevelId {
