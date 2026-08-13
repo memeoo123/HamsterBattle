@@ -9,11 +9,15 @@
 | `restore-specification` | `$wechat-minigame-reverse-expert` | ready `restoreSpec`, `goldenCases` |
 | `implementation` for Cocos | `$cocos-minigame-restorer` | `cocosProject` |
 | `validation` for Cocos | `$cocos-minigame-restorer` | `validationReport`, required checks |
+| post-completion regression | owning subsystem skill, then `$cocos-minigame-restorer` | reopened check, fresh `validationManifest` |
 
 For a battle-heavy reconstruction, invoke `$wechat-minigame-battlefield-restorer` inside
 `restore-specification`, `implementation`, or `validation` to maintain subsystem evidence,
 implementation, deterministic-test, and matched-replay gates. The orchestration phase and
 primary artifact owner remain unchanged.
+
+Record its state as `battlefieldState`. A `representative-level` or
+`battlefield-faithful` orchestration target cannot complete from generic checks alone.
 
 Within `implementation` and `validation`, route by acceptance tier rather than visual
 salience: unfinished `mechanicsData` always routes to the battlefield restorer first;
@@ -27,6 +31,9 @@ formula, schedule, reward, or state-transition difference.
   target and record the package/handoff; do not force another discovery scan.
 - If several AppIDs changed, stay in target identification until a clean comparison or
   user evidence selects one.
+- On Windows, reuse a unique high-confidence package-inventory candidate. Invoke the file
+  locator only when the target remains ambiguous or a bounded watch is needed; do not run
+  two equivalent scans merely because both skills are installed.
 - If the engine is not Cocos, do not route to `cocos-minigame-restorer`. Keep the target in
   reverse analysis or report that no implementation skill is installed for that engine.
 - If `RESTORE_SPEC.json` has `implementationReady: false`, route back to reverse-expert.
@@ -46,4 +53,8 @@ formula, schedule, reward, or state-transition difference.
 - `goldenCases`: deterministic combat/wave/base/interval cases.
 - `cocosProject`: project directory containing `package.json` and `assets/`.
 - `originalReference`: matched screenshot or recording used for fidelity comparison.
+- `battlefieldState`: subsystem evidence/implementation/validation state and its supported
+  completion claim.
+- `validationManifest`: machine-generated current validation commands, counts, evidence
+  fingerprints, and results.
 - `validationReport`: final confirmed/approximate/missing matrix.

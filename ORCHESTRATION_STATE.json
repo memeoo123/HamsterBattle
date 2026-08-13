@@ -87,8 +87,8 @@
       "engineEvidence": "ace-protect.json + app-config.json + UnityPlugin 1.3.7 loader"
     },
     "wxf9af2417e78ce07a/18": {
-      "phase": "complete",
-      "status": "complete",
+      "phase": "validation",
+      "status": "in_progress",
       "platform": "windows",
       "engine": "cocos",
       "authorization": {
@@ -100,84 +100,279 @@
         "handoff": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\handoffs\\wxf9af2417e78ce07a-18.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-10T02:48:45.800292+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:45.800292+00:00",
+          "fingerprint": {
+            "kind": "file",
+            "sha256": "6262b58de8443623c21dc9353cc0217bb8bbb1df09387f8f556c95c127e733b2",
+            "size": 833
+          }
         },
         "mainPackage": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\input\\wxf9af2417e78ce07a\\18\\__WITHOUT_MULTI_PLUGINCODE__.wxapkg",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-10T02:48:45.883508+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:45.883508+00:00",
+          "fingerprint": {
+            "kind": "file",
+            "sha256": "e1fb5ef76b1e27dc00005028022fc858f3107d1a5b0fff73e92cc1714defec42",
+            "size": 3923061
+          }
         },
         "extractedRoot": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\reverse-work\\unpacked\\wxf9af2417e78ce07a\\18",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-10T02:48:45.964623+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:45.964623+00:00",
+          "fingerprint": {
+            "kind": "directory-metadata",
+            "sha256": "6a1c0a1793cdb8b8effef87a59d8a00f99418f04da852c2ae796765d6eb2eb2f",
+            "fileCount": 18,
+            "totalBytes": 5356397,
+            "latestMtimeNs": 1785470662093059400
+          }
         },
         "reverseManifest": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\manifest.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-10T02:48:46.145189+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:46.145189+00:00",
+          "fingerprint": {
+            "kind": "file",
+            "sha256": "9a0fe99cb2a6555376a52a1eab06d1e5eb9ff3df1f172ddbd87ff780314401de",
+            "size": 4357
+          }
         },
         "restoreSpec": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\generated\\RESTORE_SPEC.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-10T02:48:46.360205+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:46.360205+00:00",
+          "fingerprint": {
+            "kind": "file",
+            "sha256": "f5f24b41965e2552ba3a4c5d2b039542725e17fead6df81d4e2b46f95292f116",
+            "size": 45281
+          }
         },
         "goldenCases": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\generated\\golden-cases.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-10T02:48:46.445409+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:46.445409+00:00",
+          "fingerprint": {
+            "kind": "file",
+            "sha256": "cd2d01e2501f60e82368370dc30b86629245b59f8a79965b1803c3e72726b78b",
+            "size": 13293
+          }
         },
         "cocosProject": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-10T02:48:46.525233+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:46.525233+00:00",
+          "fingerprint": {
+            "kind": "directory-metadata",
+            "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
+            "fileCount": 651,
+            "totalBytes": 17493101,
+            "latestMtimeNs": 1786594996527862500
+          }
         },
         "validationReport": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\VALIDATION_REPORT.md",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-11T04:05:54.056938+00:00"
+          "fingerprint": {
+            "kind": "file",
+            "sha256": "0522ca8b33f9aa4ae3fb55c01ae35c03edd3fc0dff96b11281910ffd1854407f",
+            "size": 35785
+          },
+          "recordedAtUtc": "2026-08-13T07:39:52.661120+00:00"
         },
         "originalReference": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\visual\\original\\2026-08-01\\manifest.json",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-10T02:48:46.711035+00:00"
+          "recordedAtUtc": "2026-08-10T02:48:46.711035+00:00",
+          "fingerprint": {
+            "kind": "file",
+            "sha256": "3ed4ba8c7e880dce10c5f45a032cd84bf10b8ed4d3469a0aeb84fc21c7332bda",
+            "size": 2313
+          }
+        },
+        "battlefieldState": {
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\BATTLEFIELD_RESTORE_STATE.json",
+          "status": "confirmed",
+          "fingerprint": {
+            "kind": "file",
+            "sha256": "77912bf282a4488437ed4f341b6f0d1c86f57ea82d50c7ea97f738d45ae592e4",
+            "size": 44749
+          },
+          "recordedAtUtc": "2026-08-13T07:36:18.912890+00:00"
+        },
+        "validationManifest": {
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\runtime\\current-validation.json",
+          "status": "confirmed",
+          "fingerprint": {
+            "kind": "file",
+            "sha256": "25854e8255e8f86699d3246e1dc5796c4273435e918e7a6a0e9422bd7823eac2",
+            "size": 45926
+          },
+          "recordedAtUtc": "2026-08-13T07:42:24.600852+00:00"
         }
       },
       "checks": {
         "goldenCases": {
           "result": "pass",
-          "evidence": "2026-08-10: run_golden_cases.py passed 47/47",
-          "atUtc": "2026-08-10T03:14:34.953675+00:00"
+          "evidence": "current-validation.json: golden cases 47/47 passed",
+          "dependencies": {
+            "goldenCases": {
+              "kind": "file",
+              "sha256": "cd2d01e2501f60e82368370dc30b86629245b59f8a79965b1803c3e72726b78b",
+              "size": 13293
+            },
+            "cocosProject": {
+              "kind": "directory-metadata",
+              "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
+              "fileCount": 651,
+              "totalBytes": 17493101,
+              "latestMtimeNs": 1786594996527862500
+            },
+            "validationManifest": {
+              "kind": "file",
+              "sha256": "25854e8255e8f86699d3246e1dc5796c4273435e918e7a6a0e9422bd7823eac2",
+              "size": 45926
+            }
+          },
+          "atUtc": "2026-08-13T07:42:25.695574+00:00"
         },
         "assetImport": {
           "result": "pass",
-          "evidence": "Cocos project check: 240 assets, 0 missing meta; live enemy catalog: 25 loaded, 0 failed, 0 console errors.",
-          "atUtc": "2026-08-12T15:45:19.120448+00:00"
+          "evidence": "current-validation.json: 251 assets, 0 missing meta",
+          "dependencies": {
+            "cocosProject": {
+              "kind": "directory-metadata",
+              "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
+              "fileCount": 651,
+              "totalBytes": 17493101,
+              "latestMtimeNs": 1786594996527862500
+            },
+            "validationManifest": {
+              "kind": "file",
+              "sha256": "25854e8255e8f86699d3246e1dc5796c4273435e918e7a6a0e9422bd7823eac2",
+              "size": 45926
+            }
+          },
+          "atUtc": "2026-08-13T07:42:26.392011+00:00"
         },
         "typescript": {
           "result": "pass",
-          "evidence": "Creator 3.8.8 bundled TypeScript --noEmit passed; unsupported satisfies syntax removed and guarded.",
-          "atUtc": "2026-08-12T15:45:34.158538+00:00"
+          "evidence": "current-validation.json: Creator 3.8.8 TypeScript passed",
+          "dependencies": {
+            "cocosProject": {
+              "kind": "directory-metadata",
+              "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
+              "fileCount": 651,
+              "totalBytes": 17493101,
+              "latestMtimeNs": 1786594996527862500
+            },
+            "validationManifest": {
+              "kind": "file",
+              "sha256": "25854e8255e8f86699d3246e1dc5796c4273435e918e7a6a0e9422bd7823eac2",
+              "size": 45926
+            }
+          },
+          "atUtc": "2026-08-13T07:42:27.100337+00:00"
         },
         "visualBaseline": {
-          "result": "pass",
-          "evidence": "targets/wxf9af2417e78ce07a/18/evidence/visual/reconstruction/2026-08-10/manifest.json",
-          "atUtc": "2026-08-10T04:44:06.975585+00:00"
+          "result": "pending",
+          "evidence": "BATTLEFIELD_RESTORE_STATE: matchedReplay pending; exact account and remaining feedback evidence unresolved",
+          "dependencies": {
+            "cocosProject": {
+              "kind": "directory-metadata",
+              "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
+              "fileCount": 651,
+              "totalBytes": 17493101,
+              "latestMtimeNs": 1786594996527862500
+            },
+            "battlefieldState": {
+              "kind": "file",
+              "sha256": "77912bf282a4488437ed4f341b6f0d1c86f57ea82d50c7ea97f738d45ae592e4",
+              "size": 44749
+            },
+            "originalReference": {
+              "kind": "file",
+              "sha256": "3ed4ba8c7e880dce10c5f45a032cd84bf10b8ed4d3469a0aeb84fc21c7332bda",
+              "size": 2313
+            },
+            "validationManifest": {
+              "kind": "file",
+              "sha256": "963ff3c267344d79be709b2024c6833d7928d9f78eb1efc5cd131aad958e7d97",
+              "size": 45626
+            },
+            "validationReport": {
+              "kind": "file",
+              "sha256": "3f37d97f6313fc5d82014b9b591a1d815a58a42128f85f39997046c7ee3a5376",
+              "size": 35333
+            }
+          },
+          "atUtc": "2026-08-13T07:37:04.094552+00:00"
         },
         "gameplaySmoke": {
-          "result": "pass",
-          "evidence": "fresh 750x1334 Web Mobile: settings, P04 abilities, daily challenge pages/back, endless; 0 warning/error",
-          "atUtc": "2026-08-11T04:05:53.968008+00:00"
+          "result": "pending",
+          "evidence": "Requires a fresh presentation-profile runtime evidence manifest after skill migration",
+          "dependencies": {
+            "cocosProject": {
+              "kind": "directory-metadata",
+              "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
+              "fileCount": 651,
+              "totalBytes": 17493101,
+              "latestMtimeNs": 1786594996527862500
+            },
+            "validationManifest": {
+              "kind": "file",
+              "sha256": "963ff3c267344d79be709b2024c6833d7928d9f78eb1efc5cd131aad958e7d97",
+              "size": 45626
+            }
+          },
+          "atUtc": "2026-08-13T07:37:13.136248+00:00"
         },
         "restoreSpecReady": {
           "result": "pass",
-          "evidence": "validate_restore_spec.py --require-ready: valid=true, implementationReady=true; K-C043 records the H03 penetrating-laser contract",
-          "atUtc": "2026-08-07T09:41:40.082755+00:00"
+          "evidence": "validate_restore_spec.py --require-ready passed",
+          "dependencies": {
+            "restoreSpec": {
+              "kind": "file",
+              "sha256": "f5f24b41965e2552ba3a4c5d2b039542725e17fead6df81d4e2b46f95292f116",
+              "size": 45281
+            }
+          },
+          "atUtc": "2026-08-13T07:37:21.735541+00:00"
         },
         "mechanicsData": {
           "result": "pass",
-          "evidence": "Static suite: 200 levels, 2978 rounds, 54816 spawns passed; late-fusion live battle has empty unitFallbacks.",
-          "atUtc": "2026-08-12T15:45:19.220115+00:00"
+          "evidence": "current-validation.json: 54/54 production test files and golden cases passed; functional reconstruction scope",
+          "dependencies": {
+            "restoreSpec": {
+              "kind": "file",
+              "sha256": "f5f24b41965e2552ba3a4c5d2b039542725e17fead6df81d4e2b46f95292f116",
+              "size": 45281
+            },
+            "goldenCases": {
+              "kind": "file",
+              "sha256": "cd2d01e2501f60e82368370dc30b86629245b59f8a79965b1803c3e72726b78b",
+              "size": 13293
+            },
+            "cocosProject": {
+              "kind": "directory-metadata",
+              "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
+              "fileCount": 651,
+              "totalBytes": 17493101,
+              "latestMtimeNs": 1786594996527862500
+            },
+            "battlefieldState": {
+              "kind": "file",
+              "sha256": "77912bf282a4488437ed4f341b6f0d1c86f57ea82d50c7ea97f738d45ae592e4",
+              "size": 44749
+            },
+            "validationManifest": {
+              "kind": "file",
+              "sha256": "25854e8255e8f86699d3246e1dc5796c4273435e918e7a6a0e9422bd7823eac2",
+              "size": 45926
+            }
+          },
+          "atUtc": "2026-08-13T07:42:27.805906+00:00"
         }
       },
       "history": [
@@ -1904,11 +2099,145 @@
           "name": "typescript",
           "result": "pass",
           "atUtc": "2026-08-12T15:45:34.158739+00:00"
+        },
+        {
+          "event": "state-migrated",
+          "atUtc": "2026-08-13T07:36:18.618801+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "battlefieldState",
+          "atUtc": "2026-08-13T07:36:18.912899+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-13T07:36:19.210857+00:00"
+        },
+        {
+          "event": "acceptance-target",
+          "from": "functional-complete",
+          "to": "battlefield-faithful",
+          "reason": "Use explicit tiered completion; full matched replay remains the project fidelity goal",
+          "atUtc": "2026-08-13T07:36:19.507297+00:00"
+        },
+        {
+          "event": "reopened",
+          "from": "complete",
+          "to": "validation",
+          "reason": "acceptance target changed: Use explicit tiered completion; full matched replay remains the project fidelity goal",
+          "atUtc": "2026-08-13T07:36:19.507582+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:36:46.187596+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:36:48.046485+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:36:51.069002+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:36:55.215032+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-13T07:37:04.094563+00:00"
+        },
+        {
+          "event": "check",
+          "name": "gameplaySmoke",
+          "result": "pending",
+          "atUtc": "2026-08-13T07:37:13.136259+00:00"
+        },
+        {
+          "event": "check",
+          "name": "restoreSpecReady",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:37:21.735549+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationReport",
+          "atUtc": "2026-08-13T07:39:52.661129+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-13T07:41:22.962968+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:41:24.118993+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:41:24.827638+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:41:25.532153+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:41:26.246214+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-13T07:42:24.600860+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:42:25.695585+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:42:26.392023+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:42:27.100347+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-13T07:42:27.805919+00:00"
         }
       ],
-      "engineEvidence": "settings.37a11.json CocosEngine 3.8.2 + System.register business bundle"
+      "engineEvidence": "settings.37a11.json CocosEngine 3.8.2 + System.register business bundle",
+      "acceptanceTarget": "battlefield-faithful"
     }
   },
   "createdAtUtc": "2026-07-31T10:06:44.358414+00:00",
-  "updatedAtUtc": "2026-08-12T15:45:34.158742+00:00"
+  "updatedAtUtc": "2026-08-13T07:42:27.805922+00:00"
 }

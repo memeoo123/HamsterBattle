@@ -8,7 +8,10 @@
 - Original Cocos version: `3.8.2`
 - Reconstruction Cocos version: `3.8.8`
 - Resolution: `750 × 1334` portrait（已纠正）
-- Validation date: 2026-08-11
+- Validation date: 2026-08-13
+- Current machine manifest: `targets/wxf9af2417e78ce07a/18/evidence/runtime/current-validation.json`（profile `mechanics`，56/56 commands，54/54 test files，251 assets，0 missing meta）
+- Acceptance target: `battlefield-faithful`
+- Achieved completion level: `functional-complete`
 
 ## Automated checks
 
@@ -54,7 +57,7 @@
 | H03 recovered laser audio | Pass (asset/linkage), matched volume pending | `5/5`：`3001_5` 原始 `skill_jiguang` 哈希、资源路径、零延迟施法起点播放、one-shot 调用及与 300 ms 行为触发分离均通过 |
 | Trait presentation | Pass (source + recovered art + fresh-build fixture) | `21/21`：发展态夹具精确锁定等级 2 与三张能力；原版 `bagLikeBuff` 丝带/卡框/推荐角标、common 蓝紫按钮/播放图标和 `image/effect` 的 `buff_0027 / buff_0036 / buff_0006` 已绑定。说明文字使用恢复字体和 RichText，复现原表绿色强调与原图断行；新的 750×1334 Web Mobile 截图无控制台错误。证据见 `evidence/visual/reconstruction/2026-08-09-trait-richtext/manifest.json` |
 | Preparation presentation | Pass (global geometry and controls) | `15/15`：归一化顶部 HUD、血条、背包板、棋盘、候选和底部按钮锚点保持匹配；恢复“获取格子 ×3”、广告刷新提示、15 银币费用和 `刷新 / 刷新 / 开战`，隐藏准备期产兵条并移除遮挡货币栏的重建主页按钮。新鲜 750×1334 Web Mobile 截图无控制台错误；证据见 `evidence/visual/reconstruction/2026-08-09-preparation-controls/manifest.json` |
-| Asset metadata | Pass | 240 asset files，missing meta `0`；新增雪山/火山背景、H05/H06/H16 共 12 套后期 Spine 与对应证据清单均由 Creator 3.8.8 正式导入。资源门禁覆盖 25 种敌人、12 套后期英雄、2 张背景和 5 个关外侧栏图标 |
+| Asset metadata | Pass | 当前 machine manifest 为 251 asset files、missing meta `0`；新增雪山/火山背景、H05/H06/H16 共 12 套后期 Spine 与对应证据清单均由 Creator 3.8.8 正式导入。资源门禁覆盖 25 种敌人、12 套后期英雄、2 张背景和 5 个关外侧栏图标 |
 | TypeScript | Pass (project scripts) | 2026-08-12 使用 Creator 3.8.8 随附 TypeScript、工程 `tsconfig.json`、`--noEmit` 与 `--skipLibCheck true` 检查通过；移除其解析器不支持的 `satisfies` 并加入兼容性门禁，不抑制项目脚本错误 |
 | Web build smoke | Pass (actual 200-level + activity + recovered-resource artifact) | 2026-08-12 23:42:06 的新鲜 `web-mobile` 产物完成；1005 雪山、1009 火山与 25 种敌人画廊运行资源加载均通过。自动图鉴契约记录 `25 loaded / 0 failed / 0 console errors`；既有广告、主页、活动、1003/1100/1200 长跑证据保持有效 |
 | Creator project open | Pass | 使用 Creator 3.8.8 隐藏 CLI 完成两次有界 Web Mobile 构建；首次发现每日挑战返回缺口，修复后的增量构建 7 秒完成且命令自行退出。未发现或终止用户既有 Creator 会话 |
@@ -79,7 +82,7 @@
 - 实机长跑：1003 `10/10`（876.781 s）、1100 `15/15`（1652.598 s）、1200 `15/15`（1289.538 s）均胜利，缺失 gear/config 均为 0。
 - 特殊模式：每日 `10/10`、199.176 s；无尽 293.182 s 摧毁敌方兵营，539 击杀、2915 金币。后期账号/角色夹具仅走恢复的进度、刷新、放置和合成公式，结算恢复且不落盘；直达普通长跑也不会再污染玩家关卡存档。
 - 五级融合最终实机：`P01,H1005,H1505,H1805`，三头像 loaded，H10 主弹体 `6/2` 发射/命中，融合主动技 `2/2` 施放/命中，warning/error 为 0。
-- 最终 52/52 测试文件、200 关 / 2,978 波 / 54,816 刷怪项通过。Cocos 工程检查为 240 assets、0 missing meta、TypeScript 通过；最新 Web Mobile 构建时间 2026-08-12 23:42:06，25 种敌人 Spine 浏览器契约为 25/25。
+- 当前 54/54 测试文件、200 关 / 2,978 波 / 54,816 刷怪项通过。Cocos 工程检查为 251 assets、0 missing meta、TypeScript 通过；最新 Web Mobile 构建时间 2026-08-13 12:13，25 种敌人 Spine 浏览器契约为 25/25。
 - 结构化证据：`targets/wxf9af2417e78ce07a/18/evidence/runtime/final-presentation-and-long-run-closure-2026-08-12/manifest.json`。
 
 ## Fidelity matrix
@@ -97,8 +100,8 @@
 
 ## Completion decision
 
-工程已完成 1001–1200 的 200 关机制数据闭环，并合入账号成长、关卡奖励与连续推进。
-最终特质和固定战斗截图已通过 `visualBaseline`；目标账号精确存档、广告平台流程、shape 动画逐帧复验和部分未访问界面保留为非阻塞扩展。
+工程已完成 1001–1200 的 200 关机制数据闭环，并合入账号成长、关卡奖励与连续推进；当前机器验证支持 `functional-complete`。
+总编排目标设为 `battlefield-faithful`。由于 `BATTLEFIELD_RESTORE_STATE.json` 仍为 `incomplete`，目标账号精确存档、剩余齿轮/状态/结算表现及 matched timing/audio 仍未关闭，`visualBaseline` 保持 pending，不能再用笼统 `complete` 表述。
 
 ## 2026-08-12 progression/role audit addendum
 

@@ -1,6 +1,6 @@
 ---
 name: cocos-minigame-restorer
-description: Reconstruct authorized Cocos Creator mini-games from evidence-backed reverse-analysis artifacts. Use when Codex needs to turn RESTORE_SPEC.json, golden cases, recovered Cocos assets, FairyGUI packages, Spine models, level tables, or combat formulas into a playable Cocos project; validate imports and TypeScript; and compare a representative level against original screenshots or recordings without inventing missing gameplay.
+description: Reconstruct and maintain authorized Cocos Creator mini-games from evidence-backed reverse-analysis artifacts. Use when Codex needs to implement or fix a Cocos project from RESTORE_SPEC.json, recovered assets, level tables, or combat formulas; run repeatable validation profiles; or compare a representative level against matched references without inventing missing gameplay.
 ---
 
 # Cocos Mini-Game Restorer
@@ -61,6 +61,17 @@ presentation-polish pass.
 Keep simulation logic separable from Cocos nodes so formulas and schedules can be tested
 without launching the editor.
 
+Keep gameplay and presentation clocks separate. A production interval, cooldown, or
+configuration period does not prove a visible animation speed. Gate every animated object
+by phase and validate preparation, battle, pause, speed-up, round-clear, and retry states.
+
+## Maintain completed reconstructions
+
+For a reported regression, run the orchestrator first. Invalidate the affected check and
+reopen validation before editing. Identify the earliest divergence, preserve old evidence,
+add a failing production-code test, implement the correction, and create a fresh validation
+manifest. Do not rely on a build or screenshot produced before the changed source.
+
 ## Inspect recovered assets
 
 Use:
@@ -109,6 +120,23 @@ running Creator. Check for existing editor/build processes first. Start one boun
 attempt, capture logs and file activity, and terminate only the exact process started by
 the current task if it stalls. Never terminate a pre-existing interactive editor.
 
+Generate one current machine-readable validation summary:
+
+```shell
+python "<skill-dir>/scripts/generate_validation_manifest.py" \
+  --project "<project>" --profile mechanics \
+  --golden-cases "<target>/generated/golden-cases.json" \
+  --creator-root "<Creator version directory>" \
+  --output "<target>/evidence/runtime/current-validation.json"
+```
+
+Profiles are ordered: `fast` runs project/TypeScript and golden checks; `mechanics` also
+runs every `tests/*.test.mjs`; `presentation` additionally requires original-reference and
+runtime-evidence paths plus an explicit `--visual-baseline-result pass`; `release` also
+requires a build output. Set visual baseline to pass only when every required fidelity row
+is confirmed. A manifest cannot claim presentation or release success from missing or
+approximate evidence.
+
 ## Perform visual validation
 
 Read [references/visual-validation.md](references/visual-validation.md). Compare the same
@@ -123,6 +151,9 @@ level, phase, round, resolution, and timestamp. Track:
 
 Maintain `RESTORE_PROGRESS.md` with `confirmed`, `approximate`, and `missing` fields.
 Never describe an approximate recreation as identical.
+Record the generated manifest in the orchestrator as `validationManifest`. Do not manually
+copy changing test, asset, or build counts into several summaries when the manifest can be
+the source of truth.
 
 ## Use bundled templates
 

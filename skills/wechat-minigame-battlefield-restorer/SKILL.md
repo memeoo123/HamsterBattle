@@ -1,6 +1,6 @@
 ---
 name: wechat-minigame-battlefield-restorer
-description: Restore an authorized WeChat mini-game battlefield as an evidence-backed, testable system across preparation, grid occupancy and merging, deployment, unit production, targeting, movement, attack timing, damage, skills, buffs, waves, scaling, victory/defeat, and audiovisual feedback. Use when the reconstructed battle feels unlike the original, combat formulas or preparation behavior are incomplete, a representative level needs high-fidelity restoration, or Codex must plan, implement, audit, or validate battlefield fidelity without treating compilation or a few numeric cases as completion.
+description: Restore and maintain an authorized WeChat mini-game battlefield as an evidence-backed, testable system across preparation, production, combat, outcomes, and audiovisual feedback. Use when the reconstructed battle feels unlike the original, a completed project regresses, combat or preparation is incomplete, or Codex must plan, implement, audit, reopen, or validate representative-level or full matched-replay fidelity.
 ---
 
 # WeChat Mini-Game Battlefield Restorer
@@ -25,6 +25,12 @@ Read, when present:
 
 Copy `assets/BATTLEFIELD_RESTORE_STATE.template.json` into the active target when the
 state file is missing. Keep all paths and findings isolated by AppID/version.
+Record it in the orchestrator as `battlefieldState`; do not let an orchestration-level
+`complete` hide a weaker battlefield claim.
+
+For a regression after completion, invalidate the affected orchestration check and reopen
+`validation` before changing implementation. Preserve the previous evidence and append
+the correction, reason, tests, and new captures.
 
 ## Keep evidence and implementation separate
 
@@ -103,12 +109,14 @@ these gates.
 Validate state integrity with:
 
 ```shell
-python3 "<skill-dir>/scripts/validate_battlefield_state.py" \
+python "<skill-dir>/scripts/validate_battlefield_state.py" \
   "<target>/BATTLEFIELD_RESTORE_STATE.json"
 ```
 
 Use `--require-evidence-gate` before implementing all remaining battlefield systems and
-`--require-complete` before claiming battlefield fidelity.
+`--require-claim representative-level` before that claim, and
+`--require-claim battlefield-faithful` before full fidelity. Use `python3` when `python`
+is unavailable.
 
 ## Report progress
 

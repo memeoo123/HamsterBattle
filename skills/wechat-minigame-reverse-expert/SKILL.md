@@ -1,6 +1,6 @@
 ---
 name: wechat-minigame-reverse-expert
-description: Analyze authorized WeChat mini-game packages and extracted projects with CLI-first, evidence-based workflows. Use for package decryption or unpacking, subpackage reconstruction, Cocos/Laya/Unity fingerprinting, JavaScript or WASM static analysis, Cocos module extraction, compact-table decoding, level-schema recovery, or producing a verified RESTORE_SPEC.json handoff. Isolate progress by AppID and version so parallel targets never share conclusions.
+description: Analyze authorized WeChat mini-game packages and extracted projects with CLI-first, evidence-based workflows. Use for package analysis, engine fingerprinting, static/runtime tracing, schema recovery, verified RESTORE_SPEC.json handoffs, or correcting a handoff when implementation evidence contradicts it. Isolate progress by AppID and version so targets never share conclusions.
 ---
 
 # WeChat Mini-Game Reverse Expert
@@ -104,6 +104,21 @@ Create `generated/golden-cases.json` containing representative:
 When the user requests implementation, hand these artifacts to
 `$cocos-minigame-restorer`. Keep analysis and reconstruction as separate stages.
 
+## Feed implementation discoveries back into evidence
+
+Treat runtime or implementation findings as verification prompts, not automatic source
+truth. When a Cocos integration test, matched capture, or user-controlled observation
+contradicts the current handoff:
+
+1. reopen the affected orchestration check;
+2. append a correction to `REVERSE_PROGRESS.md` with the old claim, new evidence, and impact;
+3. update only the affected `RESTORE_SPEC.json` fields and evidence-index entries;
+4. add or update a golden case when the correction changes deterministic behavior;
+5. record the revised artifacts so dependent validation checks become stale.
+
+Never rewrite the whole contract merely to make it agree with the implementation. Keep
+the code fix and the evidence correction independently reviewable.
+
 ## Use bundled scripts
 
 Resolve scripts relative to this skill:
@@ -125,4 +140,3 @@ column semantics. Never force them onto an unrelated game.
 
 Use `[已确认]` or `[待确认]`, followed by evidence, verification command, and impact.
 Finish with the completed stage, blocker, and next one to three smallest actions.
-

@@ -1,6 +1,6 @@
 ---
 name: wechat-minigame-reconstruction-orchestrator
-description: Orchestrate authorized WeChat mini-game work from package discovery through target identification, reverse analysis, RESTORE_SPEC generation, Cocos reconstruction, and final validation. Use when the user asks to analyze, reproduce, restore, continue, resume, check progress, or finish a long-running WeChat mini-game project and should not have to choose or sequence the locator, inventory, reverse-expert, and Cocos-restorer skills manually.
+description: Orchestrate authorized WeChat mini-game work from package discovery through target identification, reverse analysis, RESTORE_SPEC generation, Cocos reconstruction, maintenance, and tiered validation. Use when the user asks to analyze, reproduce, restore, continue, resume, check progress, fix a completed reconstruction, or finish a long-running WeChat mini-game project without choosing or sequencing the specialized skills manually.
 ---
 
 # WeChat Mini-Game Reconstruction Orchestrator
@@ -14,20 +14,21 @@ machine-readable project state.
 Locate `ORCHESTRATION_STATE.json` in the project root. If missing, initialize:
 
 ```shell
-python3 "<skill-dir>/scripts/orchestrate.py" init \
+python "<skill-dir>/scripts/orchestrate.py" init \
   --project-root "<project-root>" --project-name "<name>"
 ```
 
 Then run:
 
 ```shell
-python3 "<skill-dir>/scripts/orchestrate.py" status \
+python "<skill-dir>/scripts/orchestrate.py" status \
   --project-root "<project-root>"
 ```
 
 Treat the returned `activeTarget`, `phase`, `blockers`, and `nextSkill` as authoritative.
 Never infer the phase from conversation length. Read
 [references/state-contract.md](references/state-contract.md) when repairing state.
+Use `python3` on systems where `python` is unavailable.
 
 ## Keep the hierarchy
 
@@ -53,9 +54,9 @@ contracts.
 After AppID/version is known:
 
 ```shell
-python3 "<skill-dir>/scripts/orchestrate.py" register-target \
+python "<skill-dir>/scripts/orchestrate.py" register-target \
   --project-root "<project-root>" --app-id "wx..." --version "<version>" \
-  --platform windows --activate
+  --platform windows --acceptance-target representative-level --activate
 ```
 
 Store separate state for every AppID/version. If multiple targets exist, keep one active.
@@ -65,7 +66,7 @@ Unity and Cocos findings because they are in the same folder.
 Record authorization once:
 
 ```shell
-python3 "<skill-dir>/scripts/orchestrate.py" authorize \
+python "<skill-dir>/scripts/orchestrate.py" authorize \
   --project-root "<project-root>" --target "wx.../<version>" \
   --scope "user-approved local package analysis and reconstruction"
 ```
@@ -75,14 +76,15 @@ python3 "<skill-dir>/scripts/orchestrate.py" authorize \
 After a sub-skill produces an artifact:
 
 ```shell
-python3 "<skill-dir>/scripts/orchestrate.py" record-artifact \
+python "<skill-dir>/scripts/orchestrate.py" record-artifact \
   --project-root "<project-root>" --target "wx.../<version>" \
   --kind handoff --path "<absolute path>"
 ```
 
 Supported kinds include `packageInventory`, `handoff`, `mainPackage`, `extractedRoot`,
 `reverseManifest`, `restoreSpec`, `goldenCases`, `cocosProject`, `originalReference`, and
-`validationReport`.
+`validationReport`. Battle-heavy targets also record `battlefieldState`; repeatable Cocos
+validation records `validationManifest`.
 
 Do not record a promised output. Require the path to exist. The script validates handoff
 and restore-spec schema where applicable.
@@ -92,7 +94,7 @@ and restore-spec schema where applicable.
 Run:
 
 ```shell
-python3 "<skill-dir>/scripts/orchestrate.py" advance \
+python "<skill-dir>/scripts/orchestrate.py" advance \
   --project-root "<project-root>" --target "wx.../<version>" --all-ready
 ```
 
@@ -105,7 +107,7 @@ The state machine enforces:
 4. restore specification → implementation: Cocos engine, ready restore spec, and golden
    cases exist;
 5. implementation → validation: Cocos project exists;
-6. validation → complete: validation report exists and required checks pass.
+6. validation → complete: the configured acceptance target is satisfied.
 
 Never bypass a failed gate by editing the phase directly. Record the missing artifact or
 return to the responsible sub-skill.
@@ -120,7 +122,7 @@ confirmation, or required runtime/schema recovery remains open.
 Use:
 
 ```shell
-python3 "<skill-dir>/scripts/orchestrate.py" set-check \
+python "<skill-dir>/scripts/orchestrate.py" set-check \
   --project-root "<project-root>" --target "wx.../<version>" \
   --name goldenCases --result pass --evidence "<report or command>"
 ```
@@ -128,6 +130,49 @@ python3 "<skill-dir>/scripts/orchestrate.py" set-check \
 Required completion checks are `mechanicsData`, `goldenCases`, `assetImport`,
 `typescript`, and `visualBaseline`. A successful compile is not a visual or gameplay
 acceptance test.
+
+Passing checks snapshot their artifact dependencies. A later source, spec, evidence, or
+validation-manifest change makes the check stale in `status`; rerun the check and call
+`set-check` again. Do not treat a stored `pass` as current when `staleChecks` reports it.
+
+## Use explicit completion levels
+
+Set the intended claim rather than overloading one `complete` label:
+
+```shell
+python "<skill-dir>/scripts/orchestrate.py" set-acceptance \
+  --project-root "<project-root>" --target "wx.../<version>" \
+  --level battlefield-faithful --reason "User requested full matched replay"
+```
+
+- `functional-complete`: mechanics, golden cases, asset import, TypeScript, and a
+  validation report pass. It does not claim matched visuals or original-account balance.
+- `representative-level`: additionally require a recorded battlefield state supporting
+  `representative-level` and a current visual baseline.
+- `battlefield-faithful`: require the battlefield state to support full matched replay.
+
+Register `BATTLEFIELD_RESTORE_STATE.json` as `battlefieldState` for battle-heavy work. The
+orchestrator reports both `completionLevel` and `battlefieldClaim`; they must not be
+silently collapsed into one claim.
+
+## Reopen completed work safely
+
+When a post-completion bug or new requirement invalidates evidence, explicitly reopen or
+invalidate the affected check:
+
+```shell
+python "<skill-dir>/scripts/orchestrate.py" invalidate-check \
+  --project-root "<project-root>" --target "wx.../<version>" \
+  --name visualBaseline --reason "Projectile timing changed"
+
+python "<skill-dir>/scripts/orchestrate.py" reopen \
+  --project-root "<project-root>" --target "wx.../<version>" \
+  --phase validation --reason "User reported a runtime fidelity regression"
+```
+
+`status` is read-only: it reports stale checks and effective blockers but does not rewrite
+history. Use `migrate-state` once for legacy states; old passing checks remain stale until
+they are genuinely rerun and recorded with dependency fingerprints.
 
 Use two ordered acceptance tiers during implementation and validation:
 
@@ -157,7 +202,7 @@ For “继续”“看进度”“做完它” or similar requests:
 6. Render the human summary:
 
 ```shell
-python3 "<skill-dir>/scripts/orchestrate.py" render-status \
+python "<skill-dir>/scripts/orchestrate.py" render-status \
   --project-root "<project-root>"
 ```
 
@@ -171,4 +216,4 @@ sub-skill to run.
 - Preserve original packages and recovered assets.
 - Never overwrite unrelated project state or user edits.
 - Keep historical phase transitions append-only in the orchestration state.
-- Mark a target complete only after the validation gate passes.
+- Mark a target complete only after its configured acceptance target passes.

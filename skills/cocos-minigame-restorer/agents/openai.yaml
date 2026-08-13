@@ -1,4 +1,4 @@
 interface:
   display_name: "Cocos 小游戏高保真还原"
-  short_description: "根据逆向证据重建 Cocos 小游戏场景、资源、战斗和代表关卡"
-  default_prompt: "使用 $cocos-minigame-restorer 根据 RESTORE_SPEC 和原游戏参考，在 Cocos Creator 工程中高保真还原代表关卡。"
+  short_description: "根据逆向证据重建或维护 Cocos 小游戏，并生成分级验证清单"
+  default_prompt: "使用 $cocos-minigame-restorer 根据 RESTORE_SPEC 修复这个 Cocos 工程，并用当前验证清单证明对应完成等级。"

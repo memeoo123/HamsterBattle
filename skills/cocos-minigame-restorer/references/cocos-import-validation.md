@@ -30,3 +30,15 @@ file activity. If a headless process stalls without logs or asset activity:
 - stop only that PID and its orphaned children;
 - keep pre-existing editor processes untouched;
 - report static-check success separately from build success.
+
+## Validation profiles
+
+- `fast`: restore-spec/project structure, TypeScript, and golden cases during iteration.
+- `mechanics`: fast checks plus every deterministic `tests/*.test.mjs` file.
+- `presentation`: mechanics plus matched original/runtime evidence paths and an explicit
+  visual-baseline decision; approximate required rows keep it pending.
+- `release`: presentation plus a fresh build-output path.
+
+Write one `validationManifest` after the last source or evidence change. Counts copied into
+Markdown are historical prose; the manifest is the current machine result. A later
+dependency fingerprint change makes orchestrator checks stale.

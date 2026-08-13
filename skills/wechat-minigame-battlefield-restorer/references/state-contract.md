@@ -35,6 +35,16 @@ override subsystem data. `completionClaim` is one of `incomplete`, `representati
 or `battlefield-faithful`.
 
 `representative-level` requires every required subsystem to have confirmed evidence,
-implemented behavior, no unknowns, and at least integration validation.
+implemented behavior, no unknowns, at least integration validation, and passing evidence,
+deterministic, and integration gates.
 `battlefield-faithful` additionally requires replay validation for every required subsystem,
-no deferred subsystem, and no blocker.
+the matchedReplay gate to pass, no deferred subsystem, and no blocker.
+
+The orchestration state has a separate `acceptanceTarget`. Record this file as
+`battlefieldState`; the orchestrator may report `functional-complete` while this file is
+still `incomplete`, but it must not report `representative-level` or
+`battlefield-faithful` beyond the claim supported here.
+
+After any source, spec, runtime, or reference change affecting a subsystem, lower the
+affected validation status or append a new test/trace before restoring its prior status.
+Do not retain replay-pass merely because an older build once matched.

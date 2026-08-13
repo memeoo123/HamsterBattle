@@ -1,4 +1,4 @@
 interface:
   display_name: "微信小游戏战场还原"
-  short_description: "循证还原战场规则、状态机、数值系统并以对局回放验收"
-  default_prompt: "使用 $wechat-minigame-battlefield-restorer 按证据链和强制门槛还原这个微信小游戏的完整战场。"
+  short_description: "循证还原、维护战场系统，并按代表关卡或完整回放分级验收"
+  default_prompt: "使用 $wechat-minigame-battlefield-restorer 恢复或重新验收这个微信小游戏战场，并给出当前支持的完成等级。"

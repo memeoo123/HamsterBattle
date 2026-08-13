@@ -44,7 +44,43 @@ def load(path: Path) -> dict[str, Any]:
     return value
 
 
-def validate(data: dict[str, Any], require_evidence: bool, require_complete: bool) -> list[str]:
+def readiness(data: dict[str, Any]) -> dict[str, bool]:
+    subsystems = data.get("subsystems") if isinstance(data.get("subsystems"), dict) else {}
+    required_entries = [
+        entry for entry in subsystems.values()
+        if isinstance(entry, dict) and entry.get("scope") == "required"
+    ]
+    deferred_count = sum(
+        1 for entry in subsystems.values()
+        if isinstance(entry, dict) and entry.get("scope") == "deferred"
+    )
+    gates = data.get("gates") if isinstance(data.get("gates"), dict) else {}
+    evidence_ready = bool(required_entries) and all(
+        entry.get("evidenceStatus") == "confirmed" and not entry.get("unknowns")
+        for entry in required_entries
+    ) and gates.get("evidence", {}).get("status") == "pass"
+    representative_ready = evidence_ready and all(
+        entry.get("implementationStatus") == "implemented"
+        and VALIDATION_RANK.get(entry.get("validationStatus"), -1)
+        >= VALIDATION_RANK["integration-pass"]
+        for entry in required_entries
+    ) and all(gates.get(name, {}).get("status") == "pass" for name in ("deterministic", "integration"))
+    faithful_ready = representative_ready and all(
+        entry.get("validationStatus") == "replay-pass" for entry in required_entries
+    ) and gates.get("matchedReplay", {}).get("status") == "pass" and deferred_count == 0 and not data.get("blockers")
+    return {
+        "evidenceReady": evidence_ready,
+        "representativeLevelReady": representative_ready,
+        "battlefieldFaithfulReady": faithful_ready,
+    }
+
+
+def validate(
+    data: dict[str, Any],
+    require_evidence: bool,
+    require_complete: bool,
+    require_claim: str | None = None,
+) -> list[str]:
     errors: list[str] = []
     if data.get("schemaVersion") != "1.0":
         errors.append("schemaVersion must be '1.0'")
@@ -142,19 +178,10 @@ def validate(data: dict[str, Any], require_evidence: bool, require_complete: boo
     if not isinstance(data.get("nextActions"), list):
         errors.append("nextActions must be a list")
 
-    evidence_ready = all(
-        entry.get("evidenceStatus") == "confirmed" and not entry.get("unknowns")
-        for _, entry in required_entries
-    )
-    representative_ready = evidence_ready and all(
-        entry.get("implementationStatus") == "implemented"
-        and VALIDATION_RANK.get(entry.get("validationStatus"), -1)
-        >= VALIDATION_RANK["integration-pass"]
-        for _, entry in required_entries
-    )
-    faithful_ready = representative_ready and all(
-        entry.get("validationStatus") == "replay-pass" for _, entry in required_entries
-    ) and deferred_count == 0 and not blockers
+    support = readiness(data)
+    evidence_ready = support["evidenceReady"]
+    representative_ready = support["representativeLevelReady"]
+    faithful_ready = support["battlefieldFaithfulReady"]
 
     if require_evidence and not evidence_ready:
         errors.append("evidence gate is not satisfied for every required subsystem")
@@ -164,6 +191,10 @@ def validate(data: dict[str, Any], require_evidence: bool, require_complete: boo
         errors.append("battlefield-faithful claim requires matched replay, no deferred scope, and no blockers")
     if require_complete and not faithful_ready:
         errors.append("complete battlefield fidelity gate is not satisfied")
+    if require_claim == "representative-level" and not representative_ready:
+        errors.append("required representative-level gate is not satisfied")
+    if require_claim == "battlefield-faithful" and not faithful_ready:
+        errors.append("required battlefield-faithful gate is not satisfied")
 
     return errors
 
@@ -173,15 +204,22 @@ def main() -> int:
     parser.add_argument("state", type=Path)
     parser.add_argument("--require-evidence-gate", action="store_true")
     parser.add_argument("--require-complete", action="store_true")
+    parser.add_argument("--require-claim", choices=("representative-level", "battlefield-faithful"))
     args = parser.parse_args()
 
     try:
         data = load(args.state)
-        errors = validate(data, args.require_evidence_gate, args.require_complete)
+        errors = validate(data, args.require_evidence_gate, args.require_complete, args.require_claim)
+        support = readiness(data)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         errors = [str(exc)]
+        support = {
+            "evidenceReady": False,
+            "representativeLevelReady": False,
+            "battlefieldFaithfulReady": False,
+        }
 
-    result = {"valid": not errors, "errors": errors}
+    result = {"valid": not errors, **support, "errors": errors}
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if not errors else 1
 

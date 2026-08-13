@@ -57,6 +57,13 @@ Represent nontrivial scalar values as:
 Use `inferred` only for conclusions supported by multiple indirect observations. Add an
 explicit verification action to every `unknown`.
 
+## Incremental corrections
+
+After handoff, append corrections rather than erasing the earlier conclusion. Preserve the
+stable evidence ID when its meaning is unchanged; allocate a new ID when the source,
+interpretation, or runtime consumer changes. Re-run the restore-spec validator and record
+the revised artifact fingerprint. Every dependent orchestrator check must then be rerun.
+
 ## Implementation gate
 
 Set `implementationReady: true` only when the representative level has:
@@ -67,4 +74,3 @@ Set `implementationReady: true` only when the representative level has:
 - complete regular-damage equation;
 - mapped critical assets or documented fallbacks;
 - at least three numeric golden cases.
-

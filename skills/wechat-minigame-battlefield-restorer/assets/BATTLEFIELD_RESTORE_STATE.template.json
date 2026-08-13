@@ -14,16 +14,16 @@
     "originalReferences": []
   },
   "subsystems": {
-    "phase-flow": {},
-    "preparation": {},
-    "deployment-and-production": {},
-    "entities-and-attributes": {},
-    "targeting-and-movement": {},
-    "attack-and-damage": {},
-    "skills-buffs-status": {},
-    "waves-and-scaling": {},
-    "outcomes-and-persistence": {},
-    "presentation-and-feedback": {}
+    "phase-flow": {"scope": "required", "evidenceStatus": "unknown", "implementationStatus": "missing", "validationStatus": "untested", "evidence": [], "unknowns": ["Confirm phase transitions and interruption boundaries."], "tests": [], "notes": ""},
+    "preparation": {"scope": "required", "evidenceStatus": "unknown", "implementationStatus": "missing", "validationStatus": "untested", "evidence": [], "unknowns": ["Confirm preparation, placement, merge, refresh, and cleanup rules."], "tests": [], "notes": ""},
+    "deployment-and-production": {"scope": "required", "evidenceStatus": "unknown", "implementationStatus": "missing", "validationStatus": "untested", "evidence": [], "unknowns": ["Confirm deployment and production clocks."], "tests": [], "notes": ""},
+    "entities-and-attributes": {"scope": "required", "evidenceStatus": "unknown", "implementationStatus": "missing", "validationStatus": "untested", "evidence": [], "unknowns": ["Confirm representative entity attributes and progression inputs."], "tests": [], "notes": ""},
+    "targeting-and-movement": {"scope": "required", "evidenceStatus": "unknown", "implementationStatus": "missing", "validationStatus": "untested", "evidence": [], "unknowns": ["Confirm target selection, range, movement, and collision rules."], "tests": [], "notes": ""},
+    "attack-and-damage": {"scope": "required", "evidenceStatus": "unknown", "implementationStatus": "missing", "validationStatus": "untested", "evidence": [], "unknowns": ["Confirm attack timing and the complete damage pipeline."], "tests": [], "notes": ""},
+    "skills-buffs-status": {"scope": "required", "evidenceStatus": "unknown", "implementationStatus": "missing", "validationStatus": "untested", "evidence": [], "unknowns": ["Confirm every representative skill, buff, status, and runtime consumer."], "tests": [], "notes": ""},
+    "waves-and-scaling": {"scope": "required", "evidenceStatus": "unknown", "implementationStatus": "missing", "validationStatus": "untested", "evidence": [], "unknowns": ["Confirm schedules, multipliers, and special waves."], "tests": [], "notes": ""},
+    "outcomes-and-persistence": {"scope": "required", "evidenceStatus": "unknown", "implementationStatus": "missing", "validationStatus": "untested", "evidence": [], "unknowns": ["Confirm victory, defeat, retry, reward, and persistence boundaries."], "tests": [], "notes": ""},
+    "presentation-and-feedback": {"scope": "required", "evidenceStatus": "unknown", "implementationStatus": "missing", "validationStatus": "untested", "evidence": [], "unknowns": ["Capture matched visual and audio references for every required state."], "tests": [], "notes": ""}
   },
   "gates": {
     "evidence": {"status": "pending", "evidence": []},
