@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0",
+  "appId": "wxf9af2417e78ce07a",
+  "packageVersion": "18",
+  "representativeLevel": 1004,
+  "viewport": { "width": 750, "height": 1334 },
+  "finding": {
+    "preparation": "center power rotor and production clock remain parked",
+    "battle": "center power rotor starts from zero degrees and runs at the calibrated visual rate",
+    "visualLapSeconds": 4,
+    "productionLapSeconds": 1,
+    "contactDelaySeconds": 0.2,
+    "fidelity": "The phase gate is based on the user's controlled competitor observation. Four seconds per visible lap is calibrated against that observation and remains approximate until a competitor video supplies frame-exact timing. Production values remain source-exact."
+  },
+  "samples": {
+    "preparation": [
+      { "elapsedSeconds": 0, "phase": "deploy", "powerCoreAngleDegrees": 0, "powerClock": "1:0.250" },
+      { "elapsedSeconds": 1.2, "phase": "deploy", "powerCoreAngleDegrees": 0, "powerClock": "1:0.250" }
+    ],
+    "battle": [
+      { "roundClockSeconds": 0.517, "powerCoreAngleDegrees": 46.5 },
+      { "roundClockSeconds": 1.534, "powerCoreAngleDegrees": 138.1 },
+      { "roundClockSeconds": 2.569, "powerCoreAngleDegrees": 231.2 }
+    ]
+  },
+  "screenshots": [
+    { "file": "prepare-static.png", "sha256": "be7fd2c9bde10c4828a00f0260e1f04f2a01ac9f6317b3951d578736f68f17b2" },
+    { "file": "battle-running.png", "sha256": "542c599c3f582d28f6d9494fe5ccd321b49723eff60fb44b79053534c4bf091b" }
+  ],
+  "verification": {
+    "browserWarnings": 0,
+    "browserErrors": 0,
+    "battlefieldProductionAssertions": 51,
+    "nodeTestFiles": { "passed": 54, "failed": 0 },
+    "goldenCases": { "passed": 47, "failed": 0 },
+    "typescript": "pass",
+    "cocosProject": { "valid": true, "assetFileCount": 251, "missingMetaCount": 0 },
+    "webMobileBuildFinishedLocal": "2026-08-13T12:13:17+08:00"
+  }
+}

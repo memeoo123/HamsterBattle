@@ -35,7 +35,7 @@ Primary recovered sources:
 Therefore:
 
 - the zero-angle pose is not itself a contact; the first completed quarter targets direction index 1;
-- core phase continues during preparation and into battle;
+- core phase remains parked during preparation and starts from zero at battle entry (2026-08-13 competitor-observation correction);
 - an occupied contact during preparation still incurs the 200 ms pause, but adds no worker progress;
 - the first in-battle contact depends on when the player starts the round and cannot be hard-reset to a fixed side.
 
@@ -75,7 +75,7 @@ Primary recovered sources:
 ## Reconstruction mapping and validation
 
 - `BattlefieldKernel.ts` now exposes the confirmed frame-stage contract, scheduled-monster RNG-domain order, and seeded LCG.
-- `CangshuGame.ts` schedules monsters before unit snapshots/actions, routes combat decisions through the seeded stream, keeps native position draws separate, and no longer resets the power-core phase at round start.
+- `CangshuGame.ts` schedules monsters before unit snapshots/actions, routes combat decisions through the seeded stream, keeps native position draws separate, and resets the parked power-core phase when each battle round starts.
 - `BattlefieldProduction.ts` advances one continuous quarter-lap clock in preparation and battle and preserves occupied-side delay outside battle without awarding progress.
 - `battlefield-kernel.test.mjs`: `116/116` assertions.
 - `battlefield-production.test.mjs`: `28/28` assertions.

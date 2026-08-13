@@ -773,7 +773,7 @@
     },
     "K-C044": {
       "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/battlefield-frame-rng-order.md",
-      "finding": "confirmed battle-controller frame order and same-frame spawn/bullet/disposal consequences; recovered the continuous preparation-to-battle power-core phase; separated native position draws from the BattleManager LCG with default seed 5 and constants 9301/49297/233280."
+      "finding": "confirmed battle-controller frame order and same-frame spawn/bullet/disposal consequences; the 2026-08-13 controlled competitor observation corrects the power core to preparation-static and battle-start behavior while retaining source-exact production parameters; separated native position draws from the BattleManager LCG with default seed 5 and constants 9301/49297/233280."
     },
     "K-C045": {
       "path": "targets/wxf9af2417e78ce07a/18/evidence/runtime/battlefield-cross-scheduler-boundary.md",

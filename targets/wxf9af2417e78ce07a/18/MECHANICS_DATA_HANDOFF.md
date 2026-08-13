@@ -141,7 +141,7 @@ Updated: 2026-08-07
   star-gated consumers and all three H11 rows: `240/240`; combat kernel including H02 split-shot selection and barrage timing/disconnect, H03 transform duration/immunity/runtime attribute direction plus laser timing/rectangle selection, H04 kill-fly gating and shield-wall timing/order, lazy RNG, H12's 20000 critical
   factor, H13's 2/4/6 bounce limits, popcorn compounding and the last-missile disconnect:
   frame-stage order, native/seeded RNG separation and the recovered LCG: `116/116`;
-  production clock including preparation carry-over and occupied-contact delay: `28/28`.
+  production clock including preparation-static gating, battle-start reset, and occupied-contact delay: `51/51`.
 - Creator 3.8.8 TypeScript (`--noEmit --skipLibCheck true`): pass.
 - Battlefield state schema validation: pass.
 - The successful numbers do not close evidence, deterministic, integration, or matched-
@@ -155,7 +155,7 @@ Updated: 2026-08-07
      H01/H02/H03/H04/H11/H12/H13 families. All 53 rows are modeled in 41 mutually
      exclusive groups, including two evidence-confirmed runtime no-ops.
    - Battle-controller same-frame ordering, scheduled-monster native/seeded RNG order and
-     the continuous preparation-to-battle core phase are now recovered and tested.
+     the preparation-static and battle-start core phase are now recovered and tested.
    - Next: continue through remaining condition handlers; no currently known represented-
      family effect row remains unrouted.
 2. **Account-derived mechanics data**

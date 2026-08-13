@@ -2,6 +2,10 @@ export const WORKER_POWER_MAX = 100;
 export const POWER_LAP_SECONDS = 1;
 export const POWER_CONTACT_DELAY_SECONDS = 0.2;
 export const POWER_QUARTER_LAP_SECONDS = POWER_LAP_SECONDS / 4;
+// Presentation is intentionally slower than the production contact clock.
+// The competitor observation supplied on 2026-08-13 shows the center rotor
+// parked during preparation and making a calm four-second lap in battle.
+export const POWER_CORE_VISUAL_LAP_SECONDS = 4;
 export const WORKER_COMPLETE_ANIMATION_SECONDS = 0.25;
 export const HAMSTER_SPAWN_FLIGHT_SECONDS = 0.5;
 export const BATTLE_SPEED_UP_MULTIPLE = 1.5;
@@ -37,20 +41,16 @@ export function gearRotationAngleDegrees(
     return baseAngle + (parity ? 1 : -1) * GEAR_ROTATION_DEGREES * progress;
 }
 
-// BrickShowBaseCom rotates the power-core panel in quarter laps and pauses on
-// an occupied side before starting the next quarter. nextDirection points at
-// the side the panel is currently travelling towards; any time beyond the
-// scheduled quarter is therefore the decoded occupied-side pause.
-export function powerCoreRotationAngleDegrees(
-    nextDirection: 0 | 1 | 2 | 3,
-    remainingSeconds: number,
-    quarterSeconds = POWER_QUARTER_LAP_SECONDS,
+// The visible center rotor is deliberately decoupled from the faster source
+// production contacts. Phase gating is handled by CangshuGame; this pure
+// helper only maps elapsed battle time onto the calibrated visual lap.
+export function powerCoreBattleRotationAngleDegrees(
+    battleElapsedSeconds: number,
+    lapSeconds = POWER_CORE_VISUAL_LAP_SECONDS,
 ): number {
-    const safeQuarter = quarterSeconds > 0 ? quarterSeconds : POWER_QUARTER_LAP_SECONDS;
-    const completedDirection = (nextDirection + 3) % 4;
-    const rotationRemaining = Math.min(safeQuarter, Math.max(0, remainingSeconds));
-    const progress = 1 - rotationRemaining / safeQuarter;
-    return (completedDirection * 90 + progress * 90) % 360;
+    const safeLap = lapSeconds > 0 ? lapSeconds : POWER_CORE_VISUAL_LAP_SECONDS;
+    const normalizedElapsed = Math.max(0, battleElapsedSeconds) % safeLap;
+    return normalizedElapsed / safeLap * 360;
 }
 
 export type PresentationDepthSource = { uid: number; y: number };
@@ -73,9 +73,9 @@ export type PowerCoreContact = {
     occupied: boolean;
 };
 
-// BrickShowBaseCom starts at its zero-angle pose, then contacts the side at the
-// completed quarter-lap index. Its GameTimer tween continues across preparation
-// and battle; only ShowNodeCom suppresses worker progress outside BATTLE.
+// The production clock starts at the zero-angle pose when battle begins, then
+// contacts the side at the completed quarter-lap index. Preparation keeps both
+// this clock and the center-rotor presentation parked.
 export function advancePowerCoreClock(
     state: PowerCoreClockState,
     elapsedSeconds: number,

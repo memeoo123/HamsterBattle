@@ -75,7 +75,7 @@ import {
     BATTLE_SPEED_UP_MULTIPLE,
     connectedGearUidsAtCoreSide,
     gearRotationAngleDegrees,
-    powerCoreRotationAngleDegrees,
+    powerCoreBattleRotationAngleDegrees,
     HAMSTER_SPAWN_FLIGHT_SECONDS,
     isGearDirectlyAdjacentToCore,
     P01_ROUND_START_PRODUCTIVITY_SECONDS,
@@ -1776,7 +1776,6 @@ export class CangshuGame extends Component {
     private freeRefreshUsed = false;
     private powerDirection: 0 | 1 | 2 | 3 = 1;
     private powerTimer = POWER_QUARTER_LAP_SECONDS;
-    private powerVisualQuarterSeconds = POWER_QUARTER_LAP_SECONDS;
     private powerCoreModelElapsed = 0;
     private powerSkillRemaining = 0;
     private powerRoleEnergy = 0;
@@ -3269,7 +3268,6 @@ export class CangshuGame extends Component {
         this.freeRefreshUsed = false;
         this.powerDirection = 1;
         this.powerTimer = POWER_QUARTER_LAP_SECONDS;
-        this.powerVisualQuarterSeconds = POWER_QUARTER_LAP_SECONDS;
         this.powerCoreModelElapsed = 0;
         this.powerSkillRemaining = 0;
         this.powerRoleEnergy = 0;
@@ -3342,9 +3340,14 @@ export class CangshuGame extends Component {
                 simulationDt = Math.min(simulationDt, Math.max(0, DEVELOPED_BATTLE_ELAPSED_SECONDS - this.roundClock));
                 if (simulationDt === 0) this.paused = true;
             }
-            if (!this.paused && (this.phase === 'deploy' || this.phase === 'battle')) {
-                this.stepPowerProduction(simulationDt, this.phase === 'battle');
+            if (!this.paused && this.phase === 'battle') {
+                this.stepPowerProduction(simulationDt, true);
                 this.stepGearRotations(simulationDt);
+            }
+            if (this.phase !== 'battle') {
+                this.powerCoreModelElapsed = 0;
+                const powerCore = this.gears.find((gear) => gear.id === 'P01');
+                if (powerCore) this.applyPowerCorePresentation(powerCore);
             }
             if (this.phase === 'battle' && !this.paused) this.stepBattle(simulationDt);
             if (freezeDevelopedBattle && this.roundClock >= DEVELOPED_BATTLE_ELAPSED_SECONDS) this.paused = true;
@@ -4652,6 +4655,9 @@ export class CangshuGame extends Component {
         }
         this.phase = 'battle';
         this.paused = false;
+        this.powerDirection = 1;
+        this.powerTimer = POWER_QUARTER_LAP_SECONDS;
+        this.powerCoreModelElapsed = 0;
         this.applyRoundStartHomeHeal();
         this.clearCandidates();
         this.applyPhaseLayout();
@@ -6711,9 +6717,6 @@ export class CangshuGame extends Component {
         );
         this.powerDirection = advanced.state.nextDirection;
         this.powerTimer = advanced.state.remainingSeconds;
-        if (advanced.contacts.length > 0) {
-            this.powerVisualQuarterSeconds = POWER_QUARTER_LAP_SECONDS / Math.max(0.01, productivity);
-        }
         this.powerCoreModelElapsed += Math.max(0, dt);
         this.applyPowerCorePresentation(core);
         this.powerContactCount += advanced.contacts.length;
@@ -6800,14 +6803,17 @@ export class CangshuGame extends Component {
     private applyPowerCorePresentation(core: Gear): void {
         const rotor = core.node.getChildByName('PowerCoreRotor');
         if (rotor) {
-            rotor.angle = powerCoreRotationAngleDegrees(
-                this.powerDirection,
-                this.powerTimer,
-                this.powerVisualQuarterSeconds,
-            );
+            rotor.angle = this.phase === 'battle'
+                ? powerCoreBattleRotationAngleDegrees(this.powerCoreModelElapsed)
+                : 0;
         }
         const hamster = core.node.getChildByName('PowerCoreHamster');
         if (hamster) {
+            if (this.phase !== 'battle') {
+                hamster.setPosition(0, 7);
+                hamster.setScale(1, 1, 1);
+                return;
+            }
             const phase = this.powerCoreModelElapsed * Math.PI * 2 / 0.58;
             hamster.setPosition(Math.sin(phase * 0.5) * 1.5, 7 + Math.sin(phase) * 4);
             const squash = Math.sin(phase + Math.PI / 2) * 0.025;

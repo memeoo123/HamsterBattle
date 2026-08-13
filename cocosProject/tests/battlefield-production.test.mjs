@@ -10,7 +10,8 @@ import {
     HAMSTER_SPAWN_FLIGHT_SECONDS,
     isGearDirectlyAdjacentToCore,
     p01RoundStartProductivity,
-    powerCoreRotationAngleDegrees,
+    powerCoreBattleRotationAngleDegrees,
+    POWER_CORE_VISUAL_LAP_SECONDS,
     POWER_CONTACT_DELAY_SECONDS,
     POWER_QUARTER_LAP_SECONDS,
     powerContactsByGear,
@@ -66,11 +67,11 @@ assert.equal(gearRotationParity(11, 17), 1, 'an adjacent cell alternates to the 
 assert.equal(gearRotationAngleDegrees(10, 17, 0.1, 0.2), -180, 'an even cell reaches a negative half turn halfway through the decoded delay');
 assert.equal(gearRotationAngleDegrees(11, 17, 0.1, 0.2), 202.5, 'an adjacent cell reaches the opposite half turn from its 22.5-degree phase');
 assert.equal(gearRotationAngleDegrees(11, 17, 0.2, 0.2), 22.5, 'a completed revolution lands on its visually equivalent base phase');
-assert.equal(powerCoreRotationAngleDegrees(1, POWER_QUARTER_LAP_SECONDS), 0, 'the P01 panel starts from the zero-angle pose');
-assert.equal(powerCoreRotationAngleDegrees(1, POWER_QUARTER_LAP_SECONDS / 2), 45, 'the P01 panel visibly traverses its first quarter lap');
-assert.equal(powerCoreRotationAngleDegrees(2, POWER_QUARTER_LAP_SECONDS + POWER_CONTACT_DELAY_SECONDS), 90, 'an occupied-side delay holds the P01 panel on its completed quarter');
-assert.equal(powerCoreRotationAngleDegrees(2, POWER_QUARTER_LAP_SECONDS / 2), 135, 'the P01 panel resumes rotation after its occupied-side pause');
-assert.equal(powerCoreRotationAngleDegrees(0, 0), 0, 'the P01 panel wraps a completed revolution to zero degrees');
+assert.equal(POWER_CORE_VISUAL_LAP_SECONDS, 4, 'the center rotor uses the observed calm four-second visual lap');
+assert.equal(powerCoreBattleRotationAngleDegrees(0), 0, 'the P01 panel starts battle from the zero-angle pose');
+assert.equal(powerCoreBattleRotationAngleDegrees(1), 90, 'the P01 panel reaches one quarter after one battle second');
+assert.equal(powerCoreBattleRotationAngleDegrees(2), 180, 'the P01 panel reaches one half after two battle seconds');
+assert.equal(powerCoreBattleRotationAngleDegrees(4), 0, 'the P01 panel wraps after the four-second battle lap');
 assert.deepEqual(
     unitPresentationBackToFront([{ uid: 3, y: -30 }, { uid: 2, y: 24 }, { uid: 1, y: 24 }]),
     [1, 2, 3],
@@ -93,7 +94,7 @@ const continuedClock = advancePowerCoreClock(
     POWER_QUARTER_LAP_SECONDS + POWER_CONTACT_DELAY_SECONDS,
     () => false,
 );
-assert.deepEqual(continuedClock.contacts, [{ direction: 2, occupied: false }], 'the same clock state continues across a preparation-to-battle boundary');
+assert.deepEqual(continuedClock.contacts, [{ direction: 2, occupied: false }], 'the battle production clock continues across consecutive contact segments');
 
 const boostedQuarter = advancePowerCoreClock(
     { nextDirection: 1, remainingSeconds: POWER_QUARTER_LAP_SECONDS },
@@ -107,7 +108,7 @@ assert.ok(
 );
 
 const gameSource = fs.readFileSync(new URL('../assets/scripts/CangshuGame.ts', import.meta.url), 'utf8');
-const productionStep = gameSource.indexOf('this.stepPowerProduction(simulationDt, this.phase === \'battle\');');
+const productionStep = gameSource.indexOf('this.stepPowerProduction(simulationDt, true);');
 const battleStep = gameSource.indexOf("if (this.phase === 'battle' && !this.paused) this.stepBattle(simulationDt);");
 assert.ok(
     productionStep >= 0 && battleStep > productionStep,
@@ -118,5 +119,8 @@ assert.match(gameSource, /node\.on\(Node\.EventType\.TOUCH_START[\s\S]{0,420}TOU
 assert.doesNotMatch(gameSource, /if \(id !== 'P01'\)\s*\{\s*node\.on/, 'P01 is no longer excluded from dragging');
 assert.match(gameSource, /id === 'P01' \? new Set<number>\(\) : new Set\(\[this\.currentPowerIndex\(\)\]\)/, 'moving P01 can target any unlocked cell while other gears reserve its live cell');
 assert.match(gameSource, /PowerCoreRotor[\s\S]{0,1000}PowerCoreHamster/, 'the rotating power panel and independently moving hamster are separate presentation nodes');
+assert.match(gameSource, /if \(!this\.paused && this\.phase === 'battle'\)[\s\S]{0,180}stepPowerProduction/, 'the power clock starts only in battle');
+assert.doesNotMatch(gameSource, /this\.phase === 'deploy' \|\| this\.phase === 'battle'/, 'preparation no longer advances the center rotor or production clock');
+assert.match(gameSource, /this\.phase === 'battle'[\s\S]{0,120}powerCoreBattleRotationAngleDegrees/, 'the center rotor applies its slowed visual clock only in battle');
 
-console.log('battlefield production: 48 assertions passed');
+console.log('battlefield production: 51 assertions passed');
