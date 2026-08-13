@@ -6,6 +6,15 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const game = readFileSync(resolve(root, 'assets/scripts/CangshuGame.ts'), 'utf8');
+assert.doesNotMatch(
+  game,
+  /\bsatisfies\b/,
+  'Creator 3.8.8 project scripts avoid unsupported TypeScript satisfies syntax',
+);
+assert.match(game, /canvas\.dataset\.visualCatalogLoaded/, 'enemy catalog exposes completed Spine loads to browser validation');
+assert.match(game, /canvas\.dataset\.visualCatalogFailed/, 'enemy catalog exposes failed Spine loads to browser validation');
+assert.match(game, /canvas\.dataset\.unitFallbacks/, 'live battles expose units still displaying fallback graphics');
+assert.match(game, /syncVisualCatalogContractState/, 'enemy catalog synchronizes resource evidence without requiring account initialization');
 const roster = readFileSync(resolve(root, 'assets/scripts/VisualRoster.ts'), 'utf8');
 
 const backgrounds = {

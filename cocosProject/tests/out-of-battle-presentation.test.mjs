@@ -55,5 +55,8 @@ assert.doesNotMatch(source, /head atlas failed.*invalid node/,
     'an intentionally destroyed asynchronous portrait target is not logged as an asset failure');
 assert.doesNotMatch(source, /enemy asset failed.*invalid node/,
     'an intentionally destroyed asynchronous gallery target is not logged as an asset failure');
+assert.match(source, /newlyUnlockedBagLikeFusions\(previousStars, this\.accountProfile\.stars\)/,
+    'cultivation reports when a hero-star upgrade unlocks a recovered fusion recipe');
+assert.match(source, /已解锁融合：/, 'the fusion unlock message is player-facing');
 
-console.log('out-of-battle presentation: 25 assertions passed');
+console.log('out-of-battle presentation: 27 assertions passed');

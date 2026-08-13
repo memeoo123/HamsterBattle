@@ -6,8 +6,9 @@ import { dirname, resolve } from 'node:path';
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const source = readFileSync(resolve(projectRoot, 'assets/scripts/CangshuGame.ts'), 'utf8');
 
-assert.match(source, /fusionValidation=\(tray\|placed\|battle\|late-tray\|late-placed\|late-battle\)/, 'fixture requires an explicit URL value');
+assert.match(source, /fusionValidation=\(merge\|tray\|placed\|battle\|late-tray\|late-placed\|late-battle\)/, 'fixture requires an explicit URL value');
 assert.match(source, /if \(fusionValidationMode\) this\.applyFusionValidationFixture/, 'normal URLs skip the fixture');
+assert.match(source, /this\.validationHeroStarOverrides = \{ H01: 2, H02: 2 \};\s+this\.replaceCandidates\(\['H0104', 'H0204'\]\)/, 'merge fixture exposes one eligible cross-family pair');
 assert.match(source, /: \['H0705', 'H0805', 'H0905'\]\)/, 'tray fixture includes the first fusion set');
 assert.match(source, /this\.addPlacedGear\('H0705', 1, 3\)/);
 assert.match(source, /this\.addPlacedGear\('H0805', 2, 2\)/);
@@ -24,4 +25,4 @@ assert.match(source, /canvas\.dataset\.fusionActiveCasts/, 'browser fixture expo
 assert.match(source, /canvas\.dataset\.fusionActiveHits/, 'browser fixture exposes active-skill hits');
 assert.match(source, /canvas\.dataset\.h15KillCoins/, 'browser fixture exposes H15 kill coins');
 
-console.log('fusion validation fixture: 17 assertions passed');
+console.log('fusion validation fixture: 18 assertions passed');

@@ -217,7 +217,12 @@ import {
     BagLikePrimarySkillId,
     BagLikeProducerProfile,
 } from './BagLikeUnitProgression';
-import { bagLikeFusionRecipe, bagLikeFusionRequirementsMet } from './BagLikeFusion';
+import {
+    bagLikeFusionMissingRequirements,
+    bagLikeFusionRecipe,
+    bagLikeFusionRequirementsMet,
+    newlyUnlockedBagLikeFusions,
+} from './BagLikeFusion';
 import {
     VISUAL_ENEMY_ROSTER,
     VISUAL_GEAR_ROSTER,
@@ -635,13 +640,13 @@ const MAIN_TAB_ICON_FRAMES: Readonly<Record<OutOfBattleTabName, BagLikeAtlasFram
 
 // MainPageTabItemConfig rows 6-11 bind these exact resource paths to the
 // out-of-battle side entries. Geometry is decoded from image/main.
-const MAIN_SIDE_ICON_FRAMES = {
+const MAIN_SIDE_ICON_FRAMES: Readonly<Record<string, BagLikeAtlasFrame>> = {
     community: { rect: new Rect(169, 315, 78, 82), sourceSize: new Size(90, 90) },
     settings: { rect: new Rect(95, 309, 72, 74), sourceSize: new Size(90, 90), offset: [-2, 2] as const },
     dailyTask: { rect: new Rect(177, 399, 62, 70), sourceSize: new Size(90, 90), offset: [-2, 2] as const },
     sevenDay: { rect: new Rect(93, 231, 74, 76), sourceSize: new Size(90, 90) },
     invitation: { rect: new Rect(95, 143, 88, 86), sourceSize: new Size(90, 90) },
-} as const satisfies Readonly<Record<string, BagLikeAtlasFrame>>;
+};
 
 // Normalized from the original 820x1542 gameplay crop to the 750x1334
 // reconstruction canvas. Keep this geometry centralized so a fresh visual
@@ -1775,6 +1780,8 @@ export class CangshuGame extends Component {
     private workerApplyCount = 0;
     private powerMissingGearCount = 0;
     private powerMissingConfigCount = 0;
+    private visualCatalogLoadedCount = 0;
+    private visualCatalogFailedCount = 0;
     private speed = 1;
     private paused = false;
     private failedAttempts = 0;
@@ -1848,6 +1855,7 @@ export class CangshuGame extends Component {
     private resultBodyLabel!: Label;
     private resultNextButtonLabel!: Label;
     private tipLabel!: Label;
+    private fusionGuideLabel!: Label;
     private dragGear: Gear | null = null;
     private dragOrigin = { row: 0, col: 0, x: 0, y: 0, scale: 1, location: 'grid' as GearLocation };
     private dragTouchOffset = { x: 0, y: 0 };
@@ -3075,6 +3083,7 @@ export class CangshuGame extends Component {
     }
 
     private upgradeCultivationHero(family: BagLikeAccountHeroFamily): void {
+        const previousStars = { ...this.accountProfile.stars };
         const result = tryUpgradeBagLikeAccountHero(this.accountProfile, family);
         if (!result.upgraded) {
             const message = result.reason === 'locked'
@@ -3089,7 +3098,11 @@ export class CangshuGame extends Component {
         }
         this.accountProfile = result.profile;
         this.persistAccountProfile(false);
-        this.showCultivationScene(`${ACCOUNT_HERO_NAMES[family]}升至 ${this.accountProfile.stars[family]} 星`);
+        const unlockedFusions = newlyUnlockedBagLikeFusions(previousStars, this.accountProfile.stars);
+        const fusionMessage = unlockedFusions.length > 0
+            ? `；已解锁融合：${unlockedFusions.map((recipe) => GEARS[recipe.resultId as GearId].name).join('、')}`
+            : '';
+        this.showCultivationScene(`${ACCOUNT_HERO_NAMES[family]}升至 ${this.accountProfile.stars[family]} 星${fusionMessage}`);
     }
 
     private showLevelSelection(): void {
@@ -3454,6 +3467,20 @@ export class CangshuGame extends Component {
             .filter((unit) => unit.team === 'enemy' && !unit.dead)
             .map((unit) => `${unit.cfg.id}#${unit.uid}@${unit.x.toFixed(1)},${unit.y.toFixed(1)}`)
             .join(';');
+        canvas.dataset.unitFallbacks = this.units
+            .filter((unit) => !unit.dead && unit.fallback.enabled)
+            .map((unit) => `${unit.team}:${unit.cfg.id}#${unit.uid}`)
+            .join(';');
+        canvas.dataset.visualCatalogLoaded = String(this.visualCatalogLoadedCount);
+        canvas.dataset.visualCatalogFailed = String(this.visualCatalogFailedCount);
+    }
+
+    private syncVisualCatalogContractState(): void {
+        if (typeof document === 'undefined' || typeof document.querySelector !== 'function') return;
+        const canvas = document.querySelector('canvas');
+        if (!canvas || !canvas.dataset) return;
+        canvas.dataset.visualCatalogLoaded = String(this.visualCatalogLoadedCount);
+        canvas.dataset.visualCatalogFailed = String(this.visualCatalogFailedCount);
     }
 
     private showLoadError(message: string): void {
@@ -3529,10 +3556,10 @@ export class CangshuGame extends Component {
         }
     }
 
-    private fusionValidationMode(): 'tray' | 'placed' | 'battle' | 'late-tray' | 'late-placed' | 'late-battle' | null {
+    private fusionValidationMode(): 'merge' | 'tray' | 'placed' | 'battle' | 'late-tray' | 'late-placed' | 'late-battle' | null {
         if (typeof window === 'undefined') return null;
-        const match = /(?:^|[?&])fusionValidation=(tray|placed|battle|late-tray|late-placed|late-battle)(?:&|$)/.exec(window.location.search);
-        return match ? match[1] as 'tray' | 'placed' | 'battle' | 'late-tray' | 'late-placed' | 'late-battle' : null;
+        const match = /(?:^|[?&])fusionValidation=(merge|tray|placed|battle|late-tray|late-placed|late-battle)(?:&|$)/.exec(window.location.search);
+        return match ? match[1] as 'merge' | 'tray' | 'placed' | 'battle' | 'late-tray' | 'late-placed' | 'late-battle' : null;
     }
 
     private traitValidationEnabled(): boolean {
@@ -3610,6 +3637,8 @@ export class CangshuGame extends Component {
             // an asset failure, and must not surface as a runtime error.
             if (!modelNode.isValid) return;
             if (error) {
+                this.visualCatalogFailedCount += 1;
+                this.syncVisualCatalogContractState();
                 console.error(`[visual-catalog] enemy asset failed ${entry.id} ${entry.spinePath}: ${error.message}`);
                 return;
             }
@@ -3623,6 +3652,8 @@ export class CangshuGame extends Component {
             } catch {
                 // Valid 3.8.99 skeleton data still renders its setup pose.
             }
+            this.visualCatalogLoadedCount += 1;
+            this.syncVisualCatalogContractState();
         });
     }
 
@@ -3726,7 +3757,7 @@ export class CangshuGame extends Component {
 
     // Explicit browser-only visual fixture. It is unreachable in the normal
     // game URL and does not alter target-account star defaults or drop tables.
-    private applyFusionValidationFixture(mode: 'tray' | 'placed' | 'battle' | 'late-tray' | 'late-placed' | 'late-battle'): void {
+    private applyFusionValidationFixture(mode: 'merge' | 'tray' | 'placed' | 'battle' | 'late-tray' | 'late-placed' | 'late-battle'): void {
         this.clearCandidates();
         const core = this.gears.find((gear) => gear.id === 'P01');
         for (const gear of this.gears) {
@@ -3734,6 +3765,12 @@ export class CangshuGame extends Component {
         }
         this.gears = core ? [core] : [];
         this.refreshPlacedWheelHomeHp();
+
+        if (mode === 'merge') {
+            this.validationHeroStarOverrides = { H01: 2, H02: 2 };
+            this.replaceCandidates(['H0104', 'H0204']);
+            return;
+        }
 
         const lateFusion = mode.startsWith('late-');
         if (mode === 'tray' || mode === 'late-tray') {
@@ -3864,6 +3901,17 @@ export class CangshuGame extends Component {
             '先把候选齿轮拖入背包；刷新会替换尚未摆放的候选',
             15,
             CREAM,
+        );
+        this.fusionGuideLabel = this.makeLabel(
+            'FusionGuide',
+            this.prepareLayer,
+            92,
+            -486,
+            500,
+            30,
+            '融合：相同齿轮可升级；两件四级伙伴可融合为红色五级齿轮',
+            14,
+            new Color(255, 218, 102, 255),
         );
 
         this.adRefreshLabel = this.makeButton('AdRefresh', this.prepareLayer, -235.5, -598.5, 215, 103, '广告刷新 1/1', () => this.claimFreeBatch());
@@ -4459,7 +4507,8 @@ export class CangshuGame extends Component {
         }
 
         this.candidateLayer.active = layout.showPreparationControls;
-        this.tipLabel.node.active = false;
+        this.tipLabel.node.active = layout.showPreparationControls;
+        this.fusionGuideLabel.node.active = layout.showPreparationControls;
         this.adRefreshLabel.node.parent!.active = layout.showPreparationControls;
         this.refreshLabel.node.parent!.active = layout.showPreparationControls;
         this.actionLabel.node.parent!.active = layout.showPreparationControls;
@@ -5931,6 +5980,7 @@ export class CangshuGame extends Component {
         };
         gear.node.setSiblingIndex(this.prepareLayer.children.length - 1);
         gear.node.setScale(1.05, 1.05, 1);
+        this.showFusionPartnerHints(gear);
     }
 
     private moveGearDrag(gear: Gear, event: EventTouch): void {
@@ -5942,6 +5992,7 @@ export class CangshuGame extends Component {
 
     private endGearDrag(gear: Gear, event: EventTouch): void {
         if (this.dragGear !== gear) return;
+        this.clearFusionPartnerHints();
         const p = event.getUILocation();
         const local = this.node.getComponent(UITransform)!.convertToNodeSpaceAR(new Vec3(p.x, p.y, 0));
         const dropX = local.x - this.dragTouchOffset.x;
@@ -6010,11 +6061,56 @@ export class CangshuGame extends Component {
 
     private cancelGearDrag(gear: Gear): void {
         if (this.dragGear !== gear) return;
+        this.clearFusionPartnerHints();
         gear.row = this.dragOrigin.row;
         gear.col = this.dragOrigin.col;
         gear.node.setPosition(this.dragOrigin.x, this.dragOrigin.y);
         gear.node.setScale(this.dragOrigin.scale, this.dragOrigin.scale, 1);
         this.dragGear = null;
+    }
+
+    private clearFusionPartnerHints(): void {
+        for (const gear of [...this.gears, ...this.candidates]) {
+            gear.node.getChildByName('FusionPartnerHint')?.destroy();
+        }
+    }
+
+    private showFusionPartnerHints(dragged: Gear): void {
+        this.clearFusionPartnerHints();
+        const stars = this.currentHeroStars();
+        for (const target of [...this.gears, ...this.candidates]) {
+            if (target === dragged) continue;
+            const recipe = bagLikeFusionRecipe(dragged.id, target.id);
+            if (!recipe) continue;
+            const footprint = this.gearFootprint(target.id);
+            const hint = this.makeNode(
+                'FusionPartnerHint',
+                target.node,
+                (footprint.columns - 1) * GRID_CELL / 2,
+                -(footprint.rows - 1) * GRID_CELL / 2,
+                footprint.columns * GRID_CELL,
+                footprint.rows * GRID_CELL,
+            );
+            const graphics = hint.addComponent(Graphics);
+            const unlocked = bagLikeFusionRequirementsMet(recipe, stars);
+            graphics.strokeColor = unlocked ? new Color(255, 223, 75, 255) : new Color(224, 102, 102, 255);
+            graphics.lineWidth = 7;
+            graphics.roundRect(
+                -footprint.columns * GRID_CELL / 2 + 5,
+                -footprint.rows * GRID_CELL / 2 + 5,
+                footprint.columns * GRID_CELL - 10,
+                footprint.rows * GRID_CELL - 10,
+                18,
+            );
+            graphics.stroke();
+            const missing = bagLikeFusionMissingRequirements(recipe, stars);
+            const text = unlocked
+                ? `可融合 → ${GEARS[recipe.resultId as GearId].name}`
+                : `需 ${Object.keys(missing).map((heroId) => `${heroId} ${missing[heroId]}星`).join('、')}`;
+            const label = this.makeLabel('FusionPartnerText', hint, 0, 0, 190, 42, text, 16, unlocked ? GOLD : WHITE);
+            this.applyOriginalOutline(label, new Color(45, 25, 20, 255), 3);
+            hint.setSiblingIndex(target.node.children.length - 1);
+        }
     }
 
     private findMergeTarget(dragged: Gear, x: number, y: number): Gear | null {

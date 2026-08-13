@@ -41,3 +41,25 @@ export function resolveBagLikeFusion(
     const recipe = bagLikeFusionRecipe(materialA, materialB);
     return recipe && bagLikeFusionRequirementsMet(recipe, heroStars) ? recipe.resultId : null;
 }
+
+export function bagLikeFusionMissingRequirements(
+    recipe: BagLikeFusionRecipe,
+    heroStars: BagLikeHeroStars,
+): Readonly<Record<string, number>> {
+    const missing: Record<string, number> = {};
+    for (const heroId of Object.keys(recipe.heroStarRequirements)) {
+        const required = recipe.heroStarRequirements[heroId];
+        if ((heroStars[heroId] || 0) < required) missing[heroId] = required;
+    }
+    return missing;
+}
+
+export function newlyUnlockedBagLikeFusions(
+    previousHeroStars: BagLikeHeroStars,
+    nextHeroStars: BagLikeHeroStars,
+): readonly BagLikeFusionRecipe[] {
+    return BAGLIKE_LEVEL5_FUSIONS.filter((recipe) => (
+        !bagLikeFusionRequirementsMet(recipe, previousHeroStars)
+        && bagLikeFusionRequirementsMet(recipe, nextHeroStars)
+    ));
+}

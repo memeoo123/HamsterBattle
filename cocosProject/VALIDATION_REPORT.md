@@ -27,7 +27,7 @@
 | Production combat kernel | Pass | `116/116` assertions；含原版伤害、攻速/失败补偿、严格范围、四叉树等距优先、归一化移动、基地路径、英雄分离碰撞、完整战斗帧阶段、同帧刷怪/弹丸/销毁顺序、原生坐标随机与种子战斗随机分域、`9301/49297/233280` LCG、弹丸实时攻击/死亡快照边界、H02 分裂射击概率/随机目标/施法者半径、H02 弹幕延迟队列/重复 600 ms 行为/施法边界及 3500 ms 断链、H03 变形持续/免控/刷新/`DMG_INC` 方向、H03 激光的 300 ms 行为/1 秒施法/4 秒冷却与 100×300 前向矩形、H04/H09 普攻击飞的概率边界及 Boss/技能类型惰性门禁、H04/H09 盾墙的周期/持续/减伤/反伤顺序、H09/H13 的 2/4/6 次近邻弹射上限、H13 爆米花逐跳 10% 复利及末跳弹丸断链、强制/属性暴击、附加暴伤、H12 20000 暴击倍率、闪避优先级及惰性暴击 RNG |
 | Production mechanism kernel | Pass | `28/28` assertions；含准备到战斗连续核心相位、方向 1 首次完成接触、占用侧 200 ms 停顿、连通块、多侧核心接触、产率、满 100、余数、输出延迟、1.5 倍速、直接相邻/仅连通边界，以及相邻效率的小数进度与显示率 |
 | Unit level progression | Pass (numeric + asset import) | `415/415`：除既有等级/资源链外，新增验证 H05/H06/H16 产兵、H14/H17 一次性齿轮技能、H11/H12/H13/H14/H17 的 WHEEL HP 与齿轮等级倍率，以及 H1005/H1505/H1805 的精确形状、属性、模型/头像映射和主技能；3 星 H13 的 363 HP 与 1004 基础 500 精确组成参考 863 |
-| Late fusion heroes | Pass (mechanics + original presentation + live browser) | `H1005/H1505/H1805` 机制保持通过，新增 16 项原始表现契约。H1005 已接入 R1004 飞碟鼠 Spine、H27_S1 弹体、H27_S2 下层核弹及五次 `bullet_hedan`；H1505 接入 H15_S1 十六帧冲撞图；H1805 接入 R1005 哥吱拉 Spine。新鲜 Web Mobile `late-battle` 实机 4 次出兵、1 次主动施放、2 次主动命中、4 次 H10 主弹体发射/2 次命中，缺失齿轮/配置均为 0、无 warning/error。resources3 无 H18_S1 资源实体，未伪造缺失弹体 |
+| Late fusion heroes | Pass (mechanics + original presentation + live browser) | `H1005/H1505/H1805` 机制保持通过，新增原始表现与浏览器契约。H1005 已接入 R1004 飞碟鼠 Spine、H27_S1 弹体、H27_S2 下层核弹及五次 `bullet_hedan`；H1505 接入 H15_S1 十六帧冲撞图；H1805 接入 R1005 哥吱拉 Spine。新鲜 Web Mobile `late-battle` 实机 4 次出兵、2 次主动施放/命中、6 次 H10 主弹体发射/2 次命中，缺失齿轮/配置均为 0；全部存活单位 `unitFallbacks` 为空且无 warning/error。resources3 无 H18_S1 资源实体，未伪造缺失弹体 |
 | H01 final-kill attack stacking | Pass (star-1 baseline; star-7 gated) | 特性池 `240/240`：`RG_H01_abl03_eff01` 在 H01 星 7 时开放一次，原表范围为 H01/H07。v18 死亡事件只携带最终击杀者 ID，并无助攻列表，因此卡面“参与击败”实际仅由最后一击触发；每次给 H01/H07 的共享实时属性层增加 `ATK_INC=200`（+2%），最多 30 层（+60%），当前与后续单位均生效，普通回合切换不清除，整局重开归零。目标账号 H01 实际星级仍待证明 |
 | H02 split-shot consumers | Pass (star-1 baseline; star-3/5/10 gated) | 特性池 `240/240`、战斗内核 `116/116`：三条同组能力按 H02 星 3/5/10 只开放最高合格行，概率为 3000/5000/10000，范围 H02/H07；被动在主技能动作前判定，从施法者半径 250 内随机选择一个敌人（主目标仍合法），发射独立速度 700、10000 比率弹体。默认 H02 星级 1 不开放高星卡；目标账号实际星级仍待证明 |
 | H02/H07 barrage-time consumers | Pass (star-1 baseline; star-7/8 gated) | 特性池 `240/240`、战斗内核 `116/116`：星 7/8 同组能力只开放最高合格行并把 `2001_5/2001_6` 快照到后续 H02/H07。首次 6 秒后施放，冷却在首个行为触发时开始；两档施法 2/3 秒，分别实际发射 9/6 枚速度 700、5000 比率弹丸。星 8 配置的 3500 ms 第七发在 3000 ms 施法结束时被清除；孤立的 3/4 秒 `ATK_SPD=30000` Buff 组没有入边，因此不凭卡面接入。逐发 `H29_S1` 原始表现已接入；目标账号 H02 实际星级仍待证明 |
@@ -55,8 +55,8 @@
 | Trait presentation | Pass (source + recovered art + fresh-build fixture) | `21/21`：发展态夹具精确锁定等级 2 与三张能力；原版 `bagLikeBuff` 丝带/卡框/推荐角标、common 蓝紫按钮/播放图标和 `image/effect` 的 `buff_0027 / buff_0036 / buff_0006` 已绑定。说明文字使用恢复字体和 RichText，复现原表绿色强调与原图断行；新的 750×1334 Web Mobile 截图无控制台错误。证据见 `evidence/visual/reconstruction/2026-08-09-trait-richtext/manifest.json` |
 | Preparation presentation | Pass (global geometry and controls) | `15/15`：归一化顶部 HUD、血条、背包板、棋盘、候选和底部按钮锚点保持匹配；恢复“获取格子 ×3”、广告刷新提示、15 银币费用和 `刷新 / 刷新 / 开战`，隐藏准备期产兵条并移除遮挡货币栏的重建主页按钮。新鲜 750×1334 Web Mobile 截图无控制台错误；证据见 `evidence/visual/reconstruction/2026-08-09-preparation-controls/manifest.json` |
 | Asset metadata | Pass | 240 asset files，missing meta `0`；新增雪山/火山背景、H05/H06/H16 共 12 套后期 Spine 与对应证据清单均由 Creator 3.8.8 正式导入。资源门禁覆盖 25 种敌人、12 套后期英雄、2 张背景和 5 个关外侧栏图标 |
-| TypeScript | Pass (project scripts) | 2026-08-11 使用 Creator 3.8.8 随附 TypeScript、工程 `tsconfig.json`、`--noEmit` 与 `--skipLibCheck true` 检查通过；不抑制项目脚本错误 |
-| Web build smoke | Pass (actual 200-level + activity + recovered-resource artifact) | 2026-08-12 18:59:56 的新鲜 `web-mobile` 产物完成；1005 雪山、1009 火山与 25 种敌人画廊运行资源加载均通过，0 新 warning/error。既有广告、主页、活动、1003/1100/1200 长跑证据保持有效 |
+| TypeScript | Pass (project scripts) | 2026-08-12 使用 Creator 3.8.8 随附 TypeScript、工程 `tsconfig.json`、`--noEmit` 与 `--skipLibCheck true` 检查通过；移除其解析器不支持的 `satisfies` 并加入兼容性门禁，不抑制项目脚本错误 |
+| Web build smoke | Pass (actual 200-level + activity + recovered-resource artifact) | 2026-08-12 23:42:06 的新鲜 `web-mobile` 产物完成；1005 雪山、1009 火山与 25 种敌人画廊运行资源加载均通过。自动图鉴契约记录 `25 loaded / 0 failed / 0 console errors`；既有广告、主页、活动、1003/1100/1200 长跑证据保持有效 |
 | Creator project open | Pass | 使用 Creator 3.8.8 隐藏 CLI 完成两次有界 Web Mobile 构建；首次发现每日挑战返回缺口，修复后的增量构建 7 秒完成且命令自行退出。未发现或终止用户既有 Creator 会话 |
 | Main startup rendering | Pass | 修复同节点重复 Renderable2D 后，显式 Main UUID 预览显示完整布阵首屏且无新增同类警告 |
 | Post-change interactive preview | Partial | 五级候选、棋盘和产兵显式夹具已完成实机截图与日志验证，并修复战斗 `BackpackPanel` 遮挡战场回归；仍需用有证据的账号星级执行正常拖拽融合完整点击测试 |
@@ -79,7 +79,7 @@
 - 实机长跑：1003 `10/10`（876.781 s）、1100 `15/15`（1652.598 s）、1200 `15/15`（1289.538 s）均胜利，缺失 gear/config 均为 0。
 - 特殊模式：每日 `10/10`、199.176 s；无尽 293.182 s 摧毁敌方兵营，539 击杀、2915 金币。后期账号/角色夹具仅走恢复的进度、刷新、放置和合成公式，结算恢复且不落盘；直达普通长跑也不会再污染玩家关卡存档。
 - 五级融合最终实机：`P01,H1005,H1505,H1805`，三头像 loaded，H10 主弹体 `6/2` 发射/命中，融合主动技 `2/2` 施放/命中，warning/error 为 0。
-- 最终 51/51 测试文件、200 关 / 2,978 波 / 54,816 刷怪项通过。Cocos 工程检查为 240 assets、0 missing meta、TypeScript 通过；最新 Web Mobile 构建时间 2026-08-12 18:59:56。
+- 最终 52/52 测试文件、200 关 / 2,978 波 / 54,816 刷怪项通过。Cocos 工程检查为 240 assets、0 missing meta、TypeScript 通过；最新 Web Mobile 构建时间 2026-08-12 23:42:06，25 种敌人 Spine 浏览器契约为 25/25。
 - 结构化证据：`targets/wxf9af2417e78ce07a/18/evidence/runtime/final-presentation-and-long-run-closure-2026-08-12/manifest.json`。
 
 ## Fidelity matrix

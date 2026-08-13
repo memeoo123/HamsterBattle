@@ -151,13 +151,13 @@
         },
         "assetImport": {
           "result": "pass",
-          "evidence": "cocosProject check: 181 assets, 0 missing meta",
-          "atUtc": "2026-08-11T04:05:53.703460+00:00"
+          "evidence": "Cocos project check: 240 assets, 0 missing meta; live enemy catalog: 25 loaded, 0 failed, 0 console errors.",
+          "atUtc": "2026-08-12T15:45:19.120448+00:00"
         },
         "typescript": {
           "result": "pass",
-          "evidence": "Creator 3.8.8 tsc --noEmit --skipLibCheck passed after out-of-battle secondary pages",
-          "atUtc": "2026-08-11T04:05:53.792058+00:00"
+          "evidence": "Creator 3.8.8 bundled TypeScript --noEmit passed; unsupported satisfies syntax removed and guarded.",
+          "atUtc": "2026-08-12T15:45:34.158538+00:00"
         },
         "visualBaseline": {
           "result": "pass",
@@ -176,8 +176,8 @@
         },
         "mechanicsData": {
           "result": "pass",
-          "evidence": "41/41 test files and golden cases 47/47",
-          "atUtc": "2026-08-11T04:05:53.880346+00:00"
+          "evidence": "Static suite: 200 levels, 2978 rounds, 54816 spawns passed; late-fusion live battle has empty unitFallbacks.",
+          "atUtc": "2026-08-12T15:45:19.220115+00:00"
         }
       },
       "history": [
@@ -1886,11 +1886,29 @@
           "event": "artifact",
           "kind": "validationReport",
           "atUtc": "2026-08-11T04:05:54.056948+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-12T15:45:19.120616+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-12T15:45:19.220304+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-12T15:45:34.158739+00:00"
         }
       ],
       "engineEvidence": "settings.37a11.json CocosEngine 3.8.2 + System.register business bundle"
     }
   },
   "createdAtUtc": "2026-07-31T10:06:44.358414+00:00",
-  "updatedAtUtc": "2026-08-12T09:32:47.856187+00:00"
+  "updatedAtUtc": "2026-08-12T15:45:34.158742+00:00"
 }

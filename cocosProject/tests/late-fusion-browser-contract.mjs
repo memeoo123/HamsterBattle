@@ -85,7 +85,8 @@ assert.ok(Number(state.h10PrimaryBulletCasts) >= 1, 'H1005 launches its type-11 
 assert.ok(Number(state.h10PrimaryBulletHits) >= 1, 'H1005 bullet resolves its recovered rectangle hit');
 assert.equal(state.powerMissingGear, '0', 'power contacts resolve every placed gear');
 assert.equal(state.powerMissingConfig, '0', 'power contacts resolve every gear configuration');
+assert.equal(state.unitFallbacks, '', 'all living late-fusion battle units replace fallback graphics with Spine');
 assert.deepEqual(errors, [], 'late fusion battle has no runtime or console errors');
 
 socket.close();
-console.log(JSON.stringify({ passed: true, assertions: 13, state, errors }, null, 2));
+console.log(JSON.stringify({ passed: true, assertions: 14, state, errors }, null, 2));
