@@ -132,6 +132,15 @@
 - 精确绑定为：`RG_ALL_abl13_eff01 → buff_0027`、`RG_H02_abl02_eff01 → buff_0036`、`RG_H03_abl02_eff01 → buff_0006`。
 - 2026-08-10 已从 Dashboard 登记定位 `C:\ProgramData\cocos\editors\Creator\3.8.8`；图集由 Creator 正式导入到 `cocosProject/assets/resources/original/trait-icons/effect.png`，自动生成 meta UUID `007031c2-937b-430e-833f-49b3b2def12f`。三张精确裁切已进入运行时并由 Fresh Web Mobile 截图确认。
 
+## 角色 FairyGUI 与战斗反馈恢复（2026-08-18）
+
+- 修正 `ui_hero.package.bin` 对无 source 的 FairyGUI Loader/List/Text/Group 对象的扫描偏移；12 个组件均完成子对象盘点。`HeroMainView`、`HeroItem` 和 `HeroInfoView` 的精确坐标已写入 `evidence/assets/original/post-unlock-cache-2026-08-18/ui_hero.layout.json`。
+- 解析 `image/quality` 的 42 个 SpriteFrame；角色页按 PowerConfig 将 P01 绑定蓝色品质帧、P02/P03/P04 绑定紫色品质帧，并按 3 列、列间距 10、行间距 18 的原始 FlowHorizontal 布局渲染。
+- 从授权 `resources3` 缓存恢复 `UI10025/zhandou_sg1` 与 `UI10026/zhandou_sg2`。前者接入获取格子控件，后者接入广告刷新和普通刷新；两张纹理字节完全一致，骨骼映射按请求顺序推断，仍待原版同帧录像视觉确认。
+- H04 `4001_bf3/4001_bf4` 与 H12 `LY_bf1202/1203` 的 BuffGroup 均明确配置 `modelId/modelId2 = null`，因此没有添加猜测性的护盾或麻痹常驻特效；H12 技能雷云与 H03 冰冻/变形特效保持原始资源和时序。
+- `BattleWinView/BattleFailView` 源码确认结果页立即打开、按钮和奖励在 300ms 后显示；重建已应用精确 `0.3s` 按钮延迟。`ui/battle` 包和 `battle_win`/`battle_fail` 音频仍未进入本地缓存，结果面板原画、转场和胜负音频同帧对照保持待确认。
+- Cocos Creator 3.8.8 有界 Web Mobile 构建于 2026-08-18 16:19 CST 完成（PID 78048，退出码 36）；当前工程 282 个资源、0 缺失 meta、TypeScript 通过。专项测试覆盖 FairyGUI/品质图集、齿轮发光、状态模型缺省和结算 300ms 时序。
+
 
 
 

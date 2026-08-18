@@ -1,0 +1,26 @@
+chilunpy_shengjishanguang.png
+size: 889,212
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+guang1
+  rotate: false
+  xy: 2, 17
+  size: 745, 193
+  orig: 750, 199
+  offset: 2, 6
+  index: -1
+guang3
+  rotate: false
+  xy: 749, 2
+  size: 44, 208
+  orig: 52, 213
+  offset: 4, 3
+  index: -1
+xingxing
+  rotate: false
+  xy: 795, 118
+  size: 92, 92
+  orig: 100, 100
+  offset: 4, 4
+  index: -1

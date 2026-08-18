@@ -125,6 +125,21 @@ async function drag(fromCocosX, fromCocosY, toCocosX, toCocosY) {
     await wait(650);
 }
 
+function candidatePositions(state) {
+    return String(state.candidateRuntime || '').split(';').filter(Boolean).map((entry) => {
+        const match = /^([^@]+)@(-?[\d.]+),(-?[\d.]+)$/.exec(entry);
+        assert.ok(match, `candidate runtime entry is parseable: ${entry}`);
+        return { id: match[1], x: Number(match[2]), y: Number(match[3]) };
+    });
+}
+
+async function dragCandidate(id, targetX, targetY) {
+    const snapshot = await readState();
+    const candidate = candidatePositions(snapshot.state).find((entry) => entry.id === id);
+    assert.ok(candidate, `candidate ${id} exists in ${snapshot.state.candidateIds}`);
+    await drag(candidate.x, candidate.y, targetX, targetY);
+}
+
 async function capture(file) {
     const result = await call('Page.captureScreenshot', {
         format: 'png',
@@ -206,26 +221,25 @@ while (Date.now() - startedAt < timeoutMs) {
 
     if (round === 1 && !attemptPrepared) {
         assert.match(state.candidateIds, /^H1301,H1201,H0101$/, 'level 1002 retry restores its first static batch');
-        await drag(-163, -385, -100, 152); // H13 L-shape above/left of the core.
-        await drag(-106, -385, -100, -48); // H12 below the core.
+        await dragCandidate('H1301', -100, 152); // H13 L-shape above/left of the core.
+        await dragCandidate('H1201', -100, -48); // H12 below the core.
         // H01 sits beside H13 at row 1 / col 4. It therefore shares H13's
         // recovered two-side connected component instead of running as an
         // isolated one-contact producer on the core's right.
-        await drag(0, -385, 100, 152);
+        await dragCandidate('H0101', 100, 152);
         attemptPrepared = true;
         record((await readState()).state, 'initial-three-side-deployment');
     } else if (round === 2) {
         assert.match(state.candidateIds, /^H1301,/, 'round 2 exposes the second recovered static batch');
-        await drag(-163, -385, -100, 152); // Merge H1301 into the placed H1301.
+        await dragCandidate('H1301', -100, 152); // Merge H1301 into the placed H1301.
         record((await readState()).state, 'h13-level-2-merge');
     } else if (round === 3) {
         assert.match(state.candidateIds, /^H1302,/, 'round 3 exposes the third recovered static batch');
-        // Before either item moves, the three-item tray places vertical H04 at
-        // x=0/y=-285. Put it over H01 so the full r1-r3/c4 column is occupied;
-        // normal replacement returns H01 to the tray.
-        await drag(0, -285, 100, 152);
-        // H13 then relayouts to x=-156/y=-335 beside G02 and can merge safely.
-        await drag(-156, -335, -100, 152);
+        // Put H04 over H01 so the full r1-r3/c4 column is occupied; normal
+        // replacement returns H01 to the tray. Runtime coordinates keep this
+        // valid when full-size candidate footprints cause tray relayout.
+        await dragCandidate('H0401', 100, 152);
+        await dragCandidate('H1302', -100, 152);
         record((await readState()).state, 'h13-level-3-and-h04-deployment');
     }
 

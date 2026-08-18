@@ -1,0 +1,821 @@
+{
+  "schemaVersion": "1.0",
+  "generator": {
+    "path": "E:\\Projects\\weichatAnalysis\\cangshu\\skills\\cocos-minigame-restorer\\scripts\\generate_validation_manifest.py",
+    "sha256": "d4aa7578ac00d064d56e1730dca463ac1da9f36290d5c2265d0ea1340fffa713",
+    "python": "3.14.2"
+  },
+  "profile": "mechanics",
+  "visualBaselineResult": "pending",
+  "passed": true,
+  "generatedAtUtc": "2026-08-18T09:38:20.332685+00:00",
+  "project": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject",
+  "creatorVersion": "3.8.8",
+  "assetFileCount": 282,
+  "missingMetaCount": 0,
+  "testFileCount": 59,
+  "passedCommandCount": 61,
+  "commandCount": 61,
+  "commands": [
+    {
+      "name": "cocos-project",
+      "command": [
+        "C:\\Users\\jiachengwei\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\skills\\cocos-minigame-restorer\\scripts\\check_cocos_project.py",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject",
+        "--creator-root",
+        "C:\\ProgramData\\cocos\\editors\\Creator\\3.8.8"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:15.972895+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:17.367301+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "{\n  \"valid\": true,\n  \"project\": \"E:\\\\Projects\\\\weichatAnalysis\\\\cangshu\\\\cocosProject\",\n  \"creatorVersion\": \"3.8.8\",\n  \"assetFileCount\": 282,\n  \"missingMetaCount\": 0,\n  \"missingMeta\": [],\n  \"typescript\": {\n    \"ran\": true,\n    \"exitCode\": 0,\n    \"stdout\": \"\",\n    \"stderr\": \"\"\n  },\n  \"errors\": [],\n  \"warnings\": []\n}",
+      "stderrTail": ""
+    },
+    {
+      "name": "golden-cases",
+      "command": [
+        "C:\\Users\\jiachengwei\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\skills\\cocos-minigame-restorer\\scripts\\run_golden_cases.py",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\generated\\golden-cases.json"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:17.367458+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:17.419335+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "pies 100 by 100\",\n      \"expected\": {\n        \"shape\": [\n          [\n            0,\n            0\n          ]\n        ],\n        \"width\": 100,\n        \"height\": 100\n      },\n      \"actual\": {\n        \"shape\": [\n          [\n            0,\n            0\n          ]\n        ],\n        \"width\": 100,\n        \"height\": 100\n      },\n      \"passed\": true\n    },\n    {\n      \"kind\": \"footprint\",\n      \"name\": \"archer horizontal footprint occupies two grid cells\",\n      \"expected\": {\n        \"shape\": [\n          [\n            0,\n            0\n          ],\n          [\n            0,\n            1\n          ]\n        ],\n        \"width\": 200,\n        \"height\": 100\n      },\n      \"actual\": {\n        \"shape\": [\n          [\n            0,\n            0\n          ],\n          [\n            0,\n            1\n          ]\n        ],\n        \"width\": 200,\n        \"height\": 100\n      },\n      \"passed\": true\n    },\n    {\n      \"kind\": \"footprint\",\n      \"name\": \"knight vertical footprint occupies three grid cells\",\n      \"expected\": {\n        \"shape\": [\n          [\n            0,\n            0\n          ],\n          [\n            1,\n            0\n          ],\n          [\n            2,\n            0\n          ]\n        ],\n        \"width\": 100,\n        \"height\": 300\n      },\n      \"actual\": {\n        \"shape\": [\n          [\n            0,\n            0\n          ],\n          [\n            1,\n            0\n          ],\n          [\n            2,\n            0\n          ]\n        ],\n        \"width\": 100,\n        \"height\": 300\n      },\n      \"passed\": true\n    },\n    {\n      \"kind\": \"footprint\",\n      \"name\": \"vertical grid unlock occupies two grid cells\",\n      \"expected\": {\n        \"shape\": [\n          [\n            0,\n            0\n          ],\n          [\n            1,\n            0\n          ]\n        ],\n        \"width\": 100,\n        \"height\": 200\n      },\n      \"actual\": {\n        \"shape\": [\n          [\n            0,\n            0\n          ],\n          [\n            1,\n            0\n          ]\n        ],\n        \"width\": 100,\n        \"height\": 200\n      },\n      \"passed\": true\n    },\n    {\n      \"kind\": \"coinProduction\",\n      \"name\": \"coin level 1 output\",\n      \"expected\": 2,\n      \"actual\": 2,\n      \"passed\": true\n    },\n    {\n      \"kind\": \"coinProduction\",\n      \"name\": \"coin level 2 output\",\n      \"expected\": 4,\n      \"actual\": 4,\n      \"passed\": true\n    },\n    {\n      \"kind\": \"coinProduction\",\n      \"name\": \"coin level 3 output\",\n      \"expected\": 8,\n      \"actual\": 8,\n      \"passed\": true\n    },\n    {\n      \"kind\": \"coinProduction\",\n      \"name\": \"coin level 4 output\",\n      \"expected\": 16,\n      \"actual\": 16,\n      \"passed\": true\n    },\n    {\n      \"kind\": \"defeatCompensation\",\n      \"name\": \"initial attempt uses full enemy attributes\",\n      \"expected\": 1,\n      \"actual\": 1,\n      \"passed\": true\n    },\n    {\n      \"kind\": \"defeatCompensation\",\n      \"name\": \"first retry reduces enemy attributes to 95 percent\",\n      \"expected\": 0.95,\n      \"actual\": 0.95,\n      \"passed\": true\n    },\n    {\n      \"kind\": \"defeatCompensation\",\n      \"name\": \"second retry reduces enemy attributes to 90.25 percent\",\n      \"expected\": 0.9025,\n      \"actual\": 0.9025,\n      \"passed\": true\n    },\n    {\n      \"kind\": \"defeatCompensation\",\n      \"name\": \"defeat compensation clamps at row 15\",\n      \"expected\": 0.4633,\n      \"actual\": 0.4633,\n      \"passed\": true\n    },\n    {\n      \"kind\": \"condition\",\n      \"name\": \"victory\",\n      \"expected\": \"won\",\n      \"actual\": \"won\",\n      \"passed\": true\n    },\n    {\n      \"kind\": \"condition\",\n      \"name\": \"defeat\",\n      \"expected\": \"lost\",\n      \"actual\": \"lost\",\n      \"passed\": true\n    },\n    {\n      \"kind\": \"condition\",\n      \"name\": \"non-final round clear\",\n      \"expected\": \"roundClear\",\n      \"actual\": \"roundClear\",\n      \"passed\": true\n    },\n    {\n      \"kind\": \"condition\",\n      \"name\": \"battle continues while enemies remain\",\n      \"expected\": \"battle\",\n      \"actual\": \"battle\",\n      \"passed\": true\n    }\n  ]\n}",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:all-level-playability.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\all-level-playability.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:17.419745+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:17.534321+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "all-level playability: 200 levels / 2978 rounds / 54816 spawns passed",
+      "stderrTail": "(node:21752) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/NormalLevelRuntime.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:android-native-browser-contract-guard.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\android-native-browser-contract-guard.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:17.534346+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:17.564968+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "android native browser-contract guard: 4 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:android-package-version.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\android-package-version.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:17.564990+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:17.596542+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "android package version: 4 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:baglike-account-profile.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\baglike-account-profile.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:17.596566+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:17.670807+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "baglike account profile: 95 assertions passed",
+      "stderrTail": "(node:57668) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeAccountProfile.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:baglike-candidate-drops.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\baglike-candidate-drops.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:17.670830+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:17.739332+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "baglike candidate drops: 47 assertions passed",
+      "stderrTail": "(node:8376) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeCandidateDrops.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:baglike-fusion-heroes.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\baglike-fusion-heroes.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:17.739355+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:17.791990+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "baglike fusion heroes: 15 assertions passed",
+      "stderrTail": "(node:74776) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeFusionHeroMechanics.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:baglike-fusion.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\baglike-fusion.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:17.792013+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:17.853940+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "baglike level-5 fusion: 12 assertions passed",
+      "stderrTail": "(node:82304) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeFusion.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:baglike-h11-healing.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\baglike-h11-healing.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:17.853973+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:17.912793+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "baglike H11 healing: 43 assertions passed",
+      "stderrTail": "(node:83768) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeHealing.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:baglike-level-selection.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\baglike-level-selection.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:17.912830+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:17.971251+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "baglike level selection: 38 assertions passed",
+      "stderrTail": "(node:82456) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeLevelSelection.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:baglike-preparation.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\baglike-preparation.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:17.971277+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.056486+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "baglike preparation placement: 24 assertions passed",
+      "stderrTail": "(node:82980) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeCandidateDrops.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:baglike-traits.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\baglike-traits.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.056512+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.133451+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "baglike traits: 240 assertions passed",
+      "stderrTail": "(node:27016) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeProgression.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:baglike-unit-progression.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\baglike-unit-progression.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.133475+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.201132+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "baglike unit progression: 424 assertions passed",
+      "stderrTail": "(node:53620) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeUnitProgression.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:battle-presentation-timing.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\battle-presentation-timing.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.201155+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.235344+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "battle presentation: recovered gear glows, exact result reveal delay, and no invented status models passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:battle-visual-baseline.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\battle-visual-baseline.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.235365+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.267366+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "battle visual baseline: 25 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:battlefield-healing.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\battlefield-healing.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.267387+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.318238+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "battlefield healing: 42 assertions passed",
+      "stderrTail": "(node:67020) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BattlefieldHealing.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:battlefield-kernel.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\battlefield-kernel.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.318260+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.375509+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "battlefield kernel: 116 assertions passed",
+      "stderrTail": "(node:75884) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BattlefieldKernel.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:battlefield-movement-integration.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\battlefield-movement-integration.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.375531+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.440423+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "battlefield movement integration: 10 assertions passed",
+      "stderrTail": "(node:54116) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BattlefieldKernel.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:battlefield-paralysis.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\battlefield-paralysis.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.440445+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.490135+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "battlefield paralysis: 18 assertions passed",
+      "stderrTail": "(node:62624) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BattlefieldParalysis.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:battlefield-production.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\battlefield-production.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.490156+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.559692+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "battlefield production: 51 assertions passed",
+      "stderrTail": "(node:66944) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BattlefieldProduction.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:battlefield-scenario.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\battlefield-scenario.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.559714+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.638488+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "battlefield scenario: 32 assertions passed",
+      "stderrTail": "(node:69308) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BattlefieldLayout.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:battlefield-terminal-presentation.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\battlefield-terminal-presentation.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.638510+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.668774+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "battlefield terminal presentation: 8 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:candidate-level-runtime.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\candidate-level-runtime.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.668795+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.737134+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "candidate level runtime: 71 assertions passed",
+      "stderrTail": "(node:66448) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/NormalLevelRuntime.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:fusion-validation-fixture.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\fusion-validation-fixture.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.737154+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.767220+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "fusion validation fixture: 18 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:gear-connector-presentation.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\gear-connector-presentation.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.767242+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.820120+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "gear connector presentation: 16 assertions passed",
+      "stderrTail": "(node:75384) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeUnitProgression.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:gear-ui-icons.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\gear-ui-icons.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.820140+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.874021+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "gear UI icons: 54/54 hero gear configurations and role positions resolve",
+      "stderrTail": "(node:60080) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeUnitProgression.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:h01-h04-audio.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h01-h04-audio.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.874043+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.908959+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H01/H04 recovered attack audio: 8 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:h02-projectile.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h02-projectile.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.908983+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.946808+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H02 recovered projectile: 12 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:h0204-projectile.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h0204-projectile.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.946832+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:18.982118+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H0204 recovered projectile: 8 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:h03-laser-audio.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h03-laser-audio.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:18.982143+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.020844+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H03 recovered laser audio: 5 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:h03-projectile.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h03-projectile.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.020882+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.066948+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H03/H08 recovered projectile: 13 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:h03-status-effects.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h03-status-effects.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.066971+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.104741+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H03 recovered status effects: 19 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:h0705-impact.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h0705-impact.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.104766+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.139498+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H0705 recovered impact: 14 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:h08-impact.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h08-impact.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.139520+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.174905+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H08 recovered impact: 15 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:h0905-effects.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h0905-effects.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.174929+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.210096+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H0905 recovered effects: 15 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:h10-primary-bullet-runtime.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h10-primary-bullet-runtime.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.210117+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.240506+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H10 primary fallback bullet runtime: 9 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:h11-healing-effect.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h11-healing-effect.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.240529+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.274188+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H11 recovered healing effect: 7 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:h12-lightning-effect.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h12-lightning-effect.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.274211+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.308580+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H12 recovered lightning effect: 12 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:h13-projectile.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\h13-projectile.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.308602+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.342568+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "H13 recovered projectile and impact: 15 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:late-fusion-presentation.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\late-fusion-presentation.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.342589+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.379124+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "late fusion presentation: 16 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:long-run-automation.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\long-run-automation.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.379146+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.409579+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "long-run input automation: 17 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:main-level-flow.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\main-level-flow.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.409598+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.460662+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "main level flow assertions passed",
+      "stderrTail": "(node:42600) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/MainLevelFlow.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:mock-advertisement.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\mock-advertisement.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.460685+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.512475+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "mock-advertisement.test.mjs: all assertions passed",
+      "stderrTail": "(node:64500) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/MockAdvertisement.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:normal-level-dependency-matrix.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\normal-level-dependency-matrix.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.512496+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.567973+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "normal level dependency matrix: 1027 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:normal-level-export.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\normal-level-export.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.567996+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.648172+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "normal level export: 3383 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:normal-level-preparation.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\normal-level-preparation.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.648194+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.723194+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "normal level preparation: 411 assertions passed",
+      "stderrTail": "(node:55352) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/NormalLevelRuntime.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:out-of-battle-config.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\out-of-battle-config.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.723216+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.778518+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "out-of-battle config tests passed",
+      "stderrTail": "(node:72304) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/OutOfBattleConfig.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:out-of-battle-presentation.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\out-of-battle-presentation.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.778543+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.811365+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "out-of-battle presentation: 27 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:post-unlock-resource-integration.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\post-unlock-resource-integration.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.811387+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.846959+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "post-unlock resource integration: exact assets, deduplication, and card/core/effect consumers passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:power-role-battle.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\power-role-battle.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.846982+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.900990+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "power role battle: 32 assertions passed",
+      "stderrTail": "(node:72412) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/PowerRoleProgression.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:power-role-progression.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\power-role-progression.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.901011+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:19.952109+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "power role progression: 28 assertions passed",
+      "stderrTail": "(node:82948) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/PowerRoleProgression.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:preparation-interaction-integration.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\preparation-interaction-integration.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:19.952130+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:20.016017+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "preparation interaction integration: 17 assertions passed",
+      "stderrTail": "(node:13328) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeCandidateDrops.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:preparation-presentation.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\preparation-presentation.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:20.016039+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:20.048887+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "preparation presentation: 19 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:project-regression-entrypoint.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\project-regression-entrypoint.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:20.048923+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:20.079178+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "project regression entrypoint: 22 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:recovered-projectile-presentation.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\recovered-projectile-presentation.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:20.079201+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:20.115577+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "recovered projectile presentation: 73 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:resource-fidelity-gate.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\resource-fidelity-gate.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:20.115598+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:20.155493+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "resource fidelity gate: 25 enemy visuals / 12 late hero models / 2 backgrounds / 5 side icons / direct-boot initialization passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:role-fairygui-quality.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\role-fairygui-quality.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:20.155514+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:20.189604+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "role FairyGUI geometry and image_quality atlas: exact evidence and runtime bindings passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:special-mode-runtime.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\special-mode-runtime.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:20.189627+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:20.262974+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "special-mode-runtime.test.mjs: all assertions passed",
+      "stderrTail": "(node:43520) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///E:/Projects/weichatAnalysis/cangshu/cocosProject/assets/scripts/BagLikeAccountProfile.ts is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    {
+      "name": "node:trait-presentation.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\trait-presentation.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:20.263001+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:20.301220+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "trait presentation: 22 assertions passed",
+      "stderrTail": ""
+    },
+    {
+      "name": "node:visual-roster.test.mjs",
+      "command": [
+        "node",
+        "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\tests\\visual-roster.test.mjs"
+      ],
+      "startedAtUtc": "2026-08-18T09:38:20.301241+00:00",
+      "finishedAtUtc": "2026-08-18T09:38:20.332046+00:00",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutTail": "visual roster: 10 assertions passed",
+      "stderrTail": ""
+    }
+  ],
+  "requirements": [],
+  "originalReferences": [],
+  "runtimeEvidence": []
+}

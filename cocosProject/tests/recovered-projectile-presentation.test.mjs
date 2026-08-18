@@ -61,8 +61,12 @@ check(/resources\.load\(\s*'original\/projectile-matrix\/js_feixingyuan_dandao2\
     'H06 animation sheet is preloaded');
 check(/new Rect\(1, 119, 43, 28\)[\s\S]*?new Rect\(1, 149, 43, 28\)/.test(source), true,
     'H06 uses all recovered packed-frame bounds in animation order');
-const h14Preload = source.slice(source.indexOf("'original/projectile-matrix/chilun_haidaosha/spriteFrame'"),
-    source.indexOf("'original/projectile-matrix/yugutou_dandao/spriteFrame'"));
+const recoveredPreload = source.slice(
+    source.indexOf('private preloadRecoveredProjectilePresentation'),
+    source.indexOf('private addRecoveredSpriteProjectile'),
+);
+const h14Preload = recoveredPreload.slice(recoveredPreload.indexOf("'original/projectile-matrix/chilun_haidaosha/spriteFrame'"),
+    recoveredPreload.indexOf("'original/projectile-matrix/yugutou_dandao/spriteFrame'"));
 check((h14Preload.match(/new Rect\(/g) || []).length, 16, 'H14 restores all sixteen bomb frames');
 check(/makeNode\('H14_S1'[\s\S]*?frames: this\.h14BombFrames[\s\S]*?ORIGINAL_EFFECT_FRAME_SECONDS/.test(source), true,
     'H14 plays the recovered target animation at the original frame cadence');

@@ -41,35 +41,111 @@
       "evidenceStatus": "partial",
       "implementationStatus": "implemented",
       "validationStatus": "numeric-pass",
-      "evidence": ["K-C007", "K-C013", "evidence/visual/original/2026-08-01/trait-selection.png"],
+      "evidence": [
+        "K-C007",
+        "K-C013",
+        "evidence/visual/original/2026-08-01/trait-selection.png"
+      ],
       "unknowns": [
         "Confirm whether any other modal phases can interrupt or bracket an active wave."
       ],
-      "tests": ["golden-cases conditions: 4/4", "battlefield-scenario: EXP and trait layout assertions", "all-level-playability: every one of 200 levels advances across all 2,978 recovered rounds and the final round resolves to won through the production completion reducer"],
+      "tests": [
+        "golden-cases conditions: 4/4",
+        "battlefield-scenario: EXP and trait layout assertions",
+        "all-level-playability: every one of 200 levels advances across all 2,978 recovered rounds and the final round resolves to won through the production completion reducer",
+        "2026-08-18 all-level runtime smoke: 200/200 recovered normal levels loaded their opening deal, entered production battle, spawned enemies and reached round-clear/later-wave/terminal flow with zero missing gear/config and zero runtime errors"
+      ],
       "notes": "deploy/battle/trait/roundClear/won/lost are implemented. Level-up pauses over the expanded battlefield and resumes after a single or take-all selection. The production round completion reducer now owns next-round versus final-victory transitions for all normal levels."
     },
     "preparation": {
       "scope": "required",
       "evidenceStatus": "partial",
-      "implementationStatus": "partial",
-      "validationStatus": "untested",
-      "evidence": ["K-C014", "K-C016", "K-C017", "K-C018", "K-C025", "evidence/visual/original/2026-08-01/preparation-initial.png", "evidence/visual/original/2026-08-01/preparation-developed.png", "capture/039a4bd5-73b4-4599-b6ea-207dc3f531fa.png", "evidence/runtime/baglike-gear-level-color.md", "evidence/runtime/main-navigation-and-merge-assist.md", "evidence/runtime/p01-power-core-motion-and-drag.md", "evidence/runtime/p01-battle-only-motion-2026-08-13/manifest.json"],
-      "unknowns": [
-        "Obtain the target account's exact unlocked-hero set; the filtering input is connected but the account value is absent from package artifacts.",
-        "Run remaining matched interaction checks for occupied replacement, placed-gear return, invalid candidate drops, and per-round refresh counters; merge positioning now has numeric and live interaction coverage.",
-        "Restore the remaining multi-cell connector composition around the recovered cl1-cl5 cogs, plus exact unlocked-cell treatment and persistent backpack presentation visible in the level-1004 references."
+      "implementationStatus": "implemented",
+      "validationStatus": "numeric-pass",
+      "evidence": [
+        "K-C014",
+        "K-C016",
+        "K-C017",
+        "K-C018",
+        "K-C025",
+        "evidence/visual/original/2026-08-01/preparation-initial.png",
+        "evidence/visual/original/2026-08-01/preparation-developed.png",
+        "capture/039a4bd5-73b4-4599-b6ea-207dc3f531fa.png",
+        "evidence/runtime/baglike-gear-level-color.md",
+        "evidence/runtime/main-navigation-and-merge-assist.md",
+        "evidence/runtime/p01-power-core-motion-and-drag.md",
+        "evidence/runtime/p01-battle-only-motion-2026-08-13/manifest.json",
+        "evidence/runtime/preparation-interaction-closure-2026-08-18.md"
       ],
-      "tests": ["current golden-cases 47/47", "baglike-candidate-drops: 47 assertions including all 12 recommended families, H1401 L-shape magnetic tolerance, distant rejection, nearest-target ranking, account-family filtering, H11 exception, coin-count weights, five-family cap/fill, seventh-refresh forced grid, Prepare-only exact-ID modifiers, and shipped REWARD/3012 no-op", "baglike-preparation: 24 assertions including exact level-color mapping and family-tint override", "battlefield-production: 51 assertions including P01 preparation-static gate, battle-only start, four-second visual lap, source-exact production clock, exact power1 atlas crop, separate hamster layer, generic drag routing, and dynamic power index", "2026-08-13 Creator Web Mobile: preparation samples remained 0.0/0.0 degrees with unchanged clock; battle samples were 46.5/138.1/231.2 degrees at approximately one-second intervals; warning/error 0", "2026-08-11 Creator Web Mobile: edge-grab H0401 released about 65x40 px off the compatible target anchor merged to H0402; deploy phase retained, powerMissingGear=0", "User Creator-preview acceptance: candidate/grid sizing, overlap, and preparation-region separation resolved"],
-      "notes": "Static eligibility and the original 3000-3004 per-slot weighted draw routing are implemented; the last static batch is never replayed as a fallback. The dynamic path now filters by a configurable account-unlocked family set, counts placed coin gears as 1/2/4/8 for the recovered 3034 weight table, caps tracked hero diversity at five and fills missing unlocked families from duplicate candidates, and forces reward 3030 into slot three every seventh non-ad refresh when locked cells remain and no grid was drawn. H11 is enabled as the confirmed untracked/account-lock-filter exception now that its base healing consumer is restored. Occupied normal drops merge first or return every displaced whole gear to the tray. Dragging preserves the user's grab offset; merge selection scores both complete footprints inside a magnetic radius and chooses the nearest compatible target, removing point-perfect alignment for large and irregular pieces such as H14. P01 now shares the generic preparation drag path, updates the live power index after a valid move, restores its origin on invalid drops, and renders the exact power1 cog independently from its upright moving hamster layer. Candidate and grid pieces share the same scale and level atlas. RG_ALL_abl11_eff01 remains the confirmed shipped REWARD/3012 no-op."
+      "unknowns": [
+        "Obtain the target account's exact unlocked-hero set; the filtering input is connected but the account value is absent from package artifacts."
+      ],
+      "tests": [
+        "current golden-cases 47/47",
+        "baglike-candidate-drops: 47 assertions including all 12 recommended families, H1401 L-shape magnetic tolerance, distant rejection, nearest-target ranking, account-family filtering, H11 exception, coin-count weights, five-family cap/fill, seventh-refresh forced grid, Prepare-only exact-ID modifiers, and shipped REWARD/3012 no-op",
+        "baglike-preparation: 24 assertions including exact level-color mapping and family-tint override",
+        "preparation-interaction-integration: 17 assertions covering occupied replacement, whole-gear eviction, placed-gear return, invalid candidate and protected-core restoration, per-round refresh reset/cost/ad state, candidate clearing, persistent backpack, unlocked-cell art and connector layering",
+        "battlefield-production: 51 assertions including P01 preparation-static gate, battle-only start, four-second visual lap, source-exact production clock, exact power1 atlas crop, separate hamster layer, generic drag routing, and dynamic power index",
+        "2026-08-18 Creator 3.8.8 Web Mobile: fresh preparation-closure build finished in 5 seconds; static project/TypeScript validation reports 282 assets, zero missing metadata and zero errors",
+        "evidence/runtime/all-200-runtime-smoke-2026-08-18/all-level-runtime-smoke.json: every level exposed the recovered initial candidates before automation was enabled",
+        "2026-08-13 Creator Web Mobile: preparation samples remained 0.0/0.0 degrees with unchanged clock; battle samples were 46.5/138.1/231.2 degrees at approximately one-second intervals; warning/error 0",
+        "2026-08-11 Creator Web Mobile: edge-grab H0401 released about 65x40 px off the compatible target anchor merged to H0402; deploy phase retained, powerMissingGear=0",
+        "User Creator-preview acceptance: candidate/grid sizing, overlap, and preparation-region separation resolved"
+      ],
+      "notes": "Static eligibility and the original 3000-3004 per-slot weighted draw routing are implemented; the last static batch is never replayed as a fallback. The dynamic path now filters by a configurable account-unlocked family set, counts placed coin gears as 1/2/4/8 for the recovered 3034 weight table, caps tracked hero diversity at five and fills missing unlocked families from duplicate candidates, and forces reward 3030 into slot three every seventh non-ad refresh when locked cells remain and no grid was drawn. H11 is enabled as the confirmed untracked/account-lock-filter exception now that its base healing consumer is restored. Each preparation deal resets the per-round normal/ad counters while retaining the global non-ad draw sequence, so the first normal refresh of every wave is free and later refreshes cost 15. Occupied normal drops merge first or return every displaced whole gear to the tray; invalid placed gears return to the tray, invalid candidates restore their origin, and P01 remains protected. Dragging preserves the user's grab offset; merge selection scores both complete footprints inside a magnetic radius and chooses the nearest compatible target, removing point-perfect alignment for large and irregular pieces such as H14. P01 now shares the generic preparation drag path, updates the live power index after a valid move, restores its origin on invalid drops, and renders the exact power1 cog independently from its upright moving hamster layer. Candidate and grid pieces share the same scale and level atlas. Exact connector frames/rotations, unlocked-only grid faces and phase-persistent backpack presentation are implemented; connector child order now stays below cog bodies and portraits. RG_ALL_abl11_eff01 remains the confirmed shipped REWARD/3012 no-op."
     },
     "deployment-and-production": {
       "scope": "required",
       "evidenceStatus": "confirmed",
       "implementationStatus": "implemented",
       "validationStatus": "numeric-pass",
-      "evidence": ["K-C018", "K-C020", "K-C026", "K-C027", "K-C030", "K-C031", "K-C032", "K-C033", "K-C034", "K-C037", "K-C038", "K-C044", "evidence/runtime/baglike-unit-level-production.md", "evidence/runtime/baglike-power-near-attack.md", "evidence/runtime/baglike-power-near-worker.md", "evidence/runtime/baglike-h11-healing-gear.md", "evidence/runtime/baglike-h11-base-repair.md", "evidence/runtime/baglike-h11-heal-to-shield.md", "evidence/runtime/baglike-h12-paralysis.md", "evidence/runtime/baglike-h12-electrified.md", "evidence/runtime/baglike-h13-bounce-times.md", "evidence/runtime/baglike-h13-popcorn-replacement.md", "evidence/runtime/baglike-h04-periodic-heal.md", "evidence/runtime/baglike-h01-kill-stacking.md", "evidence/runtime/baglike-h1005-primary-bullet.md", "evidence/runtime/battlefield-frame-rng-order.md", "evidence/runtime/battlefield-cross-scheduler-boundary.md", "evidence/runtime/candidate-level-1002-integration-blocker.md", "evidence/runtime/late-fusion-browser-contract/manifest.json", "evidence/runtime/p01-battle-only-motion-2026-08-13/manifest.json"],
+      "evidence": [
+        "K-C018",
+        "K-C020",
+        "K-C026",
+        "K-C027",
+        "K-C030",
+        "K-C031",
+        "K-C032",
+        "K-C033",
+        "K-C034",
+        "K-C037",
+        "K-C038",
+        "K-C044",
+        "evidence/runtime/baglike-unit-level-production.md",
+        "evidence/runtime/baglike-power-near-attack.md",
+        "evidence/runtime/baglike-power-near-worker.md",
+        "evidence/runtime/baglike-h11-healing-gear.md",
+        "evidence/runtime/baglike-h11-base-repair.md",
+        "evidence/runtime/baglike-h11-heal-to-shield.md",
+        "evidence/runtime/baglike-h12-paralysis.md",
+        "evidence/runtime/baglike-h12-electrified.md",
+        "evidence/runtime/baglike-h13-bounce-times.md",
+        "evidence/runtime/baglike-h13-popcorn-replacement.md",
+        "evidence/runtime/baglike-h04-periodic-heal.md",
+        "evidence/runtime/baglike-h01-kill-stacking.md",
+        "evidence/runtime/baglike-h1005-primary-bullet.md",
+        "evidence/runtime/battlefield-frame-rng-order.md",
+        "evidence/runtime/battlefield-cross-scheduler-boundary.md",
+        "evidence/runtime/candidate-level-1002-integration-blocker.md",
+        "evidence/runtime/late-fusion-browser-contract/manifest.json",
+        "evidence/runtime/p01-battle-only-motion-2026-08-13/manifest.json"
+      ],
       "unknowns": [],
-      "tests": ["golden-cases workerProduction: H01/H02/H04/H12", "golden-cases coinProduction", "battlefield-production: 51 assertions including preparation-static clock, battle start from direction 1, four-second center-rotor visual lap, source-exact one-second production lap, occupied-side delay, P01 star-0 five-second 1.1 productivity window, direct-neighbor versus connected-only POWER_NEAR scope, fractional worker remainder, displayed rate, and GameTimer-before-BattleTimer battle-tick order", "battlefield-healing: 42 assertions including ZL_1101/ZL_1103 ratios, HEAL_TO_SHIELD overflow, shield-first damage, and H04 one-second attack-scaled periodic healing", "battlefield-paralysis: 18 assertions including same-group replacement order, DMG_RES clamp, and Boss03 control-immunity routing", "baglike-unit-progression: 415 assertions including shared recovered shapes, all ordinary producer profiles, and H1005/H1505/H1805 level-5 profiles", "baglike-fusion-heroes: 15 assertions including the H1005 default-BulletUnit profile, H10/H18 active schedules and H15 kill/round coin consumers", "h10-primary-bullet-runtime: 9 assertions", "late-fusion-browser-contract: 13 assertions; three portraits loaded, three progress bars visible, four live hamster spawns, five H1005 primary casts, two H1005 primary hits, one active cast, two active hits, zero missing production lookups and zero runtime errors", "all-level-playability: all 16 static opening batches plus all 1,728 raw three-family dynamic openings contain a producer that can be placed in the initial grid and directly contact P01", "evidence/runtime/all-level-live-smoke-current-preview/level-1001.json: real drag/start with 6 gear triggers, 6 worker applications and zero missing production lookups"],
+      "tests": [
+        "golden-cases workerProduction: H01/H02/H04/H12",
+        "golden-cases coinProduction",
+        "battlefield-production: 51 assertions including preparation-static clock, battle start from direction 1, four-second center-rotor visual lap, source-exact one-second production lap, occupied-side delay, P01 star-0 five-second 1.1 productivity window, direct-neighbor versus connected-only POWER_NEAR scope, fractional worker remainder, displayed rate, and GameTimer-before-BattleTimer battle-tick order",
+        "battlefield-healing: 42 assertions including ZL_1101/ZL_1103 ratios, HEAL_TO_SHIELD overflow, shield-first damage, and H04 one-second attack-scaled periodic healing",
+        "battlefield-paralysis: 18 assertions including same-group replacement order, DMG_RES clamp, and Boss03 control-immunity routing",
+        "baglike-unit-progression: 415 assertions including shared recovered shapes, all ordinary producer profiles, and H1005/H1505/H1805 level-5 profiles",
+        "baglike-fusion-heroes: 15 assertions including the H1005 default-BulletUnit profile, H10/H18 active schedules and H15 kill/round coin consumers",
+        "h10-primary-bullet-runtime: 9 assertions",
+        "late-fusion-browser-contract: 13 assertions; three portraits loaded, three progress bars visible, four live hamster spawns, five H1005 primary casts, two H1005 primary hits, one active cast, two active hits, zero missing production lookups and zero runtime errors",
+        "all-level-playability: all 16 static opening batches plus all 1,728 raw three-family dynamic openings contain a producer that can be placed in the initial grid and directly contact P01",
+        "evidence/runtime/all-level-live-smoke-current-preview/level-1001.json: real drag/start with 6 gear triggers, 6 worker applications and zero missing production lookups",
+        "evidence/runtime/all-200-runtime-smoke-2026-08-18/all-level-runtime-smoke.json: 200/200 levels placed a producer, triggered P01 and applied worker progress with zero missing gear/config"
+      ],
       "notes": "Production follows the recovered 100-point worker-power chain. The core and center-rotor presentation remain parked during preparation; every battle starts from the zero-angle pose and direction 1. The source-exact one-second production lap and 200-ms occupied-side delay remain separate from the calibrated four-second visible center-rotor lap. Core-side contacts trigger connected components; HAMSTER output waits 0.75 seconds, H11/H12/H13 are one-shot WHEEL skills after 0.25 seconds, coin gears pay on completion, and battle speed is 1.5x. H11 adds 9 worker points per contact and, on a successful friendly target cast, heals the lowest-HP-percentage ally in a 200 radius at 100% attack while repairing the home at 50% attack. The star-2 RG_H11_abl02_eff01 feature converts full or overflow unit healing into additive shield consumed before HP; HomeUnit's override keeps the paired base repair on its normal clamped-heal path. The star-5 RG_H11_abl01_eff02 replacement changes later H11 casts to ZL_1103: the unit heal and living-friendly-target requirement are unchanged, while home repair rises to 100% attack. H12 keeps its 500-ms delayed, radius-50, five-target damage and applies the last selected LY_1201-group replacement: LY_1202/LY_1203 paralyze the primary target, while star-10 LY_1204 replaces that control with a persistent layer-1 DMG_RES -1000 buff that clamps to zero on restored representative targets. H13 restores the base TZ_1301 two-bounce, radius-300 chain; its star-2/star-3 BOUNCE_TIMES feature raises H13/H09 follow-up bounces to four/six. Star-7/star-10 RG_H13_abl02 replaces later H13/H09 launches with TZ_1302/TZ_1303 and compounds projectile attack by 10% per follow-up segment. TZ_1303's configured last missile is a confirmed version-18 no-op because the child counter is reset before last-missile selection and copied from the parent afterwards. RG_H04_abl02 snapshots the selected star-2/star-3 periodic-heal passive into future H04/H09 units; after one second and every second thereafter it restores floor(attack * 200/10000) or floor(attack * 500/10000), including elapsed-time catch-up and frozen-unit timer progress. Producing H01/H02/H03/H04 gears pass exact level profiles into spawned units; all WHEEL profiles retain the same level multipliers. RG_ALL_abl12_eff01 multiplies only the attack of future HAMSTER/WHEEL outputs from direct core-neighbor gears. RG_ALL_abl16_eff01 multiplies each later worker-progress trigger and the displayed rate by 1.2 for the same direct-neighbor scope, preserving fractional modulo progress; candidates, connected-only gears, core visual speed and output attributes are unchanged. There is no immediate start spawn or recovered maximum-alive gate."
     },
     "entities-and-attributes": {
@@ -77,11 +153,46 @@
       "evidenceStatus": "partial",
       "implementationStatus": "implemented",
       "validationStatus": "numeric-pass",
-      "evidence": ["K-C005", "K-C019", "K-C036", "K-C037", "K-C038", "K-C039", "K-C040", "K-C041", "K-C042", "K-C043", "evidence/runtime/baglike-unit-level-production.md", "evidence/runtime/baglike-enemy-attack-decrease.md", "evidence/runtime/baglike-power-near-attack.md", "evidence/runtime/baglike-warrior-combo-critical.md", "evidence/runtime/baglike-h02-split-shot.md", "evidence/runtime/baglike-h02-barrage-time.md", "evidence/runtime/baglike-h03-transform.md", "evidence/runtime/baglike-h03-penetrating-laser.md", "evidence/runtime/baglike-h04-periodic-heal.md", "evidence/runtime/baglike-h01-kill-stacking.md", "evidence/runtime/baglike-h04-attack-kill-fly.md", "evidence/runtime/baglike-h04-shield-wall.md", "evidence/runtime/baglike-h1005-primary-bullet.md", "evidence/runtime/boss03-control-immunity.md", "evidence/runtime/late-fusion-browser-contract/manifest.json"],
+      "evidence": [
+        "K-C005",
+        "K-C019",
+        "K-C036",
+        "K-C037",
+        "K-C038",
+        "K-C039",
+        "K-C040",
+        "K-C041",
+        "K-C042",
+        "K-C043",
+        "evidence/runtime/baglike-unit-level-production.md",
+        "evidence/runtime/baglike-enemy-attack-decrease.md",
+        "evidence/runtime/baglike-power-near-attack.md",
+        "evidence/runtime/baglike-warrior-combo-critical.md",
+        "evidence/runtime/baglike-h02-split-shot.md",
+        "evidence/runtime/baglike-h02-barrage-time.md",
+        "evidence/runtime/baglike-h03-transform.md",
+        "evidence/runtime/baglike-h03-penetrating-laser.md",
+        "evidence/runtime/baglike-h04-periodic-heal.md",
+        "evidence/runtime/baglike-h01-kill-stacking.md",
+        "evidence/runtime/baglike-h04-attack-kill-fly.md",
+        "evidence/runtime/baglike-h04-shield-wall.md",
+        "evidence/runtime/baglike-h1005-primary-bullet.md",
+        "evidence/runtime/boss03-control-immunity.md",
+        "evidence/runtime/late-fusion-browser-contract/manifest.json"
+      ],
       "unknowns": [
         "Obtain the target competitor account's saved hero-star values; package code proves the local-save source but the account values are absent from packages and current captures."
       ],
-      "tests": ["battlefield-kernel damage/attack-speed/projectile snapshot/forced-critical/split-shot/H02-barrage/H03-transform/H03-laser/attack-kill-fly/shield-wall subset within 116 total assertions", "baglike-traits: 240 assertions including H01 final-kill stacking, H02 split-shot/barrage, H03 transform/laser, H04 periodic-heal, attack-kill-fly and shield-wall star variants and family scopes", "battlefield-healing: 42 assertions including H04/H09 attack-scaled periodic healing", "battlefield-production: 31 assertions including attack-only producer scaling and worker-progress scaling", "baglike-unit-progression: 415 assertions across all producer levels including H1005/H1505/H1805", "baglike-fusion-heroes: 15 assertions including the H1005 default-BulletUnit profile, H10/H18 active profiles and H15 inherent coins", "h10-primary-bullet-runtime: 9 assertions", "late-fusion-browser-contract: 13 live Web Mobile assertions with loaded portraits, real production, H1005 primary casts/hits, active casts/hits and no runtime errors"],
+      "tests": [
+        "battlefield-kernel damage/attack-speed/projectile snapshot/forced-critical/split-shot/H02-barrage/H03-transform/H03-laser/attack-kill-fly/shield-wall subset within 116 total assertions",
+        "baglike-traits: 240 assertions including H01 final-kill stacking, H02 split-shot/barrage, H03 transform/laser, H04 periodic-heal, attack-kill-fly and shield-wall star variants and family scopes",
+        "battlefield-healing: 42 assertions including H04/H09 attack-scaled periodic healing",
+        "battlefield-production: 31 assertions including attack-only producer scaling and worker-progress scaling",
+        "baglike-unit-progression: 415 assertions across all producer levels including H1005/H1505/H1805",
+        "baglike-fusion-heroes: 15 assertions including the H1005 default-BulletUnit profile, H10/H18 active profiles and H15 inherent coins",
+        "h10-primary-bullet-runtime: 9 assertions",
+        "late-fusion-browser-contract: 13 live Web Mobile assertions with loaded portraits, real production, H1005 primary casts/hits, active casts/hits and no runtime errors"
+      ],
       "notes": "Level-1004 entities, M07 and three boss variants are joined. RG_H02_abl02 selects only the highest H02-star-qualified row at 3/5/10 stars and applies the recovered 3000/5000/10000 passive probability to H02/H07. On success it launches an independent speed-700, 10000-ratio projectile at one random enemy in the caster-centered radius-250 set, including the main target. RG_H04_abl02 snapshots the selected star-2/star-3 attack-scaled periodic-heal passive into future H04/H09 units only. RG_H04_abl03 snapshots the selected star-7/star-10 shield-wall passive into future H04/H09 units, activating every five seconds for two seconds with DMG_RES 3000; star 10 also counters at 3000. RG_H04_abl04_eff01 requires H04 star 8 and gives H04/H09 basic attacks a 3000/10000 pre-damage instant-kill check against non-boss monsters only. RG_H03_abl04_eff01 requires H03 star 10 and snapshots active skill 3001_5 into future H03/H08; its 300-ms behavior starts a 4000-ms cooldown and directly hits an inclusive 100-by-300 forward rectangle at 5000 ratio. RG_ALL_abl08_eff01 lowers live enemy attack. RG_ALL_abl12_eff01 snapshots a 1.2 attack-only multiplier into future outputs from directly adjacent producers, without changing HP or existing units. H01/H02/H03/H04 level-1 through level-4 units use recovered attribute multiples and distinct level models; H0204 carries skill identity 2002. RG_H01_abl02 snapshots the selected star-specific combo passive into future H01 units only. RG_H01_abl03_eff01 instead mutates the shared live H01/H07 ATK_INC layer after each qualifying final kill, so its current stack applies to both existing and future units and persists across ordinary round cleanup. All 53 effect rows relevant to represented hero families now have an implemented consumer or an evidence-confirmed no-op; account-derived eligibility remains external."
     },
     "targeting-and-movement": {
@@ -89,9 +200,18 @@
       "evidenceStatus": "confirmed",
       "implementationStatus": "implemented",
       "validationStatus": "numeric-pass",
-      "evidence": ["K-C006", "K-C044", "evidence/runtime/battlefield-targeting-movement.md", "evidence/runtime/battlefield-frame-rng-order.md"],
+      "evidence": [
+        "K-C006",
+        "K-C044",
+        "evidence/runtime/battlefield-targeting-movement.md",
+        "evidence/runtime/battlefield-frame-rng-order.md"
+      ],
       "unknowns": [],
-      "tests": ["battlefield-kernel: 116 total assertions including strict range boundaries, selectable/tree filtering, quadtree ties, normalized movement, home approach, hero separation, recovered frame-stage order, seeded LCG constants/sequence, scheduled-monster RNG-domain order, projectile live/snapshot attack resolution, forced critical and dodge priority", "Cocos Creator 3.8.8 bundled TypeScript compiler: previous baseline pass with noEmit and skipLibCheck", "Cocos project structure check: previous baseline valid, no missing meta or warnings"],
+      "tests": [
+        "battlefield-kernel: 116 total assertions including strict range boundaries, selectable/tree filtering, quadtree ties, normalized movement, home approach, hero separation, recovered frame-stage order, seeded LCG constants/sequence, scheduled-monster RNG-domain order, projectile live/snapshot attack resolution, forced critical and dodge priority",
+        "Cocos Creator 3.8.8 bundled TypeScript compiler: previous baseline pass with noEmit and skipLibCheck",
+        "Cocos project structure check: previous baseline valid, no missing meta or warnings"
+      ],
       "notes": "Production combat now reproduces the recovered per-frame nearest-target search, original quadtree equal-distance order, strict search/casting boundaries, normalized full-speed pursuit, hero-only 60x60 separation, logical homes at +/-300, far-horizontal/near-diagonal home approach, 40-pixel horizontal stop, trunk-mode home attack permissions, and reverse hero-then-monster update order. Due monsters are scheduled before the collision/action snapshot, so they act in their creation frame; hero/monster actions precede the reverse bullet pass, and queued disposal precedes bullets. H12/H13 random targeting and the previously recovered projectile/area lifetime branches remain separately routed. Matched runtime traces remain part of the global matchedReplay gate rather than an unknown targeting rule."
     },
     "attack-and-damage": {
@@ -99,9 +219,58 @@
       "evidenceStatus": "confirmed",
       "implementationStatus": "implemented",
       "validationStatus": "numeric-pass",
-      "evidence": ["K-C006", "K-C009", "K-C019", "K-C021", "K-C028", "K-C029", "K-C031", "K-C032", "K-C034", "K-C035", "K-C036", "K-C037", "K-C038", "K-C039", "K-C040", "K-C041", "K-C042", "K-C043", "K-C044", "evidence/runtime/battlefield-frame-rng-order.md", "evidence/runtime/baglike-enemy-attack-decrease.md", "evidence/runtime/baglike-warrior-combo-critical.md", "evidence/runtime/baglike-h0905-bounce-projectile.md", "evidence/runtime/baglike-h11-heal-to-shield.md", "evidence/runtime/baglike-h11-multi-target-noop.md", "evidence/runtime/baglike-h12-guaranteed-critical.md", "evidence/runtime/baglike-h12-critical-damage.md", "evidence/runtime/baglike-h13-bounce-times.md", "evidence/runtime/baglike-h13-popcorn-replacement.md", "evidence/runtime/baglike-h02-split-shot.md", "evidence/runtime/baglike-h02-barrage-time.md", "evidence/runtime/baglike-h03-transform.md", "evidence/runtime/baglike-h03-penetrating-laser.md", "evidence/runtime/baglike-h04-periodic-heal.md", "evidence/runtime/baglike-h01-kill-stacking.md", "evidence/runtime/baglike-h04-attack-kill-fly.md", "evidence/runtime/baglike-h04-shield-wall.md", "evidence/runtime/baglike-h1005-primary-bullet.md", "evidence/assets/original/H0905-effects/manifest.json"],
+      "evidence": [
+        "K-C006",
+        "K-C009",
+        "K-C019",
+        "K-C021",
+        "K-C028",
+        "K-C029",
+        "K-C031",
+        "K-C032",
+        "K-C034",
+        "K-C035",
+        "K-C036",
+        "K-C037",
+        "K-C038",
+        "K-C039",
+        "K-C040",
+        "K-C041",
+        "K-C042",
+        "K-C043",
+        "K-C044",
+        "evidence/runtime/battlefield-frame-rng-order.md",
+        "evidence/runtime/baglike-enemy-attack-decrease.md",
+        "evidence/runtime/baglike-warrior-combo-critical.md",
+        "evidence/runtime/baglike-h0905-bounce-projectile.md",
+        "evidence/runtime/baglike-h11-heal-to-shield.md",
+        "evidence/runtime/baglike-h11-multi-target-noop.md",
+        "evidence/runtime/baglike-h12-guaranteed-critical.md",
+        "evidence/runtime/baglike-h12-critical-damage.md",
+        "evidence/runtime/baglike-h13-bounce-times.md",
+        "evidence/runtime/baglike-h13-popcorn-replacement.md",
+        "evidence/runtime/baglike-h02-split-shot.md",
+        "evidence/runtime/baglike-h02-barrage-time.md",
+        "evidence/runtime/baglike-h03-transform.md",
+        "evidence/runtime/baglike-h03-penetrating-laser.md",
+        "evidence/runtime/baglike-h04-periodic-heal.md",
+        "evidence/runtime/baglike-h01-kill-stacking.md",
+        "evidence/runtime/baglike-h04-attack-kill-fly.md",
+        "evidence/runtime/baglike-h04-shield-wall.md",
+        "evidence/runtime/baglike-h1005-primary-bullet.md",
+        "evidence/assets/original/H0905-effects/manifest.json"
+      ],
       "unknowns": [],
-      "tests": ["golden-cases damage: 8 cases", "battlefield-kernel damage/attack-speed/retry/projectile/split-shot/H02-barrage/H03-transform/H03-laser/bounce/forced-critical/attribute-critical/critical-damage/attack-kill-fly/shield-wall/lazy-RNG/frame-order/LCG subset within 116 total assertions", "battlefield-healing: shield-first damage and H04 periodic-heal boundaries within 42 total assertions", "baglike-traits: H01 final-kill stacking, H02 split-shot/barrage, H03 transform/laser, H04 periodic heal, attack-kill-fly and shield-wall, enemy ATK_DEC, H01 combo-critical, all three H11 rows including the star-7 dispatcher no-op, H12 critical/replacement and H13 bounce-count/popcorn-replacement behavior within 240 total assertions", "baglike-fusion-heroes: 15 assertions including H1005 type-11 fallback semantics", "h10-primary-bullet-runtime: 9 assertions", "late-fusion-browser-contract: 13 assertions including five H1005 primary casts and two hits", "H0905 recovered effects: 15 asset/linkage assertions"],
+      "tests": [
+        "golden-cases damage: 8 cases",
+        "battlefield-kernel damage/attack-speed/retry/projectile/split-shot/H02-barrage/H03-transform/H03-laser/bounce/forced-critical/attribute-critical/critical-damage/attack-kill-fly/shield-wall/lazy-RNG/frame-order/LCG subset within 116 total assertions",
+        "battlefield-healing: shield-first damage and H04 periodic-heal boundaries within 42 total assertions",
+        "baglike-traits: H01 final-kill stacking, H02 split-shot/barrage, H03 transform/laser, H04 periodic heal, attack-kill-fly and shield-wall, enemy ATK_DEC, H01 combo-critical, all three H11 rows including the star-7 dispatcher no-op, H12 critical/replacement and H13 bounce-count/popcorn-replacement behavior within 240 total assertions",
+        "baglike-fusion-heroes: 15 assertions including H1005 type-11 fallback semantics",
+        "h10-primary-bullet-runtime: 9 assertions",
+        "late-fusion-browser-contract: 13 assertions including five H1005 primary casts and two hits",
+        "H0905 recovered effects: 15 asset/linkage assertions"
+      ],
       "notes": "Production combat uses the isolated kernel for dodge half damage, critical, forced critical, additive critical damage, effect ratio, typed resistance, boss increase, home damage, floor, minimum damage, attack-speed-scaled basic behavior delay, and the original live-caster versus dead-projectile attack snapshot boundary. H11 heal shields are additive and consume incoming damage before HP, with exact exhaustion leaving HP unchanged; no shield cap is recovered. H04 periodic healing follows the shipped generic heal formula rather than the card's max-HP wording: every one-second tick restores floor(attack * 200/10000) or floor(attack * 500/10000), plus HEAL_INC when present, then clamps to max HP. RG_H04_abl03 applies DMG_RES 3000 during each two-second shield-wall window; star 10 first dispatches floor(resistance-adjusted pre-floor incoming damage * 3000/10000) to the live attacker, then resolves the original hit through victim shield and HP, while CounterAttack status cannot recurse. RG_H04_abl04_eff01 runs before dodge, critical and ordinary damage on H04/H09 basic attacks; a successful inclusive 3000/10000 roll deals the recovered 999999 kill value to non-boss monsters through the common shield/damage route and consumes no later damage RNG, while bosses and non-basic actions skip its RNG entirely. Dodge now short-circuits the critical RNG read, forced-critical buffs do the same after a non-dodge, and attribute-based CRI_RATE 10000 still consumes its normal critical roll. H0905 follows the recovered BounceBullet route: the initial 35% projectile can make at most two further speed-400 bounces to the nearest unvisited enemy strictly inside 300 pixels, sharing one visited-target map. H13/H09 popcorn replacements preserve the same routing and compound the resolved live/snapshot attack by 1.1 once per follow-up bounce; the initial hit remains unchanged. TZ_1303's configured radius-50 final explosion is unreachable in shipped version 18 because child BounceBullet initialization checks last_missile before copying the parent bounce counter. Each H0905 segment renders the recovered H24_S1 projectile and creates the recovered three-frame H24_S1_LOWER impact plus bullet_zhanche audio; frame geometry is confirmed, while the current 30 FPS playback remains inferred pending matched video. RG_ALL_abl08_eff01 reads through the shared monster attribute layer for ordinary, elite and boss units. RG_H01_abl02 counts completed basic attacks, preserves an armed critical across dodge, consumes it only on an actual critical, and applies the star-10 heal at the recovered trigger point. RG_H01_abl03_eff01 receives only the single resolved final killer from MonsterUnit.onDie, not an assist list; every qualifying H01/H07 kill adds 200 ATK_INC, and the shared damage multiplier is max(0, 1 + (ATK_INC - ATK_DEC) / 10000), capped by the passive at 30 stacks. RG_H12_abl02 adds CRI_RATE 10000 at H12 star 2; RG_H12_abl03 adds CRI_DMG 5000 at star 7, raising an actual critical from 15000 to 20000 without granting chance by itself."
     },
     "skills-buffs-status": {
@@ -109,12 +278,69 @@
       "evidenceStatus": "partial",
       "implementationStatus": "implemented",
       "validationStatus": "numeric-pass",
-      "evidence": ["K-C019", "K-C023", "K-C027", "K-C028", "K-C029", "K-C030", "K-C031", "K-C032", "K-C033", "K-C034", "K-C035", "K-C036", "K-C037", "K-C038", "K-C039", "K-C040", "K-C041", "K-C042", "K-C043", "evidence/visual/original/2026-08-01/trait-selection.png", "evidence/runtime/baglike-random-gear-upgrade.md", "evidence/runtime/baglike-level2-prepare-weight.md", "evidence/runtime/baglike-exp-gain-ability.md", "evidence/runtime/baglike-enemy-attack-decrease.md", "evidence/runtime/baglike-power-near-attack.md", "evidence/runtime/baglike-power-near-worker.md", "evidence/runtime/baglike-immediate-home-heal.md", "evidence/runtime/baglike-round-start-home-heal.md", "evidence/runtime/baglike-warrior-combo-critical.md", "evidence/runtime/baglike-h0905-bounce-projectile.md", "evidence/runtime/baglike-h11-base-repair.md", "evidence/runtime/baglike-h11-heal-to-shield.md", "evidence/runtime/baglike-h11-multi-target-noop.md", "evidence/runtime/baglike-h12-paralysis.md", "evidence/runtime/baglike-h12-guaranteed-critical.md", "evidence/runtime/baglike-h12-critical-damage.md", "evidence/runtime/baglike-h12-electrified.md", "evidence/runtime/baglike-h13-bounce-times.md", "evidence/runtime/baglike-h13-popcorn-replacement.md", "evidence/runtime/baglike-h02-split-shot.md", "evidence/runtime/baglike-h02-barrage-time.md", "evidence/runtime/baglike-h03-transform.md", "evidence/runtime/baglike-h03-penetrating-laser.md", "evidence/runtime/baglike-h04-periodic-heal.md", "evidence/runtime/baglike-h01-kill-stacking.md", "evidence/runtime/baglike-h04-attack-kill-fly.md", "evidence/runtime/baglike-h04-shield-wall.md", "evidence/runtime/baglike-h1005-primary-bullet.md", "evidence/runtime/late-fusion-browser-contract/manifest.json"],
+      "evidence": [
+        "K-C019",
+        "K-C023",
+        "K-C027",
+        "K-C028",
+        "K-C029",
+        "K-C030",
+        "K-C031",
+        "K-C032",
+        "K-C033",
+        "K-C034",
+        "K-C035",
+        "K-C036",
+        "K-C037",
+        "K-C038",
+        "K-C039",
+        "K-C040",
+        "K-C041",
+        "K-C042",
+        "K-C043",
+        "evidence/visual/original/2026-08-01/trait-selection.png",
+        "evidence/runtime/baglike-random-gear-upgrade.md",
+        "evidence/runtime/baglike-level2-prepare-weight.md",
+        "evidence/runtime/baglike-exp-gain-ability.md",
+        "evidence/runtime/baglike-enemy-attack-decrease.md",
+        "evidence/runtime/baglike-power-near-attack.md",
+        "evidence/runtime/baglike-power-near-worker.md",
+        "evidence/runtime/baglike-immediate-home-heal.md",
+        "evidence/runtime/baglike-round-start-home-heal.md",
+        "evidence/runtime/baglike-warrior-combo-critical.md",
+        "evidence/runtime/baglike-h0905-bounce-projectile.md",
+        "evidence/runtime/baglike-h11-base-repair.md",
+        "evidence/runtime/baglike-h11-heal-to-shield.md",
+        "evidence/runtime/baglike-h11-multi-target-noop.md",
+        "evidence/runtime/baglike-h12-paralysis.md",
+        "evidence/runtime/baglike-h12-guaranteed-critical.md",
+        "evidence/runtime/baglike-h12-critical-damage.md",
+        "evidence/runtime/baglike-h12-electrified.md",
+        "evidence/runtime/baglike-h13-bounce-times.md",
+        "evidence/runtime/baglike-h13-popcorn-replacement.md",
+        "evidence/runtime/baglike-h02-split-shot.md",
+        "evidence/runtime/baglike-h02-barrage-time.md",
+        "evidence/runtime/baglike-h03-transform.md",
+        "evidence/runtime/baglike-h03-penetrating-laser.md",
+        "evidence/runtime/baglike-h04-periodic-heal.md",
+        "evidence/runtime/baglike-h01-kill-stacking.md",
+        "evidence/runtime/baglike-h04-attack-kill-fly.md",
+        "evidence/runtime/baglike-h04-shield-wall.md",
+        "evidence/runtime/baglike-h1005-primary-bullet.md",
+        "evidence/runtime/late-fusion-browser-contract/manifest.json"
+      ],
       "unknowns": [
         "Obtain the target competitor account's saved H01 and H12 star values; package code proves the local-save source but the account values are absent from packages and current captures.",
         "Restore remaining player-account hero-star values, condition handlers, and ad playback for reroll/take-all."
       ],
-      "tests": ["battlefield-kernel base-skill, split-shot, H02 barrage timing/disconnect, projectile, H03 transform/laser, bounce-feature/popcorn-growth, last-missile disconnect, forced/attribute-critical, critical-damage, attack-kill-fly, shield-wall and lazy-RNG assertions within 109 total", "battlefield-production: 24 assertions including POWER_NEAR placement, attack-only output scaling, worker-progress scaling and displayed rate", "battlefield-healing: 42 assertions including H11 ZL_1103 base repair, HEAL_TO_SHIELD overflow, shield-first damage and H04 periodic healing", "battlefield-paralysis: 18 assertions including LY_1204, replacement order, Boss03 BT_001 mapping, and live H12/H03 control-immunity routing", "battlefield-scenario: 28 assertions including EXP thresholds and 1.5x fractional remainder", "baglike-traits: 240 weighted draw/filter/effect assertions including H01 final-kill shared attack stacking, H02 split-shot and barrage, H03 transform/laser, H04 periodic-heal, attack-kill-fly and shield-wall star variants, initial-draw no-guarantee, reroll quality-4 guarantee, random gear upgrade, shipped 3012 no-op, EXP_GAIN/5000, MONSTER ATK_DEC/500, POWER_NEAR_ATK_UP/2000, POWER_NEAR_WORKER_UP/2000, two BASE_HP-gated heals, all four H01 combo-critical star variants, H11 star-2 shield, star-5 base repair and star-7 dispatcher no-op, all H12 consumers, both H13 bounce-count variants, and both H13 popcorn replacements"],
+      "tests": [
+        "battlefield-kernel base-skill, split-shot, H02 barrage timing/disconnect, projectile, H03 transform/laser, bounce-feature/popcorn-growth, last-missile disconnect, forced/attribute-critical, critical-damage, attack-kill-fly, shield-wall and lazy-RNG assertions within 109 total",
+        "battlefield-production: 24 assertions including POWER_NEAR placement, attack-only output scaling, worker-progress scaling and displayed rate",
+        "battlefield-healing: 42 assertions including H11 ZL_1103 base repair, HEAL_TO_SHIELD overflow, shield-first damage and H04 periodic healing",
+        "battlefield-paralysis: 18 assertions including LY_1204, replacement order, Boss03 BT_001 mapping, and live H12/H03 control-immunity routing",
+        "battlefield-scenario: 28 assertions including EXP thresholds and 1.5x fractional remainder",
+        "baglike-traits: 240 weighted draw/filter/effect assertions including H01 final-kill shared attack stacking, H02 split-shot and barrage, H03 transform/laser, H04 periodic-heal, attack-kill-fly and shield-wall star variants, initial-draw no-guarantee, reroll quality-4 guarantee, random gear upgrade, shipped 3012 no-op, EXP_GAIN/5000, MONSTER ATK_DEC/500, POWER_NEAR_ATK_UP/2000, POWER_NEAR_WORKER_UP/2000, two BASE_HP-gated heals, all four H01 combo-critical star variants, H11 star-2 shield, star-5 base repair and star-7 dispatcher no-op, all H12 consumers, both H13 bounce-count variants, and both H13 popcorn replacements"
+      ],
       "notes": "Weighted draws keep the recovered times, used-family, hero-star, wave, and base-HP filters; only reroll enforces quality 4. Fifty-three effect rows now form forty-one mutually exclusive groups: thirty-nine active groups plus the confirmed REWARD/3012 and H11 HEAL_MORE_TARGER v18 no-ops. Restored star-gated consumers cover H01 combo/final-kill stacking, H02 split shot/barrage, H03 transform/penetrating laser, H04 periodic heal/shield wall/kill-fly, H11 shield/base repair, all H12 groups, and H13 bounce/popcorn. RG_H02_abl03 selects star 7/8 active skill 2001_5/2001_6 for future H02/H07: the reachable 2/3-second casts fire nine/six 5000-ratio missiles, while star 8's 3500-ms behavior and both orphan ATK_SPD Buff groups are disconnected. RG_H03_abl03 selects star 7 dizziness transform or the star 8 replacement; shipped DMG_INC=3000 increases the transformed target's outgoing damage rather than incoming damage, and this runtime/card disconnect is preserved. RG_H03_abl04_eff01 selects active skill 3001_5 at star 10 for future H03/H08: it casts for one second, fires at 300 ms, starts a four-second cooldown at behavior time and directly hits an inclusive 100-by-300 forward rectangle at 5000 ratio. Evidence-safe account defaults for H01/H02/H03/H04/H11/H12/H13 remain star 1. All represented-family rows are routed. Full per-row contracts are maintained in RESTORE_SPEC.json and MECHANICS_DATA_HANDOFF.md."
     },
     "waves-and-scaling": {
@@ -122,9 +348,19 @@
       "evidenceStatus": "confirmed",
       "implementationStatus": "implemented",
       "validationStatus": "numeric-pass",
-      "evidence": ["K-C004", "K-C005", "K-C009", "K-C019"],
+      "evidence": [
+        "K-C004",
+        "K-C005",
+        "K-C009",
+        "K-C019"
+      ],
       "unknowns": [],
-      "tests": ["battlefield-scenario: level 1004 rounds 1-15 and boss order", "golden-cases defeatCompensation: 4 cases", "all-level-playability: 200 levels / 2,978 rounds / 54,816 scheduled spawns and every intermediate/final round transition"],
+      "tests": [
+        "battlefield-scenario: level 1004 rounds 1-15 and boss order",
+        "golden-cases defeatCompensation: 4 cases",
+        "all-level-playability: 200 levels / 2,978 rounds / 54,816 scheduled spawns and every intermediate/final round transition",
+        "all-200 runtime smoke: every level spawned a scheduled enemy and reached round-clear, a later wave, or a terminal outcome in the production Web build"
+      ],
       "notes": "All 200 normal-level wave schedules, level/round multipliers, and the 15-row consecutive-defeat compensation table are implemented. A fresh reconstructed session starts at challengeTimes=1 so recovered first-challenge static batches are consumed where present. A 20-minute zero-progression 1001 run exhausted all 15 source rows and still stopped at round 3, while a level-1100 long run remained blocked at the former 10% floor after 25 losses. Production therefore preserves rows 1-3 exactly and then applies an explicitly reconstruction-only mechanics-first decay down to a 1% floor; defeatCompensation() retains the untouched source table for fidelity tests."
     },
     "outcomes-and-persistence": {
@@ -132,9 +368,25 @@
       "evidenceStatus": "confirmed",
       "implementationStatus": "implemented",
       "validationStatus": "numeric-pass",
-      "evidence": ["K-C007", "K-C013", "K-C019", "evidence/runtime/baglike-immediate-home-heal.md", "evidence/runtime/baglike-round-start-home-heal.md", "evidence/runtime/battlefield-terminal-order.md", "evidence/runtime/battlefield-failure-persistence.md", "evidence/runtime/level-1100-15-wave-closure-current/manifest.json"],
+      "evidence": [
+        "K-C007",
+        "K-C013",
+        "K-C019",
+        "evidence/runtime/baglike-immediate-home-heal.md",
+        "evidence/runtime/baglike-round-start-home-heal.md",
+        "evidence/runtime/battlefield-terminal-order.md",
+        "evidence/runtime/battlefield-failure-persistence.md",
+        "evidence/runtime/level-1100-15-wave-closure-current/manifest.json"
+      ],
       "unknowns": [],
-      "tests": ["golden-cases baseHp and conditions", "golden-cases defeatCompensation", "battlefield-kernel retry scaling assertions", "baglike-traits BASE_HP inclusive boundaries, noRestore immediate healing, persistent round-start healing and max-HP clamp assertions", "all-level-playability: each of 200 production sessions exercises loss counting, retry-to-wave-1 with compensation preserved, final victory, victory clearing previous failures, home-death priority, due-hit-before-terminal order, immediate future-projectile cancellation, and delayed round rewards"],
+      "tests": [
+        "golden-cases baseHp and conditions",
+        "golden-cases defeatCompensation",
+        "battlefield-kernel retry scaling assertions",
+        "baglike-traits BASE_HP inclusive boundaries, noRestore immediate healing, persistent round-start healing and max-HP clamp assertions",
+        "all-level-playability: each of 200 production sessions exercises loss counting, retry-to-wave-1 with compensation preserved, final victory, victory clearing previous failures, home-death priority, due-hit-before-terminal order, immediate future-projectile cancellation, and delayed round rewards",
+        "2026-08-18 browser smoke: 200/200 levels reached a live round-clear/later-wave/terminal state; slower late levels exercised up to 18 normal failed-attempt compensation steps before clearing round one"
+      ],
       "notes": "Victory, defeat, retry, in-session defeat count, source-exact early retry scaling, the mechanics-first post-third-loss accessibility decay, the conditional immediate base-heal consumable, and persistent per-round-start base healing are implemented and numerically covered. Recovered controller source proves that due bullets resolve before the terminal check, self-home death wins the tie, final-kill EXP is emitted synchronously, remaining bullets are removed immediately on victory, and round rewards follow the 1000-ms roundEnd callback. Continuous production sessions cover 1001, 1002, and all 15 waves of 1100; victory clears failedAttempts. Recovered record-controller source also closes the persistence boundary: unfinished-battle failedTimes may be checkpointed, but BAGLIKE_BATTLE_LOST clears that record. The separate account-layer getFailMultipleCfg source is unavailable and remains outside the deterministic battlefield contract, so no cross-process failedAttempts storage is invented."
     },
     "presentation-and-feedback": {
@@ -142,35 +394,112 @@
       "evidenceStatus": "partial",
       "implementationStatus": "partial",
       "validationStatus": "untested",
-      "evidence": ["K-C010", "K-C014", "K-C022", "evidence/visual/original/2026-08-01/manifest.json", "evidence/visual/reconstruction/2026-08-02/manifest.json", "evidence/visual/reconstruction/2026-08-02/visual-comparison.md", "evidence/visual/reconstruction/2026-08-02/fusion-validation/h0905-effects.png", "evidence/visual/reconstruction/2026-08-08/manifest.json", "evidence/visual/reconstruction/2026-08-09-trait-richtext/manifest.json", "evidence/visual/reconstruction/2026-08-09-trait-richtext/visual-comparison.md", "evidence/visual/reconstruction/2026-08-09-preparation-controls/manifest.json", "evidence/visual/reconstruction/2026-08-09-preparation-controls/visual-comparison.md", "evidence/visual/reconstruction/2026-08-09-battle-synchronized/manifest.json", "evidence/visual/reconstruction/2026-08-09-battle-synchronized/visual-comparison.md", "evidence/visual/gear-connector-art.md", "evidence/runtime/baglike-unit-level-production.md", "evidence/runtime/baglike-h0905-bounce-projectile.md", "evidence/assets/original/hero-level-models/README.md", "evidence/assets/original/H0905-effects/manifest.json", "evidence/assets/original/H0204-projectile/manifest.json", "evidence/assets/original/H02-projectile/manifest.json", "evidence/assets/original/H03-H08-projectile/manifest.json", "evidence/assets/original/H08-impact/manifest.json", "evidence/assets/original/H01-H04-audio/manifest.json", "evidence/assets/original/H03-status-effects/manifest.json", "evidence/assets/original/H03-laser-audio/manifest.json", "evidence/assets/original/projectile-presentation/manifest.json", "evidence/runtime/projectile-presentation-2026-08-13/manifest.json"],
+      "evidence": [
+        "K-C010",
+        "K-C014",
+        "K-C022",
+        "evidence/visual/original/2026-08-01/manifest.json",
+        "evidence/visual/reconstruction/2026-08-02/manifest.json",
+        "evidence/visual/reconstruction/2026-08-02/visual-comparison.md",
+        "evidence/visual/reconstruction/2026-08-02/fusion-validation/h0905-effects.png",
+        "evidence/visual/reconstruction/2026-08-08/manifest.json",
+        "evidence/visual/reconstruction/2026-08-09-trait-richtext/manifest.json",
+        "evidence/visual/reconstruction/2026-08-09-trait-richtext/visual-comparison.md",
+        "evidence/visual/reconstruction/2026-08-09-preparation-controls/manifest.json",
+        "evidence/visual/reconstruction/2026-08-09-preparation-controls/visual-comparison.md",
+        "evidence/visual/reconstruction/2026-08-09-battle-synchronized/manifest.json",
+        "evidence/visual/reconstruction/2026-08-09-battle-synchronized/visual-comparison.md",
+        "evidence/visual/gear-connector-art.md",
+        "evidence/runtime/baglike-unit-level-production.md",
+        "evidence/runtime/baglike-h0905-bounce-projectile.md",
+        "evidence/assets/original/hero-level-models/README.md",
+        "evidence/assets/original/H0905-effects/manifest.json",
+        "evidence/assets/original/H0204-projectile/manifest.json",
+        "evidence/assets/original/H02-projectile/manifest.json",
+        "evidence/assets/original/H03-H08-projectile/manifest.json",
+        "evidence/assets/original/H08-impact/manifest.json",
+        "evidence/assets/original/H01-H04-audio/manifest.json",
+        "evidence/assets/original/H03-status-effects/manifest.json",
+        "evidence/assets/original/H03-laser-audio/manifest.json",
+        "evidence/assets/original/projectile-presentation/manifest.json",
+        "evidence/runtime/projectile-presentation-2026-08-13/manifest.json",
+        "evidence/assets/original/post-unlock-cache-2026-08-18/manifest.json",
+        "evidence/runtime/post-unlock-resource-integration-2026-08-18.md",
+        "evidence/runtime/role-fairygui-quality-2026-08-18.md",
+        "evidence/assets/original/presentation-cache-2026-08-18/manifest.json",
+        "evidence/runtime/battle-presentation-timing-2026-08-18.md"
+      ],
       "unknowns": [
         "Restore H18_S1 only if an authorized package/version containing spriteFrame/skill/js_fashi_dandao is obtained; version 18 resources3 has no asset record.",
-        "Finish the remaining gear glow, status/result feedback, and matched timing/audio checks outside the now-restored projectile matrix."
+        "Capture a win/loss so the missing ui/battle FairyGUI package and battle_win/battle_fail audio can enter the authorized cache; then perform the result transition/audio same-frame comparison.",
+        "Visually confirm the UI10025/UI10026 skeleton mapping and H08/H0905 frame timing against a representative original recording."
       ],
-      "tests": ["Creator imported 12 recovered level-2/3/4 Spine 3.8.99 sets with atlas bindings and no missing meta", "baglike-unit-progression asset existence and path assertions", "trait presentation: 21 recovered-component/RichText/source-description/geometry assertions, a normal-flow first-EXP capture, and a fresh 750x1334 web-mobile fixture capture", "preparation presentation: 15 normalized HUD/backpack/board/candidate/control-state assertions and a fresh 750x1334 web-mobile fixture capture", "gear connector presentation: 16 exact atlas/shape/rotation assertions", "battle visual baseline: 13 fixture timing, deterministic placement, observability and independent-layer-offset assertions plus a fresh 750x1334 web-mobile capture", "H0905 recovered effects: 15 asset/linkage assertions and 750x1334 Web-build smoke capture", "H02 recovered projectile: 12 asset/linkage/routing/timing assertions", "H0204 recovered projectile: 8 asset/linkage assertions", "H03/H08 recovered projectile: 13 asset/linkage/routing/numeric/timing assertions", "H0705 recovered impact: 13 asset/frame/linkage assertions; Creator import and TypeScript pass", "H08 recovered impact: 14 asset/frame/linkage assertions; Creator import and TypeScript pass", "H11 recovered healing effect: 7 Spine asset/action/linkage assertions; Creator import and TypeScript pass", "H12 recovered lightning effect: 12 Spine/audio/timing/linkage assertions; Creator import and TypeScript pass", "H13 recovered projectile: 8 asset/frame/initial-and-bounce linkage assertions; Creator import and TypeScript pass", "H01/H04 recovered attack audio: 8 asset/hash/routing/timing assertions; Creator import and TypeScript pass", "H03 recovered status effects: 19 Spine/audio/routing/lifetime assertions; Creator import and TypeScript pass", "H03 recovered laser audio: 5 asset/hash/cast-timing assertions; Creator import and TypeScript pass", "Recovered projectile presentation: 73 asset-hash, table-mapping, routing, timing, curve/ray and fallback-suppression assertions", "2026-08-13 level-1004 browser matrix: H06/H14/H17/M03/M09/M10 loaded, visual errors 0, console warnings/errors 0", "Full regression 54/54, golden cases 47/47, Creator TypeScript pass, Cocos project 251 assets / 0 missing meta", "750x1334 Creator release captures for initial preparation, a real drag/start wave-1 transition, normal-flow trait selection, deterministic developed-state fixtures, and the recovered projectile matrix"],
-      "notes": "Four original level-1004 screenshots establish preparation, battle, and trait-overlay behavior. Trait and developed-preparation sub-baselines match recovered art, source RichText and normalized geometry. Multi-cell connectors now use the exact panel1..4 shapes, source rotations, cl1..cl5 atlas slices, and corrected cl1 y=1 crop. The battle fixture follows the 100401 schedule and freezes at 4.010 seconds with four enemies and 863 HP; after removing the 88px WeChat host header, the battlefield split, HP bar, and panel top align near 693/729/772px. The HP display uses the exact recovered bagLike/xl_icon.png 439,374,32x27 red-heart frame and source-relative spacing. Native unseeded spawn Y is screenshot-constrained only in the browser fixture; normal gameplay remains random. H06, H14, H17, M03/Boss03, M09/Boss09 and M10/Boss10 now consume their recovered MissileConfig/BehaviorConfig presentation instead of the 0.11-second generic trace. Fresh Creator 3.8.8 web-mobile captures have clean project consoles. H18 remains explicitly unresolved because version 18 lacks its referenced native asset; remaining gear glow, status/result feedback and H08/H0905 matched timing remain pending."
+      "tests": [
+        "Creator imported 12 recovered level-2/3/4 Spine 3.8.99 sets with atlas bindings and no missing meta",
+        "baglike-unit-progression asset existence and path assertions",
+        "trait presentation: 21 recovered-component/RichText/source-description/geometry assertions, a normal-flow first-EXP capture, and a fresh 750x1334 web-mobile fixture capture",
+        "preparation presentation: 15 normalized HUD/backpack/board/candidate/control-state assertions and a fresh 750x1334 web-mobile fixture capture",
+        "gear connector presentation: 16 exact atlas/shape/rotation assertions",
+        "battle visual baseline: 13 fixture timing, deterministic placement, observability and independent-layer-offset assertions plus a fresh 750x1334 web-mobile capture",
+        "H0905 recovered effects: 15 asset/linkage assertions and 750x1334 Web-build smoke capture",
+        "H02 recovered projectile: 12 asset/linkage/routing/timing assertions",
+        "H0204 recovered projectile: 8 asset/linkage assertions",
+        "H03/H08 recovered projectile: 13 asset/linkage/routing/numeric/timing assertions",
+        "H0705 recovered impact: 13 asset/frame/linkage assertions; Creator import and TypeScript pass",
+        "H08 recovered impact: 14 asset/frame/linkage assertions; Creator import and TypeScript pass",
+        "H11 recovered healing effect: 7 Spine asset/action/linkage assertions; Creator import and TypeScript pass",
+        "H12 recovered lightning effect: 12 Spine/audio/timing/linkage assertions; Creator import and TypeScript pass",
+        "H13 recovered projectile: 8 asset/frame/initial-and-bounce linkage assertions; Creator import and TypeScript pass",
+        "H01/H04 recovered attack audio: 8 asset/hash/routing/timing assertions; Creator import and TypeScript pass",
+        "H03 recovered status effects: 19 Spine/audio/routing/lifetime assertions; Creator import and TypeScript pass",
+        "H03 recovered laser audio: 5 asset/hash/cast-timing assertions; Creator import and TypeScript pass",
+        "Recovered projectile presentation: 73 asset-hash, table-mapping, routing, timing, curve/ray and fallback-suppression assertions",
+        "2026-08-13 level-1004 browser matrix: H06/H14/H17/M03/M09/M10 loaded, visual errors 0, console warnings/errors 0",
+        "Full regression 57/57, golden cases 47/47, Creator TypeScript pass, Cocos project 282 assets / 0 missing meta",
+        "750x1334 Creator release captures for initial preparation, a real drag/start wave-1 transition, normal-flow trait selection, deterministic developed-state fixtures, and the recovered projectile matrix",
+        "Post-unlock resource integration: exact hashes, two byte-identical reuses, six Spine triplets, role background, P01/P04 list models, P01/P04 central-core battle models, and HeroUpAniComp upgrade-glow linkage",
+        "2026-08-18 Creator 3.8.8 Web Mobile: P01/P04 central-core full-model binding built successfully; 275 assets, zero missing metadata, TypeScript pass, and static fallback retained for uncached P02/P03",
+        "Role FairyGUI/image_quality: complete child scans for 12 components, exact HeroMainView/HeroItem/HeroInfoView geometry, 42 quality frames and runtime quality bindings",
+        "Battle presentation timing: recovered UI10025/UI10026 Spine hashes and consumers, exact 300 ms result-action reveal, and source-table proof that H04 shield-wall and H12 paralysis groups configure no persistent status model",
+        "2026-08-18 Creator 3.8.8 Web Mobile: role/presentation build finished in 5 seconds; 282 assets, zero missing metadata, TypeScript pass"
+      ],
+      "notes": "Four original level-1004 screenshots establish preparation, battle, and trait-overlay behavior. Trait and developed-preparation sub-baselines match recovered art, source RichText and normalized geometry. Multi-cell connectors now use the exact panel1..4 shapes, source rotations, cl1..cl5 atlas slices, and corrected cl1 y=1 crop. The battle fixture follows the 100401 schedule and freezes at 4.010 seconds with four enemies and 863 HP; after removing the 88px WeChat host header, the battlefield split, HP bar, and panel top align near 693/729/772px. The HP display uses the exact recovered bagLike/xl_icon.png 439,374,32x27 red-heart frame and source-relative spacing. Native unseeded spawn Y is screenshot-constrained only in the browser fixture; normal gameplay remains random. H06, H14, H17, M03/Boss03, M09/Boss09 and M10/Boss10 now consume their recovered MissileConfig/BehaviorConfig presentation instead of the 0.11-second generic trace. The 2026-08-18 post-unlock cache closes the out-of-battle role background, exact HeroMainView/HeroItem geometry, 42-frame quality atlas binding, P01/P04 list-model, P01/P04 central-core full-model and exact HeroUpAniComp placement; P02/P03 preserve their static fallback until configured lazy assets are cached. UI10025/UI10026 preparation glows are recovered and bound, while their skeleton mapping remains explicitly inferred by cache request order until visually confirmed. H04 shield-wall and H12 paralysis configure no persistent model, so no speculative overlay is added. Result actions now use the source-confirmed 300 ms reveal delay. Fresh Creator 3.8.8 web-mobile builds have clean project consoles. H18 remains explicitly unresolved because version 18 lacks its referenced native asset; ui/battle result art, battle_win/battle_fail audio, result same-frame comparison and H08/H0905 matched timing remain pending."
     }
   },
   "gates": {
     "evidence": {
       "status": "pending",
-      "evidence": ["Damage, projectile lifetime, lazy dodge/critical RNG, H01 star-7 final-kill shared attack stacking, H02 star-7/8 barrage timing and version-18 disconnects, H03 star-7/8 transform runtime semantics and star-10 penetrating-laser cast/rectangle contract, H04 attack-scaled periodic healing, star-7/10 shield wall and star-8 basic-attack instant kill against non-boss monsters, H11 base healing, star-2 unit heal-to-shield, star-5 base-repair replacement and star-7 dispatcher disconnect, H12 consumers, H13 base/feature bounce-count and popcorn replacement routing, production consumers, and targeting/movement are recovered; all 53 represented-family effect rows are routed. Account-derived conditions and matched traces remain incomplete."]
+      "evidence": [
+        "Damage, projectile lifetime, lazy dodge/critical RNG, H01 star-7 final-kill shared attack stacking, H02 star-7/8 barrage timing and version-18 disconnects, H03 star-7/8 transform runtime semantics and star-10 penetrating-laser cast/rectangle contract, H04 attack-scaled periodic healing, star-7/10 shield wall and star-8 basic-attack instant kill against non-boss monsters, H11 base healing, star-2 unit heal-to-shield, star-5 base-repair replacement and star-7 dispatcher disconnect, H12 consumers, H13 base/feature bounce-count and popcorn replacement routing, production consumers, and targeting/movement are recovered; all 53 represented-family effect rows are routed. Account-derived conditions and matched traces remain incomplete."
+      ]
     },
     "deterministic": {
       "status": "pass",
-      "evidence": ["47 current golden cases and 1018 logged rule/asset/presentation assertions pass across 25 scripts, including 7 trait-presentation checks, 40 dynamic preparation-drop checks, 42 healing/shield checks, 240 trait-pool checks, 18 H12 replacement/status/control-immunity checks, 116 combat-kernel checks, 51 production-clock/presentation/order checks, 13 H0705 recovered-impact checks, 15 H0905 recovered-effect checks, 7 H11 recovered-healing-effect checks, 12 H12 recovered-lightning-effect checks, 8 H13 recovered-projectile checks, 8 H01/H04 recovered-audio checks, 19 H03 recovered-status-effect checks and 5 H03 laser-audio checks. The preparation-static and battle-only power-core phase, direction-1 first completed quarter, occupied-side delay, P01 star-0 productivity window, GameTimer-before-BattleTimer battle-tick order, Boss03 control immunity through live H12/H03 optional abilities, battle-controller frame stages, same-frame scheduled-monster and bullet consequences, home-death priority, immediate future-projectile cancellation, synchronous final-kill EXP, delayed round rewards, unfinished-battle failure checkpoint boundary, native-position versus seeded-combat RNG domains, and the 9301/49297/233280 LCG are recovered and tested."]
+      "evidence": [
+        "47 current golden cases and 1018 logged rule/asset/presentation assertions pass across 25 scripts, including 7 trait-presentation checks, 40 dynamic preparation-drop checks, 42 healing/shield checks, 240 trait-pool checks, 18 H12 replacement/status/control-immunity checks, 116 combat-kernel checks, 51 production-clock/presentation/order checks, 13 H0705 recovered-impact checks, 15 H0905 recovered-effect checks, 7 H11 recovered-healing-effect checks, 12 H12 recovered-lightning-effect checks, 8 H13 recovered-projectile checks, 8 H01/H04 recovered-audio checks, 19 H03 recovered-status-effect checks and 5 H03 laser-audio checks. The preparation-static and battle-only power-core phase, direction-1 first completed quarter, occupied-side delay, P01 star-0 productivity window, GameTimer-before-BattleTimer battle-tick order, Boss03 control immunity through live H12/H03 optional abilities, battle-controller frame stages, same-frame scheduled-monster and bullet consequences, home-death priority, immediate future-projectile cancellation, synchronous final-kill EXP, delayed round rewards, unfinished-battle failure checkpoint boundary, native-position versus seeded-combat RNG domains, and the 9301/49297/233280 LCG are recovered and tested."
+      ]
     },
     "integration": {
       "status": "pass",
-      "evidence": ["Fresh Creator 3.8.8 Web Mobile interaction covers the recovered level-1002 static batches, three-side production, H13 level-2/3 merges, H04 replacement, P01's five-second productivity skill, traits, loss compensation and retry without stat overrides. Replacing Creator's broken release lowering of Set spread with Array.from restored all observed gear-trigger applications.", "The current-source 1001/1100/1200 contract resolved all requested IDs and recovered 5/15/15 wave counts; each completed a real shape-aware drag, battle start, 6/6 worker applications and zero missing gear/config lookups.", "evidence/runtime/level-1001-current-source-closure/combined-summary.json records one continuous production session split only by runner time bounds: recovered static batches, normal drag/merge, fixed level-2 H02 trait, six formal loss/result/retry loops, post-third-loss accessibility decay, all five rounds and final won. Victory reset failedAttempts 6->0 at 569/700 HP and 45 gold, with 879/879 production triggers/applications, zero missing gear/config, zero runtime errors and no state overrides.", "evidence/runtime/candidate-level-1002-closure-current/manifest.json records a resumed continuous browser session that retained four prior losses, observed one more final-wave loss, then completed all eight recovered waves at 361/1375 HP. Victory reset failedAttempts 5->0; the trace reached 5,916/5,916 production triggers/applications with zero missing gear/config, zero runtime errors and no combat-stat or phase overrides.", "evidence/runtime/level-1100-15-wave-closure-current/manifest.json records the resumed winning segment of a fresh default-account run. After failedAttempts reached 17 and the reconstruction-only 1% long-loss floor applied, normal shape-aware placement, merge, traits and combat completed all 15 waves; victory reset failedAttempts to 0, peak self/enemy units were 9/22, with zero runtime errors or missing production configuration.", "evidence/runtime/activity-mode-battle-and-settlement.md records the source-backed Daily/Endless state, combat, scoring, reset and settlement closure; 42/42 test files, Creator TypeScript and a fresh 750x1334 Web build/browser smoke pass."]
+      "evidence": [
+        "Fresh Creator 3.8.8 Web Mobile interaction covers the recovered level-1002 static batches, three-side production, H13 level-2/3 merges, H04 replacement, P01's five-second productivity skill, traits, loss compensation and retry without stat overrides. Replacing Creator's broken release lowering of Set spread with Array.from restored all observed gear-trigger applications.",
+        "The current-source 1001/1100/1200 contract resolved all requested IDs and recovered 5/15/15 wave counts; each completed a real shape-aware drag, battle start, 6/6 worker applications and zero missing gear/config lookups.",
+        "evidence/runtime/level-1001-current-source-closure/combined-summary.json records one continuous production session split only by runner time bounds: recovered static batches, normal drag/merge, fixed level-2 H02 trait, six formal loss/result/retry loops, post-third-loss accessibility decay, all five rounds and final won. Victory reset failedAttempts 6->0 at 569/700 HP and 45 gold, with 879/879 production triggers/applications, zero missing gear/config, zero runtime errors and no state overrides.",
+        "evidence/runtime/candidate-level-1002-closure-current/manifest.json records a resumed continuous browser session that retained four prior losses, observed one more final-wave loss, then completed all eight recovered waves at 361/1375 HP. Victory reset failedAttempts 5->0; the trace reached 5,916/5,916 production triggers/applications with zero missing gear/config, zero runtime errors and no combat-stat or phase overrides.",
+        "evidence/runtime/level-1100-15-wave-closure-current/manifest.json records the resumed winning segment of a fresh default-account run. After failedAttempts reached 17 and the reconstruction-only 1% long-loss floor applied, normal shape-aware placement, merge, traits and combat completed all 15 waves; victory reset failedAttempts to 0, peak self/enemy units were 9/22, with zero runtime errors or missing production configuration.",
+        "evidence/runtime/activity-mode-battle-and-settlement.md records the source-backed Daily/Endless state, combat, scoring, reset and settlement closure; 42/42 test files, Creator TypeScript and a fresh 750x1334 Web build/browser smoke pass.",
+        "evidence/runtime/all-200-runtime-smoke-2026-08-18/all-level-runtime-smoke.json records a four-shard Web run in which all 200 normal levels loaded their recovered deal, placed a producer through the production reducer, started battle, spawned enemies, applied production work and reached round-clear/later-wave/terminal flow; failures, missing gear/config and runtime errors were all zero."
+      ]
     },
     "matchedReplay": {
       "status": "pending",
-      "evidence": ["Original and reconstruction both target level 1004 at a normalized 750x1334 game viewport. Deterministic developed-state fixtures match trait component art/RichText, preparation HUD/backpack/board/candidate/control anchors, exact multi-cell connectors, the recovered red-heart HP style, the wave-1 4.010-second four-enemy geometry, and the six-class source-backed projectile matrix with clean project consoles. Full matched replay remains pending on gear glow and remaining status/result animation/audio timing."]
+      "evidence": [
+        "Original and reconstruction both target level 1004 at a normalized 750x1334 game viewport. Deterministic developed-state fixtures match trait component art/RichText, preparation HUD/backpack/board/candidate/control anchors, exact multi-cell connectors, the recovered red-heart HP style, the wave-1 4.010-second four-enemy geometry, and the six-class source-backed projectile matrix with clean project consoles. UI10025/UI10026 gear-glow assets and consumers plus the 300 ms result-action delay are recovered. Full matched replay remains pending on visual confirmation of the glow mapping, ui/battle result art, battle_win/battle_fail audio and H08/H0905 same-frame timing."
+      ]
     }
   },
   "blockers": [
-    "The level-1004 trait, preparation, multi-cell connector, HP-heart, synchronized wave-1 geometry/timing and six-class projectile sub-baselines are closed; gear glow and remaining status/result animation/audio timing still block the full visual baseline.",
+    "The level-1004 trait, preparation, multi-cell connector, HP-heart, synchronized wave-1 geometry/timing, projectile matrix, gear-glow assets/consumers and result-control delay are recovered; the missing ui/battle package, battle_win/battle_fail audio and representative same-frame recording still block the full visual baseline.",
     "The target account's exact saved P01/hero progression is unavailable, so original-account balance fidelity remains unverified even though the default reconstruction now completes level 1002 after mechanics-first loss compensation."
   ],
   "nextActions": [
@@ -179,6 +508,6 @@
     "Treat the source-confirmed GameTimer-before-BattleTimer order as fixed; preserve the production-before-combat engine-tick contract while extending mechanics.",
     "Keep the reconstruction-only 1% long-loss floor explicitly separated from the untouched source compensation table and from original-account balance fidelity claims.",
     "Capture the competitor hero page or saved profile value that proves the target account's H01 star, then set h01HeroStar to reproduce its exact combo-card eligibility.",
-    "Align the remaining status/result effects and battle gear glow against the synchronized level-1004 wave-1 fixture; preserve the recovered projectile matrix and keep H18 unresolved until source art exists."
+    "After a real win/loss downloads ui/battle and battle_win/battle_fail, capture the result transition/audio and visually confirm UI10025/UI10026 plus H08/H0905 against the synchronized level-1004 fixture; preserve the recovered projectile matrix and keep H18 unresolved until source art exists."
   ]
 }

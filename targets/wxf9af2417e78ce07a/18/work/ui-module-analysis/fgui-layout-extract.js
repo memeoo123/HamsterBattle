@@ -29,11 +29,23 @@ class Reader {
 function parseChild(reader, itemsById, strict = false) {
   const start = reader.pos;
   const objectType = reader.u8();
-  const sourceId = reader.string();
-  const sourcePackageId = reader.string();
-  const constructedRaw = reader.u8();
-  if (strict && constructedRaw > 1) throw new Error('invalid constructed flag');
-  const constructed = constructedRaw === 1;
+  // This compact package writer uses a one-byte 1 marker for built-in objects
+  // (loader, list, text, graph, group...) which have no package source. Sourced
+  // images/components keep the regular sourceId/sourcePackageId/constructed
+  // triplet. Treating the marker as the high byte of a string length caused the
+  // old scanner to start one byte late and report plausible but corrupt records.
+  let sourceId = '';
+  let sourcePackageId = '';
+  let constructed = false;
+  if (reader.buffer[reader.pos] === 1) {
+    reader.u8();
+  } else {
+    sourceId = reader.string();
+    sourcePackageId = reader.string();
+    const constructedRaw = reader.u8();
+    if (strict && constructedRaw > 1) throw new Error('invalid constructed flag');
+    constructed = constructedRaw === 1;
+  }
   const instanceId = reader.string();
   const name = reader.string();
   const x = reader.i32();

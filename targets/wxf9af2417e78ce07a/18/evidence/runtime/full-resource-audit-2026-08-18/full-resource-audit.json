@@ -1,0 +1,1214 @@
+{
+  "schemaVersion": "1.0",
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "version": "18"
+  },
+  "generatedAt": "2026-08-18T09:17:28.289Z",
+  "build": "http://127.0.0.1:18181",
+  "passed": true,
+  "assertions": 8,
+  "totals": {
+    "total": 166,
+    "loaded": 155,
+    "staticFallback": 10,
+    "fileMissing": 1
+  },
+  "categories": {
+    "hero": {
+      "total": 97,
+      "loaded": 91,
+      "staticFallback": 6,
+      "fileMissing": 0
+    },
+    "power-role": {
+      "total": 8,
+      "loaded": 4,
+      "staticFallback": 4,
+      "fileMissing": 0
+    },
+    "monster": {
+      "total": 25,
+      "loaded": 25,
+      "staticFallback": 0,
+      "fileMissing": 0
+    },
+    "projectile": {
+      "total": 14,
+      "loaded": 13,
+      "staticFallback": 0,
+      "fileMissing": 1
+    },
+    "effect": {
+      "total": 22,
+      "loaded": 22,
+      "staticFallback": 0,
+      "fileMissing": 0
+    }
+  },
+  "records": [
+    {
+      "category": "effect",
+      "id": "audio:H03-freeze",
+      "resourcePath": "original/skill_bingfeng",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "audio:H03-laser",
+      "resourcePath": "original/skill_jiguang",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "audio:H03-transform",
+      "resourcePath": "original/skill_bianxing",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "audio:H09",
+      "resourcePath": "original/bullet_zhanche",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "audio:H10",
+      "resourcePath": "original/bullet_hedan",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "audio:H12-lightning",
+      "resourcePath": "original/bullet_leiyun",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "audio:H14",
+      "resourcePath": "original/projectile-matrix/bullet_shayu",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "audio:melee-charge",
+      "resourcePath": "original/skill_zhuangji",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "audio:melee-sword",
+      "resourcePath": "original/skill_jijian",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "H03:freeze",
+      "resourcePath": "spine/H03Freeze/hit_binkuai",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "H03:transform",
+      "resourcePath": "spine/H03Transform/hit_lizi",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "H0705:impact",
+      "resourcePath": "original/js_gangtiexia_hill_baozha/spriteFrame",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "H0805:impact",
+      "resourcePath": "original/js_aoteman_hill/spriteFrame",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "H0905:impact",
+      "resourcePath": "original/js_zhanche_hill/spriteFrame",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "H1005:nuke",
+      "resourcePath": "spine/H1005Nuke/hedang",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "H11:heal",
+      "resourcePath": "spine/H11Healing/skill01_hit_upper",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "H12:lightning",
+      "resourcePath": "spine/H12Lightning/chilun_leiyun",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "H13:impact",
+      "resourcePath": "spine/H13Impact/baomihua_hill",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "H15:coin-impact",
+      "resourcePath": "original/chilun_chuangzhangsha/spriteFrame",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "power-role:upgrade-glow",
+      "resourcePath": "spine/PowerRoleUpgradeGlow/chilunpy_shengjishanguang",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "preparation:grid-reward-glow",
+      "resourcePath": "spine/PreparationGlowSg1/zhandou_sg1",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "effect",
+      "id": "preparation:refresh-glow",
+      "resourcePath": "spine/PreparationGlowSg2/zhandou_sg2",
+      "status": "loaded",
+      "detail": "production effect/audio asset"
+    },
+    {
+      "category": "hero",
+      "id": "C01:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame coin"
+    },
+    {
+      "category": "hero",
+      "id": "C02:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame coin"
+    },
+    {
+      "category": "hero",
+      "id": "C03:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame coin"
+    },
+    {
+      "category": "hero",
+      "id": "C04:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame coin"
+    },
+    {
+      "category": "hero",
+      "id": "H0101:combat",
+      "resourcePath": "spine/H0101/js_zhanshi_1",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0101:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0101"
+    },
+    {
+      "category": "hero",
+      "id": "H0102:combat",
+      "resourcePath": "spine/H0102/js_zhanshi_2",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0102:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0102"
+    },
+    {
+      "category": "hero",
+      "id": "H0103:combat",
+      "resourcePath": "spine/H0103/js_zhanshi_3",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0103:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0103"
+    },
+    {
+      "category": "hero",
+      "id": "H0104:combat",
+      "resourcePath": "spine/H0104/js_zhanshi_4",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0104:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0104"
+    },
+    {
+      "category": "hero",
+      "id": "H0201:combat",
+      "resourcePath": "spine/H0201/js_sheshou_1",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0201:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0201"
+    },
+    {
+      "category": "hero",
+      "id": "H0202:combat",
+      "resourcePath": "spine/H0202/js_sheshou_2",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0202:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0202"
+    },
+    {
+      "category": "hero",
+      "id": "H0203:combat",
+      "resourcePath": "spine/H0203/js_sheshou_3",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0203:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0203"
+    },
+    {
+      "category": "hero",
+      "id": "H0204:combat",
+      "resourcePath": "spine/H0204/js_sheshou_4",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0204:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0204"
+    },
+    {
+      "category": "hero",
+      "id": "H0301:combat",
+      "resourcePath": "spine/H0301/js_fashi_1",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0301:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0301"
+    },
+    {
+      "category": "hero",
+      "id": "H0302:combat",
+      "resourcePath": "spine/H0302/js_fashi_2",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0302:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0302"
+    },
+    {
+      "category": "hero",
+      "id": "H0303:combat",
+      "resourcePath": "spine/H0303/js_fashi_3",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0303:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0303"
+    },
+    {
+      "category": "hero",
+      "id": "H0304:combat",
+      "resourcePath": "spine/H0304/js_fashi_4",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0304:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0304"
+    },
+    {
+      "category": "hero",
+      "id": "H0401:combat",
+      "resourcePath": "spine/H0401/js_qishi_1",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0401:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0401"
+    },
+    {
+      "category": "hero",
+      "id": "H0402:combat",
+      "resourcePath": "spine/H0402/js_qishi_2",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0402:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0402"
+    },
+    {
+      "category": "hero",
+      "id": "H0403:combat",
+      "resourcePath": "spine/H0403/js_qishi_3",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0403:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0403"
+    },
+    {
+      "category": "hero",
+      "id": "H0404:combat",
+      "resourcePath": "spine/H0404/js_qishi_4",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0404:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0404"
+    },
+    {
+      "category": "hero",
+      "id": "H0501:combat",
+      "resourcePath": "spine/H0501/js_lieren_1",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0501:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0501"
+    },
+    {
+      "category": "hero",
+      "id": "H0502:combat",
+      "resourcePath": "spine/H0502/js_lieren_2",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0502:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0502"
+    },
+    {
+      "category": "hero",
+      "id": "H0503:combat",
+      "resourcePath": "spine/H0503/js_lieren_3",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0503:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0503"
+    },
+    {
+      "category": "hero",
+      "id": "H0504:combat",
+      "resourcePath": "spine/H0504/js_lieren_4",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0504:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0504"
+    },
+    {
+      "category": "hero",
+      "id": "H0601:combat",
+      "resourcePath": "spine/H0601/js_feixingyuan_1",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0601:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0601"
+    },
+    {
+      "category": "hero",
+      "id": "H0602:combat",
+      "resourcePath": "spine/H0602/js_feixingyuan_2",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0602:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0602"
+    },
+    {
+      "category": "hero",
+      "id": "H0603:combat",
+      "resourcePath": "spine/H0603/js_feixingyuan_3",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0603:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0603"
+    },
+    {
+      "category": "hero",
+      "id": "H0604:combat",
+      "resourcePath": "spine/H0604/js_feixingyuan_4",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0604:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0604"
+    },
+    {
+      "category": "hero",
+      "id": "H0705:combat",
+      "resourcePath": "spine/H0705/js_gangtiexia",
+      "status": "loaded",
+      "detail": "fusion combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0705:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0705"
+    },
+    {
+      "category": "hero",
+      "id": "H0805:combat",
+      "resourcePath": "spine/H0805/js_aoteman",
+      "status": "loaded",
+      "detail": "fusion combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0805:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0805"
+    },
+    {
+      "category": "hero",
+      "id": "H0905:combat",
+      "resourcePath": "spine/H0905/js_zhanche",
+      "status": "loaded",
+      "detail": "fusion combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H0905:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H0905"
+    },
+    {
+      "category": "hero",
+      "id": "H1005:combat",
+      "resourcePath": "spine/H1005/js_feidieshu",
+      "status": "loaded",
+      "detail": "fusion combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H1005:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1005"
+    },
+    {
+      "category": "hero",
+      "id": "H11:combat",
+      "resourcePath": null,
+      "status": "static-fallback",
+      "detail": "original producer is a stationary wheel with no independent combat Spine; gear/effect presentation remains active"
+    },
+    {
+      "category": "hero",
+      "id": "H1101:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1101"
+    },
+    {
+      "category": "hero",
+      "id": "H1102:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1101"
+    },
+    {
+      "category": "hero",
+      "id": "H1103:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1101"
+    },
+    {
+      "category": "hero",
+      "id": "H1104:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1101"
+    },
+    {
+      "category": "hero",
+      "id": "H12:combat",
+      "resourcePath": null,
+      "status": "static-fallback",
+      "detail": "original producer is a stationary wheel with no independent combat Spine; gear/effect presentation remains active"
+    },
+    {
+      "category": "hero",
+      "id": "H1201:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1201"
+    },
+    {
+      "category": "hero",
+      "id": "H1202:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1201"
+    },
+    {
+      "category": "hero",
+      "id": "H1203:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1201"
+    },
+    {
+      "category": "hero",
+      "id": "H1204:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1201"
+    },
+    {
+      "category": "hero",
+      "id": "H13:combat",
+      "resourcePath": null,
+      "status": "static-fallback",
+      "detail": "original producer is a stationary wheel with no independent combat Spine; gear/effect presentation remains active"
+    },
+    {
+      "category": "hero",
+      "id": "H1301:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1301"
+    },
+    {
+      "category": "hero",
+      "id": "H1302:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1301"
+    },
+    {
+      "category": "hero",
+      "id": "H1303:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1301"
+    },
+    {
+      "category": "hero",
+      "id": "H1304:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1301"
+    },
+    {
+      "category": "hero",
+      "id": "H14:combat",
+      "resourcePath": null,
+      "status": "static-fallback",
+      "detail": "original producer is a stationary wheel with no independent combat Spine; gear/effect presentation remains active"
+    },
+    {
+      "category": "hero",
+      "id": "H1401:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1401"
+    },
+    {
+      "category": "hero",
+      "id": "H1402:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1401"
+    },
+    {
+      "category": "hero",
+      "id": "H1403:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1401"
+    },
+    {
+      "category": "hero",
+      "id": "H1404:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1401"
+    },
+    {
+      "category": "hero",
+      "id": "H15:combat",
+      "resourcePath": null,
+      "status": "static-fallback",
+      "detail": "original producer is a stationary wheel with no independent combat Spine; gear/effect presentation remains active"
+    },
+    {
+      "category": "hero",
+      "id": "H1505:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1505"
+    },
+    {
+      "category": "hero",
+      "id": "H1601:combat",
+      "resourcePath": "spine/H1601/js_konglong_1",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H1601:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1601"
+    },
+    {
+      "category": "hero",
+      "id": "H1602:combat",
+      "resourcePath": "spine/H1602/js_konglong_2",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H1602:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1602"
+    },
+    {
+      "category": "hero",
+      "id": "H1603:combat",
+      "resourcePath": "spine/H1603/js_konglong_3",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H1603:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1603"
+    },
+    {
+      "category": "hero",
+      "id": "H1604:combat",
+      "resourcePath": "spine/H1604/js_konglong_4",
+      "status": "loaded",
+      "detail": "production combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H1604:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1604"
+    },
+    {
+      "category": "hero",
+      "id": "H17:combat",
+      "resourcePath": null,
+      "status": "static-fallback",
+      "detail": "original producer is a stationary wheel with no independent combat Spine; gear/effect presentation remains active"
+    },
+    {
+      "category": "hero",
+      "id": "H1701:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1701"
+    },
+    {
+      "category": "hero",
+      "id": "H1702:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1701"
+    },
+    {
+      "category": "hero",
+      "id": "H1703:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1701"
+    },
+    {
+      "category": "hero",
+      "id": "H1704:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1701"
+    },
+    {
+      "category": "hero",
+      "id": "H1805:combat",
+      "resourcePath": "spine/H1805/js_gesila",
+      "status": "loaded",
+      "detail": "fusion combat Spine"
+    },
+    {
+      "category": "hero",
+      "id": "H1805:portrait",
+      "resourcePath": "original/heroSmallHead/spriteFrame",
+      "status": "loaded",
+      "detail": "recovered portrait frame H1805"
+    },
+    {
+      "category": "monster",
+      "id": "B01",
+      "resourcePath": "spine/B01/boss_1",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "B02",
+      "resourcePath": "spine/B02/boss_2",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "B03",
+      "resourcePath": "spine/B03/boss_3",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "Boss01",
+      "resourcePath": "spine/M01/gw_01",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "Boss02",
+      "resourcePath": "spine/M02/gw_02",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "Boss03",
+      "resourcePath": "spine/M03/gw_03",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "Boss06",
+      "resourcePath": "spine/M06/gw_06",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "Boss07",
+      "resourcePath": "spine/M07/gw_07",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "Boss09",
+      "resourcePath": "spine/M09/gw_09",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "Boss10",
+      "resourcePath": "spine/M10/gw_10",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "Boss11",
+      "resourcePath": "spine/M11/gw_11",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "Boss14",
+      "resourcePath": "spine/M14/gw_14",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M01",
+      "resourcePath": "spine/M01/gw_01",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M02",
+      "resourcePath": "spine/M02/gw_02",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M03",
+      "resourcePath": "spine/M03/gw_03",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M04",
+      "resourcePath": "spine/M04/gw_04",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M05",
+      "resourcePath": "spine/M05/gw_05",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M06",
+      "resourcePath": "spine/M06/gw_06",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M07",
+      "resourcePath": "spine/M07/gw_07",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M09",
+      "resourcePath": "spine/M09/gw_09",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M10",
+      "resourcePath": "spine/M10/gw_10",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M11",
+      "resourcePath": "spine/M11/gw_11",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M12",
+      "resourcePath": "spine/M12/gw_12",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M13",
+      "resourcePath": "spine/M13/gw_13",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "monster",
+      "id": "M14",
+      "resourcePath": "spine/M14/gw_14",
+      "status": "loaded",
+      "detail": "recovered enemy/Boss Spine"
+    },
+    {
+      "category": "power-role",
+      "id": "P01:card",
+      "resourcePath": "spine/PowerRoleP01Card/pao_paopaoshu",
+      "status": "loaded",
+      "detail": "recovered configured power-role Spine"
+    },
+    {
+      "category": "power-role",
+      "id": "P01:core",
+      "resourcePath": "spine/PowerRoleP01Full/pao_paopaoshu",
+      "status": "loaded",
+      "detail": "recovered configured power-role Spine"
+    },
+    {
+      "category": "power-role",
+      "id": "P02:card",
+      "resourcePath": "spine/power/pao_shandianxia0.75/pao_shandianxia",
+      "status": "static-fallback",
+      "detail": "configured lazy-cache model has not been downloaded; colored labeled portrait fallback is used"
+    },
+    {
+      "category": "power-role",
+      "id": "P02:core",
+      "resourcePath": "spine/power/pao_shandianxia/pao_shandianxia",
+      "status": "static-fallback",
+      "detail": "configured lazy-cache model has not been downloaded; colored labeled portrait fallback is used"
+    },
+    {
+      "category": "power-role",
+      "id": "P03:card",
+      "resourcePath": "spine/power/pao_suonike0.75/pao_suonike",
+      "status": "static-fallback",
+      "detail": "configured lazy-cache model has not been downloaded; colored labeled portrait fallback is used"
+    },
+    {
+      "category": "power-role",
+      "id": "P03:core",
+      "resourcePath": "spine/power/pao_suonike/pao_suonike",
+      "status": "static-fallback",
+      "detail": "configured lazy-cache model has not been downloaded; colored labeled portrait fallback is used"
+    },
+    {
+      "category": "power-role",
+      "id": "P04:card",
+      "resourcePath": "spine/PowerRoleP04/pao_kakaxi",
+      "status": "loaded",
+      "detail": "recovered configured power-role Spine"
+    },
+    {
+      "category": "power-role",
+      "id": "P04:core",
+      "resourcePath": "spine/PowerRoleP04Full/pao_kakaxi",
+      "status": "loaded",
+      "detail": "recovered configured power-role Spine"
+    },
+    {
+      "category": "projectile",
+      "id": "H0201",
+      "resourcePath": "original/js_sheshou_zidan/spriteFrame",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    },
+    {
+      "category": "projectile",
+      "id": "H0204",
+      "resourcePath": "original/js_sheshou_lanqiu/spriteFrame",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    },
+    {
+      "category": "projectile",
+      "id": "H0301",
+      "resourcePath": "spine/H03Projectile/zidan",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    },
+    {
+      "category": "projectile",
+      "id": "H0601",
+      "resourcePath": "original/projectile-matrix/js_feixingyuan_dandao2/spriteFrame",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    },
+    {
+      "category": "projectile",
+      "id": "H0905",
+      "resourcePath": "original/js_zhanche_dandao/spriteFrame",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    },
+    {
+      "category": "projectile",
+      "id": "H1005",
+      "resourcePath": "spine/H1005Projectile/js_feidieshu_dandao",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    },
+    {
+      "category": "projectile",
+      "id": "H1301",
+      "resourcePath": "original/baomihuali/spriteFrame",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    },
+    {
+      "category": "projectile",
+      "id": "H1401",
+      "resourcePath": "original/projectile-matrix/chilun_haidaosha/spriteFrame",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    },
+    {
+      "category": "projectile",
+      "id": "H1701",
+      "resourcePath": "spine/ProjectileMatrix/H17/chilun_shexian1",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    },
+    {
+      "category": "projectile",
+      "id": "H18_S1",
+      "resourcePath": "spriteFrame/skill/js_fashi_dandao",
+      "status": "file-missing",
+      "detail": "model table references this path, but version-18 resources3 has no matching native asset"
+    },
+    {
+      "category": "projectile",
+      "id": "M03",
+      "resourcePath": "original/projectile-matrix/yugutou_dandao/spriteFrame",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    },
+    {
+      "category": "projectile",
+      "id": "M09",
+      "resourcePath": "original/projectile-matrix/boss_1_dandao/spriteFrame",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    },
+    {
+      "category": "projectile",
+      "id": "M10",
+      "resourcePath": "spine/ProjectileMatrix/M10/gw_10_zidan",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    },
+    {
+      "category": "projectile",
+      "id": "P04",
+      "resourcePath": "original/feibiao/feibiao/spriteFrame",
+      "status": "loaded",
+      "detail": "production projectile asset"
+    }
+  ],
+  "runtimeErrors": []
+}

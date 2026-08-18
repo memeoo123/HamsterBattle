@@ -8,7 +8,14 @@
 - 当前阶段：Cocos 代表关卡验证 / 完整闭环与表现验收
 - 还原契约：`implementationReady=true`
 - 活动工程：`E:\Projects\weichatAnalysis\cangshu\cocosProject`
-- 更新日期：2026-08-10
+- 更新日期：2026-08-18
+
+## 最新验证补记（2026-08-18）
+
+- **全 200 关运行时冒烟与一键回归**：新增 `all-level-runtime-smoke-browser-contract.mjs` 和 `scripts/run-project-regression.ps1`。四个隔离 Chrome 分片实跑 `1001..1200`，200/200 均观察到恢复发牌、生产 reducer 布阵、开战、刷怪、P01 齿轮触发/工人应用及回合清算/后续波次/终局，缺齿轮配置、缺生产配置与运行时错误均为 0，总耗时 927.713 秒。Quick 档从新鲜 Creator 构建开始，47.104 秒内通过 61 条验证命令、59 个测试文件、166 项资源巡检和 3/3 代表关冒烟。证据见 `evidence/runtime/all-200-runtime-smoke-2026-08-18/` 与 `evidence/runtime/project-regression-entrypoint-2026-08-18.md`。
+- **刷新计数修复后代表关卡长流程复跑**：当前源码的 1001、1002、1100 均通过真实拖放、合并、特质、失败补偿与重试进入 `won`；通关金币分别为 45、80、175，三关均为 `powerMissingGear=0`、`powerMissingConfig=0`、最终 `unitFallbacks` 为空。1002 前三批恢复候选顺序有显式断言；1100 在同一浏览器会话续跑完成 15 波。证据见 `evidence/runtime/representative-long-run-refresh-2026-08-18/`。
+- **全角色资源运行时巡检**：审计路由逐项调用 Cocos `resources.load`，覆盖英雄/齿轮头像与战斗模型、动力角色、怪物/Boss、弹体、特效和关联音频，共 166 项：155 成功加载、10 使用明确静态回退、1 文件缺失、0 运行时异常。唯一真实缺文件为 `H18_S1 -> spriteFrame/skill/js_fashi_dandao`；同时修复 P04 卡西西鼠飞镖路径少一层 `feibiao` 的生产绑定。证据见 `evidence/runtime/full-resource-audit-2026-08-18/`。
+- **当前源码回归**：全量机制验证 60 条命令、58 个测试文件全部通过，Creator TypeScript、资源导入和项目结构检查通过；机器报告见 `evidence/runtime/current-validation.json`。视觉基线及 battlefield-faithful 仍保持未完成。
 
 ## 跨机器合并补记（2026-08-10）
 
@@ -417,3 +424,25 @@
 - 恢复 H05/H06/H16 1–4 级共 12 套 Spine 3.8.99；25 种普通关敌人全部绑定视觉 roster，原先 19 个空 `spinePath` 已关闭。
 - 原 `image/main` 图集的五个侧栏图标进入主页；资源门禁覆盖 25 敌人、12 后期英雄、2 背景、5 图标。
 - 运行验收发现并修复直达锁定关卡时动力角色状态初始化竞态；修复后 1009 直接进入且 P01 完整。最终 51/51、golden 47/47、240 assets / 0 missing meta、TypeScript 和 18:59:56 Web Mobile 构建通过。证据见 `evidence/runtime/autonomous-resource-regression-2026-08-12.md`。
+
+## 全角色解锁后的远程缓存复核（2026-08-18）
+
+- 用户报告已解锁全部角色后，针对 `wxf9af2417e78ce07a/18` 重新扫描桌面微信缓存。目标主包和 game 分包自 2026-07-30 起均未变化；新增内容位于 `usr/gamecaches/resources2|resources3`，确认属于 Cocos 远程按需资源，而非新的 `.wxapkg`。
+- 2026-08-18 14:19:41 与 14:24:39（北京时间）新增两批共 12 个原始文件、778,440 字节。已原样留存到 `evidence/assets/original/post-unlock-cache-2026-08-18/`，记录 UUID、CDN 路径、SHA-256、尺寸和字节级去重结果；复核确认 `image/shape` 与 `image/effect` 已在 Cocos 工程中以相同哈希存在，其余 10 个为工程此前没有的原始资源。
+- `[已确认]` 角色页 `ui/hero` FairyGUI 包解压为 10,461 字节，包含 `HeroMainView / HeroInfoView / HeroUnlockView / HeroResetView` 等 12 个组件，主页面均为 750×1334；同时取得角色页图集/背景、`image/quality`、`image/shape`、完整 `image/effect`、齿轮升级闪光，以及 `pao_kakaxi` 和 `cj_xuedi` 两套 Spine 3.8.99 资源。
+- `[已导入]` 新资源已合并到 Cocos 工程并由 Creator 3.8.8 生成元数据：角色页使用 `bg1` 原始背景，P04 卡片使用 `pao_kakaxi` Spine，成功升星/免费升级时使用 `HeroUpAniComp` 对应升级闪光。`ui_hero` 包/图集、`image/quality` 与 `cj_xuedi` 已保留在工程资源树，等待各自精确布局或玩法消费者，不做猜测式接线。
+- `[未恢复]` `H18_S1 / spriteFrame/skill/js_fashi_dandao` 仍未出现。版本 18 `resources3` 配置没有该逻辑路径或原生 UUID，本次缓存索引也没有对应项，因此继续保持明确缺口，不生成近似素材。
+- 本次没有读取 MMKV、账号数据库或日志；“全部角色已解锁”为用户提供的外部账号证据，不据此猜测每名角色的等级或星级。
+
+## 解锁后资源合并与回归验证（2026-08-18）
+
+- 导入映射见 `cocosProject/assets/resources/data/post-unlock-resource-map.json`；三套 Spine 均使用从原 `resources3.import` 序列化记录提取的精确 atlas 文本，未手写纹理区域。
+- Cocos Creator 3.8.8 Web Mobile 有界构建成功，新增资源 `0 missing meta`；项目检查和 TypeScript 均通过。
+- 当前 mechanics 验证为 `57/57` 命令、`55/55` 测试文件通过，专项 `post-unlock-resource-integration` 覆盖哈希、去重、Spine 三件套和三个运行时消费者。
+- 这批资源关闭了角色页背景、P04 角色卡动态模型和角色升级闪光的资源缺口；尚未关闭 `H18_S1`、代表关 1004 的战斗齿轮闪光、状态/结算动画与音频时序，也不能证明用户账号的精确等级/星级。
+# 2026-08-18 P04 battle-cache correction
+
+- Runtime evidence: entering battle with P04 equipped added the full `spine/power/pao_kakaxi/pao_kakaxi` texture and skeleton to the WeChat cache at 14:49 CST. The new files map through the version-18 Cocos config to texture UUID `54f4c307-52dc-4ed0-aed1-e63e6f1b664d` and skeleton UUID `f0c10b8d-a1c0-4635-92a6-2daf7269abbf`.
+- Correction: the prior filename-only audit incorrectly treated uncached lazy resources as absent. P01 full + 0.75 were already cached; P04 full + 0.75 are now cached. P02/P03 have configured full + 0.75 paths but remain uncached locally.
+- Integration: the newly observed P04 full Spine triplet is preserved separately as `PowerRoleP04Full`; the previously overlooked P01 full/card cache triplets are preserved as `PowerRoleP01Full` and `PowerRoleP01Card`. Decoded `ModelConfig` closes their consumer parameters: P01/P04 battlefield models use `(1,-10)`, scale `1`, height `80`, looping `idle`; P01L/P04L card models use `(1,-20)`, scale `0.7`, height `80`, looping `idle`. P01/P04 full models now replace the central-core static portrait after load, while P02/P03 retain the fallback until their configured lazy assets are cached.
+- Confirmed hard resource gap remains H18 skill `spriteFrame/skill/js_fashi_dandao`; no configured native asset or cache entry has been recovered for it.

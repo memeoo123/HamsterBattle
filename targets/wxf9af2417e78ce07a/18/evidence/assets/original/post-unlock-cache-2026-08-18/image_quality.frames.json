@@ -1,0 +1,1274 @@
+{
+  "schemaVersion": "1.0",
+  "sourceImportPack": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\assets\\original\\item-ui\\resources3.import.0de4fdaf8.fe248.json",
+  "sourceBundleConfig": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\assets\\original\\post-unlock-cache-2026-08-18\\resources3.config.cce0e.json",
+  "logicalPath": "image/quality",
+  "atlasUuid": "95uJP+j/9NzKUIVSSxFJVN",
+  "imageSize": {
+    "width": 1586,
+    "height": 512
+  },
+  "frameCount": 42,
+  "frames": [
+    {
+      "name": "blue_frame",
+      "rect": {
+        "x": 1049,
+        "y": 416,
+        "width": 92,
+        "height": 94
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 94,
+        "height": 94
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "blue_hero_frame",
+      "rect": {
+        "x": 1,
+        "y": 1,
+        "width": 216,
+        "height": 284
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 216,
+        "height": 284
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "blue_hero_lv",
+      "rect": {
+        "x": 1509,
+        "y": 373,
+        "width": 38,
+        "height": 40
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 38,
+        "height": 40
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "blue_hero_shape",
+      "rect": {
+        "x": 1309,
+        "y": 193,
+        "width": 58,
+        "height": 58
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 58,
+        "height": 58
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "blue_monster_frame",
+      "rect": {
+        "x": 1,
+        "y": 287,
+        "width": 162,
+        "height": 216
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 162,
+        "height": 216
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "blue_skill",
+      "rect": {
+        "x": 493,
+        "y": 287,
+        "width": 130,
+        "height": 128
+      },
+      "offset": {
+        "x": 0,
+        "y": 1
+      },
+      "originalSize": {
+        "width": 130,
+        "height": 130
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "fruit_buff_blue",
+      "rect": {
+        "x": 493,
+        "y": 417,
+        "width": 276,
+        "height": 94
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 276,
+        "height": 94
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "fruit_buff_green",
+      "rect": {
+        "x": 771,
+        "y": 417,
+        "width": 276,
+        "height": 94
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 276,
+        "height": 94
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "fruit_buff_orange",
+      "rect": {
+        "x": 1309,
+        "y": 1,
+        "width": 276,
+        "height": 94
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 276,
+        "height": 94
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "fruit_buff_purple",
+      "rect": {
+        "x": 1309,
+        "y": 97,
+        "width": 276,
+        "height": 94
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 276,
+        "height": 94
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "gray_frame",
+      "rect": {
+        "x": 1243,
+        "y": 385,
+        "width": 92,
+        "height": 94
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 94,
+        "height": 94
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "gray_hero_frame",
+      "rect": {
+        "x": 219,
+        "y": 1,
+        "width": 216,
+        "height": 284
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 216,
+        "height": 284
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "gray_hero_lv",
+      "rect": {
+        "x": 1431,
+        "y": 385,
+        "width": 38,
+        "height": 40
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 38,
+        "height": 40
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "gray_hero_shape",
+      "rect": {
+        "x": 1369,
+        "y": 193,
+        "width": 58,
+        "height": 58
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 58,
+        "height": 58
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "green_blood",
+      "rect": {
+        "x": 1043,
+        "y": 386,
+        "width": 20,
+        "height": 28
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 20,
+        "height": 28
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "green_frame",
+      "rect": {
+        "x": 1321,
+        "y": 253,
+        "width": 92,
+        "height": 94
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 94,
+        "height": 94
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "green_hero_frame",
+      "rect": {
+        "x": 437,
+        "y": 1,
+        "width": 216,
+        "height": 284
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 216,
+        "height": 284
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "green_hero_lv",
+      "rect": {
+        "x": 1431,
+        "y": 427,
+        "width": 38,
+        "height": 40
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 38,
+        "height": 40
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "green_hero_shape",
+      "rect": {
+        "x": 1523,
+        "y": 193,
+        "width": 58,
+        "height": 58
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 58,
+        "height": 58
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "green_skill",
+      "rect": {
+        "x": 625,
+        "y": 287,
+        "width": 130,
+        "height": 128
+      },
+      "offset": {
+        "x": 0,
+        "y": 1
+      },
+      "originalSize": {
+        "width": 130,
+        "height": 130
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "jn_blue",
+      "rect": {
+        "x": 1021,
+        "y": 286,
+        "width": 98,
+        "height": 98
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 98,
+        "height": 98
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "jn_green",
+      "rect": {
+        "x": 1121,
+        "y": 285,
+        "width": 98,
+        "height": 98
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 98,
+        "height": 98
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "jn_purple",
+      "rect": {
+        "x": 1143,
+        "y": 385,
+        "width": 98,
+        "height": 98
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 98,
+        "height": 98
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "jn_red",
+      "rect": {
+        "x": 1221,
+        "y": 285,
+        "width": 98,
+        "height": 98
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 98,
+        "height": 98
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "orange_frame",
+      "rect": {
+        "x": 1429,
+        "y": 193,
+        "width": 92,
+        "height": 94
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 94,
+        "height": 94
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "orange_hero_frame",
+      "rect": {
+        "x": 1091,
+        "y": 1,
+        "width": 216,
+        "height": 282
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 216,
+        "height": 282
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "orange_hero_lv",
+      "rect": {
+        "x": 1431,
+        "y": 469,
+        "width": 38,
+        "height": 40
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 38,
+        "height": 40
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "orange_hero_shape",
+      "rect": {
+        "x": 1523,
+        "y": 253,
+        "width": 58,
+        "height": 58
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 58,
+        "height": 58
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "purple_blood",
+      "rect": {
+        "x": 1065,
+        "y": 386,
+        "width": 20,
+        "height": 28
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 20,
+        "height": 28
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "purple_frame",
+      "rect": {
+        "x": 1415,
+        "y": 289,
+        "width": 92,
+        "height": 94
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 94,
+        "height": 94
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "purple_hero_frame",
+      "rect": {
+        "x": 873,
+        "y": 1,
+        "width": 216,
+        "height": 283
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 216,
+        "height": 283
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "purple_hero_lv",
+      "rect": {
+        "x": 1471,
+        "y": 415,
+        "width": 38,
+        "height": 40
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 38,
+        "height": 40
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "purple_hero_shape",
+      "rect": {
+        "x": 1337,
+        "y": 349,
+        "width": 58,
+        "height": 58
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 58,
+        "height": 58
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "purple_monster_frame",
+      "rect": {
+        "x": 165,
+        "y": 287,
+        "width": 162,
+        "height": 216
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 162,
+        "height": 216
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "purple_skill",
+      "rect": {
+        "x": 757,
+        "y": 287,
+        "width": 130,
+        "height": 128
+      },
+      "offset": {
+        "x": 0,
+        "y": 1
+      },
+      "originalSize": {
+        "width": 130,
+        "height": 130
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "red_blood",
+      "rect": {
+        "x": 1087,
+        "y": 386,
+        "width": 20,
+        "height": 28
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 20,
+        "height": 28
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "red_frame",
+      "rect": {
+        "x": 1337,
+        "y": 409,
+        "width": 92,
+        "height": 94
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 94,
+        "height": 94
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "red_hero_frame",
+      "rect": {
+        "x": 655,
+        "y": 1,
+        "width": 216,
+        "height": 284
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 216,
+        "height": 284
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "red_hero_shape",
+      "rect": {
+        "x": 1509,
+        "y": 313,
+        "width": 58,
+        "height": 58
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 58,
+        "height": 58
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "red_monster_frame",
+      "rect": {
+        "x": 329,
+        "y": 287,
+        "width": 162,
+        "height": 216
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 162,
+        "height": 216
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "red_skill",
+      "rect": {
+        "x": 889,
+        "y": 286,
+        "width": 130,
+        "height": 128
+      },
+      "offset": {
+        "x": 0,
+        "y": 1
+      },
+      "originalSize": {
+        "width": 130,
+        "height": 130
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    },
+    {
+      "name": "yellow_blood",
+      "rect": {
+        "x": 1109,
+        "y": 386,
+        "width": 20,
+        "height": 28
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "originalSize": {
+        "width": 20,
+        "height": 28
+      },
+      "rotated": false,
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pixelsToUnit": 100,
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "meshType": 0
+    }
+  ]
+}

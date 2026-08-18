@@ -1,0 +1,17 @@
+{
+    "schemaVersion":  1,
+    "profile":  "Quick",
+    "startedAt":  "2026-08-18T10:07:36.6883495Z",
+    "project":  "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject",
+    "outputRoot":  "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\runtime\\one-click-regression-fresh-build-2026-08-18",
+    "build":  "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\build\\project-regression-20260818-175545\\web-mobile",
+    "passed":  true,
+    "steps":  {
+                  "mechanicsValidation":  "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\runtime\\one-click-regression-fresh-build-2026-08-18\\mechanics-validation.json",
+                  "resourceAudit":  "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\runtime\\one-click-regression-fresh-build-2026-08-18\\resource-audit\\full-resource-audit.json",
+                  "allLevelRuntimeSmoke":  "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\runtime\\one-click-regression-fresh-build-2026-08-18\\all-level-runtime-smoke.json"
+              },
+    "error":  null,
+    "finishedAt":  "2026-08-18T10:08:08.1827344Z",
+    "elapsedSeconds":  31.495
+}

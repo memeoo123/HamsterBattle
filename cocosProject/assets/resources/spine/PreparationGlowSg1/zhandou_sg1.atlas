@@ -1,0 +1,12 @@
+zhandou_sg1.png
+size: 164,124
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+sg
+  rotate: false
+  xy: 2, 2
+  size: 160, 120
+  orig: 160, 120
+  offset: 0, 0
+  index: -1

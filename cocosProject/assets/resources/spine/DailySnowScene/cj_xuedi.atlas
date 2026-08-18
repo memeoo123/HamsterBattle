@@ -1,0 +1,47 @@
+cj_xuedi.png
+size: 570,398
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+js_1
+  rotate: false
+  xy: 404, 166
+  size: 164, 230
+  orig: 164, 230
+  offset: 0, 0
+  index: -1
+js_2
+  rotate: true
+  xy: 2, 2
+  size: 146, 204
+  orig: 146, 204
+  offset: 0, 0
+  index: -1
+js_3
+  rotate: false
+  xy: 316, 51
+  size: 98, 97
+  orig: 98, 97
+  offset: 0, 0
+  index: -1
+js_4
+  rotate: false
+  xy: 208, 44
+  size: 106, 104
+  orig: 106, 104
+  offset: 0, 0
+  index: -1
+js_5
+  rotate: false
+  xy: 2, 150
+  size: 400, 246
+  orig: 400, 246
+  offset: 0, 0
+  index: -1
+xue
+  rotate: false
+  xy: 208, 32
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1

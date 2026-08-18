@@ -1,0 +1,18 @@
+{
+    "schemaVersion":  1,
+    "profile":  "Full",
+    "startedAt":  "2026-08-18T09:38:15.2854342Z",
+    "project":  "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject",
+    "outputRoot":  "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\runtime\\all-200-runtime-smoke-2026-08-18",
+    "build":  "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\build\\resource-audit-validation-20260818\\web-mobile",
+    "passed":  true,
+    "steps":  {
+                  "mechanicsValidation":  "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\runtime\\all-200-runtime-smoke-2026-08-18\\mechanics-validation.json",
+                  "resourceAudit":  "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\runtime\\all-200-runtime-smoke-2026-08-18\\resource-audit\\full-resource-audit.json",
+                  "allLevelRuntimeSmoke":  "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\runtime\\all-200-runtime-smoke-2026-08-18\\all-level-runtime-smoke.json",
+                  "representativeLongRuns":  "skipped by -SkipLongRuns"
+              },
+    "error":  null,
+    "finishedAt":  "2026-08-18T09:53:42.9971748Z",
+    "elapsedSeconds":  927.713
+}

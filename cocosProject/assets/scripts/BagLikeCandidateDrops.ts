@@ -16,6 +16,37 @@ export type CandidateGearId =
 
 export type CandidateRefreshType = 'prepare' | 'normal' | 'ad';
 
+export type CandidateRefreshCounters = {
+    normalRefreshTimes: number;
+    nonAdRefreshTimes: number;
+    hasRefreshFromAd: boolean;
+};
+
+export function beginCandidatePreparationRound(
+    counters: CandidateRefreshCounters,
+): CandidateRefreshCounters {
+    return {
+        normalRefreshTimes: 0,
+        nonAdRefreshTimes: counters.nonAdRefreshTimes,
+        hasRefreshFromAd: false,
+    };
+}
+
+export function completeCandidateRefresh(
+    counters: CandidateRefreshCounters,
+    refreshType: CandidateRefreshType,
+): CandidateRefreshCounters {
+    return {
+        normalRefreshTimes: counters.normalRefreshTimes + (refreshType === 'normal' ? 1 : 0),
+        nonAdRefreshTimes: counters.nonAdRefreshTimes + (refreshType === 'ad' ? 0 : 1),
+        hasRefreshFromAd: counters.hasRefreshFromAd || refreshType === 'ad',
+    };
+}
+
+export function candidateNormalRefreshCost(normalRefreshTimes: number, paidCost: number): number {
+    return normalRefreshTimes > 0 ? Math.max(0, paidCost) : 0;
+}
+
 export type CandidateRewardWeightModifier = {
     rewardType: 'REWARD';
     rewardId: number;
@@ -362,6 +393,25 @@ export type PlacedFootprint = {
     shape: GridShape;
 };
 
+export type GridDropResolution =
+    | { kind: 'place'; row: number; col: number; displacedUids: number[] }
+    | { kind: 'return-to-candidate' }
+    | { kind: 'restore-origin' };
+
+export type GridDropInput = {
+    source: 'candidate' | 'grid';
+    movingUid: number;
+    movingShape: GridShape;
+    target: { row: number; col: number } | null;
+    rows: number;
+    columns: number;
+    unlocked: ReadonlySet<number>;
+    reserved: ReadonlySet<number>;
+    placed: ReadonlyArray<PlacedFootprint>;
+    protectedPlacementUids?: ReadonlySet<number>;
+    invalidGridDrop?: 'return-to-candidate' | 'restore-origin';
+};
+
 export function placementCells(shape: GridShape, row: number, col: number): Array<[number, number]> {
     return shape.map(([rowOffset, colOffset]) => [row + rowOffset, col + colOffset]);
 }
@@ -471,6 +521,37 @@ export function displacedPlacementUids(
         .filter((gear) => gear.uid !== movingUid)
         .filter((gear) => placementCells(gear.shape, gear.row, gear.col).some(([cellRow, cellCol]) => targetCells.has(`${cellRow}:${cellCol}`)))
         .map((gear) => gear.uid);
+}
+
+export function resolveGridDrop(input: GridDropInput): GridDropResolution {
+    const target = input.target;
+    if (target && placementAreaValid(
+        input.movingShape,
+        target.row,
+        target.col,
+        input.rows,
+        input.columns,
+        input.unlocked,
+        input.reserved,
+    )) {
+        const protectedUids = input.protectedPlacementUids ?? new Set<number>();
+        return {
+            kind: 'place',
+            row: target.row,
+            col: target.col,
+            displacedUids: displacedPlacementUids(
+                input.placed,
+                input.movingUid,
+                input.movingShape,
+                target.row,
+                target.col,
+            ).filter((uid) => !protectedUids.has(uid)),
+        };
+    }
+    if (input.source === 'grid' && input.invalidGridDrop !== 'restore-origin') {
+        return { kind: 'return-to-candidate' };
+    }
+    return { kind: 'restore-origin' };
 }
 
 export type CandidateTrayFootprint = {

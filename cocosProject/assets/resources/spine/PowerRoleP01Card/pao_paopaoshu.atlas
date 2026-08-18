@@ -1,0 +1,187 @@
+pao_paopaoshu.png
+size: 692,613
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+js_0
+  rotate: false
+  xy: 308, 203
+  size: 78, 59
+  orig: 78, 59
+  offset: 0, 0
+  index: -1
+js_1
+  rotate: false
+  xy: 24, 598
+  size: 19, 14
+  orig: 19, 14
+  offset: 0, 0
+  index: -1
+js_10
+  rotate: false
+  xy: 308, 139
+  size: 64, 65
+  orig: 64, 65
+  offset: 0, 0
+  index: -1
+js_11
+  rotate: false
+  xy: 389, 279
+  size: 80, 71
+  orig: 80, 75
+  offset: 0, 4
+  index: -1
+js_12
+  rotate: 180
+  xy: 301, 3
+  size: 143, 119
+  orig: 143, 119
+  offset: 0, 0
+  index: -1
+js_14
+  rotate: false
+  xy: 167, 83
+  size: 39, 51
+  orig: 39, 51
+  offset: 0, 0
+  index: -1
+js_15
+  rotate: false
+  xy: 167, 4
+  size: 84, 61
+  orig: 84, 61
+  offset: 0, 0
+  index: -1
+js_2
+  rotate: false
+  xy: 573, 42
+  size: 50, 45
+  orig: 50, 53
+  offset: 0, 0
+  index: -1
+js_22
+  rotate: false
+  xy: 505, 43
+  size: 66, 46
+  orig: 66, 46
+  offset: 0, 0
+  index: -1
+js_3
+  rotate: false
+  xy: 2, 585
+  size: 21, 26
+  orig: 47, 26
+  offset: 0, 0
+  index: -1
+js_33
+  rotate: false
+  xy: 445, 18
+  size: 59, 61
+  orig: 59, 65
+  offset: 0, 4
+  index: -1
+js_4
+  rotate: false
+  xy: 389, 375
+  size: 77, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+js_6
+  rotate: false
+  xy: 2, 428
+  size: 257, 183
+  orig: 257, 183
+  offset: 0, 0
+  index: -1
+js_9
+  rotate: false
+  xy: 134, 240
+  size: 65, 60
+  orig: 65, 60
+  offset: 0, 0
+  index: -1
+js_f
+  rotate: false
+  xy: 2, 34
+  size: 163, 100
+  orig: 164, 101
+  offset: 0, 0
+  index: -1
+js_s
+  rotate: false
+  xy: 2, 136
+  size: 211, 88
+  orig: 234, 88
+  offset: 1, 0
+  index: -1
+js_s3
+  rotate: true
+  xy: 215, 77
+  size: 184, 91
+  orig: 185, 92
+  offset: 0, 1
+  index: -1
+pps
+  rotate: false
+  xy: 389, 122
+  size: 166, 154
+  orig: 188, 188
+  offset: 22, 17
+  index: -1
+simoke_skill_xing
+  rotate: false
+  xy: 2, 460
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+simoke_skill_yun_0
+  rotate: false
+  xy: 134, 302
+  size: 58, 124
+  orig: 201, 282
+  offset: 78, 14
+  index: -1
+simoke_skill_yun_1
+  rotate: false
+  xy: 557, 96
+  size: 95, 180
+  orig: 201, 282
+  offset: 60, 29
+  index: -1
+simoke_skill_yun_2
+  rotate: false
+  xy: 2, 226
+  size: 130, 200
+  orig: 201, 282
+  offset: 33, 38
+  index: -1
+simoke_skill_yun_3
+  rotate: true
+  xy: 474, 453
+  size: 158, 215
+  orig: 201, 282
+  offset: 15, 43
+  index: -1
+simoke_skill_yun_4
+  rotate: true
+  xy: 261, 440
+  size: 171, 211
+  orig: 201, 282
+  offset: 9, 47
+  index: -1
+simoke_skill_yun_5
+  rotate: true
+  xy: 474, 278
+  size: 173, 188
+  orig: 201, 282
+  offset: 7, 73
+  index: -1
+simoke_skill_yun_6
+  rotate: true
+  xy: 202, 263
+  size: 175, 185
+  orig: 201, 282
+  offset: 5, 76
+  index: -1

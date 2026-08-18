@@ -1,0 +1,265 @@
+{
+  "schemaVersion": "1.0",
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "version": "18"
+  },
+  "observation": {
+    "userReportedState": "all roles unlocked",
+    "scannedAtUtc": "2026-08-18T06:23:29.6166255Z",
+    "sourceKind": "xwechat-radium-gamecaches",
+    "contentAuthorization": "user-approved local package analysis and reconstruction",
+    "excludedSources": [
+      "MMKV storage",
+      "account databases",
+      "mini-program logs",
+      "credentials and tokens"
+    ]
+  },
+  "summary": {
+    "newCacheFiles": 15,
+    "newCacheBytes": 901150,
+    "byteIdenticalFilesAlreadyPreserved": 3,
+    "downloadGroupsUtc": [
+      "2026-08-18T06:19:41Z",
+      "2026-08-18T06:24:39Z",
+      "2026-08-18T06:49:37Z"
+    ],
+    "packageFilesChanged": false,
+    "missingH18SkillAssetRecovered": false
+  },
+  "files": [
+    {
+      "preservedAs": "cj_xuedi.skel",
+      "bundle": "resources3",
+      "logicalPath": "spine/ui/cj_xuedi/cj_xuedi",
+      "uuid": "76956bb5-239e-42d4-ae61-1a300fe96bbf",
+      "sourceCacheFile": "17870339818680.bin",
+      "bytes": 14853,
+      "sha256": "2e0ea059d17571f63ff16c46f8d9ee5c86ddd9d60fdd938035c360f9cbdc2a4f",
+      "format": "Spine binary 3.8.99",
+      "animations": ["idle"],
+      "existingByteIdenticalMatch": false
+    },
+    {
+      "preservedAs": "pao_kakaxi.skel",
+      "bundle": "resources3",
+      "logicalPath": "spine/power/pao_kakaxi0.75/pao_kakaxi",
+      "uuid": "32ef66db-8114-456e-afca-ad438caaa846",
+      "sourceCacheFile": "17870339823761.bin",
+      "bytes": 62617,
+      "sha256": "7d1a07959d88c210929ae08e9e55490a80af96144bb72b7dc23e4baab43428f7",
+      "format": "Spine binary 3.8.99",
+      "animations": ["daiji", "idle", "attack2_02_*", "skill01_fenghen_*"],
+      "existingByteIdenticalMatch": false
+    },
+    {
+      "preservedAs": "cj_xuedi.png",
+      "bundle": "resources3",
+      "logicalPath": "spine/ui/cj_xuedi/cj_xuedi",
+      "uuid": "77dbbf19-7f19-46d3-bd67-a8d402e8a12f",
+      "sourceCacheFile": "17870339828792.png",
+      "bytes": 73342,
+      "sha256": "9545709191e84c1ff9482a36e63bdd6607436325cea2e011b834063bf16d74f4",
+      "dimensions": [570, 398],
+      "existingByteIdenticalMatch": false
+    },
+    {
+      "preservedAs": "pao_kakaxi.png",
+      "bundle": "resources3",
+      "logicalPath": "spine/power/pao_kakaxi0.75/pao_kakaxi",
+      "uuid": "07014898-fbf3-4a16-88ee-e7a13447e074",
+      "sourceCacheFile": "17870339833853.png",
+      "bytes": 310172,
+      "sha256": "c10c69caf02f7b644fd9e942259487aeb7d4c34b16c9915466c8fe445d660686",
+      "dimensions": [800, 503],
+      "existingByteIdenticalMatch": false
+    },
+    {
+      "preservedAs": "pao_kakaxi.full.skel",
+      "bundle": "resources3",
+      "logicalPath": "spine/power/pao_kakaxi/pao_kakaxi",
+      "uuid": "f0c10b8d-a1c0-4635-92a6-2daf7269abbf",
+      "sourceCacheFile": "178703577850213.bin",
+      "bytes": 62617,
+      "sha256": "1914bd320a22a9cd19b202e6b29ecca92eee0b24f806dde5dc1e26996376264e",
+      "format": "Spine binary 3.8.99",
+      "animations": ["daiji", "idle", "attack2_02_*", "skill01_fenghen_*"],
+      "existingByteIdenticalMatch": false
+    },
+    {
+      "preservedAs": "pao_kakaxi.full.png",
+      "bundle": "resources3",
+      "logicalPath": "spine/power/pao_kakaxi/pao_kakaxi",
+      "uuid": "54f4c307-52dc-4ed0-aed1-e63e6f1b664d",
+      "sourceCacheFile": "178703577900414.png",
+      "bytes": 29677,
+      "sha256": "6c82bdc91f7b38341c12e7fb0f5a80a9b94a38ccf35f2a85c517c3ba1f1306d3",
+      "dimensions": [191, 145],
+      "existingByteIdenticalMatch": false
+    },
+    {
+      "preservedAs": "ui_hero.package.bin",
+      "bundle": "resources2",
+      "logicalPath": "ui/hero",
+      "uuid": "ff47547b-938b-496c-818e-bf1ac5c7e197",
+      "sourceCacheFile": "17870342794924.bin",
+      "bytes": 2862,
+      "sha256": "2b784d74562e6b5f5a71c9a7addc7abc2d9ab861a16c89cd921c2a0331ec2d71",
+      "format": "zlib-compressed FairyGUI package",
+      "rawBytes": 10461,
+      "packageId": "69f29748",
+      "packageName": "hero",
+      "componentCount": 12,
+      "existingByteIdenticalMatch": false
+    },
+    {
+      "preservedAs": "bg1.jpg",
+      "bundle": "resources2",
+      "logicalPath": "ui/unpack/bg/bg1",
+      "uuid": "c1a92cbe-6627-43f1-83bd-f20fb6f2b4c1",
+      "sourceCacheFile": "17870342799945.jpg",
+      "bytes": 24072,
+      "sha256": "481b10e0f2be897d72039f23477ebfe1f9410972d91db0ae38fe1a00c4721d8c",
+      "dimensions": [750, 1626],
+      "existingByteIdenticalMatch": false
+    },
+    {
+      "preservedAs": "ui_hero.atlas.png",
+      "bundle": "resources2",
+      "logicalPath": "ui/hero_0",
+      "uuid": "f09d0ebe-0759-4d27-9922-44726f58e0a3",
+      "sourceCacheFile": "17870342804976.png",
+      "bytes": 9868,
+      "sha256": "199424c6486a57cd89da744f5ed6dcc1d3ed49fa1a59f9579ecbccc43fedbcf9",
+      "dimensions": [710, 446],
+      "existingByteIdenticalMatch": false
+    },
+    {
+      "preservedAs": "image_quality.png",
+      "bundle": "resources3",
+      "logicalPath": "image/quality",
+      "uuid": "b90abef4-212d-4bc8-a349-990a2ae3ab12",
+      "sourceCacheFile": "17870342809997.png",
+      "bytes": 56227,
+      "sha256": "bc86ac7d8cbf40bfc1f4995e543655f1ffa0e0a01f0b80badc5a93d1eff214ec",
+      "dimensions": [1586, 512],
+      "existingByteIdenticalMatch": false
+    },
+    {
+      "preservedAs": "image_shape.png",
+      "bundle": "resources3",
+      "logicalPath": "image/shape",
+      "uuid": "6b2a5226-737b-415f-9aea-dac58eac2941",
+      "sourceCacheFile": "17870342815028.png",
+      "bytes": 20861,
+      "sha256": "ca7bbc1fa5787a238c3fe2d5bdc92097bebb96623f806b69f043c2e17430ffed",
+      "dimensions": [539, 480],
+      "existingByteIdenticalMatch": true,
+      "existingProjectPath": "cocosProject/assets/resources/original/shape.png"
+    },
+    {
+      "preservedAs": "chilunpy_shengjishanguang.png",
+      "bundle": "resources3",
+      "logicalPath": "spine/ui/chilunpy_shengjishanguang/chilunpy_shengjishanguang",
+      "uuid": "ed54d9d0-608f-451b-9e52-d2cfd78f6a4a",
+      "sourceCacheFile": "17870342820049.png",
+      "bytes": 45908,
+      "sha256": "7cda98ce70e3878cf85e1862964b824c3ab772b1d61b6d69a90905e0e3ca3985",
+      "dimensions": [889, 212],
+      "existingByteIdenticalMatch": false
+    },
+    {
+      "preservedAs": "chilunpy_shengjishanguang.skel",
+      "bundle": "resources3",
+      "logicalPath": "spine/ui/chilunpy_shengjishanguang/chilunpy_shengjishanguang",
+      "uuid": "158ad8b0-db64-4019-92ec-2162d051eb5f",
+      "sourceCacheFile": "178703428250610.bin",
+      "bytes": 4284,
+      "sha256": "5e940dda36d6d1d9f4923c1ad96c79956a29e99d0fc568c8bbf7909351508ca6",
+      "format": "Spine binary 3.8.99",
+      "animations": ["idle"],
+      "existingByteIdenticalMatch": false
+    },
+    {
+      "preservedAs": "image_effect.png",
+      "bundle": "resources3",
+      "logicalPath": "image/effect",
+      "uuid": "7f2cc19b-e5f8-47e5-9938-388d0d437af0",
+      "sourceCacheFile": "178703428300811.png",
+      "bytes": 153374,
+      "sha256": "da0f386f4f2202cb0eef59dc7517716e6d5a580a9ce6b6be859b6b4cb599a3d6",
+      "dimensions": [1024, 496],
+      "existingByteIdenticalMatch": true,
+      "existingProjectPaths": [
+        "cocosProject/assets/resources/original/effect.png",
+        "cocosProject/assets/resources/original/trait-icons/effect.png"
+      ],
+      "note": "The complete original atlas was already preserved byte-for-byte in the Cocos project; the post-unlock cache independently confirmed the same binary."
+    }
+  ],
+  "preexistingRoleCacheFiles": [
+    {
+      "preservedAs": "pao_paopaoshu.full.skel",
+      "logicalPath": "spine/power/pao_paopaoshu/pao_paopaoshu",
+      "uuid": "11ee228b-bcb0-4520-8a71-8103d29e9da1",
+      "sourceCacheFile": "178540547906127.bin",
+      "bytes": 59580,
+      "sha256": "4aeafaf343f227a1ceceaa5cb8df7d6027e42e3c1a7d42f35714a6ffe4926a3c",
+      "format": "Spine binary 3.8.99"
+    },
+    {
+      "preservedAs": "pao_paopaoshu.full.png",
+      "logicalPath": "spine/power/pao_paopaoshu/pao_paopaoshu",
+      "uuid": "622115ed-f98e-4e0f-be57-902847184dd5",
+      "sourceCacheFile": "178540547752924.png",
+      "bytes": 30989,
+      "sha256": "fc02bb82fc7c2a02df2a3c92b81ddf42569f753b579129ba7fa30fc18b1a898d",
+      "dimensions": [199, 135]
+    },
+    {
+      "preservedAs": "pao_paopaoshu.075.skel",
+      "logicalPath": "spine/power/pao_paopaoshu0.75/pao_paopaoshu",
+      "uuid": "e26f9ca5-e38b-4812-9b20-2622bd25b38f",
+      "sourceCacheFile": "178546859047418.bin",
+      "bytes": 59580,
+      "sha256": "b134e62130a95113e83c146324d1e9f1595daa74e4106c8a4c360badec305651",
+      "format": "Spine binary 3.8.99"
+    },
+    {
+      "preservedAs": "pao_paopaoshu.075.png",
+      "logicalPath": "spine/power/pao_paopaoshu0.75/pao_paopaoshu",
+      "uuid": "a6e4ea43-2a5b-4e76-8773-b0cde6b306fc",
+      "sourceCacheFile": "178546859200021.png",
+      "bytes": 351040,
+      "sha256": "ce8d8545946c53bd462f0d9a0a9b6df4d612071a67e1882aef51a698228945a7",
+      "dimensions": [692, 613]
+    }
+  ],
+  "heroPackageComponents": [
+    "HeroInfoView",
+    "HeroResetView",
+    "HeroUnlockView",
+    "HeroMainView",
+    "HeroFragmentBar",
+    "HeroInfoItem",
+    "HeroItem",
+    "HeroSkillItem",
+    "HeroAttrItem",
+    "HeroResetItem",
+    "HeroUpAniComp",
+    "HeroSkillDescItem"
+  ],
+  "negativeEvidence": {
+    "requestedMissingAsset": "H18_S1 / spriteFrame/skill/js_fashi_dandao",
+    "result": "not recovered",
+    "reason": "No matching logical path or native UUID exists in the version-18 resources3 configuration, and no matching entry appeared in either post-unlock cache index."
+  },
+  "lazyCacheStatus": {
+    "P01": "full and 0.75 models cached",
+    "P02": "full and 0.75 paths configured but not cached locally",
+    "P03": "full and 0.75 paths configured but not cached locally",
+    "P04": "full and 0.75 models cached",
+    "classification": "An uncached configured path is lazy-download pending, not a confirmed missing asset."
+  }
+}

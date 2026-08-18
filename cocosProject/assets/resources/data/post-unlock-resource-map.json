@@ -1,0 +1,163 @@
+{
+  "schemaVersion": "1.0",
+  "target": {
+    "appId": "wxf9af2417e78ce07a",
+    "version": "18"
+  },
+  "importedAt": "2026-08-18T08:00:38.020Z",
+  "sourceEvidence": "../targets/wxf9af2417e78ce07a/18/evidence/assets/original/post-unlock-cache-2026-08-18/manifest.json",
+  "copied": [
+    {
+      "source": "bg1.jpg",
+      "destination": "assets/resources/original/post-unlock/bg1.jpg",
+      "sha256": "481b10e0f2be897d72039f23477ebfe1f9410972d91db0ae38fe1a00c4721d8c"
+    },
+    {
+      "source": "ui_hero.atlas.png",
+      "destination": "assets/resources/original/post-unlock/ui_hero.atlas.png",
+      "sha256": "199424c6486a57cd89da744f5ed6dcc1d3ed49fa1a59f9579ecbccc43fedbcf9"
+    },
+    {
+      "source": "ui_hero.package.bin",
+      "destination": "assets/resources/original/post-unlock/ui_hero.package.bin",
+      "sha256": "2b784d74562e6b5f5a71c9a7addc7abc2d9ab861a16c89cd921c2a0331ec2d71"
+    },
+    {
+      "source": "ui_hero.layout.json",
+      "destination": "assets/resources/data/post-unlock-hero-layout.json",
+      "sha256": "6119df8c71191097729bb6e0567342833c9a73f86dc864836569f6b8988210b2"
+    },
+    {
+      "source": "image_quality.png",
+      "destination": "assets/resources/original/post-unlock/image_quality.png",
+      "sha256": "bc86ac7d8cbf40bfc1f4995e543655f1ffa0e0a01f0b80badc5a93d1eff214ec"
+    },
+    {
+      "source": "image_quality.frames.json",
+      "destination": "assets/resources/data/image-quality-frames.json",
+      "sha256": "d785906fcbb32865d0ea798ab69fd4a7288a0fcb18e6b6525a6c39ded6f6ddd0"
+    },
+    {
+      "source": "pao_kakaxi.skel",
+      "destination": "assets/resources/spine/PowerRoleP04/pao_kakaxi.skel",
+      "sha256": "7d1a07959d88c210929ae08e9e55490a80af96144bb72b7dc23e4baab43428f7"
+    },
+    {
+      "source": "pao_kakaxi.png",
+      "destination": "assets/resources/spine/PowerRoleP04/pao_kakaxi.png",
+      "sha256": "c10c69caf02f7b644fd9e942259487aeb7d4c34b16c9915466c8fe445d660686"
+    },
+    {
+      "source": "pao_kakaxi.full.skel",
+      "destination": "assets/resources/spine/PowerRoleP04Full/pao_kakaxi.skel",
+      "sha256": "1914bd320a22a9cd19b202e6b29ecca92eee0b24f806dde5dc1e26996376264e"
+    },
+    {
+      "source": "pao_kakaxi.full.png",
+      "destination": "assets/resources/spine/PowerRoleP04Full/pao_kakaxi.png",
+      "sha256": "6c82bdc91f7b38341c12e7fb0f5a80a9b94a38ccf35f2a85c517c3ba1f1306d3"
+    },
+    {
+      "source": "pao_paopaoshu.full.skel",
+      "destination": "assets/resources/spine/PowerRoleP01Full/pao_paopaoshu.skel",
+      "sha256": "4aeafaf343f227a1ceceaa5cb8df7d6027e42e3c1a7d42f35714a6ffe4926a3c"
+    },
+    {
+      "source": "pao_paopaoshu.full.png",
+      "destination": "assets/resources/spine/PowerRoleP01Full/pao_paopaoshu.png",
+      "sha256": "fc02bb82fc7c2a02df2a3c92b81ddf42569f753b579129ba7fa30fc18b1a898d"
+    },
+    {
+      "source": "pao_paopaoshu.075.skel",
+      "destination": "assets/resources/spine/PowerRoleP01Card/pao_paopaoshu.skel",
+      "sha256": "b134e62130a95113e83c146324d1e9f1595daa74e4106c8a4c360badec305651"
+    },
+    {
+      "source": "pao_paopaoshu.075.png",
+      "destination": "assets/resources/spine/PowerRoleP01Card/pao_paopaoshu.png",
+      "sha256": "ce8d8545946c53bd462f0d9a0a9b6df4d612071a67e1882aef51a698228945a7"
+    },
+    {
+      "source": "cj_xuedi.skel",
+      "destination": "assets/resources/spine/DailySnowScene/cj_xuedi.skel",
+      "sha256": "2e0ea059d17571f63ff16c46f8d9ee5c86ddd9d60fdd938035c360f9cbdc2a4f"
+    },
+    {
+      "source": "cj_xuedi.png",
+      "destination": "assets/resources/spine/DailySnowScene/cj_xuedi.png",
+      "sha256": "9545709191e84c1ff9482a36e63bdd6607436325cea2e011b834063bf16d74f4"
+    },
+    {
+      "source": "chilunpy_shengjishanguang.skel",
+      "destination": "assets/resources/spine/PowerRoleUpgradeGlow/chilunpy_shengjishanguang.skel",
+      "sha256": "5e940dda36d6d1d9f4923c1ad96c79956a29e99d0fc568c8bbf7909351508ca6"
+    },
+    {
+      "source": "chilunpy_shengjishanguang.png",
+      "destination": "assets/resources/spine/PowerRoleUpgradeGlow/chilunpy_shengjishanguang.png",
+      "sha256": "7cda98ce70e3878cf85e1862964b824c3ab772b1d61b6d69a90905e0e3ca3985"
+    },
+    {
+      "source": "resources3.import.0de4fdaf8.fe248.json",
+      "destination": "assets/resources/spine/PowerRoleP04/pao_kakaxi.atlas",
+      "derived": "exact serialized atlas text",
+      "texture": "pao_kakaxi.png"
+    },
+    {
+      "source": "resources3.import.0de4fdaf8.fe248.json",
+      "destination": "assets/resources/spine/PowerRoleP04Full/pao_kakaxi.atlas",
+      "derived": "exact serialized atlas text",
+      "texture": "pao_kakaxi.png"
+    },
+    {
+      "source": "resources3.import.0de4fdaf8.fe248.json",
+      "destination": "assets/resources/spine/PowerRoleP01Full/pao_paopaoshu.atlas",
+      "derived": "exact serialized atlas text",
+      "texture": "pao_paopaoshu.png"
+    },
+    {
+      "source": "resources3.import.0de4fdaf8.fe248.json",
+      "destination": "assets/resources/spine/PowerRoleP01Card/pao_paopaoshu.atlas",
+      "derived": "exact serialized atlas text",
+      "texture": "pao_paopaoshu.png"
+    },
+    {
+      "source": "resources3.import.0de4fdaf8.fe248.json",
+      "destination": "assets/resources/spine/DailySnowScene/cj_xuedi.atlas",
+      "derived": "exact serialized atlas text",
+      "texture": "cj_xuedi.png"
+    },
+    {
+      "source": "resources3.import.0de4fdaf8.fe248.json",
+      "destination": "assets/resources/spine/PowerRoleUpgradeGlow/chilunpy_shengjishanguang.atlas",
+      "derived": "exact serialized atlas text",
+      "texture": "chilunpy_shengjishanguang.png"
+    }
+  ],
+  "reusedByteIdentical": [
+    {
+      "logicalPath": "image/effect",
+      "projectPath": "assets/resources/original/effect.png",
+      "sha256": "da0f386f4f2202cb0eef59dc7517716e6d5a580a9ce6b6be859b6b4cb599a3d6"
+    },
+    {
+      "logicalPath": "image/shape",
+      "projectPath": "assets/resources/original/shape.png",
+      "sha256": "ca7bbc1fa5787a238c3fe2d5bdc92097bebb96623f806b69f043c2e17430ffed"
+    }
+  ],
+  "consumers": {
+    "roleBackground": "original/post-unlock/bg1/spriteFrame",
+    "powerRoleP01Card": "spine/PowerRoleP01Card/pao_paopaoshu",
+    "powerRoleP04": "spine/PowerRoleP04/pao_kakaxi",
+    "powerRoleQualityAtlas": "original/post-unlock/image_quality/spriteFrame + data/image-quality-frames.json",
+    "heroFairyGuiLayout": "data/post-unlock-hero-layout.json",
+    "powerCoreP01": "spine/PowerRoleP01Full/pao_paopaoshu",
+    "powerCoreP04": "spine/PowerRoleP04Full/pao_kakaxi",
+    "powerRoleUpgradeGlow": "spine/PowerRoleUpgradeGlow/chilunpy_shengjishanguang"
+  },
+  "pendingBindings": [
+    "spine/PowerRoleP02/P03 full and 0.75 models: configured paths are known but their lazy cache files have not been downloaded",
+    "cj_xuedi: exact daily-snow-scene consumer is outside the current representative level"
+  ]
+}

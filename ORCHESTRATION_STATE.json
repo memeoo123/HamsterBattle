@@ -162,24 +162,24 @@
         "cocosProject": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject",
           "status": "confirmed",
-          "recordedAtUtc": "2026-08-10T02:48:46.525233+00:00",
           "fingerprint": {
             "kind": "directory-metadata",
-            "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
-            "fileCount": 651,
-            "totalBytes": 17493101,
-            "latestMtimeNs": 1786594996527862500
-          }
+            "sha256": "f6dd7301253176e36d09619de9d8dea0be5375ffa8e6f9438c696a12e38fe5a2",
+            "fileCount": 726,
+            "totalBytes": 18885407,
+            "latestMtimeNs": 1787042585936019600
+          },
+          "recordedAtUtc": "2026-08-18T08:45:42.677891+00:00"
         },
         "validationReport": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\cocosProject\\VALIDATION_REPORT.md",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\runtime\\all-200-runtime-smoke-2026-08-18\\README.md",
           "status": "confirmed",
           "fingerprint": {
             "kind": "file",
-            "sha256": "0522ca8b33f9aa4ae3fb55c01ae35c03edd3fc0dff96b11281910ffd1854407f",
-            "size": 35785
+            "sha256": "4c5d4cc6a4b04ee12d0870e85ebf036534ceb65c2b3bbda428421bdd665a3d48",
+            "size": 1509
           },
-          "recordedAtUtc": "2026-08-13T07:39:52.661120+00:00"
+          "recordedAtUtc": "2026-08-18T10:03:53.097722+00:00"
         },
         "originalReference": {
           "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\visual\\original\\2026-08-01\\manifest.json",
@@ -196,26 +196,26 @@
           "status": "confirmed",
           "fingerprint": {
             "kind": "file",
-            "sha256": "77912bf282a4488437ed4f341b6f0d1c86f57ea82d50c7ea97f738d45ae592e4",
-            "size": 44749
+            "sha256": "72ced973d61895047b1610323bf8bde0faf86efec3ed2e00938030ffd524458a",
+            "size": 50267
           },
-          "recordedAtUtc": "2026-08-13T07:36:18.912890+00:00"
+          "recordedAtUtc": "2026-08-18T08:45:39.534911+00:00"
         },
         "validationManifest": {
-          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\runtime\\current-validation.json",
+          "path": "E:\\Projects\\weichatAnalysis\\cangshu\\targets\\wxf9af2417e78ce07a\\18\\evidence\\runtime\\one-click-regression-fresh-build-2026-08-18\\mechanics-validation.json",
           "status": "confirmed",
           "fingerprint": {
             "kind": "file",
-            "sha256": "25854e8255e8f86699d3246e1dc5796c4273435e918e7a6a0e9422bd7823eac2",
-            "size": 45926
+            "sha256": "4a15dc2b719e4d09bbee1b4f71fdb1f184fb175a52a1f71cede53d2bf84cefbc",
+            "size": 49077
           },
-          "recordedAtUtc": "2026-08-13T07:42:24.600852+00:00"
+          "recordedAtUtc": "2026-08-18T10:09:00.934513+00:00"
         }
       },
       "checks": {
         "goldenCases": {
           "result": "pass",
-          "evidence": "current-validation.json: golden cases 47/47 passed",
+          "evidence": "targets/wxf9af2417e78ce07a/18/evidence/runtime/one-click-regression-fresh-build-2026-08-18/mechanics-validation.json",
           "dependencies": {
             "goldenCases": {
               "kind": "file",
@@ -224,72 +224,72 @@
             },
             "cocosProject": {
               "kind": "directory-metadata",
-              "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
-              "fileCount": 651,
-              "totalBytes": 17493101,
-              "latestMtimeNs": 1786594996527862500
+              "sha256": "0f53dba2bc082d1e51ad87d50505c3a16d395f15bc5aaa4564c96c5b0bd6801e",
+              "fileCount": 729,
+              "totalBytes": 18914286,
+              "latestMtimeNs": 1787046947491138000
             },
             "validationManifest": {
               "kind": "file",
-              "sha256": "25854e8255e8f86699d3246e1dc5796c4273435e918e7a6a0e9422bd7823eac2",
-              "size": 45926
+              "sha256": "4a15dc2b719e4d09bbee1b4f71fdb1f184fb175a52a1f71cede53d2bf84cefbc",
+              "size": 49077
             }
           },
-          "atUtc": "2026-08-13T07:42:25.695574+00:00"
+          "atUtc": "2026-08-18T10:09:03.380149+00:00"
         },
         "assetImport": {
           "result": "pass",
-          "evidence": "current-validation.json: 251 assets, 0 missing meta",
+          "evidence": "targets/wxf9af2417e78ce07a/18/evidence/runtime/one-click-regression-fresh-build-2026-08-18/mechanics-validation.json",
           "dependencies": {
             "cocosProject": {
               "kind": "directory-metadata",
-              "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
-              "fileCount": 651,
-              "totalBytes": 17493101,
-              "latestMtimeNs": 1786594996527862500
+              "sha256": "0f53dba2bc082d1e51ad87d50505c3a16d395f15bc5aaa4564c96c5b0bd6801e",
+              "fileCount": 729,
+              "totalBytes": 18914286,
+              "latestMtimeNs": 1787046947491138000
             },
             "validationManifest": {
               "kind": "file",
-              "sha256": "25854e8255e8f86699d3246e1dc5796c4273435e918e7a6a0e9422bd7823eac2",
-              "size": 45926
+              "sha256": "4a15dc2b719e4d09bbee1b4f71fdb1f184fb175a52a1f71cede53d2bf84cefbc",
+              "size": 49077
             }
           },
-          "atUtc": "2026-08-13T07:42:26.392011+00:00"
+          "atUtc": "2026-08-18T10:09:04.846898+00:00"
         },
         "typescript": {
           "result": "pass",
-          "evidence": "current-validation.json: Creator 3.8.8 TypeScript passed",
+          "evidence": "targets/wxf9af2417e78ce07a/18/evidence/runtime/one-click-regression-fresh-build-2026-08-18/mechanics-validation.json",
           "dependencies": {
             "cocosProject": {
               "kind": "directory-metadata",
-              "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
-              "fileCount": 651,
-              "totalBytes": 17493101,
-              "latestMtimeNs": 1786594996527862500
+              "sha256": "0f53dba2bc082d1e51ad87d50505c3a16d395f15bc5aaa4564c96c5b0bd6801e",
+              "fileCount": 729,
+              "totalBytes": 18914286,
+              "latestMtimeNs": 1787046947491138000
             },
             "validationManifest": {
               "kind": "file",
-              "sha256": "25854e8255e8f86699d3246e1dc5796c4273435e918e7a6a0e9422bd7823eac2",
-              "size": 45926
+              "sha256": "4a15dc2b719e4d09bbee1b4f71fdb1f184fb175a52a1f71cede53d2bf84cefbc",
+              "size": 49077
             }
           },
-          "atUtc": "2026-08-13T07:42:27.100337+00:00"
+          "atUtc": "2026-08-18T10:09:06.125566+00:00"
         },
         "visualBaseline": {
           "result": "pending",
-          "evidence": "BATTLEFIELD_RESTORE_STATE: matchedReplay pending; exact account and remaining feedback evidence unresolved",
+          "evidence": "Gear glows and 300 ms result reveal recovered; ui/battle art, win/fail audio, and same-frame recording remain pending",
           "dependencies": {
             "cocosProject": {
               "kind": "directory-metadata",
-              "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
-              "fileCount": 651,
-              "totalBytes": 17493101,
-              "latestMtimeNs": 1786594996527862500
+              "sha256": "b3aefa7f3b5a5c9557683497d4f2227f65033dde5838a199ea3444d0ea4e20cb",
+              "fileCount": 725,
+              "totalBytes": 18876231,
+              "latestMtimeNs": 1787041391697841000
             },
             "battlefieldState": {
               "kind": "file",
-              "sha256": "77912bf282a4488437ed4f341b6f0d1c86f57ea82d50c7ea97f738d45ae592e4",
-              "size": 44749
+              "sha256": "81e0415264aa40c7b5e577f3cbfbf9f1724bedf1b1f4a65b73af583db209aa06",
+              "size": 49631
             },
             "originalReference": {
               "kind": "file",
@@ -298,16 +298,11 @@
             },
             "validationManifest": {
               "kind": "file",
-              "sha256": "963ff3c267344d79be709b2024c6833d7928d9f78eb1efc5cd131aad958e7d97",
-              "size": 45626
-            },
-            "validationReport": {
-              "kind": "file",
-              "sha256": "3f37d97f6313fc5d82014b9b591a1d815a58a42128f85f39997046c7ee3a5376",
-              "size": 35333
+              "sha256": "4afbe8d1d058386137891b70196815ff77a5d6aac347140229ec5311f53f6d9f",
+              "size": 48652
             }
           },
-          "atUtc": "2026-08-13T07:37:04.094552+00:00"
+          "atUtc": "2026-08-18T08:24:18.890324+00:00"
         },
         "gameplaySmoke": {
           "result": "pending",
@@ -342,7 +337,7 @@
         },
         "mechanicsData": {
           "result": "pass",
-          "evidence": "current-validation.json: 54/54 production test files and golden cases passed; functional reconstruction scope",
+          "evidence": "targets/wxf9af2417e78ce07a/18/evidence/runtime/one-click-regression-fresh-build-2026-08-18/mechanics-validation.json",
           "dependencies": {
             "restoreSpec": {
               "kind": "file",
@@ -356,23 +351,23 @@
             },
             "cocosProject": {
               "kind": "directory-metadata",
-              "sha256": "b37aa28e423ede224e4be816f77090ebee57ca9e6f04125d8c5b8d22449e9051",
-              "fileCount": 651,
-              "totalBytes": 17493101,
-              "latestMtimeNs": 1786594996527862500
+              "sha256": "0f53dba2bc082d1e51ad87d50505c3a16d395f15bc5aaa4564c96c5b0bd6801e",
+              "fileCount": 729,
+              "totalBytes": 18914286,
+              "latestMtimeNs": 1787046947491138000
             },
             "battlefieldState": {
               "kind": "file",
-              "sha256": "77912bf282a4488437ed4f341b6f0d1c86f57ea82d50c7ea97f738d45ae592e4",
-              "size": 44749
+              "sha256": "e3ff6096ff7a1ca8ff099cbbfe429d2c2cd3e63b31e348a6c7c6591a63e4c1f0",
+              "size": 51662
             },
             "validationManifest": {
               "kind": "file",
-              "sha256": "25854e8255e8f86699d3246e1dc5796c4273435e918e7a6a0e9422bd7823eac2",
-              "size": 45926
+              "sha256": "4a15dc2b719e4d09bbee1b4f71fdb1f184fb175a52a1f71cede53d2bf84cefbc",
+              "size": 49077
             }
           },
-          "atUtc": "2026-08-13T07:42:27.805906+00:00"
+          "atUtc": "2026-08-18T10:09:07.534965+00:00"
         }
       },
       "history": [
@@ -2232,6 +2227,342 @@
           "name": "mechanicsData",
           "result": "pass",
           "atUtc": "2026-08-13T07:42:27.805919+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-13T08:38:09.399751+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-13T08:38:10.900851+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-13T08:38:11.775933+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-13T08:38:12.670789+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-13T08:38:13.535920+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-18T06:46:15.775678+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-18T06:46:17.127430+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-18T06:46:17.851338+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-18T06:46:18.589364+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-18T06:46:19.297751+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-18T07:02:17.511604+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-18T07:02:29.688488+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-18T07:02:30.709360+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-18T07:02:31.735591+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-18T07:02:32.768913+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-18T07:06:45.523587+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-18T07:06:47.371387+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-18T07:06:48.447351+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-18T07:06:49.539805+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-18T07:06:50.645700+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "battlefieldState",
+          "atUtc": "2026-08-18T07:50:46.505629+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-18T07:50:47.458618+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "cocosProject",
+          "atUtc": "2026-08-18T07:51:07.790456+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-18T07:51:08.629827+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-18T07:51:09.505842+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-18T07:51:10.351499+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-18T07:51:11.214337+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "battlefieldState",
+          "atUtc": "2026-08-18T08:23:58.123476+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-18T08:23:59.333730+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "cocosProject",
+          "atUtc": "2026-08-18T08:24:01.201621+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-18T08:24:14.585398+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-18T08:24:15.659253+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-18T08:24:16.740400+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-18T08:24:17.807559+00:00"
+        },
+        {
+          "event": "check",
+          "name": "visualBaseline",
+          "result": "pending",
+          "atUtc": "2026-08-18T08:24:18.890336+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "battlefieldState",
+          "atUtc": "2026-08-18T08:45:39.534920+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-18T08:45:40.763788+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "cocosProject",
+          "atUtc": "2026-08-18T08:45:42.677907+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-18T08:46:04.715906+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-18T08:46:05.833758+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-18T08:46:06.937885+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-18T08:46:08.037137+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationReport",
+          "atUtc": "2026-08-18T09:21:22.169515+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-18T09:21:23.788816+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-18T09:21:26.336704+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-18T09:21:27.998913+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-18T09:21:29.493689+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-18T09:21:31.021520+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-18T10:03:51.635356+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationReport",
+          "atUtc": "2026-08-18T10:03:53.097733+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-18T10:03:55.606779+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-18T10:03:56.888918+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-18T10:03:58.346096+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-18T10:03:59.795826+00:00"
+        },
+        {
+          "event": "artifact",
+          "kind": "validationManifest",
+          "atUtc": "2026-08-18T10:09:00.934523+00:00"
+        },
+        {
+          "event": "check",
+          "name": "goldenCases",
+          "result": "pass",
+          "atUtc": "2026-08-18T10:09:03.380162+00:00"
+        },
+        {
+          "event": "check",
+          "name": "assetImport",
+          "result": "pass",
+          "atUtc": "2026-08-18T10:09:04.846911+00:00"
+        },
+        {
+          "event": "check",
+          "name": "typescript",
+          "result": "pass",
+          "atUtc": "2026-08-18T10:09:06.125578+00:00"
+        },
+        {
+          "event": "check",
+          "name": "mechanicsData",
+          "result": "pass",
+          "atUtc": "2026-08-18T10:09:07.534978+00:00"
         }
       ],
       "engineEvidence": "settings.37a11.json CocosEngine 3.8.2 + System.register business bundle",
@@ -2239,5 +2570,5 @@
     }
   },
   "createdAtUtc": "2026-07-31T10:06:44.358414+00:00",
-  "updatedAtUtc": "2026-08-13T07:42:27.805922+00:00"
+  "updatedAtUtc": "2026-08-18T10:09:07.534981+00:00"
 }

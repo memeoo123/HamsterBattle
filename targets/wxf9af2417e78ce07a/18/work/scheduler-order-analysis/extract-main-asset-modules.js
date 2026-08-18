@@ -5,9 +5,10 @@ const vm = require('vm');
 const inputPath = process.argv[2];
 const outputDirectory = process.argv[3];
 const modulePatternText = process.argv[4];
+const assetFactoryPatternText = process.argv[5] || '^assets/main/index\\..+\\.js$';
 
 if (!inputPath || !outputDirectory || !modulePatternText) {
-    console.error('usage: node extract-main-asset-modules.js <main-game.js> <output-dir> <module-regex>');
+    console.error('usage: node extract-main-asset-modules.js <main-game.js> <output-dir> <module-regex> [asset-factory-regex]');
     process.exit(2);
 }
 
@@ -80,8 +81,9 @@ sandbox.self = sandbox;
 
 vm.runInNewContext(source, sandbox, { filename: inputPath, timeout: 15000, displayErrors: true });
 
-const assetFactoryName = [...factories.keys()].find((name) => /^assets\/main\/index\..+\.js$/.test(name));
-if (!assetFactoryName) throw new Error('assets/main factory was not found');
+const assetFactoryPattern = new RegExp(assetFactoryPatternText);
+const assetFactoryName = [...factories.keys()].find((name) => assetFactoryPattern.test(name));
+if (!assetFactoryName) throw new Error(`asset factory was not found for ${assetFactoryPatternText}`);
 const factorySource = factories.get(assetFactoryName).toString();
 const declarationMatch = factorySource.match(/^[^{]*\{\s*["']use strict["'];var ([^;]+);/);
 if (!declarationMatch) throw new Error('assets/main variable declaration was not found');

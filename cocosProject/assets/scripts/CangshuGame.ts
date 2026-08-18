@@ -163,16 +163,20 @@ import {
 } from './BagLikeProgression';
 import {
     bagLikeGearBodyColor,
+    beginCandidatePreparationRound,
+    candidateNormalRefreshCost,
     candidateRewardModifiersForRefresh,
     candidateTrayLayout,
     CandidateGearId,
     CandidateRefreshType,
     candidateDrawIds,
+    completeCandidateRefresh,
     drawDynamicCandidateBatch,
     displacedPlacementUids,
     gearMergeTargetScore,
     placementAreaValid,
     placementCells,
+    resolveGridDrop,
     shouldUseStaticCandidateBatch,
 } from './BagLikeCandidateDrops';
 import {
@@ -972,6 +976,41 @@ type ProjectileVisual = {
     frameSeconds?: number;
 };
 
+// Exact SpriteFrame records decoded from image/quality's serialized Cocos
+// SpriteAtlas. PowerConfig maps P01 to quality 3 (blue) and P02-P04 to quality
+// 4 (purple).
+const POWER_ROLE_QUALITY_FRAMES: Readonly<Record<3 | 4, {
+    hero: BagLikeAtlasFrame;
+    level: BagLikeAtlasFrame;
+    shape: BagLikeAtlasFrame;
+}>> = {
+    3: {
+        hero: { rect: new Rect(1, 1, 216, 284), sourceSize: new Size(216, 284) },
+        level: { rect: new Rect(1509, 373, 38, 40), sourceSize: new Size(38, 40) },
+        shape: { rect: new Rect(1309, 193, 58, 58), sourceSize: new Size(58, 58) },
+    },
+    4: {
+        hero: { rect: new Rect(873, 1, 216, 283), sourceSize: new Size(216, 283) },
+        level: { rect: new Rect(1471, 415, 38, 40), sourceSize: new Size(38, 40) },
+        shape: { rect: new Rect(1337, 349, 58, 58), sourceSize: new Size(58, 58) },
+    },
+};
+
+// HeroMainView and HeroItem setup_beforeAdd geometry decoded from
+// ui_hero.package.bin. The list is FlowHorizontal with 10 px column gap,
+// 18 px line gap and three columns inside x=31,y=200,w=698,h=1000.
+const HERO_FAIRYGUI_LAYOUT = {
+    list: { x: 31, y: 200, width: 698, height: 1000, columns: 3, columnGap: 10, lineGap: 18 },
+    item: { width: 226, height: 326 },
+    background: { x: 0, y: 4, width: 216, height: 322 },
+    portrait: { x: 108, y: 129, width: 130, height: 130 },
+    shape: { x: 168, y: 0, width: 58, height: 58 },
+    levelBar: { x: 14, y: 231, width: 188, height: 40 },
+    fragmentBar: { x: 14, y: 277, width: 188, height: 28 },
+    name: { x: 107, y: 42, width: 107, height: 36 },
+    level: { x: 108, y: 251, width: 80, height: 34 },
+} as const;
+
 type HitEffectVisual = {
     node: Node;
     sprite: Sprite;
@@ -996,6 +1035,15 @@ const DEFAULT_LEVEL_ID = 1004;
 // FrameAnim in the recovered version-18 runtime initializes perFrameTime to
 // 66.6ms. Sprite-frame effects therefore advance at about 15fps.
 const ORIGINAL_EFFECT_FRAME_SECONDS = 0.0666;
+type ResourceAuditCategory = 'hero' | 'power-role' | 'monster' | 'projectile' | 'effect';
+type ResourceAuditStatus = 'loaded' | 'static-fallback' | 'file-missing';
+type ResourceAuditRecord = {
+    category: ResourceAuditCategory;
+    id: string;
+    resourcePath: string | null;
+    status: ResourceAuditStatus;
+    detail: string;
+};
 const RECOVERED_PROJECTILE_PRESENTATION_IDS = new Set([
     'H0601', 'H1401', 'H1701',
     'M03', 'Boss03', 'M09', 'Boss09', 'M10', 'Boss10',
@@ -1832,6 +1880,7 @@ export class CangshuGame extends Component {
     private backpackHpBar!: Node;
     private candidateLayer!: Node;
     private resultLayer!: Node;
+    private resultActionsLayer!: Node;
     private traitLayer!: Node;
     private accountLayer!: Node;
     private accountContentLayer!: Node;
@@ -1871,6 +1920,7 @@ export class CangshuGame extends Component {
     private resultTitleLabel!: Label;
     private resultBodyLabel!: Label;
     private resultNextButtonLabel!: Label;
+    private resultRevealVersion = 0;
     private tipLabel!: Label;
     private fusionGuideLabel!: Label;
     private dragGear: Gear | null = null;
@@ -1904,6 +1954,11 @@ export class CangshuGame extends Component {
         });
         resources.load('original/default', TTFFont, (fontError, font) => {
             if (!fontError && font) this.originalFont = font;
+            if (this.resourceAuditEnabled()) {
+                profiler.hideStats();
+                this.buildResourceAudit();
+                return;
+            }
             if (this.visualCatalogMode()) {
                 profiler.hideStats();
                 this.buildVisualCatalog();
@@ -2862,7 +2917,7 @@ export class CangshuGame extends Component {
         this.resetLevelSession();
         this.destroyRootChildren();
         const root = this.makeNode('RoleScene', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
-        this.addMenuBackground(root, 'fightscene_03');
+        this.addMenuBackground(root, 'post-unlock/bg1');
         const shade = this.makeNode('RoleShade', root, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
         const shadeGraphics = shade.addComponent(Graphics);
         shadeGraphics.fillColor = new Color(12, 20, 30, 172);
@@ -2875,69 +2930,117 @@ export class CangshuGame extends Component {
             roleUnlocked ? `当前出战：${OUT_OF_BATTLE_POWER_ROLES.find((role) => role.id === this.powerRoleState.equippedRoleId)?.name || '跑跑鼠'}` : '通关第5关后开放', 20, CREAM);
 
         OUT_OF_BATTLE_POWER_ROLES.forEach((role, index) => {
-            const column = index % 2;
-            const row = Math.floor(index / 2);
-            const x = column === 0 ? -178 : 178;
-            const y = 310 - row * 335;
-            const card = this.makeNode(`RoleCard_${role.id}`, root, x, y, 320, 300);
-            const cardGraphics = card.addComponent(Graphics);
-            cardGraphics.fillColor = new Color(31, 48, 70, 245);
-            cardGraphics.roundRect(-160, -150, 320, 300, 24);
-            cardGraphics.fill();
-            cardGraphics.strokeColor = role.id === 'P01' ? GOLD : new Color(111, 145, 183, 255);
-            cardGraphics.lineWidth = 4;
-            cardGraphics.roundRect(-158, -148, 316, 296, 22);
-            cardGraphics.stroke();
-            const progress = this.powerRoleState.roles[role.id];
-            const owned = progress.star >= 0;
-            const equipped = this.powerRoleState.equippedRoleId === role.id;
-            const targetStar = Math.max(0, progress.star + 1);
-            const fragmentCost = POWER_ROLE_STAR_COSTS[Math.min(POWER_ROLE_MAX_STAR, targetStar)];
-            const remainingFree = Math.max(0, POWER_ROLE_DAILY_FREE_FRAGMENT_TIMES - progress.freeFragmentTimes);
-            this.attachStaticGearPortrait(card, role.id, -105, 70);
-            this.makeLabel(`RoleTag_${role.id}`, card, 46, 112, 190, 30,
-                equipped ? '当前出战' : owned ? '已获得角色' : '等待招募', 15, new Color(157, 213, 255, 255));
-            this.makeLabel(`RoleName_${role.id}`, card, 46, 78, 190, 40, role.name, 26, owned ? WHITE : new Color(172, 179, 190, 255));
-            this.makeLabel(`RoleQuality_${role.id}`, card, 46, 42, 190, 30,
-                owned ? `${progress.star} 星 · ${equipped ? '出战中' : '已获得'}` : '尚未获得', 17, owned ? GOLD : CREAM);
-            this.makeLabel(`RoleFragments_${role.id}`, card, 0, 5, 280, 32,
-                progress.star >= POWER_ROLE_MAX_STAR ? '已满星' : `碎片 ${progress.fragments} / ${fragmentCost}`, 17, new Color(157, 213, 255, 255));
-
-            const enoughFragments = progress.fragments >= fragmentCost;
-            const progressActionText = progress.star >= POWER_ROLE_MAX_STAR
-                ? '已满星'
-                : enoughFragments
-                  ? owned ? '升星' : '招募'
-                  : `免费碎片 +${POWER_ROLE_FREE_FRAGMENT_COUNT}（${remainingFree}/3）`;
-            const progressAction = this.makeButton(`RoleProgress_${role.id}`, card, 0, -42, 262, 42,
-                progressActionText, () => this.progressPowerRole(role.id));
-            if (progress.star >= POWER_ROLE_MAX_STAR || (!enoughFragments && remainingFree <= 0) || !roleUnlocked) {
-                this.restyleButton(progressAction, new Color(70, 76, 88, 255), new Color(160, 164, 174, 255));
-                progressAction.node.parent!.getComponent(Button)!.interactable = false;
-            } else {
-                this.restyleButton(progressAction, enoughFragments ? new Color(211, 145, 38, 255) : new Color(94, 76, 153, 255), WHITE);
-            }
-            progressAction.fontSize = 16;
-            const levelLimit = powerRoleLevelLimit(progress.star);
-            const freeLevelRemaining = Math.max(0, POWER_ROLE_DAILY_FREE_LEVEL_TIMES - progress.freeLevelTimes);
-            const levelUp = this.makeButton(`RoleLevel_${role.id}`, card, 0, -84, 262, 38,
-                owned ? `等级 ${progress.level}/${levelLimit} · 免费升级 ${freeLevelRemaining}/3` : '招募后可升级',
-                () => this.upgradePowerRoleLevelFromUi(role.id));
-            this.restyleButton(levelUp, new Color(57, 91, 135, 255), WHITE);
-            levelUp.fontSize = 14;
-            levelUp.node.parent!.getComponent(Button)!.interactable = owned && progress.level < levelLimit && freeLevelRemaining > 0 && roleUnlocked;
-            const detail = this.makeButton(`RoleDetail_${role.id}`, card, -70, -125, 118, 38, '详情', () => this.showRoleDetailScene(role.id));
-            this.restyleButton(detail, new Color(43, 99, 132, 255), WHITE);
-            detail.fontSize = 17;
-            const equip = this.makeButton(`RoleEquip_${role.id}`, card, 70, -125, 118, 38,
-                equipped ? '出战中' : owned ? '出战' : '未获得', () => this.equipPowerRoleFromUi(role.id));
-            this.restyleButton(equip, equipped ? new Color(43, 132, 96, 255) : new Color(56, 82, 105, 255), WHITE);
-            equip.fontSize = 17;
-            equip.node.parent!.getComponent(Button)!.interactable = owned && !equipped && roleUnlocked;
+            const column = index % HERO_FAIRYGUI_LAYOUT.list.columns;
+            const row = Math.floor(index / HERO_FAIRYGUI_LAYOUT.list.columns);
+            const itemLeft = HERO_FAIRYGUI_LAYOUT.list.x
+                + column * (HERO_FAIRYGUI_LAYOUT.item.width + HERO_FAIRYGUI_LAYOUT.list.columnGap);
+            const itemTop = HERO_FAIRYGUI_LAYOUT.list.y
+                + row * (HERO_FAIRYGUI_LAYOUT.item.height + HERO_FAIRYGUI_LAYOUT.list.lineGap);
+            const x = itemLeft + HERO_FAIRYGUI_LAYOUT.item.width / 2 - DESIGN_WIDTH / 2;
+            const y = DESIGN_HEIGHT / 2 - itemTop - HERO_FAIRYGUI_LAYOUT.item.height / 2;
+            this.buildFairyGuiPowerRoleItem(root, role, x, y, roleUnlocked);
         });
+        if (message.startsWith('升星成功') || message.startsWith('免费升级成功')) {
+            this.playPowerRoleUpgradeGlow(root);
+        }
         this.makeLabel('RoleMessage', root, 0, -420, 700, 74,
             message || `每名角色每天可领取 3 次免费碎片；集齐 ${OUT_OF_BATTLE_POWER_STAR_ZERO_COST} 片即可招募`, 17, message ? WHITE : CREAM);
         this.buildMainBottomNavigation(root, '角色');
+    }
+
+    private buildFairyGuiPowerRoleItem(
+        root: Node,
+        role: OutOfBattlePowerRole,
+        x: number,
+        y: number,
+        roleUnlocked: boolean,
+    ): void {
+        const layout = HERO_FAIRYGUI_LAYOUT;
+        const progress = this.powerRoleState.roles[role.id];
+        const owned = progress.star >= 0;
+        const equipped = this.powerRoleState.equippedRoleId === role.id;
+        const quality = role.quality === 3 ? 3 : 4;
+        const frames = POWER_ROLE_QUALITY_FRAMES[quality];
+        const card = this.makeNode(`RoleCard_${role.id}`, root, x, y, layout.item.width, layout.item.height);
+        card.addComponent(Button);
+        card.on(Button.EventType.CLICK, () => this.showRoleDetailScene(role.id), this);
+
+        const topLeftCenter = (spec: { x: number; y: number; width: number; height: number }): readonly [number, number] => [
+            spec.x + spec.width / 2 - layout.item.width / 2,
+            layout.item.height / 2 - spec.y - spec.height / 2,
+        ];
+        const [backgroundX, backgroundY] = topLeftCenter(layout.background);
+        const background = this.makeNode(
+            `RoleQualityFrame_${role.id}`,
+            card,
+            backgroundX,
+            backgroundY,
+            layout.background.width,
+            layout.background.height,
+        );
+        this.attachRecoveredAtlasSprite(background, 'original/post-unlock/image_quality/spriteFrame', frames.hero);
+
+        const [shapeX, shapeY] = topLeftCenter(layout.shape);
+        const shape = this.makeNode(`RoleQualityShape_${role.id}`, card, shapeX, shapeY, layout.shape.width, layout.shape.height);
+        this.attachRecoveredAtlasSprite(shape, 'original/post-unlock/image_quality/spriteFrame', frames.shape);
+        this.makeLabel(`RoleState_${role.id}`, shape, 0, 0, 52, 30,
+            equipped ? '出战' : owned ? `${Math.max(0, progress.star)}★` : '锁', 14, equipped ? GOLD : WHITE);
+
+        const portraitX = layout.portrait.x - layout.item.width / 2;
+        const portraitY = layout.item.height / 2 - layout.portrait.y;
+        this.attachPowerRolePortrait(card, role.id, portraitX, portraitY);
+
+        const nameX = layout.name.x - layout.item.width / 2;
+        const nameY = layout.item.height / 2 - layout.name.y;
+        this.makeLabel(`RoleName_${role.id}`, card, nameX, nameY, layout.name.width, layout.name.height,
+            role.name, 19, owned ? WHITE : new Color(172, 179, 190, 255));
+
+        const [levelBarX, levelBarY] = topLeftCenter(layout.levelBar);
+        const levelBar = this.makeNode(
+            `RoleLevelFrame_${role.id}`,
+            card,
+            levelBarX,
+            levelBarY,
+            layout.levelBar.width,
+            layout.levelBar.height,
+        );
+        this.attachRecoveredAtlasSprite(levelBar, 'original/post-unlock/image_quality/spriteFrame', frames.level);
+        const levelX = layout.level.x - layout.item.width / 2;
+        const levelY = layout.item.height / 2 - layout.level.y;
+        this.makeLabel(`RoleLevel_${role.id}`, card, levelX, levelY, layout.level.width, layout.level.height,
+            owned ? `Lv.${progress.level}` : '未获得', 17, WHITE);
+
+        const [fragmentX, fragmentY] = topLeftCenter(layout.fragmentBar);
+        const fragment = this.makeNode(
+            `RoleFragmentBar_${role.id}`,
+            card,
+            fragmentX,
+            fragmentY,
+            layout.fragmentBar.width,
+            layout.fragmentBar.height,
+        );
+        const fragmentGraphics = fragment.addComponent(Graphics);
+        fragmentGraphics.fillColor = new Color(28, 40, 56, 230);
+        fragmentGraphics.roundRect(-94, -14, 188, 28, 13);
+        fragmentGraphics.fill();
+        const targetStar = Math.max(0, progress.star + 1);
+        const fragmentCost = POWER_ROLE_STAR_COSTS[Math.min(POWER_ROLE_MAX_STAR, targetStar)];
+        const ratio = progress.star >= POWER_ROLE_MAX_STAR ? 1 : Math.min(1, progress.fragments / Math.max(1, fragmentCost));
+        if (ratio > 0) {
+            fragmentGraphics.fillColor = quality === 3 ? new Color(49, 180, 255, 255) : new Color(214, 103, 255, 255);
+            fragmentGraphics.roundRect(-91, -11, 182 * ratio, 22, 10);
+            fragmentGraphics.fill();
+        }
+        this.makeLabel(`RoleFragments_${role.id}`, fragment, 0, 0, 178, 24,
+            progress.star >= POWER_ROLE_MAX_STAR ? '已满星' : `${progress.fragments}/${fragmentCost}`, 14, WHITE);
+
+        if (!roleUnlocked) {
+            const lock = this.makeNode(`RoleLockedShade_${role.id}`, card, -5, -2, 216, 322);
+            const lockGraphics = lock.addComponent(Graphics);
+            lockGraphics.fillColor = new Color(11, 18, 26, 150);
+            lockGraphics.roundRect(-108, -161, 216, 322, 20);
+            lockGraphics.fill();
+        }
     }
 
     private progressPowerRole(id: PowerRoleId): void {
@@ -3026,7 +3129,41 @@ export class CangshuGame extends Component {
             this.makeLabel(`RoleAbilityText_${ability.id}`, row, 58, 0, 550, 54,
                 ability.description, 15, CREAM);
         });
-        this.makeLabel('RoleDetailEvidence', root, 0, -325, 700, 64,
+        const progress = this.powerRoleState.roles[role.id];
+        const owned = progress.star >= 0;
+        const equipped = this.powerRoleState.equippedRoleId === role.id;
+        const targetStar = Math.max(0, progress.star + 1);
+        const fragmentCost = POWER_ROLE_STAR_COSTS[Math.min(POWER_ROLE_MAX_STAR, targetStar)];
+        const remainingFree = Math.max(0, POWER_ROLE_DAILY_FREE_FRAGMENT_TIMES - progress.freeFragmentTimes);
+        const enoughFragments = progress.fragments >= fragmentCost;
+        const progressAction = this.makeButton('RoleDetailProgress', root, -224, -224, 210, 50,
+            progress.star >= POWER_ROLE_MAX_STAR
+                ? '已满星'
+                : enoughFragments
+                  ? owned ? '升星' : '招募'
+                  : `免费碎片 +${POWER_ROLE_FREE_FRAGMENT_COUNT}（${remainingFree}/3）`,
+            () => this.progressPowerRole(role.id));
+        progressAction.fontSize = 15;
+        const progressEnabled = progress.star < POWER_ROLE_MAX_STAR && (enoughFragments || remainingFree > 0);
+        this.restyleButton(progressAction,
+            progressEnabled ? new Color(94, 76, 153, 255) : new Color(70, 76, 88, 255), WHITE);
+        progressAction.node.parent!.getComponent(Button)!.interactable = progressEnabled;
+
+        const freeLevelRemaining = Math.max(0, POWER_ROLE_DAILY_FREE_LEVEL_TIMES - progress.freeLevelTimes);
+        const levelLimit = powerRoleLevelLimit(progress.star);
+        const levelUp = this.makeButton('RoleDetailLevel', root, 0, -224, 210, 50,
+            owned ? `Lv.${progress.level}/${levelLimit} · 升级` : '招募后升级',
+            () => this.upgradePowerRoleLevelFromUi(role.id));
+        levelUp.fontSize = 15;
+        this.restyleButton(levelUp, new Color(57, 91, 135, 255), WHITE);
+        levelUp.node.parent!.getComponent(Button)!.interactable = owned
+            && progress.level < levelLimit && freeLevelRemaining > 0;
+
+        const equip = this.makeButton('RoleDetailEquip', root, 224, -224, 210, 50,
+            equipped ? '出战中' : owned ? '设为出战' : '尚未获得', () => this.equipPowerRoleFromUi(role.id));
+        this.restyleButton(equip, equipped ? new Color(43, 132, 96, 255) : new Color(56, 82, 105, 255), WHITE);
+        equip.node.parent!.getComponent(Button)!.interactable = owned && !equipped;
+        this.makeLabel('RoleDetailEvidence', root, 0, -310, 700, 48,
             '提升星级可逐步解锁全部角色能力', 16, CREAM);
         const back = this.makeButton('RoleDetailBack', root, 0, -405, 250, 56, '返回角色', () => this.showRoleScene());
         this.restyleButton(back, new Color(43, 99, 132, 255), WHITE);
@@ -3612,6 +3749,161 @@ export class CangshuGame extends Component {
         return /(?:^|[?&])accountDebug=1(?:&|$)/.test(window.location.search);
     }
 
+    private resourceAuditEnabled(): boolean {
+        if (typeof window === 'undefined') return false;
+        return /(?:^|[?&])resourceAudit=1(?:&|$)/.test(window.location.search);
+    }
+
+    private buildResourceAudit(): void {
+        const records: ResourceAuditRecord[] = [];
+        let pending = 0;
+        let queued = false;
+        const canvas = typeof document === 'undefined' ? null : document.querySelector('canvas');
+
+        const publish = (): void => {
+            if (!canvas) return;
+            const ordered = [...records].sort((left, right) =>
+                left.category.localeCompare(right.category) || left.id.localeCompare(right.id));
+            canvas.dataset.resourceAuditReady = queued && pending === 0 ? '1' : 'loading';
+            canvas.dataset.resourceAuditExpected = String(ordered.length + pending);
+            canvas.dataset.resourceAuditLoaded = String(ordered.filter((entry) => entry.status === 'loaded').length);
+            canvas.dataset.resourceAuditFallback = String(ordered.filter((entry) => entry.status === 'static-fallback').length);
+            canvas.dataset.resourceAuditMissing = String(ordered.filter((entry) => entry.status === 'file-missing').length);
+            canvas.dataset.resourceAuditManifest = JSON.stringify(ordered);
+        };
+        const fallback = (
+            category: ResourceAuditCategory,
+            id: string,
+            resourcePath: string | null,
+            detail: string,
+        ): void => {
+            records.push({ category, id, resourcePath, status: 'static-fallback', detail });
+        };
+        const missing = (
+            category: ResourceAuditCategory,
+            id: string,
+            resourcePath: string,
+            detail: string,
+        ): void => {
+            records.push({ category, id, resourcePath, status: 'file-missing', detail });
+        };
+        const load = (
+            category: ResourceAuditCategory,
+            id: string,
+            resourcePath: string,
+            detail: string,
+        ): void => {
+            pending += 1;
+            resources.load(resourcePath, (error, asset) => {
+                records.push({
+                    category,
+                    id,
+                    resourcePath,
+                    status: error || !asset ? 'file-missing' : 'loaded',
+                    detail: error ? `${detail}; ${error.message}` : detail,
+                });
+                pending -= 1;
+                publish();
+            });
+        };
+
+        // Every preparation item gets its own audit row even where several
+        // portraits deliberately share one recovered atlas frame.
+        for (const gear of VISUAL_GEAR_ROSTER) {
+            load('hero', `${gear.id}:portrait`, 'original/heroSmallHead/spriteFrame',
+                `recovered portrait frame ${gear.headKey}`);
+        }
+        const hamsterModels: Readonly<Record<string, string>> = {
+            H01: 'js_zhanshi', H02: 'js_sheshou', H03: 'js_fashi', H04: 'js_qishi',
+            H05: 'js_lieren', H06: 'js_feixingyuan', H16: 'js_konglong',
+        };
+        for (const family of Object.keys(hamsterModels)) {
+            const modelName = hamsterModels[family];
+            for (let level = 1; level <= 4; level += 1) {
+                const gearId = `${family}0${level}`;
+                load('hero', `${gearId}:combat`, `spine/${gearId}/${modelName}_${level}`,
+                    'production combat Spine');
+            }
+        }
+        for (const [id, path] of [
+            ['H0705', 'spine/H0705/js_gangtiexia'],
+            ['H0805', 'spine/H0805/js_aoteman'],
+            ['H0905', 'spine/H0905/js_zhanche'],
+            ['H1005', 'spine/H1005/js_feidieshu'],
+            ['H1805', 'spine/H1805/js_gesila'],
+        ] as const) load('hero', `${id}:combat`, path, 'fusion combat Spine');
+        for (const id of ['H11', 'H12', 'H13', 'H14', 'H15', 'H17']) {
+            fallback('hero', `${id}:combat`, null,
+                'original producer is a stationary wheel with no independent combat Spine; gear/effect presentation remains active');
+        }
+
+        for (const [id, path] of [
+            ['P01:card', 'spine/PowerRoleP01Card/pao_paopaoshu'],
+            ['P01:core', 'spine/PowerRoleP01Full/pao_paopaoshu'],
+            ['P04:card', 'spine/PowerRoleP04/pao_kakaxi'],
+            ['P04:core', 'spine/PowerRoleP04Full/pao_kakaxi'],
+        ] as const) load('power-role', id, path, 'recovered configured power-role Spine');
+        for (const [id, path] of [
+            ['P02:card', 'spine/power/pao_shandianxia0.75/pao_shandianxia'],
+            ['P02:core', 'spine/power/pao_shandianxia/pao_shandianxia'],
+            ['P03:card', 'spine/power/pao_suonike0.75/pao_suonike'],
+            ['P03:core', 'spine/power/pao_suonike/pao_suonike'],
+        ] as const) fallback('power-role', id, path,
+            'configured lazy-cache model has not been downloaded; colored labeled portrait fallback is used');
+
+        for (const enemy of VISUAL_ENEMY_ROSTER) {
+            load('monster', enemy.id, enemy.spinePath, 'recovered enemy/Boss Spine');
+        }
+
+        for (const [id, path] of [
+            ['H0201', 'original/js_sheshou_zidan/spriteFrame'],
+            ['H0204', 'original/js_sheshou_lanqiu/spriteFrame'],
+            ['H0301', 'spine/H03Projectile/zidan'],
+            ['H0601', 'original/projectile-matrix/js_feixingyuan_dandao2/spriteFrame'],
+            ['H0905', 'original/js_zhanche_dandao/spriteFrame'],
+            ['H1005', 'spine/H1005Projectile/js_feidieshu_dandao'],
+            ['H1301', 'original/baomihuali/spriteFrame'],
+            ['H1401', 'original/projectile-matrix/chilun_haidaosha/spriteFrame'],
+            ['H1701', 'spine/ProjectileMatrix/H17/chilun_shexian1'],
+            ['M03', 'original/projectile-matrix/yugutou_dandao/spriteFrame'],
+            ['M09', 'original/projectile-matrix/boss_1_dandao/spriteFrame'],
+            ['M10', 'spine/ProjectileMatrix/M10/gw_10_zidan'],
+            ['P04', 'original/feibiao/feibiao/spriteFrame'],
+        ] as const) load('projectile', id, path, 'production projectile asset');
+        missing('projectile', 'H18_S1', 'spriteFrame/skill/js_fashi_dandao',
+            'model table references this path, but version-18 resources3 has no matching native asset');
+
+        for (const [id, path] of [
+            ['H03:freeze', 'spine/H03Freeze/hit_binkuai'],
+            ['H03:transform', 'spine/H03Transform/hit_lizi'],
+            ['H11:heal', 'spine/H11Healing/skill01_hit_upper'],
+            ['H12:lightning', 'spine/H12Lightning/chilun_leiyun'],
+            ['H13:impact', 'spine/H13Impact/baomihua_hill'],
+            ['H0705:impact', 'original/js_gangtiexia_hill_baozha/spriteFrame'],
+            ['H0805:impact', 'original/js_aoteman_hill/spriteFrame'],
+            ['H0905:impact', 'original/js_zhanche_hill/spriteFrame'],
+            ['H1005:nuke', 'spine/H1005Nuke/hedang'],
+            ['H15:coin-impact', 'original/chilun_chuangzhangsha/spriteFrame'],
+            ['preparation:grid-reward-glow', 'spine/PreparationGlowSg1/zhandou_sg1'],
+            ['preparation:refresh-glow', 'spine/PreparationGlowSg2/zhandou_sg2'],
+            ['power-role:upgrade-glow', 'spine/PowerRoleUpgradeGlow/chilunpy_shengjishanguang'],
+            ['audio:H03-transform', 'original/skill_bianxing'],
+            ['audio:H03-freeze', 'original/skill_bingfeng'],
+            ['audio:H03-laser', 'original/skill_jiguang'],
+            ['audio:H12-lightning', 'original/bullet_leiyun'],
+            ['audio:melee-sword', 'original/skill_jijian'],
+            ['audio:melee-charge', 'original/skill_zhuangji'],
+            ['audio:H09', 'original/bullet_zhanche'],
+            ['audio:H10', 'original/bullet_hedan'],
+            ['audio:H14', 'original/projectile-matrix/bullet_shayu'],
+        ] as const) load('effect', id, path, 'production effect/audio asset');
+
+        queued = true;
+        publish();
+        this.makeLabel('ResourceAuditTitle', this.node, 0, 50, 700, 80,
+            '全角色资源运行时巡检中…', 28, WHITE);
+    }
+
     private visualCatalogMode(): 'enemies' | 'gears' | null {
         if (typeof window === 'undefined') return null;
         const match = /(?:^|[?&])visualCatalog=(enemies|gears)(?:&|$)/.exec(window.location.search);
@@ -4003,6 +4295,17 @@ export class CangshuGame extends Component {
         this.applyCommButtonSkin(this.adRefreshLabel, COMM_ATLAS_FRAMES.blueButton);
         this.applyCommButtonSkin(this.refreshLabel, COMM_ATLAS_FRAMES.greenButton);
         this.applyCommButtonSkin(this.actionLabel, COMM_ATLAS_FRAMES.yellowButton);
+        // BagLikeView binds UI10026/zhandou_sg2 to both refresh controls.
+        this.attachPreparationButtonGlow(
+            this.adRefreshLabel.node.parent!,
+            'spine/PreparationGlowSg2/zhandou_sg2',
+            'AdRefreshGlow_UI10026',
+        );
+        this.attachPreparationButtonGlow(
+            this.refreshLabel.node.parent!,
+            'spine/PreparationGlowSg2/zhandou_sg2',
+            'RefreshGlow_UI10026',
+        );
         for (const label of [this.adRefreshLabel, this.refreshLabel, this.actionLabel]) {
             label.fontSize = 30;
             label.lineHeight = 36;
@@ -4077,12 +4380,14 @@ export class CangshuGame extends Component {
         resultGraphics.stroke();
         this.resultTitleLabel = this.makeLabel('ResultTitle', this.resultLayer, 0, 118, 480, 64, '关卡胜利', 38, GOLD);
         this.resultBodyLabel = this.makeLabel('ResultBody', this.resultLayer, 0, 36, 540, 110, '', 20, CREAM);
-        this.makeButton('Retry', this.resultLayer, -220, -125, 190, 64, '重新挑战', () => this.retryCurrentMode());
-        this.makeButton('ResultHome', this.resultLayer, 0, -125, 190, 64, '返回主页', () => this.returnFromBattleResult());
-        this.resultNextButtonLabel = this.makeButton('NextLevel', this.resultLayer, 220, -125, 190, 64,
+        this.resultActionsLayer = this.makeNode('ResultActions', this.resultLayer, 0, 0, 620, 100);
+        this.makeButton('Retry', this.resultActionsLayer, -220, -125, 190, 64, '重新挑战', () => this.retryCurrentMode());
+        this.makeButton('ResultHome', this.resultActionsLayer, 0, -125, 190, 64, '返回主页', () => this.returnFromBattleResult());
+        this.resultNextButtonLabel = this.makeButton('NextLevel', this.resultActionsLayer, 220, -125, 190, 64,
             '进入下一关', () => this.navigateToLevel(this.levelId + 1));
         this.restyleButton(this.resultNextButtonLabel, new Color(45, 151, 92, 255), new Color(231, 255, 231, 255));
         this.resultNextButtonLabel.node.parent!.active = false;
+        this.resultActionsLayer.active = false;
         this.resultLayer.active = false;
 
         this.traitLayer = this.makeNode('TraitSelectionOverlay', this.node, 0, 0, DESIGN_WIDTH, DESIGN_HEIGHT);
@@ -4860,6 +5165,8 @@ export class CangshuGame extends Component {
         this.dealPreparationBatch();
         this.tipLabel.string = '把候选仓鼠战士拖入背包后，再开始第 1 波';
         this.resultLayer.active = false;
+        this.resultRevealVersion += 1;
+        this.resultActionsLayer.active = false;
         this.resultNextButtonLabel.node.parent!.active = false;
         this.traitLayer.active = false;
         this.applyPhaseLayout();
@@ -4879,14 +5186,13 @@ export class CangshuGame extends Component {
 
     private claimNextBatch(_free: boolean): void {
         if (this.phase !== 'deploy') return;
-        const baseCost = this.normalRefreshTimes > 0 ? REFRESH_COST : 0;
+        const baseCost = candidateNormalRefreshCost(this.normalRefreshTimes, REFRESH_COST);
         const cost = this.battleMode === 'daily' ? dailyRefreshCost(baseCost, this.dailyBuffIds) : baseCost;
         if (this.gold < cost) {
             this.tipLabel.string = `金币不足：本次刷新需要 ${cost}`;
             return;
         }
         this.gold -= cost;
-        this.normalRefreshTimes += 1;
         this.replaceCandidates(this.nextCandidateBatch('normal'));
         this.tipLabel.string = cost === 0 ? '本局首次普通刷新免费；请手动拖动候选齿轮' : `已消耗 ${cost} 金币刷新；请手动摆放`;
     }
@@ -4898,7 +5204,6 @@ export class CangshuGame extends Component {
             return;
         }
         this.playMockAdvertisement('battle-refresh', () => {
-            this.freeRefreshUsed = true;
             this.replaceCandidates(this.nextCandidateBatch('ad'));
             this.tipLabel.string = '广告播放完成：候选齿轮已刷新，仍需手动拖入背包';
             this.refreshUi();
@@ -4909,11 +5214,26 @@ export class CangshuGame extends Component {
     }
 
     private dealPreparationBatch(): void {
+        const counters = beginCandidatePreparationRound({
+            normalRefreshTimes: this.normalRefreshTimes,
+            nonAdRefreshTimes: this.nonAdRefreshTimes,
+            hasRefreshFromAd: this.freeRefreshUsed,
+        });
+        this.normalRefreshTimes = counters.normalRefreshTimes;
+        this.nonAdRefreshTimes = counters.nonAdRefreshTimes;
+        this.freeRefreshUsed = counters.hasRefreshFromAd;
         this.replaceCandidates(this.nextCandidateBatch('prepare'));
     }
 
     private nextCandidateBatch(refreshType: CandidateRefreshType): GearId[] {
-        if (refreshType !== 'ad') this.nonAdRefreshTimes += 1;
+        const counters = completeCandidateRefresh({
+            normalRefreshTimes: this.normalRefreshTimes,
+            nonAdRefreshTimes: this.nonAdRefreshTimes,
+            hasRefreshFromAd: this.freeRefreshUsed,
+        }, refreshType);
+        this.normalRefreshTimes = counters.normalRefreshTimes;
+        this.nonAdRefreshTimes = counters.nonAdRefreshTimes;
+        this.freeRefreshUsed = counters.hasRefreshFromAd;
         const useStatic = shouldUseStaticCandidateBatch(
             this.levelId,
             this.challengeTimes,
@@ -5181,6 +5501,72 @@ export class CangshuGame extends Component {
         });
     }
 
+    private attachPowerRolePortrait(parent: Node, roleId: PowerRoleId, x: number, y: number): void {
+        this.attachStaticGearPortrait(parent, roleId, x, y);
+        const resourcePaths: Partial<Record<PowerRoleId, string>> = {
+            P01: 'spine/PowerRoleP01Card/pao_paopaoshu',
+            P04: 'spine/PowerRoleP04/pao_kakaxi',
+        };
+        const resourcePath = resourcePaths[roleId];
+        if (!resourcePath) return;
+        resources.load(resourcePath, sp.SkeletonData, (error, data) => {
+            if (error || !data || !parent.isValid) return;
+            const fallback = parent.getChildByName(`StaticGearPortrait_${roleId}`);
+            if (fallback?.isValid) fallback.destroy();
+            const model = this.makeNode(`RecoveredPowerRoleModel_${roleId}`, parent, x + 1, y - 20, 80, 80);
+            // ModelConfig.P01L/P04L record offset (1,-20), scale 0.7,
+            // height 80 and looping idle for the card/list models.
+            model.setScale(0.7, 0.7, 1);
+            const skeleton = model.addComponent(sp.Skeleton);
+            skeleton.skeletonData = data;
+            skeleton.setAnimation(0, 'idle', true);
+        });
+    }
+
+    private attachPowerCoreRoleModel(parent: Node, roleId: PowerRoleId): void {
+        this.attachStaticGearPortrait(parent, roleId, 0, 0);
+        const resourcePaths: Partial<Record<PowerRoleId, string>> = {
+            P01: 'spine/PowerRoleP01Full/pao_paopaoshu',
+            P04: 'spine/PowerRoleP04Full/pao_kakaxi',
+        };
+        const resourcePath = resourcePaths[roleId];
+        if (!resourcePath) return;
+        resources.load(resourcePath, sp.SkeletonData, (error, data) => {
+            if (error || !data || !parent.isValid) return;
+            const fallback = parent.getChildByName(`StaticGearPortrait_${roleId}`);
+            if (fallback?.isValid) fallback.destroy();
+            const model = this.makeNode(`RecoveredPowerCoreRoleModel_${roleId}`, parent, 1, -10, 80, 80);
+            // ModelConfig.P01/P04 share offset (1,-10), scale 1,
+            // height 80 and looping idle for the battlefield power-core model.
+            model.setScale(1, 1, 1);
+            const skeleton = model.addComponent(sp.Skeleton);
+            skeleton.skeletonData = data;
+            skeleton.setAnimation(0, 'idle', true);
+        });
+    }
+
+    private playPowerRoleUpgradeGlow(parent: Node): void {
+        resources.load(
+            'spine/PowerRoleUpgradeGlow/chilunpy_shengjishanguang',
+            sp.SkeletonData,
+            (error, data) => {
+                if (error || !data || !parent.isValid) return;
+                // HeroInfoView places its centered 708x380 HeroUpAniComp at
+                // FairyGUI (374,341), which maps to Cocos (-1,326) in 750x1334.
+                const glow = this.makeNode('RecoveredPowerRoleUpgradeGlow', parent, -1, 326, 708, 380);
+                const skeleton = glow.addComponent(sp.Skeleton);
+                skeleton.skeletonData = data;
+                skeleton.setCompleteListener(() => {
+                    if (glow.isValid) glow.destroy();
+                });
+                skeleton.setAnimation(0, 'idle', false);
+                this.scheduleOnce(() => {
+                    if (glow.isValid) glow.destroy();
+                }, 2);
+            },
+        );
+    }
+
     private attachGearPortrait(gear: Gear, headKey: string, x: number, y: number): void {
         const frameData = HERO_SMALL_HEAD_FRAMES[headKey];
         if (!frameData) return;
@@ -5227,7 +5613,6 @@ export class CangshuGame extends Component {
         if (!rect) return;
         const rotor = this.makeNode(`GearRotor_${shapeRow}_${shapeCol}`, parent, x, y, 116, 116);
         rotor.angle = baseAngle;
-        rotor.setSiblingIndex(0);
         const shadowNode = this.makeNode(`GearBodyShadow_cl${level}`, rotor, 4, -5, 110, 110);
         shadowNode.setScale(1.04, 1.04, 1);
         const glowNode = this.makeNode('GearPowerGlow', rotor, 0, 0, 110, 110);
@@ -5275,7 +5660,7 @@ export class CangshuGame extends Component {
         // The original keeps the equipped role model outside the rotating
         // power-panel node and loops its battle animation independently.
         const hamster = this.makeNode('PowerCoreHamster', gear.node, 0, 7, 90, 90);
-        this.attachStaticGearPortrait(hamster, this.powerRoleState.equippedRoleId, 0, 0);
+        this.attachPowerCoreRoleModel(hamster, this.powerRoleState.equippedRoleId);
     }
 
     private attachBagLikeAtlasSprite(node: Node, spec: BagLikeAtlasFrame): void {
@@ -6258,6 +6643,12 @@ export class CangshuGame extends Component {
     private addDevelopedGridReward(): void {
         if (this.prepareLayer.getChildByName('DevelopedGridReward')) return;
         const reward = this.makeNode('DevelopedGridReward', this.prepareLayer, -298, -283, 104, 132);
+        // BagLikeView binds UI10025/zhandou_sg1 to adGridBtn.modelNode.
+        this.attachPreparationButtonGlow(
+            reward,
+            'spine/PreparationGlowSg1/zhandou_sg1',
+            'GridRewardGlow_UI10025',
+        );
         const tile = this.makeNode('GridRewardTile', reward, 0, 0, 56, 56);
         const graphics = tile.addComponent(Graphics);
         graphics.fillColor = new Color(151, 156, 189, 255);
@@ -6274,6 +6665,23 @@ export class CangshuGame extends Component {
         this.applyOriginalOutline(count, new Color(0, 0, 0, 255), 2);
         const title = this.makeLabel('GridRewardTitle', reward, 0, -47, 104, 30, '获取格子', 20, WHITE);
         this.applyOriginalOutline(title, new Color(0, 0, 0, 255), 3);
+    }
+
+    private attachPreparationButtonGlow(parent: Node, resourcePath: string, name: string): void {
+        resources.load(resourcePath, sp.SkeletonData, (error, data) => {
+            if (error || !data || !parent.isValid || parent.getChildByName(name)) return;
+            const glow = this.makeNode(name, parent, 0, 0, 164, 124);
+            glow.setSiblingIndex(0);
+            const skeleton = glow.addComponent(sp.Skeleton);
+            skeleton.skeletonData = data;
+            skeleton.premultipliedAlpha = false;
+            try {
+                skeleton.setAnimation(0, 'idle', true);
+            } catch {
+                // Preserve the recovered setup pose if a reduced runtime cannot
+                // expose the Spine 3.8.99 animation during an import refresh.
+            }
+        });
     }
 
     private workerProgressRatio(gear: Gear): number {
@@ -6357,11 +6765,30 @@ export class CangshuGame extends Component {
             this.dragGear = null;
             return;
         }
-        if (cell && !config.gridUnlock && this.canPlaceGear(gear.id, cell.row, cell.col)) {
-            const displaced = this.displacedGearsAt(gear, cell.row, cell.col);
+        const dropResolution = config.gridUnlock ? null : resolveGridDrop({
+            source: gear.location,
+            movingUid: gear.uid,
+            movingShape: this.gearShape(gear.id),
+            target: cell,
+            rows: GRID_ROWS,
+            columns: GRID_COLS,
+            unlocked: this.unlocked,
+            reserved: gear.id === 'P01' ? new Set<number>() : new Set([this.currentPowerIndex()]),
+            placed: this.gears.map((placed) => ({
+                uid: placed.uid,
+                row: placed.row,
+                col: placed.col,
+                shape: this.gearShape(placed.id),
+            })),
+            protectedPlacementUids: new Set(this.gears.filter((placed) => placed.id === 'P01').map((placed) => placed.uid)),
+            invalidGridDrop: gear.id === 'P01' ? 'restore-origin' : 'return-to-candidate',
+        });
+        if (dropResolution?.kind === 'place') {
+            const displacedUidSet = new Set(dropResolution.displacedUids);
+            const displaced = this.gears.filter((placed) => displacedUidSet.has(placed.uid));
             this.returnGearsToCandidates(displaced);
-            gear.row = cell.row;
-            gear.col = cell.col;
+            gear.row = dropResolution.row;
+            gear.col = dropResolution.col;
             if (gear.location === 'candidate') {
                 this.candidates = this.candidates.filter((item) => item !== gear);
                 this.gears.push(gear);
@@ -6384,12 +6811,14 @@ export class CangshuGame extends Component {
             this.tipLabel.string = displaced.length
                 ? `${config.name}已替换 ${displaced.length} 个旧齿轮；旧齿轮已退回候选栏`
                 : `${config.name}已手动摆入背包`;
-        } else if (gear.location === 'grid' && gear.id === 'P01') {
+        } else if (dropResolution?.kind === 'restore-origin') {
             gear.row = this.dragOrigin.row;
             gear.col = this.dragOrigin.col;
             gear.node.setPosition(this.dragOrigin.x, this.dragOrigin.y);
-            this.tipLabel.string = '动力仓鼠需要放在已解锁的棋盘格内';
-        } else if (gear.location === 'grid') {
+            this.tipLabel.string = gear.id === 'P01'
+                ? '动力仓鼠需要放在已解锁的棋盘格内'
+                : config.gridUnlock ? '扩展格必须完整落在未解锁区域' : '该形状无法放入此处，请换一个空位';
+        } else if (dropResolution?.kind === 'return-to-candidate') {
             this.returnGearsToCandidates([gear]);
             this.tipLabel.string = `${config.name}已从背包取下并退回候选栏`;
         } else {
@@ -7935,7 +8364,7 @@ export class CangshuGame extends Component {
     }
 
     private preloadP04Projectile(): void {
-        resources.load('original/feibiao/spriteFrame', SpriteFrame, (error, sourceFrame) => {
+        resources.load('original/feibiao/feibiao/spriteFrame', SpriteFrame, (error, sourceFrame) => {
             if (error || !sourceFrame) return;
             const frame = new SpriteFrame();
             frame.reset({
@@ -8496,6 +8925,19 @@ export class CangshuGame extends Component {
         }, 1);
     }
 
+    private revealResultActionsAfterSourceDelay(showNext: boolean): void {
+        const version = ++this.resultRevealVersion;
+        this.resultNextButtonLabel.node.parent!.active = showNext;
+        this.resultActionsLayer.active = false;
+        // BattleWinView/BattleFailView open immediately, then onUpdateRewards
+        // reveals the buttons and rewards after GameTimer.once(MB), MB = 300 ms.
+        this.scheduleOnce(() => {
+            if (version !== this.resultRevealVersion || !this.resultLayer.active) return;
+            if (this.phase !== 'won' && this.phase !== 'lost') return;
+            this.resultActionsLayer.active = true;
+        }, 0.3);
+    }
+
     private finish(won: boolean): void {
         const validationOriginalProfile = this.battleMode === 'normal'
             ? this.longRunOriginalAccountProfile
@@ -8520,7 +8962,7 @@ export class CangshuGame extends Component {
         this.resultBodyLabel.string = won
             ? `${this.rounds.length} 波敌人已经全部清除\n账号奖励：${this.accountAttemptRewardText()}${unlockedText}`
             : `我方兵营已被摧毁\n下次敌军属性降至 ${Math.round(mechanicsFirstDefeatCompensation(this.failedAttempts) * 100)}%`;
-        this.resultNextButtonLabel.node.parent!.active = won && this.levelId < BAGLIKE_LAST_LEVEL_ID;
+        this.revealResultActionsAfterSourceDelay(won && this.levelId < BAGLIKE_LAST_LEVEL_ID);
         this.resultNextButtonLabel.string = this.levelId < BAGLIKE_LAST_LEVEL_ID
             ? `进入第 ${bagLikeLevelNumber(this.levelId + 1)} 关`
             : '全部通关';
@@ -8566,7 +9008,7 @@ export class CangshuGame extends Component {
             this.resultBodyLabel.string = `本次击杀 ${this.specialKillCount} · 获得金币 ${this.specialDropGold}\n历史最高：${this.specialModeState.endless.maxKillCount} 击杀 / ${this.specialModeState.endless.maxGold} 金币`;
             this.tipLabel.string = '无尽试炼按金币优先、同金币按击杀数更新纪录';
         }
-        this.resultNextButtonLabel.node.parent!.active = false;
+        this.revealResultActionsAfterSourceDelay(false);
     }
 
     private clearUnits(): void {

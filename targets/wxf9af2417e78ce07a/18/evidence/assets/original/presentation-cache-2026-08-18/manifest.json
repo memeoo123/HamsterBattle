@@ -1,0 +1,58 @@
+{
+  "capturedAt": "2026-08-18",
+  "target": "wxf9af2417e78ce07a/18",
+  "source": "authorized xwechat resources3 cache",
+  "caution": "The two skeleton-to-model mappings follow cache request order; the texture files are byte-identical.",
+  "textureHash": "fc1ebfd4b2b2b7bbd7cfb9381a549dab0edee4c18edacff6713e217f402391bc",
+  "entries": [
+    {
+      "id": "UI10025",
+      "skeletonHash": "2d752e976b00307eec7fcf66505159ce5b228863508a0ad121d8e2811826df2b",
+      "resourceDirectory": "PreparationGlowSg1",
+      "basename": "zhandou_sg1",
+      "consumers": [
+        "BagLikeView.adGridBtn.modelNode"
+      ],
+      "mappingConfidence": "inferred-by-cache-request-order",
+      "sourceSkeleton": "178540547601021.bin",
+      "sourceTexture": "178540547499419.png",
+      "animation": "idle",
+      "loop": true,
+      "atlas": {
+        "width": 164,
+        "height": 124,
+        "region": {
+          "x": 2,
+          "y": 2,
+          "width": 160,
+          "height": 120
+        }
+      }
+    },
+    {
+      "id": "UI10026",
+      "skeletonHash": "42a1ab4d8fe499675642ff625ab9165a2ef5b6ce2e62c43ca0aabc030b35fdf6",
+      "resourceDirectory": "PreparationGlowSg2",
+      "basename": "zhandou_sg2",
+      "consumers": [
+        "BagLikeView.adRefreshBtn.modelNode",
+        "BagLikeView.refreshBtn.modelNode"
+      ],
+      "mappingConfidence": "inferred-by-cache-request-order",
+      "sourceSkeleton": "178540547651322.bin",
+      "sourceTexture": "178540548108631.png",
+      "animation": "idle",
+      "loop": true,
+      "atlas": {
+        "width": 164,
+        "height": 124,
+        "region": {
+          "x": 2,
+          "y": 2,
+          "width": 160,
+          "height": 120
+        }
+      }
+    }
+  ]
+}
